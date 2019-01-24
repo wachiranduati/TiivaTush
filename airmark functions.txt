@@ -1,0 +1,68 @@
+// this is the first one click teh add to cart button and the button is deactivated
+the item is added to cart figure showing the current count
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	#item1 {
+		height: 50px;
+		width: 50px;
+		background-color: black;
+		margin: 10px;
+		
+	}
+	#item2 {
+		height: 50px;
+		width: 50px;
+		background-color: blue;
+		margin: 10px;
+		
+	}
+	</style>
+</head>
+<body>
+
+<p id="p1">0</p>
+<input type="button" onclick="dosomething()" value="twende"/>
+
+<div id="item1" onclick="addtocart(this)"></div>
+
+<div id="item2" onclick="addtocart(this)"></div>
+<input type="button" onclick="addtocart(this)" name="mybutton" id="mybutton" value="Click"/>
+
+<input type="button" onclick="addtocart(this)" name="mybutton" id="mybutton2" value="Click"/>
+
+<script>
+
+function addtocart(e){
+	var x = e.id;
+		alert(x);
+		document.getElementById(x).disabled = true;
+		
+		var m = Number(document.getElementById("p1").innerHTML) + 1;
+		document.getElementById("p1").innerHTML = m;
+		
+}
+
+
+<!-- function dosomething(){ -->
+	 <!-- var x = 0; -->
+		<!-- document.getElementById("p1").innerHTML = x; -->
+		<!-- x++; -->
+		
+	<!-- } -->
+
+
+
+</script>
+
+<p>The paragraph above was changed by a script.</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/js/tryit.asp?filename=tryjs_change_innerhtml by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 23 Jan 2015 07:36:28 GMT -->
+</html>
+
+// it ends here it only deactivates teh buttons preventing further clicking and updates the current count in a 
+superscript of teh add to cart tag at the top header

@@ -1,0 +1,347 @@
+* {
+    margin:0px;
+    padding: 0px;
+    
+}
+
+footer {
+    clear: both;
+    background: rgba(47, 44, 44, 0.64);
+    padding-top: 10px;
+}
+
+#heading {
+    width: 100%;
+    height: 40px;
+    background: rgba(74, 59, 255, 0);
+   
+}
+
+/*=============================logo on top to the top left===================*/
+#loggo {
+    margin-left: 150px;
+    clear: both;
+}
+
+#container ul li {
+    display: inline;
+    margin: 0 auto;
+/*    background-color: #04ffe2;*/
+    border:1px solid #aaa;
+    margin-left:20px;
+    border-radius: 5px;
+    padding: 5px;
+    
+}
+
+#container {
+    background-color:rgba(123,232,212,0.2);
+    margin: 5px;
+    padding: 10px;
+    position: relative;
+    left: 120px;
+    font-family: Brush Script Std;
+    font-size: 120%;
+    width: 450px;
+    margin-left: 100px;
+    border: 2px solid gray;
+    border-radius: 7px;
+    
+}
+#container ul li a {
+    text-decoration: none;
+    color: rgba(70, 68, 68, 0.76);
+    
+    
+}
+#all ul li {
+    display: inline;
+}
+img {
+    max-height: 100px;
+}
+div>div {
+    text-align: center;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: bold;
+    margin: auto 0;
+    color: white;
+    
+}
+
+.group_cont {
+    border: 1px dotted blue;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    margin: 0 0 10px 0;
+    border-radius: 4px;
+
+}
+
+#topheader {
+    background: rgba(128, 128, 128, 0.17);
+    height: 20px;
+    width: 100%;
+    
+}
+
+#all {
+    float: right;
+    width: 78%;
+    margin-right: 15px;
+}
+li>a {
+    padding: 5px;
+/*    keep notice of this padding i put on the bottom*/
+    padding-bottom: 20px;
+}
+
+#categories {
+    width: 17%;
+    background: rgba(0, 0, 255, 0.37);
+    
+    float:left;
+    padding-left: 4px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-left: 10px;
+    
+}
+
+
+#searchbar {
+    margin-left: 5px;
+    position: relative;
+    top: 10px;
+    padding: 10px;
+    width: 240px;
+    margin-bottom: 20px; 
+    
+}
+
+h1 {
+    color: rgba(0, 255, 255, 0.47);
+    text-shadow: 0px 3px 4px black;
+    font-size: 25px;
+    font-family:monospace;
+}
+#featured {
+    text-align: center;
+    color: orange;
+    text-shadow: -2px 2px 3px rgba(175, 113, 0, 0.53);
+}
+
+#category-name {
+    color: orange;
+    text-shadow: -2px 2px 5px black;
+    text-indent: 30px;
+    font-size: 90%;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+/*make the category lists indented*/
+/*
+li ul {
+    text-align: left;
+}
+*/
+
+#topbar_howto {
+    background: white;
+}
+
+#big_wrapper {
+    width: 80%;
+    margin: 0 auto;
+    
+}
+
+#searchbutton {
+    position: relative;
+    top: -41px;
+    left: 220px;
+    border: 1px solid blue;
+    border-radius: 3px;
+    font-size: 90%
+}
+
+ul.main-categories ul li{
+    text-indent: 40px;
+    list-style-type:none;
+    font-family: sans-serif;
+    font-style: italic;
+    
+}
+
+#topbarCO {
+    height: 50px;
+    background: rgba(0, 0, 0, 0.51);  
+}
+
+#logocontact {
+    margin-top: 50px;
+    padding: 10px;
+}
+
+ul.topnav li {
+    display: inline-block;
+    padding: 5px;
+    float:right;
+    margin-right: 20px;
+    margin-top: 15px;
+    border: 1px solid gray;
+    border-radius: 2px;
+    
+}
+
+#contactustitle {
+    clear: right;
+    margin-top: 150px;
+    text-align: center;
+    font-size: 140%;
+    color: orange;
+    
+}
+
+#lowerfooter ul li{
+    display: inline-block;
+    width: 140px;
+}
+
+#lowerfooter {
+    width: 100%;
+    padding: 5px;
+    font-size: 75%;
+    text-align: center;
+}
+#lowerfooter li{
+    padding: 2px;
+    margin-right: 80px;
+}
+
+#newsletter {
+    width: 20%;
+    
+}
+
+.thebox {
+    height: 2px;
+    background: orange;
+    position: relative;
+    top: 13px;
+    width: 40%;
+    margin: 0 ;
+    box-shadow: 1px 2px 5px gray; 
+}
+
+#contactwords {
+    width: 150px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.thebox2 {
+    height: 2px;
+    background: orange;
+    position: relative;
+    top: 13px;
+    width: 40%;
+    margin: 0 60% ;
+    box-shadow: 1px 2px 5px gray; 
+}
+
+#contactinfo {
+    width: 40%;
+    border: 1px solid gray;
+    margin-left: 2%;
+    margin-top: 20px;
+    padding: 20px;
+}
+#contactinfo input, textarea {
+    padding: 5px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+
+
+#contactsself {
+    float: right;
+    width: 500px;
+    font-family: sans-serif;
+    font-style: italic;
+    padding: 20px;
+    margin-right: 40px;
+    line-height: 2;
+    position: relative;
+    top: 50px;
+    box-shadow: 1px 2px 2px black;
+
+}
+
+
+
+#newsletternew {
+    width: 35%;
+    float: right;
+    margin-right: 1px;
+}
+
+.main-categories {
+    list-style-type: none;
+}
+.main-categories ul li {
+    margin: 2px 0;
+}
+
+#404loggo {
+    position: relative;
+    top: 50px;
+    left: 400px;
+}
+
+#gohomelink {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 120%;
+    padding: 20px 90px;
+    position: relative;
+    top: 200px;
+    left: 20%;
+    border: 1px solid black;
+    background: orange;
+    color: white;
+      
+}
+/*
+#gohomelink:hover {
+    background: linear-gradient( 45deg,gray, blue);
+    color: white;
+}
+*/
+
+#404pagebody{
+	background-image:url(images/404page.png);
+}
+
+#im_links li {
+    display: inline;
+    padding: 5px;
+    margin-left: 20px;
+    
+}
+
+#lowerend {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+

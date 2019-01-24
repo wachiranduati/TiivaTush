@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<title>Tiiva | Misc</title>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bootstrapdist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="final.css">
+        <script src="jquery.min.js"></script>
+        <script src="bootstrapdist/js/bootstrap.min.js"></script>
+        <script src="display.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+</head>
+    <body>
+        <div class="container">
+            <div class="row" style="border:1px solid orange;background-image:url(images/thaticon.png);background-position:center;background-repeat:no-repeat;">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row" style="background-color:rgba(220, 220, 220, 0.7);">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border-bottom:1px solid rgba(17, 145, 255, 0.73);box-shadow:0px 1px 1px black;">
+                                    <h5>Thanyou for choosing Tiiva.</h5>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:3px;">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <img src="images/airmarklogotrial2.png" class="img-responsive"/>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+                            </div>
+                            <div class="alert alert-success">
+                                <a href="#" class="close" data-dismiss="alert" >&times;</a>
+                                <strong>Success!!</strong>
+                                <span>Your order has been received.Here's your provisional receipt.</span>
+                            </div>
+                            
+                            
+                            
+                            <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="shoppingcart"></div>
+                                    </div>
+                            
+                            <div class="row" style="font-family:kok;">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                            <h4>Arrival Date:</h4>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="border-bottom:1px solid black;">
+                                            <h4>TIIVA : <span id="eta">2 - 5 Working</span> Days</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row" style="background-color:gainsboro;font-family:kok;">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <p>Thankyou for supporting small local businesses.We at Tiiva strive to grow both our local and international brands.It is our hope to soon start an environmental initiative planting and caring of trees with a small percent of every single purchase </p><img src="icons/emojiicon.png" class="img-responsive" style="display:inline;height:90px;position:absolute;top:35px;"/>
+                                    <h4 class="text-center">From Tiiva, We Thankyou and hope to see you again very soon.</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+                function changetime(){
+                    if($("#shippingdays").text() == 'free'){
+                    $("#eta").text("2 - 5 working");
+                }else{
+                    $("#eta").text("1 - 3");
+                }
+                }
+            
+            purchasedcart();
+             function purchasedcart(){
+              if(window.XMLHttpRequest){
+                    xmlhttp3 = new XMLHttpRequest();
+                }else{
+                    xmlhttp3 = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+           xmlhttp3.onreadystatechange = function(){
+                if (xmlhttp3.readyState == 4 && xmlhttp3.status == 200){
+                    document.getElementById('shoppingcart').innerHTML= xmlhttp3.responseText;
+                    
+                changetime();
+
+                    }
+                    }
+                    xmlhttp3.open('GET','salesreceipt.php',true);
+                    xmlhttp3.send();
+            
+            
+            }
+            
+            
+            
+            
+        </script>
+    </body>
+</html>

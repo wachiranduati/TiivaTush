@@ -1,0 +1,1679 @@
+
+
+#stickeynotes {
+    margin: 0 auto;
+    float: right;
+    width: 700px;
+}
+
+#Backhome {
+    width: 250px;
+    padding: 11px;
+    background: #ffc400; 
+    clear: both;
+    margin: 10px;
+    margin-left: 40%;
+    position: relative;
+    top: -60px;
+    
+
+}
+#Backhome a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+#Backhome:hover {
+    background: linear-gradient(45deg, blue, green);
+    color: yellow;
+}
+
+#wordAdvcie {
+    width: 200px;
+    text-align: center;
+    padding: 30px;
+    font-weight: bolder;
+    line-height: 2;
+    margin: 20px 30px;
+}
+
+#container404 {
+    width: 900px;
+}
+
+
+
+#topbarlightgrey ul li {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 80%;
+    position: relative;
+    top: -10px;
+    margin-bottom: 10px;
+}
+
+#topbarlightgrey {
+    height: 30px;
+    background: rgba(0, 0, 0, 0.19);
+}
+
+#firstcontactlist {
+ float: left;
+}
+
+#socialmedialinks {
+    float:right
+}
+
+#logoimage {
+    width: 210px;
+}
+
+#homelogo {
+    height: 100px;
+}
+
+#importanthomelinks li{
+    display: inline;
+    float: right;
+    margin-right: 30px;
+    position: relative;
+    top: -60px;
+    font-size: 80%;
+    
+}
+
+.headerruletopbox {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.17);
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+#airmarkquicklinks {
+    clear: both;
+    padding: 5px;
+}
+#airmarkquicklinks ul {
+    margin-left: -45px;
+}
+
+#airmarkquicklinks ul li{
+    padding: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.43);
+    border-radius: 8px;
+    color: rgba(0, 0, 0, 0.68);
+    
+}
+#airmarkquicklinks ul li:hover{
+    background-color: rgba(0, 0, 0, 0.46);
+    color: white;
+}
+#airmarkquicklinks li{
+    display: inline-block;
+    padding: 5px;
+    margin-left: 20px;
+    float: left;
+}
+
+
+
+#searchpad {
+    margin-top: 10px;
+    margin-left: 14%;
+}
+
+#searchpad input{
+    font-family: kokila;
+    font-size: 17px;
+}
+
+
+#aboutshopper {
+    width: 250px;
+    float: right;
+    text-align: left;
+    padding: 10px;
+}
+
+#upperfooter {
+    margin-top: 80px; 
+    padding-top: 10px;
+    height: 200px;
+    background: rgba(88, 88, 88, 0.68);
+    
+}
+
+#simplefooterlinks li {
+    list-style-type: none;
+    display: inline;
+    padding: 5px;
+    margin-right: 20px;
+}
+
+#footerlinks {
+    margin-top: 36px;
+    height: 100px;
+}
+#footerlinks .footerlink1 ul {
+    width: 100px;
+    display: inline;
+    font-size: 90%;
+    list-style-type: none;
+}
+#footerlinks .footerlink1 ul li{
+    padding: 2px;
+}
+#footerlinks .footerlink1{
+    display: inline-block;
+    width: 160px;
+    text-align: left;
+    position: relative;
+    top: -34px;
+    color: rgba(0, 0, 0, 0.64);
+    margin-left: 40px;
+    font-size: 16px;
+}
+
+#simplefooterlinks li ul li {
+    display: block;
+    width: 150px;
+    
+}
+#innerlists {
+    margin-left: -40px;
+}
+
+#footerlink1 {
+   width: 200px; 
+}
+
+.topic1 {
+    clear: both;
+    padding: 5px;
+    text-align: left;
+    width: 95%;
+    border: 1px solid rgba(128, 128, 128, 0.12);
+    background: rgba(128, 128, 128, 0.12);
+    margin: 50px auto;
+}
+
+#Newusertitle {
+    margin-left: 20px;
+}
+#Newusertitle input {
+    padding: 10px;
+    margin-left: 20px;
+}
+
+#checkoutwords {
+    position: relative;
+    top: -16px;
+}
+
+.topic2 {
+    clear: both;
+    padding: 5px;
+    text-align: left;
+    width: 95%;
+    border: 1px solid rgba(128, 128, 128, 0.12);
+    background: rgba(128, 128, 128, 0.12);
+    margin: 50px auto;
+    color: rgba(128, 128, 128, 0.74);
+}
+
+#shopperinformation {
+    width: 220px;
+}
+#shopperinformation input {
+    padding: 5px;
+    margin: 5px;
+}
+#shopperinformation button {
+    margin: 5px;
+    display: inline-block;
+    background: orange;
+    border: 1px solid orange;
+    color: white;
+}
+#shopperinformation h3 {
+    color: rgba(64, 64, 64, 0.62);
+}
+
+#customerdetails {
+    width: 920px;;
+    height: 400px;
+    margin: 0 auto;
+    margin-bottom: 0px;
+    
+}
+
+#billtodetails {
+    width: 404px;
+    height: 350px;
+    position: relative;
+    top: -216px;
+    left: 240px;
+}
+#billtodetails input {
+    width: 160px;
+}
+#billtodetails h3 {
+    color: rgba(64, 64, 64, 0.62);
+}
+#billtodetails input {
+    padding: 5px;
+    margin: 2px;
+}
+
+#shippingorder {
+    width: 200px;
+    position: relative;
+    top: -590px; 
+    left: 630px;    
+}
+#shippingorder h6 {
+    font-weight: normal;
+    font-style: oblique;
+    padding: 2px;
+    position: relative;
+    top: -55px;
+    left: 15px;
+    font-size: 14px;
+}
+#shippingorder h3{
+    color: rgba(64, 64, 64, 0.62);
+    margin-bottom: 26px;
+}
+#shippingorder textarea {
+    font-size: 80%;
+}
+#shippingorder input {
+    margin-top: 20px;
+}
+
+
+
+#tableandtitle>h3 {
+    margin-left: 20px;
+    color: gray;
+    font-weight: normal;
+}
+
+#Direcoty {
+    margin: 70px 22%;
+    width: 50%;
+    line-height: 2;
+    list-style: circle;
+    text-transform: capitalize;   
+}
+
+
+
+#creedimage {
+    height: 400px;
+    width: 800px;
+    border: 2px solid blue;
+    clear: both;
+    padding: 30px;
+    margin: 45px 9%;
+}
+
+#sidebarcategories {
+    width: 180px;
+    border: 1px solid blue;
+    margin-left: 10px;
+    float: left;
+    position: relative;
+    top: -535px;
+    color: white;
+    height: 395px;
+    padding: 5px;
+}
+#sidebarcategories li {
+    text-transform: uppercase;
+    line-height: 2;
+    list-style: none;
+    margin-right: 100px;
+}
+
+.sidebarheading {
+    text-align: center;
+    color: orange;
+    font: 20px orange Atelier Omega;
+    padding: 5px;
+    text-transform: uppercase;
+    border-right: 2px inset gray;
+    text-shadow: 2px 1px 2px black;
+}
+
+#mainbarcategories {
+    width: 73%;
+    margin-left: 26%;
+
+}
+#mainbarcategories .theitems{
+    display: inline-block;
+}
+#mainbarcategories ul li ul li {
+    display: inline-block;
+}
+#mainbarcategories ul li{
+    font-family: Adobe Caslon Pro;
+    font-size: 25px;
+    text-align: left;
+    width: 100%;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    
+}
+#mainbarcategories ul{
+    
+}
+/*#mainbarcategories ul li ul li {
+    display: inline;
+    width: 20%;
+    height: 40%;
+    border: 1px solid black;
+    
+}*/
+#mainbarcategories li {
+    list-style: none;
+    text-align: center;
+/*    the below choice was temporary height holder to give a feel of the list it has been commented out to ensure that new items placed will give teh said object a height*/
+/*    height: 300px;*/
+}
+
+#lowerend {
+    text-align: center;
+}
+
+#product_scrolling_images {
+    height: 45px;
+    margin-left: 10px;
+    background: url(images/imagescroller.gif);
+    background-size: 100%;
+    padding: 5px;
+    margin-left: 20px;
+    margin-top: 60px;
+    padding: 10px;
+    border: 1px solid black;   
+}
+
+#hiddenspace {
+    margin-bottom: 100px;
+}
+
+
+
+#product_image_container {
+    width: 30%;
+    margin: 0 auto;
+    float: left;
+}
+
+
+
+#productdetails_container {
+    width: 50%;
+    float: right;
+    border: 1px solid rgba(128, 128, 128, 0.59);
+    text-align: left;
+    font-family: kokila;
+    font-size: 140%;
+    padding: 20px;
+    padding-bottom: 70px;
+
+}
+
+#productdetails_container input{
+    width: 40px;
+}
+#productdetails_container h3{
+    margin: 0px;
+    font-size: 130%;
+}
+#productdetails_container h5{
+    font-size: 160%;
+    margin: 0;
+    color: orange;
+    text-shadow: 1px 1px 2px black;
+}
+#productdetails_container h4{
+    text-align: left;
+    margin: 0;
+    font-family: monospace;
+    
+}
+
+#tobecleared {
+    clear: both;
+}
+
+
+#productdetailform form{
+    width: 100%;
+    float: left;
+}
+#productdetailform h3{
+    float: right;
+    color: white;
+    background: orange;
+    margin-right: 10%;
+    padding: 3px;
+}
+
+.Fattext {
+    font-weight: bold;
+    
+}
+
+#importantdetail p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+#importantdetail {
+    display: block;
+}
+
+#addtocartbutton {
+    margin: 40px;
+    text-align: center;
+    width: 200px;
+    padding: 10px;
+    background: orange;
+    color: white;
+}
+
+
+#descriptionoffershere {
+    width: 35%;
+    float: left;
+    border: 1px solid rgba(128, 128, 128, 0.6);
+    margin-left: 5%;
+    text-align: center;
+    line-height: 2;
+    height: 300px;
+   
+}
+
+#QAdescriptionpart {
+    
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    margin-left: 10%;
+    width: 45%;
+    float: left;
+    height: 300px;
+    margin-bottom: 20px;
+    
+}
+#QAdescriptionpart h3{
+    margin-left: 5px;
+    font: 20px kokila black;
+    text-decoration: underline;
+}
+
+#importantwrittendescription {
+    margin-top: 70px;
+    width: 100%;
+    height: 300px;
+}
+
+#QAdescriptionmenu ul li{
+    display: inline;
+    padding: 10px;
+    color: white;
+    background: black;
+    border: 1px solid white;
+    margin-right: 20px;
+    position: relative;
+    top: -15px;
+}
+
+#QAdescriptionmenu {
+    background: black;
+    height: 20px;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+
+#descriptioninfo {
+    width: 90%;
+    margin-left: 3%;
+    line-height: 2;
+}
+
+
+
+#browsersizecontainer {
+    margin-bottom: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 2px solid black;
+}
+
+
+
+
+
+#otherthingsyoudlike {
+    clear: both;
+    width: 90%;
+    border: 1px solid black;
+    margin: 10px;
+    margin-left: 5%;
+    border-top: none;
+}
+
+#thingsyoulikebox ul li img{
+    display: inline-block;
+    width: 30%;
+    border: 1px solid red;
+    float: left;
+    margin-left: 2%;
+}
+#thingsyoulikebox ul li{
+    list-style: none;
+    margin: 0 auto;
+}
+
+#linktopheader {
+    text-align: center;
+    font-family: kokila;
+    font-size: 150%;
+    color: white;
+    background: black;
+}
+
+#thingsyoulikebox {
+    height: 200px;
+}
+
+
+#cartdirectorylist {
+    clear: both;
+    margin-top: 70px;
+}
+#cartdirectorylist ul li{
+    list-style: none;
+    width: 10%;
+    display: inline;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid lightblue;
+    
+}
+
+
+#thecarttable {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-family: kokila;
+    font-size: 20px;
+}
+table {
+    border: 1px solid gray;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+table thead{
+    background: orange;
+    color:white;
+}
+
+
+.thecancelbutton {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background: rgba(128, 128, 128, 0.5);
+}
+
+
+
+#thetwoheadercontainers {
+    margin: 2.5%;
+}
+
+#theleftbox {
+    width: 45%;
+    float: left;
+    border: 1px solid gray;
+    height: 320px;
+    font-family: kokila;
+    font-size: 23px;
+}
+#theleftbox input{
+    margin-left: 7%;
+    margin-top: 5%;
+}
+
+#therightbox {
+    width: 45%;
+    border: 1px solid rgb(128, 128, 128);
+    float: right;
+    height: 380px;
+    margin-right: 20px;
+}
+
+#therightbox form{
+    margin-top: 30px;
+}
+
+#therightbox form input{
+    width: 80%;
+    margin: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+    background: rgba(128, 128, 128, 0.11);
+    font-family: kokila;
+    font-size: 130%;
+    margin-left: 30px;
+   
+}
+
+#thetwoformcontainers {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+.clearbothing {
+    clear: both;
+}
+
+#buttonsdiv input{
+    color: white;
+}
+
+
+
+#buttonsdiv p{
+    display: inline;
+    padding: 5px;
+    margin-left: 15%;
+    background: orange;
+    color: white;
+    font-family: kokila;
+    font-size: 20px;
+    padding-right: 30px;
+    text-align: center;
+    
+}
+#buttonsdiv {
+    margin-top: 30px;
+}
+#buttonsdiv p:hover{
+    background: lightgray;
+    color: black;
+}
+
+
+.countrydropdown {
+    width: 40%;
+    font-family: kokila;
+    float: left;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+#dropdowns {
+    
+}
+
+#dropdownclear {
+    clear: both;
+}
+
+#thetablecheckoutheader {
+    color: gray;
+    font-family: kokila;
+    margin-left: 5%;
+    font-size: 30px;
+}
+
+
+
+
+
+#paymentoption {
+    margin-left: 5%;
+    font-family: kokila;
+    font-size: 20px;
+}
+#paymentoption input{
+    display: inline;
+}
+
+.checkboxes {
+    width: 20%;
+    float: left;
+}
+
+#clearblogfooter {
+    clear: both;
+}
+
+#bloglistscontainer {
+    width: 75%;
+    border: 1px solid rgba(0, 0, 0, 0.31);
+    float: left;
+    margin-left: 2.5%;
+    height: 460px;
+    margin-bottom: 20px;
+}
+#bloglistscontainer ul{
+    width: 100%;
+}
+#bloglistscontainer li{
+    width: 100%;
+    list-style: none;
+    height: 300px;
+}
+
+/*here we add part 2*/
+#bloglistscontainer2 {
+    width: 75%;
+    border: 1px solid black;
+    float: left;
+    margin-left: 2.5%;
+    height: 800px;
+    margin-bottom: 20px;
+}
+#bloglistscontainer2 ul{
+    width: 100%;
+}
+#bloglistscontainer2 li{
+    width: 100%;
+    list-style: none;
+    height: 300px;
+}
+
+.blogdetailsplusauthor {
+    width: 90%;
+}
+.blogdetailsplusauthor div{
+    float: left;
+    font-family: kokila;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+
+.blogheadercontainer header{
+    text-transform: capitalize;
+    font-family: kokila;
+    font-size: 25px;
+    color: gray;
+}
+
+
+
+
+
+
+#blogstarratings {
+    float: right;
+    margin-right: -25px;
+    margin-top: 10px;
+}
+
+#insideblogimage {
+    clear: both;
+    border: 1px solid green;
+    height: 200px;
+    width: 90%;
+    background: url(images/cod.jpg);
+    background-size: 100%;
+}
+
+#partoftheblogarticle {
+    width: 93%;
+}
+
+.cartreadmorebutton {
+    background: orange;
+    font-family: kokila;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    width: 100px;
+}
+
+
+
+#invisiblemarginforcategories {
+    width: 20%;
+    float: left;
+    height: 2000px;
+}
+
+#singleblogbuttons p{
+    width: 50px;
+    padding: 6px;
+    background: gray;
+    color: black;
+    font: 22px kokila;
+    text-align: center;
+    float: right;
+    margin-right: 20px;
+}
+#singleblogbuttons{
+    margin-right: 40px;
+}
+
+#ratingsonsingleblogbottom {
+    clear: both;
+    width: 93%;
+    height: 30px;
+}
+
+
+
+#singleblogtags p,#singleblogtags h3 {
+    width: 60px;
+    display: inline;
+}
+
+#singleblogtags {
+    width: 30%;  
+    font-family: kokila;
+    font-size: 22px;
+    float: left;
+    margin-left: 135px;
+}
+#singleblogtags p{
+    color: orange;
+    
+}
+
+#ratethieitemtitle {
+    width: 150px;
+    text-transform: uppercase;
+    font-family: kokila;
+    font-size: 19px;
+    text-align: center;
+    float: left;
+    position: relative;
+    top: -15px;
+}
+
+#thestarsandvotes {
+    width: 170px;
+    font-family: kokila;
+    font-size: 20px;
+    color: orange;
+    float: left;
+}
+
+#searchykath {
+    height: 60px;
+    width: 55%;
+    border: 2px solid orange;
+    box-shadow: 1px 1px 1px black;
+    box-shadow: 3px 1px 3px black offset;
+}
+
+
+
+#searching {
+    height: 90px;
+}
+
+#thatsearchbutton {
+    height: 63px;
+    width: 15%;
+    background-color: orange;
+    color: black;
+    font-size: 19px;
+    margin-left: -6px;
+}
+
+
+
+.itembox {
+    height: 200px;
+}
+
+.theitems {
+    width: 23%;
+    border: 1px solid black;margin-right: 10px;
+    
+}
+
+/*
+.theitems h4 {
+    text-align: center;
+    font-family: kokila;
+    font-size: 19px;
+}
+*/
+
+
+
+#sidenotecategories {
+    width: 160px;
+    border: 1px solid gray;
+    float: left;
+    color: black;
+    margin-left: -180px;
+    position: relative;
+    line-height: 1.8;
+    height: 330px;
+}
+#sidenotecategories ul li {
+    list-style: none;
+    margin-left: -20px;
+    position: relative;
+    top: -15px;
+}
+
+#bridgedivider {
+    height: 130px;
+    border: 1px solid black;
+    width: 94%;
+    margin-left: 3%;
+    margin-top: 30px;
+    background-image: url(images/asscreed.jpg)
+}
+
+
+
+#sidenotecategories2 {
+    width: 160px;
+    line-height: 1.8;
+    float:left;
+    border: 1px solid gray;
+    margin-left: 12px;
+       
+}
+#sidenotecategories2 ul li {
+    list-style: none;
+    margin-left: -20px;
+}
+
+
+
+#bridgedivider2 {
+    height: 130px;
+    border: 1px solid black;
+    width: 94%;
+    margin-left: 3%;
+    margin-top: 70px;
+    background-image: url(images/asscreed.jpg)
+}
+
+
+
+
+
+#productname {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+
+
+.itemimage {
+    height: 250px;
+    margin-bottom: 0px;
+    background-image: url(images/1.jpg);
+    background-size: 100%;
+}
+
+#pricing {
+    font-size: 19px;
+    margin-bottom: 0px;
+    text-align: center;
+    color: orange;
+    
+}
+
+#producttitle {
+    text-align: center;
+    margin-top: 0px;
+    font-family: kokila;
+    width: 100%;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+#addtocart {
+    border: 1px solid orange;
+    width: 50%;
+    color: white;
+    background-color: orange;
+    height: 30px;
+    font-family: kokila;
+    font-size: 25px;
+    margin-left: 24%;
+    position: relative;
+    top: -10px;
+    
+}
+
+
+
+
+
+#mainbarcategories2 {
+    margin-left: 5px;
+}
+#mainbarcategories2 .theitems2 {
+    display: inline-block;
+}
+
+#mainbarcategories2 ul li {
+    list-style-type: none;
+}
+
+
+
+
+
+
+
+
+
+#wellsee {
+    clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#someweirdbox {
+    width: 15%;
+    height: 400px;
+    border: 1px solid black;
+    margin-left: 10px;
+    float: left;
+}
+
+
+
+.theitems2 {
+    width: 16%;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    margin: 1px;
+    margin-top: 5px;
+    
+}
+
+.sidebarheading2 {
+    font-size: 29px;
+    margin-bottom: 10px;
+    font-family: kokila;
+    text-transform: uppercase;
+    color: orange;
+    margin-left: 20%;
+    text-shadow: 1px 2px 1px black;
+    margin-top: 10px;
+}
+
+.sidebarheading3 {
+    font-family: kokila;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 25px;
+    color: orange;
+}
+
+#sidebarcategories2 {
+    width: 180px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    margin-left: 10px;
+    float: left;
+    position: relative;
+    top: 90px;
+    padding: 5px;
+}
+#sidebarcategories2 ul li {
+    line-height: 2;
+    font-family: kokila;
+    font-size: 25px;
+    list-style: none;
+    margin-left: -20px;
+}
+
+
+
+#emailcontact {
+    width: 250px;
+    height: 25px;
+}
+
+#namescontact {
+    width: 350px;
+    height: 25px;
+    
+}
+
+#submitbutton {
+    margin-top: 10px;
+}
+
+#subjectcontact {
+    width: 90%;
+    margin-left: 2%;
+}
+
+#texting {
+    width: 90%;
+    height: 150px;
+}
+
+
+
+.headerruletopbox2 {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.17);
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+    margin-bottom: 10px;
+}
+
+#homelogo2 {
+    width: 20%;
+    margin-left: 35%;
+}
+
+#theinputloginbox {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 20px;
+    padding: 2px;
+    height: 500px;
+}
+#theinputloginbox .textinput {
+    display: block;
+    height: 30px;
+    width: 70%;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: kokila;
+    border: 1px solid rgba(128, 128, 128, 0.31);
+    padding: 5px;
+}
+#theinputloginbox .smallticker{
+    display: block;
+    margin: 20px 0;
+    margin-left: 10%; 
+    
+}
+
+
+
+
+.notescheckbo {
+    font-family: kokila;
+    margin-left: 14%;
+    position: relative;
+    top: -67px;
+    
+}
+
+#sighnupbutton {
+    width: 70%;
+    margin-left: 10%;
+    position: relative;
+    top: -65px;
+    height: 30px;
+    color: white;
+    font-family: kokila;
+    font-size: 20px;
+    background-color: #ff6200;
+    
+}
+
+.alreadycrap {
+    font-family: kokila;
+    font-size: 21px;
+    width: 42%;
+    margin-left: 39%;
+    position: relative;
+    top: -30px;
+}
+.alreadycrap a {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footershit {
+    height: 50px;
+    background-color: gray;
+    margin-top: 25px;
+}
+
+.tocentercop {
+    text-align: center;
+    padding: 2px;
+}
+
+#loginbox {
+    width: 40%;
+    margin-left: 30%;
+    height: 500px;
+    margin-top: 30px;
+}
+#loginbox .logininputs {
+    display: block;
+    margin: 10px;
+    width: 70%;
+    height: 30px;
+    padding: 15px;
+    margin-left: 12%;
+    margin-top: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    font-family: kokila;
+    font-size: 24px;
+}
+
+.forgotpasslog {
+    font-family: kokila;
+    font-size: 20px;
+    text-align: right;
+    margin-right: 12%;
+}
+.forgotpasslog a {
+    color: #0027ff;
+}
+
+#loginbutton {
+    width: 76%;
+    margin-left: 12%;
+    height: 50px;
+    color: white;
+    background-color: orangered;
+    font-family: kokila;
+    font-size: 24px;
+}
+
+#newtoairmtit {
+    text-align: center;
+    margin-top: 100px;
+    font-family: kokila;
+    font-size: 24px;
+    font-weight: bold;
+    color: gray;
+}
+
+
+
+#createairmarkacc {
+    width: 70%;
+    padding: 17px;
+    margin-left: 12%;
+    border: 1px solid orangered;
+    background-color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#createairmarkacc a {
+    text-decoration: none;
+    color: orangered;
+}
+
+#logoimage2 {
+    width: 210px;
+    margin-left: 1%;
+}
+
+#searchkath {
+    height: 40px;
+    width: 42%;
+    margin-left: 28%;
+    position: relative;
+    top: -70px;
+    border: 1px solid orangered;
+    background-color: gainsboro;
+    padding: 24px;
+    font-family: kokila;
+    font-size: 19px;
+}
+
+#searchkathbutton {
+    height: 49.5px;
+    position: relative;
+    top: -69px;
+    margin-left: -7px;
+    width: 90px;
+    border: 1px solid orange;
+    font-family: kokila;
+    font-size: 29px;
+    color: white;
+    background-color: orangered
+}
+
+#importanthomelinks1 {
+    margin-left: 74%;
+    position: relative;
+    top: -135px;
+}
+#importanthomelinks1 li {
+    display: inline-block;
+    padding: 13px;
+    width: 80px;
+    text-align: center;
+    border: 1px solid rgba(128, 128, 128, 0.15);
+    background-color: rgba(220, 220, 220, 0.43);
+    margin-left: 15px;
+    font-family: kokila;
+    font-size: 24px;
+    height: 20px;
+  
+}
+
+#box2 {
+        height: 400px;
+        clear: both;
+        padding: 30px;
+        background-color: black;
+        margin-top: 12px;
+}
+
+.headerruletopbox1 {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.17);
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    top: 60px;
+    margin-bottom: 80px;
+}
+
+
+
+#box3 {
+        height: 400px;
+        clear: both;
+        padding: 30px;
+        background-image: url(images/awesome.jpg);
+        background-size: 100%;
+        margin-top: 50px;
+}
+
+#sidebarcategories3 {
+    width: 200px;
+    border: 1px solid blue;
+    margin-left: 65px;
+    float: left;
+    position: relative;
+    top: -563px;
+    color: white;
+    height: 448px;
+    padding: 5px;
+    background-color: rgba(220, 220, 220, 0.13);
+    
+}
+#sidebarcategories3 li {
+    list-style: none;
+    line-height: 2.5;
+    text-transform: uppercase;
+    position: relative;
+    top: -20px;
+    
+    
+}
+
+
+
+
+
+
+
+
+#uploadpagetitel {
+    clear: both;
+    font-family: kokila;
+    font-size: 31px;
+    text-align: center;
+    position: relative;
+    top: -80px;
+    color: orangered;
+    font-weight: bold;
+    width: 25%;
+    margin-left: 35%;
+    text-transform: uppercase;
+}
+
+.uploadpageprogressbar {
+    border: 1px solid gray;
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+
+
+.loadingprogressbox {
+    width: 2%;
+    background-color: blue;
+    height: 40px;
+    margin: 1px;
+    
+}
+
+#textinsideprogress {
+    text-align: center;
+    font-family: born addict;
+    font-size: 19px;
+    position: relative;
+    top: -50px;
+    text-shadow: 1px 2px 1px black;
+}
+
+#uploadcomponentcontainer {
+    border: 1px solid gray;
+    width: 90%;
+    margin-left: 5%;
+    height: 780px;
+}
+
+#dragndropmajor {
+    width: 35%;
+    border: 1px solid gray;
+    margin: 10px;
+    float: left;
+    margin-left: 30px;
+    padding: 5px;
+}
+
+.largedropimage {
+    height: 400px;
+    background-image: url(images/sth.jpg);
+    background-size: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+
+.smalleritems {
+    width: 30%;
+    height: 150px;
+    border-right: 1px solid black;
+    display: inline-block;
+    margin: 3px;
+    background-image: url(images/cod.jpg);
+    background-size: 200%;
+}
+
+
+
+
+
+#toclear {
+    clear: both;
+}
+
+#detailsuploadcolum {
+    border: 1px solid gray;
+    float: left;
+    width: 42%;
+    margin: 10px;
+    padding: 10px;
+    margin-left: 14%;
+    padding-bottom: 40px;
+}
+
+#itemname {
+    width: 70%;
+    margin: 2%;
+    font-family: kokila;
+    font-size: 22px;
+    background-color: gainsboro;
+    text-align: center;
+    border: 1px solid orangered;
+}
+
+#webidonme {
+    margin-left: 33px;
+    font-family: born addict;
+    
+}
+
+#web_id {
+    width: 50%;
+    background-color: gainsboro;
+    margin-top: 15px;
+    text-align: center;
+    font-family: kokila;
+    font-size: 19px;
+    border: 1px solid orangered;
+}
+
+#garmenttypelist {
+    width: 20%;
+    margin-top: 30px;
+    font-family: kokila;
+    font-size: 19px;
+    border: 1px solid orangered;
+    background-color: gainsboro;
+}
+
+
+
+#garmentypecontainer {
+    margin-left: 35px;
+    font-family: kokila;
+    font-size: 19px;
+
+}
+
+#sexoptionsupload {
+    margin-left: 30px;
+    font-family: kokila;
+    font-size: 19px;
+}
+
+#garmentsizelist {
+    width: 40%;
+    margin: 20px;
+    font-family: kokila;
+    padding: 2px;
+    border: 1px solid orangered;
+}
+
+#garmentsizedrop {
+    font-family: born addict;
+    margin-left: 55px;
+    
+}
+
+.thidimensionwith {
+    width: 50px;
+    font-family: kokila;
+    text-align: center;
+    border: 1px solid orangered;
+    padding: 2px;
+}
+
+#dimensionssize {
+    margin: 37px;
+    font-family: kokila;
+    font-size: 19px;
+}
+
+#garmentcond {
+    font-size: 25px;
+    color: red;
+    background-color: gainsboro;
+    border: 1px solid orangered;
+}
+
+#itemcondition {
+    font-family: kokila;
+    font-size: 19px;
+    margin-left: 56px;
+}
+
+#itempricetrue {
+    width: 40%;
+    background-color: gainsboro;
+    border: 1px solid orangered;
+    text-align: center;
+    font-family: kokila;
+    font-size: 19px;
+}
+
+#itempricelabl {
+    font-family: kokila;
+    font-size: 19px;
+    margin-left: 80px;
+    
+}
+
+.itemnamelabel {
+    font-family: kokila;
+    font-size: 19px;
+    margin-left: 20px;
+    text-transform: uppercase;
+}
+
+
+
+
+
+#thatlastpartnotifications {
+    float: left;
+    width: 90%;
+    height: 70px;
+    border: 1px solid gray;
+    margin: 10px 1%;
+}
+
+#publishbutton {
+    font-family: kokila;
+    font-size: 21px;
+    width: 100%;
+    padding: 10px;
+    background-color: dodgerblue;
+    color: white;
+}

@@ -1,0 +1,166 @@
+/* Style all font awesome icons */
+.fa {
+    padding: 15px;
+    font-size: 15px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/*the back to top button falls here*/
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 4%; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 100; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    color: red; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+}
+
+#myBtn:hover {
+    color: white; /* Add a dark-grey background on hover */
+    background-color: rgba(0, 0, 0, 0.38);
+
+}
+
+
+.featured:hover{
+    box-shadow:0 0 15px blue;
+}
+
+.featurediv{
+    padding: 2px;
+}
+.searchbox {
+    border-bottom: 1px solid black;
+}
+
+#box1 {
+            border-right: 1px dotted gainsboro;
+        }
+#box1:hover {
+            box-shadow: 0px -1px 10px red;
+        }
+#resi:hover {
+    background-color: rgba(64, 64, 64, 0.63);
+}
+.thitter:hover {
+    background-color: #0088ff;
+}
+
+
+@keyframes tag {
+    0% { transform: rotate(-10deg);}
+    100% {transform: rotate(10deg);}
+}
+.mtushtag{
+    animation-name: tag;
+    animation-duration: 2s;
+    animation-direction:alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+}
+.comment{
+    padding: 0px;
+    margin: 0px;
+}
+#linewithtime{
+    border-top: 2px solid black;
+}
+.closemodalcart:hover{
+    color: black;
+}
+
+/*        cart modal start here*/
+.cartmodal {
+position: relative;
+background-color: #fefefe;
+margin: auto;
+padding: 0;
+border: 1px solid #888;
+width: 80%;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+-webkit-animation-name: animatetop;
+-webkit-animation-duration: 0.4s;
+animation-name: animatetop;
+animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+from {top: -300px; opacity: 0}
+to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+from {top: -300px; opacity: 0}
+to {top: 0; opacity: 1}
+}
+/*        cart modal ends here*/
+/*.mainpagelinks:hover{
+    color: white;
+}*/
+/*.results{
+    max-height: 400px;
+    overflow-x: scroll;
+}*/
+.simplesearchresults, .advancedresulsttainer{
+    position:absolute;z-index:21;width:86%;left:30px;background-color:white;
+}
+.menuscreen .menulist{
+    text-indent: none;
+}
+.productslideimages{
+    max-height: 520px;
+    max-width: 320px;
+}
+
+.labeltainer{
+    color:white;
+    background-color: black;
+    border:1px solid white;
+}
+.labeltainer:hover{
+    color:black;
+    text-weight:bold;
+    background-color: white;
+}
+#box2 {
+            border-right: 1px dotted gainsboro;
+        }
+#box2:hover {
+            box-shadow: 0px 0px 12px blue;
+        }
+.productimage {
+            background-size:100%;
+            background-position:center;
+            background-repeat:no-repeat;
+            -webkit-transition: border 0.6s, background-size 0.6s;  /* For Safari 3.1 to 6.0 */
+            transition: border 0.6s, background-size 0.6s;
+        }
+
+.productimage:hover{
+    border:1px solid red;
+    background-size: 110%;
+}
+.productimage2 {
+            background-size:100%;
+            background-position:center;
+            background-repeat:no-repeat;
+            -webkit-transition: border 0.6s, background-size 0.6s;  /* For Safari 3.1 to 6.0 */
+            transition: border 0.6s, background-size 0.6s;
+        }
+
+.productimage2:hover{
+    border:1px solid red;
+    background-size: 110%;
+}
