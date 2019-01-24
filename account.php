@@ -15,7 +15,6 @@ if (isset($_SESSION['$user_id'])){
         $sth = $query_row['username'];
     }
 
-    //echo '<span>Hi, '.$sth.' Welcome to Tiiva </span><span class=\"pull-right\">support +254705780775</span>';
     echo "<span> Hi <a target=\"_blank\" href=\"userprof.php\">$sth</a>, Welcome to Tiiva</span><span class=\"pull-right\"><a href=\"Logout.php\">Logout</a></span>";
     }else {
     echo "<span class=\"pull-left\">Please <a href=\"login.php\">LogIn</a> To Enjoy All Features By Tiiva</span><span class=\"pull-right visible-lg visible-md\"><i class=\"mdi mdi-phone-classic\"></i> Tiiva support team +(254)705780775</span>";
