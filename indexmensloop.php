@@ -1,18 +1,8 @@
 <?php
 require 'connect.php';
 
-// CREATE ALL FUNCTIONS FOR ALL CASES
-// CASE 1 TO LOOP A GENERAL CATEGORY BOTH MTUSH AND SHOP
-// CASE 2 TO LOOP A SPECIFIC SUBCATEGORY BOTH MTUSH AND SHOP
 
-//check whether there are enough items in that category
-// the minimum number of items must be met
-// if so then display 6 at a time
-// if not show stock images with sold out, uploading or hide the entire category
-// for every sold out category append message on txt file for me to find
-// append file if remaining items are 3 times the required number
 $category = 'mens';
-//$subcategory = 'joggers';
 $notifymecount = 4;// 400 100 in order
 $today = Date('Y-m-d');
 $toolowcustomer = 1;
@@ -20,13 +10,13 @@ $toolowcustomer = 1;
 $toolowmessagee = 'items in '.$category.' CATEGORY need restocking';
 $query = "SELECT * FROM `products` WHERE `category`='$category' AND `availability`='1' AND `buyer`='0'";
 // ensure item has not been booked or bought
-$query_run = mysql_query($query);
-$query_num_rows = mysql_num_rows($query_run);
-$query_row = mysql_fetch_assoc($query_run);
+$query_run = mysqli_query($conn, $query);
+$query_num_rows = mysqli_num_rows($query_run);
+$query_row = mysqli_fetch_assoc($query_run);
 
 
 $query2 = "SELECT * FROM `products` WHERE `category`='$category' AND `availability`='1' AND `buyer`='0' ORDER BY RAND() LIMIT 6";
-$query2_run = mysql_query($query2);
+$query2_run = mysqli_query($conn, $query2);
 
 
 // recommended number per category = 100 so notification will be after 400
@@ -63,7 +53,7 @@ if($query_num_rows <= $notifymecount){
         // items are enought to display continue
         // display items for customer to view
         //$count = 1;
-        while($query2_row = mysql_fetch_assoc($query2_run)){
+        while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
             echo "
@@ -151,7 +141,7 @@ if($query_num_rows <= $notifymecount){
         // items are enought to display continue
         // display items for customer to view
         //$count = 1;
-        while($query2_row = mysql_fetch_assoc($query2_run)){
+        while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
             echo "
@@ -237,7 +227,7 @@ if($query_num_rows <= $notifymecount){
         // items are enought to display continue
         // display items for customer to view
         //$count = 1;
-        while($query2_row = mysql_fetch_assoc($query2_run)){
+        while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
             echo "
