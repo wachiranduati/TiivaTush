@@ -60,13 +60,7 @@ if($query_num_rows <= $notifymecount){
     <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" id=\"box1\">
     <div class=\"row\" style=\"padding:4px;\">
             <a href=\"productdetails.php?id=$query2_row[id]\" target=\"_blank\"><div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12 productimage\" style=\"background-image:url('mtumbauploads/compresseduploads/$query2_row[imageone]'); height:140px;width:100%;background-size:80%;\">
-               <img src=\"images/mtushtag.png\" class=\"img-responsive visible-lg visible-md mtushtag\" style=\"height:50%;position:absolute;top:-1.5%;left:80%;\"/>
-
-                <img src=\"images/mtushtag.png\" class=\"img-responsive visible-sm visible-xs mtushtag\" style=\"height:50%;position:absolute;top:-1.5%;left:80%;\"/>
-
-                <!--
-
-                <img src=\"$query2_row[imageone]\" class=\"img-responsive\"/>-->
+               
             </div>
             </a>
             </hr>
@@ -74,32 +68,6 @@ if($query_num_rows <= $notifymecount){
             <hr style=\"margin:0px;padding:0px;\">
             <h1 class=\"text-center text-capitalize\" style=\"font-family:kok;padding:0px;margin:0px;color:#606060;font-size:100%;\"><strong>$query2_row[itemtitle]</strong></h1>
             <h2 class=\"text-left\" style=\"padding:0px;margin:0px;color:#ffa427;font-size:100%;\">Ksh $price</h2>
-
-            <!--<div class=\"row\">
-                <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
-                    <p class=\"text-center\">$price Ksh</p>
-                </div>
-            </div>
-            <div class=\"row\">
-                <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
-                    <p class=\"text-center\" style=\"font-family:kok;\">$query2_row[itemtitle]</p>
-                </div>
-            </div>-->
-           <!-- <div class=\"row visible-lg visible-md\">
-                <div class=\"col-lg-1 col-md-1 col-sm-1 col-xs-1\"></div>
-                <div class=\"col-lg-10 col-md-10 col-sm-10 col-xs-10\">
-                    <a href=\"productdetails.php?id=$query2_row[id]\" class=\"btn btn-block btn-primary\" data-name=\"$query2_row[itemtitle]\" data-price=\"$price\" target=\"_blank\">Add to Cart</a>
-                </div>
-                <div class=\"col-lg-1 col-md-1 col-sm-1 col-xs-1\"></div>
-            </div>
-
-            <div class=\"row visible-sm visible-xs\">
-                <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
-                <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-6\">
-                    <a href=\"productdetails.php?id=$query_row[id]\" class=\"btn btn-sm btn-block btn-primary\" data-name=\"$query2_row[itemtitle]\" data-price=\"$price\" target=\"_blank\">Add to Cart</a>
-                </div>
-                <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
-            </div>-->
 
 
         </div>
@@ -156,32 +124,6 @@ if($query_num_rows <= $notifymecount){
             <hr style=\"margin:0px;padding:0px;\">
             <h1 class=\"text-center text-capitalize\" style=\"font-family:kok;padding:0px;margin:0px;color:#606060;font-size:100%;\"><strong>$query2_row[itemtitle]</strong></h1>
             <h2 class=\"text-left\" style=\"padding:0px;margin:0px;color:#ffa427;font-size:100%;\">Ksh $price</h2>
-
-            <!--<div class=\"row\">
-                <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
-                    <p class=\"text-center\">$price Ksh</p>
-                </div>
-            </div>
-            <div class=\"row\">
-                <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
-                    <p class=\"text-center\" style=\"font-family:kok;\">$query2_row[itemtitle]</p>
-                </div>
-            </div>-->
-           <!-- <div class=\"row visible-lg visible-md\">
-                <div class=\"col-lg-1 col-md-1 col-sm-1 col-xs-1\"></div>
-                <div class=\"col-lg-10 col-md-10 col-sm-10 col-xs-10\">
-                    <a href=\"productdetails.php?id=$query2_row[id]\" class=\"btn btn-block btn-primary\" data-name=\"$query2_row[itemtitle]\" data-price=\"$price\" target=\"_blank\">Add to Cart</a>
-                </div>
-                <div class=\"col-lg-1 col-md-1 col-sm-1 col-xs-1\"></div>
-            </div>
-
-            <div class=\"row visible-sm visible-xs\">
-                <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
-                <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-6\">
-                    <a href=\"productdetails.php?id=$query_row[id]\" class=\"btn btn-sm btn-block btn-primary\" data-name=\"$query2_row[itemtitle]\" data-price=\"$price\" target=\"_blank\">Add to Cart</a>
-                </div>
-                <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
-            </div>-->
 
 
         </div>
