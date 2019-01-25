@@ -69,13 +69,7 @@ if($query_num_rows <= $notifymecount){
     <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" id=\"box1\">
     <div class=\"row\" style=\"padding:4px;\">
             <a href=\"productdetails.php?id=$query2_row[id]\" target=\"_blank\"><div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12 productimage\" style=\"background-image:url('mtumbauploads/compresseduploads/$query2_row[imageone]'); height:140px;width:100%;background-size:80%;\">
-               <img src=\"images/mtushtag.png\" class=\"img-responsive visible-lg visible-md mtushtag\" style=\"height:50%;position:absolute;top:-1.5%;left:80%;\"/>
                 
-                <img src=\"images/mtushtag.png\" class=\"img-responsive visible-sm visible-xs mtushtag\" style=\"height:50%;position:absolute;top:-1.5%;left:80%;\"/>
-                
-                <!-- 
-                
-                <img src=\"$query2_row[imageone]\" class=\"img-responsive\"/>-->
             </div>
             </a>
             </hr>
@@ -157,13 +151,7 @@ if($query_num_rows <= $notifymecount){
     <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" id=\"box1\">
     <div class=\"row\" style=\"padding:4px;\">
             <a href=\"productdetails.php?id=$query2_row[id]\" target=\"_blank\"><div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12 productimage\" style=\"background-image:url('mtumbauploads/compresseduploads/$query2_row[imageone]'); height:140px;width:100%;background-size:80%;\">
-               <img src=\"images/mtushtag.png\" class=\"img-responsive visible-lg visible-md mtushtag\" style=\"height:50%;position:absolute;top:-1.5%;left:80%;\"/>
                 
-                <img src=\"images/mtushtag.png\" class=\"img-responsive visible-sm visible-xs mtushtag\" style=\"height:50%;position:absolute;top:-1.5%;left:80%;\"/>
-                
-                <!-- 
-                
-                <img src=\"$query2_row[imageone]\" class=\"img-responsive\"/>-->
             </div>
             </a>
             </hr>
@@ -243,13 +231,7 @@ if($query_num_rows <= $notifymecount){
     <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" id=\"box1\">
     <div class=\"row\" style=\"padding:4px;\">
             <a href=\"productdetails.php?id=$query2_row[id]\" target=\"_blank\"><div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12 productimage\" style=\"background-image:url('mtumbauploads/compresseduploads/$query2_row[imageone]'); height:140px;width:100%;background-size:80%;\">
-               <img src=\"images/mtushtag.png\" class=\"img-responsive visible-lg visible-md mtushtag\" style=\"height:50%;position:absolute;top:-1.5%;left:80%;\"/>
                 
-                <img src=\"images/mtushtag.png\" class=\"img-responsive visible-sm visible-xs mtushtag\" style=\"height:50%;position:absolute;top:-1.5%;left:80%;\"/>
-                
-                <!-- 
-                
-                <img src=\"$query2_row[imageone]\" class=\"img-responsive\"/>-->
             </div>
             </a>
             </hr>

@@ -822,13 +822,7 @@ while($query_row = mysqli_fetch_assoc($query_run)){
    <div class=\"col-lg-2 col-md-2 col-sm-6 col-xs-6\" id=\"box1\">
    <div class=\"row\" style=\"padding:4px;\">
     <a href=\"productdetails.php?id=$query_row[id]\" target=\"_blank\"><div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12 productimage\" style=\"background-image:url('mtumbauploads/compresseduploads/$query_row[imageone]'); height:140px;width:100%;background-size:80%;\">
-       <img src=\"images/mtushtag.png\" class=\"img-responsive visible-lg visible-md mtushtag\" style=\"height:50%;position:absolute;top:-1.5%;left:80%;\"/>
-
-        <img src=\"images/mtushtag.png\" class=\"img-responsive visible-sm visible-xs mtushtag\" style=\"height:50%;position:absolute;top:-1.5%;left:80%;\"/>
-
-        <!--
-
-        <img src=\"$query_row[imageone]\" class=\"img-responsive\"/>-->
+       
     </div>
     </a>
     </hr>
@@ -888,13 +882,7 @@ $query_run = mysqli_query($conn, $query);
      <div class=\"col-lg-2 col-md-2 col-sm-6 col-xs-6\" id=\"box1\">
      <div class=\"row\" style=\"padding:4px;\">
        <a href=\"productdetails.php?id=$query_row[id]\" target=\"_blank\"><div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12 productimage\" style=\"background-image:url('mtumbauploads/compresseduploads/$query_row[imageone]'); height:140px;width:100%;background-size:80%;\">
-          <img src=\"images/mtushtag.png\" class=\"img-responsive visible-lg visible-md mtushtag\" style=\"height:50%;position:absolute;top:-1.5%;left:80%;\"/>
-
-           <img src=\"images/mtushtag.png\" class=\"img-responsive visible-sm visible-xs mtushtag\" style=\"height:50%;position:absolute;top:-1.5%;left:80%;\"/>
-
-           <!--
-
-           <img src=\"$query_row[imageone]\" class=\"img-responsive\"/>-->
+          
        </div>
        </a>
        </hr>
