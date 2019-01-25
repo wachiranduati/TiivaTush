@@ -399,7 +399,7 @@ $century = 321;
 
             </div>
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p class="text-center text-capitalize">A WN creation Copyright &#169 Tiiva Inc.</p></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p class="text-center text-capitalize">Copyright &#169 Tiiva Inc <?php echo Date('Y')?>.</p></div>
             </div>
 
         </div>

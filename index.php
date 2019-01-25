@@ -1977,7 +1977,7 @@ if(isset($_POST['useremail'])){
 
             <!--container ends here-->
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p class="text-center text-capitalize">A WN creation Copyright &#169 Tiiva Inc.</p></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p class="text-center text-capitalize">Copyright &#169 Tiiva Inc <?php echo Date('Y')?>.</p></div>
             </div>
             <div class="row">
                 <div id="myBtn" style="border:1px solid black;background-color:rgba(0, 0, 0, 0.47);border:1px solid black;padding:5px;border-radius:50%;">

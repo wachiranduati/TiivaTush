@@ -13,6 +13,7 @@ if(isset($_SESSION['$user_id'])){
 
 $century = 860;
 $id = $_GET['id'];
+$Yeartoday = Date('Y');
 
 
 //with the change in categories this will now add the item and items will not be
@@ -1014,7 +1015,7 @@ echo " <!--Ends here -->
 
             <!--container ends here-->
             <div class=\"row\">
-                <div class=\"\"><p class=\"text-center\">A WN creation Copyright &#169 Tiiva Inc.</p></div>
+                <div class=\"\"><p class=\"text-center\">Copyright &#169 Tiiva Inc $Yeartoday.</p></div>
             </div>
         </div>
             </div>

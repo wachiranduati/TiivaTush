@@ -1,13 +1,27 @@
 <?php
-$ip1 = $_SERVER['REMOTE_ADDR'];
-$ip2 = $_SERVER['HTTP_CLIENT_IP'];
-$ip3 = $_SERVER['HTTP_X_FORWARDED_FOR'];
-if($ip1 != "" or $ip2 != "" or $ip3 != ""){
-   // echo "Remote ip address is $ip1 HTTP_client_ip $ip2 HTTP_X_FORWARDED is $ip3";
-    //setcookie("_ter",$ip1,time() + (86400 * 365),"/");//86400 =  1 day
-    echo $_COOKIE["_ter"];
-   // then modify the cookie on the login page with the username value;
-}
+// session_start();
+// ob_start();
+// require 'search.inc.php';
+// require 'core.inc.php';
+// $ip1 = '';
+// $ip2 = '';
+// $ip3 = '';
+// if (array_key_exists('REMOTE_ADDR', $_SERVER)){
+//     $ip1 = $_SERVER['REMOTE_ADDR'];
+// }
+// if (array_key_exists('HTTP_CLIENT_IP', $_SERVER)){
+//     $ip2 = $_SERVER['HTTP_CLIENT_IP'];
+// }
+// if (array_key_exists('HTTP_X_FORWARDED_FOR', $_SERVER)){
+//     $ip3 = $_SERVER['HTTP_X_FORWARDED_FOR'];
+// }
+
+// if($ip1 != "" or $ip2 != "" or $ip3 != ""){
+//    // echo "Remote ip address is $ip1 HTTP_client_ip $ip2 HTTP_X_FORWARDED is $ip3";
+//     //setcookie("_ter",$ip1,time() + (86400 * 365),"/");//86400 =  1 day
+//     echo $_COOKIE["_ter"];
+//    // then modify the cookie on the login page with the username value;
+// }
 ?>
 <!doctype html>
 <html>
@@ -30,8 +44,8 @@ if($ip1 != "" or $ip2 != "" or $ip3 != ""){
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
-                <div class="row visible-lg">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-lg" style="background-image:url(editions/pexels-photo-247304.jpeg);background-size:100%;background-position:center;">
+                <div class="row visible-lg visible-md">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-lg visible-md" style="background-image:url(editions/pexels-photo-247304.jpeg);background-size:100%;background-position:center;">
                 <div class="row" style="background-color:rgba(0, 0, 0, 0.6);">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><p class="text-right" style="color:white;">Hello and Welcome....</p></div>
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
@@ -115,123 +129,12 @@ if($ip1 != "" or $ip2 != "" or $ip3 != ""){
                 </div>
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:rgba(0, 0, 0, 0.29);color:white;margin-top:1%;">
-                        <h6 class="text-uppercase text-center"><strong>&#169 Tiiva Inc. A WN creation&#8482</strong></h6>
+                        <h6 class="text-uppercase text-center"><strong>Copyright &#169 Tiiva Inc <?php echo Date('Y')?>.</strong></h6>
                     </div>
                 </div>
             </div>
         </div>
-                <div class="row visible-md">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-image:url(editions/manontop.jpeg);background-position:center;background-attachment:fixed;">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:rgba(0, 0, 0, 0.52);font-family:kok;position:fixed;">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="color:white;"><h6>Hi, Welcome to Tiiva.....</h6></div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><a href="login.php" title="LogIn to Tiiva" style="color:white;"><h6>Login</h6></a></div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><a href="register.php" title="Register an account on Tiiva" style="color:white;"><h6>Register</h6></a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:4.5%;font-family:kok;margin-top:4%;">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">                                      <img src="editions/tiivi-logo.png" class="img-responsive">
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
-
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:rgba(255, 255, 255, 0.53);">
-                                                <h3 class="text-capitalize text-center">About us</h3>
-                                                <p>How would you feel about a platform created and powered by 80% youth..?weird right.<br><br>Tiiva is a young company, an ecommerce site to be precise.Not trying to reinvent the wheel, we hope to bridge the gap. Between the ecommerce world and the users.<br><br>Tiiva provides a different kind of service, more like with an extra service compared to other ecommerce platforms...<br>We love what we do and maybe that makes us serve you better...Did you know that we also put up our own blogs inhouse..</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="font-family:kok;background-color:rgb(0, 0, 0);color:white;padding-top:1.5%;padding-bottom:1.5%;">
-                                        <img src="editions/tiivi-logo.png" class="img-responsive" style="height:50px;display:inline-block;"/><h3 class="text-uppercase text-center" style="display:inline;">What about Shopping&nbsp;?</h3>
-                                    </div>
-                                </div>
-                        
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-image:url(editions/man-person-jumping-desert.jpg);background-size:100%;background-position:center;background-attachment:fixed;background-repeat:no-repeat;">
-                                <div class="row" style="margin-top:2%;color:white;">
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="background-color:rgba(0, 0, 0, 0.4);padding-top:3%;padding-bottom:3%;border-top-right-radius:10%;border-bottom-left-radius:10%;margin-bottom:2%;">
-                                                <div class="row">
-                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                                        <p>This is the fun part...<br>You have the previlege to do all your shopping under one roof...<br><em>I know.. i know.. the line is cliche</em><br>gimme a sec...<br><br>Here at Tiiva we have 3 different ecommerce sites setup into one<br></p>
-                                                <ul>
-                                                <li><a href="index.php">The shack</a> - Here you can buy mtumba</li>
-                                                <li><a href="shop.php">The shop</a> - This resemebles any other ecommerce site</li>
-                                                <li><a href="homepage.php">The Onetime</a> -  This is the auction part</li>
-                                                </ul>
-                                                <p><br>you can click any of the links above to visit the categories
-                                                <br><br>
-                                                To <a href="login.php">login</a> or <a href="register.php">register</a> click on the links at the top right</p>
-                                                    </div>
-                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="font-family:kok;padding-top:1%;padding-bottom:1%;">
-                                <h3 class="text-uppercase text-center" style="">Can i sell on Tiiva&nbsp;?</h3>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height:400px;background-image:url(editions/pexels-photo-247304.jpeg);background-size:100%;background-position:center;background-attachment:fixed;">
-                                <div class="row">
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7" style="background-color:rgba(255, 255, 255, 0.41);margin-top:5%;padding-top:2%;padding-bottom:2%;">
-                                        <p style="text-shadow:1px 2px 5px rgba(0, 0, 0, 0.4);">Here at Tiiva 100% of our items are uploaded by our users.It is our wish to support and grow our local brands and small businesses.<br>That ofcourse doesnt mean that we only deal in local products...Noo....Were open to everything..<br><br>
-                                             To post you're items on Tiiva you just have to get intouch with us through our contacts page here <a href="contactus.php" title="Get intouch with us">Contact us</a>
-                                                <br><br>
-                                                From you we demand only one thing,  quality, remember your store name will be visible to our users and with a good reputation so does your customer base widen..
-                                                </p>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="position:absolute;top:20%;">
-                        <span id="cookiealert2">
-                            
-                        </span>
-                    </div>
-                </div>
-                        <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:rgba(0, 0, 0, 0.29);color:white;margin-top:1%;">
-                        <h6 class="text-uppercase text-center"><strong>&#169 Tiiva Inc. A WN creation&#8482</strong></h6>
-                    </div>
-                </div>
-                    </div>
-                </div>
+                
                 <div class="row visible-sm visible-xs">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="row">
@@ -284,7 +187,7 @@ if($ip1 != "" or $ip2 != "" or $ip3 != ""){
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:black;color:white;">
-                                                    <h4 class="text-center text-capitalize">&#169 Tiiva Inc. A WN creation&#8482</h4>
+                                                    <h4 class="text-center text-capitalize">Copyright &#169 Tiiva Inc <?php echo Date('Y')?>.</h4>
                                                 </div>
                                             </div>
                                         </div>

@@ -17,6 +17,7 @@ $century = 860;
         <script src="display.js"></script>
         <script src="moded.js"></script>
         <link rel="stylesheet" href="MaterialDesign-Webfont-master/css/materialdesignicons.min.css">
+        <link rel="icon" type="image/png" href="icons/thaticon.png">
     <style type="text/css">
         .searchbox {
             border-bottom: 1px solid black;
@@ -352,7 +353,7 @@ $century = 860;
 
             <!--container ends here-->
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p class="text-center text-capitalize">A WN creation Copyright &#169 Airmark Inc.</p></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p class="text-center text-capitalize">Copyright &#169 Tiiva Inc <?php echo Date('Y')?>.</p></div>
             </div>
         </div>
         <script type="text/javascript">
