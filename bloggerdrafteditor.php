@@ -4,8 +4,8 @@ if(isset($_POST['editdraftno'])){
     $editdraftno = $_POST['editdraftno'];
     if(!empty($editdraftno) && $editdraftno != 0){
         $query = "SELECT * FROM blogs WHERE `id`='$editdraftno'";
-$query_run = mysql_query($query);
-$query_fetch_assoc = mysql_fetch_assoc($query_run);
+$query_run = mysqli_query($conn, $query);
+$query_fetch_assoc = mysqli_fetch_assoc($query_run);
 $id = $query_fetch_assoc['id'];
 $title = $query_fetch_assoc['title'];
 $writter = $query_fetch_assoc['writter'];

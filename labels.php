@@ -17,7 +17,7 @@ require 'core.inc.php';
 //echo $_SERVER['HTTP_X_FORWARDED_FOR'];
 $century = 860;//Mtush
 
-$_SESSION['$user_id'];
+// $_SESSION['$user_id'];
 // md5('wagwanista');
 
 if(isset($_POST['useremail'])){

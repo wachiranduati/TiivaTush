@@ -13,19 +13,19 @@ if(isset($_SESSION['$staff'])){
     echo "Do nothing";
 }
 
-//echo md5($salt.mysql_real_escape_string('pass123'));
+//echo md5($salt.mysqli_real_escape_string($conn, 'pass123'));
 
 if(isset($_POST['username']) && isset($_POST['password'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
     if(!empty($username) && !empty($password)){
-        $usernameF = mysql_real_escape_string($_POST['username']);
-        $passwordF = md5($salt.mysql_real_escape_string($_POST['password']));
+        $usernameF = mysqli_real_escape_string($conn, $_POST['username']);
+        $passwordF = md5($salt.mysqli_real_escape_string($conn, $_POST['password']));
         //echo $usernameF.' and '.$passwordF;
         $query = "SELECT * FROM `Staff` WHERE `username`='$usernameF' AND `password`='$passwordF'";
-        $query_run = mysql_query($query);
-        $query_num_rows = mysql_num_rows($query_run);
-        $query_fetch_assoc = mysql_fetch_assoc($query_run);
+        $query_run = mysqli_query($conn, $query);
+        $query_num_rows = mysqli_num_rows($query_run);
+        $query_fetch_assoc = mysqli_fetch_assoc($query_run);
         if($query_num_rows != 0){
             // create session for username id
             $staffid =  $query_fetch_assoc['id'];

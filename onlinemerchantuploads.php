@@ -11,7 +11,7 @@ $tempuser = ceil($user + 21);
 // echo "me and you";
 $count = 1;
 $query = "SELECT * FROM `products` WHERE `availability`!='0' AND `sellerid`='$tempuser'";
-$query_run = mysql_query($query);
+$query_run = mysqli_query($conn, $query);
 echo "<div style=\"height:200px;overflow:scroll;\">";
 echo "<div class=\"table-responsive\">
   <table class=\"table\">
@@ -31,7 +31,7 @@ echo "<div class=\"table-responsive\">
       </tr>
     </thead>
     <tbody>";
-while($query_row = mysql_fetch_assoc($query_run)){
+while($query_row = mysqli_fetch_assoc($query_run)){
     $price = number_format($query_row['price']);
     //echo $query_row['itemtitle'] .'<br>';
     echo "<tr>";

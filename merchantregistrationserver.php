@@ -22,7 +22,7 @@ if(isset($_POST['Sname']) && isset($_POST['Fname']) && isset($_POST['Lname']) &&
         //echo $surname.' '.$firstname.' '.$idno.' '.$phone.' '.$businesstype.' '.$country.' '.$county.' '.$township;
         // insert the values into a database
         $query = "INSERT INTO `Merchants` (`id`,`surname`,`firstname`,`lastname`,`idno`,`phonenumber`,`businesstype`,`country`,`county`,`township`,`day`,`time`,`ips`,`gps`,`activate`,`agent`,`businessname`) VALUES ('','$surname','$firstname','$lastname','$idno','$phone','$businesstype','$country','$county','$township','$today','$time','$me','','','','$business')";
-        if($query_run = mysql_query($query)){
+        if($query_run = mysqli_query($conn, $query)){
             //echo "Kudos";
             echo "
                     <div class=\"alert alert-success\">
@@ -33,7 +33,7 @@ if(isset($_POST['Sname']) && isset($_POST['Fname']) && isset($_POST['Lname']) &&
                 ";
         }else{
             //echo "Error. Please try again later";
-            //echo mysql_error();
+            //echo mysqli_error();
             echo "
                     <div class=\"alert alert-danger\">
                         <a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a>
@@ -46,11 +46,11 @@ if(isset($_POST['Sname']) && isset($_POST['Fname']) && isset($_POST['Lname']) &&
         
     }else{
         die("Something is wrong");
-        //echo mysql_error();
+        //echo mysqli_error();
     }
 }else{
     die("Somethings wrong");
-    //echo mysql_error();
+    //echo mysqli_error();
 }
 ?>
 

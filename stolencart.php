@@ -20,20 +20,20 @@ if(isset($_GET['site'])){
                     if(isset($_SESSION['shackcart'][$id])){
                     $_SESSION['shackcart'][$id]['quantity']++;
                         echo "item was already in the cart doing a plus one";
-                        displaycart($dbs,$cartame,$dbsother,$cartameother);
+                        displaycart($dbs,$cartame,$dbsother,$cartameother, $conn);
 
 
                 }else{
                     $query = "SELECT * FROM `products` WHERE `id`='$id'";
-                    $query_run = mysql_query($query);
-                    if(mysql_num_rows($query_run) != 0){
-                        $row_s = mysql_fetch_array($query_run);
+                    $query_run = mysqli_query($conn, $query);
+                    if(mysqli_num_rows($query_run) != 0){
+                        $row_s = mysqli_fetch_array($query_run);
                         $_SESSION['shackcart'][$row_s['id']]=array(
                             "quantity" => 1,
                             "price" => $row_s['price']
                         );
                         echo "item has been added/ not plus one to the cart";
-                        displaycart($dbs,$cartame,$dbsother,$cartameother);
+                        displaycart($dbs,$cartame,$dbsother,$cartameother, $conn);
 
 
                     }
@@ -44,18 +44,18 @@ if(isset($_GET['site'])){
                         if($_SESSION['shackcart'][$id]['quantity'] > 0){
                             $_SESSION['shackcart'][$id]['quantity']--;
                             echo "item was already in cart removing minus one";
-                            displaycart($dbs,$cartame,$dbsother,$cartameother);
+                            displaycart($dbs,$cartame,$dbsother,$cartameother, $conn);
 
                         }else{
                             unset($_SESSION['shackcart'][$id]);
                             echo "item wasnt in the cart";
-                            displaycart($dbs,$cartame,$dbsother,$cartameother);
+                            displaycart($dbs,$cartame,$dbsother,$cartameother, $conn);
 
                         }
 
                 }else{
                         echo "There's nothing to take out of the cart";
-                        displaycart($dbs,$cartame,$dbsother,$cartameother);
+                        displaycart($dbs,$cartame,$dbsother,$cartameother, $conn);
 
                     }
 
@@ -76,20 +76,20 @@ if(isset($_GET['site'])){
                     if(isset($_SESSION['shopcart'][$id])){
                     $_SESSION['shopcart'][$id]['quantity']++;
                         echo "item was already in the cart doing a plus one";
-                        displaycart($dbs,$cartame,$dbsother,$cartameother);
+                        displaycart($dbs,$cartame,$dbsother,$cartameother, $conn);
 
 
                 }else{
                     $query = "SELECT * FROM `brandyproducts` WHERE `id`='$id'";
-                    $query_run = mysql_query($query);
-                    if(mysql_num_rows($query_run) != 0){
-                        $row_s = mysql_fetch_array($query_run);
+                    $query_run = mysqli_query($conn, $query);
+                    if(mysqli_num_rows($query_run) != 0){
+                        $row_s = mysqli_fetch_array($query_run);
                         $_SESSION['shopcart'][$row_s['id']]=array(
                             "quantity" => 1,
                             "price" => $row_s['price']
                         );
                         echo "item has been added/ not plus one to the cart";
-                        displaycart($dbs,$cartame,$dbsother,$cartameother);
+                        displaycart($dbs,$cartame,$dbsother,$cartameother, $conn);
 
 
                     }
@@ -100,18 +100,18 @@ if(isset($_GET['site'])){
                         if($_SESSION['shopcart'][$id]['quantity'] > 0){
                             $_SESSION['shopcart'][$id]['quantity']--;
                             echo "item was already in cart removing minus one";
-                            displaycart($dbs,$cartame,$dbsother,$cartameother);
+                            displaycart($dbs,$cartame,$dbsother,$cartameother, $conn);
 
                         }else{
                             unset($_SESSION['shopcart'][$id]);
                             echo "item wasnt in the cart";
-                            displaycart($dbs,$cartame,$dbsother,$cartameother);
+                            displaycart($dbs,$cartame,$dbsother,$cartameother, $conn);
 
                         }
 
                 }else{
                         echo "There's nothing to take out of the cart";
-                        displaycart($dbs,$cartame,$dbsother,$cartameother);
+                        displaycart($dbs,$cartame,$dbsother,$cartameother, $conn);
 
                     }
 
@@ -130,20 +130,20 @@ if(isset($_GET['site'])){
                     if(isset($_SESSION['shackcart'][$id])){
                     $_SESSION['shackcart'][$id]['quantity']++;
                         echo "item was already in the cart doing a plus one";
-                        displaycart($dbs,$cartame,$dbsother,$cartameother);
+                        displaycart($dbs,$cartame,$dbsother,$cartameother, $conn);
 
 
                 }else{
                     $query = "SELECT * FROM `products` WHERE `id`='$id'";
-                    $query_run = mysql_query($query);
-                    if(mysql_num_rows($query_run) != 0){
-                        $row_s = mysql_fetch_array($query_run);
+                    $query_run = mysqli_query($conn, $query);
+                    if(mysqli_num_rows($query_run) != 0){
+                        $row_s = mysqli_fetch_array($query_run);
                         $_SESSION['shackcart'][$row_s['id']]=array(
                             "quantity" => 1,
                             "price" => $row_s['price']
                         );
                         echo "item has been added/ not plus one to the cart";
-                        displaycart($dbs,$cartame,$dbsother,$cartameother);
+                        displaycart($dbs,$cartame,$dbsother,$cartameother, $conn);
 
 
                     }
@@ -154,18 +154,18 @@ if(isset($_GET['site'])){
                         if($_SESSION['shackcart'][$id]['quantity'] > 0){
                             $_SESSION['shackcart'][$id]['quantity']--;
                             echo "item was already in cart removing minus one";
-                            displaycart($dbs,$cartame,$dbsother,$cartameother);
+                            displaycart($dbs,$cartame,$dbsother,$cartameother, $conn);
 
                         }else{
                             unset($_SESSION['shackcart'][$id]);
                             echo "item wasnt in the cart";
-                            displaycart($dbs,$cartame,$dbsother,$cartameother);
+                            displaycart($dbs,$cartame,$dbsother,$cartameother, $conn);
 
                         }
 
                 }else{
                         echo "There's nothing to take out of the cart";
-                        displaycart($dbs,$cartame,$dbsother,$cartameother);
+                        displaycart($dbs,$cartame,$dbsother,$cartameother, $conn);
 
                     }
 
@@ -189,9 +189,9 @@ if(isset($_GET['site'])){
 //
 //     }else{
 //         $query = "SELECT * FROM `products` WHERE `id`='$id'";
-//         $query_run = mysql_query($query);
-//         if(mysql_num_rows($query_run) != 0){
-//             $row_s = mysql_fetch_array($query_run);
+//         $query_run = mysqli_query($conn, $query);
+//         if(mysqli_num_rows($query_run) != 0){
+//             $row_s = mysqli_fetch_array($query_run);
 //             $_SESSION['cart'][$row_s['id']]=array(
 //                 "quantity" => 1,
 //                 "price" => $row_s['price']
@@ -225,16 +225,16 @@ if(isset($_GET['site'])){
 // $dbs = 'products';
 // $cartame = 'shackcart';
 
-function displaycart($dbs,$cartame,$dbsother,$cartameother){
+function displaycart($dbs,$cartame,$dbsother,$cartameother, $conn){
     $sql = "SELECT * FROM $dbs WHERE id IN (";
     foreach($_SESSION[$cartame] as $id => $value){
         $sql.=$id.",";
     }
     $sql = substr($sql, 0, -1).") ORDER BY itemtitle ASC";
-    $query = mysql_query($sql);
+    $query = mysqli_query($conn, $sql);
     $totalprice = 0;
     if($_SESSION[$cartame][$id]['quantity'] != 0){
-        while($row=mysql_fetch_assoc($query)){
+        while($row=mysqli_fetch_assoc($query)){
         $subtotal = $_SESSION[$cartame][$row['id']]['quantity']*$row['price'];
         $totalprice += $subtotal;
 
@@ -254,10 +254,10 @@ function displaycart($dbs,$cartame,$dbsother,$cartameother){
             $sql.=$id.",";
         }
         $sql = substr($sql, 0, -1).") ORDER BY itemtitle ASC";
-        $query = mysql_query($sql);
+        $query = mysqli_query($sql);
         $totalprice2 = 0;
         if($_SESSION[$cartameother][$id]['quantity'] != 0){
-            while($row=mysql_fetch_assoc($query)){
+            while($row=mysqli_fetch_assoc($query)){
             $subtotal = $_SESSION[$cartameother][$row['id']]['quantity']*$row['price'];
             $totalprice2 += $subtotal;
 

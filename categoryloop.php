@@ -7,10 +7,10 @@ $id = 5;
 // items required img source, price, title, then formulate the button data-name, data-price
 //for this page only get the lead image, follow up to details page query up the total 3 images
 
-$query = "SELECT `imageone`, `price`, `itemtitle`, `category` FROM `products` WHERE `id`='".mysql_real_escape_string($id)."'";
-$query_run = mysql_query($query);
+$query = "SELECT `imageone`, `price`, `itemtitle`, `category` FROM `products` WHERE `id`='".mysqli_real_escape_string($conn, $id)."'";
+$query_run = mysqli_query($conn, $query);
 
-$query_row = mysql_fetch_assoc($query_run);
+$query_row = mysqli_fetch_assoc($query_run);
 //echo $query_row[imageone];
 
 $count = 1;
@@ -35,7 +35,7 @@ echo
             <div class=\"row visible-lg visible-md\">
                 <div class=\"col-lg-1 col-md-1 col-sm-1 col-xs-1\"></div>
                 <div class=\"col-lg-10 col-md-10 col-sm-12 col-xs-12\">
-                    <a href=\"productdetails.php?id=$id\" class=\"btn btn-block btn-primary\" data-name=\"$query_row[itemtitle]\" data-price=\"$query_row[price]\">Add to Cart</a>
+                    <a href=\"productdetails.php?id=$query_row[id]\" class=\"btn btn-block btn-primary\" data-name=\"$query_row[itemtitle]\" data-price=\"$query_row[price]\">Add to Cart</a>
                 </div>
                 <div class=\"col-lg-1 col-md-1 col-sm-1 col-xs-1\"></div>
             </div>
@@ -43,7 +43,7 @@ echo
             <div class=\"row visible-sm visible-xs\">
                 <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
                 <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-6\">
-                    <a href=\"productdetails.php?id=$id\" class=\"btn btn-sm btn-primary\" data-name=\"$query_row[itemtitle]\" data-price=\"$query_row[price]\">Add to Cart</a>
+                    <a href=\"productdetails.php?id=$query_row[id]\" class=\"btn btn-sm btn-primary\" data-name=\"$query_row[itemtitle]\" data-price=\"$query_row[price]\">Add to Cart</a>
                 </div>
                 <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
 

@@ -32,8 +32,8 @@ $todayyear = Date(Y);
             // creates an empty dates array
             $traffick = array();
             // creates an empty dates traffick array
-            $query_run = mysql_query($query);
-            while($row = mysql_fetch_assoc($query_run)){
+            $query_run = mysqli_query($conn, $query);
+            while($row = mysqli_fetch_assoc($query_run)){
                 //echo $row['date'].'<br>';
                 $thedate = $row['date'];
                 $nameofmonth = date('j',strtotime($thedate));
@@ -81,10 +81,10 @@ echo "
 $query = "SELECT * FROM `sold` WHERE MONTH(DATE(`date`)) = $todaymonth ORDER BY `date` ASC";
 //$query = "SELECT * FROM `sold` ORDER BY `date` ASC";
     
-$query_run = mysql_query($query);
-$query_num_rows = mysql_num_rows($query_run);
+$query_run = mysqli_query($conn, $query);
+$query_num_rows = mysqli_num_rows($query_run);
 if($query_num_rows != 0){
-        $row = mysql_fetch_assoc($query_run);
+        $row = mysqli_fetch_assoc($query_run);
         $dateq = $row['date'];
         $nameofmonth = date('j',strtotime($dateq));
         $nameofcurrentmonth = date('M',strtotime($dateq));
@@ -101,8 +101,8 @@ if($query_num_rows != 0){
                         // query the days present in the database from this month
                         // create an array
                 $querydays = "SELECT * FROM `sold` WHERE MONTH(DATE(`date`)) = $todaymonth ORDER BY `date` ASC";
-                $querydays_run = mysql_query($querydays);
-                $querydays_num_rows = mysql_num_rows($querydays_run);
+                $querydays_run = mysqli_query($conn, $querydays);
+                $querydays_num_rows = mysqli_num_rows($querydays_run);
                 if($querydays_num_rows != 0){
                     // month exists and days should also exist
                              //echo date('t');// returns the number of days in the present month
@@ -131,10 +131,10 @@ while($thismonth <= $number){
 $query = "SELECT * FROM `sold` WHERE MONTH(DATE(`date`)) = $todaymonth AND DAY(DATE(`date`)) = $thismonth ORDER BY `date` ASC";
 //$query = "SELECT * FROM `sold` ORDER BY `date` ASC";
     
-$query_run = mysql_query($query);
-$query_num_rows = mysql_num_rows($query_run);
+$query_run = mysqli_query($conn, $query);
+$query_num_rows = mysqli_num_rows($query_run);
 if($query_num_rows != 0){
-        $row = mysql_fetch_assoc($query_run);
+        $row = mysqli_fetch_assoc($query_run);
         $dateq = $row['date'];
         $nameofmonth = date('j',strtotime($dateq));
     // get each items count to power it to the month its in

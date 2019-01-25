@@ -13,9 +13,9 @@ $mycart = $_SESSION['cartname'];
 // should we show the shop from which item was sold? probably the username
 // here were not using the session array instead we use the session row
 $query = "SELECT * FROM `checkoutcarts` WHERE `cartname`='$mycart'";
-$query_run = mysql_query($query);
-$row = mysql_fetch_assoc($query_run);
-$query_num_rows = mysql_num_rows($query_run);
+$query_run = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($query_run);
+$query_num_rows = mysqli_num_rows($query_run);
 if($query_num_rows != 0){
     //echo "Found";
     // return customers name buy querying cart name in another table
@@ -23,9 +23,9 @@ if($query_num_rows != 0){
     // table with site i.e Tiiva.com items id/name? quantity total  soldby
     // final total plus VAT and FREE SHIPPING
     $querycustomerinfo = "SELECT * FROM `sold` WHERE `cartname`='$mycart'";
-    $querycustomer_run = mysql_query($querycustomerinfo);
-    $query_num_rowscustomer = mysql_num_rows($querycustomer_run);
-    $rowcstm = mysql_fetch_assoc($querycustomer_run);
+    $querycustomer_run = mysqli_query($conn, $querycustomerinfo);
+    $query_num_rowscustomer = mysqli_num_rows($querycustomer_run);
+    $rowcstm = mysqli_fetch_assoc($querycustomer_run);
     if($query_num_rowscustomer != 0){
         // user cart no exists
         //echo $cartname;
@@ -118,9 +118,9 @@ if($query_num_rows != 0){
             $productself = substr($cartcontentsarray[$x],1,strlen($cartcontentsarray[$x]));
             $queryitem = "SELECT * FROM $dbs WHERE `id`='$productself'";
             //echo $queryitem;
-            $queryitemrun = mysql_query($queryitem);
-            $queryitem_num_rows = mysql_num_rows($queryitemrun);
-            $queryitemrow =  mysql_fetch_assoc($queryitemrun);
+            $queryitemrun = mysqli_query($conn, $queryitem);
+            $queryitem_num_rows = mysqli_num_rows($queryitemrun);
+            $queryitemrow =  mysqli_fetch_assoc($queryitemrun);
             if($queryitem_num_rows != 0){
                 // found item
                 //echo $queryitemrow['itemtitle'].' sold by';

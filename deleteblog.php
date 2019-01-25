@@ -6,21 +6,21 @@ $me = $_SESSION['$user_id'];
 //echo isset($_SESSION['$user_id']);
 if(isset($_SESSION['$user_id'])){
     //find user name
-            $query2 = "SELECT `stagename` FROM `users` WHERE `id`='".mysql_real_escape_string($me)."'";
-            $query_run2 = mysql_query($query2);
-            $query_rows2 = mysql_fetch_assoc($query_run2);
+            $query2 = "SELECT `stagename` FROM `users` WHERE `id`='".mysqli_real_escape_string($conn, $me)."'";
+            $query_run2 = mysqli_query($conn, $query2);
+            $query_rows2 = mysqli_fetch_assoc($query_run2);
             $thewritter = $query_rows2['stagename'];
     
     if(isset($_POST['current'])){
         $id = $_POST['current'];
         $query = "SELECT `writter`,`title` FROM `blogs` WHERE `id`='$id' AND `writter`='$thewritter'";
-        $query_run = mysql_query($query);
-        $query_fetch_assoc = mysql_fetch_assoc($query_run);
+        $query_run = mysqli_query($conn, $query);
+        $query_fetch_assoc = mysqli_fetch_assoc($query_run);
         $title = $query_fetch_assoc['title'];
-        $query_num_rows = mysql_num_rows($query_run);
+        $query_num_rows = mysqli_num_rows($query_run);
         if($query_num_rows == 1){
             $query3 = "UPDATE `blogs` SET `remove`='1' WHERE `id`='$id'";
-            if($query_run3 = mysql_query($query3)){
+            if($query_run3 = mysqli_query($conn, $query3)){
                
                  echo "
                     <div class=\"alert alert-success\">

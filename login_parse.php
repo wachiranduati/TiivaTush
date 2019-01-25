@@ -21,25 +21,25 @@ if($from != ''){
 }
 
 if(isset($_POST['username']) && isset($_POST['password'])){
-    $username = mysql_real_escape_string($_POST['username']);
-    $password = mysql_real_escape_string(md5($salt.$_POST['password']));
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, md5($salt.$_POST['password']));
     
     $query = "SELECT `id` FROM `users` WHERE `username`='$username' OR `emailaddress`='$username' OR `mobilenumber`='$username' AND `password`='$password'";
-    $query_run = mysql_query($query);
-    $query_num_rows = mysql_num_rows($query_run);
+    $query_run = mysqli_query($conn, $query);
+    $query_num_rows = mysqli_num_rows($query_run);
     if($query_num_rows == 0){
         //echo 'Wrong username/password combination';
         // theres an error....first check the trial error with this ip
         // so here were blocking the ip and notify the user
         // and create a cookie
         $query_trial = "SELECT * FROM `blockedaccount` WHERE `ip`='$me'";
-        $querytrial_run = mysql_query($query_trial);
-        $querytrial_num_rows = mysql_num_rows($querytrial_run);
-        $querytrial_row = mysql_fetch_assoc($querytrial_run);
+        $querytrial_run = mysqli_query($conn, $query_trial);
+        $querytrial_num_rows = mysqli_num_rows($querytrial_run);
+        $querytrial_row = mysqli_fetch_assoc($querytrial_run);
         if($querytrial_num_rows == 0){
             //first trial to be logged here
             $querytrialinsert = "INSERT INTO `blockedaccount` (`id`,`ip`,`trial`,`block`) VALUES ('','$me','1','0') ";
-            if($querytrialinsert_run = mysql_query($querytrialinsert)){
+            if($querytrialinsert_run = mysqli_query($conn, $querytrialinsert)){
                 // you have 2 more trials left
                 echo "
                             <div class=\"alert alert-danger\">
@@ -68,7 +68,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
                 // update the value
                 $trialupdate = $trials + 1;
                 $queryupdatetrial =  "UPDATE `blockedaccount` SET `trial`='$trialupdate' WHERE `ip`='$me'";
-                if($queryupdatetrial_run = mysql_query($queryupdatetrial)){
+                if($queryupdatetrial_run = mysqli_query($conn, $queryupdatetrial)){
                     // updated echo remaining tries
                     $remaining = 3 - $trialupdate;
                     echo "
@@ -91,7 +91,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             }else{
                 // maximum trials achieved block account
                 $queryblocktrials = "UPDATE `blockedaccount` SET `block`='1' WHERE `ip`='$me' AND `trial`='3'";
-                if($queryblock_run = mysql_query($queryblocktrials)){
+                if($queryblock_run = mysqli_query($conn, $queryblocktrials)){
                     // account blocked
                     
                     echo "
@@ -125,7 +125,10 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         
     }else {
        // echo 'Details matched out';
-        $user_id = mysql_result($query_run, 0, 'id');
+        // $user_id = mysqli_result($conn, $query_run, 0, 'id');
+        // $_SESSION['$user_id'] = $user_id;
+        $attemplogn = mysqli_fetch_assoc($query_run);
+        $user_id = $attemplogn['id'];
         $_SESSION['$user_id'] = $user_id;
         //echo "Session id created ".$user_id;
         //echo "created";

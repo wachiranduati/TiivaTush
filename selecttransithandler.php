@@ -18,12 +18,12 @@ if(isset($_SESSION['$staff'])){
       //continue
       // query the staff table
       $querystaff = "SELECT * FROM `staff` WHERE `id`='$handler'";
-      $querystaff_run = mysql_query($querystaff);
-      $querystaff_num = mysql_num_rows($querystaff_run);
+      $querystaff_run = mysqli_query($conn, $querystaff);
+      $querystaff_num = mysqli_num_rows($querystaff_run);
       if($querystaff_num == 1){
         //continue
         // return the staffs name in the new input
-        $querystaff_row = mysql_fetch_assoc($querystaff_run);
+        $querystaff_row = mysqli_fetch_assoc($querystaff_run);
         $staffname = $querystaff_row['tiivanick'];
         //TODO AUTOMATE THE EXCHANGE CENTER TOO...LATER
         echo "

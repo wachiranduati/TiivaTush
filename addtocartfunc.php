@@ -6,14 +6,14 @@ require 'connect.php';
 
 function addtocart($buyer){
 $query3 = "SELECT `availability` FROM `products` WHERE `id` = '5' AND `buyer` = '0'";
-$query3_run = mysql_query($query3);
-$query3_num_rows = mysql_num_rows($query3_run);
+$query3_run = mysqli_query($conn, $query3);
+$query3_num_rows = mysqli_num_rows($query3_run);
 
 if ($query3_num_rows != 0){
     if($query= "UPDATE  `a_database`.`products` SET `availability` = '0' WHERE `products`.`id` = '5'"){
-    $query_run = mysql_query($query);
-    $query2 = "UPDATE `a_database`.`products` SET `buyer`= '".mysql_real_escape_string($buyer)."' WHERE `products`.`id` = '5'";
-    $query_run2 = mysql_query($query2);
+    $query_run = mysqli_query($conn, $query);
+    $query2 = "UPDATE `a_database`.`products` SET `buyer`= '".mysqli_real_escape_string($conn, $buyer)."' WHERE `products`.`id` = '5'";
+    $query_run2 = mysqli_query($conn, $query2);
         echo "<div class=\"row\">
                     <div class=\"col-xs-12\">
                         <div class=\"alert alert-success\">
@@ -37,14 +37,14 @@ if ($query3_num_rows != 0){
 
 function removefromcart($buyer){
 $query3 = "SELECT `availability` FROM `products` WHERE `id` = '5' AND `buyer` = '$buyer'";//to change to user
-$query3_run = mysql_query($query3);
-$query3_num_rows = mysql_num_rows($query3_run);
+$query3_run = mysqli_query($conn, $query3);
+$query3_num_rows = mysqli_num_rows($query3_run);
 
 if ($query3_num_rows != 0){
     if($query= "UPDATE  `a_database`.`products` SET `availability` = '1' WHERE `products`.`id` = '5'"){
-    $query_run = mysql_query($query);
+    $query_run = mysqli_query($conn, $query);
     $query2 = "UPDATE `a_database`.`products` SET `buyer`= '0' WHERE `products`.`id` = '5'";
-    $query_run2 = mysql_query($query2);
+    $query_run2 = mysqli_query($conn, $query2);
         echo "<div class=\"row\">
                     <div class=\"col-xs-12\">
                         <div class=\"alert alert-success\">

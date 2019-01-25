@@ -14,13 +14,13 @@ if(isset($_GET['category'])){
         $toolowmessagee = 'items in '.$category.' CATEGORY, in '.$subcategory.' need restocking';
         $query = "SELECT * FROM `brandyproducts` WHERE `category`='$category' AND `instock`>='1'";
         // ensure item has not been booked or bought
-        $query_run = mysql_query($query);
-        $query_num_rows = mysql_num_rows($query_run);
-        $query_row = mysql_fetch_assoc($query_run);
+        $query_run = mysqli_query($conn, $query);
+        $query_num_rows = mysqli_num_rows($query_run);
+        $query_row = mysqli_fetch_assoc($query_run);
 
 
         $query2 = "SELECT * FROM `brandyproducts` WHERE `category`='$category' AND `instock`>='1' ORDER BY RAND() LIMIT 6";
-        $query2_run = mysql_query($query2);
+        $query2_run = mysqli_query($conn, $query2);
 
 
         // recommended number per category = 100 so notification will be after 400
@@ -53,7 +53,7 @@ if(isset($_GET['category'])){
                 // items are enought to display continue
                 // display items for customer to view
                 //$count = 1;
-                while($query2_row = mysql_fetch_assoc($query2_run)){
+                while($query2_row = mysqli_fetch_assoc($query2_run)){
                     $price = number_format($query2_row['price']);
                     //echo "Yes";
                     echo "
@@ -109,7 +109,7 @@ if(isset($_GET['category'])){
                 // items are enought to display continue
                 // display items for customer to view
                 //$count = 1;
-                while($query2_row = mysql_fetch_assoc($query2_run)){
+                while($query2_row = mysqli_fetch_assoc($query2_run)){
                     $price = number_format($query2_row['price']);
                     //echo "Yes";
                     echo "
@@ -172,7 +172,7 @@ if(isset($_GET['category'])){
                 // items are enought to display continue
                 // display items for customer to view
                 //$count = 1;
-                while($query2_row = mysql_fetch_assoc($query2_run)){
+                while($query2_row = mysqli_fetch_assoc($query2_run)){
                     $price = number_format($query2_row['price']);
                     //echo "Yes";
                     echo "

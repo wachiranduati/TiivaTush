@@ -19,8 +19,8 @@ $dates = array();
 // creates an empty dates array
 $traffick = array();
 // creates an empty dates traffick array
-$query_run = mysql_query($query);
-while($row = mysql_fetch_assoc($query_run)){
+$query_run = mysqli_query($conn, $query);
+while($row = mysqli_fetch_assoc($query_run)){
     //echo $row['date'].'<br>';
     $thedate = $row['Day'];
     $thetraffick = $row[$side];

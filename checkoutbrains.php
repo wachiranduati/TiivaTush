@@ -11,7 +11,7 @@ if(isset($_SESSION['$user_id'])){
 }else{
     $toreg = 1;
 }
-//mysql_real_escape_string()
+//mysqli_real_escape_string($conn, )
 
 $today = date(Y).'-'.date(m).'-'.date(d);
 $time = Date(H).':'.Date(i).':'.Date(s);
@@ -31,10 +31,10 @@ $cartameother = 'shackcart';
     }
 
     $sql = substr($sql, 0, -1).") ORDER BY itemtitle ASC";
-    $query = mysql_query($sql);
+    $query = mysqli_query($conn, $sql);
     $totalprice = 0;
     if($_SESSION['shackcart'][$id]['quantity'] != 0){
-        while($row=mysql_fetch_assoc($query)){
+        while($row=mysqli_fetch_assoc($query)){
             echo "<tr>";
         $subtotal = $_SESSION['shackcart'][$row['id']]['quantity']*$row['price'];
         $quantity = strval($_SESSION['shackcart'][$row['id']]['quantity']);
@@ -62,10 +62,10 @@ $cartameother = 'shackcart';
     }
 
     $sql = substr($sql, 0, -1).") ORDER BY itemtitle ASC";
-    $query = mysql_query($sql);
+    $query = mysqli_query($conn, $sql);
     //$totalprice = 0;
     if($_SESSION['shopcart'][$id]['quantity'] != 0){
-        while($row=mysql_fetch_assoc($query)){
+        while($row=mysqli_fetch_assoc($query)){
             echo "<tr>";
         $subtotal = $_SESSION['shopcart'][$row['id']]['quantity']*$row['price'];
         $quantity = strval($_SESSION['shopcart'][$row['id']]['quantity']);
@@ -102,10 +102,10 @@ $cartameother = 'shackcart';
     // }
     //
     // $sql = substr($sql, 0, -1).") ORDER BY itemtitle ASC";
-    // $query = mysql_query($sql);
+    // $query = mysqli_query($conn, $sql);
     // $totalprice = 0;
     // if($_SESSION['shackcart'][$id]['quantity'] != 0){
-    //     while($row=mysql_fetch_assoc($query)){
+    //     while($row=mysqli_fetch_assoc($query)){
     //         echo "<tr>";
     //     $subtotal = $_SESSION['shackcart'][$row['id']]['quantity']*$row['price'];
     //     $quantity = strval($_SESSION['shackcart'][$row['id']]['quantity']);
@@ -153,7 +153,7 @@ if(isset($_POST['username']) ||
     $shipping = $_POST['shipping'];
     $area = $_POST['area'];
     $transcationinputid = strtoupper($_POST['transcationinputid']);
-    $details = mysql_escape_string($_POST['details']);
+    $details = mysqli_escape_string($_POST['details']);
 
     $phoneno = $phonenumber;
     $salt = "Dance3imefika2mashinanee";
@@ -174,7 +174,7 @@ if(isset($_POST['username']) ||
                         //echo "Thankyou, we are working on your order.";
                         $query = "INSERT INTO  `a_database`.`sold` (`id` ,`names` ,`identity` ,`email` ,`phone` ,`county` ,`area` ,`details` ,`date`,`cartname`,`shipping`)VALUES (NULL ,  '$username',  '$useridno',  '$emailaddress',  '$phonenumber',  '$county',  '$area',  '$details',  '$today','$cartname','$shipping')";
 
-                        if($query_run = mysql_query($query)){
+                        if($query_run = mysqli_query($conn, $query)){
                             //echo "We have received your order, We will get in touch.";
 //                            echo "<div class=\"alert alert-success\">
 //                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a>
@@ -184,7 +184,7 @@ if(isset($_POST['username']) ||
                             // create row in checkoutcarts with cartname contents count and date and verification
                             $querycart = "INSERT INTO  `checkoutcarts` (`cartid` ,`customer_id` ,`cartname` ,`cartcontents`,`itemprice` ,`count` ,`carttotal` ,`paymentverification` ,`date`,`time`,`status`,`updated`,`pickupstat`)VALUES (NULL ,  '$toreg','$cartname','$newtotalitemids','$newrowprices','$newcount','$totalprice','$transcationinputid','$today','$time','SOLD','0','INCOMPLETE')";
 
-                            if($query_runcart = mysql_query($querycart)){
+                            if($query_runcart = mysqli_query($conn, $querycart)){
                             echo "<div class=\"alert alert-success\">
                                     <a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a>
                                     <strong>Success!!</strong>

@@ -14,8 +14,8 @@ if(isset($_SESSION['$user_id'])){
 if(isset($_POST['cct'])){
     $cct = $_POST['cct'];
     $query = "SELECT * FROM `checkoutcarts` WHERE `cartname`='$cct'";
-    $query_run = mysql_query($query);
-    if($row = mysql_fetch_assoc($query_run)){
+    $query_run = mysqli_query($conn, $query);
+    if($row = mysqli_fetch_assoc($query_run)){
         $cartcontents = $row['cartcontents'];
         $cartitemprice = $row['itemprice'];
         $cartcount = $row['count'];
@@ -81,8 +81,8 @@ if(isset($_POST['cct'])){
             }else{
                 //echo "Something's wrong";
             }
-            $queryproduct_run = mysql_query($queryproduct);
-            if($queryproductrow = mysql_fetch_assoc($queryproduct_run)){
+            $queryproduct_run = mysqli_query($conn, $queryproduct);
+            if($queryproductrow = mysqli_fetch_assoc($queryproduct_run)){
                 //echo $site.' '.$queryproductrow['imageone'].' '.$queryproductrow['itemtitle'].'<br>';
                 echo "<tr>";
                 echo "<td>";
@@ -150,9 +150,9 @@ if(isset($_POST['cct'])){
                 // echo "<button id=\"raterbutton\" onclick=\"displayitemdets('$dbs$search');modalRem();\" data-target=\"#loginModal\" data-toggle=\"modal\" class=\"btn btn-success rater\"><span id=\"current\" style=\"visibility:hidden;display:none;\">$dbs$search</span>Rate & Review ?</button>";
                 // echo "<span id=\"current\" class=\"invisible\">$dbs$search</span>";
                 $queryrated = "SELECT * FROM `reviews` WHERE `productid`='$search' AND `site`='$dbs'";
-                $queryrated_run = mysql_query($queryrated);
+                $queryrated_run = mysqli_query($conn, $queryrated);
 
-                $queryrated_num = mysql_num_rows($queryrated_run);
+                $queryrated_num = mysqli_num_rows($queryrated_run);
                 if($queryrated_num == 0){
                   //no record present
                   // so user should be able to rate and review the item
@@ -161,7 +161,7 @@ if(isset($_POST['cct'])){
                 }else{
                   // already has a row created
                   // check whether he exists in the users already recorded
-                  $queryrated_row = mysql_fetch_assoc($queryrated_run);
+                  $queryrated_row = mysqli_fetch_assoc($queryrated_run);
                   $usersarray = explode(',',$queryrated_row['users']);
                   if(in_array($usercheck,$usersarray)){
                     // found means you've already rated and reviewed mwah

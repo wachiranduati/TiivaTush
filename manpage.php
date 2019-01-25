@@ -18,9 +18,9 @@ $jump = 0;
 $items = 100;
 
 
-$query2 = "SELECT * FROM `products` WHERE `category`='".mysql_real_escape_string($search)."' AND `sex`!='".mysql_real_escape_string($sub)."' AND `availability`='1' AND `buyer`='0'";
-$query_run2 = mysql_query($query2);
-$query_num_rows2 = mysql_num_rows($query_run2);
+$query2 = "SELECT * FROM `products` WHERE `category`='".mysqli_real_escape_string($conn, $search)."' AND `sex`!='".mysqli_real_escape_string($conn, $sub)."' AND `availability`='1' AND `buyer`='0'";
+$query_run2 = mysqli_query($conn, $query2);
+$query_num_rows2 = mysqli_num_rows($query_run2);
 $pagecount = $query_num_rows2 / $items;
 
 if($sub == 'female'){
@@ -30,7 +30,7 @@ if($sub == 'female'){
 }
 //echo $query_num_rows2;
 
-//$query_row = mysql_fetch_assoc($query_run);
+//$query_row = mysqli_fetch_assoc($query_run);
 //echo $query_row[imageone];
 echo "
         <!doctype html>

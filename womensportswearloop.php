@@ -104,7 +104,7 @@ if($query_num_rows <= $notifymecount){
             <div class=\"row visible-sm visible-xs\">
                 <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
                 <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-6\">
-                    <a href=\"productdetails.php?id=$id\" class=\"btn btn-sm btn-block btn-primary\" data-name=\"$query2_row[itemtitle]\" data-price=\"$price\" target=\"_blank\">Add to Cart</a>
+                    <a href=\"productdetails.php?id=$query_row[id]\" class=\"btn btn-sm btn-block btn-primary\" data-name=\"$query2_row[itemtitle]\" data-price=\"$price\" target=\"_blank\">Add to Cart</a>
                 </div>
                 <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
             </div>-->
@@ -192,7 +192,7 @@ if($query_num_rows <= $notifymecount){
             <div class=\"row visible-sm visible-xs\">
                 <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
                 <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-6\">
-                    <a href=\"productdetails.php?id=$id\" class=\"btn btn-sm btn-block btn-primary\" data-name=\"$query2_row[itemtitle]\" data-price=\"$price\" target=\"_blank\">Add to Cart</a>
+                    <a href=\"productdetails.php?id=$query_row[id]\" class=\"btn btn-sm btn-block btn-primary\" data-name=\"$query2_row[itemtitle]\" data-price=\"$price\" target=\"_blank\">Add to Cart</a>
                 </div>
                 <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
             </div>-->

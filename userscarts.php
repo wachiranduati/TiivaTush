@@ -12,13 +12,13 @@ $usercheck = $user + 21;
 //$query = "SELECT * FROM `checkoutcarts` WHERE `cartid`!='0' ORDER BY `cartid` DESC LIMIT 10";
 $query = "SELECT * FROM `checkoutcarts` WHERE `customer_id`='$usercheck' ORDER BY `cartid` DESC";
 $query2 = "SELECT * FROM `checkoutcarts` WHERE `customer_id`='$usercheck'";
-$query2_run = mysql_query($query2);
-$query2_num_rows = mysql_num_rows($query2_run);
+$query2_run = mysqli_query($query2);
+$query2_num_rows = mysqli_num_rows($query2_run);
 echo '<span id="cartsno" style="display:none;">'.$query2_num_rows.'</span>';
-$query_run = mysql_query($query);
+$query_run = mysqli_query($conn, $query);
 echo "<ul class=\"list-group\">";
 $count = 1;
-while($row = mysql_fetch_assoc($query_run)){
+while($row = mysqli_fetch_assoc($query_run)){
     echo "<li class=\"list-group-item list-cart\">$count. &nbsp;&nbsp;cart ";
     echo '<span id="cartname">'.$row['cartname'].'</span>&nbsp;&nbsp;&nbsp;&nbsp;';
     echo "<span class=\"pull-right\">";

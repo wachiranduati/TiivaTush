@@ -3,8 +3,8 @@ require 'connect.php';
 
 
 $query_count = "SELECT * FROM blogs";
-$query_run_count = mysql_query($query_count);
-$count = mysql_num_rows($query_run_count);
+$query_run_count = mysqli_query($conn, $query_count);
+$count = mysqli_num_rows($query_run_count);
 $pages = ceil($count / 5);
 //$current = 2;
 if(isset($_POST['current'])){
@@ -20,11 +20,11 @@ if(isset($_POST['current'])){
 if($current == 1){
     echo "Showing page $current of $pages <a onclick=\"bloggeronlineitems($current +  1);\" class=\"btn btn-warning btn-xs\">Next</a>";
     $query = "SELECT * FROM blogs WHERE `remove`='0' LIMIT 5";
-    $query_run = mysql_query($query);
+    $query_run = mysqli_query($conn, $query);
 }else{
     if($current > 1){
         $query = "SELECT * FROM blogs WHERE `remove`='0' LIMIT 5 OFFSET $jump";
-            $query_run = mysql_query($query);
+            $query_run = mysqli_query($conn, $query);
         if($current == $pages){
             echo "Showing page $current of $pages <a onclick=\"bloggeronlineitems($current - 1);\" class=\"btn btn-warning btn-xs\">Prev</a>";
             
@@ -61,7 +61,7 @@ echo "
             $number = ceil(($current - 1) * 5 + 1);
         }
         
-while($Query_fetch_assoc = mysql_fetch_assoc($query_run)){
+while($Query_fetch_assoc = mysqli_fetch_assoc($query_run)){
     echo "<tr>";
     
     echo "<td>";

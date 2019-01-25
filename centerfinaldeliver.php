@@ -14,7 +14,7 @@ function completecartatdestination(){
   //the script below checks to confirm that a complete cart is at the destination centre
   //loop throught pickupds
   $queryupdatetransitdbs = "SELECT * FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE' AND `updated`='1'";
-  $queryupdttrns_run = mysql_query($queryupdatetransitdbs);
+  $queryupdttrns_run = mysqli_query($conn, $queryupdatetransitdbs);
   // create a new array
   echo "
   <div class=\"row\" style=\"background-color:white;font-family:kok;\">
@@ -37,7 +37,7 @@ function completecartatdestination(){
       ";
   $transitdbsarray = array();
   $transitbdcrtsize = array();
-  while($queryupdttrs_row = mysql_fetch_assoc($queryupdttrns_run)){
+  while($queryupdttrs_row = mysqli_fetch_assoc($queryupdttrns_run)){
      $cart = $queryupdttrs_row['cartname'];
      $cartcontents = $queryupdttrs_row['cartcontents'];
      $cartcontentsarray = explode(',',$cartcontents);
@@ -64,8 +64,8 @@ function completecartatdestination(){
     // for signed off belonging to this cart
     // get the num-rows of occurences from this cart then compare with the count from checkoutcarts....if same then the cart is complete
     $querytrnsitms = "SELECT * FROM `transitdbs` WHERE `cartname`='$cartnametdbs'";
-    $querytrnsitms_run = mysql_query($querytrnsitms);
-    $querytrnsitms_num = mysql_num_rows($querytrnsitms_run);
+    $querytrnsitms_run = mysqli_query($conn, $querytrnsitms);
+    $querytrnsitms_num = mysqli_num_rows($querytrnsitms_run);
     $itemdelivered = true;
 
     if($querytrnsitms_num == $carttdbssize){
@@ -75,7 +75,7 @@ function completecartatdestination(){
       // these results mean that cart in transit is complete soo it should be delivered immediately it gets to the destination center
       // check whether the cart is at the final center
 
-        while($querytrnsitms_row = mysql_fetch_assoc($querytrnsitms_run)){
+        while($querytrnsitms_row = mysqli_fetch_assoc($querytrnsitms_run)){
           $itemloc = $querytrnsitms_row['exchcenters'];
           $cartdeadline = $querytrnsitms_row['deadline'];
           $itemid = $querytrnsitms_row['itemid'];
@@ -165,7 +165,7 @@ function completecartatdestination(){
 //REVIEW IT SHOUD BE KNOWN THAT THE SCIRPT BELOW WILL ONLY WORK ASSUMING THAT ALL CART ITEMS HAVE BEEN PICKED UP*******corrected
 //THE PICKUPDS ACTUALLY SHOWS ITEMS THAT NEED TO BE PICKED UP SO ALL IS WELL....COMPARE THEM TO THE ONES CURRENTLY IN transit
 $queryupdatetransitdbs = "SELECT * FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE' AND `updated`='1'";
-$queryupdttrns_run = mysql_query($queryupdatetransitdbs);
+$queryupdttrns_run = mysqli_query($conn, $queryupdatetransitdbs);
 // create a new array
 $transitdbsarray = array();
 echo "<div class=\"row incompletecart\" style=\"background-color:white;font-family:kok;\">
@@ -187,7 +187,7 @@ echo "<div class=\"row incompletecart\" style=\"background-color:white;font-fami
     </thead>
     <tbody>
     ";
-while($queryupdttrs_row = mysql_fetch_assoc($queryupdttrns_run)){
+while($queryupdttrs_row = mysqli_fetch_assoc($queryupdttrns_run)){
    $cart = $queryupdttrs_row['cartname'];
    $cartcontents = $queryupdttrs_row['cartcontents'];
    $cartcontentsarray = explode(',',$cartcontents);
@@ -215,26 +215,26 @@ for($trdbs = 0; $trdbs < count($transitdbsarray); $trdbs++){
   // so for every item found check whether in the transitdbs its been delivered
   //query items from this cart in the pickupds database
   $querycartitems = "SELECT * FROM `pickupds` WHERE `cart`='$currentcart'";
-  $querycartitems_run = mysql_query($querycartitems);
+  $querycartitems_run = mysqli_query($conn, $querycartitems);
   //check whether the cart actually exists
 
-  $querycartitems_num = mysql_num_rows($querycartitems_run);
+  $querycartitems_num = mysqli_num_rows($querycartitems_run);
   if($querycartitems_num != 0){
     // cart exists
 
 
-    while($querycartitems_row = mysql_fetch_assoc($querycartitems_run)){
+    while($querycartitems_row = mysqli_fetch_assoc($querycartitems_run)){
       // return an item id which will then be queried in the transitdbs to ensure the item has not been delivered
       // if still in transit--- specifically in the final center then allow to deliver
       // get the item id to compare to in the transitdbs
       $pickupdsid = $querycartitems_row['id'];
       // query this id in transitdbs to confirm whether item has already been delivered
       $queryitemtransit = "SELECT * FROM `transitdbs` WHERE `itemid`='$pickupdsid' AND `cartname`='$currentcart'";
-      $queryitemtransit_run = mysql_query($queryitemtransit);
-      $queryitemtransit_num = mysql_num_rows($queryitemtransit_run);
+      $queryitemtransit_run = mysqli_query($conn, $queryitemtransit);
+      $queryitemtransit_num = mysqli_num_rows($queryitemtransit_run);
       if($queryitemtransit_num != 0){
         //continue.....item found
-        if($queryitemtransit_row = mysql_fetch_assoc($queryitemtransit_run)){
+        if($queryitemtransit_row = mysqli_fetch_assoc($queryitemtransit_run)){
           //return transitdbs id
           $theid = $queryitemtransit_row['id'];
           $dstatus = $queryitemtransit_row['dstatus'];

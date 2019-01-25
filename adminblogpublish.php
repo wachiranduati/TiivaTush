@@ -12,7 +12,7 @@ if(isset($_POST['id']) && isset($_POST['title']) && isset($_POST['ele']) && isse
         
         //$query = "SELECT * FROM products WHERE `id`= $id AND `progress`= 'complete' AND `verifid`='0'";
         $query = "UPDATE blogs SET `rating`='$rating', `link1`='$tag1', `link2`='$tag2', `link3`='$tag3', `verified`='1' WHERE `id`='$id' AND `progress`='complete' ";
-        if($query_run = mysql_query($query)){
+        if($query_run = mysqli_query($conn, $query)){
            echo "
                 <div class=\"alert alert-info\">
                 <a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a>

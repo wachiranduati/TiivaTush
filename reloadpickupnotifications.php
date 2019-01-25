@@ -24,8 +24,8 @@ $newnewsth = Date('H:i',$newsth);
 
 
 $query = "SELECT * FROM `autotest` WHERE `test`='pickup'";
-$query_run  = mysql_query($query);
-$row = mysql_fetch_assoc($query_run);
+$query_run  = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($query_run);
 $comptime  = $row['time'];
 $compsth = strtotime($comptime);
 $newnewcompsth = Date('H:i',$compsth);
@@ -45,11 +45,11 @@ if($newnewsth == $newnewcompsth){
   // update pick up notifs
   // loop throgh checkoutcarts which have not been looped through before
   $querycheckout = "SELECT * FROM `checkoutcarts` WHERE `updated`='0' AND `pickupstat`='INCOMPLETE'";
-  if($queryrun_check = mysql_query($querycheckout)){
+  if($queryrun_check = mysqli_query($conn, $querycheckout)){
     $listcontents = array();
     $listcheckoutcarts = array();
     $listcheckoutcartsperrow = array();
-    while($querycheck_row = mysql_fetch_assoc($queryrun_check)){
+    while($querycheck_row = mysqli_fetch_assoc($queryrun_check)){
       $cartcontent = $querycheck_row['cartcontents'];
       $cartcontentid = $querycheck_row['cartid'];
       $cartname = $querycheck_row['cartname'];
@@ -112,14 +112,14 @@ if($newnewsth == $newnewcompsth){
             // we need to loop through the list contents array
 
             $querycheckoutcont = "SELECT `sellerid` FROM `$currentdbs` WHERE `id`='$item'";
-          $queryrun_checkcont = mysql_query($querycheckoutcont);
-          while($querycheckcont_row = mysql_fetch_assoc($queryrun_checkcont)){
+          $queryrun_checkcont = mysqli_query($conn, $querycheckoutcont);
+          while($querycheckcont_row = mysqli_fetch_assoc($queryrun_checkcont)){
             $seller = $querycheckcont_row['sellerid'];
             $modseller = ceil($seller + 21);
             // echo $modseller.' '.$currentitem.'<br>';
             $queryupdatepickup = "INSERT INTO `pickupds` (`id`,`item`,`seller`,`time`,`cart`,`agent`,`otheragent`,`pickupmode`,`date`,`handoverperp`,`name`,`idnumber`,`paymentmode`,`sign`,`trnsupt`)
              VALUES ('','$currentitem','$modseller','$newnewsth','$cartname','','','','','','','','','0','0')";
-             if($queryupdatepickup_run = mysql_query($queryupdatepickup)){
+             if($queryupdatepickup_run = mysqli_query($conn, $queryupdatepickup)){
               //  echo "blocking this row";
              }else{
               //  echo "Ran into an error buana";
@@ -140,14 +140,14 @@ if($newnewsth == $newnewcompsth){
           // we need to loop through the list contents array
 
           $querycheckoutcont = "SELECT `sellerid` FROM `$currentdbs` WHERE `id`='$item'";
-        $queryrun_checkcont = mysql_query($querycheckoutcont);
-        while($querycheckcont_row = mysql_fetch_assoc($queryrun_checkcont)){
+        $queryrun_checkcont = mysqli_query($conn, $querycheckoutcont);
+        while($querycheckcont_row = mysqli_fetch_assoc($queryrun_checkcont)){
           $seller = $querycheckcont_row['sellerid'];
           $modseller = ceil($seller + 21);
           // echo $modseller.' '.$currentitem.'<br>';
           $queryupdatepickup = "INSERT INTO `pickupds` (`id`,`item`,`seller`,`time`,`cart`,`agent`,`otheragent`,`pickupmode`,`date`,`handoverperp`,`name`,`idnumber`,`paymentmode`,`sign`)
            VALUES ('','$currentitem','$modseller','$newnewsth','$cartname','','','','','','','','','0')";
-           if($queryupdatepickup_run = mysql_query($queryupdatepickup)){
+           if($queryupdatepickup_run = mysqli_query($conn, $queryupdatepickup)){
             //  echo "blocking this row";
            }else{
             //  echo "Ran into an error buana";
@@ -170,7 +170,7 @@ if($newnewsth == $newnewcompsth){
     for($crt = 0; $crt < $cartcartarraysize; $crt++){
       $currentcart = $listcheckoutcarts[$crt];
       $queryafterloop = "UPDATE `checkoutcarts` SET `updated`='1' WHERE `cartid`='$currentcart' AND `pickupstat`='INCOMPLETE' AND `updated`='0'";
-      if($queryafterloop_run = mysql_query($queryafterloop)){
+      if($queryafterloop_run = mysqli_query($conn, $queryafterloop)){
         // do sth
         // echo "Just updated the entire list";
       }else{
@@ -182,7 +182,7 @@ if($newnewsth == $newnewcompsth){
   // were going to update the time this list was updated
 
 $queryupdatelisttime = "UPDATE `autotest` SET `time`='$sometimerec', `date`='$somedayrec' WHERE `test`='pickup'";
-if($queryupdatelist_run = mysql_query($queryupdatelisttime)){
+if($queryupdatelist_run = mysqli_query($conn, $queryupdatelisttime)){
   echo "Just updated the list as of $sometimerec Today";
 }else{
   die("Sorry ran into an error");

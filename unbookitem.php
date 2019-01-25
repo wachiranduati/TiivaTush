@@ -10,7 +10,7 @@ require 'connect.php';
 if(isset($_SESSION['$user_id'])){
     if(isset($_POST['itemid'])){
     $buyer = $_SESSION['$user_id'];
-    $itemid = mysql_real_escape_string($_POST['itemid']);
+    $itemid = mysqli_real_escape_string($conn, $_POST['itemid']);
     if(!empty($buyer) && !empty($itemid)){
         //call function to book item
         removefromcart($buyer,$itemid);
@@ -25,8 +25,8 @@ if(isset($_SESSION['$user_id'])){
 }
 function removefromcart($buyer,$itemid){
 $query3 = "SELECT `availability` FROM `products` WHERE `id` = '$itemid' AND `buyer` = '$buyer'";//to change to user
-$query3_run = mysql_query($query3);
-$query3_num_rows = mysql_num_rows($query3_run);
+$query3_run = mysqli_query($query3);
+$query3_num_rows = mysqli_num_rows($query3_run);
 
 if ($query3_num_rows != 0){
     // unbook
@@ -38,9 +38,9 @@ if ($query3_num_rows != 0){
     }else{
         // unbook it
                 if($query= "UPDATE  `a_database`.`products` SET `availability` = '1' WHERE `products`.`id` = '$itemid'"){
-                    $query_run = mysql_query($query);
+                    $query_run = mysqli_query($conn, $query);
                     $query2 = "UPDATE `a_database`.`products` SET `buyer`= '0' WHERE `products`.`id` = '$itemid'";
-                    $query_run2 = mysql_query($query2);
+                    $query_run2 = mysqli_query($query2);
                         echo "<div class=\"row\">
                                     <div class=\"col-xs-12\">
                                         <div class=\"alert alert-success\">

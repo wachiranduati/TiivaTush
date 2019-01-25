@@ -51,19 +51,19 @@ function returndelvdetsandform(){
   //retrieve cart shipping details
 //REVIEW CONFIRM THAT THE CART IS ACTUALLY COMPLETE AND IS AT THE FINAL CENTER AND THAT IT IS IN THIS HANDLERS CONTROL
   $querystaff = "SELECT * FROM `staff` WHERE `id`='$loggedstaff'";
-  $querystaff_run = mysql_query($querystaff);
-  if($querystaff_row = mysql_fetch_assoc($querystaff_run)){
+  $querystaff_run = mysqli_query($conn, $querystaff);
+  if($querystaff_row = mysqli_fetch_assoc($querystaff_run)){
     //first get the staff name
     $staffnick = $querystaff_row['tiivanick'];
   }
 
   //return the cart form details and delivery form
   $querycardetls = "SELECT * FROM `sold` WHERE `cartname`='$cartname'";
-  $querycardetls_run = mysql_query($querycardetls);
-  $querycardetls_num = mysql_num_rows($querycardetls_run);
+  $querycardetls_run = mysqli_query($conn, $querycardetls);
+  $querycardetls_num = mysqli_num_rows($querycardetls_run);
   if($querycardetls_num != 0){
     //continue
-    if($querycardetls_row = mysql_fetch_assoc($querycardetls_run)){
+    if($querycardetls_row = mysqli_fetch_assoc($querycardetls_run)){
       // row returned .....continue
       $name = $querycardetls_row['names'];
       $nameid = $querycardetls_row['identity'];
@@ -149,7 +149,7 @@ function returndelvdetsandform(){
   }else{
     // cart does not exist so quit
     die("Error bruv");
-    // echo mysql_error();
+    // echo mysqli_error();
   }
 }
 
@@ -168,19 +168,19 @@ function incompletecartreturnt(){
     //retrieve cart shipping details
   //REVIEW CONFIRM THAT THE CART IS ACTUALLY COMPLETE AND IS AT THE FINAL CENTER AND THAT IT IS IN THIS HANDLERS CONTROL
     $querystaff = "SELECT * FROM `staff` WHERE `id`='$loggedstaff'";
-    $querystaff_run = mysql_query($querystaff);
-    if($querystaff_row = mysql_fetch_assoc($querystaff_run)){
+    $querystaff_run = mysqli_query($conn, $querystaff);
+    if($querystaff_row = mysqli_fetch_assoc($querystaff_run)){
       //first get the staff name
       $staffnick = $querystaff_row['tiivanick'];
     }
 
     //return the cart form details and delivery form
     $querycardetls = "SELECT * FROM `sold` WHERE `cartname`='$cartname'";
-    $querycardetls_run = mysql_query($querycardetls);
-    $querycardetls_num = mysql_num_rows($querycardetls_run);
+    $querycardetls_run = mysqli_query($conn, $querycardetls);
+    $querycardetls_num = mysqli_num_rows($querycardetls_run);
     if($querycardetls_num != 0){
       //continue
-      if($querycardetls_row = mysql_fetch_assoc($querycardetls_run)){
+      if($querycardetls_row = mysqli_fetch_assoc($querycardetls_run)){
         // row returned .....continue
         $name = $querycardetls_row['names'];
         $nameid = $querycardetls_row['identity'];
@@ -194,11 +194,11 @@ function incompletecartreturnt(){
         $shipping = $querycardetls_row['shipping'];
         // check whether the item id in transit is at the final center
           $queryitemid = "SELECT * FROM `transitdbs` WHERE `cartname`='$cartname' AND `id`='$itemid'";
-          $queryitemid_run = mysql_query($queryitemid);
-          $queryitemid_num = mysql_num_rows($queryitemid_run);
+          $queryitemid_run = mysqli_query($conn, $queryitemid);
+          $queryitemid_num = mysqli_num_rows($queryitemid_run);
           if($queryitemid_num != 0){
             //row found...now check whether final center is in the destination center
-            if($queryitemid_row = mysql_fetch_assoc($queryitemid_run)){
+            if($queryitemid_row = mysqli_fetch_assoc($queryitemid_run)){
               //continue
                $exchcenterslist = $queryitemid_row['exchcenters'];
                $exchcentersarray = explode(',',$exchcenterslist);
@@ -304,7 +304,7 @@ function incompletecartreturnt(){
     }else{
       // cart does not exist so quit
       die("Error bruv");
-      // echo mysql_error();
+      // echo mysqli_error();
     }
 
 }
@@ -323,14 +323,14 @@ function checkincompletecompletecartsdlv(){
   $timenow = Date("H:m:i");
   // now query the autotest table
   $queryautotest = "SELECT * FROM `autotest` WHERE `test`='incomplete'";
-  $queryautotest_run = mysql_query($queryautotest);
-  $queryautotest_num = mysql_num_rows($queryautotest_run);
+  $queryautotest_run = mysqli_query($conn, $queryautotest);
+  $queryautotest_num = mysqli_num_rows($queryautotest_run);
 
   if($queryautotest_num == 1){
     //record found
     // echo "record found";// dont insert row
     //TODO CHECK THE TIME
-    $queryautotest_row = mysql_fetch_assoc($queryautotest_run);
+    $queryautotest_row = mysqli_fetch_assoc($queryautotest_run);
     $rantime = $queryautotest_row['time'];
     $randate = $queryautotest_row['date'];
 
@@ -357,11 +357,11 @@ function checkincompletecompletecartsdlv(){
       $incompletecartsarray = array();
       // query the time then check the incomplete delivery TODO IS HERE TODO TODO
       $queryincompletecarts = "SELECT `cartname` FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE'";
-      $queryincompletecarts_run = mysql_query($queryincompletecarts);
-      $queryincompletecarts_num = mysql_num_rows($queryincompletecarts_run);
+      $queryincompletecarts_run = mysqli_query($conn, $queryincompletecarts);
+      $queryincompletecarts_num = mysqli_num_rows($queryincompletecarts_run);
       if($queryincompletecarts_num != 0){
         // carts exist
-        while($queryincompletecarts_row = mysql_fetch_assoc($queryincompletecarts_run)){
+        while($queryincompletecarts_row = mysqli_fetch_assoc($queryincompletecarts_run)){
           // add the carts to the arrays
           $cart = $queryincompletecarts_row['cartname'];
           if(in_array($cart,$incompletecartsarray)){
@@ -377,14 +377,14 @@ function checkincompletecompletecartsdlv(){
           $currentcart = $incompletecartsarray[$i];
           //get the cart size from pickuptable
           $querycartoriginlsize = "SELECT `id` FROM `pickupds` WHERE `cart`='$currentcart'";
-          if($querycartoriginlsize_run = mysql_query($querycartoriginlsize)){
+          if($querycartoriginlsize_run = mysqli_query($conn, $querycartoriginlsize)){
             // continue
-            $querycartoriginlsize_num = mysql_num_rows($querycartoriginlsize_run);
+            $querycartoriginlsize_num = mysqli_num_rows($querycartoriginlsize_run);
             // compare the size with that of the transitdbs table
               $querytransitcartsize = "SELECT * FROM `transitdbs` WHERE `cartname`='$currentcart' AND `dstatus`='1'";
-              if($querytransitcartsize_run = mysql_query($querytransitcartsize)){
+              if($querytransitcartsize_run = mysqli_query($conn, $querytransitcartsize)){
                 //continue
-                $querytransitcartsize_num = mysql_num_rows($querytransitcartsize_run);
+                $querytransitcartsize_num = mysqli_num_rows($querytransitcartsize_run);
                 // first ensure that the cart actually exists in the transit table
                 if($querytransitcartsize_num != 0){
                   if($querycartoriginlsize_num == $querytransitcartsize_num){
@@ -394,12 +394,12 @@ function checkincompletecompletecartsdlv(){
                     // echo "complete $currentcart <br>";
                     // continue to update the checkoutcarts
                     $queryfinalizecheckoutcart = "UPDATE `checkoutcarts` SET `pickupstat`='COMPLETE' WHERE `cartname`='$currentcart'";
-                    if($queryfinalizecheckoutcart_run = mysql_query($queryfinalizecheckoutcart)){
+                    if($queryfinalizecheckoutcart_run = mysqli_query($conn, $queryfinalizecheckoutcart)){
                         // incomplete cart is now officially complete
                         // echo "Incomplete cart successfully delivered";
                         // now update the time in the autotest
                         $querycheckoutcartupdateinco = "UPDATE `autotest` SET `time`='$timenow', `date`='$date'";
-                        if($querycheckoutcartupdateinco_run = mysql_query($querycheckoutcartupdateinco)){
+                        if($querycheckoutcartupdateinco_run = mysqli_query($conn, $querycheckoutcartupdateinco)){
                           echo "Dbs successfully updated";
                         }else {
                           die("Error");
@@ -414,7 +414,7 @@ function checkincompletecompletecartsdlv(){
                     //TODO DIE() FUNCTIONS ARE BEHAVING WEIRDLY IN CUTTING LOOPS SHORT
                     //  echo "$currentcart<br>";
                      $querycheckoutcartupdateinco = "UPDATE `autotest` SET `time`='$timenow', `date`='$date'";
-                     if($querycheckoutcartupdateinco_run = mysql_query($querycheckoutcartupdateinco)){
+                     if($querycheckoutcartupdateinco_run = mysqli_query($conn, $querycheckoutcartupdateinco)){
                        echo "(functn update )Dbs successfully updated<br>";
                      }else {
                        die("Error");
@@ -450,7 +450,7 @@ function checkincompletecompletecartsdlv(){
     echo "not found the record";// insert row
     // insert row
     $queryinsertincompleteautotst = "INSERT INTO `autotest` (`id`,`test`,`time`,`date`) VALUES ('','incomplete','$timenow','0')";
-    if($queryinsertincompleteautotst_run = mysql_query($queryinsertincompleteautotst)){
+    if($queryinsertincompleteautotst_run = mysqli_query($conn, $queryinsertincompleteautotst)){
       // it ran
       echo "|incomplete| row has successfully been created";
       // now check for incomplete cart delivery TODO IS HERE
@@ -462,11 +462,11 @@ function checkincompletecompletecartsdlv(){
        $incompletecartsarray = array();
        // query the time then check the incomplete delivery TODO IS HERE TODO TODO
        $queryincompletecarts = "SELECT `cartname` FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE'";
-       $queryincompletecarts_run = mysql_query($queryincompletecarts);
-       $queryincompletecarts_num = mysql_num_rows($queryincompletecarts_run);
+       $queryincompletecarts_run = mysqli_query($conn, $queryincompletecarts);
+       $queryincompletecarts_num = mysqli_num_rows($queryincompletecarts_run);
        if($queryincompletecarts_num != 0){
          // carts exist
-         while($queryincompletecarts_row = mysql_fetch_assoc($queryincompletecarts_run)){
+         while($queryincompletecarts_row = mysqli_fetch_assoc($queryincompletecarts_run)){
            // add the carts to the arrays
            $cart = $queryincompletecarts_row['cartname'];
            if(in_array($cart,$incompletecartsarray)){
@@ -482,14 +482,14 @@ function checkincompletecompletecartsdlv(){
            $currentcart = $incompletecartsarray[$i];
            //get the cart size from pickuptable
            $querycartoriginlsize = "SELECT `id` FROM `pickupds` WHERE `cart`='$currentcart'";
-           if($querycartoriginlsize_run = mysql_query($querycartoriginlsize)){
+           if($querycartoriginlsize_run = mysqli_query($conn, $querycartoriginlsize)){
              // continue
-             $querycartoriginlsize_num = mysql_num_rows($querycartoriginlsize_run);
+             $querycartoriginlsize_num = mysqli_num_rows($querycartoriginlsize_run);
              // compare the size with that of the transitdbs table
                $querytransitcartsize = "SELECT * FROM `transitdbs` WHERE `cartname`='$currentcart' AND `dstatus`='1'";
-               if($querytransitcartsize_run = mysql_query($querytransitcartsize)){
+               if($querytransitcartsize_run = mysqli_query($conn, $querytransitcartsize)){
                  //continue
-                 $querytransitcartsize_num = mysql_num_rows($querytransitcartsize_run);
+                 $querytransitcartsize_num = mysqli_num_rows($querytransitcartsize_run);
                  // first ensure that the cart actually exists in the transit table
                  if($querytransitcartsize_num != 0){
                    if($querycartoriginlsize_num == $querytransitcartsize_num){
@@ -499,7 +499,7 @@ function checkincompletecompletecartsdlv(){
                      // echo "complete $currentcart <br>";
                      // continue to update the checkoutcarts
                      $queryfinalizecheckoutcart = "UPDATE `checkoutcarts` SET `pickupstat`='COMPLETE' WHERE `cartname`='$currentcart'";
-                     if($queryfinalizecheckoutcart_run = mysql_query($queryfinalizecheckoutcart)){
+                     if($queryfinalizecheckoutcart_run = mysqli_query($conn, $queryfinalizecheckoutcart)){
                          // incomplete cart is now officially complete
                          echo " (update funct) Incomplete cart successfully delivered<br>";
                          // now update the time in the autotest
@@ -564,20 +564,20 @@ function completecartdelivery(){
           //retrieve the staffs name
           $loggedstaff = $_SESSION['$staff'];
           $querystaff = "SELECT * FROM `staff` WHERE `id`='$loggedstaff'";
-          $querystaff_run = mysql_query($querystaff);
-          $querystaff_num = mysql_num_rows($querystaff_run);
+          $querystaff_run = mysqli_query($conn, $querystaff);
+          $querystaff_num = mysqli_num_rows($querystaff_run);
           if($querystaff_num != 0){
-            if($querystaff_row = mysql_fetch_assoc($querystaff_run)){
+            if($querystaff_row = mysqli_fetch_assoc($querystaff_run)){
               //first get the staff name
               $staffnick = $querystaff_row['tiivanick'];
               // now check whether staff nick is the same as the current handler
               $querygetcurrenthandler = "SELECT * FROM `transitdbs` WHERE `cartname` = '$cart' AND `dstatus`='0'";
-              $querygetcurrenthandler_run = mysql_query($querygetcurrenthandler);
-              $querygetcurrenthandler_num = mysql_num_rows($querygetcurrenthandler_run);
+              $querygetcurrenthandler_run = mysqli_query($conn, $querygetcurrenthandler);
+              $querygetcurrenthandler_num = mysqli_num_rows($querygetcurrenthandler_run);
               if($querygetcurrenthandler_num != 0){
                 //continue
                 $hasentirecart = true;
-                while($querygetcurrenthandler_row = mysql_fetch_assoc($querygetcurrenthandler_run)){
+                while($querygetcurrenthandler_row = mysqli_fetch_assoc($querygetcurrenthandler_run)){
                   //continue
                   $handlerslist = $querygetcurrenthandler_row['handlers'];
                   $handlerslistarray = explode(',',$handlerslist);
@@ -598,15 +598,15 @@ function completecartdelivery(){
                   // echo "proceed to deliver";
                   //THIS IS THE SIMPLER ONE....UPDATE THE CART ITEMS VALUES TO 1 THEN CHANGE THE CHECKOUT CARTS TO COMPLETE...THEN UPDATE THE DELIVERIES TABLE
                   $queryupdatedstatus = "UPDATE `transitdbs` SET `dstatus`='1' WHERE `cartname`='$cart' AND `dstatus`='0'";
-                  if($queryupdatedstatus_run = mysql_query($queryupdatedstatus)){
+                  if($queryupdatedstatus_run = mysqli_query($conn, $queryupdatedstatus)){
                     //itll run throught the entire table
                     //continue to update checkout carts
                     $queryupdatecheckoutcart = "UPDATE `checkoutcarts` SET `pickupstat`='COMPLETE' WHERE `cartname`='$cart'";
-                    if($queryupdatecheckoutcart_run = mysql_query($queryupdatecheckoutcart)){
+                    if($queryupdatecheckoutcart_run = mysqli_query($conn, $queryupdatecheckoutcart)){
                       //continue
                       //insert row in deliveries table
                       $queryfinalizedelivery = "INSERT INTO `deliveries` (`id`,`cartno`,`name`,`nameid`,`date`,`time`,`agent`) VALUES ('','$cart','$name','$id','$date','$timenow','$staffnick')";
-                      if($queryfinalizedelivery_run = mysql_query($queryfinalizedelivery)){
+                      if($queryfinalizedelivery_run = mysqli_query($conn, $queryfinalizedelivery)){
                         //successful
                         echo "cart $cart has successfully been delivered to $name TODAY AT $timenow HRS";
                       }else{
@@ -668,26 +668,26 @@ function incompletecartdelivery(){
       // this one should also have the itemid
       //TODO USE A COMMON ID LIKE SAY THE TRANSIT ID OR THE ACTUAL PRODUCT ID
       $querycheckcartstatus = "SELECT * FROM `checkoutcarts` WHERE `cartname`='$cart' AND `pickupstat`='INCOMPLETE'";
-      $querycheckcartstatus_run = mysql_query($querycheckcartstatus);
-      $querycheckcartstatus_num = mysql_num_rows($querycheckcartstatus_run);
+      $querycheckcartstatus_run = mysqli_query($conn, $querycheckcartstatus);
+      $querycheckcartstatus_num = mysqli_num_rows($querycheckcartstatus_run);
       if($querycheckcartstatus_num == 1){
         //continue
         // check whether item is with the current handler
         $loggedstaff = $_SESSION['$staff'];
         $querystaff = "SELECT * FROM `staff` WHERE `id`='$loggedstaff'";
-        $querystaff_run = mysql_query($querystaff);
-        $querystaff_num = mysql_num_rows($querystaff_run);
+        $querystaff_run = mysqli_query($conn, $querystaff);
+        $querystaff_num = mysqli_num_rows($querystaff_run);
         if($querystaff_num != 0){
-          if($querystaff_row = mysql_fetch_assoc($querystaff_run)){
+          if($querystaff_row = mysqli_fetch_assoc($querystaff_run)){
             //first get the staff name
             $staffnick = $querystaff_row['tiivanick'];
             // the id provided is the table id
             $queryconfirmstaffhandler = "SELECT * FROM `transitdbs` WHERE `id`='$item' AND `cartname`='$cart'";
-            $queryconfirmstaffhandler_run = mysql_query($queryconfirmstaffhandler);
-            $queryconfirmstaffhandler_num = mysql_num_rows($queryconfirmstaffhandler_run);
+            $queryconfirmstaffhandler_run = mysqli_query($conn, $queryconfirmstaffhandler);
+            $queryconfirmstaffhandler_num = mysqli_num_rows($queryconfirmstaffhandler_run);
             if($queryconfirmstaffhandler_num == 1){
               //continue
-              $queryconfirmstaffhandler_row = mysql_fetch_assoc($queryconfirmstaffhandler_run);
+              $queryconfirmstaffhandler_row = mysqli_fetch_assoc($queryconfirmstaffhandler_run);
               $lasthandlerlist = $queryconfirmstaffhandler_row['handlers'];
               $lasthandlerArray = explode(',',$lasthandlerlist);
               $handlpositn = round(count($lasthandlerArray) - 1);
@@ -696,17 +696,17 @@ function incompletecartdelivery(){
                 //handler has the package
                 // check whether item with this itemid and cart exists else add it
                 $querycheckincdelivery = "SELECT * FROM `incdelivery` WHERE `cartno`='$cart' AND `itemid`='$item'";
-                $querycheckincdelivery_run = mysql_query($querycheckincdelivery);
-                $querycheckincdelivery_num = mysql_num_rows($querycheckincdelivery_run);
+                $querycheckincdelivery_run = mysqli_query($conn, $querycheckincdelivery);
+                $querycheckincdelivery_num = mysqli_num_rows($querycheckincdelivery_run);
                 if($querycheckincdelivery_num == 0){
                   //continue
                   $queryfinalizedlv = "INSERT INTO `incdelivery` (`id`,`cartno`,`itemid`,`name`,`nameid`,`date`,`time`,`agent`) VALUES ('','$cart','$item','$name','$id','$date','$timenow','$agent')";
-                  if($queryfinalizedlv_run = mysql_query($queryfinalizedlv)){
+                  if($queryfinalizedlv_run = mysqli_query($conn, $queryfinalizedlv)){
                     // successfully updated
                     // echo "Item $item of cart $cart has successfully been delivered";
                     // update the transit status to 1
                     $queryfinalizetrnsstat = "UPDATE `transitdbs` SET `dstatus`='1' WHERE `id`='$item' AND `cartname`='$cart'";
-                    if($queryfinalizetrnsstat_run = mysql_query($queryfinalizetrnsstat)){
+                    if($queryfinalizetrnsstat_run = mysqli_query($conn, $queryfinalizetrnsstat)){
                       //successfully done
                       echo "Item $item of cart $cart has successfully been delivered";
                     }else{

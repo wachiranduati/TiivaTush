@@ -2,6 +2,8 @@
 session_start();
 ob_start();
 require 'connect.php';
+
+
 // call this on page show not on page load to ensure user is viewing the current page
 // ensure user is logged in to use it else leave it be
 // book item when onpageshow and on page load
@@ -10,10 +12,10 @@ require 'connect.php';
 if(isset($_SESSION['$user_id'])){
     if(isset($_POST['itemid'])){
     $buyer = $_SESSION['$user_id'];
-    $itemid = mysql_real_escape_string($_POST['itemid']);
+    $itemid = mysqli_real_escape_string($conn, $_POST['itemid']);
     if(!empty($buyer) && !empty($itemid)){
         //call function to book item
-        addtocart($buyer,$itemid);
+        addtocart($buyer,$itemid, $conn);
     }else{
         die('Error! please try again later');
     }
@@ -31,16 +33,16 @@ if(isset($_SESSION['$user_id'])){
                     </div>
                 </div>";
 }
-function addtocart($buyer,$itemid){
+function addtocart($buyer,$itemid, $conn){
 $query3 = "SELECT `availability` FROM `products` WHERE `id` = '$itemid' AND `buyer` = '0'";
-$query3_run = mysql_query($query3);
-$query3_num_rows = mysql_num_rows($query3_run);
+$query3_run = mysqli_query($conn, $query3);
+$query3_num_rows = mysqli_num_rows($query3_run);
 
 if ($query3_num_rows != 0){
     if($query= "UPDATE  `a_database`.`products` SET `availability` = '0' WHERE `products`.`id` = '$itemid'"){
-    $query_run = mysql_query($query);
-    $query2 = "UPDATE `a_database`.`products` SET `buyer`= '".mysql_real_escape_string($buyer)."' WHERE `products`.`id` = '$itemid'";
-    $query_run2 = mysql_query($query2);
+    $query_run = mysqli_query($conn, $query);
+    $query2 = "UPDATE `a_database`.`products` SET `buyer`= '".mysqli_real_escape_string($conn, $buyer)."' WHERE `products`.`id` = '$itemid'";
+    $query_run2 = mysqli_query($conn, $query2);
         echo "<div class=\"row\">
                     <div class=\"col-xs-12\">
                         <div class=\"alert alert-success\">
@@ -53,8 +55,8 @@ if ($query3_num_rows != 0){
 }else {
     // check whether i'm the one whose already booked the item and notify me else notify as this below
     $query4 = "SELECT `availability` FROM `products` WHERE `id` = '$itemid' AND `buyer` = '$buyer'";
-    $query4_run = mysql_query($query4);
-    $query4_num_rows = mysql_num_rows($query4_run);
+    $query4_run = mysqli_query($conn, $query4);
+    $query4_num_rows = mysqli_num_rows($query4_run);
     if($query4_num_rows != 0){
         // we already booked it
         // enable add to cart button

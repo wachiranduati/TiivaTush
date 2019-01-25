@@ -276,7 +276,7 @@ if(isset($_POST['itname']) && isset($_POST['maincategory']) && isset($_POST['sub
 
                 $query = "INSERT INTO  `brandyproducts` (`id`,`itemtitle`,`Description`,`sellerid`,`category`,`subcategory`,`imageone`,`imagetwo`,`imagethree`,`price`,`Instock`,`sold`,`storename`,`rating`,`label`,`up_date`,`up_time`)
                         VALUES ('','$itname','$description','$uploader','$maincategory','$subcategory','$imageoneup','$imagetwoup','$imagethreeup','$price','$instock','0','','3','$label','$date','$timenow')";
-                if(mysql_query($query)){
+                if(mysqli_query($conn, $query)){
                      echo "<div class=\"row\">
                     <div class=\"col-xs-12\">
                         <div class=\"alert alert-success\">

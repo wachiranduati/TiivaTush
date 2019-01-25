@@ -11,8 +11,8 @@ if(isset($_POST['itemid'])){
     $itemid = $_POST['itemid'];
     if(!empty($itemid)){
         $query = "SELECT `id` WHERE `availability`='0' AND `buyer`!='0' AND `id`='$itemid'";
-        $query_run = mysql_query($query);
-        $query_num_rows = mysql_num_rows($query_run);
+        $query_run = mysqli_query($conn, $query);
+        $query_num_rows = mysqli_num_rows($query_run);
         if($query_num_rows != 0){
             // found meaning item has been booked or has already been sold
             // disable all the buttons

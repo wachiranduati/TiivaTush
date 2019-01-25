@@ -8,19 +8,19 @@ $id = 5;
 //for this page only get the lead image, follow up to details page query up the total 3 images
 
 function itemloop(){
-    $query2 = "SELECT `imageone`, `price`, `webid`, `itemtitle`, `category` FROM `products` WHERE `id`='".mysql_real_escape_string($id)."'";
-$query_run2 = mysql_query($query2);
-$query_num_rows = mysql_num_rows($query_run2);
+    $query2 = "SELECT `imageone`, `price`, `webid`, `itemtitle`, `category` FROM `products` WHERE `id`='".mysqli_real_escape_string($conn, $id)."'";
+$query_run2 = mysqli_query($conn, $query2);
+$query_num_rows = mysqli_num_rows($query_run2);
 //echo $query_num_rows;
 if($query_num_rows >= 6){
     //to be changed later to 30 to ensure theres enough items at all times
     // the while loop should fall here if less than the required amount
     //with disabled links
     echo "nothing was found or items are not more than 6";
-    $query = "SELECT `imageone`, `price`, `webid`, `itemtitle`, `category` FROM `products` WHERE `id`='".mysql_real_escape_string($id)."'";
-$query_run = mysql_query($query);
+    $query = "SELECT `imageone`, `price`, `webid`, `itemtitle`, `category` FROM `products` WHERE `id`='".mysqli_real_escape_string($conn, $id)."'";
+$query_run = mysqli_query($conn, $query);
 
-$query_row = mysql_fetch_assoc($query_run);
+$query_row = mysqli_fetch_assoc($query_run);
 //echo $query_row[imageone];
 
 
@@ -52,7 +52,7 @@ echo
             <div class=\"row visible-lg visible-md\">
                 <div class=\"col-lg-1 col-md-1 col-sm-1 col-xs-1\"></div>
                 <div class=\"col-lg-10 col-md-10 col-sm-10 col-xs-10\">
-                    <a href=\"productdetails.php?id=$id\" class=\"btn btn-block btn-primary\" data-name=\"$query_row[itemtitle]\" data-price=\"$query_row[price]\" target=\"_blank\">Add to Cart</a>
+                    <a href=\"productdetails.php?id=$query_row[id]\" class=\"btn btn-block btn-primary\" data-name=\"$query_row[itemtitle]\" data-price=\"$query_row[price]\" target=\"_blank\">Add to Cart</a>
                 </div>
                 <div class=\"col-lg-1 col-md-1 col-sm-1 col-xs-1\"></div>
             </div>
@@ -60,7 +60,7 @@ echo
             <div class=\"row visible-sm visible-xs\">
                 <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
                 <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-6\">
-                    <a href=\"productdetails.php?id=$id\" class=\"btn btn-sm btn-block btn-primary\" data-name=\"$query_row[itemtitle]\" data-price=\"$query_row[price]\" target=\"_blank\">Add to Cart</a>
+                    <a href=\"productdetails.php?id=$query_row[id]\" class=\"btn btn-sm btn-block btn-primary\" data-name=\"$query_row[itemtitle]\" data-price=\"$query_row[price]\" target=\"_blank\">Add to Cart</a>
                 </div>
                 <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
             </div>
@@ -77,12 +77,12 @@ echo
     //echo "Something to display right here";
     //this should indicate everything is okay and should
     // display 6 items online with an id count increase
-    $query = "SELECT `imageone`, `id`, `price`, `webid`, `itemtitle`, `category` FROM `products` WHERE `id`!='".mysql_real_escape_string($id)."' ORDER BY RAND() LIMIT 6";
-$query_run = mysql_query($query);
+    $query = "SELECT `imageone`, `id`, `price`, `webid`, `itemtitle`, `category` FROM `products` WHERE `id`!='".mysqli_real_escape_string($conn, $id)."' ORDER BY RAND() LIMIT 6";
+$query_run = mysqli_query($conn, $query);
 
     $counts = 1;
 
-    while($query_row = mysql_fetch_assoc($query_run)){
+    while($query_row = mysqli_fetch_assoc($query_run)){
        // echo $query_row['webid'];
  
   echo "
@@ -118,7 +118,7 @@ $query_run = mysql_query($query);
             <div class=\"row visible-sm visible-xs\">
                 <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
                 <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-6\">
-                    <a href=\"productdetails.php?id=$id\" class=\"btn btn-sm btn-block btn-primary\" data-name=\"$query_row[itemtitle]\" data-price=\"$query_row[price]\" target=\"_blank\">Add to Cart</a>
+                    <a href=\"productdetails.php?id=$query_row[id]\" class=\"btn btn-sm btn-block btn-primary\" data-name=\"$query_row[itemtitle]\" data-price=\"$query_row[price]\" target=\"_blank\">Add to Cart</a>
                 </div>
                 <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
             </div>

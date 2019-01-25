@@ -15,9 +15,9 @@ if($me==1){
 }
 
 if($me != 0){
-    $query2 = "SELECT `stagename` FROM `users` WHERE `id`='".mysql_real_escape_string($me)."'";
-            $query_run2 = mysql_query($query2);
-            $query_rows2 = mysql_fetch_assoc($query_run2);
+    $query2 = "SELECT `stagename` FROM `users` WHERE `id`='".mysqli_real_escape_string($conn, $me)."'";
+            $query_run2 = mysqli_query($conn, $query2);
+            $query_rows2 = mysqli_fetch_assoc($query_run2);
             $thewritter = $query_rows2['stagename'];
 
 }else{
@@ -39,12 +39,12 @@ if($progress == 'complete'){
 //echo '<h2>You posted:</h2><hr/>'.$_POST['title'].'<hr/>'.stripslashes($_POST['myTextArea']).'<br> and this is the'. $_POST['coverphoto'];
 if(isset($_POST['title']) && isset($_POST['myTextArea']) && isset($_POST['coverphoto'])){
     //echo "Everything is set";
-    $title = mysql_real_escape_string($_POST['title']);
-    $myTextArea = mysql_real_escape_string($_POST['myTextArea']);
-    $coverphoto = mysql_real_escape_string($_POST['coverphoto']);
-    $tag1 = mysql_real_escape_string($_POST['tag1']);
-    $tag2 = mysql_real_escape_string($_POST['tag2']);
-    $tag3 = mysql_real_escape_string($_POST['tag3']);
+    $title = mysqli_real_escape_string($conn, $_POST['title']);
+    $myTextArea = mysqli_real_escape_string($conn, $_POST['myTextArea']);
+    $coverphoto = mysqli_real_escape_string($conn, $_POST['coverphoto']);
+    $tag1 = mysqli_real_escape_string($conn, $_POST['tag1']);
+    $tag2 = mysqli_real_escape_string($conn, $_POST['tag2']);
+    $tag3 = mysqli_real_escape_string($conn, $_POST['tag3']);
     if(!empty($title) && !empty($myTextArea) && !empty($coverphoto)){
             
            if(!empty($tag1) && !empty($tag2) && !empty($tag3)){
@@ -52,7 +52,7 @@ if(isset($_POST['title']) && isset($_POST['myTextArea']) && isset($_POST['coverp
                
                $query = "UPDATE `blogs` SET `title`='$title', `date`='$today', `views`='0', `image`='$coverphoto', `message`='$myTextArea', `rating`='0', `tag1`='$tag1', `tag2`='$tag2', `tag3`='$tag3', `progress`='complete', `verified`='0' WHERE `id`='$id'";
             
-            if(mysql_query($query)){
+            if(mysqli_query($conn, $query)){
                 //echo "$title $message";
                 echo "
                     <div class=\"alert alert-success\">
@@ -62,7 +62,7 @@ if(isset($_POST['title']) && isset($_POST['myTextArea']) && isset($_POST['coverp
                     </div>
                     "; 
             }else{
-                //echo mysql_error();
+                //echo mysqli_error();
                 echo "Sorry something's wrong";
             }
            }else{
@@ -86,19 +86,19 @@ if($progress == 'complete'){
 }else{
     $message = "has been saved";
 }
-    $title = mysql_real_escape_string($_POST['title']);
-    $myTextArea = mysql_real_escape_string($_POST['myTextArea']);
-    $coverphoto = mysql_real_escape_string($_POST['coverphoto']);
-    $tag1 = mysql_real_escape_string($_POST['tag1']);
-    $tag2 = mysql_real_escape_string($_POST['tag2']);
-    $tag3 = mysql_real_escape_string($_POST['tag3']);
+    $title = mysqli_real_escape_string($conn, $_POST['title']);
+    $myTextArea = mysqli_real_escape_string($conn, $_POST['myTextArea']);
+    $coverphoto = mysqli_real_escape_string($conn, $_POST['coverphoto']);
+    $tag1 = mysqli_real_escape_string($conn, $_POST['tag1']);
+    $tag2 = mysqli_real_escape_string($conn, $_POST['tag2']);
+    $tag3 = mysqli_real_escape_string($conn, $_POST['tag3']);
         
     
 //    $query = "INSERT INTO `a_database`.`blogs` (`id`, `title`, `writter`, `date`, `views`, `image`, `message`, `rating`, `tag1`, `tag2`, `tag3`, `progress`, `verified`) VALUES (NULL, '$title', '$thewritter', '$today', '0', '$coverphoto', '$myTextArea', '0', '$tag1', '$tag2', '$tag3', '$progress', '$blogger')";
         
         $query = "UPDATE `blogs` SET `title`='$title', `date`='$today', `views`='0', `image`='$coverphoto', `message`='$myTextArea', `rating`='0', `tag1`='$tag1', `tag2`='$tag2', `tag3`='$tag3', `progress`='incomplete', `verified`='0' WHERE `id`='$id'";
             
-            if(mysql_query($query)){
+            if(mysqli_query($conn, $query)){
                 //echo "$title $message";
                 echo "
                     <div class=\"alert alert-success\">
@@ -108,7 +108,7 @@ if($progress == 'complete'){
                     </div>
                     "; 
             }else{
-                //echo mysql_error();
+                //echo mysqli_error();
                 //echo "Sorry something's wrong";
                 echo "
                     <div class=\"alert alert-danger\">

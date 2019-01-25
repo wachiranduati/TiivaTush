@@ -18,20 +18,20 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
             echo 'Passwords do not match<br>';
         }else {
             echo 'you are free to proceed<br>';
-            $query = "SELECT `mobilenumber` FROM `users` WHERE `mobilenumber`='".mysql_real_escape_string($mobilenumber)."'";
-            $query_run = mysql_query($query);
-            $query_num_rows = mysql_num_rows($query_run);
+            $query = "SELECT `mobilenumber` FROM `users` WHERE `mobilenumber`='".mysqli_real_escape_string($conn, $mobilenumber)."'";
+            $query_run = mysqli_query($conn, $query);
+            $query_num_rows = mysqli_num_rows($query_run);
             
             if($query_num_rows > 0){
                 echo 'Another user is already registered using this phonenumber<br>';
             }else{
                 echo 'OK number is available';
-                $query = "INSERT INTO `users` VALUES ('','".mysql_real_escape_string($emailaddress)."','".mysql_real_escape_string($username)."','".mysql_real_escape_string($password)."','".mysql_real_escape_string($mobilenumber)."','')";
-                if($query_run = mysql_query($query)){
+                $query = "INSERT INTO `users` VALUES ('','".mysqli_real_escape_string($conn, $emailaddress)."','".mysqli_real_escape_string($conn, $username)."','".mysqli_real_escape_string($conn, $password)."','".mysqli_real_escape_string($conn, $mobilenumber)."','')";
+                if($query_run = mysqli_query($conn, $query)){
                     $querylog = "SELECT `id` FROM `users` WHERE `emailaddress`='$emailaddress' AND `username`='$username' AND `password`='$password' AND `mobilenumber`='$mobilenumber'";
-                    $querylog_run = mysql_query($querylog);
-                    $querylog_num = mysql_num_rows($querylog_run);
-                    $querylog_row = mysql_fetch_assoc($querylog_run);
+                    $querylog_run = mysqli_query($conn, $querylog);
+                    $querylog_num = mysqli_num_rows($querylog_run);
+                    $querylog_row = mysqli_fetch_assoc($querylog_run);
                     if($querylog_num == 0){
                      // nothing to show here   
                     }else{
@@ -43,7 +43,7 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
                     
                 }else {
                     echo 'Could not creat your account at the moment, please try again later.';
-                    //echo mysql_error();
+                    //echo mysqli_error();
                 }
             }
         }

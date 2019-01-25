@@ -50,39 +50,39 @@ if(isset($_GET['search_text'])){
 }
 if(!empty($search_text)){
 
-		//$query = "SELECT `itemtitle`,`subcategory`, `price`, `imageone`, `category`, `id` FROM $databs WHERE `itemtitle` LIKE '%".mysqli_real_escape_string($search_text)."%' ORDER BY RAND() LIMIT 5";
+		//$query = "SELECT `itemtitle`,`subcategory`, `price`, `imageone`, `category`, `id` FROM $databs WHERE `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%' ORDER BY RAND() LIMIT 5";
 		if($databs == 'products'){
-		    $query = "SELECT * FROM $databs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($search_text)."%' ORDER BY RAND() LIMIT 5";
+		    $query = "SELECT * FROM $databs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%' ORDER BY RAND() LIMIT 5";
 		}elseif( $databs == 'brandyproducts'){
-		    $query = "SELECT * FROM $databs WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($search_text)."%' ORDER BY RAND() LIMIT 5";
+		    $query = "SELECT * FROM $databs WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%' ORDER BY RAND() LIMIT 5";
 		}else{
-		    $query = "SELECT * FROM $databs WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($search_text)."%' ORDER BY RAND() LIMIT 5";
+		    $query = "SELECT * FROM $databs WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%' ORDER BY RAND() LIMIT 5";
 		}
 
-        //$query2 = "SELECT `itemtitle`,`subcategory`, `price`, `imageone`, `category` FROM $databs WHERE `itemtitle` LIKE '%".mysqli_real_escape_string($search_text)."%'";
+        //$query2 = "SELECT `itemtitle`,`subcategory`, `price`, `imageone`, `category` FROM $databs WHERE `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		if($databs == 'products'){
-		    $query2 = "SELECT * FROM $databs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($search_text)."%'";
+		    $query2 = "SELECT * FROM $databs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		}elseif( $databs == 'brandyproducts'){
-		    $query2 = "SELECT * FROM $databs WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($search_text)."%'";
+		    $query2 = "SELECT * FROM $databs WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		}else{
-		    $query2 = "SELECT * FROM $databs WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($search_text)."%'";
+		    $query2 = "SELECT * FROM $databs WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		}
 
-        $query_run2 = mysql_query($query2);
-        $query_num_rows = mysql_num_rows($query_run2);
+        $query_run2 = mysqli_query($conn, $query2);
+        $query_num_rows = mysqli_num_rows($query_run2);
 
-        //$query3 = "SELECT `itemtitle`,`subcategory`, `price`, `imageone`, `category` FROM $otherdata WHERE `itemtitle` LIKE '%".mysqli_real_escape_string($search_text)."%'";
+        //$query3 = "SELECT `itemtitle`,`subcategory`, `price`, `imageone`, `category` FROM $otherdata WHERE `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		if($otherdata == 'products'){
-		    $query3 = "SELECT * FROM $otherdata WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($search_text)."%'";
+		    $query3 = "SELECT * FROM $otherdata WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		}elseif( $otherdata == 'brandyproducts'){
-		    $query3 = "SELECT * FROM $otherdata WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($search_text)."%'";
+		    $query3 = "SELECT * FROM $otherdata WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		}else{
-		    $query3 = "SELECT * FROM $otherdata WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($search_text)."%'";
+		    $query3 = "SELECT * FROM $otherdata WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		}
 
 
-        $query_run3 = mysql_query($query3);
-        $query_num_rows3 = mysql_num_rows($query_run3);
+        $query_run3 = mysqli_query($conn, $query3);
+        $query_num_rows3 = mysqli_num_rows($query_run3);
 
 
 
@@ -98,15 +98,15 @@ if(!empty($search_text)){
 			</thead>-->
 				<tbody>";
 
-		$query_run = mysql_query($query);
-		while ($query_row = mysql_fetch_assoc($query_run)){
+		$query_run = mysqli_query($conn, $query);
+		while ($query_row = mysqli_fetch_assoc($query_run)){
 			//echo $name = '<a href="anotherpage.php?search_text='.$query_row['itemtitle'].'">'.$query_row['itemtitle'].'</a><br>';
 			//echo $name = '<div class="searchbox"><a href="mainpage.php?search_text='.$query_row['itemtitle'].'">'.$query_row['itemtitle'].'</a></div>';
 			//echo $name = '<div class="searchbox"><a href="searchresults.php?search_text='.$query_row['itemtitle'].'">'.$query_row['itemtitle'].'</a></div>';
-			$formatvat = number_format($query_row[price]);
-          $titles = substr($query_row[itemtitle],0,15);
-		  $identity = $query_row[id];
-          $titlesLarge = substr($query_row[itemtitle],0,35);
+			$formatvat = number_format($query_row['price']);
+          $titles = substr($query_row['itemtitle'],0,15);
+		  $identity = $query_row['id'];
+          $titlesLarge = substr($query_row['itemtitle'],0,35);
             // echo "<div class=\"row thitter\" style=\"border-bottom:1px dotted gainsboro;border-right:1px solid gainsboro;border-left:1px solid gainsboro;background-color:white;font-family:kok;padding:0px;\">
             //     <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3 visible-lg visible-md\"><a href=\"$x\"><img src=\"mtumbauploads/compresseduploads/$query_row[imageone]\" class=\"img-responsive\" Style=\"max-height:50px;max-width:50px;\"/></a></div>
             //     <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3 visible-sm visible-xs\"><a href=\"$x\"><img src=\"mtumbauploads/compresseduploads/$query_row[imageone]\" class=\"img-responsive\" style=\"max-height:35px;max-width:60px;\"/></a></div>

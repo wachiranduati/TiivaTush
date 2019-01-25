@@ -7,7 +7,7 @@ $tempme = ceil($user + 21);
 
 
 $query = "SELECT * FROM `pickupds` WHERE `seller`='$tempme' AND `sign`='1' AND `idnumber`!='0' AND `name`!=''";
-$query_run = mysql_query($query);
+$query_run = mysqli_query($conn, $query);
 $count = 1;
 echo "
 <div class=\"table-responsive table-hover\">
@@ -23,7 +23,7 @@ echo "
     </thead>
     <tbody>
   ";
-while($row = mysql_fetch_assoc($query_run)){
+while($row = mysqli_fetch_assoc($query_run)){
   $item = $row['item'];
   $agent = $row['agent'];
 // search for the item refrence in item number search for its image and title
@@ -45,8 +45,8 @@ if($dbs == 'M' || $dbs == 'm'){
 }
 
 $queryitems = "SELECT * FROM `$currentdbs` WHERE `id`='$product'";
-$queryitemsrun = mysql_query($queryitems);
-while($queryitemrow = mysql_fetch_assoc($queryitemsrun)){
+$queryitemsrun = mysqli_query($conn, $queryitems);
+while($queryitemrow = mysqli_fetch_assoc($queryitemsrun)){
   $imageone = $imgaddr.$queryitemrow['imageone'];
   $itemtitle = $queryitemrow['itemtitle'];
   $price = number_format($queryitemrow['price']);

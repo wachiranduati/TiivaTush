@@ -10,8 +10,8 @@ $pickupday = Date('Y-m-d H:i:s');
 
 // TODO GET THE STAFF TIIVANICK NAME TO BE CHANGED TO ACTUAL NAME
 $querystaff = "SELECT * FROM `staff` WHERE `id`='$staff'";
-$querystaff_run = mysql_query($querystaff);
-$querystaff_row = mysql_fetch_assoc($querystaff_run);
+$querystaff_run = mysqli_query($conn, $querystaff);
+$querystaff_row = mysqli_fetch_assoc($querystaff_run);
 $agent =  $querystaff_row['tiivanick'];
 // START OF TRIAL VARIABLES
 // $otheragent = 'otheragent';
@@ -73,7 +73,7 @@ if(isset($_POST['pickupmode']) && isset($_POST['agent']) && isset($_POST['handov
         }else{
           // nothing
         }
-        if($querypickup_run = mysql_query($querypickup)){
+        if($querypickup_run = mysqli_query($conn, $querypickup)){
           // item has been updated
           echo "Item $itemno from cartnumber $cartname pickup successful. It is now registered successfully in Transit";
           // echo "  <div class=\"row\" style=\"position:absolute;z-index:19;margin-top:20%;\">

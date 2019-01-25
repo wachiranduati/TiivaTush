@@ -10,10 +10,10 @@ require 'connect.php';
 
 require 'connect.php';
 $query = "SELECT `id`, `itemtitle`, `imageone`, `sellerid`, `price` FROM `products` WHERE `buyer`='0' ORDER BY `id` DESC LIMIT 10";
-$query_run = mysql_query($query);
+$query_run = mysqli_query($conn, $query);
 $count = 1;
 
-While($query_row = mysql_fetch_assoc($query_run)
+While($query_row = mysqli_fetch_assoc($query_run)
 ){
     
     echo "

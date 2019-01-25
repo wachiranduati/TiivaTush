@@ -38,10 +38,10 @@ $cookiename =  md5($_SESSION['$user_id'].'cooksieairmark');
 // items required img source, price, title, then formulate the button data-name, data-price
 //for this page only get the lead image, follow up to details page query up the total 3 images
 
-$query = "SELECT * FROM `brandyproducts` WHERE `id`='".mysql_real_escape_string($id)."'";
-$query_run = mysql_query($query);
+$query = "SELECT * FROM `brandyproducts` WHERE `id`='".mysqli_real_escape_string($conn, $id)."'";
+$query_run = mysqli_query($conn, $query);
 
-$query_row = mysql_fetch_assoc($query_run);
+$query_row = mysqli_fetch_assoc($query_run);
 //echo $query_row[imageone];
 
 $description = "This is some shit placed here wooo i really hope it daent show up";
@@ -719,31 +719,31 @@ echo "
 
 
 function itemloop($id){
-    $query_id_details = "SELECT * FROM `products` WHERE `id`='".mysql_real_escape_string($id)."'";
-    $query_run_details = mysql_query($query_id_details);
-    $query_row_details = mysql_fetch_assoc($query_run_details);
+    $query_id_details = "SELECT * FROM `products` WHERE `id`='".mysqli_real_escape_string($conn, $id)."'";
+    $query_run_details = mysqli_query($query_id_details);
+    $query_row_details = mysqli_fetch_assoc($query_run_details);
     $pageCategory = $query_row_details['category'];
     $pageSubcategory = $query_row_details['subcategory'];
 
 
-    $query2 = "SELECT * FROM `brandyproducts` WHERE `id`!='".mysql_real_escape_string($id)."' AND `instock`>='4' AND `category`='$pageCategory' AND `subcategory`='$pageSubcategory'";
-$query_run2 = mysql_query($query2);
-$query_num_rows = mysql_num_rows($query_run2);
+    $query2 = "SELECT * FROM `brandyproducts` WHERE `id`!='".mysqli_real_escape_string($conn, $id)."' AND `instock`>='4' AND `category`='$pageCategory' AND `subcategory`='$pageSubcategory'";
+$query_run2 = mysqli_query($query2);
+$query_num_rows = mysqli_num_rows($query_run2);
 //echo $query_num_rows;
 if($query_num_rows <= 6){
     //to be changed later to 30 to ensure theres enough items at all times
     // the while loop should fall here if less than the required amount
     //with disabled links
     //echo "nothing was found or items are not more than 6";
-    $query = "SELECT * FROM `brandyproducts` WHERE `id`!='".mysql_real_escape_string($id)."' AND `instock`>='4' ORDER BY RAND() LIMIT 4";
-$query_run = mysql_query($query);
+    $query = "SELECT * FROM `brandyproducts` WHERE `id`!='".mysqli_real_escape_string($conn, $id)."' AND `instock`>='4' ORDER BY RAND() LIMIT 4";
+$query_run = mysqli_query($conn, $query);
 
-//$query_row = mysql_fetch_assoc($query_run);
+//$query_row = mysqli_fetch_assoc($query_run);
 //echo $query_row[imageone];
 
 
 $count = 1;
-while($query_row = mysql_fetch_assoc($query_run)){
+while($query_row = mysqli_fetch_assoc($query_run)){
     $price = number_format($query_row['price']);
 
     echo "
@@ -782,12 +782,12 @@ while($query_row = mysql_fetch_assoc($query_run)){
     //echo "Something to display right here";
     //this should indicate everything is okay and should
     // display 6 items online with an id count increase
-    $query = "SELECT * FROM `brandyproducts` WHERE `id`!='".mysql_real_escape_string($id)."' AND `instock`>='4' AND `category`='$pageCategory' AND `subcategory`='$pageSubcategory' ORDER BY RAND() LIMIT 4";
-$query_run = mysql_query($query);
+    $query = "SELECT * FROM `brandyproducts` WHERE `id`!='".mysqli_real_escape_string($conn, $id)."' AND `instock`>='4' AND `category`='$pageCategory' AND `subcategory`='$pageSubcategory' ORDER BY RAND() LIMIT 4";
+$query_run = mysqli_query($conn, $query);
 
     $counts = 1;
 
-    while($query_row = mysql_fetch_assoc($query_run)){
+    while($query_row = mysqli_fetch_assoc($query_run)){
        // echo $query_row['webid'];
        $price = number_format($query_row['price']);
 

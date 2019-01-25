@@ -4,8 +4,8 @@ if(isset($_POST['blogid'])){
     $blogid = $_POST['blogid'];
     if(!empty($blogid) && $blogid != 0){
         $query = "SELECT * from blogs WHERE `id`= $blogid AND `progress`= 'complete' AND `verified`= '0'";
-        $query_run = mysql_query($query);
-        $query_fetch_assoc = mysql_fetch_assoc($query_run);
+        $query_run = mysqli_query($conn, $query);
+        $query_fetch_assoc = mysqli_fetch_assoc($query_run);
             $id =  $query_fetch_assoc['id'];
             $title = $query_fetch_assoc['title'];
             $writter = $query_fetch_assoc['writter'];

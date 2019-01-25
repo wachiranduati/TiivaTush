@@ -312,10 +312,10 @@ if (isset($_POST['itname']) ||
 
                 $query = "INSERT INTO  `products`
                         VALUES (
-                        '' ,  '".mysql_real_escape_string($itname)."', '".mysql_real_escape_string($specialkey)."',  '".mysql_real_escape_string($maincategory)."',  '".mysql_real_escape_string($subcategory)."',  '".mysql_real_escape_string($imageup)."',  '".mysql_real_escape_string($imageup2)."',  '".mysql_real_escape_string($imageup3)."',
-                        '".mysql_real_escape_string($price)."',  '1',  '0' , '".mysql_real_escape_string($sizec)."' ,'".mysql_real_escape_string($height)."' ,'".mysql_real_escape_string($width)."', '".mysql_real_escape_string($chest)."', '".mysql_real_escape_string($sex)."', '".mysql_real_escape_string($rating)."','".mysql_real_escape_string($label)."',0,'$date','$timenow')";
-                //mysql_query($query);
-                if(mysql_query($query)){
+                        '' ,  '".mysqli_real_escape_string($conn, $itname)."', '".mysqli_real_escape_string($conn, $specialkey)."',  '".mysqli_real_escape_string($conn, $maincategory)."',  '".mysqli_real_escape_string($conn, $subcategory)."',  '".mysqli_real_escape_string($conn, $imageup)."',  '".mysqli_real_escape_string($conn, $imageup2)."',  '".mysqli_real_escape_string($conn, $imageup3)."',
+                        '".mysqli_real_escape_string($conn, $price)."',  '1',  '0' , '".mysqli_real_escape_string($conn, $sizec)."' ,'".mysqli_real_escape_string($conn, $height)."' ,'".mysqli_real_escape_string($conn, $width)."', '".mysqli_real_escape_string($conn, $chest)."', '".mysqli_real_escape_string($conn, $sex)."', '".mysqli_real_escape_string($conn, $rating)."','".mysqli_real_escape_string($conn, $label)."',0,'$date','$timenow')";
+                //mysqli_query($conn, $query);
+                if(mysqli_query($conn, $query)){
                     echo "<div class=\"row\">
                         <div class=\"col-xs-12\">
                             <div class=\"alert alert-success\">
@@ -325,7 +325,7 @@ if (isset($_POST['itname']) ||
                     </div>";
                 }else{
                     die("Error");
-                    //echo mysql_error();
+                    //echo mysqli_error();
                 }
 
 

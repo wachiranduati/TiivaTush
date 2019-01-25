@@ -19,8 +19,8 @@ function loggedin(){
 
 function getuserfield($field){
     $query = "SELECT `$field` FROM `users` WHERE `id`='1'";
-    if($query_run = mysql_query($query)){
-        return mysql_result($query_run, 0, $field);
+    if($query_run = mysqli_query($conn, $query)){
+        return mysqli_result($query_run, 0, $field);
     }
 }
 

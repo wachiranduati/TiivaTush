@@ -20,13 +20,13 @@ $toolowcustomer = 1;
 $toolowmessagee = 'items in '.$category.' CATEGORY need restocking';
 $query = "SELECT * FROM `products` WHERE `category`='$category' AND `availability`='1' AND `buyer`='0'";
 // ensure item has not been booked or bought
-$query_run = mysqli_query($query);
+$query_run = mysqli_query($conn, $query);
 $query_num_rows = mysqli_num_rows($query_run);
 $query_row = mysqli_fetch_assoc($query_run);
 
 
 $query2 = "SELECT * FROM `products` WHERE `category`='$category' AND `availability`='1' AND `buyer`='0' ORDER BY RAND() LIMIT 6";
-$query2_run = mysql_query($query2);
+$query2_run = mysqli_query($conn, $query2);
 
 
 // recommended number per category = 100 so notification will be after 400
@@ -63,7 +63,7 @@ if($query_num_rows <= $notifymecount){
         // items are enought to display continue
         // display items for customer to view
         //$count = 1;
-        while($query2_row = mysql_fetch_assoc($query2_run)){
+        while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
             echo "
@@ -151,7 +151,7 @@ if($query_num_rows <= $notifymecount){
         // items are enought to display continue
         // display items for customer to view
         //$count = 1;
-        while($query2_row = mysql_fetch_assoc($query2_run)){
+        while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
             echo "
@@ -237,7 +237,7 @@ if($query_num_rows <= $notifymecount){
         // items are enought to display continue
         // display items for customer to view
         //$count = 1;
-        while($query2_row = mysql_fetch_assoc($query2_run)){
+        while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
             echo "

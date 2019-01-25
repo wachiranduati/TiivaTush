@@ -11,8 +11,8 @@ if(isset($_POST['item_id'])){
     $item_id = $_POST['item_id'];
     //echo $item_id;
     if($item_id != ''){
-    $query =  "SELECT * FROM `pickupds` WHERE `cart` LIKE '%".mysql_real_escape_string($item_id)."%' AND `seller`='$tempme' AND `sign`='0' AND `paymentmode`='' AND `idnumber`='0' AND `name`=''";
-    $query_run = mysql_query($query);
+    $query =  "SELECT * FROM `pickupds` WHERE `cart` LIKE '%".mysqli_real_escape_string($conn, $item_id)."%' AND `seller`='$tempme' AND `sign`='0' AND `paymentmode`='' AND `idnumber`='0' AND `name`=''";
+    $query_run = mysqli_query($conn, $query);
     $count = 1;
     echo "
     <div class=\"table-responsive\">
@@ -33,7 +33,7 @@ if(isset($_POST['item_id'])){
         </thead>
         <tbody>
       ";
-    while($row = mysql_fetch_assoc($query_run)){
+    while($row = mysqli_fetch_assoc($query_run)){
       $item = $row['item'];
       $agent = $row['agent'];
       $cartname = $row['cart'];
@@ -56,8 +56,8 @@ if(isset($_POST['item_id'])){
     }
     // query the original item dbs ie products to return image and title
     $queryitems = "SELECT * FROM `$currentdbs` WHERE `id`='$product'";
-    $queryitemsrun = mysql_query($queryitems);
-    while($queryitemrow = mysql_fetch_assoc($queryitemsrun)){
+    $queryitemsrun = mysqli_query($conn, $queryitems);
+    while($queryitemrow = mysqli_fetch_assoc($queryitemsrun)){
       $imageone = $imgaddr.$queryitemrow['imageone'];
       $itemtitle = $queryitemrow['itemtitle'];
       $seller = ceil($queryitemrow['sellerid'] + 21);
@@ -72,8 +72,8 @@ if(isset($_POST['item_id'])){
     }
     // query the checkoutcarts to return
     $querycheckoucarts = "SELECT * FROM `checkoutcarts` WHERE `cartname`='$cartname' AND `pickupstat`='INCOMPLETE' AND `updated`='1'";
-    $querycheckoutcarts_run = mysql_query($querycheckoucarts);
-    while ($querycheckout_row = mysql_fetch_assoc($querycheckoutcarts_run)) {
+    $querycheckoutcarts_run = mysqli_query($conn, $querycheckoucarts);
+    while ($querycheckout_row = mysqli_fetch_assoc($querycheckoutcarts_run)) {
       $pricelist = $querycheckout_row['itemprice'];
       $cartcontentslist = $querycheckout_row['cartcontents'];
       $purchsdate = $querycheckout_row['Date'];
@@ -94,8 +94,8 @@ if(isset($_POST['item_id'])){
         <td>$purchsdate / $purchasetime HRS</td>";
         // query the Merchant to return merchant location and merchant
         $queryshippinginfo = "SELECT * FROM `sold` WHERE `cartname`='$cartname'";
-        $queryshippinginfo_run = mysql_query($queryshippinginfo);
-        while($queryshippinginfo_row = mysql_fetch_assoc($queryshippinginfo_run)){
+        $queryshippinginfo_run = mysqli_query($conn, $queryshippinginfo);
+        while($queryshippinginfo_row = mysqli_fetch_assoc($queryshippinginfo_run)){
           $county = $queryshippinginfo_row['county'];
           $area = $queryshippinginfo_row['area'];
           $shippingto = $queryshippinginfo_row['shipping'];

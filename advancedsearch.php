@@ -38,28 +38,28 @@ if(isset($_POST['search_text']) && isset($_POST['minprice']) && isset($_POST['ma
 
     if(!empty($search_text) && !empty($minprice) && !empty($maxprice) && !empty($site) && !empty($category) && $minprice < $maxprice){
 
-		//$query = "SELECT * FROM `$site` WHERE `itemtitle` LIKE '%".mysql_real_escape_string($search_text)."%' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category' ORDER BY RAND() LIMIT 8";
+		//$query = "SELECT * FROM `$site` WHERE `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category' ORDER BY RAND() LIMIT 8";
 		if($site == 'products'){
-		    $query = "SELECT * FROM $site WHERE `availability`='1' AND `buyer`='0' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category'  AND `itemtitle` LIKE '%".mysql_real_escape_string($search_text)."%' ORDER BY RAND() LIMIT 5";
+		    $query = "SELECT * FROM $site WHERE `availability`='1' AND `buyer`='0' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category'  AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%' ORDER BY RAND() LIMIT 5";
 		}elseif( $site == 'brandyproducts'){
-		    $query = "SELECT * FROM $site WHERE `instock`>='1' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category' AND  `itemtitle` LIKE '%".mysql_real_escape_string($search_text)."%' ORDER BY RAND() LIMIT 5";
+		    $query = "SELECT * FROM $site WHERE `instock`>='1' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category' AND  `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%' ORDER BY RAND() LIMIT 5";
 		}else{
-		    $query = "SELECT * FROM $site WHERE `instock`>='1' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category' AND  `itemtitle` LIKE '%".mysql_real_escape_string($search_text)."%' ORDER BY RAND() LIMIT 5";
+		    $query = "SELECT * FROM $site WHERE `instock`>='1' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category' AND  `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%' ORDER BY RAND() LIMIT 5";
 		}
 
 
-        //$query2 = "SELECT `itemtitle`,`subcategory`, `price`, `imageone`, `category` FROM `$site` WHERE `itemtitle` LIKE '%".mysql_real_escape_string($search_text)."%' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category'";
+        //$query2 = "SELECT `itemtitle`,`subcategory`, `price`, `imageone`, `category` FROM `$site` WHERE `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category'";
 		if($site == 'products'){
-		    $query2 = "SELECT * FROM $site WHERE `availability`='1' AND `buyer`='0' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category'  AND `itemtitle` LIKE '%".mysql_real_escape_string($search_text)."%'";
+		    $query2 = "SELECT * FROM $site WHERE `availability`='1' AND `buyer`='0' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category'  AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		}elseif( $site == 'brandyproducts'){
-		    $query2 = "SELECT * FROM $site WHERE `instock`>='1' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category' AND  `itemtitle` LIKE '%".mysql_real_escape_string($search_text)."%'";
+		    $query2 = "SELECT * FROM $site WHERE `instock`>='1' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category' AND  `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		}else{
-		    $query2 = "SELECT * FROM $site WHERE `instock`>='1' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category' AND  `itemtitle` LIKE '%".mysql_real_escape_string($search_text)."%'";
+		    $query2 = "SELECT * FROM $site WHERE `instock`>='1' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category' AND  `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		}
 
 
-        $query_run2 = mysql_query($query2);
-        $query_num_rows = mysql_num_rows($query_run2);
+        $query_run2 = mysqli_query($conn, $query2);
+        $query_num_rows = mysqli_num_rows($query_run2);
 
 
 		echo "
@@ -74,8 +74,8 @@ if(isset($_POST['search_text']) && isset($_POST['minprice']) && isset($_POST['ma
 			</thead>-->
 				<tbody>";
 
-		$query_run = mysql_query($query);
-		while ($query_row = mysql_fetch_assoc($query_run)){
+		$query_run = mysqli_query($conn, $query);
+		while ($query_row = mysqli_fetch_assoc($query_run)){
 			//echo $name = '<a href="anotherpage.php?search_text='.$query_row['itemtitle'].'">'.$query_row['itemtitle'].'</a><br>';
 			//echo $name = '<div class="searchbox"><a href="mainpage.php?search_text='.$query_row['itemtitle'].'">'.$query_row['itemtitle'].'</a></div>';
 			//echo $name = '<div class="searchbox"><a href="searchresults.php?search_text='.$query_row['itemtitle'].'">'.$query_row['itemtitle'].'</a></div>';

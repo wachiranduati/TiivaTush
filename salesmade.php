@@ -11,17 +11,17 @@ $mycart = $_SESSION['cartname'];
 
 if(isset($_SESSION['cartname']) && !empty($mycart)){
     $query = "SELECT * FROM `Salesip` WHERE `ipwithsales` = '$me'";
-    $query_run = mysql_query($query);
-    $query_num_rows = mysql_num_rows($query_run);
+    $query_run = mysqli_query($conn, $query);
+    $query_num_rows = mysqli_num_rows($query_run);
     if($query_num_rows == 0){
         // ip has just made a sale but does not appear in the list
         // append it
         $queryinsert = "INSERT INTO `Salesip` (`id`,`ipwithsales`) VALUES ('','$me')";
-        if($qeuryinsert_run = mysql_query($queryinsert)){
+        if($qeuryinsert_run = mysqli_query($conn, $queryinsert)){
             //echo "ip has been added to sales ip";
         }else{
             //echo "We ran into some trouble";
-            ////echo mysql_error();
+            ////echo mysqli_error();
         }
     }else{
         // this is a return customer do nothing

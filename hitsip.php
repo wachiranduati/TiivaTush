@@ -42,15 +42,15 @@ function checkip2($ip1,$today,$time){
     // HIDDEN THE ABOVE QUERY
             //$query = "SELECT * FROM `hits` WHERE `Day`='2017-11-07' AND `Time`='01'";
     // check whether the row exists then explode the string
-            $query_run = mysql_query($query);
+            $query_run = mysqli_query($conn, $query);
     
-            if(mysql_num_rows($query_run) <= 0){
+            if(mysqli_num_rows($query_run) <= 0){
                 // row doesnt exist so create one
                 // for sales ip why not query the ip against sales instead of having to search throught 
                 // lots of data
                 $querycheckipsales = "SELECT * FROM `salesip` WHERE `ipwithsales`='$ip1'";
-                $querycheckipsales_run = mysql_query($querycheckipsales);
-                $querycheckipsales_num_rows = mysql_num_rows($querycheckipsales_run);
+                $querycheckipsales_run = mysqli_query($conn, $querycheckipsales);
+                $querycheckipsales_num_rows = mysqli_num_rows($querycheckipsales_run);
                 if($querycheckipsales_num_rows == 0){
                     // ip doesnt exist in sales....its a windowshoppers ip
                     // insert to database column regular plus 1, return plus 0
@@ -66,7 +66,7 @@ function checkip2($ip1,$today,$time){
 //                echo $return;
                 
                 $queryinsert = "INSERT INTO `hits` (`id`,`Day`,`Time`,`ips`,`traffick`,`regular`,`return`) VALUES ('','$today','$time','$ip1','1','$regular','$return')";
-                if(mysql_query($queryinsert)){
+                if(mysqli_query($conn, $queryinsert)){
                     echo "<br>Row has been created and ip inserted with traffick 1";
                 }
             }else{
@@ -75,7 +75,7 @@ function checkip2($ip1,$today,$time){
                 // row exists so search for ip in list
                 // return the ips list
                 echo "<br>Row exists so search for ip in list";
-                $row = mysql_fetch_assoc($query_run);
+                $row = mysqli_fetch_assoc($query_run);
                 echo '<br>'.$row['ips'];
                 $regularcount = $row['regular'];
                 $returncount = $row['return'];
@@ -93,8 +93,8 @@ function checkip2($ip1,$today,$time){
                     // also check whether the ip is in the other database
                     // checking for ips from sales in this traffick ips
                     $querycheckipsales = "SELECT * FROM `salesip` WHERE `ipwithsales`='$ip1'";
-                    $querycheckipsales_run = mysql_query($querycheckipsales);
-                    $querycheckipsales_num_rows = mysql_num_rows($querycheckipsales_run);
+                    $querycheckipsales_run = mysqli_query($conn, $querycheckipsales);
+                    $querycheckipsales_num_rows = mysqli_num_rows($querycheckipsales_run);
                     if($querycheckipsales_num_rows == 0){
                         // ip doesnt exist in sales....its a windowshoppers ip
                         // insert to database column regular plus 1, return plus 0
@@ -116,7 +116,7 @@ function checkip2($ip1,$today,$time){
                     echo '<br>'.$ipcount;
                     //update the database
                     $querynewdatabase = "UPDATE `hits` SET `ips`='$newiplistsarraystring', `traffick`='$ipcount', `regular`='$regular', `return`='$return' WHERE `Day`='$today' AND `Time`='$time'" ;
-                    if(mysql_query($querynewdatabase)){
+                    if(mysqli_query($conn, $querynewdatabase)){
                         echo "Database has been updated";
                     }else{
                         echo "Database update ran into some error";

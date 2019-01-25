@@ -50,13 +50,13 @@ if(isset($cookiestatus)){
 }
 function checkip($ip1,$today,$time){ 
             $query = "SELECT * FROM `hits_ip` WHERE `ip`='$ip1'";
-            $query_run = mysql_query($query);
-            $query_num_rows = mysql_num_rows($query_run);
+            $query_run = mysqli_query($conn, $query);
+            $query_num_rows = mysqli_num_rows($query_run);
             if($query_num_rows == 0){
                 echo '<br>no ip here buster';
                 // add your ip address
                 $queryip = "INSERT INTO `hits_ip` (`id`,`ip`,`date`,`time`) VALUES ('','$ip1','$today','$time')";
-                if(mysql_query($queryip)){
+                if(mysqli_query($conn, $queryip)){
                     echo "Your ip has been added to the database";
                 }else{
                     echo "Must have run into some error";

@@ -4,8 +4,8 @@ session_start();
 require 'connect.php';
 // this will update the entire products database time
 $querydates = "SELECT * FROM `brandyproducts` WHERE `id`!='0'";
-$querydates_run = mysql_query($querydates);
-while($querydates_row = mysql_fetch_assoc($querydates_run)){
+$querydates_run = mysqli_query($conn, $querydates);
+while($querydates_row = mysqli_fetch_assoc($querydates_run)){
   $id = $querydates_row['id'];
   $sample = $querydates_row['imageone'];
   $sampleArray = explode('-',$sample);
@@ -24,7 +24,7 @@ while($querydates_row = mysql_fetch_assoc($querydates_run)){
   $finaldate = $sampleArray[2].'-'.$actualmonth.'-'.$sampleArray[1];
   // update the database
   $queryupdatedates = "UPDATE `brandyproducts` SET `up_date`='$finaldate' WHERE `id`='$id'";
-  if($queryupdatedates_run = mysql_query($queryupdatedates)){
+  if($queryupdatedates_run = mysqli_query($conn, $queryupdatedates)){
     // updated the row
     echo "updated row id $id<br>";
   }

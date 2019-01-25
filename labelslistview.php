@@ -25,17 +25,17 @@ if($currentpage == 1){
     $query = "SELECT * FROM `products` WHERE `availability`='1' AND `buyer`='0' AND `label`='$label' LIMIT $itemsperpage OFFSET $pagejump";
 }
 
-$query_run = mysql_query($query);
+$query_run = mysqli_query($conn, $query);
 
 $query2 = "SELECT * FROM `products` WHERE `availability`='1' AND `buyer`='0' AND `label`='$label'";
-$query_run2 = mysql_query($query2);
-$query_num_rows2 = mysql_num_rows($query_run2);
+$query_run2 = mysqli_query($conn, $query2);
+$query_num_rows2 = mysqli_num_rows($query_run2);
 $page_count = 40;
 $pages = ceil($query_num_rows2/$page_count);
 
 
 
-while($query_row = mysql_fetch_assoc($query_run)){
+while($query_row = mysqli_fetch_assoc($query_run)){
             $price = number_format($query_row['price']);
             //echo "Yes";
             echo "

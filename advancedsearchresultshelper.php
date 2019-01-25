@@ -45,46 +45,46 @@ $items = 100;
 $jump = $items * $current;
 
 if($page == 1){
-    //$query = "SELECT * FROM `products` WHERE `category`='".mysql_real_escape_string($search)."' AND `subcategory`='".mysql_real_escape_string($sub)."' AND `availability`='1' AND `buyer`='0' LIMIT $items1";
-    //$query = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysql_real_escape_string($search)."%' LIMIT $items1";
+    //$query = "SELECT * FROM `products` WHERE `category`='".mysqli_real_escape_string($conn, $search)."' AND `subcategory`='".mysqli_real_escape_string($conn, $sub)."' AND `availability`='1' AND `buyer`='0' LIMIT $items1";
+    //$query = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items1";
     if($dbs == 'products'){
-        $query = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysql_real_escape_string($search)."%' LIMIT $items1";
+        $query = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items1";
     }elseif( $dbs == 'brandyproducts'){
-        $query = "SELECT * FROM $dbs WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysql_real_escape_string($search)."%' LIMIT $items1";
+        $query = "SELECT * FROM $dbs WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items1";
     }else{
-        $query = "SELECT * FROM $dbs WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysql_real_escape_string($search)."%' LIMIT $items OFFSET $jump";
+        $query = "SELECT * FROM $dbs WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items OFFSET $jump";
     }
 }else{
-    //$query = "SELECT * FROM `products` WHERE `category`='".mysql_real_escape_string($search)."' AND `subcategory`='".mysql_real_escape_string($sub)."' AND `availability`='1' AND `buyer`='0' LIMIT $items OFFSET $jump";
-    //$query = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysql_real_escape_string($search)."%' LIMIT $items OFFSET $jump";
+    //$query = "SELECT * FROM `products` WHERE `category`='".mysqli_real_escape_string($conn, $search)."' AND `subcategory`='".mysqli_real_escape_string($conn, $sub)."' AND `availability`='1' AND `buyer`='0' LIMIT $items OFFSET $jump";
+    //$query = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items OFFSET $jump";
     if($dbs == 'products'){
-        $query = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysql_real_escape_string($search)."%' LIMIT $items OFFSET $jump";
+        $query = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items OFFSET $jump";
     }elseif( $dbs == 'brandyproducts'){
-        $query = "SELECT * FROM $dbs WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysql_real_escape_string($search)."%' LIMIT $items OFFSET $jump";
+        $query = "SELECT * FROM $dbs WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items OFFSET $jump";
     }else{
-        $query = "SELECT * FROM $dbs WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysql_real_escape_string($search)."%' LIMIT $items OFFSET $jump";
+        $query = "SELECT * FROM $dbs WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items OFFSET $jump";
     }
 }
 
 
-//$query = "SELECT * FROM `products` WHERE `category`='".mysql_real_escape_string($search)."' AND `subcategory`='".mysql_real_escape_string($sub)."'LIMIT $items OFFSET $jump";
-$query_run = mysql_query($query);
-$query_num_rows = mysql_num_rows($query_run);
+//$query = "SELECT * FROM `products` WHERE `category`='".mysqli_real_escape_string($conn, $search)."' AND `subcategory`='".mysqli_real_escape_string($conn, $sub)."'LIMIT $items OFFSET $jump";
+$query_run = mysqli_query($conn, $query);
+$query_num_rows = mysqli_num_rows($query_run);
 
 
-//$query2 = "SELECT * FROM `products` WHERE `category`='".mysql_real_escape_string($search)."' AND `subcategory`='".mysql_real_escape_string($sub)."' AND `availability`='1' AND `buyer`='0' ORDER BY RAND()";
-//$query2 = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysql_real_escape_string($search)."%' ORDER BY RAND()";
+//$query2 = "SELECT * FROM `products` WHERE `category`='".mysqli_real_escape_string($conn, $search)."' AND `subcategory`='".mysqli_real_escape_string($conn, $sub)."' AND `availability`='1' AND `buyer`='0' ORDER BY RAND()";
+//$query2 = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' ORDER BY RAND()";
 if($dbs == 'products'){
-    $query2 = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysql_real_escape_string($search)."%' LIMIT $items OFFSET $jump";
+    $query2 = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items OFFSET $jump";
 }elseif( $dbs == 'brandyproducts'){
-    $query2 = "SELECT * FROM $dbs WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysql_real_escape_string($search)."%' LIMIT $items OFFSET $jump";
+    $query2 = "SELECT * FROM $dbs WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items OFFSET $jump";
 }else{
-    $query2 = "SELECT * FROM `brandyproducts` WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysql_real_escape_string($search)."%' LIMIT $items OFFSET $jump";
+    $query2 = "SELECT * FROM `brandyproducts` WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items OFFSET $jump";
 }
-$query_run2 = mysql_query($query2);
-$query_num_rows2 = mysql_num_rows($query_run2);
+$query_run2 = mysqli_query($conn, $query2);
+$query_num_rows2 = mysqli_num_rows($query_run2);
 $pages = $query_num_rows2 / $items;
-while($query_row = mysql_fetch_assoc($query_run)){
+while($query_row = mysqli_fetch_assoc($query_run)){
 
 $price = number_format($query_row['price']);
     echo "

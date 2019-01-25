@@ -12,10 +12,10 @@ function displaycart(){
         $sql.=$id.",";
     }
     $sql = substr($sql, 0, -1).") ORDER BY itemtitle ASC";
-    $query = mysql_query($sql);
+    $query = mysqli_query($conn, $sql);
     $totalprice = 0;
     if($_SESSION['cart'][$id]['quantity'] != 0){
-        while($row=mysql_fetch_assoc($query)){
+        while($row=mysqli_fetch_assoc($query)){
         $subtotal = $_SESSION['cart'][$row['id']]['quantity']*$row['price'];
         $totalprice += $subtotal;
         

@@ -70,7 +70,7 @@ function returnproduct(){
       // insert new row to dbs named returns, with id, productid, reason, dates
       // TODO ADD A SCRIPT TO CHANGE THE STATUS OF THE SELLERS FUNDS ACCOUNT AND ALSO THE CLIENTS ACCOUNT TO SHOW ITEM RETURNED
       $querycompltreturn = "INSERT INTO `returns` VALUES ('','$product','$reason','$message','$today')";
-      if(mysql_query($querycompltreturn)){
+      if(mysqli_query($conn, $querycompltreturn)){
         echo "Item $item has been successfully marked for return. Merchant has been notified.";
       }else{
         die("Error");
@@ -112,11 +112,11 @@ function showincompleteproddetails(){
         die("Error");
       }
       $queryactualproduct = "SELECT * FROM `$table` WHERE `id`='$nurw'";
-      $queryactualproduct_run = mysql_query($queryactualproduct);
-      $queryactualproduct_num = mysql_num_rows($queryactualproduct_run);
+      $queryactualproduct_run = mysqli_query($conn, $queryactualproduct);
+      $queryactualproduct_num = mysqli_num_rows($queryactualproduct_run);
       if($queryactualproduct_num == 1){
         //continue
-        if($queryprod_row = mysql_fetch_assoc($queryactualproduct_run)){
+        if($queryprod_row = mysqli_fetch_assoc($queryactualproduct_run)){
           $imageone = $queryprod_row['imageone'];
           $imagetwo = $queryprod_row['imagetwo'];
           $imagethree = $queryprod_row['imagethree'];
@@ -247,11 +247,11 @@ function showcompleteproddetails(){
           die("Error");
         }
         $queryactualproduct = "SELECT * FROM `$table` WHERE `id`='$nurw'";
-        $queryactualproduct_run = mysql_query($queryactualproduct);
-        $queryactualproduct_num = mysql_num_rows($queryactualproduct_run);
+        $queryactualproduct_run = mysqli_query($conn, $queryactualproduct);
+        $queryactualproduct_num = mysqli_num_rows($queryactualproduct_run);
         if($queryactualproduct_num == 1){
           //continue
-          if($queryprod_row = mysql_fetch_assoc($queryactualproduct_run)){
+          if($queryprod_row = mysqli_fetch_assoc($queryactualproduct_run)){
             $imageone = $queryprod_row['imageone'];
             $imagetwo = $queryprod_row['imagetwo'];
             $imagethree = $queryprod_row['imagethree'];
@@ -371,8 +371,8 @@ function showretcartcontentsincomplete(){
       if(!empty($inccart)){
         // continue
         $querycartcontents = "SELECT * FROM `incdelivery` WHERE `cartno`='$inccart'";
-        $querycartcontents_run = mysql_query($querycartcontents);
-        $querycartcontents_num = mysql_num_rows($querycartcontents_run);
+        $querycartcontents_run = mysqli_query($conn, $querycartcontents);
+        $querycartcontents_num = mysqli_num_rows($querycartcontents_run);
         if($querycartcontents_num != 0){
           // continue
           echo "<div class=\"table-responsive\" style=\"font-family:kok;\">
@@ -390,7 +390,7 @@ function showretcartcontentsincomplete(){
                     </thead>
                     <tbody>
             ";
-          while($querycartcontents_row = mysql_fetch_assoc($querycartcontents_run)){
+          while($querycartcontents_row = mysqli_fetch_assoc($querycartcontents_run)){
             // show all item records
              // and provide retun buttons for each row
              // showing a form with an onclick of the button
@@ -399,11 +399,11 @@ function showretcartcontentsincomplete(){
              // since this is a return, we have the right to know what the item is so that we can flag it
              // so query the actual database
              $queryitemincart = "SELECT * FROM `pickupds` WHERE `id`='$itemid'";
-             $queryitemincart_run = mysql_query($queryitemincart);
-             $queryitemincart_num = mysql_num_rows($queryitemincart_run);
+             $queryitemincart_run = mysqli_query($conn, $queryitemincart);
+             $queryitemincart_num = mysqli_num_rows($queryitemincart_run);
              if($queryitemincart_num != 0){
                // continue
-               while($queryitemincart_row = mysql_fetch_assoc($queryitemincart_run)){
+               while($queryitemincart_row = mysqli_fetch_assoc($queryitemincart_run)){
                  $item = $queryitemincart_row['item'];
                  $dbs = substr($item,0,1);
                  $nurw = substr($item,1);
@@ -420,12 +420,12 @@ function showretcartcontentsincomplete(){
                    die("Error");
                  }
                  $queryactualproduct = "SELECT * FROM `$table` WHERE `id`='$nurw'";
-                 $queryactualproduct_run = mysql_query($queryactualproduct);
-                 $queryactualproduct_num = mysql_num_rows($queryactualproduct_run);
+                 $queryactualproduct_run = mysqli_query($conn, $queryactualproduct);
+                 $queryactualproduct_num = mysqli_num_rows($queryactualproduct_run);
                  if($queryactualproduct_num != 0){
                    //continue
                    $count = 1;
-                   while($queryactualproduct_row = mysql_fetch_assoc($queryactualproduct_run)){
+                   while($queryactualproduct_row = mysqli_fetch_assoc($queryactualproduct_run)){
                      $imageone = $queryactualproduct_row['imageone'];
                      $itemtitle = $queryactualproduct_row['itemtitle'];
                      $label = $queryactualproduct_row['label'];
@@ -490,8 +490,8 @@ function showretcartcontentscmp($xert){
   // $compcart = '4f50706353f017fac7dc3a95c5eb0038';
   $compcart = $xert;
   $querycompcart = "SELECT * FROM `deliveries` WHERE `cartno`='$compcart'";
-  $querycompcart_run = mysql_query($querycompcart);
-  $querycompcart_num = mysql_num_rows($querycompcart_run);
+  $querycompcart_run = mysqli_query($conn, $querycompcart);
+  $querycompcart_num = mysqli_num_rows($querycompcart_run);
   if($querycompcart_num != 0){
     // continue
     // show product items from the cart and pass buttons
@@ -512,12 +512,12 @@ function showretcartcontentscmp($xert){
               <tbody>
       ";
     $querycartpickuplist = "SELECT * FROM `pickupds` WHERE `cart`='$compcart'";
-    $querycartpickuplist_run = mysql_query($querycartpickuplist);
-    $querycartpickuplist_num = mysql_num_rows($querycartpickuplist_run);
+    $querycartpickuplist_run = mysqli_query($conn, $querycartpickuplist);
+    $querycartpickuplist_num = mysqli_num_rows($querycartpickuplist_run);
     if($querycartpickuplist_num != 0){
       //continue
       $count = 1;
-      while($querycartpickuplist_row = mysql_fetch_assoc($querycartpickuplist_run)){
+      while($querycartpickuplist_row = mysqli_fetch_assoc($querycartpickuplist_run)){
         $item = $querycartpickuplist_row['item'];
         // echo "$item <br>";
         // return product details
@@ -536,11 +536,11 @@ function showretcartcontentscmp($xert){
           die("Error");
         }
         $queryactualproduct = "SELECT * FROM `$table` WHERE `id`='$nurw'";
-        $queryactualproduct_run = mysql_query($queryactualproduct);
-        $queryactualproduct_num = mysql_num_rows($queryactualproduct_run);
+        $queryactualproduct_run = mysqli_query($conn, $queryactualproduct);
+        $queryactualproduct_num = mysqli_num_rows($queryactualproduct_run);
         if($queryactualproduct_num != 0){
 
-          while($queryactualproduct_row = mysql_fetch_assoc($queryactualproduct_run)){
+          while($queryactualproduct_row = mysqli_fetch_assoc($queryactualproduct_run)){
             $imageone = $queryactualproduct_row['imageone'];
             $itemtitle = $queryactualproduct_row['itemtitle'];
             $label = $queryactualproduct_row['label'];
@@ -592,8 +592,8 @@ function showreturncarts(){
       // check with complete cart and its items.....if not found...check with incomplete carts
       // then with incomplete cart and its items
       $querysilimarcart = "SELECT * FROM `deliveries` WHERE `cartno` LIKE '%$cart%'";
-      $querysilimarcart_run = mysql_query($querysilimarcart);
-      $querysilimarcart_num = mysql_num_rows($querysilimarcart_run);
+      $querysilimarcart_run = mysqli_query($conn, $querysilimarcart);
+      $querysilimarcart_num = mysqli_num_rows($querysilimarcart_run);
       if($querysilimarcart_num != 0){
         // continue the delivery was found
         // show the results
@@ -612,7 +612,7 @@ function showreturncarts(){
                   </thead>
                   <tbody>
           ";
-        while($querysilimarcart_row = mysql_fetch_assoc($querysilimarcart_run)){
+        while($querysilimarcart_row = mysqli_fetch_assoc($querysilimarcart_run)){
           $matchcarts = $querysilimarcart_row['cartno'];
           $name = $querysilimarcart_row['name'];
           $nameid = $querysilimarcart_row['nameid'];
@@ -638,8 +638,8 @@ function showreturncarts(){
       }else{
         // check with incomplete carts
         $querysimilarinccar = "SELECT * FROM `incdelivery` WHERE `cartno` LIKE '%$cart%'";
-        $querysimilarinccar_run = mysql_query($querysimilarinccar);
-        $querysimilarinccar_num = mysql_num_rows($querysimilarinccar_run);
+        $querysimilarinccar_run = mysqli_query($conn, $querysimilarinccar);
+        $querysimilarinccar_num = mysqli_num_rows($querysimilarinccar_run);
         if($querysimilarinccar_num != 0){
           // found
           echo "<div class=\"table-responsive\" style=\"font-family:kok;\">
@@ -657,7 +657,7 @@ function showreturncarts(){
                     </thead>
                     <tbody>
             ";
-          while($querysimilarinccar_row = mysql_fetch_assoc($querysimilarinccar_run)){
+          while($querysimilarinccar_row = mysqli_fetch_assoc($querysimilarinccar_run)){
             $incmatchcarts = $querysimilarinccar_row['cartno'];
             $name = $querysimilarinccar_row['name'];
             $nameid = $querysimilarinccar_row['nameid'];
@@ -701,15 +701,15 @@ function unflagitem(){
         // flag the item
         // confirm staff is at the center and is not the last handler
         $queryconfitemstats = "SELECT * FROM `transitdbs` WHERE `itemid`='$item' AND `cartname`='$cart'";
-        $queryconfitemstats_run = mysql_query($queryconfitemstats);
-        $queryconfitemstats_num = mysql_num_rows($queryconfitemstats_run);
+        $queryconfitemstats_run = mysqli_query($conn, $queryconfitemstats);
+        $queryconfitemstats_num = mysqli_num_rows($queryconfitemstats_run);
         if($queryconfitemstats_num != 0){
           // continue
-          while($queryconfitemstats_row = mysql_fetch_assoc($queryconfitemstats_run)){
+          while($queryconfitemstats_row = mysqli_fetch_assoc($queryconfitemstats_run)){
             $staffid = $_SESSION['$staff'];
             $querystaffname = "SELECT * FROM `staff` WHERE `id`='$staffid'";
-            $querystaffname_run = mysql_query($querystaffname);
-            $querystaffname_row = mysql_fetch_assoc($querystaffname_run);
+            $querystaffname_run = mysqli_query($conn, $querystaffname);
+            $querystaffname_row = mysqli_fetch_assoc($querystaffname_run);
             $staffname = $querystaffname_row['tiivanick'];
             $stafflocation = $querystaffname_row['tiivacenter'];
             // retrieve handlers list and center list
@@ -727,7 +727,7 @@ function unflagitem(){
             if($staffname != $finalhandler && $stafflocation == $finalcenter){
               // continue
               $queryflag = "UPDATE `transitdbs` SET `integrity`='0' WHERE `itemid`='$item' AND `cartname`='$cart'";
-              if($queryflag_run = mysql_query($queryflag)){
+              if($queryflag_run = mysqli_query($conn, $queryflag)){
                 //successful
                 echo "successfully unflagged item $item of cart $cart";
               }else{
@@ -759,15 +759,15 @@ function flagitem(){
         // flag the item
         // confirm staff is at the center and is not the last handler
         $queryconfitemstats = "SELECT * FROM `transitdbs` WHERE `itemid`='$item' AND `cartname`='$cart'";
-        $queryconfitemstats_run = mysql_query($queryconfitemstats);
-        $queryconfitemstats_num = mysql_num_rows($queryconfitemstats_run);
+        $queryconfitemstats_run = mysqli_query($conn, $queryconfitemstats);
+        $queryconfitemstats_num = mysqli_num_rows($queryconfitemstats_run);
         if($queryconfitemstats_num != 0){
           // continue
-          while($queryconfitemstats_row = mysql_fetch_assoc($queryconfitemstats_run)){
+          while($queryconfitemstats_row = mysqli_fetch_assoc($queryconfitemstats_run)){
             $staffid = $_SESSION['$staff'];
             $querystaffname = "SELECT * FROM `staff` WHERE `id`='$staffid'";
-            $querystaffname_run = mysql_query($querystaffname);
-            $querystaffname_row = mysql_fetch_assoc($querystaffname_run);
+            $querystaffname_run = mysqli_query($conn, $querystaffname);
+            $querystaffname_row = mysqli_fetch_assoc($querystaffname_run);
             $staffname = $querystaffname_row['tiivanick'];
             $stafflocation = $querystaffname_row['tiivacenter'];
             // retrieve handlers list and center list
@@ -785,7 +785,7 @@ function flagitem(){
             if($staffname != $finalhandler && $stafflocation == $finalcenter){
               // continue
               $queryflag = "UPDATE `transitdbs` SET `integrity`='1' WHERE `itemid`='$item' AND `cartname`='$cart'";
-              if($queryflag_run = mysql_query($queryflag)){
+              if($queryflag_run = mysqli_query($conn, $queryflag)){
                 //successful
                 echo "successfully flagged item $item of cart $cart";
               }else{
@@ -820,11 +820,11 @@ function inspectitems(){
   // check for the center i'm in...find out if theres a package not yet catalogued
   $staffid = $_SESSION['$staff'];
   $querystaffcentr = "SELECT * FROM `staff` WHERE `id`='$staffid'";
-  $querystaffcentr_run = mysql_query($querystaffcentr);
-  $querystaffcentr_num = mysql_num_rows($querystaffcentr_run);
+  $querystaffcentr_run = mysqli_query($conn, $querystaffcentr);
+  $querystaffcentr_num = mysqli_num_rows($querystaffcentr_run);
   if($querystaffcentr_num == '1'){
     //continue
-    if($querystaffcentr_row = mysql_fetch_assoc($querystaffcentr_run)){
+    if($querystaffcentr_row = mysqli_fetch_assoc($querystaffcentr_run)){
       echo "<div class=\"table-responsive\" style=\"font-family:kok;\">
       <small>In the case where you find a package that seems to have its structural integrity compromised i.e. damaged or seal tampered with...please flag it<br>
       this will help us identify the time frame within which the package got compromised</small>
@@ -848,11 +848,11 @@ function inspectitems(){
         // check for check out carts taht are incomplete
         $checkedcartsArray = array();
         $querycheckoutcartvble = "SELECT `cartname` FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE'";
-        $querycheckoutcartvble_run = mysql_query($querycheckoutcartvble);
-        $querycheckoutcartvble_num = mysql_num_rows($querycheckoutcartvble_run);
+        $querycheckoutcartvble_run = mysqli_query($conn, $querycheckoutcartvble);
+        $querycheckoutcartvble_num = mysqli_num_rows($querycheckoutcartvble_run);
         if($querycheckoutcartvble_num != '0'){
 
-          while($querycheckoutcartvble_row = mysql_fetch_assoc($querycheckoutcartvble_run)){
+          while($querycheckoutcartvble_row = mysqli_fetch_assoc($querycheckoutcartvble_run)){
             $cartname = $querycheckoutcartvble_row['cartname'];
             if(in_array($cartname,$checkedcartsArray)){
               echo "found";
@@ -867,10 +867,10 @@ function inspectitems(){
         for($i = 0; $i < count($checkedcartsArray); $i++){
           $currentcart = $checkedcartsArray[$i];
           $queryitempos = "SELECT * FROM `transitdbs` WHERE `cartname`='$currentcart'";
-          $queryitempos_run = mysql_query($queryitempos);
-          $queryitempos_num = mysql_num_rows($queryitempos_run);
+          $queryitempos_run = mysqli_query($conn, $queryitempos);
+          $queryitempos_num = mysqli_num_rows($queryitempos_run);
           if($queryitempos_num != 0){
-              while($queryitempos_row = mysql_fetch_assoc($queryitempos_run)){
+              while($queryitempos_row = mysqli_fetch_assoc($queryitempos_run)){
                 $id = $queryitempos_row['id'];
                 $itemid = $queryitempos_row['itemid'];
                 $cart = $queryitempos_row['cartname'];

@@ -41,9 +41,9 @@ if(isset($_GET['action'])){
 
     }else{
         $query = "SELECT * FROM `products` WHERE `id`='$id'";
-        $query_run = mysql_query($query);
-        if(mysql_num_rows($query_run) != 0){
-            $row_s = mysql_fetch_array($query_run);
+        $query_run = mysqli_query($conn, $query);
+        if(mysqli_num_rows($query_run) != 0){
+            $row_s = mysqli_fetch_array($query_run);
             $_SESSION['shackcart'][$row_s['id']]=array(
                 "quantity" => 1,
                 "price" => $row_s['price']
@@ -72,9 +72,9 @@ if(isset($_GET['action'])){
         }
 //        else{
 //        $query = "SELECT * FROM `products` WHERE `id`='$id'";
-//        $query_run = mysql_query($query);
-//        if(mysql_num_rows($query_run) != 0){
-//            $row_s = mysql_fetch_array($query_run);
+//        $query_run = mysqli_query($conn, $query);
+//        if(mysqli_num_rows($query_run) != 0){
+//            $row_s = mysqli_fetch_array($query_run);
 //            $_SESSION['cart'][$row_s['id']]=array(
 //                "quantity" => 1,
 //                "price" => $row_s['price']
@@ -109,12 +109,12 @@ function displaycart($dbs,$cartame,$dbsother,$cartameother,$shipping,$message){
     }
 
     $sql = substr($sql, 0, -1).") ORDER BY itemtitle ASC";
-    $query = mysql_query($sql);
+    $query = mysqli_query($conn, $sql);
     $totalprice = 0;
     $count = 1;
 
     if($_SESSION[$cartame][$id]['quantity'] != 0){
-        while($row=mysql_fetch_assoc($query)){
+        while($row=mysqli_fetch_assoc($query)){
             echo "<tr>";
         $subtotal = $_SESSION[$cartame][$row['id']]['quantity']*$row['price'];
         $totalprice += $subtotal;
@@ -175,12 +175,12 @@ foreach($_SESSION[$cartameother] as $id => $value){
 }
 
 $sql = substr($sql, 0, -1).") ORDER BY itemtitle ASC";
-$query = mysql_query($sql);
+$query = mysqli_query($conn, $sql);
 //$totalprice = 0;
 //$count2 = 1;
 
 if($_SESSION[$cartameother][$id]['quantity'] != 0){
-    while($row=mysql_fetch_assoc($query)){
+    while($row=mysqli_fetch_assoc($query)){
         echo "<tr>";
     $subtotal = $_SESSION[$cartameother][$row['id']]['quantity']*$row['price'];
     $totalprice2 += $subtotal;

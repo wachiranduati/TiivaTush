@@ -3,10 +3,10 @@ ob_start();
 session_start();
 require 'connect.php';
 $query = "SELECT `label` FROM `products` WHERE `availability`='1' AND `buyer`='0'";
-$query_run = mysql_query($query);
+$query_run = mysqli_query($conn, $query);
 $labels = array();
 
-while ($query_row = mysql_fetch_assoc($query_run)){
+while ($query_row = mysqli_fetch_assoc($query_run)){
     $moja = $query_row['label'];
     if(in_array($moja,$labels)){
     }else{

@@ -18,15 +18,15 @@ $jump = 0;
 $items = 100;
 
 
-$query2 = "SELECT * FROM `products` WHERE `subcategory`='".mysql_real_escape_string($search)."' AND `availability`='1' AND `buyer`='0'";
-$query_run2 = mysql_query($query2);
-$query_num_rows2 = mysql_num_rows($query_run2);
+$query2 = "SELECT * FROM `products` WHERE `subcategory`='".mysqli_real_escape_string($conn, $search)."' AND `availability`='1' AND `buyer`='0'";
+$query_run2 = mysqli_query($conn, $query2);
+$query_num_rows2 = mysqli_num_rows($query_run2);
 $pagecount = $query_num_rows2 / $items;
 
 
 //echo $query_num_rows2;
 
-//$query_row = mysql_fetch_assoc($query_run);
+//$query_row = mysqli_fetch_assoc($query_run);
 //echo $query_row[imageone];
 echo "
         <!doctype html>
@@ -283,7 +283,6 @@ echo "
                 </div>
                 <div class=\"row hidden\">
                     <div class=\"col-lg-12 col-md-12 col-xs-12\">
-                        <span id=\"sub\">$sub</span>
                     <span id=\"cat\">$search</span>
                     <span id=\"page\">$page</span>
                     </div>

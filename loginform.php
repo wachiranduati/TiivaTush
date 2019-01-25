@@ -4,13 +4,13 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     $password = md5($_POST['password']);
     
     if(!empty($username) && !empty($password)){
-        $query = "SELECT `id` FROM `users` WHERE `username`='".mysql_real_escape_string($username)."' AND `password`='".mysql_real_escape_string($password)."'";
-        $query_run = mysql_query($query);
-        $query_num_rows = mysql_num_rows($query_run);
+        $query = "SELECT `id` FROM `users` WHERE `username`='".mysqli_real_escape_string($conn, $username)."' AND `password`='".mysqli_real_escape_string($conn, $password)."'";
+        $query_run = mysqli_query($conn, $query);
+        $query_num_rows = mysqli_num_rows($query_run);
         if($query_num_rows == 0){
             echo 'Invalid username/password combination';
         }else{
-            $user_id = mysql_result($query_run, 0, 'id');
+            $user_id = mysqli_result($query_run, 0, 'id');
             $_SESSION['$user_id'] = $user_id;
             header('Location:index.php');
         }

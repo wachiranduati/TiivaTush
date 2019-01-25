@@ -26,8 +26,8 @@ if(isset($_POST['search'])){
     }
 
     $query = "SELECT * FROM `$dbs` WHERE `id`='$search'";
-    $query_run = mysql_query($query);
-    if($row = mysql_fetch_assoc($query_run)){
+    $query_run = mysqli_query($conn, $query);
+    if($row = mysqli_fetch_assoc($query_run)){
       // echo $row['itemtitle'];
       // echo $row['imageone'];
       $name = $row['itemtitle'];

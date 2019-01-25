@@ -6,7 +6,7 @@ require 'connect.php';
     $today = date(Y).'-'.date(m).'-'.date(d);
     $time = date(H).':'.date(i).':'.date(s);
 //echo $today;
-//mysql_real_escape_string
+//mysqli_real_escape_string
 
 if(isset($_POST['email']) || 
    isset($_POST['phonenumber']) && 
@@ -25,7 +25,7 @@ if(isset($_POST['email']) ||
                     if(!empty($subject)){
                         //echo 'Your emailaddress is '.$email.' and number '.$phonenumber.' and your name is '.$name.' and your message states that "'.$details.'"';
                         $query = "INSERT INTO `messages`(`Email`,`Phonenumber`,`Name`,`Details`,`Id`,`Date`,`time`,`subject`) VALUES ('$email','$phonenumber','$name','$details','','$today','$time','$subject')";
-                        if($query_run = mysql_query($query)){
+                        if($query_run = mysqli_query($conn, $query)){
                            // echo "Your message has just been sent We will get back to you as soon as possible";
                             
                             echo "

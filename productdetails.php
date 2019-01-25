@@ -3,18 +3,17 @@ ob_start();
 session_start();
 require 'connect.php';
 require 'core.inc.php';
-//echo $_SESSION['$user_id'];
-$buyer = $_SESSION['$user_id'];
-$none = 0;
+
+if(isset($_SESSION['$user_id'])){
+    $buyer = $_SESSION['$user_id'];
+    $none = 0;
+    $cookiename =  md5($_SESSION['$user_id'].'cooksieairmark');
+
+}
 
 $century = 860;
 $id = $_GET['id'];
 
-//require 'addtocartfunc.php';
-//addtocart($buyer);
-
-$cookiename =  md5($_SESSION['$user_id'].'cooksieairmark');
-//echo $cookiename;
 
 //with the change in categories this will now add the item and items will not be
 //automatically be added to the users account
@@ -38,19 +37,19 @@ $cookiename =  md5($_SESSION['$user_id'].'cooksieairmark');
 // items required img source, price, title, then formulate the button data-name, data-price
 //for this page only get the lead image, follow up to details page query up the total 3 images
 
-$query = "SELECT * FROM `products` WHERE `id`='".mysql_real_escape_string($id)."'";
-$query_run = mysql_query($query);
+$query = "SELECT * FROM `products` WHERE `id`='".mysqli_real_escape_string($conn, $id)."'";
+$query_run = mysqli_query($conn, $query);
 
-$query_row = mysql_fetch_assoc($query_run);
+$query_row = mysqli_fetch_assoc($query_run);
 //echo $query_row[imageone];
 
 $description = "This is some shit placed here wooo i really hope it daent show up";
 
 
-if($query_row[category] != 'wallart' && $query_row[category] != 'labels' ){
+if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
     $message = "Remember, these are second hand clothes \"Mtush\" we ensure that items you purchase reach up to our standards.Check the item description to look throught the items dimensions.";
 
-}elseif ($query_row[category] == 'wallart'){
+}elseif ($query_row['category'] == 'wallart'){
     $message = "This is an original new item by $sellerid, We at Airmark appreciate art.Remember to check the item description above to look through the specifics.";
 }else {
     $message = "We at Airmark support designers from Kenya and all over. The items above are brand new from both international and local designers.Remember to look through the items description.";
@@ -60,7 +59,7 @@ if($query_row[category] != 'wallart' && $query_row[category] != 'labels' ){
 echo "
         <!DOCTYPE html>
 <html>
-<title>Tiiva | $query_row[itemtitle]</title>
+<title>tiiva.co.ke | $query_row[itemtitle]</title>
 
 <head>
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
@@ -75,6 +74,7 @@ echo "
         <script src=\"display.js\"></script>
         <script src=\"moded.js\"></script>
         <link rel=\"stylesheet\" href=\"MaterialDesign-Webfont-master/css/materialdesignicons.min.css\">
+        <link rel=\"icon\" type=\"image/png\" href=\"icons/thaticon.png\">
 
     <style type=\"text/css\">
 
@@ -789,32 +789,33 @@ themselves?”</div>
 // items required img source, price, title, then formulate the button data-name, data-price
 //for this page only get the lead image, follow up to details page query up the total 3 images
 
-function itemloop($id){
-    $query_id_details = "SELECT * FROM `products` WHERE `id`='".mysql_real_escape_string($id)."'";
-    $query_run_details = mysql_query($query_id_details);
-    $query_row_details = mysql_fetch_assoc($query_run_details);
+function itemloop($id, $conn){
+    $query_id_details = "SELECT * FROM `products` WHERE `id`='".mysqli_real_escape_string($conn, $id)."'";
+    $query_run_details = mysqli_query($conn, $query_id_details);
+    $query_row_details = mysqli_fetch_assoc($query_run_details);
     $pageCategory = $query_row_details['category'];
     $pageSubcategory = $query_row_details['subcategory'];
 
 
-    $query2 = "SELECT * FROM `products` WHERE `id`!='".mysql_real_escape_string($id)."' AND `availability`='1' AND `buyer`='0' AND `category`='$pageCategory' AND `subcategory`='$pageSubcategory'";
-$query_run2 = mysql_query($query2);
-$query_num_rows = mysql_num_rows($query_run2);
+    $query2 = "SELECT * FROM `products` WHERE `id`!='".mysqli_real_escape_string($conn, $id)."' AND `availability`='1' AND `buyer`='0' AND `category`='$pageCategory' AND `subcategory`='$pageSubcategory'";
+$query_run2 = mysqli_query($conn, $query2);
+$query_num_rows = mysqli_num_rows($query_run2);
 //echo $query_num_rows;
 if($query_num_rows <= 6){
     //to be changed later to 30 to ensure theres enough items at all times
     // the while loop should fall here if less than the required amount
     //with disabled links
     //echo "nothing was found or items are not more than 6";
-    $query = "SELECT `imageone`, `price`, `webid`, `itemtitle`, `category` FROM `products` WHERE `id`!='".mysql_real_escape_string($id)."' AND `availability`='1' AND `buyer`='0' ORDER BY RAND() LIMIT 6";
-$query_run = mysql_query($query);
+    $query = "SELECT * FROM `products` WHERE `id`!='".mysqli_real_escape_string($conn, $id)."' AND `availability`='1' AND `buyer`='0' ORDER BY RAND() LIMIT 6";
+$query_run = mysqli_query($conn, $query);
+// print(mysqli_error($conn));
 
-//$query_row = mysql_fetch_assoc($query_run);
+//$query_row = mysqli_fetch_assoc($query_run);
 //echo $query_row[imageone];
 
 
 $count = 1;
-while($query_row = mysql_fetch_assoc($query_run)){
+while($query_row = mysqli_fetch_assoc($query_run)){
     $price = number_format($query_row['price']);
 
     echo "
@@ -874,12 +875,12 @@ while($query_row = mysql_fetch_assoc($query_run)){
     //echo "Something to display right here";
     //this should indicate everything is okay and should
     // display 6 items online with an id count increase
-    $query = "SELECT * FROM `products` WHERE `id`!='".mysql_real_escape_string($id)."' AND `availability`='1' AND `buyer`='0' AND `category`='$pageCategory' AND `subcategory`='$pageSubcategory' ORDER BY RAND() LIMIT 6";
-$query_run = mysql_query($query);
+    $query = "SELECT * FROM `products` WHERE `id`!='".mysqli_real_escape_string($conn, $id)."' AND `availability`='1' AND `buyer`='0' AND `category`='$pageCategory' AND `subcategory`='$pageSubcategory' ORDER BY RAND() LIMIT 6";
+$query_run = mysqli_query($conn, $query);
 
     $counts = 1;
 
-    while($query_row = mysql_fetch_assoc($query_run)){
+    while($query_row = mysqli_fetch_assoc($query_run)){
        // echo $query_row['webid'];
        $price = number_format($query_row['price']);
 
@@ -941,7 +942,7 @@ $query_run = mysql_query($query);
 
 
 }
-itemloop($id);
+itemloop($id, $conn);
 echo "
 
 <!--            SOMETHING IS INTENTIONALLY MISSING HERE-->

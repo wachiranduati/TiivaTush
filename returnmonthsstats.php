@@ -18,8 +18,8 @@ $todayyear = Date(Y);
             // creates an empty dates array
             $traffick = array();
             // creates an empty dates traffick array
-            $query_run = mysql_query($query);
-            while($row = mysql_fetch_assoc($query_run)){
+            $query_run = mysqli_query($conn, $query);
+            while($row = mysqli_fetch_assoc($query_run)){
                 //echo $row['date'].'<br>';
                 $thedate = $row['date'];
                 $nameofmonth = date('M',strtotime($thedate));
@@ -81,10 +81,10 @@ while($thismonth <= 12){
 $query = "SELECT * FROM `sold` WHERE MONTH(DATE(`date`)) = $thismonth ORDER BY `date` ASC";
 //$query = "SELECT * FROM `sold` ORDER BY `date` ASC";
     
-$query_run = mysql_query($query);
-$query_num_rows = mysql_num_rows($query_run);
+$query_run = mysqli_query($conn, $query);
+$query_num_rows = mysqli_num_rows($query_run);
 if($query_num_rows != 0){
-        $row = mysql_fetch_assoc($query_run);
+        $row = mysqli_fetch_assoc($query_run);
         $dateq = $row['date'];
         $nameofmonth = date('M',strtotime($dateq));
     // get each items count to power it to the month its in

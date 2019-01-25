@@ -107,8 +107,8 @@ function displaycart(){
         $sql.=$id.",";
     }
     $sql = substr($sql, 0, -1).") ORDER BY itemtitle ASC";
-    $query = mysql_query($sql);
-    while($row=mysql_fetch_array($query)){
+    $query = mysqli_query($sql);
+    while($row=mysqli_fetch_array($query)){
         $image = $row['imageone'];
         $title = substr($row['itemtitle'],0,13);
         

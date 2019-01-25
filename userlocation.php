@@ -6,10 +6,10 @@ $query = "SELECT *
 FROM sold
 INNER JOIN checkoutcarts
 ON sold.cartname=checkoutcarts.cartname WHERE checkoutcarts.customer_id=27";
-$query_run = mysql_query($query);
+$query_run = mysqli_query($conn, $query);
 $locations = array();
 echo "<div class=\"row\">";
-while($query_row = mysql_fetch_assoc($query_run)){
+while($query_row = mysqli_fetch_assoc($query_run)){
   //echo $query_row['county'].' '.$query_row['area'].' '.$query_row['phone'].'<br>';
   $phone = $query_row['phone'];
   if(in_array($phone,$locations)){

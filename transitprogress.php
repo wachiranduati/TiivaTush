@@ -30,10 +30,10 @@ function updatetransitdatabase(){
   // query the carts that are incomplete....these are the undelivered carts
   // query the carts that have already been updated only
   $queryupdatetransitdbs = "SELECT `cartname` FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE' AND `updated`='1'";
-  $queryupdttrns_run = mysql_query($queryupdatetransitdbs);
+  $queryupdttrns_run = mysqli_query($queryupdatetransitdbs);
   // create a new array
   $transitdbsarray = array();
-  while($queryupdttrs_row = mysql_fetch_assoc($queryupdttrns_run)){
+  while($queryupdttrs_row = mysqli_fetch_assoc($queryupdttrns_run)){
      $cart = $queryupdttrs_row['cartname'];
     // check to confirm that the item is in the array
     if(in_array($cart,$transitdbsarray)){
@@ -54,8 +54,8 @@ function updatetransitdatabase(){
     // query pickupds with sign, name, idnumber, overperp and agent are done
     // for signed off belonging to this cart
     $querytrnsitms = "SELECT * FROM `pickupds` WHERE `cart`='$cartnametdbs' AND `sign`='1' AND `idnumber`!='0' AND `name`!='' AND `trnsupt`='0'";
-    $querytrnsitms_run = mysql_query($querytrnsitms);
-    while($querytrnsitms_row = mysql_fetch_assoc($querytrnsitms_run)){
+    $querytrnsitms_run = mysqli_query($querytrnsitms);
+    while($querytrnsitms_row = mysqli_fetch_assoc($querytrnsitms_run)){
       // get the id from the list
       // TODO The transitdbs contains a colum with from..this will be changed to reflect the sellers location
       $transititemid = $querytrnsitms_row['id'];
@@ -69,12 +69,12 @@ function updatetransitdatabase(){
       }
       // before going to the next step update trnsupt to prevent looping again throught this row
       $querylocktransrow = "UPDATE `pickupds` SET `trnsupt`='1' WHERE `id`='$transititemid'";
-      if($querylocktransrow_run = mysql_query($querylocktransrow)){
+      if($querylocktransrow_run = mysqli_query($querylocktransrow)){
         // row successfully locked
         // retrive the shipping type, deadline and centre destination from dbs table sold
         $querygetsoldtbdata = "SELECT * FROM `sold` WHERE `cartname`='$cartnametdbs'";
-        $querygetsoldtbdata_run = mysql_query($querygetsoldtbdata);
-        if($querygetsoldtbdata_row = mysql_fetch_assoc($querygetsoldtbdata_run)){
+        $querygetsoldtbdata_run = mysqli_query($querygetsoldtbdata);
+        if($querygetsoldtbdata_row = mysqli_fetch_assoc($querygetsoldtbdata_run)){
           $centredestination = $querygetsoldtbdata_row['county'].','.$querygetsoldtbdata_row['area'];
           $shiptype = $querygetsoldtbdata_row['shipping'];
           $cartdatepay = $querygetsoldtbdata_row['date'];
@@ -116,7 +116,7 @@ function updatetransitdatabase(){
       // 1 for delivered else zero for nada
       $querytransinsertrow = "INSERT INTO `transitdbs` (`id`,`itemid`,`cartname`,`from`,`exchlocs`,`handlers`,`exchdattimes`,`exchcenters`,`centredestination`,`shiptype`,`deadline`,`dstatus`,`integrity`)
       VALUES ('','$transititemid','$cartnametdbs','Kabuta_1','kabuta_2','$pickupagent','$initialtrnstime','Kabuta_3','$centredestination','$shiptype','$deadline','','')";
-      if($querytransinsertrow_run = mysql_query($querytransinsertrow)){
+      if($querytransinsertrow_run = mysqli_query($querytransinsertrow)){
         // its been updated
         echo "transit database updated<br>";
       }else{
@@ -141,11 +141,11 @@ function updatetransitdatabase(){
 function keeptrackofcartintransit(){
   //loop throught pickupds
   $queryupdatetransitdbs = "SELECT * FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE' AND `updated`='1'";
-  $queryupdttrns_run = mysql_query($queryupdatetransitdbs);
+  $queryupdttrns_run = mysqli_query($queryupdatetransitdbs);
   // create a new array
   $transitdbsarray = array();
   $transitbdcrtsize = array();
-  while($queryupdttrs_row = mysql_fetch_assoc($queryupdttrns_run)){
+  while($queryupdttrs_row = mysqli_fetch_assoc($queryupdttrns_run)){
      $cart = $queryupdttrs_row['cartname'];
      $cartcontents = $queryupdttrs_row['cartcontents'];
      $cartcontentsarray = explode(',',$cartcontents);
@@ -173,8 +173,8 @@ function keeptrackofcartintransit(){
     // for signed off belonging to this cart
     // get the num-rows of occurences from this cart then compare with the count from checkoutcarts....if same then the cart is complete
     $querytrnsitms = "SELECT * FROM `pickupds` WHERE `cart`='$cartnametdbs' AND `sign`='1' AND `idnumber`!='0' AND `name`!='' AND `trnsupt`='1'";
-    $querytrnsitms_run = mysql_query($querytrnsitms);
-    $querytrnsitms_num = mysql_num_rows($querytrnsitms_run);
+    $querytrnsitms_run = mysqli_query($querytrnsitms);
+    $querytrnsitms_num = mysqli_num_rows($querytrnsitms_run);
     if($querytrnsitms_num == $carttdbssize){
       // cart is complete
       echo "$cartnametdbs cart is complete<br>";
@@ -195,11 +195,11 @@ function completecartatdestination(){
   //the script below checks to confirm that a complete cart is at the destination centre
   //loop throught pickupds
   $queryupdatetransitdbs = "SELECT * FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE' AND `updated`='1'";
-  $queryupdttrns_run = mysql_query($queryupdatetransitdbs);
+  $queryupdttrns_run = mysqli_query($queryupdatetransitdbs);
   // create a new array
   $transitdbsarray = array();
   $transitbdcrtsize = array();
-  while($queryupdttrs_row = mysql_fetch_assoc($queryupdttrns_run)){
+  while($queryupdttrs_row = mysqli_fetch_assoc($queryupdttrns_run)){
      $cart = $queryupdttrs_row['cartname'];
      $cartcontents = $queryupdttrs_row['cartcontents'];
      $cartcontentsarray = explode(',',$cartcontents);
@@ -226,8 +226,8 @@ function completecartatdestination(){
     // for signed off belonging to this cart
     // get the num-rows of occurences from this cart then compare with the count from checkoutcarts....if same then the cart is complete
     $querytrnsitms = "SELECT * FROM `transitdbs` WHERE `cartname`='$cartnametdbs'";
-    $querytrnsitms_run = mysql_query($querytrnsitms);
-    $querytrnsitms_num = mysql_num_rows($querytrnsitms_run);
+    $querytrnsitms_run = mysqli_query($querytrnsitms);
+    $querytrnsitms_num = mysqli_num_rows($querytrnsitms_run);
     $itemdelivered = true;
 
     if($querytrnsitms_num == $carttdbssize){
@@ -237,7 +237,7 @@ function completecartatdestination(){
       // these results mean that cart in transit is complete soo it should be delivered immediately it gets to the destination center
       // check whether the cart is at the final center
 
-        while($querytrnsitms_row = mysql_fetch_assoc($querytrnsitms_run)){
+        while($querytrnsitms_row = mysqli_fetch_assoc($querytrnsitms_run)){
           $itemloc = $querytrnsitms_row['exchcenters'];
           $cartdeadline = $querytrnsitms_row['deadline'];
           $itemlocarray = explode(',',$itemloc);
@@ -278,7 +278,7 @@ function cartitemdeadlinenotifier(){
   // not items because the items belong to a cart so check on the cart instead
 
   $queryupdatetransitdbs = "SELECT * FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE' AND `updated`='1'";
-  $queryupdttrns_run = mysql_query($queryupdatetransitdbs);
+  $queryupdttrns_run = mysqli_query($queryupdatetransitdbs);
   // create a new array
   $transitdbsarray = array();
   $transitbdchtDatearray = array();
@@ -290,7 +290,7 @@ function cartitemdeadlinenotifier(){
   // therefore today will be
   $today = $year.'-'.$month.'-'.$day;
 
-  while($queryupdttrs_row = mysql_fetch_assoc($queryupdttrns_run)){
+  while($queryupdttrs_row = mysqli_fetch_assoc($queryupdttrns_run)){
      $cart = $queryupdttrs_row['cartname'];
      $cartdate = $queryupdttrs_row['Date'];
      // take the purchase Date plus 0ne day then the shipping period aside
@@ -327,8 +327,8 @@ function cartitemdeadlinenotifier(){
     // query pickupds with sign, name, idnumber, overperp and agent are done
     // for signed off belonging to this cart
     $querytrnsitms = "SELECT * FROM `transitdbs` WHERE `cartname`='$cartnametdbs'";
-    $querytrnsitms_run = mysql_query($querytrnsitms);
-    while ($querytrnsitms_row = mysql_fetch_assoc($querytrnsitms_run)) {
+    $querytrnsitms_run = mysqli_query($querytrnsitms);
+    while ($querytrnsitms_row = mysqli_fetch_assoc($querytrnsitms_run)) {
       // for every item in the transitdbs table check against cart
       // then check whether deadline is less than or equal to 2 to gauge impending deadline
       // DEADLINE WILL ONLY APPLY TO THE ITEMS/CARTS IN TRANSIT --YAANI ALREADY PICKED UP
@@ -351,7 +351,7 @@ function returnadmintransit(){
 
   // first return the incomplete carts i.e carts in transit
   $queryupdatetransitdbs = "SELECT * FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE' AND `updated`='1'";
-  $queryupdttrns_run = mysql_query($queryupdatetransitdbs);
+  $queryupdttrns_run = mysqli_query($queryupdatetransitdbs);
   // create a new array
   $transitdbsarray = array();
   $count = 1;
@@ -374,7 +374,7 @@ function returnadmintransit(){
           </tr>
         </thead>
         <tbody>";
-  while($queryupdttrs_row = mysql_fetch_assoc($queryupdttrns_run)){
+  while($queryupdttrs_row = mysqli_fetch_assoc($queryupdttrns_run)){
      $cart = $queryupdttrs_row['cartname'];
 
 
@@ -397,8 +397,8 @@ function returnadmintransit(){
     // query pickupds with sign, name, idnumber, overperp and agent are done
     // for signed off belonging to this cart
     $querytrnsitms = "SELECT * FROM `transitdbs` WHERE `cartname`='$cartnametdbs'";
-    $querytrnsitms_run = mysql_query($querytrnsitms);
-    while ($querytrnsitms_row = mysql_fetch_assoc($querytrnsitms_run)) {
+    $querytrnsitms_run = mysqli_query($querytrnsitms);
+    while ($querytrnsitms_row = mysqli_fetch_assoc($querytrnsitms_run)) {
       $itemid = $querytrnsitms_row['itemid'];
       //get current handler, current location, current center, exchange time, destination, deadline, shipping type
       $destination = $querytrnsitms_row['centredestination'];// destination
@@ -429,8 +429,8 @@ function returnadmintransit(){
       // what should we show for the current item in transit...
       // query the pickupds with the id return the entire row
       $querypickupds = "SELECT * FROM `pickupds` WHERE `id`='$itemid'";
-      $querypickupds_run = mysql_query($querypickupds);
-      if($querypickupds_row = mysql_fetch_assoc($querypickupds_run)){
+      $querypickupds_run = mysqli_query($querypickupds);
+      if($querypickupds_row = mysqli_fetch_assoc($querypickupds_run)){
         // to show items from one seller will introduce the if statement here
         // since this is admin one...maybe show all details
           $item = $querypickupds_row['item'];
@@ -482,7 +482,7 @@ function returnadmintransit(){
 function returnmerchanttransit(){
   // first return the incomplete carts i.e carts in transit
   $queryupdatetransitdbs = "SELECT * FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE' AND `updated`='1'";
-  $queryupdttrns_run = mysql_query($queryupdatetransitdbs);
+  $queryupdttrns_run = mysqli_query($queryupdatetransitdbs);
   // create a new array
   $transitdbsarray = array();
   $count = 1;
@@ -505,7 +505,7 @@ function returnmerchanttransit(){
         </thead>
         <tbody>";
 
-  while($queryupdttrs_row = mysql_fetch_assoc($queryupdttrns_run)){
+  while($queryupdttrs_row = mysqli_fetch_assoc($queryupdttrns_run)){
      $cart = $queryupdttrs_row['cartname'];
 
 
@@ -528,8 +528,8 @@ function returnmerchanttransit(){
     // query pickupds with sign, name, idnumber, overperp and agent are done
     // for signed off belonging to this cart
     $querytrnsitms = "SELECT * FROM `transitdbs` WHERE `cartname`='$cartnametdbs'";
-    $querytrnsitms_run = mysql_query($querytrnsitms);
-    while ($querytrnsitms_row = mysql_fetch_assoc($querytrnsitms_run)) {
+    $querytrnsitms_run = mysqli_query($querytrnsitms);
+    while ($querytrnsitms_row = mysqli_fetch_assoc($querytrnsitms_run)) {
       $itemid = $querytrnsitms_row['itemid'];
       //get current handler, current location, current center, exchange time, destination, deadline, shipping type
       $destination = $querytrnsitms_row['centredestination'];// destination
@@ -560,8 +560,8 @@ function returnmerchanttransit(){
       // what should we show for the current item in transit...
       // query the pickupds with the id return the entire row
       $querypickupds = "SELECT * FROM `pickupds` WHERE `id`='$itemid'";
-      $querypickupds_run = mysql_query($querypickupds);
-      if($querypickupds_row = mysql_fetch_assoc($querypickupds_run)){
+      $querypickupds_run = mysqli_query($querypickupds);
+      if($querypickupds_row = mysqli_fetch_assoc($querypickupds_run)){
         // to show items from one seller will introduce the if statement here
         // since this is admin one...maybe show all details
           $item = $querypickupds_row['item'];
@@ -581,8 +581,8 @@ function returnmerchanttransit(){
             die("Error");
           }
           $queryreturnproperties = "SELECT * FROM `$currentdbs` WHERE `id`='$product'";
-          $queryreturnproperties_run = mysql_query($queryreturnproperties);
-          if($queryreturnproperties_row = mysql_fetch_assoc($queryreturnproperties_run)){
+          $queryreturnproperties_run = mysqli_query($queryreturnproperties);
+          if($queryreturnproperties_row = mysqli_fetch_assoc($queryreturnproperties_run)){
             $itemtitle = $queryreturnproperties_row['itemtitle'];
             $itemimage = $queryreturnproperties_row['imageone'];
             $actualimage = $imgaddr.''.$itemimage;

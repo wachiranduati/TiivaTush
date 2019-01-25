@@ -7,10 +7,10 @@ $id = 5;
 // items required img source, price, title, then formulate the button data-name, data-price
 //for this page only get the lead image, follow up to details page query up the total 3 images
 
-$query = "SELECT `imageone`, `price`, `itemtitle`, `imagetwo`, `sellerid`,  `webid`, `imagethree`, `category` FROM `products` WHERE `id`='".mysql_real_escape_string($id)."'";
-$query_run = mysql_query($query);
+$query = "SELECT `imageone`, `price`, `itemtitle`, `imagetwo`, `sellerid`,  `webid`, `imagethree`, `category` FROM `products` WHERE `id`='".mysqli_real_escape_string($conn, $id)."'";
+$query_run = mysqli_query($conn, $query);
 
-$query_row = mysql_fetch_assoc($query_run);
+$query_row = mysqli_fetch_assoc($query_run);
 //echo $query_row[imageone];
 
 // \"$query_row[imageone]\";

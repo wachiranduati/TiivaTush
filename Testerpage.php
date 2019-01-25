@@ -7,8 +7,8 @@ require 'connect.php';
  $staff = $_SESSION['$staff'];
 
  $querystaff = "SELECT * FROM `staff` WHERE `id`='$staff'";
- $querystaff_run = mysql_query($querystaff);
- $querystaff_row = mysql_fetch_assoc($querystaff_run);
+ $querystaff_run = mysqli_query($querystaff);
+ $querystaff_row = mysqli_fetch_assoc($querystaff_run);
  $agent =  $querystaff_row['tiivanick'];
  // echo $staff;
 ?>

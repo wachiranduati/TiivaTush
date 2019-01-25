@@ -1,10 +1,10 @@
 <?php
 require 'connect.php';
 $id = $_GET['blogspot'];
-$query = "SELECT `id`, `title` ,`writter` ,`date` ,`views` ,`image`, `message`, `rating`, `tag1` , `tag2` , `tag3` FROM `blogs` WHERE `id`='".mysql_real_escape_string(1)."'";
-$query_run = mysql_query($query);
+$query = "SELECT `id`, `title` ,`writter` ,`date` ,`views` ,`image`, `message`, `rating`, `tag1` , `tag2` , `tag3` FROM `blogs` WHERE `id`='".mysqli_real_escape_string($conn, 1)."'";
+$query_run = mysqli_query($conn, $query);
 
-$query_row = mysql_fetch_assoc($query_run);
+$query_row = mysqli_fetch_assoc($query_run);
 //echo $query_row[message];
 $count = 0;
 $len = strlen($query_row[message]);

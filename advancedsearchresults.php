@@ -68,23 +68,23 @@ $century = 860;//Mtush
 
 
 
-//$query2 = "SELECT * FROM `products` WHERE `category`='".mysql_real_escape_string($search)."' AND `subcategory`='".mysql_real_escape_string($sub)."' AND `availability`='1' AND `buyer`='0'";
-//$query2 = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysql_real_escape_string($search)."%'";
+//$query2 = "SELECT * FROM `products` WHERE `category`='".mysqli_real_escape_string($conn, $search)."' AND `subcategory`='".mysqli_real_escape_string($conn, $sub)."' AND `availability`='1' AND `buyer`='0'";
+//$query2 = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%'";
 if($dbs == 'products'){
-    $query2 = "SELECT * FROM $dbs WHERE `availability`='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `buyer`='0' AND `itemtitle` LIKE '%".mysql_real_escape_string($search)."%'";
+    $query2 = "SELECT * FROM $dbs WHERE `availability`='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%'";
 }elseif( $dbs == 'brandyproducts'){
-    $query2 = "SELECT * FROM $dbs WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysql_real_escape_string($search)."%'";
+    $query2 = "SELECT * FROM $dbs WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%'";
 }else{
-    $query2 = "SELECT * FROM $dbs WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysql_real_escape_string($search)."%'";
+    $query2 = "SELECT * FROM $dbs WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%'";
 }
-$query_run2 = mysql_query($query2);
-$query_num_rows2 = mysql_num_rows($query_run2);
+$query_run2 = mysqli_query($conn, $query2);
+$query_num_rows2 = mysqli_num_rows($query_run2);
 $pagecount = $query_num_rows2 / $items;
 
 
 //echo $query_num_rows2;
 
-//$query_row = mysql_fetch_assoc($query_run);
+//$query_row = mysqli_fetch_assoc($query_run);
 //echo $query_row[imageone];
 echo "
         <!doctype html>

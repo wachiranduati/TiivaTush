@@ -11,13 +11,13 @@ function returnlocations(){
     $location = $_GET['loc'];
     if(!empty($location)){
       $querylocs = "SELECT * FROM `merchants` WHERE `township` LIKE '$location%'";
-      $querylocs_run = mysql_query($conn,$querylocs);
-      $querylocs_num = mysql_num_rows($querylocs_run);
+      $querylocs_run = mysqli_query($conn, $conn,$querylocs);
+      $querylocs_num = mysqli_num_rows($querylocs_run);
       if($querylocs_num > 0){
         //continue
         echo "<table class=\"table table-hover\">
                 <tbody>";
-        while($querylocs_row = mysql_fetch_assoc($querylocs_run)){
+        while($querylocs_row = mysqli_fetch_assoc($querylocs_run)){
           $town = $querylocs_row['township'];
           $county = $querylocs_row['county'];
           echo "<tr>

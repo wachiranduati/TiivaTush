@@ -52,14 +52,14 @@ if(isset($_POST['gift']) && isset($_POST['rate']) && isset($_POST['review'])){
     }else{
       die("Error");
     }
-    $query_run = mysql_query($query);
-    $query_num_rows = mysql_num_rows($query_run);
+    $query_run = mysqli_query($conn, $query);
+    $query_num_rows = mysqli_num_rows($query_run);
     if($query_num_rows == 0){
       //row does not exist not rated or reviewed
       // insert row
       //echo "not exist";
       $queryinsert = "INSERT INTO `reviews` VALUES('','$product','$site','$rateslist','$ratetotalslist','$reviewtext','1','$user_id')";
-      if($qinsert_run = mysql_query($queryinsert)){
+      if($qinsert_run = mysqli_query($conn, $queryinsert)){
         // rating on a product has begun
         echo "Thankyou for rating and reviewing the item";
       }else{
@@ -77,8 +77,8 @@ if(isset($_POST['gift']) && isset($_POST['rate']) && isset($_POST['review'])){
       //user has not commented
           // review it and update values
         $querycheckonuser = "SELECT * FROM `reviews` WHERE `productid`='$product' AND `site`='$site'";
-        $querycheckonuser_run = mysql_query($querycheckonuser);
-        if($quqerycheckonuser_row = mysql_fetch_assoc($querycheckonuser_run)){
+        $querycheckonuser_run = mysqli_query($conn, $querycheckonuser);
+        if($quqerycheckonuser_row = mysqli_fetch_assoc($querycheckonuser_run)){
           $revieweduserslist = $quqerycheckonuser_row['users'];
           $reviewedusersarray = explode(',',$revieweduserslist);
           $reviewslist = $quqerycheckonuser_row['reviews'];
@@ -136,7 +136,7 @@ if(isset($_POST['gift']) && isset($_POST['rate']) && isset($_POST['review'])){
             // update the actual data in the database with the new figures
 
             $querynewreview = "UPDATE `reviews` SET `ratetotals`='$ratetotallistnew', `reviews`='$reviewsnewlist', `reviewnos`='$reviewnosnewlist', `users`='$reviewusernewlist' WHERE `productid`='$product' AND `site`='$site'";
-            if($querynewreviewrun = mysql_query($querynewreview)){
+            if($querynewreviewrun = mysqli_query($conn, $querynewreview)){
               //successfully rated and reviewed
               echo "Your rating and review has successfully been updated. Thankyou";
             }else{

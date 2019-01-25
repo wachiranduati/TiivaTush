@@ -1,7 +1,7 @@
 <?php
 require 'connect.php';
-$today = Date(Y).'-'.Date(m).'-'.Date(d);
-$timetoday = Date(H).':'.Date(i).':'.Date(s);
+$today = Date('Y').'-'.Date('m').'-'.Date('d');
+$timetoday = Date('H').':'.Date('i').':'.Date('s');
 //$id = 2;
 $me = $_SERVER['REMOTE_ADDR'];
 //$me = '11.11.11.11';
@@ -14,21 +14,21 @@ $me = $_SERVER['REMOTE_ADDR'];
 //ALGORITHM
 // first check whether item row exists if not create one
 // decide to make a unique view counter logging ips in an array
-//mysql_real_escape_string
+//mysqli_real_escape_string
 
 if(isset($_POST['id'])){
     $id = $_POST['id'];
     if(!empty($id)){
         // do everything
         $query = "SELECT * FROM `productviews` WHERE `productid`='$id'";
-$query_run = mysql_query($query);
-$query_num_rows = mysql_num_rows($query_run);
-$row = mysql_fetch_assoc($query_run);
+$query_run = mysqli_query($conn, $query);
+$query_num_rows = mysqli_num_rows($query_run);
+$row = mysqli_fetch_assoc($query_run);
 if($query_num_rows == 0){
     // does not exist
     // create a row and give it a view of 1 and update it with todays date
     $queryinsert = "INSERT INTO `productviews` (`id`,`productid`,`views`,`lastviewed`,`lsttime`,`ips`) VALUES ('','$id','1','$today','$timetoday','$me')";
-    if($queryinsert_run = mysql_query($queryinsert)){
+    if($queryinsert_run = mysqli_query($conn, $queryinsert)){
         // row has been insert
         // recall the function to update the figure on the product page
         //echo "it has inserted";
@@ -40,7 +40,7 @@ if($query_num_rows == 0){
         //echo "Error inserting";
         echo "0";
 
-        //echo mysql_error();
+        //echo mysqli_error();
     }
 }else{
     // exists
@@ -63,7 +63,7 @@ if($query_num_rows == 0){
         //echo $views;
         $ipscount = count($ipsarray);
         $queryupdate = "UPDATE `productviews` SET `views`='$ipscount', `lastviewed`='$today', `lsttime`='$timetoday' WHERE `productid`='$id'";
-        if($queryupdate_run = mysql_query($queryupdate)){
+        if($queryupdate_run = mysqli_query($conn, $queryupdate)){
             // it updated the records okay
             // call the function again
             //echo "updated successfully1";
@@ -72,7 +72,7 @@ if($query_num_rows == 0){
             // encountered a problem updating the records
             //echo "error updating1";
             echo $ipscount;
-           // //echo mysql_error();
+           // //echo mysqli_error();
         }
 
     }else{
@@ -84,7 +84,7 @@ if($query_num_rows == 0){
         $views = count(newipsarray);
         //echo $views;
         $queryupdate = "UPDATE `productviews` SET `views`='$views', `lastviewed`='$today', `lsttime`='$timetoday',`ips`='$newipsarraystring' WHERE `productid`='$id'";
-        if($queryupdate_run = mysql_query($queryupdate)){
+        if($queryupdate_run = mysqli_query($conn, $queryupdate)){
             // it updated the records okay
             // call the function again
             //echo "updated successfully2";
@@ -93,7 +93,7 @@ if($query_num_rows == 0){
             // encountered a problem updating the records
             echo "error updating2";
             echo $views;
-           // //echo mysql_error();
+           // //echo mysqli_error();
         }
         
     }

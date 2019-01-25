@@ -86,9 +86,9 @@ function specialuploadsshack(){
               $querycategorydt = "SELECT * FROM `products` WHERE `category`='$category'";
             }
 
-            $querycategorydt_run = mysql_query($querycategorydt);
+            $querycategorydt_run = mysqli_query($conn, $querycategorydt);
             // introduce the if statement to do something if result occurs in dates occuring here
-            $querycategorydt_num = mysql_num_rows($querycategorydt_run);
+            $querycategorydt_num = mysqli_num_rows($querycategorydt_run);
             if($querycategorydt_num != 0){
               //continue
                 echo "<div class=\"table-responsive\">
@@ -111,7 +111,7 @@ function specialuploadsshack(){
                           </thead>
                           <tbody>
                   ";
-              while($querycategorydt_row = mysql_fetch_assoc($querycategorydt_run)){
+              while($querycategorydt_row = mysqli_fetch_assoc($querycategorydt_run)){
                   // check whether item occurs in the provided timeframe
                   $id = $querycategorydt_row['id'];
                   $prodsupdate = $querycategorydt_row['up_date'];
@@ -258,9 +258,9 @@ function specialuploadsshop(){
               $querycategorydt = "SELECT * FROM `brandyproducts` WHERE `category`='$category'";
             }
 
-            $querycategorydt_run = mysql_query($querycategorydt);
+            $querycategorydt_run = mysqli_query($conn, $querycategorydt);
             // introduce the if statement to do something if result occurs in dates occuring here
-            $querycategorydt_num = mysql_num_rows($querycategorydt_run);
+            $querycategorydt_num = mysqli_num_rows($querycategorydt_run);
             if($querycategorydt_num != 0){
               //continue
                 echo "<div class=\"table-responsive\">
@@ -284,7 +284,7 @@ function specialuploadsshop(){
                           </thead>
                           <tbody>
                   ";
-              while($querycategorydt_row = mysql_fetch_assoc($querycategorydt_run)){
+              while($querycategorydt_row = mysqli_fetch_assoc($querycategorydt_run)){
                   // check whether item occurs in the provided timeframe
                   $id = $querycategorydt_row['id'];
                   $prodsupdate = $querycategorydt_row['up_date'];
@@ -402,12 +402,12 @@ function searchprodsshop(){
     $search = $_POST['search'];
     if(!empty($search)){
         $querysearchcount = "SELECT * FROM `brandyproducts` WHERE `id` LIKE '%$search%'";
-        $querysearchcount_run = mysql_query($querysearchcount);
-        $querysearchcount_num = mysql_num_rows($querysearchcount_run);
+        $querysearchcount_run = mysqli_query($conn, $querysearchcount);
+        $querysearchcount_num = mysqli_num_rows($querysearchcount_run);
 
         $querysearchterm = "SELECT * FROM `brandyproducts` WHERE `id` LIKE '%$search%' ORDER BY RAND() LIMIT 5";
-        $querysearchterm_run = mysql_query($querysearchterm);
-        $querysearchterm_num = mysql_num_rows($querysearchterm_run);
+        $querysearchterm_run = mysqli_query($conn, $querysearchterm);
+        $querysearchterm_num = mysqli_num_rows($querysearchterm_run);
         if($querysearchterm_num != 0){
           //continue
           echo "<div class=\"table-responsive\">
@@ -429,7 +429,7 @@ function searchprodsshop(){
                 </tr>
               </thead>
               <tbody>";
-          while($querysearchterm_row = mysql_fetch_assoc($querysearchterm_run)){
+          while($querysearchterm_row = mysqli_fetch_assoc($querysearchterm_run)){
             $id = $querysearchterm_row['id'];
             $imageone = $querysearchterm_row['imageone'];
             $itemtitle = $querysearchterm_row['itemtitle'];
@@ -502,12 +502,12 @@ function searchshackshop(){
     $search = $_POST['search'];
     if(!empty($search)){
         $querysearchcount = "SELECT * FROM `products` WHERE `id` LIKE '%$search%'";
-        $querysearchcount_run = mysql_query($querysearchcount);
-        $querysearchcount_num = mysql_num_rows($querysearchcount_run);
+        $querysearchcount_run = mysqli_query($conn, $querysearchcount);
+        $querysearchcount_num = mysqli_num_rows($querysearchcount_run);
 
         $querysearchterm = "SELECT * FROM `products` WHERE `id` LIKE '%$search%' ORDER BY RAND() LIMIT 5";
-        $querysearchterm_run = mysql_query($querysearchterm);
-        $querysearchterm_num = mysql_num_rows($querysearchterm_run);
+        $querysearchterm_run = mysqli_query($conn, $querysearchterm);
+        $querysearchterm_num = mysqli_num_rows($querysearchterm_run);
         if($querysearchterm_num != 0){
           //continue
           echo "<div class=\"table-responsive\">
@@ -528,7 +528,7 @@ function searchshackshop(){
                 </tr>
               </thead>
               <tbody>";
-          while($querysearchterm_row = mysql_fetch_assoc($querysearchterm_run)){
+          while($querysearchterm_row = mysqli_fetch_assoc($querysearchterm_run)){
             $id = $querysearchterm_row['id'];
             $imageone = $querysearchterm_row['imageone'];
             $itemtitle = $querysearchterm_row['itemtitle'];
@@ -607,8 +607,8 @@ function displayshopproducts(){
   $nexpage = round($page + 1);
   //script to just return the count
   $resultsnumber = "SELECT * FROM `brandyproducts` WHERE `id`!='0'";
-  $resultsnumber_run = mysql_query($resultsnumber);
-  $resultsnumber_num = mysql_num_rows($resultsnumber_run);
+  $resultsnumber_run = mysqli_query($conn, $resultsnumber);
+  $resultsnumber_num = mysqli_num_rows($resultsnumber_run);
   $perpage = 40;
   $jump = 40 * ($page - 1);
 
@@ -622,8 +622,8 @@ function displayshopproducts(){
   }
 
   // $querchkshopprods = "SELECT * FROM `brandyproducts` WHERE `id`!='0' LIMIT 40";
-  $querchkshopprods_run = mysql_query($querchkshopprods);
-  $querchkshopprods_num = mysql_num_rows($querchkshopprods_run);
+  $querchkshopprods_run = mysqli_query($conn, $querchkshopprods);
+  $querchkshopprods_num = mysqli_num_rows($querchkshopprods_run);
   if($querchkshopprods_num != 0){
     echo "
     <div class=\"table-responsive\">
@@ -661,7 +661,7 @@ function displayshopproducts(){
         </thead>
         <tbody>
       ";
-    while($querchkshopprods_row = mysql_fetch_assoc($querchkshopprods_run)){
+    while($querchkshopprods_row = mysqli_fetch_assoc($querchkshopprods_run)){
       $id = $querchkshopprods_row['id'];
       $imageone = $querchkshopprods_row['imageone'];
       $itemtitle = $querchkshopprods_row['itemtitle'];
@@ -727,8 +727,8 @@ function display_shackprods(){
   $nexpage = round($page + 1);
   //script to just return the count
   $resultsnumber = "SELECT * FROM `products` WHERE `id`!='0'";
-  $resultsnumber_run = mysql_query($resultsnumber);
-  $resultsnumber_num = mysql_num_rows($resultsnumber_run);
+  $resultsnumber_run = mysqli_query($conn, $resultsnumber);
+  $resultsnumber_num = mysqli_num_rows($resultsnumber_run);
   $perpage = 40;
   $jump = 40 * ($page - 1);
   // script to just returnt the count end
@@ -741,8 +741,8 @@ function display_shackprods(){
   }
 
   // $querchkshopprods = "SELECT * FROM `brandyproducts` WHERE `id`!='0' LIMIT 40";
-  $querchkshopprods_run = mysql_query($querchkshopprods);
-  $querchkshopprods_num = mysql_num_rows($querchkshopprods_run);
+  $querchkshopprods_run = mysqli_query($conn, $querchkshopprods);
+  $querchkshopprods_num = mysqli_num_rows($querchkshopprods_run);
   if($querchkshopprods_num != 0){
     echo "
     <div class=\"table-responsive\">
@@ -779,7 +779,7 @@ function display_shackprods(){
         </thead>
         <tbody>
       ";
-    while($querchkshopprods_row = mysql_fetch_assoc($querchkshopprods_run)){
+    while($querchkshopprods_row = mysqli_fetch_assoc($querchkshopprods_run)){
       $id = $querchkshopprods_row['id'];
       $imageone = $querchkshopprods_row['imageone'];
       $itemtitle = $querchkshopprods_row['itemtitle'];

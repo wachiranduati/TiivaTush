@@ -60,9 +60,9 @@ if(isset($_SESSION['$user_id'])){
     
     $query = "SELECT * FROM `tempcart` WHERE `owner` = '$user_id'"; 
     // remember to hash and salt the user id later**********
-    $query_run = mysql_query($query); 
-    $query_num_rows = mysql_num_rows($query_run);
-    $query_fetch_assoc = mysql_fetch_assoc($query_run);
+    $query_run = mysqli_query($conn, $query); 
+    $query_num_rows = mysqli_num_rows($query_run);
+    $query_fetch_assoc = mysqli_fetch_assoc($query_run);
     
     //does cart for the user id provided exist? were checking for the number of rows returned
     if($query_num_rows == 0){
@@ -75,7 +75,7 @@ if(isset($_SESSION['$user_id'])){
         $initial_count = 1;
         $cartitem_count = $initial_count;
         $query_createcart = "INSERT INTO `tempcart` (`id`,`owner`,`items`,`count`,`cartdate`,`cookie`) VALUES ('','$user_id','$cartitem','$cartitem_count','$today','$cookievariable')";
-        if($query_createcart_run = mysql_query($query_createcart)){
+        if($query_createcart_run = mysqli_query($conn, $query_createcart)){
             echo "<br>cart has been created";
         }else{
             echo "Something wrong happened";
@@ -110,7 +110,7 @@ if(isset($_SESSION['$user_id'])){
             
             $query_update_count = "UPDATE `tempcart` SET  `count` =  '$newcountstring' WHERE  `tempcart`.`owner` ='$user_id'";
             
-            if($query_update_count_run = mysql_query($query_update_count)){
+            if($query_update_count_run = mysqli_query($conn, $query_update_count)){
                 echo '<br>count has been updated';
             }else{
                 echo 'error something went wrong';
@@ -139,7 +139,7 @@ if(isset($_SESSION['$user_id'])){
             
             $query_insert_item = "UPDATE `tempcart` SET `items`='$insertnewcartarray', `count` =  '$insertnewcartcountarray' WHERE  `tempcart`.`owner` ='$user_id'";
             
-            if($query_insert_item_run = mysql_query($query_insert_item)){
+            if($query_insert_item_run = mysqli_query($conn, $query_insert_item)){
                 echo '<br>count has been inserted';
             }else{
                 echo 'error in insert something went wrong';
@@ -165,9 +165,9 @@ if(isset($_SESSION['$user_id'])){
             //check whether the cookie exists in the database
             $cookiecheckvalue = $_COOKIE['Tiiva'];
             $querycookiecheck = "SELECT * FROM `tempcart` WHERE `cookie` = '$cookiecheckvalue'";
-            $query_run_cookiecheck = mysql_query($querycookiecheck);
-            $query_run_cookiecheck_num_rows = mysql_num_rows($query_run_cookiecheck);
-            $query_fetch_assoc_cookiecheck = mysql_fetch_assoc($query_run_cookiecheck);
+            $query_run_cookiecheck = mysqli_query($conn, $querycookiecheck);
+            $query_run_cookiecheck_num_rows = mysqli_num_rows($query_run_cookiecheck);
+            $query_fetch_assoc_cookiecheck = mysqli_fetch_assoc($query_run_cookiecheck);
              if($query_run_cookiecheck_num_rows != 0){
                  // cookie is in the database maybe with an owner or without
                  if($query_fetch_assoc_cookiecheck['owner']  != ''){
@@ -190,7 +190,7 @@ if(isset($_SESSION['$user_id'])){
                          $newupdateownerfullcountstring = implode(',',$newupdateownerfullcountarray);
                          
                          $queryupdateownerow = "UPDATE `tempcart` SET `count` = '$newupdateownerfullcountstring' WHERE `id`='$updateownerfullrowid' AND `owner`!=''";
-                             if($anythingcangoinhere = mysql_query($queryupdateownerow)){
+                             if($anythingcangoinhere = mysqli_query($conn, $queryupdateownerow)){
                                  echo "<br>item was found in the cart and its count has been updated 1";
                              }else{
                                  echo "<br>Something went terribly wrong item was found but cannot be updated 2";
@@ -209,7 +209,7 @@ if(isset($_SESSION['$user_id'])){
                          $newudpateownerinarrayownerfulcountstring = implode(',',$newupdateownerfullcountarray);
                          
                          $queryupdateownerow = "UPDATE `tempcart` SET `count` = '$newudpateownerinarrayownerfulcountstring',`items`='$newupdateownerinarrayownerfullstring' WHERE `id`='$updateownerfullrowid' AND `owner`!=''";
-                             if($anythingcangoinhere = mysql_query($queryupdateownerow)){
+                             if($anythingcangoinhere = mysqli_query($conn, $queryupdateownerow)){
                                  echo "<br>item was found in the cart and its count has been updated 3";
                              }else{
                                  echo "<br>Something went terribly wrong item was found but cannot be updated 4";
@@ -237,7 +237,7 @@ if(isset($_SESSION['$user_id'])){
                          $newupdateownerlessrowcountarraystring = implode(',',$newupdateownerlessrowcountarray);
                          //update only the count in the exact position it appears
                          $queryupdateownelessrow = "UPDATE `tempcart` SET `count` = '$newupdateownerlessrowcountarraystring' WHERE `id`='$updateownerlessrowid' AND `owner`=''";
-                             if($queryupdateownerlessrowrun = mysql_query($queryupdateownelessrow)){
+                             if($queryupdateownerlessrowrun = mysqli_query($conn, $queryupdateownelessrow)){
                                  echo "<br>item was found in the cart and its count has been updated";
                              }else{
                                  echo "<br>Something went terribly wrong item was found but cannot be updated";
@@ -255,7 +255,7 @@ if(isset($_SESSION['$user_id'])){
                          
                          // update the query
                          $queryupdateownelessrow = "UPDATE `tempcart` SET `count` = '$newinsertownerlessrowcountarraystring', `items`='$newinsertownerlessrowitemsarraystring' WHERE `id`='$updateownerlessrowid' AND `owner`=''";
-                             if($queryupdateownerlessrowrun = mysql_query($queryupdateownelessrow)){
+                             if($queryupdateownerlessrowrun = mysqli_query($conn, $queryupdateownelessrow)){
                                  echo "<br>Item wasnt in the cart. It has been added and count updated";
                              }else{
                                  echo "<br>Something went wrong item could not be added into the cart";

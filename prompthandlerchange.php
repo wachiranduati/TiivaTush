@@ -23,8 +23,8 @@ function createprompt(){
 
     $loggedstaff = $_SESSION['$staff'];
     $querystaff = "SELECT * FROM `staff` WHERE `id`='$loggedstaff'";
-    $querystaff_run = mysql_query($querystaff);
-    if($querystaff_row = mysql_fetch_assoc($querystaff_run)){
+    $querystaff_run = mysqli_query($conn, $querystaff);
+    if($querystaff_row = mysqli_fetch_assoc($querystaff_run)){
       //first get the staff name
       $staffnick = $querystaff_row['tiivanick'];
     }
@@ -44,8 +44,8 @@ function createprompt(){
 
         // first check whether the same item from the same cart exists before inserting
         $queryrowcheck = "SELECT * FROM `transitprompt` WHERE `itemid`='$itemid' AND `cartname`='$cartname'";
-        $queryrowcheck_run = mysql_query($queryrowcheck);
-        $queryrowcheck_num = mysql_num_rows($queryrowcheck_run);
+        $queryrowcheck_run = mysqli_query($conn, $queryrowcheck);
+        $queryrowcheck_num = mysqli_num_rows($queryrowcheck_run);
         if($queryrowcheck_num == 0){
           // no other accoutn of it so proceed
           // SINCE THERE ARE MTUSH AND SHOP ITEMS THAT RULE IS FLAWED. WORK IT OUT
@@ -54,14 +54,14 @@ function createprompt(){
           // but first filter the agent id| query his name instead and move on
           // id should check out to name
           $queryfilterstaffname = "SELECT * FROM `staff` WHERE `id`='$handlerid' AND `tiivanick`='$handler'";
-          $queryfilterstaffname_run = mysql_query($queryfilterstaffname);
-          $queryfilterstaffname_num = mysql_num_rows($queryfilterstaffname_run);
+          $queryfilterstaffname_run = mysqli_query($conn, $queryfilterstaffname);
+          $queryfilterstaffname_num = mysqli_num_rows($queryfilterstaffname_run);
           if($queryfilterstaffname_num == 1){
             // theres only one result which is okay, proceed. there shouldnt exhist most than one row
             // insert row
             $querypromptinsert = "INSERT INTO `transitprompt` (`id`,`itemid`,`cartname`,`hdlfrom`,`exchlocs`,`hdlto`,`exchtime`,`exchcenter`,`sign`)
             VALUES ('','$itemid','$cartname','$staffnick','$location','$handler','$datetime','$exchcenter','0')";
-            if($querypromptinsert_run = mysql_query($querypromptinsert)){
+            if($querypromptinsert_run = mysqli_query($conn, $querypromptinsert)){
               //it runs...proceed
               echo "prompt has been submitted";
             }else{
@@ -103,8 +103,8 @@ function showmyprompts(){
   // this are prompts sent out to me
   $loggedstaff = $_SESSION['$staff'];
   $querystaff = "SELECT * FROM `staff` WHERE `id`='$loggedstaff'";
-  $querystaff_run = mysql_query($querystaff);
-  if($querystaff_row = mysql_fetch_assoc($querystaff_run)){
+  $querystaff_run = mysqli_query($conn, $querystaff);
+  if($querystaff_row = mysqli_fetch_assoc($querystaff_run)){
     //first get the staff name
     $staffnick = $querystaff_row['tiivanick'];
     // query the prompt dbs to find a row that matches my name
@@ -126,8 +126,8 @@ function showmyprompts(){
           </thead><tbody>";
     //the table ends here
     $queryprompthandler = "SELECT * FROM  `transitprompt` WHERE `hdlto`='$staffnick' AND `sign`='0'";
-    $queryprompthandler_run = mysql_query($queryprompthandler);
-    $queryprompthandler_num = mysql_num_rows($queryprompthandler_run);
+    $queryprompthandler_run = mysqli_query($conn, $queryprompthandler);
+    $queryprompthandler_num = mysqli_num_rows($queryprompthandler_run);
 
     if($queryprompthandler_num == 0){
       //empty so show no thing in the table
@@ -136,7 +136,7 @@ function showmyprompts(){
             </tr>";
     }else{
       // continue on with the while loop
-      while ($queryprompthandler_row = mysql_fetch_assoc($queryprompthandler_run)) {
+      while ($queryprompthandler_row = mysqli_fetch_assoc($queryprompthandler_run)) {
         //TODO INCLUDE THE ITEM ID FROM TRANSITDBS FOR EASIER COMPARISON
         $no = '#';
         $id = $queryprompthandler_row['id'];
@@ -177,8 +177,8 @@ function showmysentprompts(){
   //script shows prompts sent out by me
   $loggedstaff = $_SESSION['$staff'];
   $querystaff = "SELECT * FROM `staff` WHERE `id`='$loggedstaff'";
-  $querystaff_run = mysql_query($querystaff);
-  if($querystaff_row = mysql_fetch_assoc($querystaff_run)){
+  $querystaff_run = mysqli_query($conn, $querystaff);
+  if($querystaff_row = mysqli_fetch_assoc($querystaff_run)){
     //first get the staff name
     $staffnick = $querystaff_row['tiivanick'];
     // query the prompt dbs to find a row that matches my name
@@ -200,8 +200,8 @@ function showmysentprompts(){
           </thead><tbody>";
     //the table ends here
     $queryprompthandler = "SELECT * FROM  `transitprompt` WHERE `hdlfrom`='$staffnick' AND `sign`='0'";
-    $queryprompthandler_run = mysql_query($queryprompthandler);
-    $queryprompthandler_num = mysql_num_rows($queryprompthandler_run);
+    $queryprompthandler_run = mysqli_query($conn, $queryprompthandler);
+    $queryprompthandler_num = mysqli_num_rows($queryprompthandler_run);
     if($queryprompthandler_num == 0){
       // no prompts sent out to me
       echo "<tr>
@@ -209,7 +209,7 @@ function showmysentprompts(){
             </tr>";
     }else{
       // there are prompts sent out to me
-      while ($queryprompthandler_row = mysql_fetch_assoc($queryprompthandler_run)) {
+      while ($queryprompthandler_row = mysqli_fetch_assoc($queryprompthandler_run)) {
         //TODO INCLUDE THE ITEM ID FROM TRANSITDBS FOR EASIER COMPARISON
         $no = '#';
         $id = $queryprompthandler_row['id'];
@@ -259,18 +259,18 @@ function confirmhandlerchange(){
     $itemid = $_POST['itemid'];
     $loggedstaff = $_SESSION['$staff'];
     $querystaff = "SELECT * FROM `staff` WHERE `id`='$loggedstaff'";
-    $querystaff_run = mysql_query($querystaff);
-    if($querystaff_row = mysql_fetch_assoc($querystaff_run)){
+    $querystaff_run = mysqli_query($conn, $querystaff);
+    if($querystaff_row = mysqli_fetch_assoc($querystaff_run)){
       //first get the staff name
       $staffnick = $querystaff_row['tiivanick'];
       $staffcenter = $querystaff_row['tiivacenter'];
     }
     //check whether the item actually exhists
     $querypromptaccept = "SELECT * FROM `transitprompt` WHERE `id`='$itemid' AND `hdlto`='$staffnick'";
-    $querypromptaccept_run = mysql_query($querypromptaccept);
-    $querypromptaccept_num = mysql_num_rows($querypromptaccept_run);
+    $querypromptaccept_run = mysqli_query($conn, $querypromptaccept);
+    $querypromptaccept_num = mysqli_num_rows($querypromptaccept_run);
     if($querypromptaccept_num == 1){
-      $querypromptaccept_row = mysql_fetch_assoc($querypromptaccept_run);
+      $querypromptaccept_row = mysqli_fetch_assoc($querypromptaccept_run);
       $cartname = $querypromptaccept_row['cartname'];
       $item = $querypromptaccept_row['itemid'];
       $exchlocs = $querypromptaccept_row['exchlocs'];
@@ -284,21 +284,21 @@ function confirmhandlerchange(){
       // also echo the final result commanding the handler to physically pick up the item now
       // $queryacceptprompt = "UPDATE `transitprompt` SET `sign`='1' WHERE `id`='$itemid'";
       $queryacceptprompt = "UPDATE `transitprompt` SET `sign`='0' WHERE `id`='$itemid'";
-      if($queryacceptprompt_run = mysql_query($queryacceptprompt)){
+      if($queryacceptprompt_run = mysqli_query($conn, $queryacceptprompt)){
         //continue
         //TODO LOG THE DELETES IN A TEXT FILE FOR SUPER USER TO REVIEW IS ORAIT
         //update the transitdbs thingy
         //first get the id of our row
         $queryacceptrowid = "SELECT * FROM `pickupds` WHERE `item`='$item' AND `cart`='$cartname'";
-        $queryacceptrowid_run = mysql_query($queryacceptrowid);
-        $queryacceptrowid_num = mysql_num_rows($queryacceptrowid_run);
+        $queryacceptrowid_run = mysqli_query($conn, $queryacceptrowid);
+        $queryacceptrowid_num = mysqli_num_rows($queryacceptrowid_run);
         if($queryacceptrowid_num == 1){
           // retrieve the row id and continue to transitdbs
-            $queryacceptrowid_row = mysql_fetch_assoc($queryacceptrowid_run);
+            $queryacceptrowid_row = mysqli_fetch_assoc($queryacceptrowid_run);
             $rowid = $queryacceptrowid_row['id'];
             $queryupdatetransitinfo = "SELECT * FROM `transitdbs` WHERE `itemid`='$rowid'";
-            $queryupdatetransitinfo_run = mysql_query($queryupdatetransitinfo);
-            if($queryupdatetransitinfo_row = mysql_fetch_assoc($queryupdatetransitinfo_run)){
+            $queryupdatetransitinfo_run = mysqli_query($conn, $queryupdatetransitinfo);
+            if($queryupdatetransitinfo_row = mysqli_fetch_assoc($queryupdatetransitinfo_run)){
               //continue by retrieving some part of the items to be updated
               $oldexchlocs = $queryupdatetransitinfo_row['exchlocs'];
               $oldhandlers = $queryupdatetransitinfo_row['handlers'];
@@ -322,10 +322,10 @@ function confirmhandlerchange(){
               //update transitdbs
               $queryupdatefinal = "UPDATE `transitdbs` SET `exchlocs`='$newexchlocs', `handlers`='$newhandlers', `exchdattimes`='$newexchdattimes',
               `exchcenters`='$newexchcenters' WHERE `itemid`='$rowid' AND `cartname`='$cartname'";
-              if($queryupdatefinal_run = mysql_query($queryupdatefinal)){
+              if($queryupdatefinal_run = mysqli_query($conn, $queryupdatefinal)){
                 // delete the record from the transitprompt dbs
                 $querydeleterecord = "DELETE FROM `transitprompt` WHERE `id`='$itemid'";
-                if($querydeleterecord_run = mysql_query($querydeleterecord)){
+                if($querydeleterecord_run = mysqli_query($conn, $querydeleterecord)){
                   //update complete
                   echo "Database updated item from cart $cartname should now be physically in your custody";
                 }else{
@@ -333,7 +333,7 @@ function confirmhandlerchange(){
                 }
               }else{
                 // die("Error5");
-                echo mysql_error();
+                echo mysqli_error();
               }
 
             }else{
@@ -391,20 +391,20 @@ function declinehandlerchange(){
       //continue
       $loggedstaff = $_SESSION['$staff'];
       $querystaff = "SELECT * FROM `staff` WHERE `id`='$loggedstaff'";
-      $querystaff_run = mysql_query($querystaff);
-      if($querystaff_row = mysql_fetch_assoc($querystaff_run)){
+      $querystaff_run = mysqli_query($conn, $querystaff);
+      if($querystaff_row = mysqli_fetch_assoc($querystaff_run)){
         //first get the staff name
         $staffnick = $querystaff_row['tiivanick'];
         $staffcenter = $querystaff_row['tiivacenter'];
       // check whether row addressed to this user exists then proceed to delete row
         $queryrowexist = "SELECT * FROM `transitprompt` WHERE `id`='$id' AND `hdlto`='$staffnick' AND `sign`='0'";
-        $queryrowexist_run = mysql_query($queryrowexist);
-        if($queryrowexist_num = mysql_num_rows($queryrowexist_run)){
-          $queryrowexist_row = mysql_fetch_assoc($queryrowexist_run);
+        $queryrowexist_run = mysqli_query($conn, $queryrowexist);
+        if($queryrowexist_num = mysqli_num_rows($queryrowexist_run)){
+          $queryrowexist_row = mysqli_fetch_assoc($queryrowexist_run);
           //continue
           //delete
           $querydeleteprompt = "DELETE FROM `transitprompt` WHERE  `id`='$id' AND `hdlto`='$staffnick' AND `sign`='0'";
-          if($querydeleteprompt_run = mysql_query($querydeleteprompt)){
+          if($querydeleteprompt_run = mysqli_query($conn, $querydeleteprompt)){
             // successfully deleted
             echo "prompt successfully declined";
           }else{
@@ -436,20 +436,20 @@ function deleteprompt(){
       //continue
       $loggedstaff = $_SESSION['$staff'];
       $querystaff = "SELECT * FROM `staff` WHERE `id`='$loggedstaff'";
-      $querystaff_run = mysql_query($querystaff);
-      if($querystaff_row = mysql_fetch_assoc($querystaff_run)){
+      $querystaff_run = mysqli_query($conn, $querystaff);
+      if($querystaff_row = mysqli_fetch_assoc($querystaff_run)){
         //first get the staff name
         $staffnick = $querystaff_row['tiivanick'];
         $staffcenter = $querystaff_row['tiivacenter'];
       // check whether row addressed to this user exists then proceed to delete row
         $queryrowexist = "SELECT * FROM `transitprompt` WHERE `id`='$id' AND `hdlfrom`='$staffnick' AND `sign`='0'";
-        $queryrowexist_run = mysql_query($queryrowexist);
-        if($queryrowexist_num = mysql_num_rows($queryrowexist_run)){
-          $queryrowexist_row = mysql_fetch_assoc($queryrowexist_run);
+        $queryrowexist_run = mysqli_query($conn, $queryrowexist);
+        if($queryrowexist_num = mysqli_num_rows($queryrowexist_run)){
+          $queryrowexist_row = mysqli_fetch_assoc($queryrowexist_run);
           //continue
           //delete
           $querydeleteprompt = "DELETE FROM `transitprompt` WHERE  `id`='$id' AND `hdlfrom`='$staffnick' AND `sign`='0'";
-          if($querydeleteprompt_run = mysql_query($querydeleteprompt)){
+          if($querydeleteprompt_run = mysqli_query($conn, $querydeleteprompt)){
             // successfully deleted
             echo "handover prompt has been deleted";
           }else{
