@@ -1,5 +1,6 @@
 <?php
 require 'connect.php';
+require 'looptemplater.php';
 
 // CREATE ALL FUNCTIONS FOR ALL CASES
 // CASE 1 TO LOOP A GENERAL CATEGORY BOTH MTUSH AND SHOP

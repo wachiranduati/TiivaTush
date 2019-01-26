@@ -2,6 +2,7 @@
 ob_start();
 session_start();
 require 'connect.php';
+require 'looptemplater.php';
 //search will be category
 // no sub
 
@@ -49,35 +50,7 @@ $count = 0;
 while($query_row = mysqli_fetch_assoc($query_run)){
     
 $price = number_format($query_row['price']);
-    echo "
-    <div class=\"col-lg-2 col-md-2 col-sm-6 col-xs-6\" id=\"box1\" style=\"margin-top:1%;border:none;\">
-            <a href=\"productdetails.php?id=$query_row[id]\" target=\"_blank\">
-                <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12 productimage\" style=\"background-image:url('mtumbauploads/compresseduploads/$query_row[imageone]'); height:140px;width:100%;background-size:80%;\">
-
-                </div>
-            </a>
-            </hr>
-            <p class=\"text-capitalize\" style=\"margin:0px;padding:0px;\">
-                $query_row[label]
-                <span class=\"pull-right\">
-                    <small>
-                    MTUMBA
-                    </small>
-                </span>
-            </p>
-            <hr style=\"margin:0px;padding:0px;\">
-                <h1 class=\"text-center text-capitalize\" style=\"font-family:kok;padding:0px;margin:0px;color:#606060;font-size:100%;\">
-                    <strong>
-                    $query_row[itemtitle]
-                    </strong>
-                </h1>
-            <h2 class=\"text-left\" style=\"padding:0px;margin:0px;color:#ffa427;font-size:100%;\">Ksh 
-                $price
-            </h2>
-            
-            
-    </div>
-        ";
+    echo returnProperItemsMainpagees($query_row['id'], $query_row['imageone'], $query_row['label'], $query_row['itemtitle'], $price);
     $count++;
     if($count % 12 == 0){
         echo "

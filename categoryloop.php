@@ -1,5 +1,6 @@
 <?php
 require 'connect.php';
+require 'looptemplater.php';
 $id = 5;
 // using id like this so that we can increment it will the 5 minute lapse
 // wer are going to select all the items any single div will require

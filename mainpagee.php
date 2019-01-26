@@ -284,7 +284,6 @@ echo "
                 </div>
                 <div class=\"row hidden\">
                     <div class=\"col-lg-12 col-md-12 col-xs-12\">
-                        <span id=\"sub\">$sub</span>
                     <span id=\"cat\">$search</span>
                     <span id=\"page\">$page</span>
                     </div>

@@ -1,5 +1,6 @@
 <?php
 require 'connect.php';
+require 'looptemplater.php';
 $id = $_GET['blogspot'];
 $query = "SELECT `id`, `title` ,`writter` ,`date` ,`views` ,`image`, `message`, `rating`, `tag1` , `tag2` , `tag3` FROM `blogs` WHERE `id`='".mysqli_real_escape_string($conn, 1)."'";
 $query_run = mysqli_query($conn, $query);

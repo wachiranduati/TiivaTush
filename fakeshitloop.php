@@ -1,5 +1,6 @@
 <?php
 require 'connect.php';
+require 'looptemplater.php';
 
 // CREATE ALL FUNCTIONS FOR ALL CASES 
 // CASE 1 TO LOOP A GENERAL CATEGORY BOTH MTUSH AND SHOP
@@ -43,21 +44,7 @@ if($query_num_rows <= $notifymecount){
         // items are too few to display 
         // produce message to user that either sold out booked out or uploading
         // set entire background and display message to clients
-        echo "
-                <div class=\"row visible-lg visible-md\">
-                    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\" style=\"height:400px;width:100%;color:red;background-image:url('editions/man-person-jumping-desert.jpg');background-size:100%;background-position:center;background-repeat:no-repeat;\">
-                        <h4 class=\"text-center text-capitalize\" style=\"margin-top:20%;\">Sorry items have ran out in this category</h4>
-                    </div>
-                </div>
-                
-                <div class=\"row visible-sm visible-xs\">
-                    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\" style=\"height:200px;width:100%;color:red;background-image:url('editions/man-person-jumping-desert.jpg');background-size:100%;background-position:center;background-repeat:no-repeat;\">
-                        <h4 class=\"text-center text-capitalize\" style=\"margin-top:20%;\">Sorry items have ran out in this category</h4>
-                    </div>
-                </div>
-                
-                
-            ";
+        echo returnEmptyCategory();
     }else{
         // items are enought to display continue
         // display items for customer to view
@@ -130,21 +117,7 @@ if($query_num_rows <= $notifymecount){
         // items are too few to display 
         // produce message to user that either sold out booked out or uploading
         // set entire background and display message to clients
-        echo "
-                <div class=\"row visible-lg visible-md\">
-                    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\" style=\"height:400px;width:100%;color:red;background-image:url('editions/man-person-jumping-desert.jpg');background-size:100%;background-position:center;background-repeat:no-repeat;\">
-                        <h4 class=\"text-center text-capitalize\" style=\"margin-top:20%;\">Sorry items have ran out in this category</h4>
-                    </div>
-                </div>
-                
-                <div class=\"row visible-sm visible-xs\">
-                    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\" style=\"height:200px;width:100%;color:red;background-image:url('editions/man-person-jumping-desert.jpg');background-size:100%;background-position:center;background-repeat:no-repeat;\">
-                        <h4 class=\"text-center text-capitalize\" style=\"margin-top:20%;\">Sorry items have ran out in this category</h4>
-                    </div>
-                </div>
-                
-                
-            ";
+        echo returnEmptyCategory();
     }else{
         // items are enought to display continue
         // display items for customer to view
@@ -215,21 +188,7 @@ if($query_num_rows <= $notifymecount){
         // items are too few to display 
         // produce message to user that either sold out booked out or uploading
         // set entire background and display message to clients
-        echo "
-                <div class=\"row visible-lg visible-md\">
-                    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\" style=\"height:400px;width:100%;color:red;background-image:url('editions/man-person-jumping-desert.jpg');background-size:100%;background-position:center;background-repeat:no-repeat;\">
-                        <h4 class=\"text-center text-capitalize\" style=\"margin-top:20%;\">Sorry items have ran out in this category</h4>
-                    </div>
-                </div>
-                
-                <div class=\"row visible-sm visible-xs\">
-                    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\" style=\"height:200px;width:100%;color:red;background-image:url('editions/man-person-jumping-desert.jpg');background-size:100%;background-position:center;background-repeat:no-repeat;\">
-                        <h4 class=\"text-center text-capitalize\" style=\"margin-top:20%;\">Sorry items have ran out in this category</h4>
-                    </div>
-                </div>
-                
-                
-            ";
+        echo returnEmptyCategory();
     }else{
         // items are enought to display continue
         // display items for customer to view
