@@ -8,6 +8,8 @@ $cartame = 'shopcart';
 $dbsother = 'products';
 $cartameother = 'shackcart';
 
+if(isset($_GET['shipping'])){
+
 if($_GET['shipping']){
     $shippingER = $_GET['shipping'];
     if($shippingER == 'free'){
@@ -28,8 +30,15 @@ if($_GET['shipping']){
     }
 }else{
     $shipping = 'FREE BY TIIVA';
+    $message = "";
     //echo $shipping;
 }
+}else{
+    $shipping = 'FREE BY TIIVA';
+    $message = "";
+    //echo $shipping;
+}
+
 
 if(isset($_GET['action'])){
     $id = intval($_GET['id']);
