@@ -844,7 +844,7 @@ themselves?”</div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
                     <a href="Mens.php">
-                        <img src="banners/merchant.png" class="img-responsive"/>
+                        <img src="banners/merchant.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
             </div>
@@ -1132,7 +1132,7 @@ themselves?”</div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
                     <a href="Mens.php">
-                        <img src="banners/merchant.png" class="img-responsive"/>
+                        <img src="banners/merchant.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
             </div>
@@ -1419,7 +1419,7 @@ themselves?”</div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
                     <a href="Mens.php">
-                        <img src="banners/merchant.png" class="img-responsive"/>
+                        <img src="banners/merchant.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
             </div>
@@ -1707,7 +1707,7 @@ themselves?”</div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
                     <a href="Mens.php">
-                        <img src="banners/merchant.png" class="img-responsive"/>
+                        <img src="banners/merchant.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
             </div>

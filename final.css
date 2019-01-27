@@ -164,3 +164,7 @@ to {top: 0; opacity: 1}
     border:1px solid red;
     background-size: 110%;
 }
+
+.bannerlg{
+    display: block;width: 100%;
+}

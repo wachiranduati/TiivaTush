@@ -550,7 +550,7 @@ $century = 860;//Mtush
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
                     <a href="index.php">
-                        <img src="banners/different.png" class="img-responsive"/>
+                        <img src="banners/different.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
             </div>
@@ -691,7 +691,7 @@ $century = 860;//Mtush
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
                     <a href="index.php">
-                        <img src="banners/variety.png" class="img-responsive"/>
+                        <img src="banners/variety.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
             </div>
@@ -839,7 +839,7 @@ $century = 860;//Mtush
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
                     <a href="blog.php">
-                        <img src="banners/blogs.png" class="img-responsive"/>
+                        <img src="banners/blogs.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
             </div>
@@ -987,7 +987,7 @@ $century = 860;//Mtush
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
                     <a href="index.php">
-                        <img src="banners/mtumbanner.png" class="img-responsive"/>
+                        <img src="banners/mtumbanner.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
             </div>
@@ -1146,7 +1146,7 @@ $century = 860;//Mtush
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
                     <a href="shop.php">
-                        <img src="banners/outdoors.png" class="img-responsive"/>
+                        <img src="banners/outdoors.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
             </div>
@@ -1283,7 +1283,7 @@ $century = 860;//Mtush
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
                     <a href="index.php">
-                        <img src="banners/different.png" class="img-responsive"/>
+                        <img src="banners/different.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
             </div>
@@ -1430,7 +1430,9 @@ $century = 860;//Mtush
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
                     <a href="index.php">
-                        <img src="banners/varietytwo.png" class="img-responsive"/>
+                        
+<img src="banners/varietytwo.png" class="img-responsive bannerlg"/>
+
                     </a>
                 </div>
             </div>
@@ -1577,7 +1579,7 @@ $century = 860;//Mtush
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
                     <a href="index.php">
-                        <img src="banners/thankyou.png" class="img-responsive"/>
+                        <img src="banners/thankyou.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
             </div>
@@ -1727,7 +1729,7 @@ $century = 860;//Mtush
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
                     <a href="Mens.php">
-                        <img src="banners/different.png" class="img-responsive"/>
+                        <img src="banners/different.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
             </div>
