@@ -131,7 +131,7 @@ to {top: 0; opacity: 1}
 }
 .labeltainer:hover{
     color:black;
-    text-weight:bold;
+    font-weight:bold;
     background-color: white;
 }
 #box2 {

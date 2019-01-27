@@ -619,7 +619,7 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=bags&sub=backpack&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;daypacks<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -645,7 +645,7 @@ $century = 860;//Mtush
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/bagsbackpackeverlanesnaps.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsbackpackeverlanesnaps.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -654,7 +654,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagsbackpackheritagebackpacks.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsbackpackheritagebackpacks.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -662,7 +662,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagsbackpackdaypacks.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsbackpackdaypacks.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -670,7 +670,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagsbackpackscoutseries.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsbackpackscoutseries.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -760,7 +760,7 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=bags&sub=duffel&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;backpack bags<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -786,7 +786,7 @@ $century = 860;//Mtush
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/bagsduffelbarrelbags.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsduffelbarrelbags.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -795,7 +795,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagsduffeldaypackbags.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsduffeldaypackbags.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -803,7 +803,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagsduffelsatchelbags.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsduffelsatchelbags.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -895,7 +895,7 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=bags&sub=clutch&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;envelope<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -922,7 +922,7 @@ $century = 860;//Mtush
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/bagsclutchsaddlebags.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsclutchsaddlebags.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -931,7 +931,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagsclutchpouchbags.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsclutchpouchbags.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -939,7 +939,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagsclutchwristletbags.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsclutchwristletbags.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -947,7 +947,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagsclutchclutchbags.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsclutchclutchbags.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1039,7 +1039,7 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=bags&sub=slouch&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;bucket bags<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -1066,7 +1066,7 @@ $century = 860;//Mtush
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/bagsslouchshopperbags.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsslouchshopperbags.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -1075,7 +1075,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagsslouchbucketbags.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsslouchbucketbags.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -1083,7 +1083,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagsslouchshoulderbags.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsslouchshoulderbags.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1091,7 +1091,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagsslouchbaguettebags.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsslouchbaguettebags.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1183,7 +1183,7 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=bags&sub=misc&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;make-up bags<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -1210,7 +1210,7 @@ $century = 860;//Mtush
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/bagsmiscpencilcase.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsmiscpencilcase.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -1219,7 +1219,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagsmiscnotebookbags.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsmiscnotebookbags.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -1227,7 +1227,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagsmiscmakeupbag.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsmiscmakeupbag.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1329,7 +1329,7 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpagee.php?search=bags&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;everlane<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -1357,7 +1357,7 @@ $century = 860;//Mtush
 
 
                             <div class="item active">
-                                    <img src="others/bagslabelsmadewell.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagslabelsmadewell.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -1365,7 +1365,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagslabelsurbanoutfitters.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagslabelsurbanoutfitters.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1373,7 +1373,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagslabelseverlane.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagslabelseverlane.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->

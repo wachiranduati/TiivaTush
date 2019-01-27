@@ -1,6 +1,7 @@
 #categories {
             padding-left: 0px;
-            line-height: 3;
+            line-height: 4;
+            margin: 0;
 }
 #categoriescontainer {
     background-color: white;
@@ -13,19 +14,22 @@
     list-style: none;
     border: none;
     cursor: pointer;
+    box-sizing: border-box;
+    padding: 0 4px;
 }
 #categories li:hover {
-    border-top: 1px solid gainsboro;
-    border-bottom: 1px solid gainsboro;
-    font-family: kok;
     background-color: rgba(220, 220, 220, 0.31);
 }
 #categories li a {
     text-decoration: none;
     color: #777777;
-    font-size: 80%;
+    font-size: 95%;
 }
 
 #categories li:hover  #categories li a {
     color: white;
+}
+
+.categoriestopprnt{
+    padding: 0;
 }

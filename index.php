@@ -320,7 +320,7 @@ if(isset($_POST['useremail'])){
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-5 col-xs-5 visible-lg visible-md">
                         <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories" style="line-height:2.5;padding-bottom:0;margin-bottom:2px;">
                             <li class="text-center" style="font-weight:bold;background-color:black;border:1px solid white;"><span style="color:orange;" class="text-uppercase text-center">Categories</span></li>
                             <li><a href="sportswear.php" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Sportswear<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -604,9 +604,10 @@ if(isset($_POST['useremail'])){
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="row">
 
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
+                                
                         <ul id="categories">
 
                             <li><a href="manpage.php?search=sportswear&sub=female&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Mens Sportswear<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -632,35 +633,35 @@ if(isset($_POST['useremail'])){
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/menssportswear.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/menssportswear.gif" class="img-responsive">
                                     <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
+                                        <h3>Sportswear</h3>
 
-                                        <!-- <p>Asscreed but not right here</p> -->
+                                        <p>Dressed for the pitch</p>
                                     </div>
                             </div>
 
                             <div class="item">
-                                    <img src="others/mensshirts.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/mensshirts.gif" class="img-responsive">
                                     <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
+                                        <h3>Men's Shirts</h3>
+                                        <p>Perfect Shirts for the perfect guy</p>
                                     </div>
                             </div>
 
                             <div class="item">
-                                    <img src="others/mensofficial.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/mensofficial.gif" class="img-responsive">
                                     <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
+                                        <h3>Formalwear?</h3>
+                                        <p>Gotta look sharp</p>
                                     </div>
                             </div>
 
                             <div class="item">
-                                    <img src="others/mensjackets.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/mensjackets.gif" class="img-responsive">
                                     <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
+                                        <h3>Men's Jackets</h3>
+                                        <p>Look cool keeping warm</p>
                                     </div>
                             </div>
 
@@ -750,7 +751,7 @@ if(isset($_POST['useremail'])){
 
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
 
                         <ul id="categories">
 
@@ -778,7 +779,7 @@ if(isset($_POST['useremail'])){
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/womensdresses.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/womensdresses.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -787,7 +788,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/womenstops.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/womenstops.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -795,7 +796,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/womenssweaters.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/womenssweaters.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -803,7 +804,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/womensblazers.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/womensblazers.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -894,7 +895,7 @@ if(isset($_POST['useremail'])){
                             <div class="row">
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=shoes&sub=flats&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Flat shoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -921,7 +922,7 @@ if(isset($_POST['useremail'])){
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/shoesflatshoes.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/shoesflatshoes.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -930,7 +931,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/shoestoms.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/shoestoms.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -938,7 +939,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/shoessportsshoes.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/shoessportsshoes.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -946,7 +947,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/shoesloafers.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/shoesloafers.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1038,7 +1039,7 @@ if(isset($_POST['useremail'])){
                             <div class="row">
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=kids&sub=sports&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Kids Sportswear<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -1065,7 +1066,7 @@ if(isset($_POST['useremail'])){
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/kidsdolls.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsdolls.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -1074,7 +1075,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidssportswear.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidssportswear.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -1082,7 +1083,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidstops.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidstops.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1090,7 +1091,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidssweaters.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidssweaters.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1182,7 +1183,7 @@ if(isset($_POST['useremail'])){
                             <div class="row">
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=sportswear&sub=joggers&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Joggers Sportswear<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -1209,7 +1210,7 @@ if(isset($_POST['useremail'])){
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/sportswearsocks.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/sportswearsocks.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -1218,7 +1219,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/sportswearvests.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/sportswearvests.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -1226,7 +1227,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/sportswearshoes.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/sportswearshoes.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1234,7 +1235,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/sportswearshorts.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/sportswearshorts.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1325,7 +1326,7 @@ if(isset($_POST['useremail'])){
                             <div class="row">
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=bags&sub=backpack&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Back packs<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -1352,7 +1353,7 @@ if(isset($_POST['useremail'])){
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/bagsbackpack.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsbackpack.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -1361,7 +1362,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagslingbag.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagslingbag.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -1369,7 +1370,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagsclutch.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsclutch.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1377,7 +1378,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/bagsduffelbags.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/bagsduffelbags.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1483,7 +1484,7 @@ if(isset($_POST['useremail'])){
                             <div class="row">
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=interiors&sub=duvets&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Bedroom articles<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -1510,7 +1511,7 @@ if(isset($_POST['useremail'])){
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/householdwallart.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/householdwallart.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -1519,7 +1520,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/householdbedsheets.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/householdbedsheets.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -1527,7 +1528,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/householdbathtowels.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/householdbathtowels.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1535,7 +1536,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/householdpillows.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/householdpillows.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1627,7 +1628,7 @@ if(isset($_POST['useremail'])){
                             <div class="row">
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=misc&sub=dolls&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;miscs dolls<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -1654,7 +1655,7 @@ if(isset($_POST['useremail'])){
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/mischats.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/mischats.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -1663,7 +1664,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/Miscslippers.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/Miscslippers.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -1671,7 +1672,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/miscsandals.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/miscsandals.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1679,7 +1680,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/miscunderwears.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/miscunderwears.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1776,7 +1777,7 @@ if(isset($_POST['useremail'])){
                             <div class="row">
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="Electronics.php" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Reebok labels<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -1802,7 +1803,7 @@ if(isset($_POST['useremail'])){
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/labelsadidas.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/labelsadidas.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -1811,7 +1812,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/labelschanel.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/labelschanel.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -1819,7 +1820,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/labelsnike.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/labelsnike.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1827,7 +1828,7 @@ if(isset($_POST['useremail'])){
                             </div>
 
                             <div class="item">
-                                    <img src="others/labelsversace.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/labelsversace.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->

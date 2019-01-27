@@ -339,7 +339,7 @@ $century = 860;//Mtush
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md">
 
                         <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories" style="line-height:2.5;padding-bottom:0;margin-bottom:2px;">
                             <li class="text-center" style="font-weight:bold;background-color:black;border:1px solid white;"><span style="color:orange;" class="text-uppercase text-center">Categories</span></li>
                             <li><a href="mainpage.php?search=kids&sub=sports&page=1" target="_blank"><img src="others/kidssportswear.gif" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Sportswear<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -620,7 +620,7 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=kids&sub=sports&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;shoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -646,7 +646,7 @@ $century = 860;//Mtush
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/kidssportswearshirts.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidssportswearshirts.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -655,7 +655,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidssportswearpants.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidssportswearpants.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -663,7 +663,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidssportswearshoes.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidssportswearshoes.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -671,7 +671,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidssportswearshorts.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidssportswearshorts.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -761,7 +761,7 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=kids&sub=offic&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;shoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -787,7 +787,7 @@ $century = 860;//Mtush
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/kidsofficialdresses.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsofficialdresses.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -796,7 +796,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidsofficialpants.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsofficialpants.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -804,7 +804,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidsofficialblouses.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsofficialblouses.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -812,7 +812,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidsofficialshirts.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsofficialshirts.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -903,7 +903,7 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=kids&sub=sweats&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;cardigans<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -930,7 +930,7 @@ $century = 860;//Mtush
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/kidssweaterssofspun.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidssweaterssofspun.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -939,7 +939,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidssweatersshrugs.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidssweatersshrugs.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -947,7 +947,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidssweaterscardigans.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidssweaterscardigans.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -955,7 +955,7 @@ $century = 860;//Mtush
                             </div>
 
                              <div class="item">
-                                    <img src="others/kidssweatersturtlenecks.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidssweatersturtlenecks.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1047,7 +1047,7 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=kids&sub=kshirts&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;blouses<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -1074,7 +1074,7 @@ $century = 860;//Mtush
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/kidstopstshirts.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidstopstshirts.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -1083,7 +1083,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidstopsvests.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidstopsvests.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -1091,7 +1091,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidstopsshirts.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidstopsshirts.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1099,7 +1099,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidstopspolos.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidstopspolos.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1204,7 +1204,7 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=kids&sub=kpants&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;jumpsuits<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -1231,7 +1231,7 @@ $century = 860;//Mtush
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/kidspantsjumpsuits.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidspantsjumpsuits.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -1240,7 +1240,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidspantsjeanpants.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidspantsjeanpants.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -1248,7 +1248,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidspantsskinnypants.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidspantsskinnypants.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1256,7 +1256,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidspantssweatpants.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidspantssweatpants.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1347,7 +1347,7 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=kids&sub=kblazers&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;boyfriend blazers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -1374,7 +1374,7 @@ $century = 860;//Mtush
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/kidsblazersboyfriendjackets.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsblazersboyfriendjackets.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -1383,7 +1383,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidsblazersmilitaryblazers.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsblazersmilitaryblazers.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -1391,7 +1391,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidsblazersdrappedblazers.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsblazersdrappedblazers.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1399,7 +1399,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidsblazersfittedblazers.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsblazersfittedblazers.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1491,7 +1491,7 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpageesub.php?search=dolls&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;barbie dolls<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -1518,7 +1518,7 @@ $century = 860;//Mtush
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/kidsdollsragdolls.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsdollsragdolls.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -1527,7 +1527,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidsdollsanimaldolls.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsdollsanimaldolls.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -1535,7 +1535,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidsdollsteddybears.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsdollsteddybears.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1543,7 +1543,7 @@ $century = 860;//Mtush
                             </div>
 
                              <div class="item">
-                                    <img src="others/kidsdollsbarbiedolls.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsdollsbarbiedolls.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1635,7 +1635,7 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpagee.php?search=bags&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;backpacks<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -1662,7 +1662,7 @@ $century = 860;//Mtush
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="others/kidsbagsrucksacks.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsbagsrucksacks.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>Asscreed</h3> -->
 
@@ -1671,7 +1671,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidsbagsbackpacks.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsbagsbackpacks.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>tom manenos</h3> -->
                                         <!-- <p>to be seen or not seen here</p> -->
@@ -1679,7 +1679,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidsbagsmessengerbags.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsbagsmessengerbags.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1687,7 +1687,7 @@ $century = 860;//Mtush
                             </div>
 
                             <div class="item">
-                                    <img src="others/kidsbagsduffelbags.gif" class="img-responsive" style="height:398px;">
+                                    <img src="others/kidsbagsduffelbags.gif" class="img-responsive">
                                     <div class="carousel-caption">
                                         <!-- <h3>cod manenos</h3> -->
                                         <!-- <p>call of duty down in the dm</p> -->
@@ -1781,7 +1781,7 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=kids&sub=kmisc&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;socks<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -1929,7 +1929,7 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
                                     <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
                             <li><a href="mainpagee.php?search=kids&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;converse<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
