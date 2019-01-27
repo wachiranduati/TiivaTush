@@ -552,85 +552,10 @@ $century = 321;//Shop
 
                 </div>
 
-
-
-            <!--Ends here -->
-            <div class="row" style="margin-top:20px;background-color:rgba(0,0,0,0.5);">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><h4>Service</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="Howto.php">Online help</a></li>
-                                        <li><a style="color:black;" href="Howto.php">Contact us</a></li>
-                                        <li><a style="color:black;" href="Howto.php">Order status</a></li>
-                                        <li><a style="color:black;" href="Howto.php">Change location</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">FAQS</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 visible-lg visible-md"><h4>Quick Shop</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="mainpage.php">Tshirts</a></li>
-                                        <li><a style="color:black;" href="Mens.php">Mens</a></li>
-                                        <li><a style="color:black;" href="women.php">Womens</a></li>
-                                        <li><a style="color:black;" href="shop.php">Gift Cards</a></li>
-                                        <li><a style="color:black;" href="shoes.php">Shoes</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 visible-lg visible-md"><h4>Policies</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="Termsofuse.php">Terms of use</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Privacy policy</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Refund policy</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Billing System</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Ticke System</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><h4>About shopper</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="aboutus.php">Company information</a></li>
-                                        <li><a style="color:black;" href="aboutus.php">Careers</a></li>
-                                        <li><a style="color:black;" href="aboutus.php">Store location</a></li>
-                                        <li><a style="color:black;" href="aboutus.php">Affiliate Program</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Copyright</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="text-center">About shopper</h4></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <form class="form-inline">
-                                        <div class="input-group" style="font-family:kok;">
-                                        <input type="email" class="form-control" placeholder="Email address" name="user's email">
-                                        <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default">Go</button>
-                                        </span>
-                                        </div>
-                                    </form>
-
-                                    <div class="row" style="margin-top:5px;">
-                                    <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-1 col-xs-9 col-xs-offset-1">
-                                        <p class="text-center"><em>Get the most recent updates from out site and be updated yourself</em></p>
-                                    </div>
-                                </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p class="text-center text-capitalize">A WN creation Copyright &#169 Airmark Inc</p></div>
-            </div>
-
-        </div>
+</div>
+<?php 
+        require('templates/footer.php');
+        ?>
         <script type="text/javascript">
 
                  //search function right here

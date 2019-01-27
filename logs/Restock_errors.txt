@@ -1507,3 +1507,6 @@ Restockmisc & socks|2019-01-26
 Restockmisc & fabrics|2019-01-26
 Restockmisc & fabrics|2019-01-26
 Restockmens & |2019-01-26
+Restockwomens & dresses|2019-01-27
+Restockwomens & dresses|2019-01-27
+Restockwomens & dresses|2019-01-27

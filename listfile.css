@@ -33,3 +33,13 @@
 .categoriestopprnt{
     padding: 0;
 }
+
+.parentspacing{
+    width: 100px;
+}
+body{
+    /*background-color: #f5f5f5;*/
+}
+.container, .container-fluid{
+    background-color: white;
+}

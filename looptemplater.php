@@ -20,7 +20,7 @@ function returnEmptyCategory(){
 
 function returnProperItems($id, $imageone, $label, $title, $price){
     $title = $title.'some extra crap appended here';
-    $shortnam = substr($title, 0, 20);
+    $shortnam = substr($title, 0, 25);
     return "
     <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" id=\"box1\">
     <div class=\"row\" style=\"padding:4px;\">
@@ -29,8 +29,8 @@ function returnProperItems($id, $imageone, $label, $title, $price){
                 </div>
             </a>
             <h5 class=\"text-capitalize\">$label</h5>
-            <hr style=\"margin:1px;\">
-            <h4 class=\"text-center text-capitalize\" style=\"font-weight:300;\"><a href=\"productdetails.php?id=$id\">$shortnam..</a></h4>
+            <hr style=\"margin:0.5px;\">
+            <h5 class=\"text-center text-capitalize\" style=\"font-weight:300;height:20px;overflow:hidden;\"><a href=\"productdetails.php?id=$id\">$shortnam..</a></h5>
             <h5 class=\"text-center\" style=\"padding:0px;margin:0px;font-weight:bold;color:#ffa427;\">Ksh $price</h5>
 
 

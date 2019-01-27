@@ -20,13 +20,15 @@ if(!empty($_SERVER['HTTP_REFERER'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="bootstrapdist/css/bootstrap.min.css">
         <link rel="stylesheet" href="final.css">
+        <link rel="stylesheet" href="moded.css">
+        <link rel="stylesheet" href="listfile.css">
+        <link rel="stylesheet" href="productitems.css">
         <script src="jquery.min.js"></script>
         <script src="bootstrapdist/js/bootstrap.min.js"></script>
         <script src="display.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style type="text/css">
-
-    </style>
+        <script src="moded.js"></script>
+        <link rel="stylesheet" href="MaterialDesign-Webfont-master/css/materialdesignicons.min.css">
+        <link rel="icon" type="image/png" href="icons/thaticon.png">
 
 </head>
 <body>
@@ -118,11 +120,11 @@ if(!empty($_SERVER['HTTP_REFERER'])){
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:rgba(0,0,0,0.2);margin-top:110px;"><p class="text-center" style="padding-top:4px;">Copyright &#169 Tiiva.Inc All Rights Inclusive</p></div>
-            </div>
         </div>
     </div>
+    <?php 
+        require('templates/footer.php');
+        ?>
     <script type="text/javascript">
         function openeye(){
             var x = document.getElementById("eye");
