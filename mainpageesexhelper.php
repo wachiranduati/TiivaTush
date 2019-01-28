@@ -46,6 +46,7 @@ $query2 = "SELECT * FROM `products` WHERE `category`!='interiors' AND `category`
 $query_run2 = mysqli_query($conn, $query2);
 $query_num_rows2 = mysqli_num_rows($query_run2);
 $pages = $query_num_rows2 / $items;
+$count = 0;
 while($query_row = mysqli_fetch_assoc($query_run)){
 
 $price = number_format($query_row['price']);
