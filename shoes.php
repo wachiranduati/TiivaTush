@@ -104,7 +104,7 @@ $century = 860;//Mtush
                             <li><a href="mainpage.php?search=shoes&sub=flats&page=1" target="_blank"><img src="others/shoesflatsdollshoes.gif" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Flat Shoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=shoes&sub=toms&page=1" target="_blank"><img src="others/shoestomsmeshespradille.gif" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Toms Shoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=shoes&sub=boots&page=1" target="_blank"><img src="others/shoesbootscombatboots.gif" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Boots<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=sandals&page=1" target="_blank"><img src="others/shoessandalswedgesandals.gif" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Sandals &amp; Slippers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=sandals&page=1" target="_blank"><img src="others/shoessandalswedgesandals.gif" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Sandals/Slippers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=shoes&sub=loafers&page=1" target="_blank"><img src="others/shoesloafershorsebit.gif" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Loafers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=shoes&sub=vans&page=1" target="_blank"><img src="others/shoesvanschucktaylor.gif" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Vans<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=shoes&sub=rubber&page=1" target="_blank"><img src="others/shoesrubberexpedition.gif" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Rubber<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -114,198 +114,30 @@ $century = 860;//Mtush
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="padding:0px;">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="padding:0px;">
 
 
                         <!--            starts here-->
                                     <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div id="imagecarousel2" class="carousel slide" data-interval="3000" data-ride="carousel">
-                                                <div class="carousel-inner">
-                                                    <ol class="carousel-indicators">
-                            <li data-target="#imagecarousel2" data-slide-to="0" class="active"></li>
-                            <li data-target="#imagecarousel2" data-slide-to="1"></li>
-                            <li data-target="#imagecarousel2" data-slide-to="2"></li>
-                            <li data-target="#imagecarousel2" data-slide-to="3"></li>
-                          </ol>
-                                                    <div class="item active">
-                                                            <!-- <img src="images/asscreed.jpg" class="img-responsive"> -->
-                                                            <img src="images\trials\slayone.jpg" class="img-responsive">
-                                                            <div class="carousel-caption">
-                                                                <!-- <h3>Asscreed</h3> -->
-
-                                                                <!-- <p>Asscreed but not right here</p> -->
-                                                            </div>
-                                                    </div>
-
-                                                    <div class="item">
-                                                            <!-- <img src="images/tom.jpg" class="img-responsive"> -->
-                                                            <img src="images\trials\slaytwo.jpg" class="img-responsive">
-                                                            <div class="carousel-caption">
-                                                                <!-- <h3>tom manenos</h3> -->
-                                                                <!-- <p>to be seen or not seen here</p> -->
-                                                            </div>
-                                                    </div>
-
-                                                    <div class="item">
-                                                            <!-- <img src="images/cod.jpg" class="img-responsive"> -->
-                                                            <img src="images\trials\slaythree.jpg" class="img-responsive">
-                                                            <div class="carousel-caption">
-                                                                <!-- <h3>cod manenos</h3> -->
-                                                                <!-- <p>call of duty down in the dm</p> -->
-                                                            </div>
-                                                    </div>
-
-                                                    <div class="item">
-                                                            <!-- <img src="images/casualwear.jpg" class="img-responsive"> -->
-                                                            <img src="images\trials\slayfour.jpg" class="img-responsive">
-                                                            <div class="carousel-caption">
-                                                                <!-- <h3>cod manenos</h3> -->
-                                                                <!-- <p>call of duty down in the dm</p> -->
-                                                            </div>
-                                                    </div>
-
-                                                    <div class="item">
-                                                            <!-- <img src="images/originalitymen.jpg" class="img-responsive"> -->
-                                                            <img src="images\trials\slayfive.png" class="img-responsive">
-                                                            <div class="carousel-caption">
-                                                                <!-- <h3>cod manenos</h3> -->
-                                                                <!-- <p>call of duty down in the dm</p> -->
-                                                            </div>
-                                                    </div>
-
-
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <?php require 'templates/carousels/carousels.php'; echo mainCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png');?>
+                            </div>
+                        </div>
                         <!--            ends here-->
 
 
                     </div>
 
                     <!--                    START OF RIGHTSIDE CONTAINER-->
-                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 visible-lg visible-md">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md">
                                             <div class="row">
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="row">
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
-                                                            <div id="imagecarousel1" class="carousel slide" data-interval="3000" data-ride="carousel">
-                                            <div class="carousel-inner">
-
-                                                <ol class="carousel-indicators">
-                        <li data-target="#imagecarousel1" data-slide-to="0" class="active"></li>
-                        <li data-target="#imagecarousel1" data-slide-to="1"></li>
-                        <li data-target="#imagecarousel1" data-slide-to="2"></li>
-                        <li data-target="#imagecarousel1" data-slide-to="3"></li>
-                      </ol>
-
-                                                <div class="item active">
-                                                        <img src="images/asscreed.jpg" class="img-responsive">
-                                                        <div class="carousel-caption">
-                                                            <!-- <h3>Asscreed</h3> -->
-
-                                                            <!-- <p>Asscreed but not right here</p> -->
-                                                        </div>
-                                                </div>
-
-                                                <div class="item">
-                                                        <img src="images/tom.jpg" class="img-responsive">
-                                                        <div class="carousel-caption">
-                                                            <!-- <h3>tom manenos</h3> -->
-                                                            <!-- <p>to be seen or not seen here</p> -->
-                                                        </div>
-                                                </div>
-
-                                                <div class="item">
-                                                        <img src="images/cod.jpg" class="img-responsive">
-                                                        <div class="carousel-caption">
-                                                            <!-- <h3>cod manenos</h3> -->
-                                                            <!-- <p>call of duty down in the dm</p> -->
-                                                        </div>
-                                                </div>
-
-                                                <div class="item">
-                                                        <img src="images/casualwear.jpg" class="img-responsive">
-                                                        <div class="carousel-caption">
-                                                            <!-- <h3>cod manenos</h3> -->
-                                                            <!-- <p>call of duty down in the dm</p> -->
-                                                        </div>
-                                                </div>
-
-                                                <div class="item">
-                                                        <img src="images/originalitymen.jpg" class="img-responsive">
-                                                        <div class="carousel-caption">
-                                                            <!-- <h3>cod manenos</h3> -->
-                                                            <!-- <p>call of duty down in the dm</p> -->
-                                                        </div>
-                                                </div>
-
-
-
-
-                                            </div>
-                                        </div>
+                                                            <?php echo offersCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png', 349);?>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
-
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="font-family:kok;font-size:120%;color:white;margin-top:1.3%;">
-                                                            <div class="row">
-
-                                                                <div id="theois" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="border-right:1px solid white;">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style=""><i class="mdi mdi-truck-fast mdi-36px" style="padding:0px;"></i></div>
-                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><h4 style="padding-top:0px;margin-top:0px;" class="text-center">Free Shipping</h4></div>
-                                                                    </div>
-                                                                    <!-- <i class="mdi mdi-truck-fast mdi-36px" style="padding:0px;"></i><h4 style="padding:0px;margin:0px;" class="text-center">Free Shipping</h4> -->
-
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="border-right:1px solid white;">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style=""><i class="mdi mdi-all-inclusive mdi-36px" style="padding:0px;"></i></div>
-                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><h4 style="padding:0px;margin:0px;" class="text-center">Great Variety</h4></div>
-                                                                    </div>
-                                                                    <!-- <i class="mdi mdi-all-inclusive mdi-36px" style="padding:0px;"></i><h4 style="padding:0px;margin:0px;" class="text-center">Great Variety</h4> -->
-
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="border-right:1px solid white;">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style=""><i class="mdi mdi-wordpress mdi-36px" style="padding:0px;"></i></div>
-                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><h4 style="padding:0px;margin:0px;" class="text-center">Tiiva blogs</h4></div>
-                                                                    </div>
-                                                                    <!-- <i class="mdi mdi-wordpress mdi-36px" style="padding:0px;"></i><h4 style="padding:0px;margin:0px;" class="text-center">Tiiva blogs</h4> -->
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="border-right:1px solid white;">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style=""><i class="mdi mdi-rice mdi-36px" style="padding:0px;"></i></div>
-                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><h4 style="padding:0px;margin:0px;">Super Different</h4></div>
-                                                                    </div>
-                                                                    <!-- <i class="mdi mdi-rice mdi-36px" style="padding:0px;"></i><h4 style="padding:0px;margin:0px;">Out of the box</h4> -->
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="border-right:1px solid white;">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style=""><i class="mdi mdi-lightbulb-on mdi-36px" style="padding:0px;"></i></div>
-                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><h4 style="padding:0px;margin:0px;" class="text-center">Sell on Tiiva</h4></div>
-                                                                    </div>
-                                                                    <!-- <i class="mdi mdi-rice mdi-36px" style="padding:0px;"></i><h4 style="padding:0px;margin:0px;">Out of the box</h4> -->
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="border-right:1px solid white;">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style=""><i class="mdi mdi-untappd mdi-36px" style="padding:0px;"></i></div>
-                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><h4 style="padding:0px;margin:0px;" class="text-center">We're Fun ;)</h4></div>
-                                                                    </div>
-                                                                    <!-- <i class="mdi mdi-rice mdi-36px" style="padding:0px;"></i><h4 style="padding:0px;margin:0px;">Out of the box</h4> -->
-                                                                </div>
-
-
-
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    
 
                                                 </div>
                                             </div>
