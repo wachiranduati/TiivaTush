@@ -108,7 +108,15 @@
                               
                               <li role="presentation" class="divider"></li>
                               <!-- <li role="presentation"><a role="menuitem" tabindex="-1" href="blog.php">Blogs</a></li> -->
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="logout.php">Logout</a></li>
+                              <?php
+                                if(userLoggedIn() == True){
+                                    echo "
+<li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"logout.php\">Logout</a></li>
+                                    ";
+
+                                }
+                              ?>
+                              
                             </ul>
                           </div>
                             </div>

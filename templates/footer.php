@@ -73,7 +73,7 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="text-center">About shopper</h4></div>
                             </div>
-                            <div class="row">
+                            <div class="row" style="display: none;">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <form class="form-inline" method="post" action="index.php">
                                         <div class="input-group" style="font-family:kok;">
