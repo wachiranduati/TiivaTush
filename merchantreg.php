@@ -40,26 +40,9 @@ if(isUserMerchant($conn) == True){
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:20px;padding-bottom:20px;">
                             <h4 class="text-center text-uppercase" style="font-size:140%;color:orange;text-shadow:-1px 2px 1px black;">Tiiva &nbsp;&nbsp;Merchant registration</h4>
                             <hr>
-<!--                            <img src="editions/milos-simic-351441.jpg" class="img-responsive"/>-->
                         </div>
                     </div>
-<!--
-                    <div class="row" style="margin-top:1%;">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-sm-3">
-                            <a href="editions/manontop.jpeg" target="_blank"><img src="editions/manontop.jpeg" class="img-responsive"/></a>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-sm-3">
-                            <a href="editions/man-person-jumping-desert.jpg" target="_blank"><img src="editions/man-person-jumping-desert.jpg" class="img-responsive"/></a>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-sm-3">
-                            <a href="editions/pexels-photo-206434.jpeg" target="_blank"><img src="editions/pexels-photo-206434.jpeg" class="img-responsive"/></a>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-sm-3">
-                            <a href="editions/pexels-photo-326311.jpeg" target="_blank"><img src="editions/pexels-photo-326311.jpeg" class="img-responsive"/></a>
-                        </div>
-                        
-                    </div>
--->
+
                     <div class="row">
                         <div class="col-lg-12 col-sm-12 col-sm-12 coll-xs-12">
                             
@@ -90,33 +73,33 @@ if(isUserMerchant($conn) == True){
                     
                     
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <form role="form" id="multiphase" onsubmit="return false">
                                 <div class="row" id="phase1">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <div class="form-group">
                                             <label for="Fisrtname">Sur Name:</label>
-                                            <input type="text" class="form-control input-sm" id="Surname" placeholder="ie. Joyce" name="surname"/>
+                                            <input type="text" class="form-control" id="Surname" placeholder="ie. Joyce" name="surname"/>
                                         </div>
                                         
                                         <div class="form-group">
                                             <label for="Firstname">First-Name:</label>
-                                            <input type="text" class="form-control input-sm" id="Firstname" name="firstname"/>
+                                            <input type="text" class="form-control" id="Firstname" name="firstname"/>
                                         </div>
                                         
                                         <div class="form-group">
                                             <label for="Lastname">Last-Name:</label>
-                                            <input type="text" class="form-control input-sm" id="Lastname" name="lastname"/>
+                                            <input type="text" class="form-control" id="Lastname" name="lastname"/>
                                         </div>
                                         
                                         <div class="form-group">
                                             <label for="ID no">ID no:</label>
-                                            <input type="number" class="form-control input-sm" id="idno" placeholder="eg. 302123232" name="idno"/>
+                                            <input type="number" class="form-control" id="idno" placeholder="eg. 302123232" name="idno"/>
                                         </div>
                                         
                                         <div class="form-group">
                                             <label for="Phonenumber">Phone number:</label>
-                                            <input type="text" class="form-control input-sm" id="phonenumber" placeholder="e.g. 0722347212" name="phonenumber"/>
+                                            <input type="text" class="form-control" id="phonenumber" placeholder="e.g. 0722347212" name="phonenumber"/>
                                         </div>
                                         <a class="btn btn-primary pull-right" onclick="processphase1();">Continue</a>
                                         
@@ -153,7 +136,7 @@ if(isUserMerchant($conn) == True){
                                         
                                         <div class="form-group">
                                             <label for="Country">Country:</label>
-                                            <input type="text" class="form-control input-sm" id="Country" name="firstname" value="Kenya" readonly/>
+                                            <input type="text" class="form-control" id="Country" name="firstname" value="Kenya" readonly/>
                                         </div>
                                         
                                         
@@ -214,7 +197,7 @@ if(isUserMerchant($conn) == True){
                                         
                                         <div class="form-group">
                                             <label for="Lastname">Township:</label>
-                                            <input type="text" class="form-control input-sm" id="township" name="township"/>
+                                            <input type="text" class="form-control" id="township" name="township"/>
                                         </div>
                                         
                                         <a class="btn btn-primary pull-right" onclick="processphase2();">Continue</a>
@@ -255,7 +238,7 @@ if(isUserMerchant($conn) == True){
                                 
                             </form>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="row" id="page1info">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <h5><em>Some minor info</em></h5>
@@ -344,87 +327,8 @@ if(isUserMerchant($conn) == True){
 <!--            TABABBLE CONTENT ENDS HERE-->
                 </div>
             </div>
-            <!--Ends here -->
-            <div class="row" style="margin-top:20px;background-color:rgba(0,0,0,0.5);">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><h4>Service</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="Howto.php">Online help</a></li>
-                                        <li><a style="color:black;" href="contactus.php">Contact us</a></li>
-                                        <li><a style="color:black;" href="aboutus.php">Order status</a></li>
-                                        <li><a style="color:black;" href="Howto.php">Change location</a></li>
-                                        <li><a style="color:black;" href="Howto.php">FAQS</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><h4>Quick Shop</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="mainpage.php">Tshirts</a></li>
-                                        <li><a style="color:black;" href="Mens.php">Mens</a></li>
-                                        <li><a style="color:black;" href="women.php">Womens</a></li>
-                                        <li><a style="color:black;" href="shop.php">Gift Cards</a></li>
-                                        <li><a style="color:black;" href="shoes.php">Shoes</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 visible-lg visible-md"><h4>Policies</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="Termsofuse.php">Terms of use</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Privacy policy</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Refund policy</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Billing System</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Ticke System</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 visible-lg visible-md"><h4>About shopper</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="aboutus.php">Company information</a></li>
-                                        <li><a style="color:black;" href="aboutus.php">Careers</a></li>
-                                        <li><a style="color:black;" href="aboutus.php">Store location</a></li>
-                                        <li><a style="color:black;" href="aboutus.php">Affiliate Program</a></li>
-                                        <li><a style="color:black;" href="aboutus.php">Copyright</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="text-center">About shopper</h4></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <form class="form-inline">
-                                        <div class="input-group" style="font-family:kok;">
-                                        <input type="email" class="form-control" placeholder="Email address" name="user's email">
-                                        <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default">Go</button>
-                                        </span>
-                                        </div>
-                                    </form>
-                                    
-                                    <div class="row" style="margin-top:5px;">
-                                    <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-1 col-xs-9 col-xs-offset-1">
-                                        <p class="text-center"><em>Get the most recent updates from out site and be updated yourself</em></p>
-                                    </div>
-                                </div>
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!--container ends here-->
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p class="text-center text-capitalize">A WN creation Copyright &#169 Airmark Inc.</p></div>
-            </div>
-            
         </div>
-        
-        </div>
+        <?php require 'templates/footer.php';?>
         <script>
             var Sname, fname, lname, idno, phone ,progressbarz, page1info, page2info;
             function _(x){
