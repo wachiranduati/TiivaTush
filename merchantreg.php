@@ -31,12 +31,12 @@ if(isUserMerchant($conn) == True){
                     <div class="row" style="background-color:rgba(0, 0, 0, 0.72);color:white;">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-sm-12 col-xs-12">
                             <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><p>Hi <?php echo getUserName($conn);?>, Welcome to the vendor registration page</p></div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><p>Hi <?php echo getUserName($conn);?>, Welcome to the vendor registration page</p></div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="row" style="background-image:url(editions/milos-simic-351441.jpg);background-size:100%;background-position:center;background-attachment:fixed;">
+                    <div class="row" style="background-image:url(editions/milos-simic-351441.jpg);background-size:110%;background-position:center;background-attachment:fixed;background-repeat: no-repeat;">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:20px;padding-bottom:20px;">
                             <h4 class="text-center text-uppercase" style="font-size:140%;color:orange;text-shadow:-1px 2px 1px black;">Tiiva &nbsp;&nbsp;Merchant registration</h4>
                             <hr>
@@ -45,17 +45,13 @@ if(isUserMerchant($conn) == True){
 
                     <div class="row">
                         <div class="col-lg-12 col-sm-12 col-sm-12 coll-xs-12">
-                            
+                            <a href="index.php">Back To Tiiva Home</a>
                         </div>
                     </div>
+                    
                     <div class="row">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                            
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                            <a href="index.php" style="display: inline-block;"><img src="images/otherphotoo.png" class="img-responsive"></a>
                         </div>
                     </div>
                     <div class="row" style="margin-bottom:1%;">

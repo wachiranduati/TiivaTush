@@ -76,7 +76,7 @@ if(isUserMerchant($conn) != True){
         <div class="container-fluid">
             <div class="row" style="background-color:rgba(0,0,0,0.2)">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="row" style="font-family:kok;padding-top:0.5%;padding-bottom:0.5%;">
+                        <div class="row" style="padding-top:0.5%;padding-bottom:0.5%;">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="boxtit"></div>
 
                         </div>
@@ -85,7 +85,7 @@ if(isUserMerchant($conn) != True){
 
 <!--            start of accounts div-->
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><img src="images/otherphotoo.png" class="img-responsive"></div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"> <a href="index.php"><img src="images/otherphotoo.png" class="img-responsive"></a> </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 visible-lg visible-md">
 
                 </div>
@@ -101,27 +101,27 @@ if(isUserMerchant($conn) != True){
 
                            <div class="row" style="margin-top:1%;">
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                   <h2 class="text-center text-uppercase visible-sm visible-xs" style="margin-top:-10px; color:orange;font-family:kok;">Tiiva Seller's account</h2>
+                                   <h2 class="text-center text-uppercase visible-sm visible-xs" style="margin-top:-10px; color:orange;">Tiiva Seller's account</h2>
                                </div>
                            </div>
                            <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="background-image:url(editions/manontop.jpeg);background-repeat:no-repeat;background-size:cover;background-position:50%;border-radius:50%;width:150px;height:150px;"></div> -->
                            <div class="row" style="position:absolute;bottom:10%;right:1.3%;">
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-lg visible-md">
-                                   <i class="mdi mdi-pen mdi-24px" style="position:absolute;right:10px;top:-40px;color:rgb(0, 128, 255);font-family:kok;text-shadow:1px 1px 1px black;"></i>
+                                   <i class="mdi mdi-pen mdi-24px" style="position:absolute;right:10px;top:-40px;color:rgb(0, 128, 255);text-shadow:1px 1px 1px black;"></i>
                                    <script>
                                        $(".mdi-pen").click(function(){
                                            alert("Edit user information");
                                        });
                                    </script>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-10px; color:white;font-family:kok;text-shadow:1px 1px 1px black;" id="boxlabels">Seller Detailse</h5>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;font-family:kok;text-shadow:1px 1px 1px black;" id="boxlabels">Wachira Nicholas Nduati</h5>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;font-family:kok;text-shadow:1px 1px 1px black;" id="boxlabels">id no: 30225736</h5>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;font-family:kok;text-shadow:1px 1px 1px black;" id="boxlabels">phone no: 073843734</h5>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;font-family:kok;text-shadow:1px 1px 1px black;" id="boxlabels">Business type: Mtumba</h5>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;font-family:kok;text-shadow:1px 1px 1px black;" id="boxlabels">country: Kenya</h5>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;font-family:kok;text-shadow:1px 1px 1px black;" id="boxlabels">county: Murang'a</h5>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;font-family:kok;text-shadow:1px 1px 1px black;" id="boxlabels">Township: Kiriaini</h5>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;font-family:kok;text-shadow:1px 1px 1px black;" id="boxlabels">Business name: Wakwito international</h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-10px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Seller Detailse</h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Wachira Nicholas Nduati</h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">id no: 30225736</h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">phone no: 073843734</h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Business type: Mtumba</h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">country: Kenya</h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">county: Murang'a</h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Township: Kiriaini</h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Business name: Wakwito international</h5>
                                </div>
                             </div>
 
@@ -159,7 +159,7 @@ if(isUserMerchant($conn) != True){
 
                 <div class="row visible-sm visible-xs">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="text-center text-uppercase" style="color:orange;font-family:kok;">Tiiva Seller's account</h4>
+                        <h4 class="text-center text-uppercase" style="color:orange;">Tiiva Seller's account</h4>
                     </div>
                 </div>
 
@@ -168,7 +168,7 @@ if(isUserMerchant($conn) != True){
 
                        <div class="row" style="position:absolute;right:4%;margin-top:40%;">
                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                               <h5 class="text-center text-uppercase" style="color:white;font-family:kok;" id="boxlabels2">Tiiva Shack upload page</h5></div>
+                               <h5 class="text-center text-uppercase" style="color:white;" id="boxlabels2">Tiiva Shack upload page</h5></div>
                        </div>
                        <div class="row" style="position:absolute;margin-top:37%;margin-bottom:2%;">
                            <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
@@ -220,7 +220,7 @@ if(isUserMerchant($conn) != True){
                                     $("#heres").toggleClass("animated bounce");
                                 },1000);
                             </script>
-                            <h1 id="heres">Welcome!</h1><span class="pull-right" style="border:1px solid orange;background-color:orange;font-weight:bold;padding:10px;border-radius:18px;font-family:kok;">Translate to local dialect</span>
+                            <h1 id="heres">Welcome!</h1><span class="pull-right" style="border:1px solid orange;background-color:orange;font-weight:bold;padding:10px;border-radius:18px;">Translate to local dialect</span>
                             <p>
                                 This is Tiiva's Merchant info page.<br>Going to help you with all the details pertaining to being a Merchant on Tiiva.<br>
                                 Remember you can always check on the <a href="howto.php" title="visit the frequent asked questions page">FAQs</a> page to better understand Tiiva
@@ -266,7 +266,7 @@ if(isUserMerchant($conn) != True){
                     <div class="row sellercontainer">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <h1>Upload Panel</h1>
-                            <p class="pull-left">to upload new products click on the blue button labelled <span style="color:green;font-family:kok;">upload item</span> to the right</p>
+                            <p class="pull-left">to upload new products click on the blue button labelled <span style="color:green;">upload item</span> to the right</p>
                             <h3 class="pull-right"><a class="btn btn-md btn-info" target="_blank" href="upload.php" title=" go to upload page">Upload Item</a></h3>
                             <!-- Tiiva shack start -->
                             <div class="row">
@@ -571,7 +571,7 @@ if(isUserMerchant($conn) != True){
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <form class="form-inline">
-                                        <div class="input-group" style="font-family:kok;">
+                                        <div class="input-group" style="">
                                         <input type="email" class="form-control" placeholder="Email address" name="user's email">
                                         <span class="input-group-btn">
                                             <button type="button" class="btn btn-default">Go</button>
