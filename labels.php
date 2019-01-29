@@ -105,7 +105,7 @@ if(isset($_POST['useremail'])){
 
 
                     </div>
-            <div class="row" style="background-image:url(images/awesome.jpg);background-size:100%;">
+            <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border:1px solid white;">
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-5 col-xs-5 visible-lg visible-md">

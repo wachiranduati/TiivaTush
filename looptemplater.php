@@ -59,4 +59,21 @@ function returnProperItemsMainpagees($id, $imageone, $label, $title, $price){
         </div>
         ";
 }
+
+function spinnersHolder($boxid){
+    return "
+        <div class=\"row\" id=\"$boxid\">
+            <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
+                <div class=\"row\">
+                    <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\" style=\"height:200px; border:1px solid black;border-right:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\" style=\"height:200px; border:1px solid black;border-right:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\" style=\"height:200px; border:1px solid black;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\" style=\"height:200px; border:1px solid black;border-top:1px solid white;border-right:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\" style=\"height:200px; border:1px solid black;border-top:1px solid white;border-right:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\" style=\"height:200px; border:1px solid black;border-top:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                </div>
+            </div>
+        </div>     
+    ";
+}
 ?>

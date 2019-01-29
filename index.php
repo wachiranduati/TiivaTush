@@ -101,7 +101,7 @@ if(isset($_POST['useremail'])){
 
 
                     </div>
-            <div class="row" style="background-image:url(images/awesome.jpg);background-size:100%;">
+            <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border:1px solid white;">
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-5 col-xs-5 visible-lg visible-md">
@@ -244,67 +244,17 @@ if(isset($_POST['useremail'])){
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border-top:1px solid gainsboro;border-right:1px solid white;">
 
 <!--            starts here-->
-            <div class="row visible-lg visible-md">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/menssportswear.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <h3>Sportswear</h3>
-
-                                        <p>Dressed for the pitch</p>
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/mensshirts.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <h3>Men's Shirts</h3>
-                                        <p>Perfect Shirts for the perfect guy</p>
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/mensofficial.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <h3>Formalwear?</h3>
-                                        <p>Gotta look sharp</p>
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/mensjackets.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <h3>Men's Jackets</h3>
-                                        <p>Look cool keeping warm</p>
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+            <div class="row visible-lg visible-md" style="padding: 0;">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0;">
+                   <?php echo groupedCarousels('menssportswear.png', 'mensshirts.gif', 'mensofficial.gif', 'mensjackets.gif', 498);?>
+                    
                 </div>
             </div>
 <!--            ends here-->
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <div class="row" id="boxmens">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="row">
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;border-right:1px solid white;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;border-right:1px solid white;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;border-top:1px solid white;border-right:1px solid white;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;border-top:1px solid white;border-right:1px solid white;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;border-top:1px solid white;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php require 'looptemplater.php'; echo spinnersHolder('boxmens');?>
                                 </div>
                             </div>
                         </div>
@@ -392,65 +342,14 @@ if(isset($_POST['useremail'])){
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/womensdresses.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/womenstops.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/womenssweaters.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/womensblazers.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('womensdresses.gif', 'womenstops.gif', 'womenssweaters.gif', 'womensblazers.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="row" id="boxwomens">
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;border-right:1px solid white;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;border-right:1px solid white;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;border-top:1px solid white;border-right:1px solid white;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;border-top:1px solid white;border-right:1px solid white;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;border-top:1px solid white;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php echo spinnersHolder('boxwomens');?>
                                 </div>
                             </div>
                         </div>
@@ -535,47 +434,7 @@ if(isset($_POST['useremail'])){
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/shoesflatshoes.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/shoestoms.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/shoessportsshoes.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/shoesloafers.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('shoesflatshoes.gif', 'shoestoms.gif', 'shoessportsshoes.gif', 'shoesloafers.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -583,18 +442,7 @@ if(isset($_POST['useremail'])){
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <div class="row" id="boxshoes">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="row">
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;border-right:1px solid white;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;border-right:1px solid white;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;border-top:1px solid white;border-right:1px solid white;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;border-top:1px solid white;border-right:1px solid white;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="height:200px; border:1px solid black;border-top:1px solid white;"><img src="images/spinner/spinner_large.gif" class="img-responsive loaderImage" style="position:absolute;top:20%;"/></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php echo spinnersHolder('boxshoes');?>
                                 </div>
                             </div>
                         </div>
@@ -679,47 +527,7 @@ if(isset($_POST['useremail'])){
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/kidsdolls.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidssportswear.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidstops.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidssweaters.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('kidsdolls.gif', 'kidssportswear.gif', 'kidstops.gif', 'kidssweaters.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -823,47 +631,7 @@ if(isset($_POST['useremail'])){
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/sportswearsocks.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearvests.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearshoes.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearshorts.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('sportswearsocks.gif', 'sportswearvests.gif', 'sportswearshoes.gif', 'sportswearshorts.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -966,47 +734,7 @@ if(isset($_POST['useremail'])){
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/bagsbackpack.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/bagslingbag.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/bagsclutch.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/bagsduffelbags.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('bagsbackpack.gif', 'bagslingbag.gif', 'bagsclutch.gif', 'bagsduffelbags.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -1124,47 +852,7 @@ if(isset($_POST['useremail'])){
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/householdwallart.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/householdbedsheets.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/householdbathtowels.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/householdpillows.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('householdwallart.gif', 'householdbedsheets.gif', 'householdbathtowels.gif', 'householdpillows.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -1268,47 +956,7 @@ if(isset($_POST['useremail'])){
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/mischats.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/Miscslippers.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/miscsandals.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/miscunderwears.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('mischats.gif', 'Miscslippers.gif', 'miscsandals.gif', 'miscunderwears.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -1416,47 +1064,7 @@ if(isset($_POST['useremail'])){
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/labelsadidas.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/labelschanel.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/labelsnike.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/labelsversace.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('labelsadidas.gif', 'labelschanel.gif', 'labelsnike.gif', 'labelsversace.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->

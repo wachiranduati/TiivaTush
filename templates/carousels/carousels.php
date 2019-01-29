@@ -83,4 +83,33 @@ function offersCarousels($imageone, $imagetwo, $imagethree, $imagefour, $height)
                                         </div>
 	";
 }
+
+function groupedCarousels($imageone, $imagetwo, $imagethree, $imagefour, $height){
+    $height = $height.'px';
+    return "
+        
+                                            <div id=\"imagecarousel\" class=\"carousel slide\" data-interval=\"2000\" data-ride=\"carousel\">
+                        <div class=\"carousel-inner\">
+
+                            <div class=\"item active\">
+                                    <img src=\"images\\carousels\\grouped\\$imageone\" class=\"img-responsive\" style=\"height: $height;\">
+                            </div>
+
+                            <div class=\"item\">
+                                    <img src=\"images\\carousels\\grouped\\$imagetwo\" class=\"img-responsive\" style=\"height: $height;\">
+                            </div>
+
+                            <div class=\"item\">
+                                    <img src=\"images\\carousels\\grouped\\$imagethree\" class=\"img-responsive\" style=\"height: $height;\">
+                            </div>
+
+                            <div class=\"item\">
+                                    <img src=\"images\\carousels\\grouped\\$imagefour\" class=\"img-responsive\" style=\"height: $height;\">
+                            </div>
+
+                        </div>
+                    </div>
+                                        
+    ";
+}
 ?>

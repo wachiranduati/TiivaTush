@@ -92,7 +92,7 @@ $century = 860;//Mtush
                     </div>
 
 
-            <div class="row" style="background-image:url(images/awesome.jpg);background-size:100%;">
+            <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border:1px solid white;">
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md">
@@ -236,47 +236,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/sportswearshoesneutralshoes.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearshoessoccercleats.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearshoescrocs.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportsweartrailrunners.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('sportswearshoesneutralshoes.gif', 'sportswearshoessoccercleats.gif', 'sportswearshoescrocs.gif', 'sportsweartrailrunners.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -359,13 +319,13 @@ $century = 860;//Mtush
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
-                            <li><a href="mainpage.php?search=sportswear&sub=pants&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Compression tights<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=sportswear&sub=pants&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Comprssn tights<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=pants&page=1" target="_blank"><img src="icons/mensicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Fleece pants<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=pants&page=1" target="_blank"><img src="icons/womens.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Tapered pants<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=pants&page=1" target="_blank"><img src="icons/kidsicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Warm up pants<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=pants&page=1" target="_blank"><img src="icons/householdicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Basketball pants<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=pants&page=1" target="_blank"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Woven pants<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=sportswear&sub=pants&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;sportstyle joggers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=sportswear&sub=pants&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;sports joggers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=pants&page=1" target="_blank"><img src="icons/labelsgifticon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Jogger pants<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=pants&page=1" target="_blank"><img src="icons/caps.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Misc pants<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
 
@@ -379,47 +339,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/sportswearbasketballpants.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearcompressiontightspants.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/menssportswear.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearpantstaperedpants.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('sportswearbasketballpants.gif', 'sportswearcompressiontightspants.gif', 'menssportswear.gif', 'sportswearpantstaperedpants.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -507,7 +427,7 @@ $century = 860;//Mtush
                             <li><a href="mainpage.php?search=sportswear&sub=shirts&page=1" target="_blank"><img src="icons/mensicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;vests<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=shirts&page=1" target="_blank"><img src="icons/womens.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;baseball jerseys<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=shirts&page=1" target="_blank"><img src="icons/kidsicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;stretchers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=sportswear&sub=shirts&page=1" target="_blank"><img src="icons/householdicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;ice hockey jerseys<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=sportswear&sub=shirts&page=1" target="_blank"><img src="icons/householdicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;icehockey jrsys<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=shirts&page=1" target="_blank"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;polo shirts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=shirts&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;jerseys<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=shirts&page=1" target="_blank"><img src="icons/labelsgifticon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;sports shirts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -523,47 +443,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/sportswearshirtsbaseballjerseys.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearshirtsvests.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearshirtssoccerjerseys.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearshirtspoloshirts.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('sportswearshirtsbaseballjerseys.gif', 'sportswearshirtsvests.gif', 'sportswearshirtssoccerjerseys.gif', 'sportswearshirtspoloshirts.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -666,7 +546,7 @@ $century = 860;//Mtush
                             <li><a href="mainpage.php?search=sportswear&sub=vests&page=1" target="_blank"><img src="icons/kidsicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;sub vests<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=vests&page=1" target="_blank"><img src="icons/householdicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;rib vests<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=vests&page=1" target="_blank"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;basketball vests<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=sportswear&sub=vests&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;cross over tanktops<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=sportswear&sub=vests&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;tanktops<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=vests&page=1" target="_blank"><img src="icons/labelsgifticon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Run vests<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=vests&page=1" target="_blank"><img src="icons/caps.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Misc vests<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
 
@@ -680,47 +560,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/sportswearveststanktops.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearbasketballvestsvests.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearshirtsvests.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearvests.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('sportswearveststanktops.gif', 'sportswearbasketballvestsvests.gif', 'sportswearshirtsvests.gif', 'sportswearvests.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -823,47 +663,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/sportswearbagsduffelbags.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearbagshobobags.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearbagsdrawstringbags.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearbagsbumbags.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('sportswearbagsduffelbags.gif', 'sportswearbagshobobags.gif', 'sportswearbagsdrawstringbags.gif', 'sportswearbagsbumbags.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -949,11 +749,11 @@ $century = 860;//Mtush
 
                             <li><a href="mainpage.php?search=sportswear&sub=shorts&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Running shorts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=shorts&page=1" target="_blank"><img src="icons/mensicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;long shorts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=sportswear&sub=shorts&page=1" target="_blank"><img src="icons/womens.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;3 quarter joggers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=sportswear&sub=shorts&page=1" target="_blank"><img src="icons/kidsicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;compression shorts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=sportswear&sub=shorts&page=1" target="_blank"><img src="icons/womens.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;3/4 joggers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=sportswear&sub=shorts&page=1" target="_blank"><img src="icons/kidsicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;comprssn shorts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=shorts&page=1" target="_blank"><img src="icons/householdicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;soccer shorts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=shorts&page=1" target="_blank"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;gym shorts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=sportswear&sub=shorts&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;sum women's shorts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=sportswear&sub=shorts&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;women's shorts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=shorts&page=1" target="_blank"><img src="icons/labelsgifticon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;sports shorts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=shorts&page=1" target="_blank"><img src="icons/caps.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;misc shorts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
 
@@ -967,47 +767,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/sportswearshortscompressionshorts.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearshortsrunningshorts.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearshortsrunningshorts.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearshorts3quartershorts.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('sportswearshortscompressionshorts.gif', 'sportswearshortsrunningshorts.gif', 'sportswearshortssummershorts.gif', 'sportswearshorts3quartershorts.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -1111,47 +871,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/sportswearsockslowsocks.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearsockkneehighsocks.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearsockcrewsocks.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearsockssportssocks.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('sportswearsockslowsocks.gif', 'sportswearsockkneehighsocks.gif', 'sportswearsockcrewsocks.gif', 'sportswearsockssportssocks.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -1255,47 +975,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/sportswearmiscgloves.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearmiscshinguard.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearmiscskates.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearmiscshoulderguard.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('sportswearmiscgloves.gif', 'sportswearmiscshinguard.gif', 'sportswearmiscskates.gif', 'sportswearmiscshoulderguard.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -1403,47 +1083,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/labelsadidas.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearlabelseverlast.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/labelsnike.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/sportswearlabelsumbro.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('labelsadidas.gif', 'sportswearlabelseverlast.gif', 'labelsnike.gif', 'sportswearlabelsumbro.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->

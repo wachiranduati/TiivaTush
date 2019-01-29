@@ -90,7 +90,7 @@ $century = 860;//Mtush
                     </div>
 
 
-            <div class="row" style="background-image:url(images/awesome.jpg);background-size:100%;">
+            <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border:1px solid white;">
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md">
@@ -231,47 +231,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/kidssportswearshirts.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidssportswearpants.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidssportswearshoes.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidssportswearshorts.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('kidssportswearshirts.gif', 'kidssportswearpants.gif', 'kidssportswearshoes.gif', 'kidssportswearshorts.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -372,47 +332,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/kidsofficialdresses.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidsofficialpants.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidsofficialblouses.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidsofficialshirts.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('kidsofficialdresses.gif', 'kidsofficialpants.gif', 'kidsofficialblouses.gif', 'kidsofficialshirts.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -515,47 +435,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/kidssweaterssofspun.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidssweatersshrugs.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidssweaterscardigans.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                             <div class="item">
-                                    <img src="others/kidssweatersturtlenecks.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('kidssweaterssofspun.gif', 'kidssweatersshrugs.gif', 'kidssweaterscardigans.gif', 'kidssweatersturtlenecks.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -659,47 +539,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/kidstopstshirts.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidstopsvests.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidstopsshirts.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidstopspolos.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('kidstopstshirts.gif', 'kidstopsvests.gif', 'kidstopsshirts.gif', 'kidstopspolos.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -816,47 +656,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/kidspantsjumpsuits.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidspantsjeanpants.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidspantsskinnypants.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidspantssweatpants.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('kidspantsjumpsuits.gif', 'kidspantsjeanpants.gif', 'kidspantsskinnypants.gif', 'kidspantssweatpants.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -939,7 +739,7 @@ $century = 860;//Mtush
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
-                            <li><a href="mainpage.php?search=kids&sub=kblazers&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;boyfriend blazers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=kids&sub=kblazers&page=1" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;boyfriend B<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=kids&sub=kblazers&page=1" target="_blank"><img src="icons/mensicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;fitted blazers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=kids&sub=kblazers&page=1" target="_blank"><img src="icons/womens.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;draped blazers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=kids&sub=kblazers&page=1" target="_blank"><img src="icons/kidsicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;bomber jackets<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -959,47 +759,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-md visible-lg">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/kidsblazersboyfriendjackets.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidsblazersmilitaryblazers.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidsblazersdrappedblazers.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidsblazersfittedblazers.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('kidsblazersboyfriendjackets.gif', 'kidsblazersmilitaryblazers.gif', 'kidsblazersdrappedblazers.gif', 'kidsblazersfittedblazers.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -1103,47 +863,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/kidsdollsragdolls.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidsdollsanimaldolls.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidsdollsteddybears.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                             <div class="item">
-                                    <img src="others/kidsdollsbarbiedolls.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('kidsdollsragdolls.gif', 'kidsdollsanimaldolls.gif', 'kidsdollsteddybears.gif', 'kidsdollsbarbiedolls.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -1247,47 +967,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/kidsbagsrucksacks.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidsbagsbackpacks.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidsbagsmessengerbags.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidsbagsduffelbags.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('kidsbagsrucksacks.gif', 'kidsbagsbackpacks.gif', 'kidsbagsmessengerbags.gif', 'kidsbagsduffelbags.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -1393,47 +1073,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/kidsmiscsocks.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidsmiscswimsuits.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidsmiscgloves.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidsmiscscarfs.gif" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('kidsmiscsocks.gif', 'kidsmiscswimsuits.gif', 'kidsmiscgloves.gif', 'kidsmiscscarfs.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -1541,47 +1181,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                    <img src="others/kidslabelsarmani.gif" class="img-responsive"style="height:398px;">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>Asscreed</h3> -->
-
-                                        <!-- <p>Asscreed but not right here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidslabelsoldnavy.gif" class="img-responsive"style="height:398px;">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>tom manenos</h3> -->
-                                        <!-- <p>to be seen or not seen here</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/kidslabelsd&g.gif" class="img-responsive"style="height:398px;">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="others/labelsnike.gif" class="img-responsive"style="height:398px;">
-                                    <div class="carousel-caption">
-                                        <!-- <h3>cod manenos</h3> -->
-                                        <!-- <p>call of duty down in the dm</p> -->
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo groupedCarousels('kidslabelsarmani.gif', 'kidslabelsoldnavy.gif', 'kidslabelsd&g.gif', 'labelsnike.gif', 498);?>
                 </div>
             </div>
 <!--            ends here-->
