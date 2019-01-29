@@ -26,12 +26,7 @@ require 'connect.php';
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="bootstrapdist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="final.css">
-        <script src="jquery.min.js"></script>
-        <script src="bootstrapdist/js/bootstrap.min.js"></script>
-        <script src="display.js"></script>
-        <link rel="stylesheet" href="MaterialDesign-Webfont-master/css/materialdesignicons.min.css">
+        <?php require 'templates/resourcelinks/headerlinks.php';?>
     <style type="text/css">
 
     </style>

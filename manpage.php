@@ -39,17 +39,7 @@ if($sub == 'female'){
     <title>Tiiva.co.ke | Mtumba | <?php echo $search.' | '.$gender;?></title>
     <head>
             <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="bootstrapdist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="final.css">
-        <link rel="stylesheet" href="moded.css">
-        <link rel="stylesheet" href="listfile.css">
-        <link rel="stylesheet" href="productitems.css">
-        <script src="jquery.min.js"></script>
-        <script src="bootstrapdist/js/bootstrap.min.js"></script>
-        <script src="display.js"></script>
-        <script src="moded.js"></script>
-        <link rel="stylesheet" href="MaterialDesign-Webfont-master/css/materialdesignicons.min.css">
-        <link rel="icon" type="image/png" href="icons/thaticon.png">
+        <?php require 'templates/resourcelinks/headerlinks.php';?>
 
             <style type="text/css">
                 #box1 {
