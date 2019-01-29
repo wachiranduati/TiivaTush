@@ -7,8 +7,6 @@ if( isset($_SESSION['$user_id'])){
 // $from = $_SERVER['HTTP_REFERER'];
 if(!empty($_SERVER['HTTP_REFERER'])){
   $from = $_SERVER['HTTP_REFERER'];
-}else{
-  //nuthn
 }
 
 ?>
@@ -29,7 +27,7 @@ if(!empty($_SERVER['HTTP_REFERER'])){
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
-            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12"><img src="images/airmarklogotrial2.png" class="img-responsive"/></div>
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12"><a href="index.php"><img src="images/airmarklogotrial2.png" class="img-responsive"/></a></div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
         </div>
         <div class="row">
@@ -56,7 +54,7 @@ if(!empty($_SERVER['HTTP_REFERER'])){
                 <div class="row">
                     <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11" style="margin-top:20px;">
                         <form class="form-group form-group-lg" action="login.php" method="post">
-                            <label>Username/Emailaddress</label><input id="username" type="text" class="form-control input-lg" name="username" placeholder="Username: Enter your Phone No/Email/Username" style=" font-size:19px;margin-bottom:5%;"/>
+                            <label>Username</label><input id="username" type="text" class="form-control input-lg" name="username" placeholder="Username: Enter your Phone No/Email/Username" style=" font-size:19px;margin-bottom:5%;"/>
                             <label>Password</label>
                             <input type="password" id="password" class="form-control input-lg" name="password" placeholder="Password: Enter your password" style=" font-size:19px;"/><span id="eye" onclick="openeye();" class="glyphicon glyphicon-eye-open" style="position:absolute;top:28%;right:-4%;color:#626262;font-size:120%;"></span>
 

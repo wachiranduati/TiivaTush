@@ -76,12 +76,38 @@
                             <span class="caret"></span></a>
 
                             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="login.php">Login</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="userprof.php">User Account</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="sellerprof.php">Merchants</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="register.php">Register</a></li>
+                                <?php require 'utils/userutils.php';?>
+                                <?php 
+                                if(userLoggedIn() != True){
+                                    echo "
+<li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"login.php\">Login</a></li>
+<li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"register.php\">Register</a></li>
+                                    ";
+
+                                }else{
+                                    echo "
+<li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"userprof.php\">User Account</a></li>
+                                    ";
+                                    if(isUserMerchant($conn) == True){
+                                    echo "
+<li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"sellerprof.php\">Merchants Home</a></li>
+                                    ";
+                                }else{
+                                    echo "
+<li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"merchantreg.php\">Merchant Reg</a></li>
+                                    ";
+                                }
+                                }
+
+                                
+                                
+                                ?>
+                                
+                              
+                              
+                              
                               <li role="presentation" class="divider"></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="blog.php">Blogs</a></li>
+                              <!-- <li role="presentation"><a role="menuitem" tabindex="-1" href="blog.php">Blogs</a></li> -->
                               <li role="presentation"><a role="menuitem" tabindex="-1" href="logout.php">Logout</a></li>
                             </ul>
                           </div>

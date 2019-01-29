@@ -50,7 +50,7 @@ if(isset($_GET['search_text'])){
 }
 if(!empty($search_text)){
 
-		//$query = "SELECT `itemtitle`,`subcategory`, `price`, `imageone`, `category`, `id` FROM $databs WHERE `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%' ORDER BY RAND() LIMIT 5";
+		
 		if($databs == 'products'){
 		    $query = "SELECT * FROM $databs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%' ORDER BY RAND() LIMIT 5";
 		}elseif( $databs == 'brandyproducts'){
@@ -59,7 +59,7 @@ if(!empty($search_text)){
 		    $query = "SELECT * FROM $databs WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%' ORDER BY RAND() LIMIT 5";
 		}
 
-        //$query2 = "SELECT `itemtitle`,`subcategory`, `price`, `imageone`, `category` FROM $databs WHERE `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
+        
 		if($databs == 'products'){
 		    $query2 = "SELECT * FROM $databs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		}elseif( $databs == 'brandyproducts'){
@@ -71,18 +71,18 @@ if(!empty($search_text)){
         $query_run2 = mysqli_query($conn, $query2);
         $query_num_rows = mysqli_num_rows($query_run2);
 
-        //$query3 = "SELECT `itemtitle`,`subcategory`, `price`, `imageone`, `category` FROM $otherdata WHERE `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
-		if($otherdata == 'products'){
-		    $query3 = "SELECT * FROM $otherdata WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
-		}elseif( $otherdata == 'brandyproducts'){
-		    $query3 = "SELECT * FROM $otherdata WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
-		}else{
-		    $query3 = "SELECT * FROM $otherdata WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
-		}
+        
+		// if($otherdata == 'products'){
+		//     $query3 = "SELECT * FROM $otherdata WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
+		// }elseif( $otherdata == 'brandyproducts'){
+		//     $query3 = "SELECT * FROM $otherdata WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
+		// }else{
+		//     $query3 = "SELECT * FROM $otherdata WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
+		// }
 
 
-        $query_run3 = mysqli_query($conn, $query3);
-        $query_num_rows3 = mysqli_num_rows($query_run3);
+  //       $query_run3 = mysqli_query($conn, $query3);
+  //       $query_num_rows3 = mysqli_num_rows($query_run3);
 
 
 
@@ -126,31 +126,31 @@ if(!empty($search_text)){
             
 
 
-					if($query_num_rows3 >= 1){
+					// if($query_num_rows3 >= 1){
+					// 	echo "
+					// 			<tr>
+					// 				<td colspan=\"4\"><a href=\"searchresults.php?search_text=$search_text&page=1&sub=$destination\" class=\"btn btn-info btn-block btn-md\" style=\"\">View all $query_num_rows matches($search_text)s #$destination</a></td>
+
+					// 			</tr>
+
+					// 			<tr>
+					// 				<td colspan=\"4\"><a href=\"searchresults.php?search_text=$search_text&page=1&sub=$destinationother\" class=\"btn btn-warning btn-block btn-md\" style=\"\">View all $query_num_rows3 matches($search_text)s #$destinationother</a></td>
+
+					// 			</tr>
+
+
+					// 			</tbody></table>
+					// 		";
+					// }else{
 						echo "
 								<tr>
-									<td colspan=\"4\"><a href=\"searchresults.php?search_text=$search_text&page=1&sub=$destination\" class=\"btn btn-info btn-block btn-md\" style=\"\">View all $query_num_rows matches($search_text)s #$destination</a></td>
-
-								</tr>
-
-								<tr>
-									<td colspan=\"4\"><a href=\"searchresults.php?search_text=$search_text&page=1&sub=$destinationother\" class=\"btn btn-warning btn-block btn-md\" style=\"\">View all $query_num_rows3 matches($search_text)s #$destinationother</a></td>
-
-								</tr>
-
-
-								</tbody></table>
-							";
-					}else{
-						echo "
-								<tr>
-									<td colspan=\"4\"><a href=\"searchresults.php?search_text=$search_text&page=1&sub=$destination\" class=\"btn btn-info btn-block btn-md\" style=\"\">View all $query_num_rows matches($search_text)s #$destination</a></td>
+									<td colspan=\"4\"><a href=\"searchresults.php?search_text=$search_text&page=1&sub=$destination\" class=\"btn btn-info btn-block btn-md\" style=\"\">View all $query_num_rows matches($search_text)s</a></td>
 
 								</tr>
 
 								</tbody></table>
-							";
-					}
+					 		";
+					// }
 
 
             //save the word into the searched texts file

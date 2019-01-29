@@ -3,8 +3,17 @@ session_start();
 ob_start();
 require 'search.inc.php';
 require 'core.inc.php';
+require 'utils/userutils.php';
 
-$_SESSION['$user_id'];
+if(userLoggedIn() != True){
+    header('Location:index.php');
+}
+
+if(isUserMerchant($conn) != True){
+    header('Location:index.php');
+}
+
+// $_SESSION['$user_id'];
 
 // TODO CREATE A RETURN FEATURE TO MONITOR ITEMS THAT WERE REJECTED AND RETURNED
 

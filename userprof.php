@@ -3,10 +3,10 @@ session_start();
 ob_start();
 require 'core.inc.php';
 require 'connect.php';
-$_SESSION['$user_id'];
+require 'utils/userutils.php';
 
-if (!isset($_SESSION['$user_id'])){
-    header('location:index.php');
+if(userLoggedIn() != True){
+    header('Location:index.php');
 }
 
 ?>

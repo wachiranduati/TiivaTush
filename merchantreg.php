@@ -1,15 +1,26 @@
+<?php
+session_start();
+ob_start();
+require 'core.inc.php';
+require 'looptemplater.php';
+require 'utils/userutils.php';
+
+if(userLoggedIn() != True){
+    header('Location:index.php');
+}
+
+if(isUserMerchant($conn) == True){
+    header('Location:sellerprof.php');
+}
+
+?>
 <!DOCTYPE html>
 <html>
-<title>Tiiva | Misc</title>
+<title>Tiiva | Merchant Registration</title>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="bootstrapdist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="final.css">
-        <script src="jquery.min.js"></script>
-        <script src="bootstrapdist/js/bootstrap.min.js"></script>
-        <script src="display.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <?php require 'templates/resourcelinks/headerlinks.php';?>
     
 </head>
     <body>
@@ -20,8 +31,7 @@
                     <div class="row" style="background-color:rgba(0, 0, 0, 0.72);color:white;">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-sm-12 col-xs-12">
                             <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><p>Hi Nick, Welcome to the vendor registration page</p></div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><p>Get to us if you need help<a href="#"> Here</a></p></div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><p>Hi <?php echo getUserName($conn);?>, Welcome to the vendor registration page</p></div>
                             </div>
                         </div>
                     </div>
@@ -108,7 +118,7 @@
                                             <label for="Phonenumber">Phone number:</label>
                                             <input type="text" class="form-control input-sm" id="phonenumber" placeholder="e.g. 0722347212" name="phonenumber"/>
                                         </div>
-                                        <a href="#" class="btn btn-primary pull-right" onclick="processphase1();">Continue</a>
+                                        <a class="btn btn-primary pull-right" onclick="processphase1();">Continue</a>
                                         
                                     </div>
                                 </div>
@@ -116,11 +126,11 @@
                                 <div class="row" id="phase2" style="visibility:hidden;display:none;">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <label for="businesstype">Business Type:</label>
-                                        <select class="form-control" id="businesstype" name="businesstype" onchange="selectedoptioninfo();">
+                                        <select class="form-control" value="Mtumba" id="businesstype" name="businesstype" onchange="selectedoptioninfo();">
 
                                         <optgroup label="Business type" >
                                         <option value="Mtumba">Mtumba</option>
-                                        <option value="wholesaler">Wholesaler</option>
+                                        <!-- <option value="wholesaler">Wholesaler</option>
                                         <option value="retailer">Retailer</option>
                                         <option value="fashiondesigner">Fashion Designer</option>
                                         <option value="skills">Skills</option>
@@ -136,7 +146,7 @@
                                         <option value="importers">Importers</option>
                                         <option value="Supermarkets">Supermarkets</option>
                                         <option value="Travel">Travel &#38 touring</option>
-                                        <option value="Builds">Workshop</option>
+                                        <option value="Builds">Workshop</option> -->
                                         
                                         </optgroup>
                                       </select>
@@ -207,7 +217,7 @@
                                             <input type="text" class="form-control input-sm" id="township" name="township"/>
                                         </div>
                                         
-                                        <a href="#" class="btn btn-primary pull-right" onclick="processphase2();">Continue</a>
+                                        <a class="btn btn-primary pull-right" onclick="processphase2();">Continue</a>
                                         
                                     </div>
                                 </div>
@@ -249,7 +259,7 @@
                             <div class="row" id="page1info">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <h5><em>Some minor info</em></h5>
-                                    <p>Hi, Were glad you'd like to work with us.<br>Please fill in your details to your left and click continue.<br>We at Tiiva strive to create a better relation between the seller and the buyer.<br>Currently we support most types of businesses <br>We also support local talent saay your an artist.... you draw potraits?...we will help you sell your art work..<br>All the items you see on Tiiva are uploaded by individual business owners. We as Tiiva own no single upload, it would be unfair being the referee and the player at the same time.<br>We do not control pricing on items that you post here...we leave that to you. <br>As far as ranking we try to be fair by randomizing it every 5 minutes, this means that items you post will at some time feature on the front page.<br>To learn more about Tiiva check out our <a href="Termsofuse.php">Rules and guidlines</a> </p>
+                                    <p>Hi, Were glad you'd like to work with us.<br>Please fill in your details to your left and click continue.<br>We at Tiiva strive to create a better relation between the seller and the buyer.<br>Currently we support most types of businesses <!-- <br>We also support local talent saay your an artist.... you draw potraits?...we will help you sell your art work.. --><br>All the items you see on Tiiva are uploaded by individual business owners. We as Tiiva own no single upload, it would be unfair being the referee and the player at the same time.<br>We do not control pricing on items that you post here...we leave that to you. <br>As far as ranking we try to be fair by randomizing it every 5 minutes, this means that items you post will at some time feature on the front page.<br>To learn more about Tiiva check out our <a href="Termsofuse.php">Rules and guidlines</a> </p>
                                 </div>
                             </div>
                             <div class="row" id="page2info" style="visibility:hidden;display:none;">
@@ -257,10 +267,11 @@
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <h4>Psst... just a bit more maybe..*wink</h4>
-                                            <small><p>Hello again, so you're halfway down just one more step to go but first you need to select your business type.<br><strong>Depending on the business type you select infortion below will change explaining a bit about the selected option.</strong></p></small>
+                                            <!-- <small><p>Hello again, so you're halfway down just one more step to go but first you need to select your business type.<br><strong>Depending on the business type you select infortion below will change explaining a bit about the selected option.</strong></p></small> -->
+                                            <small> <p>Hello again, so you're halfway down just one more step to go but first provide your location details.</p> </small>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row" style="display: none;">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="selectedcontent">
                                             <h5 class="text-uppercase"><strong><span id="selectedtitle">Wholesaler</span></strong></h5>
                                             <small><span id="selectedinfo">

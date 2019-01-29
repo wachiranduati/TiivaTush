@@ -24,7 +24,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, md5($salt.$_POST['password']));
     
-    $query = "SELECT `id` FROM `users` WHERE `username`='$username' OR `emailaddress`='$username' OR `mobilenumber`='$username' AND `password`='$password'";
+    $query = "SELECT `id` FROM `users` WHERE `username`='$username' AND `password`='$password'";
     $query_run = mysqli_query($conn, $query);
     $query_num_rows = mysqli_num_rows($query_run);
     if($query_num_rows == 0){
