@@ -100,20 +100,12 @@ if(!empty($search_text)){
 
 		$query_run = mysqli_query($conn, $query);
 		while ($query_row = mysqli_fetch_assoc($query_run)){
-			//echo $name = '<a href="anotherpage.php?search_text='.$query_row['itemtitle'].'">'.$query_row['itemtitle'].'</a><br>';
-			//echo $name = '<div class="searchbox"><a href="mainpage.php?search_text='.$query_row['itemtitle'].'">'.$query_row['itemtitle'].'</a></div>';
-			//echo $name = '<div class="searchbox"><a href="searchresults.php?search_text='.$query_row['itemtitle'].'">'.$query_row['itemtitle'].'</a></div>';
+			
 			$formatvat = number_format($query_row['price']);
           $titles = substr($query_row['itemtitle'],0,15);
 		  $identity = $query_row['id'];
           $titlesLarge = substr($query_row['itemtitle'],0,35);
-            // echo "<div class=\"row thitter\" style=\"border-bottom:1px dotted gainsboro;border-right:1px solid gainsboro;border-left:1px solid gainsboro;background-color:white;font-family:kok;padding:0px;\">
-            //     <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3 visible-lg visible-md\"><a href=\"$x\"><img src=\"mtumbauploads/compresseduploads/$query_row[imageone]\" class=\"img-responsive\" Style=\"max-height:50px;max-width:50px;\"/></a></div>
-            //     <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3 visible-sm visible-xs\"><a href=\"$x\"><img src=\"mtumbauploads/compresseduploads/$query_row[imageone]\" class=\"img-responsive\" style=\"max-height:35px;max-width:60px;\"/></a></div>
-            //     <div class=\"col-lg-6 col-md-6 col-sm-5 col-xs-5\"><a style=\"text-decoration:none;\"><h4 style=\"color:blue;cursor:default;\" class=\"text-capitalize\">$titles</h4></a></div>
-            //     <div class=\"col-lg-3 col-md-3 col-sm-4 col-xs-4 visible-lg visible-md\"><a style=\"color:orange;text-decoration:none;cursor:default;\"><h4 class=\"text-capitalize\">$query_row[price]&nbsp;<p style=\"font-size:90%;color:gainsboro;display:inline;\">Ksh</p></a></h4></div>
-            //     <div class=\"col-lg-3 col-md-3 col-sm-4 col-xs-4 visible-sm visible-xs\"><a style=\"color:orange;text-decoration:none;cursor:default;\"><p class=\"text-capitalize\">$query_row[price]&nbsp;<span style=\"font-size:90%;color:gainsboro;display:inline;\">Ksh</span></a></p></div>
-            // </div>";
+            
 
 			echo "
 					<tr onclick=\"letsgo('$link$identity');\">
@@ -125,28 +117,13 @@ if(!empty($search_text)){
 				";
 
 
-			// echo "
-			// 		<tr>
-			// 			<td><a href=\"index.php\"><img src=\"mtumbauploads/compresseduploads/$query_row[imageone]\" class=\"img-responsive\" Style=\"max-height:50px;max-width:50px;\"/></a></td>
-			// 			<td><a href=\"index.php\"><h4 style=\"color:blue;cursor:default;\" class=\"text-capitalize visible-lg visible-md\">$titlesLarge</h4><h5 style=\"color:blue;cursor:default;\" class=\"text-capitalize visible-sm visible-xs\">$titles...</h5></a></td>
-			// 			<td><a href=\"index.php\"><h4 class=\"text-capitalize visible-lg visible-md\">$formatvat&nbsp;<p style=\"font-size:90%;color:gainsboro;display:inline;\">Ksh</p></a></h4><h5 class=\"text-capitalize visible-sm visible-xs\">$formatvat&nbsp;<p style=\"font-size:90%;color:gainsboro;display:inline;\">Ksh</p></a></h5></a></td>
-			// 			<td><a href=\"index.php\"><h4 class=\"text-capitalize visible-lg visible-md\">#Shack</h4><h5 class=\"text-capitalize visible-sm visible-xs\">#Shack</h5></a></td>
-			// 		</tr>
-			// 	";
-
-
-
-			//echo "<a clas=\"list-group-item\" style=\"display:block;\"><img src=\"mtumbauploads/compresseduploads/$query_row[imageone]\" class=\"img-responsive\" Style=\"max-height:100px;max-width:100px;display:inline;\"/>&nbsp;&nbsp;<h4 class=\"text-capitalize\" style=\"color:blue;cursor:default;display:inline;\">$titles</h4>&nbsp;&nbsp;&nbsp;<h4 class=\"text-capitalize\" style=\"display:inline;\">$query_row[price]&nbsp;</h4></a>";
+			
 
 		}
 
 
         if($query_num_rows >= 1 ){
-            // echo "<div class=\"row\" style=\"border-bottom:1px dotted gainsboro;border-right:1px solid gainsboro;border-left:1px solid gainsboro;background-color:white;font-family:kok;color:white;\">
-            //         <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
-            //             <a href=\"searchresults.php?search_text=$search_text\" class=\"btn btn-info btn-block btn-md\" style=\"\">View all $query_num_rows items($search_text)s</a>
-            //         </div>
-            //     </div>";
+            
 
 
 					if($query_num_rows3 >= 1){

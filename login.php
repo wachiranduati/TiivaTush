@@ -56,9 +56,9 @@ if(!empty($_SERVER['HTTP_REFERER'])){
                 <div class="row">
                     <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11" style="margin-top:20px;">
                         <form class="form-group form-group-lg" action="login.php" method="post">
-                            <label>Username/Emailaddress</label><input id="username" type="text" class="form-control input-lg" name="username" placeholder="Username: Enter your Phone No/Email/Username" style="font-family:kokila; font-size:19px;margin-bottom:5%;"/>
+                            <label>Username/Emailaddress</label><input id="username" type="text" class="form-control input-lg" name="username" placeholder="Username: Enter your Phone No/Email/Username" style=" font-size:19px;margin-bottom:5%;"/>
                             <label>Password</label>
-                            <input type="password" id="password" class="form-control input-lg" name="password" placeholder="Password: Enter your password" style="font-family:kokila; font-size:19px;"/><span id="eye" onclick="openeye();" class="glyphicon glyphicon-eye-open" style="position:absolute;top:28%;right:-4%;color:#626262;font-size:120%;"></span>
+                            <input type="password" id="password" class="form-control input-lg" name="password" placeholder="Password: Enter your password" style=" font-size:19px;"/><span id="eye" onclick="openeye();" class="glyphicon glyphicon-eye-open" style="position:absolute;top:28%;right:-4%;color:#626262;font-size:120%;"></span>
 
 
                         <div class="row">
@@ -70,7 +70,7 @@ if(!empty($_SERVER['HTTP_REFERER'])){
                             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" >
 
 <!--                                    <input type="submit" value="Login" class="btn btn-primary btn-block">-->
-                                <a class="btn btn-primary btn-block" onclick="login();">Login</a>
+                                <a class="btn btn-primary btn-block btn-lg" onclick="login();">Login</a>
                                 </form>
                             </div>
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" ></div>
@@ -78,12 +78,12 @@ if(!empty($_SERVER['HTTP_REFERER'])){
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin:20px 0;"></div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h2 class="text-center" style="font-family:kokila;">New to Tiiva?</h2></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h2 class="text-center" style="">New to Tiiva?</h2></div>
                             </div>
                             <div class="row visible-lg visible-md">
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                    <h3 class="text-center" style="padding:10px;border:1px solid orangered;"><a href="register.php" class="text-center" style="color:orangered;font-family:kokila;">Create you own Tiiva account</a></h3>
+                                    <h3 class="text-center" style="padding:10px;border:1px solid orangered;"><a href="register.php" class="text-center" style="color:orangered;">Create you own Tiiva account</a></h3>
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                             </div>
