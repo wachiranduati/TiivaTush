@@ -3,7 +3,7 @@
         <!-- stick it here -->
         <div class="row" style="background-color:rgba(0,0,0,0.2)">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="row" style="font-family:kok;padding-top:0.5%;padding-bottom:0.5%;">
+                        <div class="row" style="padding-top:0.5%;padding-bottom:0.5%;">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="boxtit"></div>
 
                         </div>
@@ -30,7 +30,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                     <form class="form-group-md" id="search" name="search">
-                    <div class="input-group col-lg-12" style="font-family:kok;">
+                    <div class="input-group col-lg-12" style="">
                         <input type="text" class="form-control" placeholder="Search items here...." name="search_text" onkeyup="findmatch();" style="border:none;box-shadow:none;border-radius:0;background-color:rgba(219, 219, 219, 0.35);">
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-default disabled btn-md" style="border:1px solid rgb(255, 186, 0);background-color:rgb(255, 186, 0);color:white;border-radius:0;">Search</button>
@@ -49,7 +49,7 @@
                     </div>
                     <div class="row visible-lg visible-md" style="cursor:pointer;">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <a class="pull-right" onclick="toggleadvancedsearch();" style="text-decoration:none;font-family:kok;" id="advancedbutton">Advanced Search</a>
+                            <a class="pull-right" onclick="toggleadvancedsearch();" style="text-decoration:none;" id="advancedbutton">Advanced Search</a>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                                 <div class="visible-lg visible-md" style="margin-top:31%;"></div>
                                 <!--                    cart new design-->
                     <div data-target="#loginModal" data-toggle="modal" onclick="loadmodalcart();">
-                        <a><span class="glyphicon glyphicon-shopping-cart" style="font-size:30px;color:#523CFA;"></span><sup><span class="badge" id="cartitems" style="background-color:red;">0</span></sup><small style="font-family:kok;">&nbsp;Cart</small>&nbsp;<span class="caret"></span></a>
+                        <a><span class="glyphicon glyphicon-shopping-cart" style="font-size:30px;color:#523CFA;"></span><sup><span class="badge" id="cartitems" style="background-color:red;">0</span></sup><small>&nbsp;Cart</small>&nbsp;<span class="caret"></span></a>
 
                     </div>
 <!--                    cart new design-->
@@ -117,32 +117,32 @@
 <div class="row" id="AdvancedSearchContainer" style="display:none;visibility:none;">
     <div class="col-lgl-12 col-md-12 col-sm-12 col-xs-12" style="display:block;visibility:visible;padding-top:10px;">
         <form role="form">
-            <div class="col-lg-3" style="font-family:kok;">
+            <div class="col-lg-3" style="">
                 <label><small>Search Phrase</small></label>
                 <input type="text" placeholder="Search phrase eg. Bomber Jacket" id="searchphrase" class="form-control input-sm"/>
             </div>
-            <div class="col-lg-2" style="font-family:kok;">
+            <div class="col-lg-2" style="">
                 <label><small>Price min(Ksh)</small></label>
                 <input type="number" placeholder="0 Ksh" value="10" id="minprice" min="10" class="form-control input-sm"/>
             </div>
-            <div class="col-lg-2" style="font-family:kok;">
+            <div class="col-lg-2" style="">
                 <label><small>Price max(Ksh)</small></label>
                 <input type="number" placeholder="100000 Ksh" max="1000000" value="1000000" id="maxprice" min="10" class="form-control input-sm"/>
             </div>
 
-            <div class="col-lg-2" style="font-family:kok;">
-                <label><small>Tiiva Site: Shop/Shack</small></label>
-                <select name="site" id="site" class="form-control input-sm">
-                    <option value="shop">Tiiva Shop</option>
+            <div class="col-lg-2" style="">
+                <label><small>Tiiva Shack</small></label>
+                <select name="site" id="site" class="form-control input-sm" value="shack">
+                    <!-- <option value="shop">Tiiva Shop</option> -->
                     <option value="shack">Tiiva Shack</option>
 
                 </select>
             </div>
 
             <div class="col-lg-2">
-                <label style="font-family:kok;"><small>Category To Search</small></label>
+                <label style=""><small>Category To Search</small></label>
                 <select name="category" id="category" class="form-control input-sm">
-                    <optgroup label="MTUMBA Categories" id="Mtumbaid">
+                    <optgroup label="Tiiva Categories" id="Mtumbaid">
                         <option disabled>Select one of the categories below</option>
                         <option value="sportswear">Sportswear</option>
                         <option value="mens">Men's Wears</option>
@@ -153,20 +153,6 @@
                         <option value="shoes">Shoes</option>
                         <option value="misc">Misc</option>
                     </optgroup>
-
-                    <optgroup label="SHOP Categories" id="Shopid">
-                        <option value="electronics">Electronics &amp; Computers</option>
-                        <option value="entertainment">Entertainment &amp; Education</option>
-                        <option value="health">Health &amp; Beauty</option>
-                        <option value="jewerly">Fashion &amp; Jewerly</option>
-                        <option value="supermarket">Supermarket</option>
-                        <option value="outdoors">Sports &amp; Outdoors</option>
-                        <option value="handmade">Handmade</option>
-                        <option value="home">Home, Garden &amp; Tools</option>
-                        <option value="automotive">Automotive, Industrial</option>
-
-                    </optgroup>
-
 
                 </select>
             </div>
@@ -195,7 +181,7 @@
             <div class="modal" id="loginModal">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
-                        <div class="modal-header" style="background-color:black;color:white;font-family:kok;">
+                        <div class="modal-header" style="background-color:black;color:white;">
                             <a class="btn btn-primary pull-right" data-dismiss="modal">&times;</a>
                             <h4 class="modal-title text-center">Your Tiiva Shopping Cart</h4>
                         </div>

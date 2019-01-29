@@ -1,6 +1,6 @@
 <?php
 require 'connect.php';
-$today_search = Date(d).'-'.Date(m).'-'.Date(Y);
+$today_search = Date('d-m-Y');
 
 //echo md5($_SERVER['HTTP_X_FORWARDED_FOR']).' | ';
 //echo md5($_SERVER['HTTP_CLIENT_IP']).' | ';
@@ -79,10 +79,10 @@ if(isset($_POST['search_text']) && isset($_POST['minprice']) && isset($_POST['ma
 			//echo $name = '<a href="anotherpage.php?search_text='.$query_row['itemtitle'].'">'.$query_row['itemtitle'].'</a><br>';
 			//echo $name = '<div class="searchbox"><a href="mainpage.php?search_text='.$query_row['itemtitle'].'">'.$query_row['itemtitle'].'</a></div>';
 			//echo $name = '<div class="searchbox"><a href="searchresults.php?search_text='.$query_row['itemtitle'].'">'.$query_row['itemtitle'].'</a></div>';
-		$formatvat = number_format($query_row[price]);
-  		$titles = substr($query_row[itemtitle],0,15);
-  		$identity = $query_row[id];
-  		$titlesLarge = substr($query_row[itemtitle],0,35);
+		$formatvat = number_format($query_row['price']);
+  		$titles = substr($query_row['itemtitle'],0,15);
+  		$identity = $query_row['id'];
+  		$titlesLarge = substr($query_row['itemtitle'],0,35);
             // echo "<div class=\"row\" class=\"thitter\" style=\"border-bottom:1px dotted gainsboro;border-right:1px solid gainsboro;border-left:1px solid gainsboro;background-color:white;font-family:kok;\">
             //     <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"><a href=\"$x\"><img src=\"$query_row[imageone]\" class=\"img-responsive\"/></a></div>
             //     <div class=\"col-lg-6 col-md-6 col-sm-5 col-xs-5 visible-lg visible-md\"><a style=\"text-decoration:none;\"><h4 style=\"color:blue;cursor:default;\">$titles</h4></a></div>
