@@ -31,8 +31,8 @@ $query_run = mysqli_query($conn, $query);
 $query2 = "SELECT * FROM `products` WHERE `availability`='1' AND `buyer`='0' AND `label`='$label'";
 $query_run2 = mysqli_query($conn, $query2);
 $query_num_rows2 = mysqli_num_rows($query_run2);
-$page_count = 40;
-$pages = ceil($query_num_rows2/$page_count);
+// $itemsperpage = 20;
+$pages = ceil($query_num_rows2/$itemsperpage);
 
 
 
@@ -48,11 +48,11 @@ while($query_row = mysqli_fetch_assoc($query_run)){
            <div class=\"col-lg-8 col-md-8 col-sm-8 col-xs-8\"><ul class=\"pagination\">";
 
     $loopscount = 1;
-    while($loopscount <= $pages){
+    while($loopscount < $pages){
         if($loopscount == $currentpage){
-        echo "<li class=\"active\" onclick=\"loadlabelslistview('$label',$loopscount);\"><a href=\"\">$loopscount</a></li>";
+        echo "<li class=\"active\" onclick=\"loadlabelslistview('$label',$loopscount);\"><a>$loopscount</a></li>";
         }else{
-            echo "<li onclick=\"loadlabelslistview('$label',$loopscount);\"><a href=\"\">$loopscount</a></li>";
+            echo "<li onclick=\"loadlabelslistview('$label',$loopscount);\"><a>$loopscount</a></li>";
         }
         $loopscount++;
     }

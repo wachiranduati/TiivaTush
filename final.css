@@ -131,11 +131,13 @@ to {top: 0; opacity: 1}
     color:white;
     background-color: black;
     border:1px solid white;
+    font-family: 'Russo One', sans-serif;
 }
 .labeltainer:hover{
     color:black;
     font-weight:bold;
     background-color: white;
+    border: 1px solid #00baff;
 }
 #box2 {
             border-right: 1px dotted gainsboro;

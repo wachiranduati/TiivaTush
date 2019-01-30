@@ -46,6 +46,7 @@ if(isset($_POST['useremail'])){
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php require 'templates/resourcelinks/headerlinks.php';?>
+        <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
 
     <style type="text/css">
         .labelslist{
@@ -156,16 +157,16 @@ if(isset($_POST['useremail'])){
 
 
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:5px;font-family:kok;margin: 10px 0 10px 0;background-color:black;color:white;">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:5px;margin: 10px 0 10px 0;background-color:black;color:white;">
                         <div class="row">
                                     <h4 class="text-center text-uppercase"><strong>Labels</strong><small class="text-lowercase" style="color:white;">&nbsp;(Click on your choice from the list below)</small></h4>
                         </div>
                 </div>
             </div>
 
-            <div class="row" style="background-image:url(editions/manontop.jpeg);background-size:100%;position:top;cursor:pointer;">
+            <div class="row" style="background-size:100%;position:top;cursor:pointer;background-color: gainsboro;">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12" style="height:200px;overflow-y:scroll;overflow-x:hidden;padding:0;" id="labelslist">
+                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12" style="height:400px;overflow-y:scroll;overflow-x:hidden;padding:0;" id="labelslist">
 
                 </div>
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
