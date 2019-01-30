@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="bootstrapdist/css/bootstrap.min.css">
 <link rel="stylesheet" href="final.css">
 <link rel="stylesheet" href="listfile.css">
-<link rel="stylesheet" href="productitems.css">
 <script src="jquery.min.js"></script>
 <script src="bootstrapdist/js/bootstrap.min.js"></script>
 <script src="display.js"></script>

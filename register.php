@@ -81,7 +81,15 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
         </div>
         <div class="row">
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="margin-top:15px;border-top:1px solid gainsboro;"></div>
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="margin-top:15px;border-top:1px solid gainsboro;">
+                
+                <div class="alert alert-danger registerAlert" style="display: none;">
+                    <a class="close" data-dismiss="alert" href="#">&times;</a>
+                    <strong>Error!!</strong>
+                    <span>To use tiiva you have to accept to our terms and conditions</span>
+                </div>
+
+            </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
         </div>
         <div class="row">
@@ -94,17 +102,17 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
                             <input type="password" class="form-control input-lg" id="password" name="password" maxlength="40" placeholder="Password:          Enter your password" onblur="passone();" style="margin-top:15px; font-size:19px;" title="<h5>Password Field</h5>Please provide your password in the input below"/><span id="passstatus" style="position:absolute;top:16%;right:-3%;"></span>
                             <input type="password" class="form-control input-lg" id="passre" name="passwordreentered" maxlength="40" placeholder="Password:          Re-enter your password" onblur="passcheck();" style="margin-top:15px; font-size:19px;" title="<h5>Re-enter Password Field</h5>Please re-enter the password your placed in the input above here"/><span id="passrestatus" style="position:absolute;top:28%;right:-3%;"></span>
                             <input type="number" class="form-control input-lg" id="mobilenumber" name="mobilenumber" value="<?php if(isset($_POST['mobilenumber'])){echo $mobilenumber;}?>" maxlength="40" onblur="mobilecheck();" placeholder="Mobile number: 0705780775" style="margin-top:15px; font-size:19px;" title="<h5>PhoneNumber Field</h5>Please provide us with your phone number.p.s. Your account will be linked directly to your phonenumber"/><span id="mobilestatus" style="position:absolute;top:41%;right:-3%;"></span>
-                            <input type="email" class="form-control input-lg" name="emailaddress" value="<?php if(isset($_POST['emailaddress'])){echo $emailaddress;}?>" maxlength="40" placeholder="Email address:    Khalil@gmail.com" style="margin-top:15px; font-size:19px;" title="<h5>Email address Field</h5>Please provide us with your Email Address"/>
+                            <input type="email" id="emailaddress" class="form-control input-lg" name="emailaddress" value="<?php if(isset($_POST['emailaddress'])){echo $emailaddress;}?>" maxlength="40" placeholder="Email address:    Khalil@gmail.com" style="margin-top:15px; font-size:19px;" title="<h5>Email address Field</h5>Please provide us with your Email Address"/>
                             <br><br>
-                            <div class="checkbox" style="margin-top:-15px;">
+                            <!-- <div class="checkbox" style="margin-top:-15px;">
                                 <label>
-                                    <input type="checkbox" name="promotions" value="option1"/>
+                                    <input id="promotions" type="checkbox" name="promotions"/>
                                     <p>Receive our offer & promotions by email</p>
                                 </label>
-                            </div>
+                            </div> -->
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="terms" value="option1"/>
+                                    <input id="terms" checked="checked" type="checkbox" name="terms"/>
                                     I agree with the <a href="Termsofuse.php">Terms and Conditions</a> & Privacy policies
                                 </label>
                             </div>
@@ -116,7 +124,7 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" ></div>
                             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" >
                                 
-                                    <input type="submit" value="Create account" name="create" class="btn btn-primary btn-block btn-lg">
+                                    <input id="regBtn" type="submit" value="Create account" name="create" class="btn btn-primary btn-block btn-lg">
                                 </form>
                             </div>
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" >
@@ -180,7 +188,7 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
         function useri(){
             var user = document.getElementById("username").value;
             var userstatus = document.getElementById("userstatus");
-            if (user != 0){
+            if (user != '' && user.length > 4 && user.indexOf(' ') < 1){
                 userstatus.innerHTML = "<span class=\"glyphicon glyphicon-ok\" style=\"color:rgb(0, 230, 0);\"></span>";
             }else{
                 userstatus.innerHTML = "<span class=\"glyphicon glyphicon-remove\" style=\"color:rgb(255, 0, 0);\"></span>";
@@ -190,7 +198,7 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
         function passone(){
             var pass = document.getElementById("password").value;
             var passstatus = document.getElementById("passstatus");
-            if (pass != 0){
+            if (pass != '' && pass.length > 7){
                 passstatus.innerHTML = "<span class=\"glyphicon glyphicon-ok\" style=\"color:rgb(0, 230, 0);\"></span>";
             }else{
                 passstatus.innerHTML = "<span class=\"glyphicon glyphicon-remove\" style=\"color:rgb(255, 0, 0);\"></span>";
@@ -200,7 +208,7 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
             var passre = document.getElementById("passre").value;
             var pass = document.getElementById("password").value;
             var passrestatus = document.getElementById("passrestatus");
-            if (passre == pass && pass != 0 && passre != 0){
+            if (passre == pass && pass != '' && passre != ''){
                 passrestatus.innerHTML = "<span class=\"glyphicon glyphicon-ok\" style=\"color:rgb(0, 230, 0);\"></span>";
             }else{
                 passrestatus.innerHTML = "<span class=\"glyphicon glyphicon-remove\" style=\"color:rgb(255, 0, 0);\"></span>";
@@ -214,6 +222,20 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
                
            })
         });
+
+        $("#terms").change(function(){
+            if ($('#terms').is(":checked")){
+              $(".registerAlert").hide();
+              $("#regBtn").attr('disabled',false);
+            }else{
+              $(".registerAlert").show();
+              $("#regBtn").attr('disabled',true);
+            }
+        });
+
+        
+
+        
     </script>
 </body>
 </html>
