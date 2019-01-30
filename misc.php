@@ -227,7 +227,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('box');?>
+                                    <?php echo spinnersHolder('boxmiscbelts');?>
                                 </div>
                             </div>
                         </div>
@@ -317,7 +317,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxofficial');?>
+                                    <?php echo spinnersHolder('boxmiscdolls');?>
                                 </div>
                             </div>
                         </div>
@@ -411,7 +411,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxsweaters');?>
+                                    <?php echo spinnersHolder('boxmischats');?>
                                 </div>
                             </div>
                         </div>
@@ -517,7 +517,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxblazers');?>
+                                    <?php echo spinnersHolder('boxmiscunderwear');?>
                                 </div>
                             </div>
                         </div>
@@ -610,7 +610,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxjackets');?>
+                                    <?php echo spinnersHolder('boxmiscmiscocks');?>
                                 </div>
                             </div>
                         </div>
@@ -703,7 +703,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxbags');?>
+                                    <?php echo spinnersHolder('boxmiscfabrics');?>
                                 </div>
                             </div>
                         </div>
@@ -796,7 +796,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxmiscs');?>
+                                    <?php echo spinnersHolder('boxmiscmisc');?>
                                 </div>
                             </div>
                         </div>
@@ -895,7 +895,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxlabels');?>
+                                    <?php echo spinnersHolder('boxmisclabels');?>
                                 </div>
                             </div>
                         </div>
@@ -947,7 +947,7 @@ function sportswear(){
     }
 xmlhttp.onreadystatechange = function(){
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-        document.getElementById('box').innerHTML= xmlhttp.responseText;
+        document.getElementById('boxmiscbelts').innerHTML= xmlhttp.responseText;
 
         }
         }
@@ -985,7 +985,7 @@ function womensloop(){
     }
 xmlhttp3.onreadystatechange = function(){
     if (xmlhttp3.readyState == 4 && xmlhttp3.status == 200){
-        document.getElementById('boxofficial').innerHTML= xmlhttp3.responseText;
+        document.getElementById('boxmiscdolls').innerHTML= xmlhttp3.responseText;
 
         }
         }
@@ -1005,7 +1005,7 @@ function mensloop(){
     }
 xmlhttp4.onreadystatechange = function(){
     if (xmlhttp4.readyState == 4 && xmlhttp4.status == 200){
-        document.getElementById('boxsweaters').innerHTML= xmlhttp4.responseText;
+        document.getElementById('boxmischats').innerHTML= xmlhttp4.responseText;
 
         }
         }
@@ -1027,7 +1027,7 @@ function bagsloop(){
     }
 xmlhttp7.onreadystatechange = function(){
     if (xmlhttp7.readyState == 4 && xmlhttp7.status == 200){
-        document.getElementById('boxblazers').innerHTML= xmlhttp7.responseText;
+        document.getElementById('boxmiscunderwear').innerHTML= xmlhttp7.responseText;
 
         }
         }
@@ -1047,7 +1047,7 @@ function shoesloop(){
     }
 xmlhttp8.onreadystatechange = function(){
     if (xmlhttp8.readyState == 4 && xmlhttp8.status == 200){
-        document.getElementById('boxjackets').innerHTML= xmlhttp8.responseText;
+        document.getElementById('boxmiscmiscocks').innerHTML= xmlhttp8.responseText;
 
         }
         }
@@ -1067,7 +1067,7 @@ $('.loaderImage').fadeOut(3000);
     }
 xmlhttp9.onreadystatechange = function(){
     if (xmlhttp9.readyState == 4 && xmlhttp9.status == 200){
-        document.getElementById('boxbags').innerHTML= xmlhttp9.responseText;
+        document.getElementById('boxmiscfabrics').innerHTML= xmlhttp9.responseText;
 
         }
         }
@@ -1087,7 +1087,7 @@ $('.loaderImage').fadeOut(3000);
     }
 xmlhttp10.onreadystatechange = function(){
     if (xmlhttp10.readyState == 4 && xmlhttp10.status == 200){
-        document.getElementById('boxmiscs').innerHTML= xmlhttp10.responseText;
+        document.getElementById('boxmiscmisc').innerHTML= xmlhttp10.responseText;
 
         }
         }
@@ -1107,7 +1107,7 @@ $('.loaderImage').fadeOut(3000);
     }
 xmlhttp11.onreadystatechange = function(){
     if (xmlhttp11.readyState == 4 && xmlhttp11.status == 200){
-        document.getElementById('boxlabels').innerHTML= xmlhttp11.responseText;
+        document.getElementById('boxmisclabels').innerHTML= xmlhttp11.responseText;
 
         }
         }

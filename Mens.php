@@ -16,15 +16,15 @@ $century = 860;//Mtush
         <?php require 'templates/resourcelinks/headerlinks.php';?>
 
     <style type="text/css">
-        .searchbox {
+        .searchboxmenssportswear {
             border-bottom: 1px solid black;
         }
 
-        #box1 {
+        #boxmenssportswear1 {
                     border-right: 1px dotted gainsboro;
                 }
-        #box1:hover {
-            box-shadow: 0px -1px 10px red;
+        #boxmenssportswear1:hover {
+            boxmenssportswear-shadow: 0px -1px 10px red;
         }
         @keyframes tag {
             0% { transform: rotate(-10deg);}
@@ -42,7 +42,7 @@ $century = 860;//Mtush
     </style>
 
 </head>
-    <body onload="sportswear();boxed();">
+    <body onload="sportswear();boxmenssportsweared();">
         <?php 
         require('templates/header.php');
         ?>
@@ -231,7 +231,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('box');?>
+                                    <?php echo spinnersHolder('boxmenssportswear');?>
                                 </div>
                             </div>
                         </div>
@@ -321,7 +321,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxofficial');?>
+                                    <?php echo spinnersHolder('boxmensformalwear');?>
                                 </div>
                             </div>
                         </div>
@@ -414,7 +414,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxsweaters');?>
+                                    <?php echo spinnersHolder('boxmenssweaters');?>
                                 </div>
                             </div>
                         </div>
@@ -509,7 +509,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxshirts');?>
+                                    <?php echo spinnersHolder('boxmenspants');?>
                                 </div>
                             </div>
                         </div>
@@ -613,7 +613,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro; border-bottom:1x solid gainsboro;">
-                                    <?php echo spinnersHolder('boxtshirtsk');?>
+                                    <?php echo spinnersHolder('boxmenstshirts');?>
                                 </div>
                             </div>
                         </div>
@@ -706,7 +706,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxblazers');?>
+                                    <?php echo spinnersHolder('boxmensblazers');?>
                                 </div>
                             </div>
                         </div>
@@ -800,7 +800,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxbags');?>
+                                    <?php echo spinnersHolder('boxmensbags');?>
                                 </div>
                             </div>
                         </div>
@@ -893,7 +893,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxmiscs');?>
+                                    <?php echo spinnersHolder('boxmensmisc');?>
                                 </div>
                             </div>
                         </div>
@@ -931,15 +931,15 @@ $century = 860;//Mtush
                         </a>
 
                         <ul class="dropdown-menu list-group">
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Fubu</a>
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Adidas</a>
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Nike</a>
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Puma</a>
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Calvin Klein</a>
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Hugo Boss</a>
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Vans</a>
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Versace</a>
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Labels</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Fubu</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Adidas</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Nike</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Puma</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Calvin Klein</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Hugo Boss</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Vans</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Versace</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Labels</a>
 
 
 
@@ -989,7 +989,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxlabels');?>
+                                    <?php echo spinnersHolder('boxmenslabels');?>
                                 </div>
                             </div>
                         </div>
@@ -1054,7 +1054,7 @@ function carousel() {
                 }
            xmlhttp.onreadystatechange = function(){
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-                    document.getElementById('box').innerHTML= xmlhttp.responseText;
+                    document.getElementById('boxmenssportswear').innerHTML= xmlhttp.responseText;
 
                     }
                     }
@@ -1064,8 +1064,8 @@ function carousel() {
             $('.loaderImage').fadeOut(3000);
                  womensloop();
             }
-            // changes the title box with the hello welcome to airmark logout thingi
-            function boxed(){
+            // changes the title boxmenssportswear with the hello welcome to airmark logout thingi
+            function boxmenssportsweared(){
               if(window.XMLHttpRequest){
                     xmlhttp2 = new XMLHttpRequest();
                 }else{
@@ -1073,7 +1073,7 @@ function carousel() {
                 }
            xmlhttp2.onreadystatechange = function(){
                 if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200){
-                    document.getElementById('boxtit').innerHTML= xmlhttp2.responseText;
+                    document.getElementById('boxmenssportsweartit').innerHTML= xmlhttp2.responseText;
 
                     }
                     }
@@ -1092,7 +1092,7 @@ function carousel() {
                 }
            xmlhttp3.onreadystatechange = function(){
                 if (xmlhttp3.readyState == 4 && xmlhttp3.status == 200){
-                    document.getElementById('boxofficial').innerHTML= xmlhttp3.responseText;
+                    document.getElementById('boxmensformalwear').innerHTML= xmlhttp3.responseText;
 
                     }
                     }
@@ -1112,7 +1112,7 @@ function carousel() {
                 }
            xmlhttp4.onreadystatechange = function(){
                 if (xmlhttp4.readyState == 4 && xmlhttp4.status == 200){
-                    document.getElementById('boxsweaters').innerHTML= xmlhttp4.responseText;
+                    document.getElementById('boxmenssweaters').innerHTML= xmlhttp4.responseText;
 
                     }
                     }
@@ -1132,7 +1132,7 @@ function carousel() {
                 }
            xmlhttp5.onreadystatechange = function(){
                 if (xmlhttp5.readyState == 4 && xmlhttp5.status == 200){
-                    document.getElementById('boxshirts').innerHTML= xmlhttp5.responseText;
+                    document.getElementById('boxmenspants').innerHTML= xmlhttp5.responseText;
 
                     }
                     }
@@ -1152,7 +1152,7 @@ function carousel() {
                 }
            xmlhttp6.onreadystatechange = function(){
                 if (xmlhttp6.readyState == 4 && xmlhttp6.status == 200){
-                    document.getElementById('boxtshirtsk').innerHTML= xmlhttp6.responseText;
+                    document.getElementById('boxmenstshirts').innerHTML= xmlhttp6.responseText;
 
                     }
                     }
@@ -1172,7 +1172,7 @@ function carousel() {
                 }
            xmlhttp7.onreadystatechange = function(){
                 if (xmlhttp7.readyState == 4 && xmlhttp7.status == 200){
-                    document.getElementById('boxblazers').innerHTML= xmlhttp7.responseText;
+                    document.getElementById('boxmensblazers').innerHTML= xmlhttp7.responseText;
 
                     }
                     }
@@ -1193,7 +1193,7 @@ function carousel() {
                 }
            xmlhttp9.onreadystatechange = function(){
                 if (xmlhttp9.readyState == 4 && xmlhttp9.status == 200){
-                    document.getElementById('boxbags').innerHTML= xmlhttp9.responseText;
+                    document.getElementById('boxmensbags').innerHTML= xmlhttp9.responseText;
 
                     }
                     }
@@ -1213,7 +1213,7 @@ function carousel() {
                 }
            xmlhttp10.onreadystatechange = function(){
                 if (xmlhttp10.readyState == 4 && xmlhttp10.status == 200){
-                    document.getElementById('boxmiscs').innerHTML= xmlhttp10.responseText;
+                    document.getElementById('boxmensmisc').innerHTML= xmlhttp10.responseText;
 
                     }
                     }
@@ -1233,7 +1233,7 @@ function carousel() {
                 }
            xmlhttp11.onreadystatechange = function(){
                 if (xmlhttp11.readyState == 4 && xmlhttp11.status == 200){
-                    document.getElementById('boxlabels').innerHTML= xmlhttp11.responseText;
+                    document.getElementById('boxmenslabels').innerHTML= xmlhttp11.responseText;
 
                     }
                     }
@@ -1243,7 +1243,7 @@ function carousel() {
                        cart();
 
             }
-                // changes the title box with the hello welcome to airmark logout thingi
+                // changes the title boxmenssportswear with the hello welcome to airmark logout thingi
             function cart(){
               if(window.XMLHttpRequest){
                     xmlhttp12 = new XMLHttpRequest();

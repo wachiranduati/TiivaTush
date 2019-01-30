@@ -231,7 +231,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('box');?>
+                                    <?php echo spinnersHolder('boxhouseholdbedroom');?>
                                 </div>
                             </div>
                         </div>
@@ -328,7 +328,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxsweaters');?>
+                                    <?php echo spinnersHolder('boxhouseholdcarpets');?>
                                 </div>
                             </div>
                         </div>
@@ -425,7 +425,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxshirts');?>
+                                    <?php echo spinnersHolder('boxhouseholdtowels');?>
                                 </div>
                             </div>
                         </div>
@@ -533,7 +533,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxtshirtsk');?>
+                                    <?php echo spinnersHolder('boxhouseholdcurtains');?>
                                 </div>
                             </div>
                         </div>
@@ -628,7 +628,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxjackets');?>
+                                    <?php echo spinnersHolder('boxhouseholdantiques');?>
                                 </div>
                             </div>
                         </div>
@@ -724,7 +724,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxbags');?>
+                                    <?php echo spinnersHolder('boxhouseholdwallart');?>
                                 </div>
                             </div>
                         </div>
@@ -822,7 +822,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxmiscs');?>
+                                    <?php echo spinnersHolder('boxhouseholdmisc');?>
                                 </div>
                             </div>
                         </div>
@@ -921,7 +921,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxlabels');?>
+                                    <?php echo spinnersHolder('boxhouseholdlabels');?>
                                 </div>
                             </div>
                         </div>
@@ -987,7 +987,7 @@ function carousel() {
                 }
            xmlhttp.onreadystatechange = function(){
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-                    document.getElementById('box').innerHTML= xmlhttp.responseText;
+                    document.getElementById('boxhouseholdbedroom').innerHTML= xmlhttp.responseText;
 
                     }
                     }
@@ -1027,7 +1027,7 @@ function carousel() {
                 }
            xmlhttp4.onreadystatechange = function(){
                 if (xmlhttp4.readyState == 4 && xmlhttp4.status == 200){
-                    document.getElementById('boxsweaters').innerHTML= xmlhttp4.responseText;
+                    document.getElementById('boxhouseholdcarpets').innerHTML= xmlhttp4.responseText;
 
                     }
                     }
@@ -1047,7 +1047,7 @@ function carousel() {
                 }
            xmlhttp5.onreadystatechange = function(){
                 if (xmlhttp5.readyState == 4 && xmlhttp5.status == 200){
-                    document.getElementById('boxshirts').innerHTML= xmlhttp5.responseText;
+                    document.getElementById('boxhouseholdtowels').innerHTML= xmlhttp5.responseText;
 
                     }
                     }
@@ -1067,7 +1067,7 @@ function carousel() {
                 }
            xmlhttp6.onreadystatechange = function(){
                 if (xmlhttp6.readyState == 4 && xmlhttp6.status == 200){
-                    document.getElementById('boxtshirtsk').innerHTML= xmlhttp6.responseText;
+                    document.getElementById('boxhouseholdcurtains').innerHTML= xmlhttp6.responseText;
 
                     }
                     }
@@ -1088,7 +1088,7 @@ function carousel() {
                 }
            xmlhttp8.onreadystatechange = function(){
                 if (xmlhttp8.readyState == 4 && xmlhttp8.status == 200){
-                    document.getElementById('boxjackets').innerHTML= xmlhttp8.responseText;
+                    document.getElementById('boxhouseholdantiques').innerHTML= xmlhttp8.responseText;
 
                     }
                     }
@@ -1108,7 +1108,7 @@ function carousel() {
                 }
            xmlhttp9.onreadystatechange = function(){
                 if (xmlhttp9.readyState == 4 && xmlhttp9.status == 200){
-                    document.getElementById('boxbags').innerHTML= xmlhttp9.responseText;
+                    document.getElementById('boxhouseholdwallart').innerHTML= xmlhttp9.responseText;
 
                     }
                     }
@@ -1128,7 +1128,7 @@ function carousel() {
                 }
            xmlhttp10.onreadystatechange = function(){
                 if (xmlhttp10.readyState == 4 && xmlhttp10.status == 200){
-                    document.getElementById('boxmiscs').innerHTML= xmlhttp10.responseText;
+                    document.getElementById('boxhouseholdmisc').innerHTML= xmlhttp10.responseText;
 
                     }
                     }
@@ -1148,7 +1148,7 @@ function carousel() {
                 }
            xmlhttp11.onreadystatechange = function(){
                 if (xmlhttp11.readyState == 4 && xmlhttp11.status == 200){
-                    document.getElementById('boxlabels').innerHTML= xmlhttp11.responseText;
+                    document.getElementById('boxhouseholdlabels').innerHTML= xmlhttp11.responseText;
 
                     }
                     }

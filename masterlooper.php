@@ -27,7 +27,7 @@ if($query_num_rows <= $notifymecount){
     if(file_exists('logs/Queried_searches.txt')){
             // append the word value to it
             $handle = fopen('logs/Restock_errors.txt','a');
-            fwrite($handle,'Restock'.$category.' & '.$subcategory.'|'.$today.PHP_EOL);
+            fwrite($handle,'Restock '.$category.' category |'.$today.PHP_EOL);
             fclose($handle);
             //echo 'File has been appended';
             //FINAL STEP
@@ -54,7 +54,7 @@ if($query_num_rows <= $notifymecount){
             //create searches.txt file and write the value to it
             //this will be the queried resulst
             $handle = fopen('logs/Restock_errors.txt','w');
-            fwrite($handle,'Restock'.$category.' & '.$subcategory.'|'.$today.PHP_EOL);
+            fwrite($handle,'Restock'.$category.' category |'.$today.PHP_EOL);
             fclose($handle);
             echo 'New File has been created and search term added with id';
             // FINAL STEP
@@ -136,7 +136,7 @@ if($query_num_rows <= $notifymecount){
     if(file_exists('logs/Queried_searches.txt')){
             // append the word value to it
             $handle = fopen('logs/Restock_errors.txt','a');
-            fwrite($handle,'Restock'.$category.' & '.$subcategory.'|'.$today.PHP_EOL);
+            fwrite($handle,'Restock everything|'.$today.PHP_EOL);
             fclose($handle);
             //echo 'File has been appended';
             //FINAL STEP
@@ -162,7 +162,7 @@ if($query_num_rows <= $notifymecount){
             //create searches.txt file and write the value to it
             //this will be the queried resulst
             $handle = fopen('logs/Restock_errors.txt','w');
-            fwrite($handle,'Restock'.$category.' & '.$subcategory.'|'.$today.PHP_EOL);
+            fwrite($handle,'Restock everything|'.$today.PHP_EOL);
             fclose($handle);
            // echo 'New File has been created and search term added with id';
             // FINAL STEP
@@ -244,7 +244,7 @@ if($query_num_rows <= $notifymecount){
     if(file_exists('logs/Queried_searches.txt')){
             // append the word value to it
             $handle = fopen('logs/Restock_errors.txt','a');
-            fwrite($handle,'Restock'.$category.' & '.$subcategory.'|'.$today.PHP_EOL);
+            fwrite($handle,'Restock '.$category.' & '.$subcategory.'|'.$today.PHP_EOL);
             fclose($handle);
             //echo 'File has been appended';
             //FINAL STEP
@@ -270,7 +270,7 @@ if($query_num_rows <= $notifymecount){
             //create searches.txt file and write the value to it
             //this will be the queried resulst
             $handle = fopen('logs/Restock_errors.txt','w');
-            fwrite($handle,'Restock'.$category.' & '.$subcategory.'|'.$today.PHP_EOL);
+            fwrite($handle,'Restock '.$category.' & '.$subcategory.'|'.$today.PHP_EOL);
             fclose($handle);
            // echo 'New File has been created and search term added with id';
             // FINAL STEP
@@ -334,14 +334,14 @@ function subcategoryTemplateLoops($conn, $table, $subcategory, $notifymecount){
 $today = Date('Y-m-d');
 $toolowcustomer = 1;
 $toolowmessagee = 'items in CATEGORY '.$subcategory.' need restocking';
-$query = "SELECT * FROM `products` WHERE `subcategory`='$subcategory' AND `availability`='1' AND `buyer`='0'";
+$query = "SELECT * FROM `$table` WHERE `subcategory`='$subcategory' AND `availability`='1' AND `buyer`='0'";
 // ensure item has not been booked or bought
 $query_run = mysqli_query($conn, $query);
 $query_num_rows = mysqli_num_rows($query_run);
 $query_row = mysqli_fetch_assoc($query_run);
 
 
-$query2 = "SELECT * FROM `products` WHERE `subcategory`='$subcategory' AND `availability`='1' AND `buyer`='0' ORDER BY RAND() LIMIT 6";
+$query2 = "SELECT * FROM `$table` WHERE `subcategory`='$subcategory' AND `availability`='1' AND `buyer`='0' ORDER BY RAND() LIMIT 6";
 $query2_run = mysqli_query($conn, $query2);
 
 
@@ -352,7 +352,7 @@ if($query_num_rows <= $notifymecount){
     if(file_exists('logs/Queried_searches.txt')){
             // append the word value to it
             $handle = fopen('logs/Restock_errors.txt','a');
-            fwrite($handle,'Restock'.$category.' & '.$subcategory.'|'.$today.PHP_EOL);
+            fwrite($handle,'Restock subcategory '.$subcategory.'|'.$today.PHP_EOL);
             fclose($handle);
             //echo 'File has been appended';
             //FINAL STEP
@@ -378,7 +378,7 @@ if($query_num_rows <= $notifymecount){
             //create searches.txt file and write the value to it
             //this will be the queried resulst
             $handle = fopen('logs/Restock_errors.txt','w');
-            fwrite($handle,'Restock'.$category.' & '.$subcategory.'|'.$today.PHP_EOL);
+            fwrite($handle,'Restock subcategory '.$subcategory.'|'.$today.PHP_EOL);
             fclose($handle);
            // echo 'New File has been created and search term added with id';
             // FINAL STEP
@@ -459,7 +459,7 @@ if($query_num_rows <= $notifymecount){
     if(file_exists('logs/Queried_searches.txt')){
             // append the word value to it
             $handle = fopen('logs/Restock_errors.txt','a');
-            fwrite($handle,'Restock'.$category.' & '.$subcategory.'|'.$today.PHP_EOL);
+            fwrite($handle,'Restock '.$category.' category unisex NOT | '.$sex.' '.$today.PHP_EOL);
             fclose($handle);
             //echo 'File has been appended';
             //FINAL STEP
@@ -485,7 +485,7 @@ if($query_num_rows <= $notifymecount){
             //create searches.txt file and write the value to it
             //this will be the queried resulst
             $handle = fopen('logs/Restock_errors.txt','w');
-            fwrite($handle,'Restock'.$category.' & '.$subcategory.'|'.$today.PHP_EOL);
+            fwrite($handle,'Restock '.$category.' category unisex NOT | '.$sex.' '.$today.PHP_EOL);
             fclose($handle);
            // echo 'New File has been created and search term added with id';
             // FINAL STEP
@@ -550,14 +550,14 @@ function subcategoryLoopSexed($conn, $table, $subcategory, $sex, $notifymecount)
 $today = Date('Y-m-d');
 $toolowcustomer = 1;
 $toolowmessagee = 'items in CATEGORY '.$subcategory.' need restocking';
-$query = "SELECT * FROM `products` WHERE `sex`!='female' AND `subcategory`='$subcategory' AND `availability`='1' AND `buyer`='0'";
+$query = "SELECT * FROM `$table` WHERE `sex`!='female' AND `subcategory`='$subcategory' AND `availability`='1' AND `buyer`='0'";
 // ensure item has not been booked or bought
 $query_run = mysqli_query($conn, $query);
 $query_num_rows = mysqli_num_rows($query_run);
 $query_row = mysqli_fetch_assoc($query_run);
 
 
-$query2 = "SELECT * FROM `products` WHERE `sex`!='female' AND `subcategory`='$subcategory' AND `availability`='1' AND `buyer`='0' ORDER BY RAND() LIMIT 6";
+$query2 = "SELECT * FROM `$table` WHERE `sex`!='female' AND `subcategory`='$subcategory' AND `availability`='1' AND `buyer`='0' ORDER BY RAND() LIMIT 6";
 $query2_run = mysqli_query($conn, $query2);
 
 
@@ -568,7 +568,7 @@ if($query_num_rows <= $notifymecount){
     if(file_exists('logs/Queried_searches.txt')){
             // append the word value to it
             $handle = fopen('logs/Restock_errors.txt','a');
-            fwrite($handle,'Restock category '.$subcategory.'|'.$today.PHP_EOL);
+            fwrite($handle,'Restock category '.$subcategory.' unisex NOT| '.$sex.' '.$today.PHP_EOL);
             fclose($handle);
             //echo 'File has been appended';
             //FINAL STEP
@@ -594,7 +594,7 @@ if($query_num_rows <= $notifymecount){
             //create searches.txt file and write the value to it
             //this will be the queried resulst
             $handle = fopen('logs/Restock_errors.txt','w');
-            fwrite($handle,'Restock'.$category.' & '.$subcategory.'|'.$today.PHP_EOL);
+            fwrite($handle,'Restock category '.$subcategory.' unisex NOT| '.$sex.' '.$today.PHP_EOL);
             fclose($handle);
            // echo 'New File has been created and search term added with id';
             // FINAL STEP
@@ -676,7 +676,7 @@ if($query_num_rows <= $notifymecount){
     if(file_exists('logs/Queried_searches.txt')){
             // append the word value to it
             $handle = fopen('logs/Restock_errors.txt','a');
-            fwrite($handle,'Restock'.$category.' & |'.$today.PHP_EOL);
+            fwrite($handle,'Restock all categories unisex except (household & kids) also NOT | '.$sex.' '.$today.PHP_EOL);
             fclose($handle);
             //echo 'File has been appended';
             //FINAL STEP
@@ -702,7 +702,7 @@ if($query_num_rows <= $notifymecount){
             //create searches.txt file and write the value to it
             //this will be the queried resulst
             $handle = fopen('logs/Restock_errors.txt','w');
-            fwrite($handle,'Restock'.$category.' & '.$subcategory.'|'.$today.PHP_EOL);
+            fwrite($handle,'Restock all categories unisex except (household & kids) also NOT | '.$sex.' '.$today.PHP_EOL);
             fclose($handle);
            // echo 'New File has been created and search term added with id';
             // FINAL STEP

@@ -3,13 +3,13 @@ function returnEmptyCategory(){
     // this is used to return a templated error that category is empty
     return "
                 <div class=\"row visible-lg visible-md\">
-                    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\" style=\"height:400px;width:100%;color:red;background-image:url('editions/man-person-jumping-desert.jpg');background-size:100%;background-position:center;background-repeat:no-repeat;\">
+                    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\" style=\"height:400px;width:100%;color:red;background-image:url('icons/sorry.svg');background-size:100%;background-position:center;background-repeat:no-repeat;\">
                         <h4 class=\"text-center text-capitalize\" style=\"margin-top:20%;\">Sorry items have ran out in this category</h4>
                     </div>
                 </div>
 
                 <div class=\"row visible-sm visible-xs\">
-                    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\" style=\"height:200px;width:100%;color:red;background-image:url('editions/man-person-jumping-desert.jpg');background-size:100%;background-position:center;background-repeat:no-repeat;\">
+                    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\" style=\"height:200px;width:100%;color:red;background-image:url('icons/sorry.svg');background-size:100%;background-position:center;background-repeat:no-repeat;\">
                         <h4 class=\"text-center text-capitalize\" style=\"margin-top:20%;\">Sorry items have ran out in this category</h4>
                     </div>
                 </div>
@@ -65,12 +65,12 @@ function spinnersHolder($boxid){
         <div class=\"row\" id=\"$boxid\">
             <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
                 <div class=\"row\">
-                    <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\" style=\"height:200px; border:1px solid black;border-right:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
-                    <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\" style=\"height:200px; border:1px solid black;border-right:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
-                    <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\" style=\"height:200px; border:1px solid black;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
-                    <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\" style=\"height:200px; border:1px solid black;border-top:1px solid white;border-right:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
-                    <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\" style=\"height:200px; border:1px solid black;border-top:1px solid white;border-right:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
-                    <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\" style=\"height:200px; border:1px solid black;border-top:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
                 </div>
             </div>
         </div>     

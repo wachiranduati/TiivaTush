@@ -234,7 +234,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxofficial');?>
+                                    <?php echo spinnersHolder('boxsportwearshoes');?>
                                 </div>
                             </div>
                         </div>
@@ -327,7 +327,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxsweaters');?>
+                                    <?php echo spinnersHolder('boxsportswearpants');?>
                                 </div>
                             </div>
                         </div>
@@ -420,7 +420,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxshirts');?>
+                                    <?php echo spinnersHolder('boxsportswearshirts');?>
                                 </div>
                             </div>
                         </div>
@@ -526,7 +526,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxblazers');?>
+                                    <?php echo spinnersHolder('boxsportswearvests');?>
                                 </div>
                             </div>
                         </div>
@@ -618,7 +618,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxjackets');?>
+                                    <?php echo spinnersHolder('boxsportswearbags');?>
                                 </div>
                             </div>
                         </div>
@@ -711,7 +711,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-bottom:1px solid gainsboro;border-top:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxbags');?>
+                                    <?php echo spinnersHolder('boxsportswearshorts');?>
                                 </div>
                             </div>
                         </div>
@@ -804,7 +804,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxmiscs');?>
+                                    <?php echo spinnersHolder('boxsportswearsocks');?>
                                 </div>
                             </div>
                         </div>
@@ -897,7 +897,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxlabels');?>
+                                    <?php echo spinnersHolder('boxsportswearmisc');?>
                                 </div>
                             </div>
                         </div>
@@ -994,7 +994,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxsportslabels');?>
+                                    <?php echo spinnersHolder('boxsportswearall');?>
                                 </div>
                             </div>
                         </div>
@@ -1080,7 +1080,7 @@ function carousel() {
                 }
            xmlhttp3.onreadystatechange = function(){
                 if (xmlhttp3.readyState == 4 && xmlhttp3.status == 200){
-                    document.getElementById('boxofficial').innerHTML= xmlhttp3.responseText;
+                    document.getElementById('boxsportwearshoes').innerHTML= xmlhttp3.responseText;
 
                     }
                     }
@@ -1100,7 +1100,7 @@ function carousel() {
                 }
            xmlhttp4.onreadystatechange = function(){
                 if (xmlhttp4.readyState == 4 && xmlhttp4.status == 200){
-                    document.getElementById('boxsweaters').innerHTML= xmlhttp4.responseText;
+                    document.getElementById('boxsportswearpants').innerHTML= xmlhttp4.responseText;
 
                     }
                     }
@@ -1120,7 +1120,7 @@ function carousel() {
                 }
            xmlhttp5.onreadystatechange = function(){
                 if (xmlhttp5.readyState == 4 && xmlhttp5.status == 200){
-                    document.getElementById('boxshirts').innerHTML= xmlhttp5.responseText;
+                    document.getElementById('boxsportswearshirts').innerHTML= xmlhttp5.responseText;
 
                     }
                     }
@@ -1160,7 +1160,7 @@ function carousel() {
                 }
            xmlhttp7.onreadystatechange = function(){
                 if (xmlhttp7.readyState == 4 && xmlhttp7.status == 200){
-                    document.getElementById('boxblazers').innerHTML= xmlhttp7.responseText;
+                    document.getElementById('boxsportswearvests').innerHTML= xmlhttp7.responseText;
 
                     }
                     }
@@ -1180,7 +1180,7 @@ function carousel() {
                 }
            xmlhttp8.onreadystatechange = function(){
                 if (xmlhttp8.readyState == 4 && xmlhttp8.status == 200){
-                    document.getElementById('boxjackets').innerHTML= xmlhttp8.responseText;
+                    document.getElementById('boxsportswearbags').innerHTML= xmlhttp8.responseText;
 
                     }
                     }
@@ -1200,7 +1200,7 @@ function carousel() {
                 }
            xmlhttp9.onreadystatechange = function(){
                 if (xmlhttp9.readyState == 4 && xmlhttp9.status == 200){
-                    document.getElementById('boxbags').innerHTML= xmlhttp9.responseText;
+                    document.getElementById('boxsportswearshorts').innerHTML= xmlhttp9.responseText;
 
                     }
                     }
@@ -1220,7 +1220,7 @@ function carousel() {
                 }
            xmlhttp10.onreadystatechange = function(){
                 if (xmlhttp10.readyState == 4 && xmlhttp10.status == 200){
-                    document.getElementById('boxmiscs').innerHTML= xmlhttp10.responseText;
+                    document.getElementById('boxsportswearsocks').innerHTML= xmlhttp10.responseText;
 
                     }
                     }
@@ -1241,7 +1241,7 @@ function carousel() {
                 }
            xmlhttp11.onreadystatechange = function(){
                 if (xmlhttp11.readyState == 4 && xmlhttp11.status == 200){
-                    document.getElementById('boxlabels').innerHTML= xmlhttp11.responseText;
+                    document.getElementById('boxsportswearmisc').innerHTML= xmlhttp11.responseText;
 
                     }
                     }
@@ -1261,7 +1261,7 @@ function carousel() {
                 }
            xmlhttp12.onreadystatechange = function(){
                 if (xmlhttp12.readyState == 4 && xmlhttp12.status == 200){
-                    document.getElementById('boxsportslabels').innerHTML= xmlhttp12.responseText;
+                    document.getElementById('boxsportswearall').innerHTML= xmlhttp12.responseText;
 
                     }
                     }

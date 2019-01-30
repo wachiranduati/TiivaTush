@@ -615,7 +615,7 @@ if(isset($_POST['useremail'])){
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('box');?>
+                                    <?php echo spinnersHolder('boxsportswear');?>
                                 </div>
                             </div>
                         </div>
@@ -1070,7 +1070,7 @@ window.onscroll = function() {scrollFunction()};
                 }
            xmlhttp.onreadystatechange = function(){
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-                    document.getElementById('box').innerHTML= xmlhttp.responseText;
+                    document.getElementById('boxsportswear').innerHTML= xmlhttp.responseText;
 
                     }
                     }

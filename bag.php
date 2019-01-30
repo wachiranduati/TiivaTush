@@ -231,7 +231,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('box');?>
+                                    <?php echo spinnersHolder('boxbagsbackpacks');?>
                                 </div>
                             </div>
                         </div>
@@ -321,7 +321,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-bottom:1px solid gainsboro:border-top:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxofficial');?>
+                                    <?php echo spinnersHolder('boxbagsduffels');?>
                                 </div>
                             </div>
                         </div>
@@ -415,7 +415,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-bottom:1px solid gainsboro;border-top:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxshirts');?>
+                                    <?php echo spinnersHolder('boxbagsclutches');?>
                                 </div>
                             </div>
                         </div>
@@ -508,7 +508,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxtshirtsk');?>
+                                    <?php echo spinnersHolder('boxbagsshoulder');?>
                                 </div>
                             </div>
                         </div>
@@ -601,7 +601,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxmiscs');?>
+                                    <?php echo spinnersHolder('boxbagsmisc');?>
                                 </div>
                             </div>
                         </div>
@@ -705,7 +705,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxlabels');?>
+                                    <?php echo spinnersHolder('boxbagslabels');?>
                                 </div>
                             </div>
                         </div>
@@ -760,7 +760,7 @@ window.onscroll = function() {scrollFunction()};
                 }
            xmlhttp.onreadystatechange = function(){
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-                    document.getElementById('box').innerHTML= xmlhttp.responseText;
+                    document.getElementById('boxbagsbackpacks').innerHTML= xmlhttp.responseText;
 
                     }
                     }
@@ -798,7 +798,7 @@ window.onscroll = function() {scrollFunction()};
                 }
            xmlhttp3.onreadystatechange = function(){
                 if (xmlhttp3.readyState == 4 && xmlhttp3.status == 200){
-                    document.getElementById('boxofficial').innerHTML= xmlhttp3.responseText;
+                    document.getElementById('boxbagsduffels').innerHTML= xmlhttp3.responseText;
 
                     }
                     }
@@ -819,7 +819,7 @@ window.onscroll = function() {scrollFunction()};
                 }
            xmlhttp5.onreadystatechange = function(){
                 if (xmlhttp5.readyState == 4 && xmlhttp5.status == 200){
-                    document.getElementById('boxshirts').innerHTML= xmlhttp5.responseText;
+                    document.getElementById('boxbagsclutches').innerHTML= xmlhttp5.responseText;
 
                     }
                     }
@@ -839,7 +839,7 @@ window.onscroll = function() {scrollFunction()};
                 }
            xmlhttp6.onreadystatechange = function(){
                 if (xmlhttp6.readyState == 4 && xmlhttp6.status == 200){
-                    document.getElementById('boxtshirtsk').innerHTML= xmlhttp6.responseText;
+                    document.getElementById('boxbagsshoulder').innerHTML= xmlhttp6.responseText;
 
                     }
                     }
@@ -861,7 +861,7 @@ window.onscroll = function() {scrollFunction()};
                 }
            xmlhttp10.onreadystatechange = function(){
                 if (xmlhttp10.readyState == 4 && xmlhttp10.status == 200){
-                    document.getElementById('boxmiscs').innerHTML= xmlhttp10.responseText;
+                    document.getElementById('boxbagsmisc').innerHTML= xmlhttp10.responseText;
 
                     }
                     }
@@ -881,7 +881,7 @@ window.onscroll = function() {scrollFunction()};
                 }
            xmlhttp11.onreadystatechange = function(){
                 if (xmlhttp11.readyState == 4 && xmlhttp11.status == 200){
-                    document.getElementById('boxlabels').innerHTML= xmlhttp11.responseText;
+                    document.getElementById('boxbagslabels').innerHTML= xmlhttp11.responseText;
 
                     }
                     }
