@@ -43,7 +43,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, 'M');
             
            // $count++;
         }
@@ -70,7 +70,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -94,7 +94,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -152,7 +152,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -178,7 +178,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -202,7 +202,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -260,7 +260,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -286,7 +286,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -310,7 +310,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -368,7 +368,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -394,7 +394,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -418,7 +418,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -475,7 +475,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -501,7 +501,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -525,7 +525,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -584,7 +584,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -610,7 +610,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -634,7 +634,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -692,7 +692,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -718,7 +718,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }
@@ -742,7 +742,7 @@ if($query_num_rows <= $notifymecount){
         while($query2_row = mysqli_fetch_assoc($query2_run)){
             $price = number_format($query2_row['price']);
             //echo "Yes";
-            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price);
+            echo returnProperItems($query2_row['id'], $query2_row['imageone'], $query2_row['label'], $query2_row['itemtitle'], $price, $query2_row['size']);
            // $count++;
         }
     }

@@ -50,7 +50,7 @@ $count = 0;
 while($query_row = mysqli_fetch_assoc($query_run)){
     
 $price = number_format($query_row['price']);
-    echo returnProperItemsMainpagees($query_row['id'], $query_row['imageone'], $query_row['label'], $query_row['itemtitle'], $price);
+    echo returnProperItemsMainpagees($query_row['id'], $query_row['imageone'], $query_row['label'], $query_row['itemtitle'], $price, $query_row['size']);
     $count++;
     if($count % 12 == 0){
         echo "

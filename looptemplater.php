@@ -18,8 +18,9 @@ function returnEmptyCategory(){
             ";
 }
 
-function returnProperItems($id, $imageone, $label, $title, $price){
+function returnProperItems($id, $imageone, $label, $title, $price, $size){
     $shortnam = substr($title, 0, 25);
+    $label = substr($label, 0, 15);
     $urlcaption = urlencode($title);
     return "
     <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" id=\"box1\">
@@ -28,10 +29,10 @@ function returnProperItems($id, $imageone, $label, $title, $price){
                 <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12 productimage\" style=\"background-image:url('mtumbauploads/compresseduploads/$imageone'); height:160px;width:100%;background-size:90%;\">
                 </div>
             </a>
-            <h5 class=\"text-capitalize\">$label</h5>
+            <h5 class=\"text-capitalize\">Label: $label &nbsp;&nbsp;&nbsp; size: $size</h5>
             <hr style=\"margin:0.5px;\">
             <h5 class=\"text-center text-capitalize\" style=\"font-weight:300;height:20px;overflow:hidden;\"><a href=\"productdetails.php?id=$id\">$shortnam..</a></h5>
-            <h5 class=\"text-center\" style=\"padding:0px;margin:0px;font-weight:bold;color:#ffa427;\">Ksh $price</h5>
+            <h5 class=\"text-center\" style=\"padding:0px;margin:0px;font-weight:bold;color:#ffa427;display:inline;\">Ksh $price</h5>
 
 
         </div>
@@ -39,8 +40,9 @@ function returnProperItems($id, $imageone, $label, $title, $price){
         ";
 }
 
-function returnProperItemsMainpagees($id, $imageone, $label, $title, $price){
+function returnProperItemsMainpagees($id, $imageone, $label, $title, $price, $size){
     $urlcaption = urlencode($title);
+    $label = substr($label, 0, 15);
     $shortnam = substr($title, 0, 20);
     return "
     <div class=\"col-lg-2 col-md-2 col-sm-6 col-xs-6\" id=\"box1\">
@@ -49,7 +51,7 @@ function returnProperItemsMainpagees($id, $imageone, $label, $title, $price){
                 <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12 productimage\" style=\"background-image:url('mtumbauploads/compresseduploads/$imageone'); height:160px;width:100%;background-size:90%;\">
                 </div>
             </a>
-            <h5 class=\"text-capitalize\">$label</h5>
+            <h5 class=\"text-capitalize\">Label: $label &nbsp;&nbsp;&nbsp; size: $size</h5>
             <hr style=\"margin:0.5px;\">
             <h5 class=\"text-center text-capitalize\" style=\"font-weight:300;height:20px;overflow:hidden;\"><a href=\"productdetails.php?id=$id\">$shortnam..</a></h5>
             <h5 class=\"text-center\" style=\"padding:0px;margin:0px;font-weight:bold;color:#ffa427;\">Ksh $price</h5>

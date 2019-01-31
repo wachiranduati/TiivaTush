@@ -931,15 +931,15 @@ $century = 860;//Mtush
                         </a>
 
                         <ul class="dropdown-menu list-group">
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Fubu</a>
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Adidas</a>
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Nike</a>
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Puma</a>
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Calvin Klein</a>
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Hugo Boss</a>
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Vans</a>
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Versace</a>
-                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxmenssportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Labels</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Fubu</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Adidas</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Nike</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Puma</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Calvin Klein</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Hugo Boss</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Vans</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Versace</a>
+                            <a href="mainpageesex.php?search=female&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Labels</a>
 
 
 
@@ -1073,7 +1073,7 @@ function carousel() {
                 }
            xmlhttp2.onreadystatechange = function(){
                 if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200){
-                    document.getElementById('boxmenssportsweartit').innerHTML= xmlhttp2.responseText;
+                    document.getElementById('boxtit').innerHTML= xmlhttp2.responseText;
 
                     }
                     }

@@ -387,7 +387,7 @@ themselves?”</div>
         <!--THIS CATEGORY START HERE SO TAKE CARE TO REMEMBER-->
            <div class="row" style="margin-top:5px;">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <a href="index.php">Home</a> <span class="glyphicon glyphicon-chevron-right" style="color:#bebebe;"></span> <a href="index.php">Mtumba</a> <span class="glyphicon glyphicon-chevron-right" style="color:#bebebe;"></span> <a href="$query_row[category].php"><?php $query_row['category']?></a> <span class="glyphicon glyphicon-chevron-right" style="color:#bebebe;"></span> <a href="#" style="color:black"><?php $query_row['itemtitle']?></a>
+                <a href="index.php">Home</a> <span class="glyphicon glyphicon-chevron-right" style="color:#bebebe;"></span> <a href="index.php">Mtumba</a> <span class="glyphicon glyphicon-chevron-right" style="color:#bebebe;"></span> <a href="<?php echo $query_row[category];?>"><?php echo $query_row['category'];?></a> <span class="glyphicon glyphicon-chevron-right" style="color:#bebebe;"></span> <a href="#" style="color:black"><?php echo $query_row['itemtitle'];?></a>
             </div>
 
 
@@ -395,7 +395,7 @@ themselves?”</div>
            </div>
            <div class="row visible-sm visible-xs">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="text-uppercase text-center" style="font-family:kok;"><?php $query_row['itemtitle']?></h4>
+                    <h4 class="text-uppercase text-center" style="font-family:kok;"><?php echo $query_row['itemtitle'];?></h4>
 
                 </div>
             </div>
@@ -621,12 +621,34 @@ themselves?”</div>
                                         <!-- item star rating and seller container-->
                                         <div class="row">
                                             <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6">
+                                                <h5>Item condition according to the Merchant</h5>
                                             <h5>
+                                                <?php 
+                                                $val = $query_row['rating'];
+                                                $count = 0;
+                                                while($count < $val){
+                                                    echo "
+                    <span class=\"glyphicon glyphicon-star\" style=\"color:orange;\"></span>
+                                                    ";
+                                                $count++;
+
+                                                }
+                                                if($val != 5){
+                                                    $fails = 5 - $val;
+                                                    $failcount = 0;
+                                                    while($failcount < $fails){
+                                                       echo "
+                    <span class=\"glyphicon glyphicon-star\" style=\"color:gainsboro;\"></span>
+                                                    "; 
+                                                    $failcount++;
+                                                    }
+                                                }
+                                                ?>
+                                                
+                                                
+                                               <!--  <span class="glyphicon glyphicon-star" style="color:orange;"></span>
                                                 <span class="glyphicon glyphicon-star" style="color:orange;"></span>
-                                                <span class="glyphicon glyphicon-star" style="color:orange;"></span>
-                                                <span class="glyphicon glyphicon-star" style="color:orange;"></span>
-                                                <span class="glyphicon glyphicon-star" style="color:orange;"></span>
-                                                <span class="glyphicon glyphicon-star" style="color:orange;"></span>
+                                                <span class="glyphicon glyphicon-star" style="color:orange;"></span> -->
                                             </h5>
                                         </div>
 
