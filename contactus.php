@@ -41,7 +41,7 @@ $century = 860;
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
             </div>
             <div class="row" style="margin-top:5px;">
-                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" style="padding:15px;border:1px solid white;border-radius:10px;font-family:kok;">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" style="padding:15px;border:1px solid white;border-radius:10px;">
                     <form class="form-group" action="contactus.php" method="post">
                         <label for="county">Subject:</label>
                         <select class="form-control" title="<h5>Reason for Contacting us</h5>Please select one of the reasons below for contacting us" id="subject" name="subject" style="margin-bottom:3%;background-color:rgba(255, 255, 255, 0.11);">
@@ -74,7 +74,7 @@ $century = 860;
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <h3 class="text-capitalize" style="text-decoration:underline;font-family:kok;"><em>Why we want you to contact us</em></h3>
+                            <h3 class="text-capitalize" style="text-decoration:underline;"><em>Why we want you to contact us</em></h3>
                             <blockquote>
                             <p><small><em>"It takes 20 years to grow a good reputation but only 5 minutes to destroy it completely."</em></small></p>
                             <footer>Warrent Buffet</footer>

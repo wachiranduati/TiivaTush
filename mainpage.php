@@ -2,6 +2,7 @@
 ob_start();
 session_start();
 require 'connect.php';
+require 'templates/carousels/carousels.php';
 
 $search = $_GET['search'];
 $sub = $_GET['sub'];
@@ -15,7 +16,7 @@ $century = 860;//Mtush
 // items required img source, price, title, then formulate the button data-name, data-price
 //for this page only get the lead image, follow up to details page query up the total 3 images
 $jump = 0;
-$items = 100;
+$items = 40;
 
 
 $query2 = "SELECT * FROM `products` WHERE `category`='".mysqli_real_escape_string($conn, $search)."' AND `subcategory`='".mysqli_real_escape_string($conn, $sub)."' AND `availability`='1' AND `buyer`='0'";
@@ -35,16 +36,6 @@ $pagecount = $query_num_rows2 / $items;
     <head>
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <?php require 'templates/resourcelinks/headerlinks.php';?>
-
-            <style type="text/css">
-                #box1 {
-                    border: 1px solid gainsboro;
-                    padding: 2px;
-                }
-                #box1:hover {
-                    box-shadow: 0px -1px 10px red;
-                }
-            </style>
     </head>
     <body>
         <?php 
@@ -73,54 +64,7 @@ $pagecount = $query_num_rows2 / $items;
 <!--            starts here-->
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <ol class="carousel-indicators">
-    <li data-target="#imagecarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#imagecarousel" data-slide-to="1"></li>
-    <li data-target="#imagecarousel" data-slide-to="2"></li>
-    <li data-target="#imagecarousel" data-slide-to="3"></li>
-  </ol>
-
-                            <div class="item active">
-                                    <img src="banners/mainpage/desert.png" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <h3>Dressed for any occasion</h3>
-
-                                        <p>#Tiiva #Mtumba The open air market is now open and live on Tiiva</p>
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="banners/mainpage/grass.png" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <h3>For the Kids?</h3>
-                                        <p>#Tiiva #Mtumba shopping for the kids? Yes! only on Tiiva #Mtumba</p>
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="banners/mainpage/jumpin.png" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <h3>Gear for the outdoors, maybe chill clothes? or dress for the games?</h3>
-                                        <p>#Tiiva #Mtumba Dress for the outdoors, look good, feel good. only on Tiiva #Mtumba</p>
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="banners/mainpage/morocco.png" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <h3>Stand Out</h3>
-                                        <p>#Tiiva Try us</p>
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo sisterPagesCarousel();?>
                 </div>
             </div>
 <!--            ends here-->
@@ -134,13 +78,16 @@ $pagecount = $query_num_rows2 / $items;
             </div>
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="row" id="spinner">
-    <div class="col-lg-4 col-md-4 col-sm-2 col-xs-2"></div>
-    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-8"><img src="icons/Preloader_1.gif" class="img-responsive"/></div>
-    <div class="col-lg-4 col-md-4 col-sm-2 col-xs-2"></div>
+    <div class="row" id="spinner">
+        <div class="col-lg-4 col-md-4 col-sm-2 col-xs-2"></div>
+        <div class="col-lg-4 col-md-4 col-sm-8 col-xs-8"><img src="icons/Preloader_1.gif" class="img-responsive"/></div>
+        <div class="col-lg-4 col-md-4 col-sm-2 col-xs-2"></div>
+    </div>
+    <div class="row" id="querycontents">
+        
+    </div>
+    
 </div>
-    <div class="row" id="querycontents"></div>
-</div></div>
 
 <?php 
 
@@ -151,7 +98,7 @@ echo "  <div class=\"row\">
             <div class=\"col-lg-4 col-md-4 col-sm-8 col-xs-8\">
                 <ul class=\"pagination\">";
 
-while($loopscount <= $pagecount){
+while($loopscount <= $pagecount+1){
 
 
         if($loopscount == $page){
@@ -179,7 +126,8 @@ echo "
 ?>
 
             <div class="row" id="box" style="margin-top:1%;"></div>
-</div>
+        </div>
+
 <?php 
         require('templates/footer.php');
         ?>
@@ -254,6 +202,7 @@ echo "
     		xmlhttp01.open('GET','search.inc.php?search_text='+ document.search.search_text.value+'&timing='+<?php echo $century;?>,true);
     		xmlhttp01.send();
     	}
+        boxed();
 
     </script>
     </body>

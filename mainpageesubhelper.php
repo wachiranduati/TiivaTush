@@ -26,8 +26,8 @@ $current = $page - 1;
 // then post them on the identical div id container
 // items required img source, price, title, then formulate the button data-name, data-price
 //for this page only get the lead image, follow up to details page query up the total 3 images
-$items1 = 100;
-$items = 100;
+$items1 = 40;
+$items = 40;
 $jump = $items * $current;
 
 if($page == 1){

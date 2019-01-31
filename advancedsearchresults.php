@@ -2,6 +2,8 @@
 ob_start();
 session_start();
 require 'connect.php';
+require 'templates/carousels/carousels.php';
+
 
 $search = $_GET['search_text'];
 $sub = $_GET['sub'];
@@ -18,7 +20,7 @@ $century = 860;//Mtush
 // items required img source, price, title, then formulate the button data-name, data-price
 //for this page only get the lead image, follow up to details page query up the total 3 images
 // $jump = 0;
- $items = 100;
+ $items = 40;
 
  if(isset($_GET['sub'])){
      $sub = $_GET['sub'];
@@ -95,15 +97,7 @@ $pagecount = $query_num_rows2 / $items;
             <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php require 'templates/resourcelinks/headerlinks.php';?>
 
-            <style type="text/css">
-                #box1 {
-                    border: 1px solid gainsboro;
-                    padding: 2px;
-                }
-                #box1:hover {
-                    box-shadow: 0px -1px 10px red;
-                }
-            </style>
+            
     </head>
     <body>
         <?php 
@@ -136,49 +130,7 @@ $pagecount = $query_num_rows2 / $items;
 <!--            starts here-->
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
-                    <div id="imagecarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <ol class="carousel-indicators">
-    <li data-target="#imagecarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#imagecarousel" data-slide-to="1"></li>
-    <li data-target="#imagecarousel" data-slide-to="2"></li>
-    <li data-target="#imagecarousel" data-slide-to="3"></li>
-  </ol>
-
-                            <div class="item active">
-                                    <img src="<?php echo $banner1;?>" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <?php echo $banner1text;?>
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="<?php echo $banner2;?>" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <?php echo $banner2text;?>
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="<?php echo $banner3;?>" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <?php echo $banner3text;?>
-                                    </div>
-                            </div>
-
-                            <div class="item">
-                                    <img src="<?php echo $banner4;?>" class="img-responsive">
-                                    <div class="carousel-caption">
-                                        <?php echo $banner4text;?>
-                                    </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                    <?php echo sisterPagesCarousel();?>
                 </div>
             </div>
 <!--            ends here-->
@@ -215,14 +167,15 @@ echo "  <div class=\"row\">
             <div class=\"col-lg-4 col-md-4 col-sm-8 col-xs-8\">
                 <ul class=\"pagination\">";
 
-while($loopscount <= $pagecount){
+while($loopscount <= $pagecount+1){
 
 
         if($loopscount == $page){
-            echo "<li class=\"active\"><a href=\"searchresults.php?search_text=$search&sub=$sub&page=$loopscount\">$loopscount</a></li>";
+            echo "<li class=\"active\"><a href=\"advancedsearchresults.php?search_text=$search&sub=$sub&page=$loopscount&category=$category&minprice=$minprice&maxprice=$maxprice\">$loopscount</a></li>";
         }else{
-            echo "<li><a href=\"searchresults.php?search_text=$search&sub=$sub&page=$loopscount\">$loopscount</a></li>";
+            echo "<li><a href=\"advancedsearchresults.php?search_text=$search&sub=$sub&page=$loopscount&category=$category&minprice=$minprice&maxprice=$maxprice\">$loopscount</a></li>";
         }
+        //search_text=er&page=1&sub=shack&category=sportswear&maxprice=1000000&minprice=10
     $loopscount++;
 
 }
@@ -314,6 +267,7 @@ echo "</ul>
     		xmlhttp01.open('GET','search.inc.php?search_text='+ document.search.search_text.value+'&timing='+<?php echo $century;?>,true);
     		xmlhttp01.send();
     	}
+      boxed();
 
     </script>
     </body>

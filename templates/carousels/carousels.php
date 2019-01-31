@@ -112,4 +112,57 @@ function groupedCarousels($imageone, $imagetwo, $imagethree, $imagefour, $height
                                         
     ";
 }
+
+function sisterPagesCarousel(){
+    return "
+    <div id=\"imagecarousel\" class=\"carousel slide\" data-interval=\"2000\" data-ride=\"carousel\">
+                        <div class=\"carousel-inner\">
+
+                            <ol class=\"carousel-indicators\">
+    <li data-target=\"#imagecarousel\" data-slide-to=\"0\" class=\"active\"></li>
+    <li data-target=\"#imagecarousel\" data-slide-to=\"1\"></li>
+    <li data-target=\"#imagecarousel\" data-slide-to=\"2\"></li>
+    <li data-target=\"#imagecarousel\" data-slide-to=\"3\"></li>
+  </ol>
+
+                            <div class=\"item active\">
+                                    <img src=\"images/carousels/main_sisters/desert.png\" class=\"img-responsive\">
+                                    <div class=\"carousel-caption\">
+                                        <h3>Dressed for any occasion</h3>
+
+                                        <p>#Tiiva #Mtumba The open air market is now open and live on Tiiva</p>
+                                    </div>
+                            </div>
+
+                            <div class=\"item\">
+                                    <img src=\"images/carousels/main_sisters/grass.png\" class=\"img-responsive\">
+                                    <div class=\"carousel-caption\">
+                                        <h3>For the Kids?</h3>
+                                        <p>#Tiiva #Mtumba shopping for the kids? Yes! only on Tiiva #Mtumba</p>
+                                    </div>
+                            </div>
+
+                            <div class=\"item\">
+                                    <img src=\"images/carousels/main_sisters/jumpin.png\" class=\"img-responsive\">
+                                    <div class=\"carousel-caption\">
+                                        <h3>Gear for the outdoors, maybe chill clothes? or dress for the games?</h3>
+                                        <p>#Tiiva #Mtumba Dress for the outdoors, look good, feel good. only on Tiiva #Mtumba</p>
+                                    </div>
+                            </div>
+
+                            <div class=\"item\">
+                                    <img src=\"images/carousels/main_sisters/morocco.png\" class=\"img-responsive\">
+                                    <div class=\"carousel-caption\">
+                                        <h3>Stand Out</h3>
+                                        <p>#Tiiva Try us</p>
+                                    </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+    ";
+}
 ?>

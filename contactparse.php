@@ -3,8 +3,8 @@ ob_start();
 session_start();
 require 'search.inc.php';
 require 'connect.php';
-    $today = date(Y).'-'.date(m).'-'.date(d);
-    $time = date(H).':'.date(i).':'.date(s);
+    $today = Date('Y-m-d');
+    $time = Date('H:i:s');
 //echo $today;
 //mysqli_real_escape_string
 

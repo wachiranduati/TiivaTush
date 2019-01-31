@@ -42,8 +42,8 @@ $current = $page - 1;
 // then post them on the identical div id container
 // items required img source, price, title, then formulate the button data-name, data-price
 //for this page only get the lead image, follow up to details page query up the total 3 images
-$items1 = 100;
-$items = 100;
+$items1 = 40;
+$items = 40;
 $jump = $items * $current;
 
 if($page == 1){
@@ -90,7 +90,7 @@ $count = 0;
 while($query_row = mysqli_fetch_assoc($query_run)){
 
 $price = number_format($query_row['price']);
-    echo returnProperItemsMainpagees($query_row['id'], $query_row['imageone'], $query_row['label'], $query_row['itemtitle'], $price);
+    echo returnProperItemsMainpagees($query_row['id'], $query_row['imageone'], $query_row['label'], $query_row['itemtitle'], $price, $query_row['size']);
     $count++;
     if($count % 12 == 0){
         echo "
