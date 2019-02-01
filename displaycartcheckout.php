@@ -1,8 +1,7 @@
 <?php
-require 'connect.php';
 ob_start();
 session_start();
-require 'core.inc.php';
+require 'connect.php';
 $dbs = 'brandyproducts';
 $cartame = 'shopcart';
 $dbsother = 'products';
@@ -46,7 +45,7 @@ if(isset($_GET['action'])){
         if(isset($_SESSION['shackcart'][$id])){
         $_SESSION['shackcart'][$id]['quantity']++;
             echo "item was already in the cart doing a plus one";
-            displaycart($dbs,$cartame);
+            displaycart($dbs,$cartame,$dbsother,$cartameother,$shipping,$message, $conn);
 
     }else{
         $query = "SELECT * FROM `products` WHERE `id`='$id'";
@@ -58,7 +57,7 @@ if(isset($_GET['action'])){
                 "price" => $row_s['price']
             );
             echo "item has been added/ not plus one to the cart";
-            displaycart($dbs,$cartame);
+            displaycart($dbs,$cartame,$dbsother,$cartameother,$shipping,$message, $conn);
 
         }
     }
@@ -72,12 +71,12 @@ if(isset($_GET['action'])){
             }else{
                 unset($_SESSION['shackcart'][$id]);
                 echo "item wasnt in the cart";
-                displaycart($dbs,$cartame);
+                displaycart($dbs,$cartame,$dbsother,$cartameother,$shipping,$message, $conn);
             }
 
     }else{
             echo "There's nothing to take out of the cart";
-            displaycart($dbs,$cartame);
+            displaycart($dbs,$cartame,$dbsother,$cartameother,$shipping,$message, $conn);
         }
 //        else{
 //        $query = "SELECT * FROM `products` WHERE `id`='$id'";
@@ -94,7 +93,10 @@ if(isset($_GET['action'])){
 }
 
 
-function displaycart($dbs,$cartame,$dbsother,$cartameother,$shipping,$message){
+function displaycart($dbs,$cartame,$dbsother,$cartameother,$shipping,$message, $conn){
+$totalprice = 0;
+$totalprice2 = 0;
+
 
     echo "
     <div class=\"table-responsive\">
@@ -112,7 +114,8 @@ function displaycart($dbs,$cartame,$dbsother,$cartameother,$shipping,$message){
     </thead>
     <tbody>";
 
-    $sql = "SELECT * FROM $dbs WHERE id IN (";
+    if(!empty($_SESSION[$cartame]) && isset($_SESSION[$cartame])){
+        $sql = "SELECT * FROM $dbs WHERE id IN (";
     foreach($_SESSION[$cartame] as $id => $value){
         $sql.=$id.",";
     }
@@ -174,8 +177,12 @@ function displaycart($dbs,$cartame,$dbsother,$cartameother,$shipping,$message){
         //echo $totalprice;
 
     }
+    }
+
+    
 
 // the other cart display
+if(!empty($_SESSION[$cartameother]) && isset($_SESSION[$cartameother])){
 
 
 $sql = "SELECT * FROM $dbsother WHERE id IN (";
@@ -185,10 +192,11 @@ foreach($_SESSION[$cartameother] as $id => $value){
 
 $sql = substr($sql, 0, -1).") ORDER BY itemtitle ASC";
 $query = mysqli_query($conn, $sql);
-//$totalprice = 0;
+// $totalprice = 0;
 //$count2 = 1;
 
 if($_SESSION[$cartameother][$id]['quantity'] != 0){
+    $count = 0;
     while($row=mysqli_fetch_assoc($query)){
         echo "<tr>";
     $subtotal = $_SESSION[$cartameother][$row['id']]['quantity']*$row['price'];
@@ -230,8 +238,9 @@ if($_SESSION[$cartameother][$id]['quantity'] != 0){
         echo "</tr>";
 
 
-        $count ++;
+        $count++;
 }
+
     $grandtotal = $totalprice + $totalprice2;
 
 
@@ -262,13 +271,14 @@ if($_SESSION[$cartameother][$id]['quantity'] != 0){
 
         ";
 }
+}
 echo "</tbody>
 </table></div>";
 // the other cart display
 }
 
 //displaycart();
-function checkthendisplaycart($dbs,$cartame,$dbsother,$cartameother,$shipping,$message){
+function checkthendisplaycart($dbs,$cartame,$dbsother,$cartameother,$shipping,$message, $conn){
     if(!isset($_SESSION['shackcart'])){
         //echo "Nothing to display";
         echo "
@@ -279,8 +289,8 @@ function checkthendisplaycart($dbs,$cartame,$dbsother,$cartameother,$shipping,$m
             </div>
             ";
     }else{
-    displaycart($dbs,$cartame,$dbsother,$cartameother,$shipping,$message);
+    displaycart($dbs,$cartame,$dbsother,$cartameother,$shipping,$message, $conn);
 }
 }
-checkthendisplaycart($dbs,$cartame,$dbsother,$cartameother,$shipping,$message);
+checkthendisplaycart($dbs,$cartame,$dbsother,$cartameother,$shipping,$message, $conn);
 ?>
