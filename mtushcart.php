@@ -83,12 +83,27 @@ function checkIfBuyerBookedItem($conn, $userid, $itemid){
 
 // echo checkIfBuyerBookedItem($conn, 1, 2);
 
+function checkWhetherInCart($conn, $userid, $itemid){
+	// ensure that the item has not been added to the cart..how? check whether both fields have been filled
+	$query = "SELECT * FROM `products` WHERE `sold` = 0 AND `buyer` = $userid AND `id` = $itemid AND `availability` = 0";
+	$query_run = mysqli_query($conn, $query);
+	$num_rows = mysqli_num_rows($query_run);
+	if($num_rows == 1){
+		return True;
+	}else{
+		return False;
+	}
+
+}
+
+// echo checkWhetherInCart($conn, 12, 2);
+
 function createProductActivityStamp($conn, $itemid, $ctime, $exptime, $userid, $state){
 	// create a new entry to a book
 	// create a new entry to a addtocart
 	// cols -> id, itemid, user, exptime, book, cart,  
 	// cart entries will be deleted when cart is checked out
-	$query = "INSERT INTO `cartactivity`(`id`, `itemid`, `ctime`, `exptime`, `userid`, `state`) VALUES ('',$itemid,'$ctime','$exptime',$userid, '$state')";
+	$query = "INSERT INTO `cartactivity`(`id`, `itemid`, `ctime`, `exptime`, `userid`, `state`) VALUES ('',$itemid,'$ctime','$exptime',$userid, 'book')";
 	if($query_run = mysqli_query($conn, $query)){
 		return True;
 	}else{
@@ -112,10 +127,7 @@ function destroyProductActivityStamp($conn, $table, $itemid, $userid){
 
 // echo destroyProductActivityStamp($conn, 'cartactivity', 49, 1);
 
-function checkIfProdActivityExist($conn){
-	// check whether an entry exists....virtually impossible but should prevent one prod having two entries
-	// $query = "SELECT * FROM `cartactivity` WHERE ``";
-}
+
 
 function timestampExtendexpiry($conn, $itemid, $booktime){
 	// this will extend the expirty time for an item for an active user
@@ -176,10 +188,59 @@ function updateProdActivityAddCart($conn, $carttime, $itemid){
 // echo updateProdActivityAddCart($conn, $carttime, 49);
 
 // <<<<<<<<<<<<<<<<<<<<<<<<< AddtoCart ITEM ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+if(isset($_POST['action']) && $_POST['action'] == 'addtocart' && isset($_POST['prod']) && is_numeric($_POST['prod']) && !empty($_POST['prod'])){
+	$prod = $_POST['prod'];
+	// check if we booked the item
+	if(checkIfBuyerBookedItem($conn, $userid, $prod) == True){
+		// add item to our cart
+		if(checkWhetherInCart($conn, $userid, $prod) != True){
+			// item not in cart
+			if(cartActivity($conn, 0, $prod, $userid) == True){
+				if(updateProdActivityAddCart($conn, $carttime, $prod) == True){
+					echo bootstrapAlert('success', 'glyphicon-info-sign', 'Hurray!! ', "Item successfully added to your cart. Proceed to checkout to buy the item <a href=\"checkout.php\">checkout</a> ", 'A0');
+				}else{
+					echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Sorry ', "We couldn't complete processing the request. Please try again later", 'A0');
+				}
+			}else{
+				echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Yikes!! ', " We couldn't complete the request, Please try again later", 'A0');
 
+			}
+
+		}else{
+			// item already in cart
+			echo bootstrapAlert('info', 'glyphicon-info-sign', 'All Clear ', "You already have this item in your cart.", 'A0');
+		}
+		
+	}else{
+		echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Sorry ', " There's a chance somene else has just booked this item, refresh the page to try and book it again", 'A0');
+	}
+}
 // <<<<<<<<<<<<<<<<<<<<<<<<< AddtoCart ITEM ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-
+// <<<<<<<<<<<<<<<<<<<<<<<<< RemoveFromCart ITEM ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+if(isset($_POST['action']) && $_POST['action'] == 'removeFrCart' && isset($_POST['prod']) && is_numeric($_POST['prod']) && !empty($_POST['prod'])){
+	// check whether he put it in his cart
+	$prod = $_POST['prod'];
+	if(checkWhetherInCart($conn, $userid, $prod) == True){
+		// in his cart
+		if(destroyProductActivityStamp($conn, 'cartactivity', $prod, $userid) == True){
+				// revert values in the product dbs to available and no buyer
+			if(cartActivity($conn, 1, $prod, $userid) == True && bookFunctionality($conn, 'products', 0, $prod) == True){
+				//reset values to available and reset buyer
+				echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Hey ', "Item has successfully been removed from your cart", 'A0');
+			}else{
+				// couldn't reset values to availabe
+				echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Error ', "We could not complete your request, please try again later", 'A0');
+			}
+		}else{
+			// destroy not successful
+			echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Sorry  ', "unbooking ran into an error", 'A0');
+		}
+	}else{
+		echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Error ', "Could not complete your request", 'A0');
+	}
+}
+// <<<<<<<<<<<<<<<<<<<<<<<<< RemoveFromCart ITEM ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 // <<<<<<<<<<<<<<<<<<<<<<<<< BOOK ITEM ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -187,6 +248,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'book' && isset($_POST['prod']
 	$prod = $_POST['prod'];
 	if(checkItemAvailability($conn, 'products', $prod) == True){
 		// available for booking
+		
 		if(bookFunctionality($conn, 'products', $userid, $prod) == True){
 			
 			// create a timestamp for the new booking
@@ -206,12 +268,17 @@ if(isset($_POST['action']) && $_POST['action'] == 'book' && isset($_POST['prod']
 		if(checkIfBuyerBookedItem($conn, $userid, $prod) == True){
 			// extend the time here TODO
 			// update time with the new time
-			if(timestampExtendexpiry($conn, $prod, $booktime) == True){
+			if(checkWhetherInCart($conn, $userid, $prod) != True){
+			// check whether item is already in users cart
+				if(timestampExtendexpiry($conn, $prod, $booktime) == True){
 				// time updated for this item
 				echo bootstrapAlert('info', 'glyphicon-info-sign', 'Surprise!!! ', "You have booked this item again. No one else can buy it for the next 5 mins", 'A0');
+				}else{
+					// time could not be updated
+					echo bootstrapAlert('danger', 'glyphicon-info-sign', 'Sorry ', "We ran into an error trying to extend your book time", 'A0');
+				}
 			}else{
-				// time could not be updated
-				echo bootstrapAlert('danger', 'glyphicon-info-sign', 'Surprise!!! ', "We ran into an error trying to extend your book time", 'A0');
+				echo bootstrapAlert('info', 'glyphicon-info-sign', 'All Clear ', "You already have this item in your cart.", 'A0');
 			}
 			
 		}else{
@@ -232,7 +299,14 @@ if(isset($_POST['action']) && $_POST['action'] == 'unbook' && isset($_POST['prod
 			// successfully unbooked item
 			// destroy entry
 			if(destroyProductActivityStamp($conn, 'cartactivity', $prod, $userid) == True){
-				echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Error ', "Item has successfully been unbooked", 'A0');
+				// revert values in the product dbs to available and no buyer
+				if(cartActivity($conn, 1, $prod, $userid) == True && bookFunctionality($conn, 'products', 0, $prod) == True){
+					//reset values to available and reset buyer
+					echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Hey ', "Item has successfully been unbooked", 'A0');
+				}else{
+					// couldn't reset values to availabe
+					echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Error ', "We could not complete your request, please try again later", 'A0');
+				}
 			}else{
 				// destroy not successful
 				echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Sorry  ', "unbooking ran into an error", 'A0');

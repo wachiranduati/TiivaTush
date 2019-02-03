@@ -461,8 +461,9 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                                         <div class="row">
                                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                                             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                                <a class="btn btn-block btn-primary btn-lg btn-block" onclick="addnewitem(<?php echo $query_row['id'];?>);" id="addtocartbutton">Buy Now</a>
+                                                <a class="btn btn-block btn-primary btn-lg btn-block" id="addtocartbutton">Buy Now</a>
                                                 <a class="btn btn-danger" id="unbookBtn">unbook me</a>
+                                                <a class="btn btn-success" id="remvCart">Remove from cart</a>
                                             </div>
                                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                                         </div>
@@ -897,13 +898,17 @@ echo "
               });
                 
              }
+             $("#addtocartbutton").click(function(){
+                addnewitem(<?php echo $id;?>);
+             });
 
-             function leavingpage(){
-                return 'leaving the page so soon?'
-             }
 
             $("#unbookBtn").click(function(){
                 unbookitem(<?php echo $id;?>);
+            });
+
+            $("#remvCart").click(function(){
+              removeItem(<?php echo $id;?>);
             });
 
             function checkitemstat(){
