@@ -1309,7 +1309,8 @@ window.onscroll = function() {scrollFunction()};
                 if (xmlhttp05.readyState == 4 && xmlhttp05.status == 200){
                     //document.getElementById('newcartitems').innerHTML= xmlhttp05.responseText;
                     loadmodalcart();
-
+                    showcount();
+                    location.reload();
                     }
                     }
                     xmlhttp05.open('GET','stolencart.php?action=add&id='+iad,true);

@@ -144,14 +144,14 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
     </style>
 
 </head>
-    <body onload="boxed();wishlistcount();showwishlistitems();updateview();bookitem();checkitemstat" onunload="unbookitem();">
+    <body onload="updateview();bookitem();">
         <?php 
         require('templates/header.php');
         ?>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <p id="itemstat" class="text-center"></p>
+                    <div id="itemstat" class="text-center"></div>
                     <p id="buttonz" class="text-center"></p>
                 </div>
             </div>
@@ -167,7 +167,7 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
         <!--THIS CATEGORY START HERE SO TAKE CARE TO REMEMBER-->
            <div class="row" style="margin-top:5px;">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <a href="index.php">Home</a> <span class="glyphicon glyphicon-chevron-right" style="color:#bebebe;"></span> <a href="index.php">Mtumba</a> <span class="glyphicon glyphicon-chevron-right" style="color:#bebebe;"></span> <a href="<?php echo $query_row[category];?>"><?php echo $query_row['category'];?></a> <span class="glyphicon glyphicon-chevron-right" style="color:#bebebe;"></span> <a href="#" style="color:black"><?php echo $query_row['itemtitle'];?></a>
+                <a href="index.php">Home</a> <span class="glyphicon glyphicon-chevron-right" style="color:#bebebe;"></span> <a href="index.php">Mtumba</a> <span class="glyphicon glyphicon-chevron-right" style="color:#bebebe;"></span> <a href="<?php echo $query_row['category'];?>"><?php echo $query_row['category'];?></a> <span class="glyphicon glyphicon-chevron-right" style="color:#bebebe;"></span> <a href="#" style="color:black"><?php echo $query_row['itemtitle'];?></a>
             </div>
 
 
@@ -194,7 +194,7 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
 
 
                             <div id="modalimagecontainer">
-                                <img id="myImg" src="mtumbauploads/<?php echo $query_row['imageone'];?>" alt="<?php echo $query_row[itemtitle]; echo $description;?>" class="modpic img-responsive">
+                                <img id="myImg" src="mtumbauploads/<?php echo $query_row['imageone'];?>" alt="<?php echo $query_row['itemtitle']; echo $description;?>" class="modpic img-responsive">
                                 <span class="glass glyphicon glyphicon-search"></span>
 
                                 <!-- The Modal -->
@@ -459,12 +459,12 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                <a class="btn btn-block btn-primary btn-lg" onclick="addnewitem();" id="addtocartbutton">Add to cart</a>
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                                <a class="btn btn-block btn-primary btn-lg btn-block" onclick="addnewitem(<?php echo $query_row['id'];?>);" id="addtocartbutton">Buy Now</a>
+                                                <a class="btn btn-danger" id="unbookBtn">unbook me</a>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                <a class="btn btn-block btn-danger btn-lg" onclick="removenewitem();" id="removefromcartbutton"><small>Remove from cart</small></a>
-                                            </div>
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                                         </div>
 
                                         <div class="row">
@@ -736,46 +736,22 @@ echo "
             function nduthi(){
                 window.alert("Do this");
             }
-
-            function additem(){
-
-            var stat = document.getElementById("cartitemstatus");
-
-                stat.innerHTML = "checking....";
-                if(window.XMLHttpRequest){
-			     xmlhttp01 = new XMLHttpRequest();
-		      }else{
-                    xmlhttp01 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-
-                xmlhttp01.onreadystatechange = function(){
-                    if (xmlhttp01.readyState == 4 && xmlhttp01.status == 200){
-                        stat.innerHTML = xmlhttp01.responseText;
-
-                    }
-                }
-                xmlhttp01.open("GET","addstoreitem.php?id=<?php echo $id;?>",true);
-                xmlhttp01.send();
-            }
+            
 
             // changes the title box with the hello welcome to airmark logout thingi
-            function boxed(){
-              if(window.XMLHttpRequest){
-                    xmlhttp2 = new XMLHttpRequest();
-                }else{
-                    xmlhttp2 = new ActiveXObject('Microsoft.XMLHTTP');
+            boxed();
+
+            function posterTemplate(url, method, receiver, action, prod){
+              var message = "action="+action+"&prod="+prod;
+                    $.ajax({
+                        url: url,
+                        type: method,
+                        data: message,
+                        success: function(data){
+                            $("#"+receiver).html(data);
+                        }
+                    });
                 }
-           xmlhttp2.onreadystatechange = function(){
-                if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200){
-                    document.getElementById('boxtit').innerHTML= xmlhttp2.responseText;
-
-                    }
-                    }
-                    xmlhttp2.open('GET','account.php',true);
-                    xmlhttp2.send();
-                cart();
-            }
-
             // show the count on your cart
             function cart(){
               if(window.XMLHttpRequest){
@@ -794,39 +770,8 @@ echo "
 
 
             }
-            function addnewitem(){
-            var addtocartbutton = document.getElementById('addtocartbutton');
-                if(window.XMLHttpRequest){
-                    xmlhttp05 = new XMLHttpRequest();
-                }else{
-                    xmlhttp05 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp05.onreadystatechange = function(){
-                if (xmlhttp05.readyState == 4 && xmlhttp05.status == 200){
-                    document.getElementById('newcartitems').innerHTML= xmlhttp05.responseText;
-                    addtocartbutton.className = 'btn btn-block btn-primary btn-lg disabled';
-                    addtocartbutton.innerHTML = 'item added';
-
-                    }
-                    }
-                    xmlhttp05.open('GET','stolencart.php?action=add&id=<?php echo $id;?>&site=shack',true);
-                    xmlhttp05.send();
-            }
-            function removenewitem(){
-                if(window.XMLHttpRequest){
-                    xmlhttp06 = new XMLHttpRequest();
-                }else{
-                    xmlhttp06 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp06.onreadystatechange = function(){
-                if (xmlhttp06.readyState == 4 && xmlhttp06.status == 200){
-                    document.getElementById('newcartitems').innerHTML= xmlhttp06.responseText;
-
-                    }
-                    }
-                    xmlhttp06.open('GET','stolencart.php?action=remove&id=<?php echo $id;?>&site=shack',true);
-                    xmlhttp06.send();
-            }
+           
+           // 
             function wishlistbutton(){
                 //alert('wishlist button has been pressed.');
                 var wishlist = document.getElementById('wishlistbutton');
@@ -850,7 +795,7 @@ echo "
                                         xmlhttp07.send();
                                         }
                     setTimeout(changename1(),100);
-                    wishlistcount();
+                    // wishlistcount();
                 }else{
                     function changename2(){
                                 wishlist.className = 'glyphicon glyphicon-heart-empty';
@@ -871,7 +816,7 @@ echo "
 
                     }
                     setTimeout(changename2(),100);
-                    wishlistcount();
+                    // wishlistcount();
                 }
             }
             function wishlistpredict(){
@@ -940,49 +885,26 @@ echo "
             }
 
             function bookitem(){
-                var addtocartbutton = document.getElementById('addtocartbutton');
-                var removefromcartbutton = document.getElementById('removefromcartbutton');
-
-                if(XMLHttpRequest){
-                    xmlhttp = new XMLHttpRequest();
-                }else{
-                    xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+                // posterTemplate('mtushcart.php', 'POST', 'itemstat', 'book', <?php echo $id;?>);
+              $.ajax({
+                url: "mtushcart.php",
+                type: "POST",
+                data: "action=book&prod=<?php echo $id;?>",
+                success: function(data){
+                    $("#itemstat").html(data);
+                    
                 }
-                xmlhttp.onreadystatechange = function(){
-                    if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
-                        document.getElementById('itemstat').innerHTML = xmlhttp.responseText;
-                       var cartstat = document.getElementById('cartstat').innerHTML;
-                       if(cartstat == 'U1'){
-                            //addtocartbutton.disable = true;
-                            addtocartbutton.className = 'btn btn-block btn-primary btn-lg disabled';
-                            removefromcartbutton.className = 'btn btn-block btn-danger btn-lg disabled';
-                       }else{
-                            addtocartbutton.className = 'btn btn-block btn-primary btn-lg';
-                            removefromcartbutton.className = 'btn btn-block btn-danger btn-lg';
-                       }
-                    }
-                }
-                xmlhttp.open('POST','bookitem.php',true);
-                xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-                xmlhttp.send("itemid=<?php echo $id;?>");
+              });
+                
              }
 
-            function unbookitem(){
-            alert('item will be removed from your list');
-                if(XMLHttpRequest){
-                    xmlhttp = new XMLHttpRequest();
-                }else{
-                    xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-                xmlhttp.onreadystatechange = function(){
-                    if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
-                        document.getElementById('itemstat').innerHTML = xmlhttp.responseText;
-                                           }
-                }
-                xmlhttp.open('POST','unbookitem.php',false);
-                xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-                xmlhttp.send("itemid=$id");
+             function leavingpage(){
+                return 'leaving the page so soon?'
              }
+
+            $("#unbookBtn").click(function(){
+                unbookitem(<?php echo $id;?>);
+            });
 
             function checkitemstat(){
                 if(XMLHttpRequest){
@@ -994,13 +916,13 @@ echo "
                     if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
                         document.getElementById('buttonz').innerHTML = xmlhttp.responseText;
                         var mtushitem = document.getElementById('mtushitem').innerHTML;
-                       if(mtushitem == 'un'){
-                            addtocartbutton.className = 'btn btn-block btn-primary btn-lg disabled';
-                            removefromcartbutton.className = 'btn btn-block btn-danger btn-lg disabled';
-                       }else{
-                            addtocartbutton.className = 'btn btn-block btn-primary btn-lg';
-                            removefromcartbutton.className = 'btn btn-block btn-danger btn-lg';
-                       }
+                       // if(mtushitem == 'un'){
+                       //      addtocartbutton.className = 'btn btn-block btn-primary btn-lg disabled';
+                       //      removefromcartbutton.className = 'btn btn-block btn-danger btn-lg disabled';
+                       // }else{
+                       //      addtocartbutton.className = 'btn btn-block btn-primary btn-lg';
+                       //      removefromcartbutton.className = 'btn btn-block btn-danger btn-lg';
+                       // }
                     }
                 }
                 xmlhttp.open('POST','checkitemstatus.php',true);
@@ -1024,6 +946,8 @@ echo "
                  xmlhttp01.open('GET','search.inc.php?search_text='+ document.search.search_text.value+'&timing='+<?php echo $century;?>,true);
                  xmlhttp01.send();
              }
+
+            loadmodalcart();
 
         </script>
         </div>

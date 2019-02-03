@@ -1,4 +1,60 @@
- 
+ function showcount(){
+        $.ajax({
+            url: "cartcount.php",
+            type: "GET",
+            success: function(data){
+                $("#cartitems").html(data);
+            }
+        });
+    }
+showcount();
+
+function unbookitem(prod){
+    // alert('unbooking item');
+    $.ajax({
+    url: "mtushcart.php",
+    type: "POST",
+    data: "action=unbook&prod="+prod,
+    success: function(data){
+        $("#itemstat").html(data);
+        
+    }
+  });
+}
+
+            
+function addnewitem(prod){
+
+  $.ajax({
+      url: "mtushcart.php",
+      type: "POST",
+      data: "action=addtocart&prod="+prod,
+      success: function(data){
+          $("#itemstat").html(data);
+          
+      }
+    });
+
+var addtocartbutton = document.getElementById('addtocartbutton');
+    if(window.XMLHttpRequest){
+        xmlhttp05 = new XMLHttpRequest();
+    }else{
+        xmlhttp05 = new ActiveXObject('Microsoft.XMLHTTP');
+    }
+xmlhttp05.onreadystatechange = function(){
+    if (xmlhttp05.readyState == 4 && xmlhttp05.status == 200){
+        document.getElementById('newcartitems').innerHTML= xmlhttp05.responseText;
+        addtocartbutton.className = 'btn btn-block btn-primary btn-lg disabled';
+        addtocartbutton.innerHTML = 'item added';
+        showcount();
+
+        }
+        }
+        xmlhttp05.open('GET','stolencart.php?action=add&id='+id+'&site=shack',true);
+        xmlhttp05.send();
+
+}
+            
             function toggleadvancedsearch(){
                 var AdvancedSearchContainer = document.getElementById('AdvancedSearchContainer');
                 var simplesearchresults = document.getElementById('simplesearchresults');
@@ -156,3 +212,4 @@ function loadhitsip(){
         }
 
 loadnewip();
+

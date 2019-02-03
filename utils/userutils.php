@@ -25,6 +25,14 @@ if ($userState == True){
 
 }
 
+function getUserID(){
+$userState = userLoggedIn();
+if ($userState == True){
+	$user = $_SESSION['$user_id'];
+	return $user;
+}
+}
+
 function isUserMerchant($conn){
 	#check whether the signed in user is also a merchant
 $userState = userLoggedIn();
@@ -57,5 +65,13 @@ function userWithEmailExists($conn, $mobilenumber){
     }else{
         echo "Please provide a number";
     }
+}
+
+function checkUserLocation(){
+	// this will be the function homing in to know the whereabouts of the user
+}
+
+function checkUserhasBookedItems(){
+	// this will be used in conjuction with check user location to unbook items from the users cart
 }
 ?>

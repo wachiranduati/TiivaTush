@@ -62,7 +62,8 @@
                                 <div class="visible-lg visible-md" style="margin-top:31%;"></div>
                                 <!--                    cart new design-->
                     <div data-target="#loginModal" data-toggle="modal" onclick="loadmodalcart();">
-                        <a><span class="glyphicon glyphicon-shopping-cart" style="font-size:30px;color:#523CFA;"></span><sup><span class="badge" id="cartitems" style="background-color:red;">0</span></sup><small>&nbsp;Cart</small>&nbsp;<span class="caret"></span></a>
+                        <a><span class="glyphicon glyphicon-shopping-cart" style="font-size:30px;color:#523CFA;"></span><sup><span class="badge" id="cartitems" style="background-color:red;">
+                        0</span></sup><small>&nbsp;Cart</small>&nbsp;<span class="caret"></span></a>
 
                     </div>
 <!--                    cart new design-->
@@ -229,6 +230,30 @@
                     </div>
                 </div>
             </div>
+<script src="moded.js"></script>
+            <script>
+                
+                
+                function removenewitem(id){
+                    if(window.XMLHttpRequest){
+                        xmlhttp06 = new XMLHttpRequest();
+                    }else{
+                        xmlhttp06 = new ActiveXObject('Microsoft.XMLHTTP');
+                    }
+                xmlhttp06.onreadystatechange = function(){
+                    if (xmlhttp06.readyState == 4 && xmlhttp06.status == 200){
+                        // document.getElementById('newcartitems').innerHTML= xmlhttp06.responseText;
+                        // unbookitem();
+                        loadmodalcart();
+                        showcount();
+
+                        }
+                        }
+                        xmlhttp06.open('GET','stolencart.php?action=remove&id='+id+'>&site=shack',true);
+                        xmlhttp06.send();
+                }
+
+            </script>
 
             <!-- <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12" style="margin-top:10px; border-top:1px solid gainsboro;">

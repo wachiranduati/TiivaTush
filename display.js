@@ -63,6 +63,7 @@ xmlhttp2.onreadystatechange = function(){
 }
 
 function loadmodalcart(){
+    alert('home');
   if(window.XMLHttpRequest){
         xmlhttp3 = new XMLHttpRequest();
     }else{
@@ -79,3 +80,23 @@ xmlhttp3.onreadystatechange = function(){
 
 
 }
+
+// function addnewitem(id){
+// var addtocartbutton = document.getElementById('addtocartbutton');
+//     if(window.XMLHttpRequest){
+//         xmlhttp05 = new XMLHttpRequest();
+//     }else{
+//         xmlhttp05 = new ActiveXObject('Microsoft.XMLHTTP');
+//     }
+// xmlhttp05.onreadystatechange = function(){
+//     if (xmlhttp05.readyState == 4 && xmlhttp05.status == 200){
+//         document.getElementById('newcartitems').innerHTML= xmlhttp05.responseText;
+//         addtocartbutton.className = 'btn btn-block btn-primary btn-lg disabled';
+//         addtocartbutton.innerHTML = 'item added';
+
+//         }
+//         }
+//         xmlhttp05.open('GET','stolencart.php?action=add&id='+id+'&site=shack',true);
+//         xmlhttp05.send();
+
+// }

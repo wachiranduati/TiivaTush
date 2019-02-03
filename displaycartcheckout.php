@@ -231,9 +231,9 @@ if($_SESSION[$cartameother][$id]['quantity'] != 0){
 
 
         echo "<td>";
-        echo "<a class=\"btn btn-sm btn-primary\" onclick=\"additem($man);\">+</a>";
+        //echo "<a class=\"btn btn-sm btn-primary\" onclick=\"additem($man);\">+</a>";
         echo "&nbsp;&nbsp;";
-    echo "<a class=\"btn btn-sm btn-danger\" onclick=\"removeitem($man);\">-</a>";
+    echo "<a class=\"btn btn-sm btn-danger\" onclick=\"removenewitem($man);\">Remove</a>";
         echo "</td>";
         echo "</tr>";
 
