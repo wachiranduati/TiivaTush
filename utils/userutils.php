@@ -74,4 +74,5 @@ function checkUserLocation(){
 function checkUserhasBookedItems(){
 	// this will be used in conjuction with check user location to unbook items from the users cart
 }
+
 ?>

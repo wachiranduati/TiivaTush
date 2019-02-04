@@ -187,6 +187,42 @@ function updateProdActivityAddCart($conn, $carttime, $itemid){
 
 // echo updateProdActivityAddCart($conn, $carttime, 49);
 
+function UnbookIfExpired($conn, $ctime){
+	// this will check exp time compare it with current time to know whether book already expired
+	$now = Date('H:m:i');
+	$query = "SELECT * FROM `cartactivity` WHERE `exptime` < '$now'";
+	$query_run = mysqli_query($conn, $query);
+	$num_rows = mysqli_num_rows($query_run);
+	if($num_rows != 0){
+		while($row = mysqli_fetch_assoc($query_run)){
+			$prod = $row['itemid'];
+			$userid = $row['userid'];
+			if(cartActivity($conn, 1, $prod, $userid) == True){
+				// make item available again
+				if(bookFunctionality($conn, 'products', 0, $prod) == True){
+					// unbook item
+					// now delete the occurence on cartactivity
+					if(destroyProductActivityStamp($conn, 'cartactivity', $prod, $userid) == True){
+						//finally done
+						echo "Item has expired. Unbooking completed";
+					}else{
+						// could not finish
+						echo "Error occured trying to unbook item";
+					}
+				}else{
+					// could not unbook item
+				}
+			}else{
+				// could not make item available again
+			}
+		}
+	}else{
+		return "found nothing";
+	}
+}
+
+echo UnbookIfExpired($conn, $ctime);
+
 // <<<<<<<<<<<<<<<<<<<<<<<<< AddtoCart ITEM ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 if(isset($_POST['action']) && $_POST['action'] == 'addtocart' && isset($_POST['prod']) && is_numeric($_POST['prod']) && !empty($_POST['prod'])){
 	$prod = $_POST['prod'];
@@ -320,4 +356,9 @@ if(isset($_POST['action']) && $_POST['action'] == 'unbook' && isset($_POST['prod
 }
 
 // <<<<<<<<<<<<<<<<<<<<<<<<< UNBOOK ITEM ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// <<<<<<<<<<<<<<<<<<<<<<<<< CLEAR EXPIRED ITEMS ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// <<<<<<<<<<<<<<<<<<<<<<<<< CLEAR EXPIRED ITEMS ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 ?>
