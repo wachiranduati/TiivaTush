@@ -1,6 +1,8 @@
 <?php 
 session_start();
-require 'utils/displayutils.php';
-return cartItemsCount();
+ob_start();
+require 'connect.php';
+require 'utils/userutils.php';
+echo returnCartCount($conn);
 
 ?>

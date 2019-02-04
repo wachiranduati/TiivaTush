@@ -5,7 +5,7 @@ require 'connect.php';
 require 'utils/displayutils.php';
 require 'utils/userutils.php';
 
-$ctime = Date('H:i:s');
+$ctime = Date('Y-m-d H:i:s');
 $booktime = 5; // minutes with activity
 $bootktimeNo = 2; // minutes with no activity
 $carttime = 2; // hours with no activity
@@ -161,7 +161,7 @@ function itemAddToWishlist(){
 function cartActivity($conn, $availability, $itemid, $userid){
 	// this will set item availability to 0 - item added
 	// this will set item availability to 1 - item removed
-	$query = "UPDATE `products` SET `availability` = $availability WHERE `sold` = 0 AND `buyer` = $userid";
+	$query = "UPDATE `products` SET `availability` = $availability WHERE `sold` = 0 AND `buyer` = $userid AND `id` = $itemid";
 	if($query_run = mysqli_query($conn, $query)){
 		return True;
 	}else{
@@ -189,7 +189,7 @@ function updateProdActivityAddCart($conn, $carttime, $itemid){
 
 function UnbookIfExpired($conn, $ctime){
 	// this will check exp time compare it with current time to know whether book already expired
-	$now = Date('H:m:i');
+	$now = Date('Y-m-d H:i:s');
 	$query = "SELECT * FROM `cartactivity` WHERE `exptime` < '$now'";
 	$query_run = mysqli_query($conn, $query);
 	$num_rows = mysqli_num_rows($query_run);
@@ -221,7 +221,7 @@ function UnbookIfExpired($conn, $ctime){
 	}
 }
 
-echo UnbookIfExpired($conn, $ctime);
+// echo UnbookIfExpired($conn, $ctime);
 
 // <<<<<<<<<<<<<<<<<<<<<<<<< AddtoCart ITEM ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 if(isset($_POST['action']) && $_POST['action'] == 'addtocart' && isset($_POST['prod']) && is_numeric($_POST['prod']) && !empty($_POST['prod'])){
@@ -325,40 +325,43 @@ if(isset($_POST['action']) && $_POST['action'] == 'book' && isset($_POST['prod']
 
 // <<<<<<<<<<<<<<<<<<<<<<<<< BOOK ITEM ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-// <<<<<<<<<<<<<<<<<<<<<<<<< UNBOOK ITEM ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// <<<<<<<<<<<<<<<<<<<<<<<<< UNBOOK ITEM ALGO COMPLETE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 if(isset($_POST['action']) && $_POST['action'] == 'unbook' && isset($_POST['prod']) && is_numeric($_POST['prod']) && !empty($_POST['prod'])){
 	$prod = $_POST['prod'];
 	if(checkIfBuyerBookedItem($conn, $userid, $prod) == True){
 			// continue
-		if(bookFunctionality($conn, 'products', 0, $prod) == True){
-			// successfully unbooked item
-			// destroy entry
-			if(destroyProductActivityStamp($conn, 'cartactivity', $prod, $userid) == True){
-				// revert values in the product dbs to available and no buyer
-				if(cartActivity($conn, 1, $prod, $userid) == True && bookFunctionality($conn, 'products', 0, $prod) == True){
-					//reset values to available and reset buyer
-					echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Hey ', "Item has successfully been unbooked", 'A0');
+		if(checkWhetherInCart($conn, $userid, $prod) != True){
+			// first check whether in cart....an item in the cart shouldn't be unbooked only expired or removed from cart
+			// falls in here
+			if(bookFunctionality($conn, 'products', 0, $prod) == True){
+				// successfully unbooked item
+				// destroy entry
+				if(destroyProductActivityStamp($conn, 'cartactivity', $prod, $userid) == True){
+					// revert values in the product dbs to available and no buyer
+					if(cartActivity($conn, 1, $prod, $userid) == True && bookFunctionality($conn, 'products', 0, $prod) == True){
+						//reset values to available and reset buyer
+						echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Hey ', "Item has successfully been unbooked", 'A0');
+					}else{
+						// couldn't reset values to availabe
+						echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Error ', "We could not complete your request, please try again later", 'A0');
+					}
 				}else{
-					// couldn't reset values to availabe
-					echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Error ', "We could not complete your request, please try again later", 'A0');
+					// destroy not successful
+					echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Sorry  ', "unbooking ran into an error", 'A0');
 				}
 			}else{
-				// destroy not successful
-				echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Sorry  ', "unbooking ran into an error", 'A0');
+				echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Error ', "Sorry we ran into an error trying to unbook this item", 'A0');
 			}
+			// falls in here
 		}else{
-			echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Error ', "Sorry we ran into an error trying to unbook this item", 'A0');
+			echo bootstrapAlert('danger', 'glyphicon-info-sign', 'Error ', "Attempted to unbook an item currently in users cart, shopping cart disables unbooking", 'A0');
 		}
 	}else{
 		echo bootstrapAlert('danger', 'glyphicon-info-sign', 'Error ', "Attempted to unbook an item currently book by another user", 'A0');
 	}
 }
 
-// <<<<<<<<<<<<<<<<<<<<<<<<< UNBOOK ITEM ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-// <<<<<<<<<<<<<<<<<<<<<<<<< CLEAR EXPIRED ITEMS ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-// <<<<<<<<<<<<<<<<<<<<<<<<< CLEAR EXPIRED ITEMS ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
+// <<<<<<<<<<<<<<<<<<<<<<<<< UNBOOK ITEM ALGO COMPLETE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// ONLY UNBOOK ITEMS NOT IN THE CART user incart function
 ?>

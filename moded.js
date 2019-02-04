@@ -49,6 +49,10 @@ function removeItem(prod){
     });
 }
 
+setInterval(function(){ 
+      console.log('auto unbook');
+   }, 120000);
+
 
             
             function toggleadvancedsearch(){
@@ -132,7 +136,8 @@ function removeItem(prod){
                     
                     }
                     }
-                    xmlhttp3.open('GET','displaycartcheckout.php',true);
+                    xmlhttp3.open('GET','displaycartcontents.php',true);
+                    // xmlhttp3.open('GET','displaycartcheckout.php',true);
                     xmlhttp3.send();
             
             

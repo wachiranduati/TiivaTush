@@ -3,7 +3,14 @@ ob_start();
 session_start();
 require 'search.inc.php';
 require 'connect.php';
+require 'utils/userutils.php';
 
+if(userLoggedIn() == True){
+    // do something later
+}else{
+    header('Location:index.php');
+    die();
+}
 $century = 321;//Shop
 
 ?>
@@ -211,6 +218,8 @@ $century = 321;//Shop
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 " style="border-top:1px solid gainsboro;">
                 </div>
             </div>
+        </div>
+        <div class="container-fluid">
             <div class="row visible-lg visible-md" style="margin-top:10px;">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="index.php">Home </a> / <a href="checkout.php">Checkout</a><h2 class="text-center text-uppercase" style="margin-top:-10px; color:orange;">Checkout</h2></div>
             </div>

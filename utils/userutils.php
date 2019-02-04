@@ -71,8 +71,17 @@ function checkUserLocation(){
 	// this will be the function homing in to know the whereabouts of the user
 }
 
-function checkUserhasBookedItems(){
-	// this will be used in conjuction with check user location to unbook items from the users cart
+function returnCartCount($conn){
+	if(userLoggedIn() == True){
+		// continue
+		$userid = getUserID();
+		$query = "SELECT * FROM `products` WHERE `availability` = 0 AND `sold` = 0 AND `buyer` = $userid";
+		$query_run = mysqli_query($conn, $query);
+		$num_rows = mysqli_num_rows($query_run);
+		return  $num_rows;
+	}else{
+		return 0;
+	}
 }
 
 ?>

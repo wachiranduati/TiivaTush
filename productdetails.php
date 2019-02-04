@@ -391,16 +391,25 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                                 <div class="row">
                                     <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="background-color:rgba(238, 238, 238, 0.77);">
                                     <!--item title container-->
-                                        <div class="row visible-lg visible-md">
+                                        <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                 <h4 class="text-uppercase" style="font-family:kok;color:black;"><strong><?php echo $query_row['itemtitle']?></strong></h4>
 
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <p class="well text-center well-sm">INSTOCK: <?php 
+                                                if($query_row['sold'] == 0){
+                                                    echo 1;
+                                                }else{
+                                                    echo 0;
+                                                }
+                                                ?></p>
                                             </div>
                                         </div>
                                         <!-- item title container-->
                                         <!-- item star rating and seller container-->
                                         <div class="row">
-                                            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6">
+                                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                                 <h5>Item condition according to the Merchant</h5>
                                             <h5>
                                                 <?php 
@@ -432,9 +441,9 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                                             </h5>
                                         </div>
 
-                                        <div class="col-lg-7 col-md-7 col-sm-6 col-xs-6">
+                                        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
 
-                                            <h5 class="text-capitalize">Item sold by: <a><?php echo $query_row['sellerid'];?></a></h5>
+                                            <h5 class="text-capitalize">Item listed by: <a><?php echo $query_row['sellerid'];?></a></h5>
                                         </div>
                                         </div>
                                         <!-- item star rating container-->
@@ -461,9 +470,34 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                                         <div class="row">
                                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                                             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                                <a class="btn btn-block btn-primary btn-lg btn-block" id="addtocartbutton">Buy Now</a>
-                                                <a class="btn btn-danger" id="unbookBtn">unbook me</a>
-                                                <a class="btn btn-success" id="remvCart">Remove from cart</a>
+                                                <?php
+                                                // if replace with unfunctional btn if item not available/cart
+                                                if(isset($_SESSION['$user_id'])){
+                                                    if($query_row['availability'] == 0 || $query_row['buyer'] != 0){
+                                                            if($query_row['buyer'] == $_SESSION['$user_id']){
+                                                                // me show added to cart
+                                                                echo "
+        <a class=\"btn btn-block btn-success btn-lg btn-block disabled\">Added to Your Cart</a>
+                                                            ";
+                                                            }else{
+                                                                // show normal cart
+                                                                echo "
+        <a class=\"btn btn-block btn-primary btn-lg btn-block\">Currently unavailable</a>
+                                                            ";
+                                                            }
+                                                    }else{
+                                                            echo "
+        <a class=\"btn btn-block btn-primary btn-lg btn-block\" id=\"addtocartbutton\">Buy Now</a>
+                                                            ";
+                                                    }
+                                                }else{
+                                                    // deactivated button
+                                                    echo "<a class=\"btn btn-block btn-info btn-lg btn-block\">Login to buy this</a>";
+                                                }
+                                                
+                                                ?>
+                                                <!-- <a class="btn btn-danger" id="unbookBtn">unbook me</a>
+                                                <a class="btn btn-success" id="remvCart">Remove from cart</a> -->
                                             </div>
                                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                                         </div>
@@ -910,6 +944,27 @@ echo "
             $("#remvCart").click(function(){
               removeItem(<?php echo $id;?>);
             });
+
+            var active = 0;
+            $(window).on('scroll',function(){
+                active = 1;
+                // console.log(active);
+            });
+
+            setInterval(function(){ 
+                if(active == 1){
+                    active = 0;
+                    bookitem();
+                    // console.log('just booked it again');
+                }
+                // else{
+                //     console.log('user inactive');
+                // }
+             }, 120000);
+            // 180 000
+            // reset after 3 minute
+            // then call the book function
+
 
             function checkitemstat(){
                 if(XMLHttpRequest){
