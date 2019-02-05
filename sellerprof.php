@@ -7,10 +7,12 @@ require 'utils/userutils.php';
 
 if(userLoggedIn() != True){
     header('Location:index.php');
+    die();
 }
 
 if(isUserMerchant($conn) != True){
     header('Location:index.php');
+    die();
 }
 
 // $_SESSION['$user_id'];
@@ -26,6 +28,7 @@ if(isUserMerchant($conn) != True){
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php require 'templates/resourcelinks/headerlinks.php';?>
+        <link rel="stylesheet" href="animate.css">
 
     <style type="text/css">
         .searchbox {
@@ -78,7 +81,6 @@ if(isUserMerchant($conn) != True){
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="row" style="padding-top:0.5%;padding-bottom:0.5%;">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="boxtit"></div>
-
                         </div>
                 </div>
             </div>
@@ -220,7 +222,7 @@ if(isUserMerchant($conn) != True){
                                     $("#heres").toggleClass("animated bounce");
                                 },1000);
                             </script>
-                            <h1 id="heres">Welcome!</h1><span class="pull-right" style="border:1px solid orange;background-color:orange;font-weight:bold;padding:10px;border-radius:18px;">Translate to local dialect</span>
+                            <h1 id="heres">Welcome!</h1>
                             <p>
                                 This is Tiiva's Merchant info page.<br>Going to help you with all the details pertaining to being a Merchant on Tiiva.<br>
                                 Remember you can always check on the <a href="howto.php" title="visit the frequent asked questions page">FAQs</a> page to better understand Tiiva
@@ -263,11 +265,11 @@ if(isUserMerchant($conn) != True){
                         </div>
                     </div>
 
-                    <div class="row sellercontainer">
+                    <div class="row sellercontainer" style="display: none;">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <h1>Upload Panel</h1>
                             <p class="pull-left">to upload new products click on the blue button labelled <span style="color:green;">upload item</span> to the right</p>
-                            <h3 class="pull-right"><a class="btn btn-md btn-info" target="_blank" href="upload.php" title=" go to upload page">Upload Item</a></h3>
+                            <h3 class="pull-right"><a class="btn btn-md btn-primary" target="_blank" href="upload.php" title=" go to upload page"><span class="mdi mdi-cloud-upload"></span> Upload Item</a></h3>
                             <!-- Tiiva shack start -->
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -321,7 +323,7 @@ if(isUserMerchant($conn) != True){
                             <!-- Tiiva shack end -->
                         </div>
                     </div>
-                    <div class="row sellercontainer">
+                    <div class="row sellercontainer" style="display: none;">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <ul class="list-group">
                                 <li class="list-group-item messages"><a href="#">Admin</a><span class="badge">23</span></li>
@@ -398,7 +400,7 @@ if(isUserMerchant($conn) != True){
 
                          </script>
                     </div>
-                    <div class="row sellercontainer">
+                    <div class="row sellercontainer" style="display: none;">
                       <script type="text/javascript">
                       boxed();
 
@@ -516,88 +518,8 @@ if(isUserMerchant($conn) != True){
                         </div>
                     </div>
                 <!-- END OF THE CONTENTS SELLER PROF -->
-
-
-
-
-            <!--Ends here -->
-            <div class="row" style="margin-top:20px;background-color:rgba(0,0,0,0.5);">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><h4>Service</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="Howto.php">Online help</a></li>
-                                        <li><a style="color:black;" href="contactus.php">Contact us</a></li>
-                                        <li><a style="color:black;" href="Howto.php">Order status</a></li>
-                                        <li><a style="color:black;" href="Howto.php">Change location</a></li>
-                                        <li><a style="color:black;" href="Howto.php">FAQS</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 visible-lg visible-md"><h4>Quick Shop</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="mainpage.php?search=mens&&sub=tshirts">Tshirts</a></li>
-                                        <li><a style="color:black;" href="Mens.php">Mens</a></li>
-                                        <li><a style="color:black;" href="Mens.php">Womens</a></li>
-                                        <li><a style="color:black;" href="shop.php">Gift Cards</a></li>
-                                        <li><a style="color:black;" href="shoes.php">Shoes</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><h4>Policies</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="Termsofuse.php">Terms of use</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Privacy policy</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Refund policy</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Billing System</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Ticket System</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 visible-lg visible-md"><h4>About shopper</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="aboutus.php">Company information</a></li>
-                                        <li><a style="color:black;" href="aboutus.php">Careers</a></li>
-                                        <li><a style="color:black;" href="aboutus.php">Store location</a></li>
-                                        <li><a style="color:black;" href="aboutus.php">Affiliate Program</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Copyright</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="text-center">About shopper</h4></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <form class="form-inline">
-                                        <div class="input-group" style="">
-                                        <input type="email" class="form-control" placeholder="Email address" name="user's email">
-                                        <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default">Go</button>
-                                        </span>
-                                        </div>
-                                    </form>
-
-                                    <div class="row" style="margin-top:5px;">
-                                    <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-1 col-xs-9 col-xs-offset-1">
-                                        <p class="text-center"><em>Get the most recent updates from out site and be updated yourself</em></p>
-                                    </div>
-                                </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--container ends here-->
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p class="text-center text-capitalize">A WN creation Copyright &#169 Airmark Inc.</p></div>
-            </div>
-        </div>
+</div>
+<?php require 'templates/footer.php';?>
 
     </body>
 </html>

@@ -89,19 +89,7 @@ if (isset($_POST['itname']) ||
        !empty($price)
 
       ){
-        //echo 'Youve selected an item';
-//        echo $maincategory;
-//        echo $subcategory;
-//        echo $size;
-//        echo $height;
-//        echo $width;
-//        echo $sex;
-//        echo $chest;
-//        echo $rating;
-//        echo $price;
-//        echo $name;
-//        echo $name2;
-//        echo $name3;
+        
 
         $size = $_FILES['file']['size'];
         $size2 = $_FILES['file2']['size'];
@@ -116,136 +104,7 @@ if (isset($_POST['itname']) ||
 			$location = 'mtumbauploads/';
 			$location2 = 'mtumbauploads/';
 			$location3 = 'mtumbauploads/';
-//            //resize script starts here
-//            if(true){
-//					$maxDimW = 5;
-//					$maxDimH = 2;
-//					list($width,$height, $type, $attr) = getimagesize($_FILES['file']['tmp_name']);
-//					if($width > $maxDimW || $height > $maxDimH ){
-//						$target_filename = $_FILES['file']['tmp_name'];
-//						$fn = $_FILES['file']['tmp_name'];
-//						$size = getImagesize($fn);
-//						$ratio = $size[0]/$size[1]; // width/height
-//						//if square
-//						//removed $ration > 1
-//						if($size[0] > $size[1]){
-//							//$width = $maxDimW;
-//							$width = 2120;
-//							$height = 1192;
-//							//$height = $maxDimH/$ratio;
-//						}elseif($size[0] == $size[1]){
-////							$width = 800;
-////							$height = 800;
-//
-//                            $width = 1192;
-//							$height = 1192;
-//
-//
-//                            // change height to 1192 by 1192
-//						}else{
-//							//average size potrait rectange
-//							//$width = $maxDimW*$ratio;
-//							//$height = $maxDimH;
-////							$width = 1315;
-////							$height = 2120;
-//
-//                            $width = 739;
-//							$height = 1192;
-//
-//
-//                            // mutliply by 0.56226
-//                            // to get a height of 1192
-//                            // width 739
-//						}
-//						$src = imagecreatefromstring(file_get_contents($fn));
-//						$dst = imagecreatetruecolor($width, $height);
-//						imagecopyresampled($dst, $src,0,0,0,0, $width, $height, $size[0],$size[1]);
-//						imagejpeg($dst, $target_filename);//adjust format as needed
-//
-//					}
-//
-//					}
-//
-//            // resize script ends here
-//
-//
-//             //resize script starts here
-//            if(true){
-//					$maxDimW = 5;
-//					$maxDimH = 2;
-//					list($width,$height, $type, $attr) = getimagesize($_FILES['file2']['tmp_name']);
-//					if($width > $maxDimW || $height > $maxDimH ){
-//						$target_filename = $_FILES['file2']['tmp_name'];
-//						$fn = $_FILES['file2']['tmp_name'];
-//						$size = getImagesize($fn);
-//						$ratio = $size[0]/$size[1]; // width/height
-//						//if square
-//						//removed $ration > 1
-//						if($size[0] > $size[1]){
-//							//$width = $maxDimW;
-//							$width = 2120;
-//							$height = 1192;
-//							//$height = $maxDimH/$ratio;
-//						}elseif($size[0] == $size[1]){
-//							$width = 800;
-//							$height = 800;
-//						}else{
-//							//average size potrait rectange
-//							//$width = $maxDimW*$ratio;
-//							//$height = $maxDimH;
-//							$width = 1315;
-//							$height = 2120;
-//						}
-//						$src = imagecreatefromstring(file_get_contents($fn));
-//						$dst = imagecreatetruecolor($width, $height);
-//						imagecopyresampled($dst, $src,0,0,0,0, $width, $height, $size[0],$size[1]);
-//						imagejpeg($dst, $target_filename);//adjust format as needed
-//
-//					}
-//
-//					}
-//
-//            // resize script ends here
-//
-//
-//             //resize script starts here
-//            if(true){
-//					$maxDimW = 5;
-//					$maxDimH = 2;
-//					list($width,$height, $type, $attr) = getimagesize($_FILES['file3']['tmp_name']);
-//					if($width > $maxDimW || $height > $maxDimH ){
-//						$target_filename = $_FILES['file3']['tmp_name'];
-//						$fn = $_FILES['file3']['tmp_name'];
-//						$size = getImagesize($fn);
-//						$ratio = $size[0]/$size[1]; // width/height
-//						//if square
-//						//removed $ration > 1
-//						if($size[0] > $size[1]){
-//							//$width = $maxDimW;
-//							$width = 2120;
-//							$height = 1192;
-//							//$height = $maxDimH/$ratio;
-//						}elseif($size[0] == $size[1]){
-//							$width = 800;
-//							$height = 800;
-//						}else{
-//							//average size potrait rectange
-//							//$width = $maxDimW*$ratio;
-//							//$height = $maxDimH;
-//							$width = 1315;
-//							$height = 2120;
-//						}
-//						$src = imagecreatefromstring(file_get_contents($fn));
-//						$dst = imagecreatetruecolor($width, $height);
-//						imagecopyresampled($dst, $src,0,0,0,0, $width, $height, $size[0],$size[1]);
-//						imagejpeg($dst, $target_filename);//adjust format as needed
-//
-//					}
-//
-//					}
-//
-//            // resize script ends here
-//
+
 
 
 
@@ -370,18 +229,7 @@ if (isset($_POST['itname']) ||
                     </div>
                 </div>";
 
-//         echo $maincategory;
-//        echo $subcategory;
-//        echo $size;
-//        echo $height;
-//        echo $width;
-//        echo $sex;
-//        echo $chest;
-//        echo $rating;
-//        echo $price;
-//        echo $name;
-//        echo $name2;
-//        echo $name3;
+
     }
 }
 

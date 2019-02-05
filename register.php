@@ -2,7 +2,43 @@
 ob_start();
 session_start();
 require 'connect.php';
-if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passwordreentered']) && isset($_POST['mobilenumber']) && isset($_POST['emailaddress'])   ){
+require 'utils/displayutils.php';
+$now = Date("Y-m-d H:i:s");
+?>
+<!DOCTYPE html>
+<html>
+<title>Tiiva | Create a Tiiva Account</title>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <?php require 'templates/resourcelinks/headerlinks.php';?>
+    
+</head>
+<body>
+    <div class="container-fluid">
+        
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-1 col-xs-1"></div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"> <a href="index.php"><img src="images/airmarklogotrial2.png" class="img-responsive"/></a> </div>
+            <div class="col-lg-4 col-md-4 col-sm-3 col-xs-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 topHeader">
+                <h1 class="text-center text-capitalize">Register Account</h1>
+                <p class="text-center">Create an account and have more fun shopping on Tiiva.</p>
+                <div class="alert alert-danger registerAlert">
+                    <a class="close" data-dismiss="alert" href="#">&times;</a>
+                    <strong>Error!!</strong>
+                    <span>To use tiiva you have to accept to our terms and conditions</span>
+                </div>
+
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><p class="text-center"> <?php if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passwordreentered']) && isset($_POST['mobilenumber']) && isset($_POST['emailaddress'])   ){
     $salt = "wagwanista";
     
     $username = $_POST['username'];
@@ -12,21 +48,20 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
     $emailaddress = $_POST['emailaddress'];
     
     
-    if(!empty($username) && !empty($password) && !empty($passwordreentered) && !empty($_POST['mobilenumber']) &&  isset($_POST['promotions']) && isset($_POST['terms'])  ){
+    if(!empty($username) && !empty($password) && !empty($passwordreentered) && !empty($_POST['mobilenumber']) && isset($_POST['terms'])  ){
         echo 'We are good to proceed<br>';
         if($password != $passwordreentered){
-            echo 'Passwords do not match<br>';
+            echo bootstrapAlert('warning', 'glyphicon-info-sign', ' Error ', "Passwords do not match", 'A0');
         }else {
-            echo 'you are free to proceed<br>';
             $query = "SELECT `mobilenumber` FROM `users` WHERE `mobilenumber`='".mysqli_real_escape_string($conn, $mobilenumber)."'";
             $query_run = mysqli_query($conn, $query);
             $query_num_rows = mysqli_num_rows($query_run);
             
             if($query_num_rows > 0){
-                echo 'Another user is already registered using this phonenumber<br>';
+                echo bootstrapAlert('warning', 'glyphicon-info-sign', ' Error ', "Another user is already registered using this phonenumber", 'A0');
             }else{
                 echo 'OK number is available';
-                $query = "INSERT INTO `users` VALUES ('','".mysqli_real_escape_string($conn, $emailaddress)."','".mysqli_real_escape_string($conn, $username)."','".mysqli_real_escape_string($conn, $password)."','".mysqli_real_escape_string($conn, $mobilenumber)."','')";
+                $query = "INSERT INTO `users` VALUES ('','".mysqli_real_escape_string($conn, $emailaddress)."','".mysqli_real_escape_string($conn, $username)."','".mysqli_real_escape_string($conn, $password)."','".mysqli_real_escape_string($conn, $mobilenumber)."','', '$now')";
                 if($query_run = mysqli_query($conn, $query)){
                     $querylog = "SELECT `id` FROM `users` WHERE `emailaddress`='$emailaddress' AND `username`='$username' AND `password`='$password' AND `mobilenumber`='$mobilenumber'";
                     $querylog_run = mysqli_query($conn, $querylog);
@@ -42,67 +77,27 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
                     }
                     
                 }else {
-                    echo 'Could not creat your account at the moment, please try again later.';
-                    //echo mysqli_error();
+                    echo bootstrapAlert('warning', 'glyphicon-info-sign', ' Error ', "Could not create your account at the moment, please try again later.", 'A0');
                 }
             }
         }
     }else {
-        echo 'All fields are required';
+        echo bootstrapAlert('danger', 'glyphicon-info-sign', ' Error ', "All fields are required", 'A0');
     }
-}
-?>
-<!DOCTYPE html>
-<html>
-<title>Tiiva | Register</title>
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-        <?php require 'templates/resourcelinks/headerlinks.php';?>
-    
-</head>
-<body>
-    <div class="container">
-        <div class="row visible-lg visible-md">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height:30px;background-color:gainsboro;"><p>Welcome to Tiiva, Please create your account</p></div>
-            
-        </div>
-        
-        <div class="row visible-sm visible-xs">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height:30px;background-color:gainsboro;"><p>Welcome to Tiiva, Please create you account</p></div>
-            
-        </div>
-        
-        
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-1 col-xs-1"></div>
-            <div class="col-lg-5 col-md-5 col-sm-9 col-xs-9"> <a href="index.php"><img src="images/airmarklogotrial2.png" class="img-responsive"/></a> </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="margin-top:15px;border-top:1px solid gainsboro;">
-                
-                <div class="alert alert-danger registerAlert" style="display: none;">
-                    <a class="close" data-dismiss="alert" href="#">&times;</a>
-                    <strong>Error!!</strong>
-                    <span>To use tiiva you have to accept to our terms and conditions</span>
-                </div>
-
-            </div>
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+}?> </p></div>
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                 <div class="row">
-                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11" style="margin-top:20px;">
-                        <form class="form-group form-group-lg" action="register.php" method="POST">
-                            <input type="text" class="form-control input-lg" id="username" onblur="useri();" name="username" value="<?php if(isset($_POST['username'])){echo $username;}?>" maxlength="40" placeholder="Username:          Enter your Username"style=" font-size:19px;" title="<h5>Username Field</h5>Please provide your username in the input box below"/><span id="userstatus" style="position:absolute;top:3%;right:-3%;"></span>
-                            <input type="password" class="form-control input-lg" id="password" name="password" maxlength="40" placeholder="Password:          Enter your password" onblur="passone();" style="margin-top:15px; font-size:19px;" title="<h5>Password Field</h5>Please provide your password in the input below"/><span id="passstatus" style="position:absolute;top:16%;right:-3%;"></span>
-                            <input type="password" class="form-control input-lg" id="passre" name="passwordreentered" maxlength="40" placeholder="Password:          Re-enter your password" onblur="passcheck();" style="margin-top:15px; font-size:19px;" title="<h5>Re-enter Password Field</h5>Please re-enter the password your placed in the input above here"/><span id="passrestatus" style="position:absolute;top:28%;right:-3%;"></span>
-                            <input type="number" class="form-control input-lg" id="mobilenumber" name="mobilenumber" value="<?php if(isset($_POST['mobilenumber'])){echo $mobilenumber;}?>" maxlength="40" onblur="mobilecheck();" placeholder="Mobile number: 0705780775" style="margin-top:15px; font-size:19px;" title="<h5>PhoneNumber Field</h5>Please provide us with your phone number.p.s. Your account will be linked directly to your phonenumber"/><span id="mobilestatus" style="position:absolute;top:41%;right:-3%;"></span>
-                            <input type="email" id="emailaddress" class="form-control input-lg" name="emailaddress" value="<?php if(isset($_POST['emailaddress'])){echo $emailaddress;}?>" maxlength="40" placeholder="Email address:    Khalil@gmail.com" style="margin-top:15px; font-size:19px;" title="<h5>Email address Field</h5>Please provide us with your Email Address"/>
+                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                        <form class="form-group form-group-lg" id="formRegister" action="register.php" method="POST">
+                            <input required type="text" class="form-control input-lg" id="username" onblur="useri();" name="username" value="<?php if(isset($_POST['username'])){echo $username;}?>" maxlength="40" placeholder="Username:          Enter your Username"title="<h5>Username Field</h5>Please provide your username in the input box below"/><span id="userstatus"></span>
+                            <input required type="password" class="form-control input-lg" id="password" name="password" maxlength="40" placeholder="Password:          Enter your password" onblur="passone();" title="<h5>Password Field</h5>Please provide your password in the input below"/><span id="passstatus"></span>
+                            <input required type="password" class="form-control input-lg" id="passre" name="passwordreentered" maxlength="40" placeholder="Password:          Re-enter your password" onblur="passcheck();" title="<h5>Re-enter Password Field</h5>Please re-enter the password your placed in the input above here"/><span id="passrestatus"></span>
+                            <input required type="number" class="form-control input-lg" id="mobilenumber" name="mobilenumber" value="<?php if(isset($_POST['mobilenumber'])){echo $mobilenumber;}?>" maxlength="40" onblur="mobilecheck();" placeholder="Mobile number: 0705780775" title="<h5>PhoneNumber Field</h5>Please provide us with your phone number.p.s. Your account will be linked directly to your phonenumber"/><span id="mobilestatus"></span>
+                            <input required type="email" id="emailaddress" class="form-control input-lg" name="emailaddress" value="<?php if(isset($_POST['emailaddress'])){echo $emailaddress;}?>" maxlength="40" placeholder="Email address:    Khalil@gmail.com" title="<h5>Email address Field</h5>Please provide us with your Email Address"/>
                             <br><br>
                             <!-- <div class="checkbox" style="margin-top:-15px;">
                                 <label>
@@ -132,9 +127,9 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ></div>
                             </div>
-                            <div class="row" style="margin-top:20px;">
+                            <div class="row signinLoginBox">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h5>Already have an account <a href="login.php" style="text-decoration:underline;"> SignIn</a></h5></div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><h5>Already have an account <a href="login.php" class="signInlink"> SignIn</a></h5></div>
                         </div>
                             
                             
@@ -144,11 +139,11 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
             </div>
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:rgba(0,0,0,0.2);"><p class="text-center" style="padding-top:4px;">A WN creation Copyright &#169 AirMark</p></div>
-            </div>
+
+            
         </div>
     </div>
+    <?php require 'templates/footer.php';?>
     <script type="text/javascript">
         function mobilecheck(){
         
@@ -175,15 +170,7 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
             }
 		
 	}
-//        function mobilecheck(){
-//            var mobi = document.getElementById("mobilenumber").value;
-//            var stat = document.getElementById("mobilestatus");
-//            if (mobi == '0705780775'){
-//                stat.innerHTML = "<span class=\"glyphicon glyphicon-ok\" style=\"color:rgb(0, 230, 0);\"></span>";
-//            }else{
-//                stat.innerHTML = "<span class=\"glyphicon glyphicon-remove\" style=\"color:rgb(255, 0, 0);\"></span>";
-//            }
-//        }
+
         
         function useri(){
             var user = document.getElementById("username").value;

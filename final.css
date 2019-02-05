@@ -173,3 +173,51 @@ to {top: 0; opacity: 1}
 .bannerlg{
     display: block;width: 100%;
 }
+
+.registerAlert{
+    display: none;
+}
+
+.topHeader{
+    margin-top:5px;
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: 15px;
+}
+
+#formRegister .form-control{
+    font-size:19px;
+    margin-top:15px;
+     font-size:19px;
+}
+
+#userstatus{
+    position:absolute;
+    top:3%;
+    right:-3%;
+}
+
+#passstatus{
+    position:absolute;
+    top:16%;
+    right:-3%;
+}
+
+#passrestatus{
+    position:absolute;
+    top:28%;
+    right:-3%;
+}
+
+#mobilestatus{
+    position:absolute;
+    top:41%;
+    right:-3%;
+}
+
+.signinLoginBox{
+    margin-top:20px;
+}
+
+.signInlink{
+    text-decoration:underline;
+}
