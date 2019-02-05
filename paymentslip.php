@@ -10,6 +10,7 @@
         <script src="bootstrapdist/js/bootstrap.min.js"></script>
         <script src="display.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" type="image/png" href="icons/thaticon.png">
     
     
 </head>
@@ -26,7 +27,7 @@
                             </div>
                             <div class="row" style="margin-top:3px;">
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                     <img src="images/airmarklogotrial2.png" class="img-responsive"/>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
@@ -58,7 +59,7 @@
                             
                             <div class="row" style="background-color:gainsboro;font-family:kok;">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <p>Thankyou for supporting small local businesses.We at Tiiva strive to grow both our local and international brands.It is our hope to soon start an environmental initiative planting and caring of trees with a small percent of every single purchase </p><img src="icons/emojiicon.svg" class="img-responsive" style="display:inline;height:90px;position:absolute;top:35px;"/>
+                                    <p>Thankyou for choosing Tiiva</p><img src="icons/emojiicon.svg" class="img-responsive" style="display:inline;height:90px;position:absolute;top:35px;"/>
                                     <h4 class="text-center">From Tiiva, We Thankyou and hope to see you again very soon.</h4>
                                 </div>
                             </div>

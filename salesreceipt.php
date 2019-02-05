@@ -41,7 +41,7 @@ if($query_num_rows != 0){
         $shippingcounty = $rowcstm['county'];
         $shippingaddr = $rowcstm['area'];
         $verification = $row['paymentverification'];
-        //echo $username;
+        // echo $carttotal;
         if($shipping != 'free'){
             $shipprice = '400 Ksh';
             //$arrival = '1 - 3 days';
@@ -51,6 +51,7 @@ if($query_num_rows != 0){
             //$arrival = '1 - 5 working days';
             $grandtotal = $carttotal + 0;
         }
+        // echo $grandtotal;
 
         // CLIENT NAME AND SHIPPING APPEARING BELOW
         echo "
@@ -86,8 +87,8 @@ if($query_num_rows != 0){
         echo "
 <div class=\"row\">
     <div class=\"col-lg-1 col-md-1 col-sm-1 col-xs-1\"></div>
-    <div class=\"col-lg-10 col-md-10 col-sm-10 col-xs-10\">
-
+    <div class=\"col-lg-10 col-md-10 col-sm-12 col-xs-12\">
+<div class=\"table-responsive\">
                 <table class=\"table table-striped\">
                 <thead>
                     <tr>
@@ -163,17 +164,17 @@ if($query_num_rows != 0){
                 // item not found
             }
         }
-        echo "<tr>";
+        // echo "<tr>";
 
-        echo "<td colspan=\"6\">";
-        echo "VAT Tax (16%)";
-        echo "</td>";
+        // echo "<td colspan=\"6\">";
+        // echo "VAT Tax (16%)";
+        // echo "</td>";
 
-        echo "<td>";
-        echo ceil($carttotal * 0.16).' Ksh<br>';
-        echo "</td>";
+        // echo "<td>";
+        // echo ceil($carttotal * 0.16).' Ksh<br>';
+        // echo "</td>";
 
-        echo "</tr>";
+        // echo "</tr>";
 
         echo "<tr>";
 
@@ -195,8 +196,8 @@ if($query_num_rows != 0){
         echo "</td>";
 
         echo "<td>";
-        //echo number_format($grandtotal).' Ksh';
-        echo number_format($carttotal).' Ksh';
+        echo number_format($grandtotal).' Ksh';
+        // echo number_format($carttotal).' Ksh';
         echo "</td>";
 
 
@@ -206,7 +207,7 @@ if($query_num_rows != 0){
         echo "
                 </tbody>
             </table>
-
+</div>
 
     </div>
     <div class=\"col-lg-1 col-md-1 col-sm-1 col-xs-1\"></div>

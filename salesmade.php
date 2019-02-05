@@ -1,6 +1,6 @@
 <?php
 ob_start();
-session_start();
+// session_start();
 require 'connect.php';
 // this should add an ip addres that gets to the receipt slip page
 // to prevent activation by just loading the page...chekc whether teh session cartname is set

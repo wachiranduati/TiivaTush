@@ -71,16 +71,32 @@ function checkUserLocation(){
 	// this will be the function homing in to know the whereabouts of the user
 }
 
-function returnCartCount($conn){
+function returnCartCount($conn, $table){
 	if(userLoggedIn() == True){
 		// continue
 		$userid = getUserID();
-		$query = "SELECT * FROM `products` WHERE `availability` = 0 AND `sold` = 0 AND `buyer` = $userid";
+		$query = "SELECT * FROM `$table` WHERE `availability` = 0 AND `sold` = 0 AND `buyer` = $userid";
 		$query_run = mysqli_query($conn, $query);
 		$num_rows = mysqli_num_rows($query_run);
 		return  $num_rows;
 	}else{
 		return 0;
+	}
+}
+
+function returncartItems($conn, $table){
+	if(returnCartCount($conn, $table) != 0){
+		// continue
+		$userid = getUserID();
+		$query = "SELECT * FROM `$table` WHERE `availability` = 0 AND `sold` = 0 AND `buyer` = $userid";
+		$query_run = mysqli_query($conn, $query);
+		$records = array();
+		while($row = mysqli_fetch_assoc($query_run)){
+			array_push($records, $row);
+		}
+		return $records;
+	}else{
+		return "Your cart is empty";
 	}
 }
 

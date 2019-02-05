@@ -1,139 +1,52 @@
 <?php
-ob_start();
 session_start();
+ob_start();
 require 'search.inc.php';
-require 'connect.php';
-//require 'somethingdelete.php';
+require 'core.inc.php';
+require 'utils/userutils.php';
 
-if(isset($_SESSION['$user_id'])){
-    $user = $_SESSION['$user_id'];
-    $toreg = $user + 21;
+$today = date('Y-m-d');
+$time = Date('H:i:s');
+
+if(userLoggedIn() == True){
+    $userid = getUserID();
 }else{
-    $toreg = 1;
+    header('Location:index.php');
+    die('Nothing to checkout');
 }
-//mysqli_real_escape_string($conn, )
 
-$today = date(Y).'-'.date(m).'-'.date(d);
-$time = Date(H).':'.Date(i).':'.Date(s);
+$row = returncartItems($conn, 'products');
 
-//echo $today;
+$cartcontents = ''; //M12, M23
+$itemprice = ''; // 200,300
+$itemcount = ''; // 12,1,3
+$carttotal = 0; // grandtotal
 
-$dbs = 'brandyproducts';
-$cartame = 'shopcart';
-$dbsother = 'products';
-$cartameother = 'shackcart';
+$counter = 0;
+while($counter < count($row)){
+    $cartcontents .= 'M'.$row[$counter]['id'].',';
 
+    $itemcount .= '1,';
 
+    $itemprice .= $row[$counter]['price'].',';
 
-    $sql = "SELECT * FROM `products` WHERE id IN (";
-    foreach($_SESSION['shackcart'] as $id => $value){
-        $sql.=$id.",";
-    }
+    $carttotal += $row[$counter]['price'];
 
-    $sql = substr($sql, 0, -1).") ORDER BY itemtitle ASC";
-    $query = mysqli_query($conn, $sql);
-    $totalprice = 0;
-    if($_SESSION['shackcart'][$id]['quantity'] != 0){
-        while($row=mysqli_fetch_assoc($query)){
-            echo "<tr>";
-        $subtotal = $_SESSION['shackcart'][$row['id']]['quantity']*$row['price'];
-        $quantity = strval($_SESSION['shackcart'][$row['id']]['quantity']);
-        $count .= $quantity.',';
+    $counter++;
+}
+$cartcontents = rtrim($cartcontents, ',');
+$itemcount = rtrim($itemcount, ',');
+$itemprice = rtrim($itemprice, ',');
 
-        $itemid = strval($row['id']);
-        $totalitemids .= 'M'.$itemid.',';
-
-        $rowtotal = strval($_SESSION['shackcart'][$row['id']]['quantity']*$row['price']);
-        $rowtotals .= $rowtotal.',';
-
-        $rowprice = strval($row['price']);
-        $rowprices .= $rowprice.',';
-
-        $totalprice += $subtotal;
+// echo $cartcontents;
+// echo '<br>';
+// echo $itemcount;
+// echo '<br>';
+// echo $itemprice;
+// echo '<br>';
+// echo $carttotal;
 
 
-    }
-
-    }
-    // the other part beginning
-    $sql = "SELECT * FROM `brandyproducts` WHERE id IN (";
-    foreach($_SESSION['shopcart'] as $id => $value){
-        $sql.=$id.",";
-    }
-
-    $sql = substr($sql, 0, -1).") ORDER BY itemtitle ASC";
-    $query = mysqli_query($conn, $sql);
-    //$totalprice = 0;
-    if($_SESSION['shopcart'][$id]['quantity'] != 0){
-        while($row=mysqli_fetch_assoc($query)){
-            echo "<tr>";
-        $subtotal = $_SESSION['shopcart'][$row['id']]['quantity']*$row['price'];
-        $quantity = strval($_SESSION['shopcart'][$row['id']]['quantity']);
-        $count .= $quantity.',';
-
-        $itemid = strval($row['id']);
-        $totalitemids .= 'S'.$itemid.',';
-
-        $rowtotal = strval($_SESSION['shopcart'][$row['id']]['quantity']*$row['price']);
-        $rowtotals .= $rowtotal.',';
-
-        $rowprice = strval($row['price']);
-        $rowprices .= $rowprice.',';
-
-        $totalprice += $subtotal;
-
-
-    }
-        $newtotalitemids = rtrim($totalitemids,',');
-
-        $newcount = rtrim($count,',');
-
-        $newrowprices = rtrim($rowprices,',');
-
-        $newrowtotals = rtrim($rowtotals,',');
-
-    }
-    // the other part ending
-
-    // the original code copy
-    // $sql = "SELECT * FROM `products` WHERE id IN (";
-    // foreach($_SESSION['shackcart'] as $id => $value){
-    //     $sql.=$id.",";
-    // }
-    //
-    // $sql = substr($sql, 0, -1).") ORDER BY itemtitle ASC";
-    // $query = mysqli_query($conn, $sql);
-    // $totalprice = 0;
-    // if($_SESSION['shackcart'][$id]['quantity'] != 0){
-    //     while($row=mysqli_fetch_assoc($query)){
-    //         echo "<tr>";
-    //     $subtotal = $_SESSION['shackcart'][$row['id']]['quantity']*$row['price'];
-    //     $quantity = strval($_SESSION['shackcart'][$row['id']]['quantity']);
-    //     $count .= $quantity.',';
-    //
-    //     $itemid = strval($row['id']);
-    //     $totalitemids .= $itemid.',';
-    //
-    //     $rowtotal = strval($_SESSION['shackcart'][$row['id']]['quantity']*$row['price']);
-    //     $rowtotals .= $rowtotal.',';
-    //
-    //     $rowprice = strval($row['price']);
-    //     $rowprices .= $rowprice.',';
-    //
-    //     $totalprice += $subtotal;
-    //
-    //
-    // }
-    //     $newtotalitemids = rtrim($totalitemids,',');
-    //
-    //     $newcount = rtrim($count,',');
-    //
-    //     $newrowprices = rtrim($rowprices,',');
-    //
-    //     $newrowtotals = rtrim($rowtotals,',');
-    //
-    // }
-    // the original code copy
 
 
 if(isset($_POST['username']) ||
@@ -153,12 +66,10 @@ if(isset($_POST['username']) ||
     $shipping = $_POST['shipping'];
     $area = $_POST['area'];
     $transcationinputid = strtoupper($_POST['transcationinputid']);
-    $details = mysqli_escape_string($_POST['details']);
+    $details = mysqli_escape_string($conn, $_POST['details']);
 
     $phoneno = $phonenumber;
     $salt = "Dance3imefika2mashinanee";
-    $today = Date(Y).'-'.Date(m).'-'.Date(d);
-    $time = Date(H).':'.Date(i).':'.Date(s);
     $cartname = md5($phoneno.$salt.$today.$time);
 
     if(!empty($username)){
@@ -170,30 +81,21 @@ if(isset($_POST['username']) ||
                 if(!empty($area)){
                     //echo "Thankyou, you just provided us with your location ";
                     if(!empty($details)){
-                        //echo $username.' '.$useridno.' '.$emailaddress.' '.$phonenumber.' '.$county.' '.$area.' '.$details;
-                        //echo "Thankyou, we are working on your order.";
+                        
                         $query = "INSERT INTO  `a_database`.`sold` (`id` ,`names` ,`identity` ,`email` ,`phone` ,`county` ,`area` ,`details` ,`date`,`cartname`,`shipping`)VALUES (NULL ,  '$username',  '$useridno',  '$emailaddress',  '$phonenumber',  '$county',  '$area',  '$details',  '$today','$cartname','$shipping')";
 
                         if($query_run = mysqli_query($conn, $query)){
-                            //echo "We have received your order, We will get in touch.";
-//                            echo "<div class=\"alert alert-success\">
-//                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a>
-//                                    <strong>Success!!</strong>
-//                                    <span>Order received. We will get in-touch.</span>
-//                                </div>";
-                            // create row in checkoutcarts with cartname contents count and date and verification
-                            $querycart = "INSERT INTO  `checkoutcarts` (`cartid` ,`customer_id` ,`cartname` ,`cartcontents`,`itemprice` ,`count` ,`carttotal` ,`paymentverification` ,`date`,`time`,`status`,`updated`,`pickupstat`)VALUES (NULL ,  '$toreg','$cartname','$newtotalitemids','$newrowprices','$newcount','$totalprice','$transcationinputid','$today','$time','SOLD','0','INCOMPLETE')";
+                            
+                            $querycart = "INSERT INTO  `checkoutcarts` (`cartid` ,`customer_id` ,`cartname` ,`cartcontents`,`itemprice` ,`count` ,`carttotal` ,`paymentverification` ,`date`,`time`,`status`,`updated`,`pickupstat`)VALUES (NULL ,  '$userid','$cartname','$cartcontents','$itemprice','$itemcount','$carttotal','$transcationinputid','$today','$time','SOLD','0','INCOMPLETE')";
 
                             if($query_runcart = mysqli_query($conn, $querycart)){
-                            echo "<div class=\"alert alert-success\">
-                                    <a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a>
-                                    <strong>Success!!</strong>
-                                    <span>Order received. We will get in-touch.</span>
-                                </div>";
-                                // create cartname session
-                                //session_destroy($_SESSION['cart']);// remove the cart from php session
-                                //SESSION DESTROY DIDNT WOK
-                                //unset($_SESSION['cart']);
+                                echo 1;
+                            // echo "<div class=\"alert alert-success\">
+                            //         <a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a>
+                            //         <strong>Success!!</strong>
+                            //         <span>Order received. We will get in-touch.</span>
+                            //     </div>";
+                                
                                 $_SESSION['cartname'] = $cartname;
                             }else{
                                 echo "<div class=\"alert alert-danger\">
@@ -215,7 +117,7 @@ if(isset($_POST['username']) ||
                         //echo "It is advisable that you provide us with extra details on delivery of your package";
                         echo "<div class=\"alert alert-danger\">
                                     <a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a>
-                                    <strong>Error!!</strong>
+                                    <strong>One more thing!!</strong>
                                     <span>It is advisable that you provide us with extra details on delivery of your package</span>
                                 </div>";
                     }

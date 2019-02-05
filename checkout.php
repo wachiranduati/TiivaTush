@@ -1,22 +1,48 @@
 <?php
-ob_start();
 session_start();
+ob_start();
 require 'search.inc.php';
-require 'connect.php';
-require 'utils/userutils.php';
+require 'core.inc.php';
+require 'looptemplater.php';
 
-if(userLoggedIn() == True){
-    // do something later
-}else{
-    header('Location:index.php');
-    die();
+//echo strpos('i love php so im seated here worndering what im doing here','im');
+
+//echo array_search('me',$thething);
+//$a=array('green','blue','red');
+//echo array_search("red",$a);
+//echo isset($_SESSION['user']);
+//echo $_SERVER['REMOTE_ADDR'];
+
+//echo md5(1);
+//echo $_SERVER['HTTP_CLIENT_IP'];
+//echo $_SERVER['HTTP_X_FORWARDED_FOR'];
+$century = 860;//Mtush
+
+// $_SESSION['$user_id'];
+// md5('wagwanista');
+
+if(isset($_POST['useremail'])){
+    $useremail = $_POST['useremail'];
+    if(!empty($useremail)){
+        //echo "It is set";
+        //echo $useremail;
+        if($useremail == 'a3f1abc0a7101ccf68bb31192780aa42@me.com'){
+            header('location:shop.php');
+        }
+
+    }else {
+        echo "The input is empty";
+    }
+}else {
+    //echo "Nuthn";
 }
-$century = 321;//Shop
+
+
 
 ?>
 <!DOCTYPE html>
 <html>
-<title>Tiiva | Checkout</title>
+<title>Tiiva.co.ke | Home</title>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,211 +50,17 @@ $century = 321;//Shop
 
 </head>
     <body onload="boxed();">
-        <div class="container-fluid">
-            <div class="row" style="background-color:rgba(0,0,0,0.2)">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="row" style="font-family:kok;padding-top:0.5%;padding-bottom:0.5%;">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="boxtit"></div>
-
-                        </div>
-                </div>
-            </div>
-
-<!--            start of accounts div-->
-            <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"><a href="index.php"><img src="images/airmarklogotrial2.png" class="img-responsive"></a></div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-<!--                    margin top start-->
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-lg visible-md" style="margin-top:3%;"></div>
-                    </div>
-<!--                    margin top end -->
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-<!--                                   SIMPLE SEARCH START-->
-
-                     <div class="row" id="simplesearch" style="display:block;visibility:visible;">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-                    <form class="form-group-md" id="search" name="search">
-                    <div class="input-group col-lg-12" style="font-family:kok;">
-                        <input type="text" class="form-control" placeholder="Search items here...." name="search_text" onkeyup="findmatch();" style="border:none;box-shadow:none;border-radius:0;background-color:rgba(219, 219, 219, 0.35);">
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-default disabled btn-md" style="border:1px solid rgb(255, 186, 0);background-color:rgb(255, 186, 0);color:white;border-radius:0;">Search</button>
-                        </span>
-                    </div>
-                        </form>
-                </div>
-            </div>
-
-            <div class="row simplesearchresults" id="simplesearchresults" style="">
-                <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 results" id="results"></div>
-            </div>
-
-<!--                    SIMPLE SEARCH END-->
-                        </div>
-                    </div>
-                    <div class="row visible-lg visible-md" style="cursor:pointer;">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <a class="pull-right" onclick="toggleadvancedsearch();" style="text-decoration:none;font-family:kok;">Advanced Search</a>
-                        </div>
-                    </div>
-                </div>
-<!--                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 visible-lg visible-md"></div>-->
-
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="cursor:default;">
-
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                                <div class="visible-lg visible-md" style="margin-top:31%;"></div>
-                                <!--                    cart new design-->
-                    <div onclick="loadmodalcart();">
-                        <a><span class="glyphicon glyphicon-shopping-cart" style="font-size:30px;color:#523CFA;"></span><sup><span class="badge" id="changethis" style="background-color:red;">0</span></sup><small style="font-family:kok;">&nbsp;Cart</small>&nbsp;<span class="caret"></span></a>
-
-                    </div>
-<!--                    cart new design-->
-
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                                                                        <div class="visible-lg visible-md" style="margin-top:31%;"></div>
-
-                    <div class="dropdown">
-                            <a class=" dropdown-toggle" id="menu1" data-toggle="dropdown"><span class="glyphicon glyphicon-user" style="font-size:30px;color:#523CFA;"></span><small>&nbsp;User</small>
-                            <span class="caret"></span></a>
-
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Login</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">User Account</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Merchants</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Register</a></li>
-                              <li role="presentation" class="divider"></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Blogs</a></li>
-                            </ul>
-                          </div>
-                            </div>
-                            <div class="col-lg-4 col-sm-4 col-xs-4 col-sm-4 visible-lg visible-md" style="margin-top:0.1%;">
-                                <a class="text-capitalize" style="color:black;text-decoration:none;"><small>More about us?</small></a>
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <a href="Howto.php" class="text-uppercase"><small>FAQS</small></a>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <a href="aboutus.php" class="text-uppercase"><small>About us</small></a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <a href="termsofuse.php" class="text-uppercase"><small>Store policy</small></a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                </div>
-
-            </div>
-
-<!--            end of accounts div-->
-<!-- start of advanced search container -->
-<div class="row" id="AdvancedSearchContainer" style="display:none;visibility:none;">
-<div class="col-lgl-12 col-md-12 col-sm-12 col-xs-12" style="display:block;visibility:visible;padding-top:10px;">
-    <form role="form">
-        <div class="col-lg-3" style="font-family:kok;">
-            <label><small>Search Phrase</small></label>
-            <input type="text" placeholder="Search phrase eg. Bomber Jacket" id="searchphrase" class="form-control input-sm"/>
-        </div>
-        <div class="col-lg-2" style="font-family:kok;">
-            <label><small>Price min(Ksh)</small></label>
-            <input type="number" placeholder="0 Ksh" value="10" id="minprice" min="10" class="form-control input-sm"/>
-        </div>
-        <div class="col-lg-2" style="font-family:kok;">
-            <label><small>Price max(Ksh)</small></label>
-            <input type="number" placeholder="100000 Ksh" max="1000000" value="1000000" id="maxprice" min="10" class="form-control input-sm"/>
-        </div>
-
-        <div class="col-lg-2" style="font-family:kok;">
-            <label><small>Tiiva Site: Shop/Shack</small></label>
-            <select name="site" id="site" class="form-control input-sm">
-                <option value="shop">Tiiva Shop</option>
-                <option value="shack">Tiiva Shack</option>
-
-            </select>
-        </div>
-
-        <div class="col-lg-2">
-            <label style="font-family:kok;"><small>Category To Search</small></label>
-            <select name="category" id="category" class="form-control input-sm">
-                <optgroup label="MTUMBA Categories" id="Mtumbaid">
-                    <option disabled>Select one of the categories below</option>
-                    <option value="sportswear">Sportswear</option>
-                    <option value="mens">Men's Wears</option>
-                    <option value="womens">Women's Wears</option>
-                    <option value="kids">Kids' Wears</option>
-                    <option value="interiors">Household</option>
-                    <option value="bags">Bags</option>
-                    <option value="shoes">Shoes</option>
-                    <option value="misc">Misc</option>
-                </optgroup>
-
-                <optgroup label="SHOP Categories" id="Shopid">
-                    <option value="electronics">Electronics &amp; Computers</option>
-                    <option value="entertainment">Entertainment &amp; Education</option>
-                    <option value="health">Health &amp; Beauty</option>
-                    <option value="jewerly">Fashion &amp; Jewerly</option>
-                    <option value="supermarket">Supermarket</option>
-                    <option value="outdoors">Sports &amp; Outdoors</option>
-                    <option value="handmade">Handmade</option>
-                    <option value="home">Home, Garden &amp; Tools</option>
-                    <option value="automotive">Automotive, Industrial</option>
-
-                </optgroup>
-
-
-            </select>
-        </div>
-        <div class="col-lg-1">
-            <label><small style="color:white;">Se</small></label>
-            <a class="btn btn-md btn-primary" onclick="advancedsearch();"><span class="glyphicon glyphicon-search"> Search</span></a>
-        </div>
-
-    </form>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-    <div class="row advancedresulsttainer">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="advancedresulst">
-
-        </div>
-    </div>
-</div>
-<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
-
-</div>
-<!-- end of advanced search container -->
-
-
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 " style="border-top:1px solid gainsboro;">
-                </div>
-            </div>
-        </div>
+        <?php 
+        require('templates/header.php');
+        ?>
         <div class="container-fluid">
             <div class="row visible-lg visible-md" style="margin-top:10px;">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="index.php">Home </a> / <a href="checkout.php">Checkout</a><h2 class="text-center text-uppercase" style="margin-top:-10px; color:orange;">Checkout</h2></div>
             </div>
-            <div class="row visible-lg visible-md">
+            <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="newcartitems"></div>
             </div>
-            <div class="row visible-sm visible-xs">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="newcartitems4"></div>
-            </div>
+            
 
 
             <div class="row visible-sm visible-xs" style="margin-top:1px;">
@@ -272,18 +104,18 @@ $century = 321;//Shop
                                 <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
                                     <form class="form-group" action="checkout.php" method="get">
                                         <label for="username">Name:</label>
-                                        <input type="text" id="username" name="username" placeholder="Name: Jeniffer Craig Someone" class="form-control" title="<h5>Name Field</h5>Please provide your full name. Your delivery will be made to this name unless a special request is provided in the <strong>Special Requests Field</strong>"/><br>
+                                        <input type="text" value="something" id="username" name="username" placeholder="Name: Jeniffer Craig Someone" class="form-control" title="<h5>Name Field</h5>Please provide your full name. Your delivery will be made to this name unless a special request is provided in the <strong>Special Requests Field</strong>"/><br>
                                         <label for="useridno">ID no:</label>
-                                        <input type="number" id="useridno" name="useridno" placeholder="ID Number: 302367236" class="form-control" title="<h5>Identification number Field</h5>Please provide your identification number in the input below"/><br>
+                                        <input type="number" value="0785959" id="useridno" name="useridno" placeholder="ID Number: 302367236" class="form-control" title="<h5>Identification number Field</h5>Please provide your identification number in the input below"/><br>
                                         <label for="emailaddress">Emailaddress: (optional)</label>
                                         <input type="email" id="emailaddress" value="myemail@gmail.com" name="emailaddress" placeholder="Email: me@gmail.com" class="form-control" title="<h5>Email address Field</h5>Please provide us with your Email Address.ps. We will send your receipt to the provided email. This step is optional"/><br>
                                         <label>Country</label>
                                         <input type="text" placeholder="Country: Kenya" readonly disabled class="form-control" title="<h5>Country Field</h5>Please provide us with your country where the shopping should be delivered"/><br>
                                         <label for="phonenumber">Phone Number:</label>
-                                        <input type="text" id="phonenumber" name="phonenumber" placeholder="Mobile Phone: 072323321" class="form-control" title="<h5>PhoneNumber Field</h5>Please provide your phone number. This must be the same one used to pay for your cart but it can be an optional contact during delivery if another one is provided in the special requests input field"/><br>
+                                        <input type="text" value="something" id="phonenumber" name="phonenumber" placeholder="Mobile Phone: 072323321" class="form-control" title="<h5>PhoneNumber Field</h5>Please provide your phone number. This must be the same one used to pay for your cart but it can be an optional contact during delivery if another one is provided in the special requests input field"/><br>
                                         <div class="form-group">
                                         <label for="county">County:</label>
-                                        <select class="form-control" id="county" name="county" title="<h5>County to Deliver cart Field</h5>Please select the county in Kenya where the delivery is to be made">
+                                        <select class="form-control" value="something" id="county" name="county" title="<h5>County to Deliver cart Field</h5>Please select the county in Kenya where the delivery is to be made">
 
                                         <optgroup label="COUNTIES/STATE/REGION" >PROVINCE
                                         <option value="Baringo">Baringo county</option>
@@ -338,7 +170,7 @@ $century = 321;//Shop
                                       </select>
                                     </div>
                                         <label for="area">Area: eg.Garissa town</label>
-                                        <input type="text" id="area" name="area" placeholder="Town/Area*" class="form-control" title="<h5>Town Delivery Field</h5>Please provide the town in which your delivery will be made p.s. You can also provide your exact gps coordinates and we will deliver straight to your doorstep at no extra cost"/><br>
+                                        <input type="text" value="somewhere" id="area" name="area" placeholder="Town/Area*" class="form-control" title="<h5>Town Delivery Field</h5>Please provide the town in which your delivery will be made p.s. You can also provide your exact gps coordinates and we will deliver straight to your doorstep at no extra cost"/><br>
                                     </form>
                                 </div>
 
@@ -353,7 +185,7 @@ $century = 321;//Shop
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;">
 <!--                                    <form>-->
-                                        <textarea title="<h5>Special Request Field</h5>Please provide extra information pertaining to your delivery. You can have your package delivered to a friend or dropped off at a drop off point of your choosing" rows="15" cols="37" id="details" name="details" class="form-control" placeholder="Notes about your order. Special Notes for Delivery. Here you can specify where you want the package dropped off to or even brought to.E.g Please deliver the package to Eldroret and drop it off at Kenafric store near Eldoret town library." style="background-color:rgba(220, 220, 220, 0.24);"></textarea>
+                                        <textarea title="<h5>Special Request Field</h5>Please provide extra information pertaining to your delivery. You can have your package delivered to a friend or dropped off at a drop off point of your choosing" rows="15" cols="37" id="details" name="details" class="form-control" placeholder="Notes about your order. Special Notes for Delivery. Here you can specify the exact location where you want the package dropped off, it can also include a fall back should you be unable to receive the package. This will be used as the drop off.E.g Kindly leave my delivery with the secretary at Shikhokho Building opposite the Marsabit National Postbank." style="background-color:rgba(220, 220, 220, 0.24);"></textarea>
 <!--                                    </form>-->
                                 </div>
                             </div>
@@ -413,11 +245,11 @@ $century = 321;//Shop
                       <label><input title="<h5>Experss delivery with Tiiva</h5>With this option you get your package delivered in 1 - 3 days at a flatrate of 400Ksh no matter the size of the package.With this option you get your package delivered faster, we top off any extra costs if any and you get a harty smile and a Thankyou with every delivery." value="ExpressTiiva" type="radio" name="optradio">Express Delivery with Tiiva (1 - 3 days) - Flat rate - 400 KSH</label>
                     </div>
                     <div class="radio">
-                      <label><input title="<h5>Fargo courier COURIER Option</h5>With this option you get your package delivered to you via Fargo courier.We top off any extra charges if your package shipping cost is higher and you receive your package faster.p.s They're awesome" type="radio" name="optradio">Fargo courier Delivery (1 - 4 days) - Flat rate - 400 KSH</label>
+                      <label><input title="<h5>Fargo courier COURIER Option</h5>With this option you get your package delivered to you via Fargo courier.We top off any extra charges if your package shipping cost is higher and you receive your package faster.p.s They're awesome" value="Others" type="radio" name="optradio">Others i.e WellsFargo | G4S | 2Nk (1 - 2 days) - Flat rate - 400 KSH</label>
                     </div>
                     </form>
-                    <small style="color:red">*NB Flat rates for the non-free deliveries get a return on the change if shipping prices are smaller and a top off if the shipping prices are higher </small>
-                    <small>i.e. change twakurudishia :)</small>
+                    <small style="color:red">*NB Flat Rates factor in any unexpected changes in pricing likely to be met on our side. You should be glad to hear that we refund you the change in Cash.</small>
+                    
 
                 </div>
 <!--                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>-->
@@ -439,7 +271,7 @@ $century = 321;//Shop
 
 <!--            start of cart-->
             <div class="row" style="margin-top:1px;display:none;" id="reviews">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="cartitems"></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="checkoutcartitems"></div>
             </div>
 
 <!--            end of the actual cart-->
@@ -576,44 +408,10 @@ $century = 321;//Shop
 	}
 
             // changes the title box with the hello welcome to airmark logout thingi
-            function boxed(){
-              if(window.XMLHttpRequest){
-                    xmlhttp2 = new XMLHttpRequest();
-                }else{
-                    xmlhttp2 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp2.onreadystatechange = function(){
-                if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200){
-                    document.getElementById('boxtit').innerHTML= xmlhttp2.responseText;
-
-                    }
-                    }
-                    xmlhttp2.open('GET','account.php',true);
-                    xmlhttp2.send();
-
-                cart();
-            }
+            
 
             // changes the title box with the hello welcome to airmark logout thingi
-            function cart(){
-              if(window.XMLHttpRequest){
-                    xmlhttp3 = new XMLHttpRequest();
-                }else{
-                    xmlhttp3 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp3.onreadystatechange = function(){
-                if (xmlhttp3.readyState == 4 && xmlhttp3.status == 200){
-                    document.getElementById('cartitems').innerHTML= xmlhttp3.responseText;
-
-                total();
-
-                    }
-                    }
-                    xmlhttp3.open('GET','displaycartcheckout.php',true);
-                    xmlhttp3.send();
-
-
-            }
+            
 
             function transactioncovertuppercase(){
                 var transcationinputid = document.getElementById('transcationinputid').value;
@@ -633,7 +431,7 @@ $century = 321;//Shop
            xmlhttp05.onreadystatechange = function(){
                 if (xmlhttp05.readyState == 4 && xmlhttp05.status == 200){
                     //document.getElementById('newcartitems').innerHTML= xmlhttp05.responseText;
-                    cart();
+                    // cart();
 
                     }
                     }
@@ -649,7 +447,6 @@ $century = 321;//Shop
            xmlhttp06.onreadystatechange = function(){
                 if (xmlhttp06.readyState == 4 && xmlhttp06.status == 200){
                     //document.getElementById('newcartitems').innerHTML= xmlhttp06.responseText;
-                    cart();
 
                     }
                     }
@@ -657,41 +454,35 @@ $century = 321;//Shop
                     xmlhttp06.send();
             }
 
+            $(document).ready(function(){
+                $.ajax({
+                            url: "displaycartcontents.php",
+                            type: "GET",
+                            success: function(data){
+                                $("#checkoutcartitems").html(data);
+                                //alert(data);
+                                total();
+                            }
+                        });
+            });
             function cartship(){
-                //alert("cartship called");
+                // alert("cartship called");
                 var xer = $("#radioform input[type='radio']:checked").val();
                 var message = "shipping="+xer;
-                    if(xer != 'free'){
                         $.ajax({
-                            url: "displaycartcheckout.php",
-                            type: "GET",
+                            url: "displaycartcontents.php",
+                            type: "POST",
                             data: message,
                             success: function(data){
-                                $("#cartitems").html(data);
+                                $("#checkoutcartitems").html(data);
                                 //alert(data);
+                                total();
                             }
                         })
-                    }else{
-                        cart();
-                    }
+                    
             }
 
-            function additemship(iad){
-                if(window.XMLHttpRequest){
-                    xmlhttp05 = new XMLHttpRequest();
-                }else{
-                    xmlhttp05 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp05.onreadystatechange = function(){
-                if (xmlhttp05.readyState == 4 && xmlhttp05.status == 200){
-                    //document.getElementById('newcartitems').innerHTML= xmlhttp05.responseText;
-                    cartship();
-
-                    }
-                    }
-                    xmlhttp05.open('GET','stolencart.php?action=add&id='+iad,true);
-                    xmlhttp05.send();
-            }
+            
             function removeitemship(irem){
                 if(window.XMLHttpRequest){
                     xmlhttp06 = new XMLHttpRequest();
@@ -723,14 +514,18 @@ $century = 321;//Shop
                 var xer = $("#radioform input[type='radio']:checked").val();
 
                 var checkoutinfo = 'username='+username+'&useridno='+useridno+'&emailaddress='+emailaddress+'&phonenumber='+phonenumber+'&county='+county+'&area='+area+'&details='+details+'&transcationinputid='+transcationinputid+"&shipping="+xer;
-                //alert(checkoutinfo);
+                alert(xer);
                 if(username != ''){
                     if(phonenumber != ''){
                         var cnty = confirm('You selected '+county+' as your county');
                         if(cnty != false){
                             if(area != ''){
                                 if(transcationinputid != ''){
-                                    sencheckout();
+                                    if(details != ''){
+                                        sencheckout(checkoutinfo);
+                                    }else{
+                                        alert('Please provide instructions for you delivery');
+                                    }
                                 }else{
                                     alert('Please provide mpesa transaction code in the input below');
                                 }
@@ -746,7 +541,7 @@ $century = 321;//Shop
                 }else{
                     alert('Please provide your Names');
                 }
-                function sencheckout(){
+                function sencheckout(checkoutinfo){
                     var spinnersmall = document.getElementById('spinnersmall');
                     var spinnerlarge = document.getElementById('spinnerlarge');
                     spinnersmall.style.visibility = 'visible';
@@ -766,7 +561,6 @@ $century = 321;//Shop
                     document.getElementById('newcartitems').innerHTML= xmlhttp06.responseText;
                     document.getElementById('newcartitems2').innerHTML= xmlhttp06.responseText;
                     document.getElementById('newcartitems3').innerHTML= xmlhttp06.responseText;
-                    document.getElementById('newcartitems4').innerHTML= xmlhttp06.responseText;
                     //cart();
                     var checkoutbutton = document.getElementById('checkoutbutton');
                     checkoutbutton.disabled = true;
@@ -776,7 +570,9 @@ $century = 321;//Shop
                     spinnerlarge.style.visibility = 'hidden';
                     spinnerlarge.style.display = 'none';
 
-                                setTimeout("payslip();",3000);
+                            if(xmlhttp06.responseText == 1){
+                                setTimeout("payslip();",1000);
+                            }
 
 
                     }
@@ -787,7 +583,7 @@ $century = 321;//Shop
                 }
             }
             function payslip(){
-                        document.location.href = 'paymentslip.html';
+                        document.location.href = 'paymentslip.php';
                             }
 
         $(document).ready(function(){
@@ -810,22 +606,19 @@ $century = 321;//Shop
                     //alert(xer);
                     //insert ajax call in here
                     var message = "shipping="+xer;
-                    if(xer != 'free'){
+                    
                         $.ajax({
-                            url: "displaycartcheckout.php",
+                            url: "displaycartcontents.php",
                             type: "GET",
                             data: message,
                             success: function(data){
-                                $("#cartitems").html(data);
-                                //total();
+                                $("#checkoutcartitems").html(data);
+                                // total();
                                 cartship();
                                 //alert(data);
                             }
                         })
-                    }else{
-                        cart();total();
-                        //cartship();
-                    }
+                    
 
                 });
 
