@@ -2,11 +2,15 @@
 session_start();
 ob_start();
 require 'connect.php';
+require 'utils/userutils.php';
 
-$user = $_SESSION['$user_id'];
+$specialkey = getMerchantId($conn);
 
-$uploader = $_SESSION['$user_id'];
-$specialkey = $uploader + 21;
+
+// $user = $_SESSION['$user_id'];
+
+// $uploader = $_SESSION['$user_id'];
+// $specialkey = $uploader + 21;
 $today = Date('M-d-Y');
 $time = Date('H-i-s');
 // added the new line here

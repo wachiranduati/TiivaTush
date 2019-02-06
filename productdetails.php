@@ -3,6 +3,8 @@ ob_start();
 session_start();
 require 'connect.php';
 require 'core.inc.php';
+// require 'utils/userutils.php';
+
 
 if(isset($_SESSION['$user_id'])){
     $buyer = $_SESSION['$user_id'];
@@ -443,7 +445,7 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
 
                                         <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
 
-                                            <h5 class="text-capitalize">Item listed by: <a><?php echo $query_row['sellerid'];?></a></h5>
+                                            <h5 class="text-capitalize">Item listed by: <a><span class="MerchstoreProd"></span></a></h5>
                                         </div>
                                         </div>
                                         <!-- item star rating container-->
@@ -964,7 +966,7 @@ echo "
             // 180 000
             // reset after 3 minute
             // then call the book function
-
+            getMerchantStore(<?php echo $query_row['sellerid'];?>);
 
             function checkitemstat(){
                 if(XMLHttpRequest){

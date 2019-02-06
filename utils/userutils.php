@@ -49,6 +49,37 @@ if ($userState == True){
 }
 }
 
+function getMerchantId($conn){
+	#retrieve merchant id
+$userState = userLoggedIn();
+if ($userState == True){
+	$user = $_SESSION['$user_id'];
+	$query = "SELECT * FROM `merchants` WHERE `userid`='".mysqli_real_escape_string($conn, $user)."'";
+	$query_run = mysqli_query($conn, $query);
+	$query_row = mysqli_num_rows($query_run);
+	if($query_row == 1){
+		$row = mysqli_fetch_assoc($query_run);
+		return $row['id'];
+	}else{
+		return False;
+	}
+}
+}
+
+function getMerchantStoreName($conn, $id){
+	#retrieve merchant store name
+	$query = "SELECT `businessname` FROM `merchants` WHERE `userid`='".mysqli_real_escape_string($conn, $id)."'";
+	$query_run = mysqli_query($conn, $query);
+	$query_row = mysqli_num_rows($query_run);
+	if($query_row == 1){
+		$row = mysqli_fetch_assoc($query_run);
+		return $row['businessname'];
+	}else{
+		return False;
+	}
+
+}
+
 function userWithEmailExists($conn, $mobilenumber){
 	# check whether user with that email address already exists| should be unique
     //$mobilenumber = '0705780775';

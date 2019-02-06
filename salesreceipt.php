@@ -2,7 +2,8 @@
 ob_start();
 session_start();
 require 'connect.php';
-require 'salesmade.php';
+require 'utils/userutils.php';
+
 //print_r($_SESSION);
 //print_r($_SESSION['cartname']);
 //$cart = $_SESSION['cart'];
@@ -125,6 +126,8 @@ if($query_num_rows != 0){
             if($queryitem_num_rows != 0){
                 // found item
                 //echo $queryitemrow['itemtitle'].' sold by';
+                $thesellerid = $queryitemrow['sellerid'];
+                $seller = getMerchantStoreName($conn, $thesellerid);
                 echo "<tr>";
 
                 echo "<td>";
@@ -145,7 +148,7 @@ if($query_num_rows != 0){
                 echo "</td>";
 
                 echo "<td>";
-                echo $queryitemrow['sellerid'];
+                echo $seller;
                 echo "</td>";
 
                 echo "<td>";

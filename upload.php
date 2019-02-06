@@ -2,20 +2,19 @@
 session_start();
 ob_start();
 require 'core.inc.php';
-
-//echo $_SESSION['$user_id'];
-
-
-if( isset($_SESSION['$user_id'])){
-
+require 'connect.php';
+require 'utils/userutils.php';
+if(userLoggedIn() == True){
+    if(isUserMerchant($conn) == True){
+    }else{
+        header('location:index.php');
+        die();
+    }
 }else{
-   //header('Location:index.php');
-
+    header('location:index.php');
+    die();
 }
 
-
-
-require 'connect.php';
 //require 'uploadmeat.php';
 
 ?>
@@ -144,7 +143,7 @@ require 'connect.php';
 
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="progress">
+                    <div class="progress" style="height: 30px;">
                         <div class="progress-bar progress-bar-striped active" id="_progress" role="progressbar"
                       aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
                         0%

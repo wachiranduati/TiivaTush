@@ -44,6 +44,17 @@ $(document).ready(function(){
     loadaccount();
 });
 
+function getMerchantStore(merch){
+        $.ajax({
+            url: "merchantstore.php",
+            type: "POST",
+            data: "merch="+merch,
+            success: function(data){
+                $(".MerchstoreProd").html(data);
+            }
+        });
+    }
+
 function boxed(){
   if(window.XMLHttpRequest){
         xmlhttp2 = new XMLHttpRequest();

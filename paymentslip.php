@@ -1,3 +1,10 @@
+<?php
+session_start();
+ob_start();
+require 'connect.php';
+require 'utils/userutils.php';
+
+?>
 <!DOCTYPE html>
 <html>
 <title>Tiiva | Misc</title>
