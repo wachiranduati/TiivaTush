@@ -173,6 +173,7 @@ to {top: 0; opacity: 1}
 .bannerlg{
     display: block;width: 100%;
 }
+/* REGISTER PAGE */
 
 .registerAlert{
     display: none;
@@ -221,3 +222,52 @@ to {top: 0; opacity: 1}
 .signInlink{
     text-decoration:underline;
 }
+
+/*REGISTER PAGE*/
+
+/*LOGIN PAGE*/
+.loginHeaderCont{
+    margin-top:2%;
+    padding-bottom:10px;
+    border-bottom:1px solid gainsboro;
+}
+
+.loginHeadertext{
+    margin: 1px;
+    padding: 1px;
+}
+
+.loginSigninText{
+    padding:10px;
+    border:1px solid orangered;
+}
+
+.loginSiginLink{
+    color:orangered;
+}
+
+.loginspacer{
+    margin:20px 0;
+}
+
+.loginUsernameInp{
+    font-size:19px;
+    margin-bottom:5%;
+}
+
+.loginEye{
+    position:absolute;
+    top:28%;
+    right:-4%;
+    color:#626262;
+    font-size:120%;
+}
+
+.loginPssd{
+    font-size:19px;
+}
+
+.loginFormCont{
+    margin-top:20px;
+}
+/*LOGIN PAGE*/

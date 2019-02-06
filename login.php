@@ -12,7 +12,7 @@ if(!empty($_SERVER['HTTP_REFERER'])){
 ?>
 <!DOCTYPE html>
 <html>
-<title>Tiiva | Login</title>
+<title>Tiiva | Login and have fun shopping on Tiiva</title>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,18 +21,17 @@ if(!empty($_SERVER['HTTP_REFERER'])){
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:gainsboro;"><p>Welcome to Tiiva,Please Log In</p> </div>
-
-        </div>
+        
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
-            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12"><a href="index.php"><img src="images/airmarklogotrial2.png" class="img-responsive"/></a></div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><a href="index.php"><img src="images/airmarklogotrial2.png" class="img-responsive"/></a></div>
+            <div class="col-lg-4 col-md-4 col-sm-3 col-xs-3"></div>
         </div>
         <div class="row">
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="margin-top:2%;border-top:1px solid gainsboro;"></div>
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 loginHeaderCont"><h1 class="text-center text-capitalize loginHeadertext">Login to Tiiva</h1>
+    <h5 class="text-center">Have fun shopping</h5>
+            </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
         </div>
         <div class="row">
@@ -46,36 +45,35 @@ if(!empty($_SERVER['HTTP_REFERER'])){
             <div class="col-lg-3 col-md-3 col-sm-1 col-xs-1"></div>
             <div class="col-lg-6 col-md-6 col-sm-11 col-xs-11">
                 <div class="row">
-                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11" style="margin-top:20px;">
+                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 loginFormCont">
                         <form class="form-group form-group-lg" action="login.php" method="post">
-                            <label>Username</label><input id="username" type="text" class="form-control input-lg" name="username" placeholder="Username: Enter your Phone No/Email/Username" style=" font-size:19px;margin-bottom:5%;"/>
+                            <label>Username/Email/Phonenumber</label><input id="username" type="text" class="form-control input-lg loginUsernameInp" name="username" placeholder="Username: Enter your Phone No/Email/Username"/>
                             <label>Password</label>
-                            <input type="password" id="password" class="form-control input-lg" name="password" placeholder="Password: Enter your password" style=" font-size:19px;"/><span id="eye" onclick="openeye();" class="glyphicon glyphicon-eye-open" style="position:absolute;top:28%;right:-4%;color:#626262;font-size:120%;"></span>
+                            <input type="password" id="password" class="form-control input-lg loginPssd" name="password" placeholder="Password: Enter your password"/><span id="eye" onclick="openeye();" class="glyphicon glyphicon-eye-open loginEye"></span>
 
 
                         <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><h5 class="text-right"><a href="paasswd.html" style="text-decoration:underline;">forgot password?</a></h5></div>
+                            <div class="col-lg-8 col-md-8 col-sm-4 col-xs-4"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-8 col-xs-8"><h5 class="text-right"><a href="paasswd.html" style="text-decoration:underline;">forgot password?</a></h5></div>
                         </div>
                         <div class="row">
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" ></div>
                             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" >
 
-<!--                                    <input type="submit" value="Login" class="btn btn-primary btn-block">-->
                                 <a class="btn btn-primary btn-block btn-lg" onclick="login();">Login</a>
                                 </form>
                             </div>
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" ></div>
                             <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin:20px 0;"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 loginspacer"></div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h2 class="text-center" style="">New to Tiiva?</h2></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h2 class="text-center">New to Tiiva?</h2></div>
                             </div>
                             <div class="row visible-lg visible-md">
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                    <h3 class="text-center" style="padding:10px;border:1px solid orangered;"><a href="register.php" class="text-center" style="color:orangered;">Create you own Tiiva account</a></h3>
+                                    <h3 class="text-center loginSigninText"><a href="register.php" class="text-center loginSiginLink">Create you own Tiiva account</a></h3>
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                             </div>
@@ -88,14 +86,6 @@ if(!empty($_SERVER['HTTP_REFERER'])){
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                             </div>
-                            <div class="row" style="margin-top:20px;">
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11">
-                                    <p>Please log in to enable all features on Tiiva</p>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                            </div>
-
 
                         </div>
                     </div>
