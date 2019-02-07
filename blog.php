@@ -207,7 +207,7 @@ $century = 321;
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 " style="margin-top:10px; border-top:1px solid gainsboro;">
                     <div class="row" style="margin-top:10px;">
                         <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-4"><p class="text-uppercase text-center"><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></p></div>
-                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-4"><p class="text-uppercase text-center"><a href="shop.php">Shop</a></p></div>
+                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-4"><p class="text-uppercase text-center"><a href="index.php">Shop</a></p></div>
                         <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-4"><p class="text-uppercase text-center"><a href="blog.php">Blog</a></p></div>
                     </div>
                 </div>
@@ -475,7 +475,7 @@ $century = 321;
                                         <li><a style="color:black;" href="mainpage.php">Tshirts</a></li>
                                         <li><a style="color:black;" href="Mens.php">Mens</a></li>
                                         <li><a style="color:black;" href="women.php">Womens</a></li>
-                                        <li><a style="color:black;" href="shop.php">Gift Cards</a></li>
+                                        <li><a style="color:black;" href="index.php">Gift Cards</a></li>
                                         <li><a style="color:black;" href="shoes.php">Shoes</a></li>
                                     </ul>
                                 </div>

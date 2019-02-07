@@ -1700,7 +1700,7 @@ require 'connect.php';
 
             function theshop(){
                 var change = document.getElementById('iframebox');
-                change.src = 'shop.php';
+                change.src = 'index.php';
                 var pagetitle = document.getElementById('pagetitle');
                 pagetitle.innerHTML = 'Shop';
             }

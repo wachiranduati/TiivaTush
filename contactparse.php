@@ -3,12 +3,13 @@ ob_start();
 session_start();
 require 'search.inc.php';
 require 'connect.php';
-    $today = Date('Y-m-d');
-    $time = Date('H:i:s');
-//echo $today;
-//mysqli_real_escape_string
+require 'utils/displayutils.php';
+    
+$today = Date('Y-m-d');
+$time = Date('H:i:s');
 
-if(isset($_POST['email']) || 
+
+if(isset($_POST['email']) &&
    isset($_POST['phonenumber']) && 
    isset($_POST['name']) && 
    isset($_POST['subject']) && 
@@ -38,16 +39,16 @@ if(isset($_POST['email']) ||
                         }   
                     }
                 }else{
-                    echo "Details container is empty";
+                    echo bootstrapAlert('danger', 'glyphicon-info-sign', ' Error ', "You message cannot be empty", 'A0');
                 }
             }else{
-                echo "Name container is empty";
+                echo bootstrapAlert('danger', 'glyphicon-info-sign', ' Error ', "Please provide your name", 'A0');
             }
         }else{
-            echo "Phonenumber container is empty";
+            echo bootstrapAlert('danger', 'glyphicon-info-sign', ' Error ', "Please provide your phonenumber", 'A0');
         }
     }else{
-        echo 'email container is empty';
+        echo bootstrapAlert('danger', 'glyphicon-info-sign', ' Error ', "Please provide your email", 'A0');
     }
 }
 

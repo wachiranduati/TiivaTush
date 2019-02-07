@@ -18,7 +18,7 @@ echo "
 
            <div class=\"row\" style=\"margin-top:5px;\">
             <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-6\">
-                <a href=\"index.php\"><span class=\"glyphicon glyphicon-home\"></span>Home</a> > <a href=\"shop.php\">Shop</a> >> <a href=\"$query_row[category].php\">$query_row[category]</a> > <a href=\"#\" style=\"color:black\">$query_row[itemtitle]</a>
+                <a href=\"index.php\"><span class=\"glyphicon glyphicon-home\"></span>Home</a> > <a href=\"index.php\">Shop</a> >> <a href=\"$query_row[category].php\">$query_row[category]</a> > <a href=\"#\" style=\"color:black\">$query_row[itemtitle]</a>
             </div>
             <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-6\"></div>
            </div>

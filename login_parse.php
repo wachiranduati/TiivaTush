@@ -8,6 +8,7 @@ $salt = "wagwanista";
 //echo $_SERVER['REMOTE_ADDR'];
 //echo $_SERVER['HTTP_CLIENT_IP'];
 //echo $_SERVER['HTTP_X_FORWARDED_FOR'];
+// use session trial instead
 
 $me = $_SERVER['REMOTE_ADDR'];
 
@@ -92,7 +93,6 @@ if(isset($_POST['username']) && isset($_POST['password'])){
                 // maximum trials achieved block account
                 $queryblocktrials = "UPDATE `blockedaccount` SET `block`='1' WHERE `ip`='$me' AND `trial`='3'";
                 if($queryblock_run = mysqli_query($conn, $queryblocktrials)){
-                    // account blocked
                     
                     echo "
                             <div class=\"alert alert-danger\">
@@ -115,40 +115,16 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             }
             
         }
-//        echo "
-//                    <div class=\"alert alert-danger\">
-//                        <a class=\"close\" data-dismiss=\"alert\" href=\"#\">&times;</a>
-//                        <strong>Error!!</strong>
-//                        <span>Wrong username/password combination</span>
-//                    </div>
-//            ";
+
         
     }else {
-       // echo 'Details matched out';
-        // $user_id = mysqli_result($conn, $query_run, 0, 'id');
-        // $_SESSION['$user_id'] = $user_id;
+       
         $attemplogn = mysqli_fetch_assoc($query_run);
         $user_id = $attemplogn['id'];
         $_SESSION['$user_id'] = $user_id;
-        //echo "Session id created ".$user_id;
-        //echo "created";
-//        echo "
-//                <div class=\"alert alert-success\">
-//                    <a class=\"close\" data-dismiss=\"alert\" href=\"#\">&times;</a>
-//                    <strong>Success!!</strong>
-//                    <span>You have successfully logged in</span>
-//                </div>
-//            ";
-       echo "
-                <div class=\"row\" style=\"visibility:hidden;display:none;\">
-                    <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-6\" id=\"casee\">1</div>
-                    <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-6\" id=\"where\">$where</div>
-                </div>
-            ";
-       //header('Location:index.php');
         
-       //header('Location:'.$http_referer);
-        //echo $user_id;
+       echo 1;
+       
         
     }
     

@@ -27,7 +27,7 @@ if(isset($_POST['useremail'])){
         //echo "It is set";
         //echo $useremail;
         if($useremail == 'a3f1abc0a7101ccf68bb31192780aa42@me.com'){
-            header('location:shop.php');
+            header('location:index.php');
         }
 
     }else {
@@ -55,7 +55,10 @@ if(isset($_POST['useremail'])){
         ?>
 <!-- stick it here -->
         <div class="container">
-
+                <?php
+        require 'templates/pagetitle.php';
+        echo pageTitle('Tiiva Home');
+                ?>
             <div class="row visible-sm visible-xs">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
                             <div class="dropdown">
@@ -157,7 +160,7 @@ if(isset($_POST['useremail'])){
 
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="#">
+                    <a href="index.php">
                         <img src="banners/different.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
@@ -250,7 +253,7 @@ if(isset($_POST['useremail'])){
             </div>
             <div class="row visible-lg visilbe-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="Mens.php">
+                    <a href="index.php">
                         <img src="banners/variety.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
@@ -345,7 +348,7 @@ if(isset($_POST['useremail'])){
             </div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="Merchantreg.php">
+                    <a href="merchantreg.php">
                         <img src="banners/merchant.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
@@ -438,8 +441,8 @@ if(isset($_POST['useremail'])){
             </div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="blog.php">
-                        <img src="banners/blogs.png" class="img-responsive bannerlg"/>
+                    <a href="index.php">
+                        <img src="banners/outdoors.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
             </div>
@@ -716,7 +719,7 @@ if(isset($_POST['useremail'])){
             </div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="shop.php">
+                    <a href="index.php">
                         <img src="banners/handcrafted.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
@@ -823,7 +826,7 @@ if(isset($_POST['useremail'])){
             </div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="homepage.php">
+                    <a href="index.php">
                         <img src="banners/different.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
@@ -1243,28 +1246,11 @@ window.onscroll = function() {scrollFunction()};
                     xmlhttp10.open('GET','indexmiscsloop.php',true);
                     xmlhttp10.send();
                  $('.loaderImage').fadeOut(3000);
-                 cart();
 
             }
 
             // changes the title box with the hello welcome to airmark logout thingi
-            function cart(){
-              if(window.XMLHttpRequest){
-                    xmlhttp12 = new XMLHttpRequest();
-                }else{
-                    xmlhttp12 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp12.onreadystatechange = function(){
-                if (xmlhttp12.readyState == 4 && xmlhttp12.status == 200){
-                    document.getElementById('cartitems').innerHTML= xmlhttp12.responseText;
-
-                    }
-                    }
-                    xmlhttp12.open('GET','shoppingcartcount.php',true);
-                    xmlhttp12.send();
-
-
-            }
+            
 
             function submitrequest(){
                 var clientname = document.getElementById('clientname').value;

@@ -265,27 +265,11 @@ $century = 860;
                     xmlhttp2.open('GET','account.php',true);
                     xmlhttp2.send();
 
-                cart();
 
             }
 
               // changes the title box with the hello welcome to Tiiva logout thingi
-            function cart(){
-              if(window.XMLHttpRequest){
-                    xmlhttp12 = new XMLHttpRequest();
-                }else{
-                    xmlhttp12 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp12.onreadystatechange = function(){
-                if (xmlhttp12.readyState == 4 && xmlhttp12.status == 200){
-                    document.getElementById('cartitems').innerHTML= xmlhttp12.responseText;
-
-                    }
-                    }
-                    xmlhttp12.open('GET','shoppingcartcount.php',true);
-                    xmlhttp12.send();
-
-            }
+            
 
             function findmatch(){
         		if(window.XMLHttpRequest){

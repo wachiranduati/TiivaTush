@@ -22,7 +22,10 @@ $century = 860;
         require('templates/header.php');
         ?>
                 <div class="container">
-             
+             <?php
+        require 'templates/pagetitle.php';
+        echo pageTitle('HOW TO - tIIVA');
+                ?>
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">

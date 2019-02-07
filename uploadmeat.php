@@ -53,10 +53,8 @@ if (isset($_POST['itname']) ||
     isset($name)||
     isset($name2)||
     isset($name3)||
-    isset($_POST['height'])||
-    isset($_POST['width'])||
+    isset($_POST['details'])||
     isset($_POST['sex'])||
-    isset($_POST['chest'])||
     isset($_POST['rating'])||
     isset($_POST['price'])
 
@@ -68,10 +66,8 @@ if (isset($_POST['itname']) ||
     //$file = $_POST['file'];
     //$file2 = $_POST['file2'];
     //$file3 = $_POST['file3'];
-    $height = $_POST['height'];
-    $width = $_POST['width'];
+    $details = $_POST['details'];
     $sex = $_POST['sex'];
-    $chest = $_POST['chest'];
     $rating = $_POST['rating'];
     $price = $_POST['price'];
     $label = $_POST['label'];
@@ -84,10 +80,8 @@ if (isset($_POST['itname']) ||
        !empty($name) &&
        !empty($name2) &&
        !empty($name3) &&
-       !empty($height) &&
-       !empty($width) &&
+       !empty($details) &&
        !empty($sex) &&
-       !empty($chest) &&
        !empty($label) &&
        !empty($rating) &&
        !empty($price)
@@ -176,7 +170,7 @@ if (isset($_POST['itname']) ||
                 $query = "INSERT INTO  `products`
                         VALUES (
                         '' ,  '".mysqli_real_escape_string($conn, $itname)."', '".mysqli_real_escape_string($conn, $specialkey)."',  '".mysqli_real_escape_string($conn, $maincategory)."',  '".mysqli_real_escape_string($conn, $subcategory)."',  '".mysqli_real_escape_string($conn, $imageup)."',  '".mysqli_real_escape_string($conn, $imageup2)."',  '".mysqli_real_escape_string($conn, $imageup3)."',
-                        '".mysqli_real_escape_string($conn, $price)."',  '1',  '0' , '".mysqli_real_escape_string($conn, $sizec)."' ,'".mysqli_real_escape_string($conn, $height)."' ,'".mysqli_real_escape_string($conn, $width)."', '".mysqli_real_escape_string($conn, $chest)."', '".mysqli_real_escape_string($conn, $sex)."', '".mysqli_real_escape_string($conn, $rating)."','".mysqli_real_escape_string($conn, $label)."',0,'$date','$timenow')";
+                        '".mysqli_real_escape_string($conn, $price)."',  '1',  '0' , '".mysqli_real_escape_string($conn, $sizec)."' ,'".mysqli_real_escape_string($conn, $details)."' , '".mysqli_real_escape_string($conn, $sex)."', '".mysqli_real_escape_string($conn, $rating)."','".mysqli_real_escape_string($conn, $label)."',0,'$date','$timenow')";
                 //mysqli_query($conn, $query);
                 if(mysqli_query($conn, $query)){
                     echo "<div class=\"row\">

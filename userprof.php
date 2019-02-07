@@ -475,23 +475,7 @@ if(userLoggedIn() != True){
 <?php require 'templates/footer.php';?>
 
         <script type="text/javascript">
-            function cart(){
-              if(window.XMLHttpRequest){
-                    xmlhttp = new XMLHttpRequest();
-                }else{
-                    xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp.onreadystatechange = function(){
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-                    document.getElementById('cartitems').innerHTML= xmlhttp.responseText;
-
-                    }
-                    }
-                    xmlhttp.open('GET','shoppingcartcount.php',true);
-                    xmlhttp.send();
-
-                boxed();
-            }
+            boxed();
 
             // changes the title box with the hello welcome to airmark logout thingi
             function boxed(){
@@ -509,7 +493,7 @@ if(userLoggedIn() != True){
                     xmlhttp2.open('GET','account.php',true);
                     xmlhttp2.send();
 
-                    purchasehist();
+                    // purchasehist();
 
             }
 
@@ -528,27 +512,11 @@ if(userLoggedIn() != True){
                     xmlhttp3.open('GET','purchasehist.php',true);
                     xmlhttp3.send();
 
-                shoppingcart();
 
 
             }
 
-             function shoppingcart(){
-                if(window.XMLHttpRequest){
-                    xmlhttp4 = new XMLHttpRequest();
-                }else{
-                    xmlhttp4 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp4.onreadystatechange = function(){
-                if (xmlhttp4.readyState == 4 && xmlhttp4.status == 200){
-                    document.getElementById('transit').innerHTML= xmlhttp4.responseText;
-
-                    }
-                    }
-                    xmlhttp4.open('GET','cartloopuser.php',true);
-                    xmlhttp4.send();
-
-            }
+             
 
             function requestitem(){
                 alert("show wishlist and links to the product page if still available");

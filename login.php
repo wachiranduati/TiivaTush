@@ -127,13 +127,12 @@ if(!empty($_SERVER['HTTP_REFERER'])){
                     }
                     xmlhttp.onreadystatechange = function(){
                         if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
-                            document.getElementById('alertbox').innerHTML = xmlhttp.responseText;
-                            casee = document.getElementById('casee').innerHTML;
-                            where = document.getElementById('where').innerHTML;
-                            if(casee == 1 && where != ''){
-                                //window.location = where;
+                            if(xmlhttp.responseText == 1){
                                 window.location = <?php echo "'$from'";?>;
+                            }else{
+                                document.getElementById('alertbox').innerHTML = xmlhttp.responseText;
                             }
+                            
                         }
                     }
                     xmlhttp.open('POST','login_parse.php',true);

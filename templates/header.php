@@ -259,7 +259,7 @@
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12" style="margin-top:10px; border-top:1px solid gainsboro;">
                     <div class="row" style="margin-top:10px;">
                         <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-4"><p class="text-uppercase text-center"><a href="index.php" title="Go back home"><span class="glyphicon glyphicon-home"><strong>Mtumba</strong></span></a></p></div>
-                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-4"><p class="text-uppercase text-center"><a href="shop.php" title="visit the main shop"><strong>Shop</strong></a></p></div>
+                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-4"><p class="text-uppercase text-center"><a href="index.php" title="visit the main shop"><strong>Shop</strong></a></p></div>
                         <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-4"><p class="text-uppercase text-center"><a href="blog.php"><strong>Blog</strong><span class="glyphicon glyphicon-leaf"></span></a></p></div>
                     </div>
                 </div>

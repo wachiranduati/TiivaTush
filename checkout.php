@@ -27,7 +27,7 @@ if(isset($_POST['useremail'])){
         //echo "It is set";
         //echo $useremail;
         if($useremail == 'a3f1abc0a7101ccf68bb31192780aa42@me.com'){
-            header('location:shop.php');
+            header('location:index.php');
         }
 
     }else {

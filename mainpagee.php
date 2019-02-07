@@ -70,7 +70,7 @@ $pagecount = $query_num_rows2 / $items;
 
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="Mens.php">
+                    <a href="index.php">
                         <img src="banners/mtumbanner.png" class="img-responsive"/>
                     </a>
                 </div>
@@ -112,7 +112,7 @@ echo "</ul>
 echo "
         <div class=\"row visible-lg visible-md\">
                 <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\" style=\"padding:0px;margin-top:1%;\">
-                    <a href=\"Mens.php\">
+                    <a href=\"merchantreg.php\">
                         <img src=\"banners/merchant.png\" class=\"img-responsive\"/>
                     </a>
                 </div>

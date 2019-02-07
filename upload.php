@@ -217,7 +217,7 @@ if(userLoggedIn() == True){
                                  <form role="form" id="file-form" action="uploadmeat.php" method="post" enctype="multipart/form-data">
                                      <div class="form-group">
                                           <label for="pwd"><span style="color:red">*</span>Item Name:</label>
-                                          <input type="text" class="form-control" maxlength="20" id="itname" name="itname" placeholder="Itemname+colour i.e Black dress">
+                                          <input type="text" class="form-control" maxlength="50" id="itname" name="itname" placeholder="Itemname+colour i.e Black dress">
                                         </div>
                                 <div class="form-group">
                                   <label for="sel1"><span style="color:red">*</span>Main Category (select one):</label>
@@ -390,21 +390,12 @@ if(userLoggedIn() == True){
 
                                          <div class="row">
                                              <br>
-                                        <div class="col-xs-4">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <label for="ex1" class="visible-lg visible-md"><span style="color:red">*</span>Length/height(Inch)</label>
                                         <label for="ex1" class="visible-sm visible-xs">Length(Inch)</label>
-                                          <input class="form-control" id="height" name="height" type="number" placeholder="length">
+                                          <textarea name="details" id="details" class="form-control" cols="30" rows="10" placeholder="Define the item in detail perse....item colour, size, dimensions, fabric material. You could also describe any faults that may be present in the item. This should be enough to describe to a buyer to reduce chances of returns" style="margin-bottom: 4%"></textarea>
                                         </div>
-                                        <div class="col-xs-4">
-                                          <label for="ex2" class="visible-lg visible-md"><span style="color:red">*</span>Width/Waist(Inch)</label>
-                                          <label for="ex2" class="visible-sm visible-xs"><span style="color:red">*</span>Waist(Inch)</label>
-                                          <input class="form-control" id="width" name="width" type="number" placeholder="width">
-                                        </div>
-                                        <div class="col-xs-4">
-                                          <label for="ex3" class="visible-lg visible-md"><span style="color:red">*</span>Bust/Chest(optional)</label>
-                                          <label for="ex3" class="visible-sm visible-xs">Chest(optnal)</label>
-                                        <input class="form-control" id="chest" name="chest" type="number" placeholder="bust">
-                                          </div>
+                                        
                                           </div>
                                           <div class="row">
                                               <div class="col-xs-12">
@@ -422,7 +413,7 @@ if(userLoggedIn() == True){
                                         </div>
                                         <div class="form-group">
                                           <label for="pwd"><span style="color:red">*</span>Item price:(Ksh)</label>
-                                          <input type="number" class="form-control" id="price" name="price" placeholder="Item price(Ksh)">
+                                          <input type="number" class="form-control" min="10" id="price" name="price" placeholder="Item price(Ksh)">
                                         </div>
 
                                          <div class="form-group">
@@ -440,24 +431,7 @@ if(userLoggedIn() == True){
 
                                       </form>
                                             <!-- Share or like us on social media -->
-                                            <div class="row">
-                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 social" style="margin-top:1%;"><h5 style="display:inline;font-family:kok;" class="text-capitalize">Share, like and chat us up on </h5>
-                                                    <a href="www.facebook.com/Tiiva"><span class="mdi mdi-facebook mdi-24px" style="color:blue;margin-right:1%;"></span></a>
-                                                    <a href="www.twitter.com/tiiva"><span class="mdi mdi-twitter mdi-24px" style="color:blue;margin-right:1%;"></span></a>
-                                                    <a href="www.googleplus.com/tiiva"><span class="mdi mdi-google-plus mdi-24px" style="color:red;margin-right:1%;"></span></a>
-                                                    <a href="www.instagram.com/tiiva"><span class="mdi mdi-instagram mdi-24px" style="color:black;margin-right:1%;"></span></a>
-                                                    <a href="www.youtube.com/tiiva"><span class="mdi mdi-youtube-play mdi-24px" style="color:red;margin-right:1%;"></span></a>
-
-                                                    <script>
-                                                        $(document).ready(function(){
-                                                            $("div>a>span").hover(function(){
-                                                                $(this).toggleClass("mdi-spin");
-                                                            });
-                                                        });
-                                                    </script>
-
-                                                </div>
-                                            </div>
+                                            
                                     </div>
 
 
@@ -482,86 +456,8 @@ if(userLoggedIn() == True){
                 </div>
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
             </div>
-
-            <!--Ends here -->
-            <div class="row" style="margin-top:20px;background-color:rgba(0,0,0,0.5);">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><h4>Service</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="Howto.php">Online help</a></li>
-                                        <li><a style="color:black;" href="contactus.php">Contact us</a></li>
-                                        <li><a style="color:black;" href="Howto.php">Order status</a></li>
-                                        <li><a style="color:black;" href="Howto.php">Change location</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">FAQS</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 visible-lg visible-md"><h4>Quick Shop</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="mainpage.php">Tshirts</a></li>
-                                        <li><a style="color:black;" href="Mens.php">Mens</a></li>
-                                        <li><a style="color:black;" href="women.php">Womens</a></li>
-                                        <li><a style="color:black;" href="shop.php">Gift Cards</a></li>
-                                        <li><a style="color:black;" href="shoes.php">Shoes</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><h4>Policies</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="Termsofuse.php">Terms of use</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Privacy policy</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Refund policy</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Billing System</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Ticke System</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 visible-lg visible-md"><h4>About shopper</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="aboutus.php">Company information</a></li>
-                                        <li><a style="color:black;" href="aboutus.php">Careers</a></li>
-                                        <li><a style="color:black;" href="aboutus.php">Store location</a></li>
-                                        <li><a style="color:black;" href="aboutus.php">Affiliate Program</a></li>
-                                        <li><a style="color:black;" href="aboutus.php">Copyright</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="text-center">About shopper</h4></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <form class="form-inline">
-                                        <div class="input-group" style="font-family:kok;">
-                                        <input type="email" class="form-control" placeholder="Email address" name="user's email">
-                                        <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default">Go</button>
-                                        </span>
-                                        </div>
-                                    </form>
-
-                                    <div class="row" style="margin-top:5px;">
-                                    <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-1 col-xs-9 col-xs-offset-1">
-                                        <p class="text-center"><em>Get the most recent updates from out site and be updated yourself</em></p>
-                                    </div>
-                                </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--container ends here-->
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p class="text-center text-capitalize">A WN creation Copyright &#169 Airmark Inc.</p></div>
-            </div>
-
-        </div>
+</div>
+<?php require 'templates/footer.php';?>
         <script type="text/javascript">
         function results(){
               if(window.XMLHttpRequest){
@@ -649,15 +545,13 @@ if(userLoggedIn() == True){
                 var file2 = document.getElementById("file2").value;
                 var file3 = document.getElementById("file3").value;
                 var sex = document.querySelector("input[name=sex]:checked").value;
-                var height = document.getElementById("height").value;
-                var width = document.getElementById("width").value;
-                var chest = document.getElementById("chest").value;
+                var details = document.getElementById("details").value;
                 var rating = document.getElementById("rating").value;
                 var price = document.getElementById("price").value;
 
-                var datastring = 'itname=' + itname + '&maincategory=' + maincategory + '&subcategory=' + subcategory + '&sel1=' + sel1 + '&label=' + label + '&file=' + file + '&file2=' + file2 + '&file3=' + file3 + '&sex=' + sex + '&height=' + height + '&width' + width + '&chest' + chest + '&rating' + rating + '&price' + price;
+                var datastring = 'itname=' + itname + '&maincategory=' + maincategory + '&subcategory=' + subcategory + '&sel1=' + sel1 + '&label=' + label + '&file=' + file + '&file2=' + file2 + '&file3=' + file3 + '&sex=' + sex + '&details=' + details + '&rating' + rating + '&price' + price;
 
-                if(itname == "" || maincategory == "" || subcategory == "" || sel1 == "" || label == "" || file == "" || file2 == "" || file3 == "" || sex == "" || height == "" || width == "" || chest == "" || rating == "" || price == ""){
+                if(itname == "" || maincategory == "" || subcategory == "" || sel1 == "" || label == "" || file == "" || file2 == "" || file3 == "" || sex == "" || details == "" || rating == "" || price == ""){
                     alert("Please Fill All Fields");
                     //alert(sex);
                     // i can change the inner html of a div element later for this

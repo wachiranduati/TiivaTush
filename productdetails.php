@@ -3,7 +3,7 @@ ob_start();
 session_start();
 require 'connect.php';
 require 'core.inc.php';
-// require 'utils/userutils.php';
+require 'looptemplater.php';
 
 
 if(isset($_SESSION['$user_id'])){
@@ -45,8 +45,6 @@ $query_run = mysqli_query($conn, $query);
 
 $query_row = mysqli_fetch_assoc($query_run);
 //echo $query_row[imageone];
-
-$description = "This is some shit placed here wooo i really hope it daent show up";
 
 
 if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
@@ -196,7 +194,7 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
 
 
                             <div id="modalimagecontainer">
-                                <img id="myImg" src="mtumbauploads/<?php echo $query_row['imageone'];?>" alt="<?php echo $query_row['itemtitle']; echo $description;?>" class="modpic img-responsive">
+                                <img id="myImg" src="mtumbauploads/<?php echo $query_row['imageone'];?>" alt="<?php echo $query_row['itemtitle']; echo $query_row['details'];?>" class="modpic img-responsive">
                                 <span class="glass glyphicon glyphicon-search"></span>
 
                                 <!-- The Modal -->
@@ -241,7 +239,7 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:10%;">
 
                                             <div id="modalimagecontainer2">
-                                <img id="myImg2" src="mtumbauploads/<?php echo $query_row['imagetwo'];?>" alt="<?php echo $query_row['itemtitle']; echo $description;?>" class="modpic img-responsive">
+                                <img id="myImg2" src="mtumbauploads/<?php echo $query_row['imagetwo'];?>" alt="<?php echo $query_row['itemtitle']; ?>" class="modpic img-responsive">
                                 <span class="glass glyphicon glyphicon-search"></span>
 
                                 <!-- The Modal -->
@@ -286,7 +284,7 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                                             <div id="modalimagecontainer3">
-                                <img id="myImg3" src="mtumbauploads/<?php echo $query_row['imagethree'];?>" alt="<?php echo $query_row['itemtitle']; echo $description;?>" class="modpic img-responsive">
+                                <img id="myImg3" src="mtumbauploads/<?php echo $query_row['imagethree'];?>" alt="<?php echo $query_row['itemtitle']; ?>" class="modpic img-responsive">
                                 <span class="glass glyphicon glyphicon-search"></span>
 
                                 <!-- The Modal -->
@@ -458,7 +456,7 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5;border-bottom:1px solid gainsboro;color:black;"><p><?php echo $description;?></p></div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5;border-bottom:1px solid gainsboro;color:black;"><p><?php echo $query_row['details'];?></p></div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="color:black;">
@@ -479,22 +477,22 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                                                             if($query_row['buyer'] == $_SESSION['$user_id']){
                                                                 // me show added to cart
                                                                 echo "
-        <a class=\"btn btn-block btn-success btn-lg btn-block disabled\">Added to Your Cart</a>
+        <a class=\"btn btn-block btn-success btn-lg btn-block disabled\"><span class=\"mdi mdi-cart-plus\"></span> Added to Your Cart</a>
                                                             ";
                                                             }else{
                                                                 // show normal cart
                                                                 echo "
-        <a class=\"btn btn-block btn-primary btn-lg btn-block\">Currently unavailable</a>
+        <a class=\"btn btn-block btn-primary btn-lg btn-block\"><span class=\"mdi mdi-cart-off\"></span> Currently unavailable</a>
                                                             ";
                                                             }
                                                     }else{
                                                             echo "
-        <a class=\"btn btn-block btn-primary btn-lg btn-block\" id=\"addtocartbutton\">Buy Now</a>
+        <a class=\"btn btn-block btn-primary btn-lg btn-block\" id=\"addtocartbutton\"><span class=\"mdi mdi-cart-plus\"></span> Buy Now</a>
                                                             ";
                                                     }
                                                 }else{
                                                     // deactivated button
-                                                    echo "<a class=\"btn btn-block btn-info btn-lg btn-block\">Login to buy this</a>";
+                                                    echo "<a class=\"btn btn-block btn-info btn-lg btn-block\"><span class=\"mdi mdi-cart-plus\"></span> Login to buy this</a>";
                                                 }
                                                 
                                                 ?>
@@ -643,50 +641,8 @@ $query_run = mysqli_query($conn, $query);
 $count = 1;
 while($query_row = mysqli_fetch_assoc($query_run)){
     $price = number_format($query_row['price']);
-
-    echo "
-   <div class=\"col-lg-2 col-md-2 col-sm-6 col-xs-6\" id=\"box1\">
-   <div class=\"row\" style=\"padding:4px;\">
-    <a href=\"productdetails.php?id=$query_row[id]\" target=\"_blank\"><div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12 productimage\" style=\"background-image:url('mtumbauploads/compresseduploads/$query_row[imageone]'); height:140px;width:100%;background-size:80%;\">
-       
-    </div>
-    </a>
-    </hr>
-    <p class=\"text-capitalize\" style=\"margin:0px;padding:0px;\">$query_row[label]</p>
-    <hr style=\"margin:0px;padding:0px;\">
-    <h1 class=\"text-center text-capitalize\" style=\"font-family:kok;padding:0px;margin:0px;color:#606060;font-size:100%;\"><strong>$query_row[itemtitle]</strong></h1>
-    <h2 class=\"text-left\" style=\"padding:0px;margin:0px;color:#ffa427;font-size:100%;\">Ksh $price</h2>
-
-    <!--<div class=\"row\">
-        <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
-            <p class=\"text-center\">$price Ksh</p>
-        </div>
-    </div>
-    <div class=\"row\">
-        <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
-            <p class=\"text-center\" style=\"font-family:kok;\">$query_row[itemtitle]</p>
-        </div>
-    </div>-->
-   <!-- <div class=\"row visible-lg visible-md\">
-        <div class=\"col-lg-1 col-md-1 col-sm-1 col-xs-1\"></div>
-        <div class=\"col-lg-10 col-md-10 col-sm-10 col-xs-10\">
-            <a href=\"productdetails.php?id=$query_row[id]\" class=\"btn btn-block btn-primary\" data-name=\"$query_row[itemtitle]\" data-price=\"$price\" target=\"_blank\">Add to Cart</a>
-        </div>
-        <div class=\"col-lg-1 col-md-1 col-sm-1 col-xs-1\"></div>
-    </div>
-
-    <div class=\"row visible-sm visible-xs\">
-        <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
-        <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-6\">
-            <a href=\"productdetails.php?id=$id\" class=\"btn btn-sm btn-block btn-primary\" data-name=\"$query_row[itemtitle]\" data-price=\"$price\" target=\"_blank\">Add to Cart</a>
-        </div>
-        <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
-    </div>-->
-
-
-   </div>
-   </div>
-   ";
+    echo returnProperItemsMainpagees($query_row['id'], $query_row['imageone'], $query_row['label'], $query_row['itemtitle'], $price, $query_row['size']);
+    
     //$count ++;
     //that code up there just looped the same item 6 times to fill in the blank slots
 }
@@ -704,49 +660,7 @@ $query_run = mysqli_query($conn, $query);
        // echo $query_row['webid'];
        $price = number_format($query_row['price']);
 
-       echo "
-     <div class=\"col-lg-2 col-md-2 col-sm-6 col-xs-6\" id=\"box1\">
-     <div class=\"row\" style=\"padding:4px;\">
-       <a href=\"productdetails.php?id=$query_row[id]\" target=\"_blank\"><div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12 productimage\" style=\"background-image:url('mtumbauploads/compresseduploads/$query_row[imageone]'); height:140px;width:100%;background-size:80%;\">
-          
-       </div>
-       </a>
-       </hr>
-       <p class=\"text-capitalize\" style=\"margin:0px;padding:0px;\">$query_row[label]</p>
-       <hr style=\"margin:0px;padding:0px;\">
-       <h1 class=\"text-center text-capitalize\" style=\"font-family:kok;padding:0px;margin:0px;color:#606060;font-size:100%;\"><strong>$query_row[itemtitle]</strong></h1>
-       <h2 class=\"text-left\" style=\"padding:0px;margin:0px;color:#ffa427;font-size:100%;\">Ksh $price</h2>
-
-       <!--<div class=\"row\">
-           <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
-               <p class=\"text-center\">$price Ksh</p>
-           </div>
-       </div>
-       <div class=\"row\">
-           <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
-               <p class=\"text-center\" style=\"font-family:kok;\">$query_row[itemtitle]</p>
-           </div>
-       </div>-->
-      <!-- <div class=\"row visible-lg visible-md\">
-           <div class=\"col-lg-1 col-md-1 col-sm-1 col-xs-1\"></div>
-           <div class=\"col-lg-10 col-md-10 col-sm-10 col-xs-10\">
-               <a href=\"productdetails.php?id=$query_row[id]\" class=\"btn btn-block btn-primary\" data-name=\"$query_row[itemtitle]\" data-price=\"$price\" target=\"_blank\">Add to Cart</a>
-           </div>
-           <div class=\"col-lg-1 col-md-1 col-sm-1 col-xs-1\"></div>
-       </div>
-
-       <div class=\"row visible-sm visible-xs\">
-           <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
-           <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-6\">
-               <a href=\"productdetails.php?id=$id\" class=\"btn btn-sm btn-block btn-primary\" data-name=\"$query_row[itemtitle]\" data-price=\"$price\" target=\"_blank\">Add to Cart</a>
-           </div>
-           <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3\"></div>
-       </div>-->
-
-
-     </div>
-     </div>
-     ";
+       echo returnProperItemsMainpagees($query_row['id'], $query_row['imageone'], $query_row['label'], $query_row['itemtitle'], $price, $query_row['size']);
 }
 }
 
@@ -790,23 +704,7 @@ echo "
                     });
                 }
             // show the count on your cart
-            function cart(){
-              if(window.XMLHttpRequest){
-                    xmlhttp12 = new XMLHttpRequest();
-                }else{
-                    xmlhttp12 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp12.onreadystatechange = function(){
-                if (xmlhttp12.readyState == 4 && xmlhttp12.status == 200){
-                    document.getElementById('cartitems').innerHTML= xmlhttp12.responseText;
-
-                    }
-                    }
-                    xmlhttp12.open('GET','shoppingcartcount.php',true);
-                    xmlhttp12.send();
-
-
-            }
+            
            
            // 
             function wishlistbutton(){

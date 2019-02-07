@@ -47,7 +47,10 @@ $century = 860;//Mtush
         require('templates/header.php');
         ?>
         <div class="container">
-
+<?php
+        require 'templates/pagetitle.php';
+        echo pageTitle('MISC');
+                ?>
             <div class="row visible-sm visible-xs">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
                             <div class="dropdown">
@@ -420,8 +423,8 @@ $century = 860;//Mtush
             </div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="blog.php">
-                        <img src="banners/blogs.png" class="img-responsive bannerlg"/>
+                    <a href="index.php">
+                        <img src="banners/outdoors.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
             </div>
@@ -619,7 +622,7 @@ $century = 860;//Mtush
             </div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="shop.php">
+                    <a href="index.php">
                         <img src="banners/handcrafted.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
@@ -1114,28 +1117,11 @@ xmlhttp11.onreadystatechange = function(){
         xmlhttp11.open('GET','misclabelsloop.php',true);
         xmlhttp11.send();
 $('.loaderImage').fadeOut(3000);
-           cart();
 
 }
 
 // changes the title box with the hello welcome to airmark logout thingi
-function cart(){
-  if(window.XMLHttpRequest){
-        xmlhttp12 = new XMLHttpRequest();
-    }else{
-        xmlhttp12 = new ActiveXObject('Microsoft.XMLHTTP');
-    }
-xmlhttp12.onreadystatechange = function(){
-    if (xmlhttp12.readyState == 4 && xmlhttp12.status == 200){
-        document.getElementById('cartitems').innerHTML= xmlhttp12.responseText;
 
-        }
-        }
-        xmlhttp12.open('GET','shoppingcartcount.php',true);
-        xmlhttp12.send();
-
-
-}
 
 function loadmodalcart(){
   if(window.XMLHttpRequest){

@@ -60,13 +60,13 @@ $century = 860;
                                         </optgroup>
                                       </select>
                         <label for="email">Email:</label>
-                        <input type="email" title="<h5>Reason for Contacting us</h5>Please select one of the reasons below for contacting us" id="email" maxlength="100" placeholder="Email Address" class="form-control" name="email" style="background-color:rgba(220, 220, 220, 0.33);border:none;"/>
+                        <input required type="email" title="<h5>Reason for Contacting us</h5>Please select one of the reasons below for contacting us" id="email" maxlength="100" placeholder="Email Address" class="form-control" name="email" style="background-color:rgba(220, 220, 220, 0.33);border:none;"/>
                         <label for="phonenumber">Phonenumber:</label>
-                        <input type="tel" title="<h5>Your Email Address</h5>Please provide us with your email address. We may need it to contact you later" id="phonenumber" maxlength="20" placeholder="Your Phone number" class="form-control" name="phonenumber" style="background-color:rgba(220, 220, 220, 0.33);border:none;"/>
+                        <input required type="tel" title="<h5>Your Email Address</h5>Please provide us with your email address. We may need it to contact you later" id="phonenumber" maxlength="20" placeholder="Your Phone number" class="form-control" name="phonenumber" style="background-color:rgba(220, 220, 220, 0.33);border:none;"/>
                         <label for="name">Name:</label>
-                        <input type="text" title="<h5>Your Name</h5>Please provide us with your full Name" id="name" maxlength="100" placeholder="Your Name" class="form-control" name="name" style="background-color:rgba(220, 220, 220, 0.33);border:none;"/>
+                        <input required type="text" title="<h5>Your Name</h5>Please provide us with your full Name" id="name" maxlength="100" placeholder="Your Name" class="form-control" name="name" style="background-color:rgba(220, 220, 220, 0.33);border:none;"/>
                         <label for="details">Message:</label>
-                        <textarea placeholder="Your message" title="<h5>Message Input Field</h5>Please provide your message in the input box below in detail" id="details" maxlength="1000" class="form-control" rows="10" name="details" style="background-color:rgba(220, 220, 220, 0.33);border:none;"></textarea><br>
+                        <textarea required placeholder="Your message" title="<h5>Message Input Field</h5>Please provide your message in the input box below in detail" id="details" maxlength="1000" class="form-control" rows="10" name="details" style="background-color:rgba(220, 220, 220, 0.33);border:none;"></textarea><br>
                         <input type="button" onclick="showself();" id="sendbutton" value="Send Message" class="btn btn-primary btn-block"/>
                     </form>
                 </div>
@@ -95,9 +95,8 @@ $century = 860;
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <pre class="pre-scrollable">CONTACT US
                                   Tiiva Inc.
-                                  125 KIRIAINI
-                                  TEL +254705780775
-                                  EMAIL info@tiiva.com
+                                  Tel: +254705780775
+                                  Email: wachiranduati@gmail.com
                           </pre>
 
                         </div>
@@ -156,21 +155,15 @@ $century = 860;
                 var sendbutton = document.getElementById('sendbutton');
 
                 if(subject != ''){
-                    //continue
                     if(phonenumber != ''){
-                        //continue
                         if(name != ''){
                             if(details != ''){
-                                //continue
                                 if(email == ''){
                                     var emailcontents = '';
                                 }else{
                                     var emailcontents = email;
                                 }
 
-//                                var formvalues = "Subject="+subject+"&email="+emailcontents+"&phonenumber="+phonenumber+"&name="+name+"&details="+details;
-//                                //alert(formvalues);
-                               // sendmessage(formvalues);
                                 if(XMLHttpRequest){
                                     xmlhttp = new XMLHttpRequest();
                                 }else{

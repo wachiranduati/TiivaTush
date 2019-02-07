@@ -48,7 +48,10 @@ $century = 860;//Mtush
         require('templates/header.php');
         ?>
  <div class="container">
-
+            <?php
+        require 'templates/pagetitle.php';
+        echo pageTitle('Sportswear');
+                ?>
             <div class="row visible-sm visible-xs">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
                             <div class="dropdown">
@@ -153,7 +156,7 @@ $century = 860;//Mtush
 
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="Mens.php">
+                    <a href="index.php">
                         <img src="banners/different.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
@@ -243,7 +246,7 @@ $century = 860;//Mtush
             </div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="Merchantreg.html">
+                    <a href="merchantreg.php">
                         <img src="banners/merchant.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
@@ -336,8 +339,8 @@ $century = 860;//Mtush
             </div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="blog.php">
-                        <img src="banners/blogs.png" class="img-responsive bannerlg"/>
+                    <a href="index.php">
+                        <img src="banners/outdoors.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
             </div>
@@ -535,7 +538,7 @@ $century = 860;//Mtush
             </div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="Mens.php">
+                    <a href="sportswear.php">
                         <img src="banners/outdoors.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
@@ -627,7 +630,7 @@ $century = 860;//Mtush
             </div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="shop.php">
+                    <a href="index.php">
                         <img src="banners/handcrafted.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
@@ -813,7 +816,7 @@ $century = 860;//Mtush
             </div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="Mens.php">
+                    <a href="index.php">
                         <img src="banners/different.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
@@ -1003,7 +1006,7 @@ $century = 860;//Mtush
             </div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="Mens.php">
+                    <a href="index.php">
                         <img src="banners/different.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
@@ -1268,27 +1271,10 @@ function carousel() {
                     xmlhttp12.open('GET','sportswearlabelsloop.php',true);
                     xmlhttp12.send();
                $('.loaderImage').fadeOut(3000);
-                       cart();
 
             }
             // changes the title box with the hello welcome to airmark logout thingi
-            function cart(){
-              if(window.XMLHttpRequest){
-                    xmlhttp13 = new XMLHttpRequest();
-                }else{
-                    xmlhttp13 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp13.onreadystatechange = function(){
-                if (xmlhttp13.readyState == 4 && xmlhttp13.status == 200){
-                    document.getElementById('cartitems').innerHTML= xmlhttp13.responseText;
-
-                    }
-                    }
-                    xmlhttp13.open('GET','shoppingcartcount.php',true);
-                    xmlhttp13.send();
-
-
-            }
+            
 
             function loadmodalcart(){
               if(window.XMLHttpRequest){

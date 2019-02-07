@@ -90,7 +90,7 @@
                                             <p>This is the fun part...<br>You have the previlege to do all your shopping under one roof...<br><em>I know.. i know.. the line is cliche</em><br>gimme a sec...<br><br>Here at Tiiva we have 3 different ecommerce sites setup into one<br></p>
                                                 <ul>
                                                 <li><a href="index.php">The shack</a> - Here you can buy mtumba</li>
-                                                <li><a href="shop.php">The shop</a> - This resemebles any other ecommerce site</li>
+                                                <li><a href="index.php">The shop</a> - This resemebles any other ecommerce site</li>
                                                 <li><a href="homepage.php">The Onetime</a> -  This is the auction part</li>
                                                 </ul>
                                                 <p><br>you can click any of the links above to visit the categories
@@ -162,7 +162,7 @@
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:1%;padding:1%;">
                                                 <p class="text-center" style="border:1px solid gainsboro;border-top:none;border-bottom:none;"> The <a href="women.php" title="ladies shopping">ladies</a><img src="icons/womansicon.png" class="img-responsive" style="height:50px;display:inline"/> to The <a href="Mens.php" title="Mens shopping">broads</a><img src="icons/mensicon.png" class="img-responsive" style="height:50px;display:inline;"/></p>
                                                 <p class="text-center" style="border:1px solid gainsboro;border-top:none;padding:1%;border-bottom:none;"><em>"We got you sorted...."</em></p>
-                                                <p>We felt the need to build different sections and so we came up with ...</p><ul><li><a href="shop.php">The shop</a> - Resembles any other ecommerce site</li><li><a href="index.php">The shack</a> - this primary deals in mtumba</li></ul><br><p class="text-capitalize text-center">all under one roof</p>
+                                                <p>We felt the need to build different sections and so we came up with ...</p><ul><li><a href="index.php">The shop</a> - Resembles any other ecommerce site</li><li><a href="index.php">The shack</a> - this primary deals in mtumba</li></ul><br><p class="text-capitalize text-center">all under one roof</p>
                                             <h3 class="text-uppercase text-center" style="border-top:1px solid gainsboro;padding-top:2%;">Sell</h3>
                                             <p>All the items we showcase are uploaded by our users and as such if you wish to partner with us get intouch with us here 
                                                 <a href="contactus.php" title="contact us"><img src="icons/customercare.png" class="img-responsive" style="height:90px;margin-left:35%;"/></a>

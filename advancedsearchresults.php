@@ -42,7 +42,7 @@ $century = 860;//Mtush
          $dbs = 'brandyproducts';
          $title = 'Tiiva Shop';
          $banner = 'banners/tiivashop.png';
-         $link = 'shop.php';
+         $link = 'index.php';
          $banner1 = 'banners/mainpage/shopbannerslide1.jpg';
          $banner1text = '<h3>Sports &amp; the Outdoors</h3><p>#Tiiva #Shop We\'re Tiiva, we got you sorted</p>';
          $banner2 = 'banners/mainpage/shopbannerslide2.jpg';
@@ -57,7 +57,7 @@ $century = 860;//Mtush
      $dbs = 'brandyproducts';
      $title = '';
      $banner = 'banners/tiivashop.png';
-     $link = 'shop.php';
+     $link = 'index.php';
      $banner1 = 'banners/mainpage/desert.png';
      $banner1text = '<h3>Dressed for any occasion</h3<p>#Tiiva #Mtumba The open air market is now open and live on Tiiva</p>';
      $banner2 = 'banners/mainpage/grass.png';
@@ -104,7 +104,10 @@ $pagecount = $query_num_rows2 / $items;
         require('templates/header.php');
         ?>
 <div class="container-fluid">
-
+<?php
+        require 'templates/pagetitle.php';
+        echo pageTitle('Advanced search results');
+                ?>
 
             <div class="row visible-sm visible-xs" style="margin-top:5px;">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border-bottom:2px solid orange;">

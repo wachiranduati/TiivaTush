@@ -4,6 +4,9 @@ session_start();
 require 'connect.php';
 require 'utils/displayutils.php';
 $now = Date("Y-m-d H:i:s");
+if( isset($_SESSION['$user_id'])){
+    header('Location:index.php');
+}
 ?>
 <!DOCTYPE html>
 <html>
