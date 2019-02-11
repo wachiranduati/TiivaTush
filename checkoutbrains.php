@@ -86,10 +86,30 @@ if(isset($_POST['username']) ||
 
                         if($query_run = mysqli_query($conn, $query)){
                             
-                            $querycart = "INSERT INTO  `checkoutcarts` (`cartid` ,`customer_id` ,`cartname` ,`cartcontents`,`itemprice` ,`count` ,`carttotal` ,`paymentverification` ,`date`,`time`,`status`,`updated`,`pickupstat`)VALUES (NULL ,  '$userid','$cartname','$cartcontents','$itemprice','$itemcount','$carttotal','$transcationinputid','$today','$time','SOLD','0','INCOMPLETE')";
+                            $querycart = "INSERT INTO  `checkoutcarts` (`cartid` ,`customer_id` ,`cartname` ,`cartcontents`,`itemprice` ,`count` ,`carttotal` ,`paymentverification` ,`date`,`time`,`status`,`updated`,`pickupstat`, `clear`)VALUES (NULL ,  '$userid','$cartname','$cartcontents','$itemprice','$itemcount','$carttotal','$transcationinputid','$today','$time','SOLD','0','INCOMPLETE', '0')";
 
                             if($query_runcart = mysqli_query($conn, $querycart)){
-                                echo 1;
+                                // check the cartactivity field to pause countdown
+                                $query_up_cart_check = "UPDATE `cartactivity` SET `checked` = 1 WHERE `userid` = $userid AND `state` = 'cart'";
+                                if($query_upc_run = mysqli_query($conn, $query_up_cart_check)){
+                                    // update sold to 1 for all the items
+                                    $query_sold = "UPDATE `products` SET `sold` = '1' WHERE `buyer` = $userid AND `sold` = 0 AND `availability` = 0";
+                                    if($query_sold_run = mysqli_query($conn, $query_sold)){
+                                        echo 1;
+                                    }else{
+                                        echo "<div class=\"alert alert-danger\">
+                                            <a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a>
+                                            <strong>Error</strong>
+                                            <span>Something went wrong</span>
+                                        </div>";
+                                    }
+                                }else{
+                                    echo "<div class=\"alert alert-danger\">
+                                            <a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a>
+                                            <strong>Error</strong>
+                                            <span>Something went wrong</span>
+                                        </div>";
+                                }
                             // echo "<div class=\"alert alert-success\">
                             //         <a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a>
                             //         <strong>Success!!</strong>

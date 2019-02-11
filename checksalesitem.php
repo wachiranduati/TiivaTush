@@ -11,7 +11,7 @@ if(isset($_POST['item_id'])){
     $item_id = $_POST['item_id'];
     //echo $item_id;
     if($item_id != ''){
-    $query =  "SELECT * FROM `pickupds` WHERE `cart` LIKE '%".mysqli_real_escape_string($conn, $item_id)."%' AND `seller`='$tempme' AND `sign`='0' AND `paymentmode`='' AND `idnumber`='0' AND `name`=''";
+    $query =  "SELECT * FROM `pickupds` WHERE `cart` LIKE '%".mysqli_real_escape_string($conn, $item_id)."%' AND `sign`='0' AND `paymentmode`='' AND `idnumber`='0' AND `name`=''";
     $query_run = mysqli_query($conn, $query);
     $count = 1;
     echo "

@@ -4,13 +4,13 @@ session_start();
 require 'connect.php';
 //TODO filter the user when pass button is clicked ot check whether the agent actually has the particular items in hand
 
-completecartatdestination();
+completecartatdestination($conn);
 // if(isset($_POST['completecartatdestination'])){
 //   completecartatdestination();
 // }else{
 //   die("Error");
 // }
-function completecartatdestination(){
+function completecartatdestination($conn){
   //the script below checks to confirm that a complete cart is at the destination centre
   //loop throught pickupds
   $queryupdatetransitdbs = "SELECT * FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE' AND `updated`='1'";
@@ -100,15 +100,17 @@ function completecartatdestination(){
           $position = round($count - 1);
           $currenthandler = $handlerarray[$position];
 
-          if($itemlocfinalstr != $finalcenterstr){
-            //change value of item value = false
-              $itemdelivered = false;
-              // echo $itemlocfinalstr.'<br>';
-          }
+          // if($itemlocfinalstr != $finalcenterstr){
+          //   //change value of item value = false
+          //     $itemdelivered = True;
+          //     //TODO CHANGED THIS TO TRUE.....REASON THIS WILL ONLY SHOW FOR ITEMS THAT ARE AT THE FINAL LOCATION
+          //     // $itemdelivered = false;
+          //     // echo $itemlocfinalstr.'<br>';
+          // }
 
 
         }
-        if($itemdelivered == true){
+        // if($itemdelivered == true){
           // echo "cart number $cartnametdbs at $finalcenterstr centre is complete. Please Ship it as soonest possible deadline set for $cartdeadline";
 
           echo "
@@ -124,10 +126,10 @@ function completecartatdestination(){
             </tr>
           ";
 
-        }else{
-          //nothing
-          echo "no cart is complete";
-        }
+        // }else{
+        //   //nothing
+        //   echo "no cart is complete";
+        // }
     }else{
       // cart is not complete
     }
@@ -261,7 +263,7 @@ for($trdbs = 0; $trdbs < count($transitdbsarray); $trdbs++){
 
           //check whether the item is in the final center...if so make it available for shipping
 
-          if($itemlocfinalstr == $finalcenterstr){
+          // if($itemlocfinalstr == $finalcenterstr){
             //package ready for delivery
             // echo $theid.'<br>';
             echo "
@@ -289,9 +291,9 @@ for($trdbs = 0; $trdbs < count($transitdbsarray); $trdbs++){
               </tr>
             ";
 
-          }else{
-            // package not ready for delivery
-          }
+          // }else{
+          //   // package not ready for delivery
+          // }
 
         }
       }else{

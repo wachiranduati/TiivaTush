@@ -1,3 +1,4 @@
+<?php
 ob_start();
 session_start();
 require 'connect.php';
@@ -7,7 +8,7 @@ if(isset($_SESSION['$staff'])){
   // continue
   $loggedstaff = $_SESSION['$staff'];
   $querystaff = "SELECT * FROM `staff` WHERE `id`='$loggedstaff'";
-  $querystaff_run = mysqli_query($querystaff);
+  $querystaff_run = mysqli_query($conn, $querystaff);
   if($querystaff_row = mysqli_fetch_assoc($querystaff_run)){
     $staffnick = $querystaff_row['tiivanick'];
   }
@@ -22,13 +23,13 @@ if(isset($_SESSION['$staff'])){
     // query only the items in transit
     // echo back item 230 of cart 2k23ooi3 bound for tharakanithi county currently handled by mukurino kigosho
     $querytrns = "SELECT * FROM `pickupds` WHERE `cart`='$cart' AND `item`='$product'";
-    $querytrns_run = mysqli_query($querytrns);
+    $querytrns_run = mysqli_query($conn, $querytrns);
     // return the id then query the current items in transit
     if($querytrns_row = mysqli_fetch_assoc($querytrns_run)){
       $pickupid = $querytrns_row['id'];
       // now query the transitdbs
       $querytrnsititem = "SELECT * FROM `transitdbs` WHERE `itemid`='$pickupid'";
-      $querytrnsititem_run = mysqli_query($querytrnsititem);
+      $querytrnsititem_run = mysqli_query($conn, $querytrnsititem);
       while ($querytrnsitms_row = mysqli_fetch_assoc($querytrnsititem_run)) {
         $itemid = $querytrnsitms_row['itemid'];
         //get current handler, current location, current center, exchange time, destination, deadline, shipping type

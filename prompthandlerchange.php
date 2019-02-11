@@ -97,7 +97,7 @@ function createprompt(){
 // look for my prompts
 //TODO TO HELP THE CURRENT HANDLER OBSERVE PROMPTS...SHOW PROMPTS HE HAS SENT OUT TOO
 //TODO DELETE A ROW AFTER THE SIGN IS 1 AFTER VERRY WELL UPDATING THE INFO IN THE ACTUAL TRANSIT DATA...IT SHOULD RUN AS MANY TIMES AS possible
-function showmyprompts(){
+function showmyprompts($conn){
   // script below is going to return a list with live prompts to the current user
   // so i basically want to pick up these items
   // this are prompts sent out to me
@@ -173,7 +173,7 @@ function showmyprompts(){
 
 }
 
-function showmysentprompts(){
+function showmysentprompts($conn){
   //script shows prompts sent out by me
   $loggedstaff = $_SESSION['$staff'];
   $querystaff = "SELECT * FROM `staff` WHERE `id`='$loggedstaff'";
@@ -248,7 +248,7 @@ function showmysentprompts(){
 
 //TODO DELETE PROMPT TO HANDLER - TO PICK UP
 // TODO DELETE PROMPT BY HANDLER = TO SEND OUT
-function confirmhandlerchange(){
+function confirmhandlerchange($conn){
   // script below will accept a prompt to pick up an item
   //first get the staffs name
   // then check his name against the particular item
@@ -367,22 +367,22 @@ function confirmhandlerchange(){
 if(isset($_POST['cr_ts'])){
   createprompt();
 }elseif(isset($_POST['myprompts'])){
-  showmyprompts();
+  showmyprompts($conn);
 }elseif(isset($_POST['sentoutprompts'])){
-  showmysentprompts();
+  showmysentprompts($conn);
 }elseif(isset($_POST['accepthandover'])){
-  confirmhandlerchange();
+  confirmhandlerchange($conn);
 }elseif(isset($_POST['declinehandover'])){
-  declinehandlerchange();
+  declinehandlerchange($conn);
 }elseif(isset($_POST['deleteprompt'])){
-  deleteprompt();
+  deleteprompt($conn);
 }else{
   die('Error235');
 }
 
 //SAVE THIS LATER*******************************88
 
-function declinehandlerchange(){
+function declinehandlerchange($conn){
   //script below will decline a prompt
   //decline by new handler...response to a prompt sent to him/her
   if(isset($_POST['itemid'])){
@@ -427,7 +427,7 @@ function declinehandlerchange(){
   }
 }
 
-function deleteprompt(){
+function deleteprompt($conn){
   //script below will decline a prompt
   //decline by new handler...response to a prompt sent to him/her
   if(isset($_POST['itemid'])){

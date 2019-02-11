@@ -8,6 +8,7 @@ $tempme = ceil($user + 21);
 
 $query = "SELECT * FROM `pickupds` WHERE `seller`='$tempme' AND `sign`='1' AND `idnumber`!='0' AND `name`!=''";
 $query_run = mysqli_query($conn, $query);
+$queur_num = mysqli_num_rows($query_run);
 $count = 1;
 echo "
 <div class=\"table-responsive table-hover\">
@@ -57,7 +58,7 @@ while($queryitemrow = mysqli_fetch_assoc($queryitemsrun)){
     <td><a href=\"$link$product\" target=\"_blank\" title=\"view item\"><img src=\"$imageone\" style=\"max-height:40px;\"/></a></td>
     <td>$itemtitle</td>
     <td>Ksh $price</td>
-    <td>$agent Null</td>
+    <td>$agent</td>
 
   </tr>
 

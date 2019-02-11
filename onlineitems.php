@@ -18,19 +18,19 @@ if(isset($_SESSION['$staff'])){
       $state = $_POST['online'];
       if($state == 'lkdsf0'){
         //call function shop
-        displayshopproducts();
+        displayshopproducts($conn);
       }elseif($state == 'oierj'){
         // call function shack
-        display_shackprods();
+        display_shackprods($conn);
       }elseif($state == 'kolwe9'){
         // call function search on shop
         searchprodsshop();
       }elseif($state == 'mksiuew'){
         // call function search on shack
-        searchshackshop();
+        searchshackshop($conn);
       }elseif($state == 'ke9l23k'){
         //call uploads time for shack
-        specialuploadsshack();
+        specialuploadsshack($conn);
       }elseif($state == '8djskl'){
         // call uploads time for shop
         specialuploadsshop();
@@ -47,7 +47,7 @@ if(isset($_SESSION['$staff'])){
   die("I gatch you");
 }
 
-function specialuploadsshack(){
+function specialuploadsshack($conn){
   //the script below will show all uploads with their time stamps and date stamps alongside
   //it will also give the user ability to chose category he/she wants and date when teh item appeared
   //it should also work with both databases ie shack
@@ -139,13 +139,13 @@ function specialuploadsshack(){
                           $id = $querycategorydt_row['id'];
                           $imageone = $querycategorydt_row['imageone'];
                           $itemtitle = $querycategorydt_row['itemtitle'];
-                          $Description = $querycategorydt_row['Description'];
+                          $Description = $querycategorydt_row['details'];
                           $sellerid = $querycategorydt_row['sellerid'];
                           $category = $querycategorydt_row['category'];
                           $subcategory = $querycategorydt_row['subcategory'];
                           $price = number_format($querycategorydt_row['price']);
                           $sold = $querycategorydt_row['sold'];
-                          $storename = $querycategorydt_row['storename'];
+                          $storename = $querycategorydt_row['sellerid'];
                           $label = $querycategorydt_row['label'];
                           if($sold == 0){
                             // $status = "mdi mdi-skull mdi-18px";
@@ -493,7 +493,7 @@ function searchprodsshop(){
   }
 }
 
-function searchshackshop(){
+function searchshackshop($conn){
   // the script below will find a product matching the provided terms
   // this is the for the shop dbs aka the brandyproducts
   $pagelink = "productdetails.php?id=";
@@ -522,7 +522,7 @@ function searchshackshop(){
                   <th><small>Category</small></th>
                   <th><small>Subcategory</small></th>
                   <th><small>Price(Ksh)</small></th>
-                  <th><small>Storename</small></th>
+                  <th><small>sellerid</small></th>
                   <th><small>Label</small></th>
                   <th><small>Action</small></th>
                 </tr>
@@ -532,13 +532,14 @@ function searchshackshop(){
             $id = $querysearchterm_row['id'];
             $imageone = $querysearchterm_row['imageone'];
             $itemtitle = $querysearchterm_row['itemtitle'];
-            $Description = $querysearchterm_row['Description'];
+            $Description = $querysearchterm_row['details'];
             $sellerid = $querysearchterm_row['sellerid'];
             $category = $querysearchterm_row['category'];
             $subcategory = $querysearchterm_row['subcategory'];
             $price = number_format($querysearchterm_row['price']);
-            $Instock = $querysearchterm_row['Instock'];
-            $storename = $querysearchterm_row['storename'];
+            $Instock = $querysearchterm_row['availability'];
+            $sold = $querysearchterm_row['sold'];
+            $storename = $querysearchterm_row['sellerid'];
             $label = $querysearchterm_row['label'];
             // echo "$id <br>";
             if($sold == 0){
@@ -595,7 +596,7 @@ function searchshackshop(){
 
 //TODO ADD ITEMS PER CATEGORY...WILL EASE IN SHOWING WHICH CATEGORY NEEDS ADDING
 
-function displayshopproducts(){
+function displayshopproducts($conn){
   // script below shoes items from the shop site part
   // think it shoudl show all products even sold and currently in limbo --- figure them out using pickup list
   // it will show the status of the products too
@@ -715,7 +716,7 @@ function displayshopproducts(){
 }
 
 
-function display_shackprods(){
+function display_shackprods($conn){
   // script below shoes items from the shop site part
   // think it shoudl show all products even sold and currently in limbo --- figure them out using pickup list
   // it will show the status of the products too
@@ -747,7 +748,7 @@ function display_shackprods(){
     echo "
     <div class=\"table-responsive\">
     <h3 class=\"text-center\">Shack Products</h3>
-    <a onclick=\"changepages_onlineshack($prevpage);\" data-page=\"$prevpage\" class=\"btn btn-primary btn-sm btn-pagesshack\">Prev</a>&nbsp;<input onfocusout=\"changepage_inputshack();\" id=\"showpageshack\" max=\"$pagesnumber\" value=\"$page\" type=\"number\" />&nbsp;<a onclick=\"changepages_online($nexpage);\" data-page=\"$nexpage\" class=\"btn btn-primary btn-sm btn-pagesshack\">Next</a>
+    <a onclick=\"changepages_onlineshack($prevpage);\" data-page=\"$prevpage\" class=\"btn btn-primary btn-sm btn-pagesshack\">Prev</a>&nbsp;<input onfocusout=\"changepage_inputshack();\" id=\"showpageshack\" max=\"$pagesnumber\" value=\"$page\" type=\"number\" />&nbsp;<a onclick=\"changepages_onlineshack($nexpage);\" data-page=\"$nexpage\" class=\"btn btn-primary btn-sm btn-pagesshack\">Next</a>
       &nbsp;&nbsp;&nbsp;<span>$resultsnumber_num results Found. Showing $perpage results of page $page / $pagesnumber</span>
       <div class=\"row\">
           <div class=\"col-lg-2 col-md-2 col-sm-2 col-xs-2\"></div>
@@ -772,7 +773,7 @@ function display_shackprods(){
             <th>Category</th>
             <th>Subcategory</th>
             <th>Price</th>
-            <th>Storename</th>
+            <th>sellerid</th>
             <th>Subcategory</th>
             <th>Edit</th>
           </tr>
@@ -783,13 +784,13 @@ function display_shackprods(){
       $id = $querchkshopprods_row['id'];
       $imageone = $querchkshopprods_row['imageone'];
       $itemtitle = $querchkshopprods_row['itemtitle'];
-      $Description = $querchkshopprods_row['Description'];
+      $Description = $querchkshopprods_row['details'];
       $sellerid = $querchkshopprods_row['sellerid'];
       $category = $querchkshopprods_row['category'];
       $subcategory = $querchkshopprods_row['subcategory'];
       $price = number_format($querchkshopprods_row['price']);
       $sold = $querchkshopprods_row['sold'];
-      $storename = $querchkshopprods_row['storename'];
+      $storename = $querchkshopprods_row['sellerid'];
       $label = $querchkshopprods_row['label'];
       if($sold == 0){
         // $status = "mdi mdi-skull mdi-18px";
@@ -831,61 +832,5 @@ function display_shackprods(){
   }
 
 }
-
-// <div class=\"table-responsive\">
-// <h3 class=\"text-center\">Shop Products</h3>
-//   <table>
-//     <thead>
-//       <tr>
-//         <th>Item</th>
-//         <th>Image</th>
-//         <th>Product/th>
-//         <th>Instock/th>
-//         <th>Description</th>
-//         <th>Category</th>
-//         <th>Subcategory</th>
-//         <th>Storename</th>
-//         <th>Subcategory</th>
-//       </tr>
-//     </thead>
-//     <tbody>
-        // <tr>
-        //   <td>item one</td>
-        //   <td>item one</td>
-        //   <td>item one</td>
-        //   <td>item one</td>
-        //   <td>item one</td>
-        //   <td>item one</td>
-        //   <td>item one</td>
-        //   <td>item one</td>
-        //   <td>item one</td>
-        // </tr>
-//     </tbody>
-//   </table>
-// </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>

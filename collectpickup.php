@@ -8,7 +8,7 @@ $tempme = ceil($user + 21);
 
 echo "<h4 class=\"text-capitalize text-center\">Items that need picking from Merchants</h4>";
 echo "Click on any of the products from the list below to pick it up";
-$query = "SELECT * FROM `pickupds` WHERE `sign`='0' AND `paymentmode`='' AND `idnumber`='0' AND `name`=''";
+$query = "SELECT * FROM `pickupds` WHERE `sign`='0' AND `paymentmode`='' AND `idnumber`='0' AND `name`='' ORDER BY `id` ASC";
 $query_run = mysqli_query($conn, $query);
 $count = 1;
 echo "

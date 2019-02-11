@@ -1,140 +1,90 @@
 <?php
 ob_start();
 session_start();
-require "connect.php";
-// TODO THERES A TODO IN THIS SCRIPT PAGE LOOK THROUGH IT
-// this will control and set up the transit progress database
-// we set/update the Destination Center and Shipping centre permanenty
-// destination centre will be easier for the handler to direct them on where to send packages next
-// time and location is logged in as a comma seperated value every time a new handler comes into play
+require 'connect.php';
+require 'utils/adminutils.php';
+// Decided to rewrite the entire thing and make it more scalable
+// i RECKON THIS SHOULD CONTROL THE ENTIRE IN TRANSIT THINGY ONCE AN ITEM HAS BEEN PICKED UP 
+// f
 
-// probably use different functions for:
-// updating the database with transit records **// COMPLETE
-// changing handlers, dattiming, locations, centres, centretiming
-// directing handlers to the next centers
-// creating a transit against time progress view map
-// also keep track of the cart items already collected*********//COMPLETE
-// nofify the collection centre once all cart items are collected************//COMPLETE
-// also notify the center when delivery deadline for items is almost met 2+ days************//COMPLETE
-// also coordinate collection center on wehre to place individual cart items depending on closeness of cart members and delivery deadline
-// keep track of a delivery cart completion database for entire site *********// COMPLETE
+function updatetransitdatabase($conn){
+  // This script will retrieve all carts that have been picked up and move them to the transit db
+  // use the autoloop to restric overloading the database...maybe 3 mins///for now 5 seconds
+  // This script will retrieve all the updated carts
+  // Then retrieve per cart id all the items in pickups where transupt is 0
+  // retrieve cart delivery details from the sold table i.e. shiptype, checkout date, shipping destination
+  // finally create new transitdbs entry to indicate that the item is now in transit
+  // update the transupt to prevent looping again through the item
+  $current_time_on_pickup_row_autotest = getAutotestTime($conn, 'transit');
 
-// echo $staff = $_SESSION['$staff'];
-// echo $staff = $_SESSION['$user_id'];
-
-function updatetransitdatabase(){
-  //UPDATE THE TRANSIT DATABASE WITH ITEMS IN TRANSIT//////////////////////////////////////////>>>>>>>>>>>>>
-  // THE TRANSIT DATABASE SHOULD ALSO CONSIDER WHETHER THE CART HAS BEEN DELIVERED
-  // TODO THIS DBS SHOULD ALSO LOG IN THE AUTOTEST TO PREVENT THE SERVER FROM BEING OVERLOADED
-
-  // query the carts that are incomplete....these are the undelivered carts
-  // query the carts that have already been updated only
-  $queryupdatetransitdbs = "SELECT `cartname` FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE' AND `updated`='1'";
-  $queryupdttrns_run = mysqli_query($queryupdatetransitdbs);
-  // create a new array
-  $transitdbsarray = array();
-  while($queryupdttrs_row = mysqli_fetch_assoc($queryupdttrns_run)){
-     $cart = $queryupdttrs_row['cartname'];
-    // check to confirm that the item is in the array
-    if(in_array($cart,$transitdbsarray)){
-      // don't add cart
-    }else{
-      // add cart
-      array_push($transitdbsarray,$cart);
-      // echo $cart.'<br>';
-      // check against cartname for orders that are complete
-      //TODO some of the mtush items occur in multiple carts which shouldnt be possible or do it after the while loop
-    }
-
-  }
-  // loop throught all items from pickupds from cartname where items belong to
-  // TODO this will correct the earlier occuring multiple mtush items in multiple carts
-  for($trdbs = 0; $trdbs < count($transitdbsarray); $trdbs++){
-    $cartnametdbs = $transitdbsarray[$trdbs];
-    // query pickupds with sign, name, idnumber, overperp and agent are done
-    // for signed off belonging to this cart
-    $querytrnsitms = "SELECT * FROM `pickupds` WHERE `cart`='$cartnametdbs' AND `sign`='1' AND `idnumber`!='0' AND `name`!='' AND `trnsupt`='0'";
-    $querytrnsitms_run = mysqli_query($querytrnsitms);
-    while($querytrnsitms_row = mysqli_fetch_assoc($querytrnsitms_run)){
-      // get the id from the list
-      // TODO The transitdbs contains a colum with from..this will be changed to reflect the sellers location
-      $transititemid = $querytrnsitms_row['id'];
-      $initialtrnstime = $querytrnsitms_row['date'];
-      // get the initial agent that picked up the item/received the item
-      if($querytrnsitms_row['agent'] != ''){
-        // if it has a value then this is the agent else go with the other
-        $pickupagent = $querytrnsitms_row['agent'];
+  if(checkIfAtleast_ThisTimeHasElapsed($current_time_on_pickup_row_autotest, '5 seconds') == True){
+    // atleast 5 seconds have elapsed
+    // udpating this to be less server expensive non need to loop throught all the 
+    // updated carts as this wont be scalable with time
+    $row = retrieveAllPickedUpRows($conn);
+    // print_r($row);
+    $UniqueCarts = createAnArraySpecialItems($row);
+    // This returns all the unique carts found in the pickupds
+    // retrieve the sold data i.e. shiptype etc
+    for($x = 0; $x < count($UniqueCarts); $x++){
+      $currentCart = $UniqueCarts[$x];
+      // retrieve cart details the sold thingy
+      $cartContents = retrieveSoldValuesforCart($conn, $currentCart);
+      // print_r($cartContents);
+      $finalDestination = $cartContents['county'].'-'.$cartContents['area'];
+      // echo $finalDestination;
+      $shiptype = $cartContents['shipping'];
+      // echo $shiptype;
+      if($cartContents['shipping'] == 'free'){
+        $extend = 5;
       }else{
-        $pickupagent = $querytrnsitms_row['otheragent'];
+        $extend = 3;
       }
-      // before going to the next step update trnsupt to prevent looping again throught this row
-      $querylocktransrow = "UPDATE `pickupds` SET `trnsupt`='1' WHERE `id`='$transititemid'";
-      if($querylocktransrow_run = mysqli_query($querylocktransrow)){
-        // row successfully locked
-        // retrive the shipping type, deadline and centre destination from dbs table sold
-        $querygetsoldtbdata = "SELECT * FROM `sold` WHERE `cartname`='$cartnametdbs'";
-        $querygetsoldtbdata_run = mysqli_query($querygetsoldtbdata);
-        if($querygetsoldtbdata_row = mysqli_fetch_assoc($querygetsoldtbdata_run)){
-          $centredestination = $querygetsoldtbdata_row['county'].','.$querygetsoldtbdata_row['area'];
-          $shiptype = $querygetsoldtbdata_row['shipping'];
-          $cartdatepay = $querygetsoldtbdata_row['date'];
-          //turn ship type to upper for easier compasions as a string
-          $shiptypecomparison = strtoupper($shiptype);
-          // strtotime of cart date
-          $strcartdate = strtotime($cartdatepay);
-
-          if($shiptypecomparison == 'FREE'){
-            // Its free and should therefore take 7 days max
-            $plusdays = 7 * 86400;
-            $strnewdeadline = $strcartdate + $plusdays;
-            $getdeadline = getdate($strnewdeadline);
-            $deadline = $getdeadline[year].'-'.$getdeadline[mon].'-'.$getdeadline[mday];
-
-          }elseif($shiptypecomparison == 'EXPRESS TIIVA'){
-            // its on tiiva express plan and should thereofre take a max of 3 days
-            $plusdays = 3 * 86400;
-            $strnewdeadline = $strcartdate + $plusdays;
-            $getdeadline = getdate($strnewdeadline);
-            $deadline = $getdeadline[year].'-'.$getdeadline[mon].'-'.$getdeadline[mday];
-
-          }elseif($shiptypecomparison == 'ON'){
-            // its on anyother shipping type mostly fargo courier max of 4 days
-            $plusdays = 4 * 86400;
-            $strnewdeadline = $strcartdate + $plusdays;
-            $getdeadline = getdate($strnewdeadline);
-            $deadline = $getdeadline[year].'-'.$getdeadline[mon].'-'.$getdeadline[mday];
-
-          }else{
-            die("Error!");
-          }
-
-
+      // echo $extend;
+      // retrieve the cart item deadline
+      $deadline = timeDeltaExtendTime_return($cartContents['date'], "$extend days", 'Y-m-d');
+      // loop throuth the row ...if the cart name is similar
+      // retrieve values....create the transit entry...then update the row transupt to 1
+      
+      for($y = 0; $y < count($row); $y++){
+        // retrieve this current loops cartname
+        $currentLoopCart = $row[$y]['cart'];
+        if($currentLoopCart == $currentCart){
+          // retrieve itemid for // transititemid
+          $transititemid = $row[$y]['id'];
+          // echo $transititemid;
+          //retrieve pickup agent
+          $pickupagent = $row[$y]['agent'];
+          // echo $pickupagent;
+          //retrieve initialtrnstime
+          $initialtrnstime = $row[$y]['date'];
+          // echo $initialtrnstime;
+          // retrieve seller for the item in transit
+          $modedseller = $row[$y]['seller']; // this is the + 21
+          $normSeller = ceil($modedseller - 21);
+          $merchdetails = getSpecificMerchantDetails($conn, $normSeller);
+          // echo $normSeller;
+          // print_r($merchdetails);
+          $merchantLocation = $merchdetails['county'].'-'.$merchdetails['township'];
+          // echo $merchantLocation;
+          // create the new entry
+          createTransitEntry($conn, $transititemid, $currentLoopCart, $merchantLocation, $merchantLocation, $pickupagent, $initialtrnstime, $finalDestination, $shiptype, $deadline);
+          // update the item row now transup to 1
+          updateTrnsuptPickupid($conn, $transititemid);
+        }else{
+          // do nothing
         }
-
-      // now update the transit dbs by inserting
-      // the new row dstatus indicates whether the particular items has been delivered or not
-      // 1 for delivered else zero for nada
-      $querytransinsertrow = "INSERT INTO `transitdbs` (`id`,`itemid`,`cartname`,`from`,`exchlocs`,`handlers`,`exchdattimes`,`exchcenters`,`centredestination`,`shiptype`,`deadline`,`dstatus`,`integrity`)
-      VALUES ('','$transititemid','$cartnametdbs','Kabuta_1','kabuta_2','$pickupagent','$initialtrnstime','Kabuta_3','$centredestination','$shiptype','$deadline','','')";
-      if($querytransinsertrow_run = mysqli_query($querytransinsertrow)){
-        // its been updated
-        echo "transit database updated<br>";
-      }else{
-        // ran into an error
-        die("could not update transit database");
       }
-      }else{
-        die("Ran into an error");
-      }
-
 
     }
 
+  }else{
+    echo "The transit update is very fresh no need to refresh";
   }
-  // print_r($transitdbsarray);
 
 }
-// updatetransitdatabase();// STEP 1
+
+// updatetransitdatabase($conn);
 
 // keep track of a delivery cart completion database for entire site
 
@@ -191,11 +141,11 @@ function keeptrackofcartintransit(){
 // TODO script that checks to see whether theres a complete cart in transit
 // TODO script that checks to see whether theres an incomplete cart in transit indicating the remaining items for a cart
 
-function completecartatdestination(){
+function completecartatdestination($conn){
   //the script below checks to confirm that a complete cart is at the destination centre
   //loop throught pickupds
   $queryupdatetransitdbs = "SELECT * FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE' AND `updated`='1'";
-  $queryupdttrns_run = mysqli_query($queryupdatetransitdbs);
+  $queryupdttrns_run = mysqli_query($conn, $queryupdatetransitdbs);
   // create a new array
   $transitdbsarray = array();
   $transitbdcrtsize = array();
@@ -273,12 +223,12 @@ function completecartatdestination(){
 
 // completecartatdestination();
 
-function cartitemdeadlinenotifier(){
+function cartitemdeadlinenotifier($conn){
   // also notify the center when delivery deadline for carts is almost met 2+ days
   // not items because the items belong to a cart so check on the cart instead
 
   $queryupdatetransitdbs = "SELECT * FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE' AND `updated`='1'";
-  $queryupdttrns_run = mysqli_query($queryupdatetransitdbs);
+  $queryupdttrns_run = mysqli_query($conn, $queryupdatetransitdbs);
   // create a new array
   $transitdbsarray = array();
   $transitbdchtDatearray = array();
@@ -347,11 +297,11 @@ function cartitemdeadlinenotifier(){
 // cartitemdeadlinenotifier();
 
 // return current items in transit individually
-function returnadmintransit(){
+function returnadmintransit($conn){
 
   // first return the incomplete carts i.e carts in transit
   $queryupdatetransitdbs = "SELECT * FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE' AND `updated`='1'";
-  $queryupdttrns_run = mysqli_query($queryupdatetransitdbs);
+  $queryupdttrns_run = mysqli_query($conn, $queryupdatetransitdbs);
   // create a new array
   $transitdbsarray = array();
   $count = 1;
@@ -397,7 +347,7 @@ function returnadmintransit(){
     // query pickupds with sign, name, idnumber, overperp and agent are done
     // for signed off belonging to this cart
     $querytrnsitms = "SELECT * FROM `transitdbs` WHERE `cartname`='$cartnametdbs'";
-    $querytrnsitms_run = mysqli_query($querytrnsitms);
+    $querytrnsitms_run = mysqli_query($conn, $querytrnsitms);
     while ($querytrnsitms_row = mysqli_fetch_assoc($querytrnsitms_run)) {
       $itemid = $querytrnsitms_row['itemid'];
       //get current handler, current location, current center, exchange time, destination, deadline, shipping type
@@ -429,7 +379,7 @@ function returnadmintransit(){
       // what should we show for the current item in transit...
       // query the pickupds with the id return the entire row
       $querypickupds = "SELECT * FROM `pickupds` WHERE `id`='$itemid'";
-      $querypickupds_run = mysqli_query($querypickupds);
+      $querypickupds_run = mysqli_query($conn, $querypickupds);
       if($querypickupds_row = mysqli_fetch_assoc($querypickupds_run)){
         // to show items from one seller will introduce the if statement here
         // since this is admin one...maybe show all details
@@ -479,10 +429,10 @@ function returnadmintransit(){
 // returnadmintransit();
 // TODO CORRECT THE FUNCTION BEFORE THIS ONE TO SHOW CART NAME ALSO AS THE RESPONSE
 // return current items in transit individually sellers/buyers
-function returnmerchanttransit(){
+function returnmerchanttransit($conn){
   // first return the incomplete carts i.e carts in transit
   $queryupdatetransitdbs = "SELECT * FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE' AND `updated`='1'";
-  $queryupdttrns_run = mysqli_query($queryupdatetransitdbs);
+  $queryupdttrns_run = mysqli_query($conn, $queryupdatetransitdbs);
   // create a new array
   $transitdbsarray = array();
   $count = 1;
@@ -618,25 +568,25 @@ function returnmerchanttransit(){
 // returnmerchanttransit();
 if(isset($_POST['transit'])){
   $transit = $_POST['transit'];
-  updatetransitdatabase();
+  updatetransitdatabase($conn);
   // check whether its a user or a staff member
   // TODO ENSURE THAT THE HANDLER PICKING IS IN THE CORRECT ROUTE THE PACKAGE IS HEADED
   // TODO THE NEW HANDLER SHOULDNT BE THE CURRENT ITEM HANDLER
   if(isset($_SESSION['$staff'])){
     // this is a tiiva staff member so show him all the data
     // call appropriate transit function
-    returnadmintransit();
+    returnadmintransit($conn);
     // returnmerchanttransit();
   }else{
     // this is probably a user not a staff member
     // TODO CHECK WHETHER THE USER IS LOGGED IN ELSE DENY THEM
     // call appropriate transit function
     // returnadmintransit();
-    returnmerchanttransit();
+    returnmerchanttransit($conn);
   }
 }elseif(isset($_POST['completecartatdestination'])){
-  updatetransitdatabase();
-  completecartatdestination();
+  updatetransitdatabase($conn);
+  completecartatdestination($conn);
 }
 
 

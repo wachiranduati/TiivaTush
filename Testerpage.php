@@ -2,14 +2,28 @@
 ob_start();
 session_start();
 require 'connect.php';
+require 'utils/userutils.php';
 
- $user = $_SESSION['$user_id'];
- $staff = $_SESSION['$staff'];
+if(userLoggedIn() == True){
+    $user = getUserID();
+    if(isStaffLoggedIn() == True){
+        $staff = getStaffID();
 
- $querystaff = "SELECT * FROM `staff` WHERE `id`='$staff'";
- $querystaff_run = mysqli_query($querystaff);
- $querystaff_row = mysqli_fetch_assoc($querystaff_run);
- $agent =  $querystaff_row['tiivanick'];
+        $querystaff = "SELECT * FROM `staff` WHERE `id`='$staff'";
+        $querystaff_run = mysqli_query($conn, $querystaff);
+        $querystaff_row = mysqli_fetch_assoc($querystaff_run);
+        $agent =  $querystaff_row['tiivanick'];
+    }else{
+        redirectAndDie();
+    }
+}else{
+    redirectAndDie();
+}
+
+ // $user = $_SESSION['$user_id'];
+ // $staff = $_SESSION['$staff'];
+
+ 
  // echo $staff;
 ?>
 <!DOCTYPE html>
@@ -20,6 +34,8 @@ require 'connect.php';
   <meta name="viewport" content="width=device-width, initial-scale=1">
       <?php require 'templates/resourcelinks/headerlinks.php';?>
             <script src="chartjs/chart.bundle.js"></script>
+      
+
 
     <style type="text/css">
         li{
@@ -28,14 +44,7 @@ require 'connect.php';
         .list-group li{
             text-decoration: none;
         }
-        .panel-body > ul{
-            text-indent: 30%;
-        }
-        li:hover {
-            text-align: right;
-            font-weight: bold;
-            font-family: kok;
-        }
+        
         li:visited {
             color: black;
             background-color: black;
@@ -49,43 +58,28 @@ require 'connect.php';
         .darkbackgrd{
           background-color: gainsboro;
         }
+        /*#e6ecf0*/
     </style>
 
 
 </head>
-    <body id="wholebody" style="background-image:url(images/mutua_matheka.jpg);backgroung-attachment:fixed;background-position:top;background-size:100%;">
+    <body id="wholebody" style="background-color: #e6ecf0;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:rgba(220, 220, 220, 0.67);"><h5>Hi Nick, Beautiful day ain't it?</h5></div>
-                            </div>
-
-                            <div class="row">
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="row" onclick="hidelist();">
-                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-color:rgba(0, 0, 0, 0.67);position:relative;top:20px;left:20px;display:visible;">
-                                            <span class="glyphicon glyphicon-align-justify text-center" style="width:100%;color:white;font-size:200%;padding:2px;padding-top:10px;padding-bottom:10px;"></span>
-
-                                        </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
-                                   </div>
-
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <img src="images/otherphotoo.png" class="img-responsive"/>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><h4 id="pagetitle">This</h4></div>
+                                <div class="col-lg-1"><img src="images/airmarklogotrial2.png" class="img-responsive"/></div>
+                                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11" style="background-color: white;box-shadow: 0 1px 3px #e6ecf0;"><h5 class="text-right">Hi <?php echo $agent;?>, Beautiful day ain't it?</h5></div>
                             </div>
 
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
-                            <nav class="navbar navbar-inverse" style="border-radius:0px;background-color:rgba(0, 0, 0, 0.68);border:0;border:1px solid white;">
+                    <div class="row" style="background-color: #e6ecf0;">
+                        <div class="col-lg-1 col-md-1 col-sm-6 col-xs-6" style="padding: 0;">
+                            <nav class="navbar navbar-inverse" style="border-radius:0px;border:1px solid white;min-height: 100vh;">
                             <ul class="nav nav-inverse nav-stacked">
 
 <!--
@@ -112,10 +106,10 @@ require 'connect.php';
                             <ul class="nav nav-pills nav-inverse nav-stacked">
                                 <li class="showuplds"><a onclick="">Uploads</a></li>
                                 <li class="onlnclk"><a onclick="">Online</a></li>
-                                <li><a onclick="sales(1);showsalespanel();">Sales</a></li>
-                                <li><a onclick="planpickup();">Pickup</a></li>
-                                <li><a onclick="deliveries(1);">Deliveries</a></li>
-                                <li><a onclick="transit();showtransit();loveme();">Transit</a></li>
+                                <li class="shacksales"><a onclick="sales(1);">Sales</a></li>
+                                <li class="directpickup"><a onclick="planpickup();">Pickup</a></li>
+                                <li class="deliveryacivator"><a onclick="deliveries(1);">Deliveries</a></li>
+                                <li class="transitactivator"><a onclick="transit();showtransit();loveme();">Transit</a></li>
                                 <li class="showreturn"><a>Returns</a></li>
                                 <li class="proofdetls"><a >Review</a></li>
                             </ul>
@@ -125,7 +119,21 @@ require 'connect.php';
                       $(document).ready(function(){
                         // $("#onlineprodscont").hide();
                         $(".onlnclk").click(function(){
-                            $("#onlineprodscont").show();
+                            $("#onlineprodscont").toggle();
+                            $("#onlineshackcontainer").toggle();
+                        });
+
+                        $(".shacksales").click(function(){
+                            $(".check_sales_box").toggle();
+                            $("#check_sales_box").toggle();
+                        });
+
+                        $(".directpickup").click(function(){
+                            $("#pickupid").toggle();
+                        });
+
+                        $(".deliveryacivator").click(function(){
+                            $("#deliverycontainer").toggle();
                         });
                       });
                     </script>
@@ -136,7 +144,7 @@ require 'connect.php';
                     <div id="panelBodyMessages" class="panel-collapse collapse">
                         <div class="panel-body">
                             <ul class="nav nav-pills nav-inverse nav-stacked">
-                                <li><a href="#" onclick="staff)();">Staff</a></li>
+                                <li><a href="#" onclick="staff();">Staff</a></li>
                                 <li><a href="#">Ground</a></li>
                                 <li><a href="#">Users</a></li>
                                 <li><a href="#">Merchants</a></li>
@@ -191,7 +199,7 @@ require 'connect.php';
                         </div>
                     </div>
                         </li>
-                        <li style="border-bottom:1px solid rgba(220, 220, 220, 0.33);"><a href="#panelBodyBlogs" data-toggle="collapse"><span class="glyphicon glyphicon-file"></span>&nbsp;Blogs</a></li>
+                        <!-- <li style="border-bottom:1px solid rgba(220, 220, 220, 0.33);"><a href="#panelBodyBlogs" data-toggle="collapse"><span class="glyphicon glyphicon-file"></span>&nbsp;Blogs</a></li>
                                 <li>
 
                     <div id="panelBodyBlogs" class="panel-collapse collapse">
@@ -199,32 +207,27 @@ require 'connect.php';
                             <ul class="nav nav-pills nav-inverse nav-stacked">
                                 <li><a class="btn" onclick="previewblogs();">Preview</a></li>
                                 <li><a class="btn" onclick="pendingblogs();">Pending</a></li>
-<!--
-                                <li><a href="#">Rating</a></li>
-                                <li><a href="#">Edit</a></li>
-                                <li><a href="#">Delete</a></li>
--->
                             </ul>
                         </div>
                     </div>
-                        </li>
+                        </li> -->
                         <li style="border-bottom:1px solid rgba(220, 220, 220, 0.33);"><a href="#panelBodyStats" data-toggle="collapse"><span class="glyphicon glyphicon-stats"></span>&nbsp;Stats</a></li>
                                 <li>
 
                     <div id="panelBodyStats" class="panel-collapse collapse">
                         <div class="panel-body">
                             <ul class="nav nav-pills nav-inverse nav-stacked">
-                                <li><a href="#" onclick="rendersalesgraph();">Sales</a></li>
-                                <li><a href="#">Deliveries</a></li>
-                                <li><a href="#">Costs</a></li>
-                                <li><a href="#" onclick="rendergeneraltraffick();">Traffick</a></li>
-                                <li><a href="#" onclick="renderfeedbackstats();">Feedback</a></li>
-                                <li><a href="#">Payments</a></li>
+                                <li><a onclick="rendersalesgraph();">Sales</a></li>
+                                <li><a>Deliveries</a></li>
+                                <li><a>Costs</a></li>
+                                <li><a onclick="rendergeneraltraffick();">Traffick</a></li>
+                                <li><a onclick="renderfeedbackstats();">Feedback</a></li>
+                                <li><a>Payments</a></li>
                             </ul>
                         </div>
                     </div>
                         </li>
-                        <li style="border-bottom:1px solid rgba(220, 220, 220, 0.33);"><a href="#panelBodyBanners" data-toggle="collapse"><span class="glyphicon glyphicon-globe"></span>&nbsp;Aesthetics</a></li>
+                        <li style="border-bottom:1px solid rgba(220, 220, 220, 0.33);"><a href="#panelBodyBanners" data-toggle="collapse"><span class="glyphicon glyphicon-globe"></span>&nbsp;Visuals</a></li>
                                 <li>
 
                     <div id="panelBodyBanners" class="panel-collapse collapse">
@@ -239,7 +242,7 @@ require 'connect.php';
                         </div>
                     </div>
                         </li>
-                        <li style="border-bottom:1px solid rgba(220, 220, 220, 0.33);"><a href="#panelBodyPayment" data-toggle="collapse"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;Payment</a></li>
+                        <li class="financeDropdown" style="border-bottom:1px solid rgba(220, 220, 220, 0.33);"><a href="#panelBodyPayment" data-toggle="collapse"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;Finance</a></li>
                                 <li>
 
                     <div id="panelBodyPayment" class="panel-collapse collapse">
@@ -276,7 +279,7 @@ require 'connect.php';
                     </ul>
                             </nav>
                         </div>
-                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                        <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
                             <div class="row" id="thesearchbar" style="visibility:hidden;display:none">
 <!--                                gallery search bar-->
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -284,7 +287,7 @@ require 'connect.php';
         <div class="col-lg-1 col-md-1"></div>
                                 <div class="col-lg-10 col-md-10">
                                     <form class="form-inline" method="post" action="index.php">
-                                        <div class="input-group col-lg-10" style="font-family:kok;">
+                                        <div class="input-group col-lg-10" style="">
                                         <input type="text" class="form-control" placeholder="Search images using itemId i.e. 3" id="searchid" onkeyup="checkid();" name="searchid" style="background-color:rgba(220, 220, 220, 0.79);border:none;">
                                         <span class="input-group-btn">
 
@@ -301,7 +304,7 @@ require 'connect.php';
 
 
               <!-- DELIVERY CONTAINER START -->
-                          <div class="row" id="deliverycontainer">
+                          <div class="row" id="deliverycontainer" style="display: none;">
                             <script>
                               function deliveries(){
                                 // alert("Heeey ease up man..");
@@ -422,8 +425,90 @@ require 'connect.php';
 
               <!-- DELIVERY CONTAINER END -->
 
+              <!-- FINANCE CONTAINER -->
+              <div class="row financeMainDiv" style="padding: 10px;display: none;">
+                  <div class="col-lg-12 col-md-12" style="border: 1px solid #e6ecf0;">
+                      <div class="row" style="background-color: white;">
+                          <div class="col-lg-12">
+                              <h4 class="text-center text-uppercase">Finances</h4>
+                          </div>
+                      </div>
+                      <div class="row" style="margin: 1% 0;background-color: white;padding: 10px 0;">
+                          <div class="col-lg-1"></div>
+                          <div class="col-lg-10">
+                              <div class="input-group">
+                                  <input type="text" class="form-control" id="exampleInputAmount" placeholder="Search transaction numbers here">
+                                  <span class="input-group-btn">
+                                      <button type="button" class="btn btn-default">Go!</button>
+                                  </span>
+                              </div>
+                          </div>
+                          <div class="col-lg-1"></div>
+                      </div>
+                      <div class="row" style="background-color: white;padding-top: 10px;">
+                          <div class="col-lg-2">
+                              <ul class="list-group" style="cursor: pointer;">
+                                  <li class="list-group-item fnance active">
+                                      <span class="badge">5</span>
+                                      Pending carts
+                                  </li>
+                                  <li class="list-group-item fnance">
+                                      <span class="badge">10</span>
+                                      Cleared Carts
+                                  </li>
+                                  <li class="list-group-item fnance">
+                                      <span class="badge">2</span>
+                                      Transaction Codes
+                                  </li>
+                                  <li class="list-group-item fnance">
+                                      <span class="badge">14</span>
+                                      Shipping Expenses
+                                  </li>
+                                  <li class="list-group-item fnance">
+                                      <span class="badge">7</span>
+                                      Petty Cash
+                                  </li>
+                                  <li class="list-group-item fnance">
+                                      <span class="badge">56</span>
+                                      Cart history
+                                  </li>
+                                  <li class="list-group-item fnance">
+                                      <span class="badge">34</span>
+                                      Merchant payout
+                                  </li>
+                                  <li class="list-group-item fnance">
+                                      <span class="badge">10</span>
+                                      Returns
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="col-lg-10 financeContent">
+                              
+                          </div>
+                      </div>
+                      <script>
+                          $(".financeDropdown").click(function(){
+                             $(".financeMainDiv").toggle();
+                          });
+                          $(".fnance").click(function(){
+                            $(".fnance").removeClass('active');
+                            $(this).addClass('active');
+                          });
+                          // load the pending carts first
+                            $.ajax({
+                                url: "finance.php",
+                                type: "GET",
+                                success: function(data){
+                                    $(".financeContent").html(data);
+                                }
+                            });
+                      </script>
+                  </div>
+              </div>
+              <!-- FINANCE CONTAINER -->
+
               <!-- PROOF CONTAINER START -->
-                          <div class="row thereviewcontainer" style="background-color:white;padding-top:10px;display:none;">
+                          <div class="row thereviewcontainer" style=";padding-top:10px;display:none;">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -483,12 +568,12 @@ require 'connect.php';
               <!-- PROOF CONTAINER END -->
 
               <!-- RETURN GOODS CONTAINER START -->
-              <div class="row returncontainer" style="background-color:white;padding-top:10px;display:none;">
+              <div class="row returncontainer" style=";padding-top:10px;display:none;">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <h3 class="text-center">Staff Return/Reject goods</h3>
-                            <div class="row" style="background-color:white;">
+                            <div class="row" style=";">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="row">
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
@@ -499,7 +584,7 @@ require 'connect.php';
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 resultssearchbox" style="position:absolute;z-index:21;width:64%;left:18%;background-color:white;box-shadow:0 0 1px rgba(219, 219, 219, 0.35);"></div>
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 resultssearchbox" style="position:absolute;z-index:21;width:64%;left:18%;;box-shadow:0 0 1px rgba(219, 219, 219, 0.35);"></div>
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                                 </div>
                               </div>
@@ -614,7 +699,8 @@ require 'connect.php';
               <!-- THE BANNERS CONTROL BOX ENDS HERE -->
 
 <!--                                UPLOADS TAB BELOW -->
-                                <div class="row uploadscontainer" style="background-color:white;padding-top:10px;font-family:kok;display:none;">
+<script></script>
+                                <div class="row uploadscontainer" style=";display:none;background-color: white;padding: 10px;">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                       <h3 class="text-center text-capitalize">The uploads tab<small> (by Date)</small></h3>
 
@@ -624,7 +710,7 @@ require 'connect.php';
                                                 <label for="site">Site: SHACK/SHOP</label>
                                                 <select class="form-control" id="site">
                                                   <option value="shack">Shack</option>
-                                                  <option selected value="shop">Shop</option>
+                                                  <!-- <option selected value="shop">Shop</option> -->
                                                 </select>
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -634,7 +720,7 @@ require 'connect.php';
                                                     <option value="blank">Everything</option>
                                                   </optgroup>
 
-                                                  <optgroup label="SHOP CATEGORIES" style="">
+                                                  <!-- <optgroup label="SHOP CATEGORIES" style="">
                                                     <option disabled="">SHOP CATEGORIES</option>
                                                     <option value="electronics">Electronics &amp; Computers</option>
                                                     <option value="entertainment">Entertainment &amp; Education</option>
@@ -645,7 +731,7 @@ require 'connect.php';
                                                     <option value="handmade">Handmade</option>
                                                     <option value="home">Home, Garden &amp; Tools</option>
                                                     <option value="automotive &amp; Industrial">Automotive &amp; Industrial</option>
-                                                  </optgroup>
+                                                  </optgroup> -->
 
                                                   <optgroup label="SHACK CATEGORIES" style="">
                                                     <option value="mens">mens</option>
@@ -661,7 +747,7 @@ require 'connect.php';
                                             </div>
                                             <div class="col-lg-2 col-md-2 col-sm-5 col-xs-5">
                                                 <label for="text">Earliest (01/16/2018)</label>
-                                                <input type="date" class="form-control" id="early" max="01/16/2018" min="2000-01-02">
+                                                <input type="date" class="form-control" id="early" value="2018-01-16" min="2000-01-02">
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5">
                                                 <label for="text">Latest (<?php echo Date("m/d/Y"); ?>)</label>
@@ -687,7 +773,7 @@ require 'connect.php';
                                     </div>
                                     <script>
                                     $(".showuplds").click(function(){
-                                      $(".uploadscontainer").show();
+                                      $(".uploadscontainer").toggle();
                                     });
                                     $(".loadproddt").click(function(){
                                       var site = $("#site").val();
@@ -743,16 +829,16 @@ require 'connect.php';
 <!--                                gallery search bar-->
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                            <div class="row" style="font-family:kok;display:none;" id="onlineprodscont">
+                            <div class="row" style="display:none;" id="onlineprodscont">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="row" style="">
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 sitebutton" style="border-right:1px solid black;background-color:white;"><h4 class="text-uppercase text-center">#Shop</h4></div>
+                                        <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 sitebutton" style="border-right:1px solid black;;"><h4 class="text-uppercase text-center">#Shop</h4></div> -->
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 sitebutton2" style="background-color:gainsboro;"><h4 class="text-uppercase text-center">#Shack</h4></div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onlineshopcontainer" style="background-color:white;border:1px solid black;border-top:none;overflow:scroll;">
-                                              this is the shop products
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onlineshackcontainer" style="background-color:white;border:1px solid black;border-top:none;overflow:scroll;">
-                                              this is the shack products
+                                        <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onlineshopcontainer" style=";border:1px solid black;border-top:none;overflow:scroll;">
+                                              
+                                        </div> -->
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 onlineshackcontainer" style=";border:1px solid black;border-top:none;overflow:scroll;">
+                                              
                                         </div>
                                     </div>
                                     <script>
@@ -793,13 +879,25 @@ require 'connect.php';
                                           // $(".btn-pages").click(function(){
                                             //  var page = $(this).attr("data-page");
                                               //  alert(page);
-                                               var otherpages = "online=lkdsf0&page="+page;
+                                               var otherpages = "online=oierj&page="+page;
                                                $.ajax({
                                                  url: "onlineitems.php",
                                                  type: 'POST',
                                                  data: otherpages,
                                                  success: function(onlineotrs){
                                                    $(".onlineshackcontainer").html(onlineotrs);
+                                                   $("#shacksearch").keyup(function(){
+                                                    var shacksrchkey = $("#shacksearch").val();
+                                                    var shackmsg = "online=mksiuew&search="+shacksrchkey;
+                                                    $.ajax({
+                                                      url: "onlineitems.php",
+                                                      type: "POST",
+                                                      data: shackmsg,
+                                                      success: function(shacksrch){
+                                                        $(".shacksearchrsls").html(shacksrch);
+                                                      }
+                                                    })
+                                                  });
                                                  }
                                                })
 
@@ -833,26 +931,10 @@ require 'connect.php';
                                                       $(".prodsearchresls").html(searching);
                                                     }
                                                   })
-                                                // }
 
 
                                               })
 
-                                              // the direction buttons have been pressed react
-                                              // $(".btn-pages").click(function(){
-                                              //    var page = $(this).attr("data-page");
-                                              //      alert(page);
-                                              //      var otherpages = "online=lkdsf0&page="+page;
-                                              //      $.ajax({
-                                              //        url: "onlineitems.php",
-                                              //        type: 'POST',
-                                              //        data: otherpages,
-                                              //        success: function(onlineotrs){
-                                              //          $(".onlineshopcontainer").html(onlineotrs);
-                                              //        }
-                                              //      })
-                                              //
-                                              // });
 
                                               $(".description").tooltip({
                                                   placement: "top",
@@ -900,14 +982,14 @@ require 'connect.php';
 
 
 <!--                                SALES TAB BELOW -->
-                                <div class="row" id="check_sales_box" style="visibility:hidden;display:none;">
+                                <div class="row" id="check_sales_box" style="display:none;background-color: white;">
 <!--                                gallery search bar-->
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="row" style="margin-bottom:1%;margin-top:1%;background-color:rgba(0, 0, 0, 0);">
         <div class="col-lg-1 col-md-1"></div>
                                 <div class="col-lg-10 col-md-10">
                                     <form class="form-inline" method="post" action="index.php">
-                                        <div class="input-group col-lg-12" style="font-family:kok;">
+                                        <div class="input-group col-lg-12" style="">
                                         <input type="text" class="form-control" placeholder="Search sales items using cartname i.e. W322kdo3" id="sales_itemid" onkeyup="check_sales_item();" name="searchid" style="background-color:rgba(220, 220, 220, 0.79);border:none;">
                                         <span class="input-group-btn">
 
@@ -917,7 +999,7 @@ require 'connect.php';
                                     </form>
                                     <div class="row">
 <!--                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>-->
-                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="border:1px solid black;margin-left:2%;z-index:100;position:absolute;background-color:white;" id="salestabsresulstdiv"></div>
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="border:1px solid black;margin-left:2%;z-index:100;position:absolute;background-color: white;" id="salestabsresulstdiv"></div>
                                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
 
                                     </div>
@@ -928,6 +1010,7 @@ require 'connect.php';
 
                                 </div>
                             </div>
+                            <div class="row check_sales_box" style="display: none;background-color: white;"></div>
 <!--                                SALES TAB BELOW-->
 
 <!--                            SEARCH'S CONTROL PANEL-->
@@ -956,7 +1039,7 @@ require 'connect.php';
                                 </div>
                                 </div>
                                 <div class="row" id="container_housing_bloglist_sheet" style="visibility:hidden;display:none;">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:white;">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style=";">
                                         <h4 class="text-capitalize text-center">All Blogs on Tiiva</h4>
                                         <a class="btn"><span class="glyphicon glyphicon-refresh pull-center" onclick="blogslistshow(1);" style="color:blue;font-weight:bold;"> Refresh list </span></a><br>
                                         <img src="images/spinner/spinner_small.gif" class="img-responsive" style="display:none;visibility:none;" id="refresh_spinner_id"/>
@@ -966,7 +1049,7 @@ require 'connect.php';
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:1%;background-color:white;" id="blogslistcontainer"></div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:1%;;" id="blogslistcontainer"></div>
                                 </div>
                                 </div>
                             </div>
@@ -976,11 +1059,11 @@ require 'connect.php';
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <a class="btn btn-info pull-right" onclick="pendingblogsicon();showpendingblogshere(1);"><span class="glyphicon glyphicon-folder-open" id="folderclose"></span>&nbsp;&nbsp;Show Pending blogs</a>
                                     <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="pendingblogslist" style="background-color:white;margin-top:1%;"></div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="pendingblogslist" style=";margin-top:1%;"></div>
                                     </div>
 
                                      <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="pendingblogs_editor" style="background-color:white;margin-top:1%;margin-bottom:1%;"></div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="pendingblogs_editor" style=";margin-top:1%;margin-bottom:1%;"></div>
                                     </div>
 
 
@@ -1275,11 +1358,11 @@ require 'connect.php';
                               <!-- MODAL BOX -->
 
                                 <!-- PICKUP DIV START -->
-                                    <div class="row">
+                                    <div class="row pickupContainer" style="padding: 10px;">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                                             <div class="row">
-                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="pickupid" style="background-color:white;">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="pickupid"  style="background-color: white;">
 
                                                 </div>
                                             </div>
@@ -1294,7 +1377,6 @@ require 'connect.php';
                                               url: 'collectpickup.php',
                                               success: function(data){
                                                   $("#pickupid").html(data);
-                                                  $("#pickupid").show();
 
                                                   console.log("Updated the list");
 
@@ -1306,7 +1388,7 @@ require 'connect.php';
                                       function modalRem(){
                                         // $("#loginModal").removeClass("zoomIn");
                                         $("#loginModal").addClass("animated zoomIn");
-                                        console.log("just logged this");
+                                        // console.log("just logged this");
                                       }
                                       function reloadmodal(item,cartname){
                                         var details = "item="+item+"&cartname="+cartname;
@@ -1326,7 +1408,7 @@ require 'connect.php';
                                     </script>
                                 <!-- PICKUP DIV END -->
           <!-- ITEMS IN TRANSIT CHANGE HANDLER START-->
-                <div class="row transitcontainer" style="background-color:white;font-family:kok;display:none;">
+                <div class="row transitcontainer" style=";display:none;">
                   <script>
                     function showtransit(){
                       $(".transitcontainer").show();
@@ -1605,7 +1687,7 @@ require 'connect.php';
 
                     <span class="hidden marker2" data-id="0">7yd</span>
                 </div>
-                <div class="row" style="margin-top:1%;background-color:white;">
+                <div class="row" style="margin-top:1%;;">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="changehandler"></div>
                 </div>
           <!-- ITEMS IN TRANSIT CHANGE HANDLER END-->
@@ -1614,7 +1696,7 @@ require 'connect.php';
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                   <!-- TODO REVIEW DISPLAY THE ITEM BELOW -->
-                                    <div class="row" style=\"visibility:hidden;display:none;\">
+                                    <div class="row">
                                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id="canvascontainer">
                                                         <canvas id="myChart2"></canvas>
                                         </div>
@@ -1663,15 +1745,16 @@ require 'connect.php';
                                         </div>
                                     </div>
                                 <div class="row" id="graphcontainer">
-<!--
-                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" style="font-family:kok;">
+
+                                    <!-- <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" style="">
                                         <div id="chartvalues" style="display:none;visibility:hidden;">100, 29, 13, 50, 12, 1,20, 35, 45, 22, 1,70</div>
 
                                          <div id="chartdays" style="display:none;visibility:hidden;">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday,Sunday, Monday, Tuesday, Wednesday, Thurdsay,Friday
                                          </div>
-                                    </div>
--->
+                                    </div> -->
+
                                 </div>
+                                
                                 </div>
                             </div>
 <!--                            STATS GRAPH END-->
@@ -1691,26 +1774,11 @@ require 'connect.php';
         <script>
 
 
-            function theshack(){
-                var change = document.getElementById('iframebox');
-                change.src = 'index.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'Mtush';
-            }
+            
 
-            function theshop(){
-                var change = document.getElementById('iframebox');
-                change.src = 'index.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'Shop';
-            }
+            
 
-            function theblogs(){
-                var change = document.getElementById('iframebox');
-                change.src = 'blog.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'Blogs';
-            }
+            
 
             function sales(sls){
               //the start
@@ -1721,8 +1789,7 @@ require 'connect.php';
                 type: 'GET',
                 data: pageit,
                 success: function(online){
-                  $("#maindiv").css("background-color","white");
-                  $("#maindiv").html(online);
+                  $(".check_sales_box").html(online);
                 }
               })
               //the end
@@ -1734,8 +1801,6 @@ require 'connect.php';
             function transit(){
 //                var change = document.getElementById('iframebox');
 //                change.src = 'transit.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'transit';
 
                 var thesearchbar = document.getElementById('thesearchbar');
                 if(thesearchbar.style.visibility == 'visible'){
@@ -1748,88 +1813,9 @@ require 'connect.php';
             });
 
 
-            function staffmessages(){
-                var change = document.getElementById('iframebox');
-                change.src = 'staffmessages.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'staff messages';
-            }
-
-            function groundmessages(){
-                var change = document.getElementById('iframebox');
-                change.src = 'groundmessages.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'Ground Messages';
-            }
-
-            function usersmessages(){
-                var change = document.getElementById('iframebox');
-                change.src = 'usermessages.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'User Messages';
-            }
-
-            function merchantmessages(){
-                var change = document.getElementById('iframebox');
-                change.src = 'merchantmessages.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'Merchant Messages';
-            }
-
-            function bloggersmessages(){
-                var change = document.getElementById('iframebox');
-                change.src = 'bloggersmessages.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'Blogger Messages';
-            }
-
-             function Marketstallusers(){
-                var change = document.getElementById('iframebox');
-                change.src = 'Marketstalls.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'Market-stall';
-            }
-
-             function Shopperusers(){
-                var change = document.getElementById('iframebox');
-                change.src = 'shopperusers.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'Shopper users';
-            }
-
-             function Merchantsusers(){
-                var change = document.getElementById('iframebox');
-                change.src = 'merchantusers.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'Merchant users';
-            }
-
-            function shopsusers(){
-                var change = document.getElementById('iframebox');
-                change.src = 'shopsusers.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'shop users';
-            }
-
-            function Bloggersusers(){
-                var change = document.getElementById('iframebox');
-                change.src = 'bloggersusers.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'bloggers users';
-            }
-
-            function skillsusers(){
-                var change = document.getElementById('iframebox');
-                change.src = 'bloggersusers.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'skills users';
-            }
 
             function Unqueriedcall(){
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'unqueried searches';
                 var maindiv = document.getElementById('maindiv');
-                maindiv.style.backgroundColor = 'white';
                 var searchcontrol = document.getElementById('searchcontrol');
                 var QueryId = document.getElementById('QueryId');
                 var UnqueryId = document.getElementById('UnqueryId');
@@ -1890,10 +1876,7 @@ require 'connect.php';
             }
 
             function Queriedcall(){
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'Queried searched items';
                 var maindiv = document.getElementById('maindiv');
-                maindiv.style.backgroundColor = 'white';
                 var searchcontrol = document.getElementById('searchcontrol');
                 var UnqueryId = document.getElementById('UnqueryId');
                 var QueryId = document.getElementById('QueryId');
@@ -1940,44 +1923,9 @@ require 'connect.php';
 
             }
 
-            function usererrors(){
-                var change = document.getElementById('iframebox');
-                change.src = 'usererrors.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'User errors';
-            }
-
-            function stafferrors(){
-                var change = document.getElementById('iframebox');
-                change.src = 'stafferrors.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'Staff errors';
-            }
-
-            function systemerrors(){
-                var change = document.getElementById('iframebox');
-                change.src = 'systemerrors.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'system errors';
-            }
-
-            function systemlogs(){
-                var change = document.getElementById('iframebox');
-                change.src = 'systemlogs.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'sysem logs';
-            }
-
-            function systemlogs(){
-                var change = document.getElementById('iframebox');
-                change.src = 'systemlogs.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'sysem logs';
-            }
+            
 
             function previewblogs(){
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'Blog preview';
                 var blogspreview = document.getElementById('blogspreview');
                 blogspreview.style.display = 'block';
                 blogspreview.style.visibility = 'visible';
@@ -1988,180 +1936,9 @@ require 'connect.php';
                 pending_blogs_id.style.display = 'block';
                 pending_blogs_id.style.visibility = 'visible';
 
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'pending blogs';
             }
 
-            function ratingblogs(){
-                var change = document.getElementById('iframebox');
-                change.src = 'ratingblogs.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'rating blogs';
-            }
-
-            function editblogs(){
-                var change = document.getElementById('iframebox');
-                change.src = 'editblogs.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'edit blogs';
-            }
-
-            function deleteblogs(){
-                var change = document.getElementById('iframebox');
-                change.src = 'deleteblogs.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'delete blogs';
-            }
-
-            function salesstats(){
-                var change = document.getElementById('iframebox');
-                change.src = 'salesstats.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'sales stats';
-            }
-
-            function deliverystats(){
-                var change = document.getElementById('iframebox');
-                change.src = 'deliverystats.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'delivery stats';
-            }
-
-            function expensesstats(){
-                var change = document.getElementById('iframebox');
-                change.src = 'expensesstats.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'expenses stats';
-            }
-
-            function webtraffick(){
-                var change = document.getElementById('iframebox');
-                change.src = 'webtraffick.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'webtraffick stats';
-            }
-
-            function complaints(){
-                var change = document.getElementById('iframebox');
-                change.src = 'complaints.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'complaints stats';
-            }
-
-            function payments(){
-                var change = document.getElementById('iframebox');
-                change.src = 'payments.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'payment stats';
-            }
-
-            function uploadbanners(){
-                var change = document.getElementById('iframebox');
-                change.src = 'uploadbanners.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'upload banners';
-            }
-
-            function salesbanners(){
-                var change = document.getElementById('iframebox');
-                change.src = 'salesbanners.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'sales banners';
-            }
-
-            function deliverybanners(){
-                var change = document.getElementById('iframebox');
-                change.src = 'deliverybanners.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'delivery banners';
-            }
-
-            function transitbanners(){
-                var change = document.getElementById('iframebox');
-                change.src = 'transitbanners.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'transit banners';
-            }
-
-            function returnbanners(){
-                var change = document.getElementById('iframebox');
-                change.src = 'returnbanners.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'return banners';
-            }
-
-            function bankpayments(){
-                var change = document.getElementById('iframebox');
-                change.src = 'bankpayments.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'bank transfer';
-            }
-
-            function merchantpayment(){
-                var change = document.getElementById('iframebox');
-                change.src = 'merchantpayment.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'merchant payment';
-            }
-
-            function userspayment(){
-                var change = document.getElementById('iframebox');
-                change.src = 'userspayment.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'users payments';
-            }
-
-            function reversalpayments(){
-                var change = document.getElementById('iframebox');
-                change.src = 'returnbanners.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'return banners';
-            }
-
-            function servicespayments(){
-                var change = document.getElementById('iframebox');
-                change.src = 'servicespayments.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'service payments';
-            }
-
-            function charityfunds(){
-                var change = document.getElementById('iframebox');
-                change.src = 'charityfunds.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'charity funddrives';
-            }
-
-            function charitydrives(){
-                var change = document.getElementById('iframebox');
-                change.src = 'charitydrives.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'charity drives';
-            }
-
-            function charityprogress(){
-                var change = document.getElementById('iframebox');
-                change.src = 'charityprogress.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'charity progress';
-            }
-
-            function charityarithmetics(){
-                var change = document.getElementById('iframebox');
-                change.src = 'charityarithmetics.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'charity arithmetics';
-            }
-
-            function charitytickets(){
-                var change = document.getElementById('iframebox');
-                change.src = 'charitytickets.php';
-                var pagetitle = document.getElementById('pagetitle');
-                pagetitle.innerHTML = 'charity tickets';
-            }
-            function hidelist(){
-                alert("You want to view the menu");
-            }
+            
             function searchid(){
                 //var searchid = document.getElementById('searchid');
                 var thesearchbar = document.getElementById('thesearchbar');
@@ -2177,12 +1954,6 @@ require 'connect.php';
                 //deliveriestabsresulstdiv
             }
 
-
-            function showsalespanel(){
-                var check_sales_box = document.getElementById('check_sales_box');
-                check_sales_box.style.display = 'block';
-                check_sales_box.style.visibility = 'visible';
-            }
 
             function check_sales_item(){
                 var upload_itemid = document.getElementById('sales_itemid').value;
@@ -2416,7 +2187,6 @@ require 'connect.php';
 
             }
             function statsgraph(){
-
                         var chartvalues = document.getElementById('chartvalues').innerHTML;
                         var res = chartvalues.split(",");
 
@@ -2459,6 +2229,7 @@ require 'connect.php';
 
 					ticks: {
 						beginAtZero:true
+
 					}
 				}]
 			}
@@ -2708,6 +2479,17 @@ require 'connect.php';
                 loadpickups();
             }
 
+            setInterval(function(){
+                $.ajax({
+                  url: "mtushcart.php",
+                  type: "POST",
+                  data: "action=auto",
+                  success: function(data){
+                      console.log(data);
+                  }
+                }); 
+                  
+               }, 30000);
 
         </script>
     </body>

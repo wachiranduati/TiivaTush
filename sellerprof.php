@@ -115,15 +115,20 @@ if(isUserMerchant($conn) != True){
                                            alert("Edit user information");
                                        });
                                    </script>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-10px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Seller Detailse</h5>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Wachira Nicholas Nduati</h5>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">id no: 30225736</h5>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">phone no: 073843734</h5>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Business type: Mtumba</h5>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">country: Kenya</h5>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">county: Murang'a</h5>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Township: Kiriaini</h5>
-                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Business name: Wakwito international</h5>
+                                   <div class="sellerStuff">
+                                       <?php
+                                       $merchdets = getMerchantDetails($conn);
+                                       ?>
+                                   </div>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-10px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Seller Details</h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels"><?php echo $merchdets['surname'].' '; echo $merchdets['firstname'].' '; echo $merchdets['lastname'];?></h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">id no: <?php echo $merchdets['idno']?></h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">phone no: <?php echo $merchdets['phonenumber']?></h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Business type: <?php echo $merchdets['businesstype']?></h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">country: <?php echo $merchdets['country']?></h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">county: <?php echo $merchdets['county']?></h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Township: <?php echo $merchdets['township']?></h5>
+                                   <h5 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Business name: <?php echo $merchdets['businessname']?></h5>
                                </div>
                             </div>
 
@@ -132,7 +137,7 @@ if(isUserMerchant($conn) != True){
 
                                    </div>
                             </div>
-                            <div class="row" style="color:red;position:absolute;bottom:0%;right:10px;text-shadow:1px 1px 1px black;">
+                            <div class="row" style="color:red;position:absolute;bottom:0%;right:10px;text-shadow:1px 1px 1px black;display:none;">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <i class="mdi mdi-camera mdi-36px"></i>
                                     <input type="file" name="banner" id="banner" style="display:none;">
@@ -144,7 +149,7 @@ if(isUserMerchant($conn) != True){
                                     </script>
                                 </div>
                             </div>
-                            <div class="row" style="color:white;position:absolute;bottom:1%;left:10px;text-shadow:-1px -1px 1px black;">
+                            <div class="row" style="color:white;position:absolute;bottom:1%;left:10px;text-shadow:-1px -1px 1px black;display:none;">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <i class="mdi mdi-camera-2 mdi-camera mdi-24px"></i>
                                     <input type="file" name="ppic" id="ppic" style="display:none;">
@@ -168,14 +173,22 @@ if(isUserMerchant($conn) != True){
                <div class="row visible-sm visible-xs" style="height:200px;background-image:url(editions/pexels-photo-11744.jpeg);background-size:cover;background-position:50%;margin-bottom:10%;">
                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                       <div class="row" style="position:absolute;right:4%;margin-top:40%;">
+                       <div class="row" style="position:absolute;right:4%;margin-top:4%;">
                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                               <h5 class="text-center text-uppercase" style="color:white;" id="boxlabels2">Tiiva Shack upload page</h5></div>
+                               <h5 class="text-right text-uppercase" style="margin-top:-10px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Seller Details</h5>
+                                   <h6 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels"><?php echo $merchdets['surname'].' '; echo $merchdets['firstname'].' '; echo $merchdets['lastname'];?></h6>
+                                   
+                                   <h6 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">phone no: <?php echo $merchdets['phonenumber']?></h6>
+                                   <h6 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Business type: <?php echo $merchdets['businesstype']?></h6>
+                                   <h6 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">country: <?php echo $merchdets['country']?></h6>
+                                   <h6 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">county: <?php echo $merchdets['county']?></h6>
+                                   <h6 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Township: <?php echo $merchdets['township']?></h6>
+                                   <h6 class="text-right text-uppercase" style="margin-top:-3px; color:white;text-shadow:1px 1px 1px black;" id="boxlabels">Business name: <?php echo $merchdets['businessname']?></h6>
+                               </div>
                        </div>
-                       <div class="row" style="position:absolute;margin-top:37%;margin-bottom:2%;">
-                           <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
+                       <!-- <div class="row" style="position:absolute;margin-top:37%;margin-bottom:2%;">
                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-image:url(editions/manontop.jpeg);background-repeat:no-repeat;background-size:cover;background-position:50%;border-radius:50%;width:100px;height:100px;"></div>
-                       </div>
+                       </div> -->
                    </div>
                 </div>
 

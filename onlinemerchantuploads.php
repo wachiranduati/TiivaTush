@@ -10,7 +10,7 @@ $tempuser = ceil($user + 21);
 
 // echo "me and you";
 $count = 1;
-$query = "SELECT * FROM `products` WHERE `availability`!='0' AND `sellerid`='$tempuser'";
+$query = "SELECT * FROM `products` WHERE `availability`!='0' AND `sellerid`='$user'";
 $query_run = mysqli_query($conn, $query);
 echo "<div style=\"height:200px;overflow:scroll;\">";
 echo "<div class=\"table-responsive\">
@@ -42,7 +42,7 @@ while($query_row = mysqli_fetch_assoc($query_run)){
       echo "<span style=\"color:green;\">AVAILABLE</span>";
       echo "</td>";
       echo "<td>";
-      echo "<img src=\"";
+      echo "<img src=\"mtumbauploads/compresseduploads/";
       echo $query_row['imageone'];
       echo "\" style=\"max-height:50px;\" ";
       echo "</td>";

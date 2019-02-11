@@ -1,6 +1,6 @@
 <?php
 require 'connect.php';
-//echo "Found me";
+// echo "Found me";
 // query check out carts
 // return dates in order
 // for loop for common days to increase count
@@ -17,30 +17,36 @@ $dates = array();
 $traffick = array();
 // creates an empty dates traffick array
 $query_run = mysqli_query($conn, $query);
-while($row = mysqli_fetch_assoc($query_run)){
+$query_num_row = mysqli_num_rows($query_run);
+if($query_num_row != 0){
+    while($row = mysqli_fetch_assoc($query_run)){
     //echo $row['date'].'<br>';
     $thedate = $row['date'];
     // first check whether value exist in array
-    if(in_array($thedate,$dates)){
-        //Found update count
-        // update datestraffick array
-        // find position of the value found
-        $dateposition = array_search($thedate,$dates);
-        // change the value
-        // first get the value of the position
-        $positionvalue = $traffick[$dateposition];
-        //now change the position value with an increment of 1
-        $traffick[$dateposition] = ceil($positionvalue + 1);
-        //$dates = array_values($dates);
-    }else{
-        //not found so add to array
-        array_push($dates,$thedate);
-        // update count to 1 on same position
-        array_push($traffick,"1");
-    }
+        if(in_array($thedate,$dates)){
+            //Found update count
+            // update datestraffick array
+            // find position of the value found
+            $dateposition = array_search($thedate,$dates);
+            // change the value
+            // first get the value of the position
+            $positionvalue = $traffick[$dateposition];
+            //now change the position value with an increment of 1
+            $traffick[$dateposition] = ceil($positionvalue + 1);
+            //$dates = array_values($dates);
+        }else{
+            //not found so add to array
+            array_push($dates,$thedate);
+            // update count to 1 on same position
+            array_push($traffick,"1");
+        }
     // array with all dates occuring in singles created now
     
 }
+}else{
+    echo "couldn't find anything";
+}
+
 //print_r($dates).'<br>';
 //echo "<br>";
 //print_r($traffick).'<br>';
@@ -48,13 +54,13 @@ while($row = mysqli_fetch_assoc($query_run)){
 $datesstring = implode(',',$dates);
 $traffickstring = implode(',',$traffick);
 //echo $datesstring.'<br>';
-//echo $traffickstring.'<br>';
+// echo $traffickstring.'<br>';
 
 echo "
         <div class=\"col-lg-5 col-md-5 col-sm-5 col-xs-5\" style=\"font-family:kok;\">
-        <div id=\"chartvalues\" style=\"display:none;visibility:hidden;\">$traffickstring</div>
+        <div id=\"chartvalues\" style=\"\">$traffickstring</div>
 
-        <div id=\"chartdays\" style=\"display:none;visibility:hidden;\">$datesstring</div>
+        <div id=\"chartdays\" style=\"\">$datesstring</div>
     ";
 ?>
 

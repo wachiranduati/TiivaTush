@@ -104,18 +104,18 @@ if(isset($_POST['useremail'])){
                                 <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
                                     <form class="form-group" action="checkout.php" method="get">
                                         <label for="username">Name:</label>
-                                        <input type="text" value="something" id="username" name="username" placeholder="Name: Jeniffer Craig Someone" class="form-control" title="<h5>Name Field</h5>Please provide your full name. Your delivery will be made to this name unless a special request is provided in the <strong>Special Requests Field</strong>"/><br>
+                                        <input type="text" id="username" name="username" placeholder="Name: Jeniffer Craig Someone" class="form-control" title="<h5>Name Field</h5>Please provide your full name. Your delivery will be made to this name unless a special request is provided in the <strong>Special Requests Field</strong>"/><br>
                                         <label for="useridno">ID no:</label>
-                                        <input type="number" value="0785959" id="useridno" name="useridno" placeholder="ID Number: 302367236" class="form-control" title="<h5>Identification number Field</h5>Please provide your identification number in the input below"/><br>
+                                        <input type="number" id="useridno" name="useridno" placeholder="ID Number: 302367236" class="form-control" title="<h5>Identification number Field</h5>Please provide your identification number in the input below"/><br>
                                         <label for="emailaddress">Emailaddress: (optional)</label>
                                         <input type="email" id="emailaddress" value="myemail@gmail.com" name="emailaddress" placeholder="Email: me@gmail.com" class="form-control" title="<h5>Email address Field</h5>Please provide us with your Email Address.ps. We will send your receipt to the provided email. This step is optional"/><br>
                                         <label>Country</label>
                                         <input type="text" placeholder="Country: Kenya" readonly disabled class="form-control" title="<h5>Country Field</h5>Please provide us with your country where the shopping should be delivered"/><br>
                                         <label for="phonenumber">Phone Number:</label>
-                                        <input type="text" value="something" id="phonenumber" name="phonenumber" placeholder="Mobile Phone: 072323321" class="form-control" title="<h5>PhoneNumber Field</h5>Please provide your phone number. This must be the same one used to pay for your cart but it can be an optional contact during delivery if another one is provided in the special requests input field"/><br>
+                                        <input type="text" id="phonenumber" name="phonenumber" placeholder="Mobile Phone: 072323321" class="form-control" title="<h5>PhoneNumber Field</h5>Please provide your phone number. This must be the same one used to pay for your cart but it can be an optional contact during delivery if another one is provided in the special requests input field"/><br>
                                         <div class="form-group">
                                         <label for="county">County:</label>
-                                        <select class="form-control" value="something" id="county" name="county" title="<h5>County to Deliver cart Field</h5>Please select the county in Kenya where the delivery is to be made">
+                                        <select class="form-control" id="county" name="county" title="<h5>County to Deliver cart Field</h5>Please select the county in Kenya where the delivery is to be made">
 
                                         <optgroup label="COUNTIES/STATE/REGION" >PROVINCE
                                         <option value="Baringo">Baringo county</option>
@@ -170,7 +170,7 @@ if(isset($_POST['useremail'])){
                                       </select>
                                     </div>
                                         <label for="area">Area: eg.Garissa town</label>
-                                        <input type="text" value="somewhere" id="area" name="area" placeholder="Town/Area*" class="form-control" title="<h5>Town Delivery Field</h5>Please provide the town in which your delivery will be made p.s. You can also provide your exact gps coordinates and we will deliver straight to your doorstep at no extra cost"/><br>
+                                        <input type="text" id="area" name="area" placeholder="Town/Area*" class="form-control" title="<h5>Town Delivery Field</h5>Please provide the town in which your delivery will be made p.s. You can also provide your exact gps coordinates and we will deliver straight to your doorstep at no extra cost"/><br>
                                     </form>
                                 </div>
 

@@ -473,7 +473,7 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                                                 <?php
                                                 // if replace with unfunctional btn if item not available/cart
                                                 if(isset($_SESSION['$user_id'])){
-                                                    if($query_row['availability'] == 0 || $query_row['buyer'] != 0){
+                                                    if($query_row['availability'] == 0 && $query_row['buyer'] != 0){
                                                             if($query_row['buyer'] == $_SESSION['$user_id']){
                                                                 // me show added to cart
                                                                 echo "

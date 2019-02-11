@@ -103,7 +103,7 @@ function createProductActivityStamp($conn, $itemid, $ctime, $exptime, $userid, $
 	// create a new entry to a addtocart
 	// cols -> id, itemid, user, exptime, book, cart,  
 	// cart entries will be deleted when cart is checked out
-	$query = "INSERT INTO `cartactivity`(`id`, `itemid`, `ctime`, `exptime`, `userid`, `state`) VALUES ('',$itemid,'$ctime','$exptime',$userid, 'book')";
+	$query = "INSERT INTO `cartactivity`(`id`, `itemid`, `ctime`, `exptime`, `userid`, `state`, `checked`) VALUES ('',$itemid,'$ctime','$exptime',$userid, 'book', '0')";
 	if($query_run = mysqli_query($conn, $query)){
 		return True;
 	}else{
@@ -117,7 +117,7 @@ function createProductActivityStamp($conn, $itemid, $ctime, $exptime, $userid, $
 
 function destroyProductActivityStamp($conn, $table, $itemid, $userid){
 	// this will delete an entry normally when a user checksout the cart or the cart expires
-	$query = "DELETE FROM `$table` WHERE `itemid` =  $itemid AND `userid` = $userid";
+	$query = "DELETE FROM `$table` WHERE `itemid` =  $itemid AND `userid` = $userid AND `checked` = 0";
 	if($query_run = mysqli_query($conn, $query)){
 		return True;
 	}else{
@@ -190,7 +190,7 @@ function updateProdActivityAddCart($conn, $carttime, $itemid){
 function UnbookIfExpired($conn, $ctime){
 	// this will check exp time compare it with current time to know whether book already expired
 	$now = Date('Y-m-d H:i:s');
-	$query = "SELECT * FROM `cartactivity` WHERE `exptime` < '$now'";
+	$query = "SELECT * FROM `cartactivity` WHERE `exptime` < '$now' AND `checked`= 0";
 	$query_run = mysqli_query($conn, $query);
 	$num_rows = mysqli_num_rows($query_run);
 	if($num_rows != 0){
@@ -222,6 +222,13 @@ function UnbookIfExpired($conn, $ctime){
 }
 
 // echo UnbookIfExpired($conn, $ctime);
+if(isset($_POST['action']) && $_POST['action'] == 'auto'){
+echo UnbookIfExpired($conn, $ctime);
+}
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<AUTOMATED UNBOOK >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<AUTOMATED UNBOOK >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 
 // <<<<<<<<<<<<<<<<<<<<<<<<< AddtoCart ITEM ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 if(isset($_POST['action']) && $_POST['action'] == 'addtocart' && isset($_POST['prod']) && is_numeric($_POST['prod']) && !empty($_POST['prod'])){

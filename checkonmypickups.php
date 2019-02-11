@@ -9,17 +9,18 @@ $tempme = ceil($user + 21);
 
 $query = "SELECT * FROM `pickupds` WHERE `seller`='$tempme' AND `sign`='0' AND `paymentmode`='' AND `idnumber`='0' AND `name`=''";
 $query_run = mysqli_query($conn, $query);
+$query_num = mysqli_num_rows($query_run);
+echo $query_num;
 $count = 1;
 echo "
 <div class=\"table-responsive\">
   <table class=\"table\">
     <thead>
       <tr>
-        <th>No</th>
+        <th>No1</th>
         <th>Item</th>
         <th>Title</th>
         <th>Price</th>
-        <th>Agent</th>
       </tr>
     </thead>
     <tbody>
@@ -58,7 +59,6 @@ while($queryitemrow = mysqli_fetch_assoc($queryitemsrun)){
     <td><a href=\"$link$product\" target=\"_blank\" title=\"view item\"><img src=\"$imageone\" style=\"max-height:40px;\"/></a></td>
     <td>$itemtitle</td>
     <td>Ksh $price</td>
-    <td>$agent Null</td>
 
   </tr>
 

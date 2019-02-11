@@ -10,7 +10,7 @@ if(isset($_SESSION['$staff'])){
     //header(location 'index.php');
     header('Location:testerpage.php');
 }else{
-    echo "Do nothing";
+    // echo "Do nothing";
 }
 //TODO THE REDIRECT FUNCTION IS BUST.....STOP USING AJAX TO REDIRECT THE USER
 ?>

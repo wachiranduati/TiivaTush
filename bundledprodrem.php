@@ -13,7 +13,7 @@ if(isset($_SESSION['$staff'])){
       $state = $_POST['state'];
       if($state == 'dw4sd'){
         // load all the items to review
-        inspectitems();
+        inspectitems($conn);
       }elseif($state == 'kdslow'){
         // flag the item
         flagitem();
@@ -24,7 +24,7 @@ if(isset($_SESSION['$staff'])){
       }elseif($state == 'k498sl'){
         // start search function
         // showreturncarts();
-        showretcartcontentsincomplete();
+        showretcartcontentsincomplete($conn);
       }elseif($state == '4lksd'){
         // provide a to provide return details for complete carts
         //TODO REVIEW TWEAK THIS FUNCTION TO ONLY SHOW ITEMS THAT HAVE NOT SURPASSED THEIR RETURN DATE/DAYS....ELSE DISABLE THE CALL TO ACTION BUTTON
@@ -38,7 +38,7 @@ if(isset($_SESSION['$staff'])){
       }elseif($state == 'exlsE'){
         // provide details for the incomplete carts
         //TODO REVIEW TWEAK THIS FUNCTION TO ONLY SHOW ITEMS THAT HAVE NOT SURPASSED THEIR RETURN DATE/DAYS....ELSE DISABLE THE CALL TO ACTION BUTTON
-        showretcartcontentsincomplete();
+        showretcartcontentsincomplete($conn);
         //TODO FIRST SEE THIS REVIEW....TO ADD NEW ACTIONS FOR THE SEARCH DROP DOWN TO SHOW ITEM DETAILS...AND ALSO
       }elseif($state == 'reason'){
         // the return function to just add a new row to the database of returns7
@@ -362,7 +362,7 @@ function showcompleteproddetails(){
 }
 
 //TODO SECURE THE CODE IN THIS PAGE
-function showretcartcontentsincomplete(){
+function showretcartcontentsincomplete($conn){
   //these are items that have been already been delivered
   // show cart contents for complete cart contents
   // $inccart = 'c132e70114a1c6990955c987915a9850';
@@ -809,7 +809,7 @@ function flagitem(){
   }
 }
 
-function inspectitems(){
+function inspectitems($conn){
   // every tiiva center should receive a prompt to update the image proof of items
   //REVIEW THE SCRIPT HAS BEEN CHANGED TO ALLOW INSPECTION OF ITEMS BY STAFF... ENABLE FLAGING OF ITEMS TO INSPECTION BY HIGHER STAFF MEMBERS
   // CHECK FOR STRUCTURAL INTEGRITY OF THE PACKAGE OR POSSIBLE TAMPERING

@@ -6,12 +6,6 @@ require 'connect.php';
 $salt = md5('chumakuburuka');
 echo $staff = md5('staff4online5');
 
-if(isset($_SESSION['$staff'])){
-    //header(location 'index.php');
-    header('Location:index.php');
-}else{
-    echo "Do nothing";
-}
 
 //echo md5($salt.mysqli_real_escape_string($conn, 'pass123'));
 

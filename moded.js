@@ -49,10 +49,6 @@ function removeItem(prod){
     });
 }
 
-setInterval(function(){ 
-      console.log('auto unbook');
-   }, 120000);
-
 
             
             function toggleadvancedsearch(){

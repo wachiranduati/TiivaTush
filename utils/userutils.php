@@ -131,4 +131,53 @@ function returncartItems($conn, $table){
 	}
 }
 
+function getMerchantDetails($conn){
+$userState = userLoggedIn();
+if ($userState == True){
+	$user = $_SESSION['$user_id'];
+	$query = "SELECT * FROM `merchants` WHERE `userid`='".mysqli_real_escape_string($conn, $user)."'";
+	$query_run = mysqli_query($conn, $query);
+	$query_row = mysqli_num_rows($query_run);
+	if($query_row == 1){
+		$row = mysqli_fetch_assoc($query_run);
+		return $row;
+	}else{
+		return False;
+	}
+}
+}
+
+function isStaffLoggedIn(){
+	if(isset($_SESSION['$staff'])){
+		return True;
+	}else{
+		return False;
+	}
+}
+
+function getStaffID(){
+$userState = isStaffLoggedIn();
+if ($userState == True){
+	$user = $_SESSION['$staff'];
+	return $user;
+}
+}
+
+function redirectAndDie(){
+	header('Location:index.php');
+	die("You do not have permission to be on this page");
+}
+
+function getSpecificMerchantDetails($conn, $sellerid){
+$query = "SELECT * FROM `merchants` WHERE `userid`='".mysqli_real_escape_string($conn, $sellerid)."'";
+$query_run = mysqli_query($conn, $query);
+$query_row = mysqli_num_rows($query_run);
+	if($query_row == 1){
+		$row = mysqli_fetch_assoc($query_run);
+		return $row;
+	}else{
+		return False;
+	}
+}
+
 ?>
