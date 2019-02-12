@@ -1678,8 +1678,18 @@ if(userLoggedIn() == True){
 
                     }
                   </script>
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="itemsintransit">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="updatemyLocation" style="background-color: gainsboro;border:1px solid white;padding-top: 20px;">
+                        <div class="form-group row">
+                          <div class="col-xs-4">
+                            <input class="form-control" id="newLocation" type="text" placeholder="user the format County-Area eg Nairobi-roysambu">
+                          </div>
+                          <div class="col-lg-2">
+                            <a class="btn btn-warning btn-block" id="locationSubm"><span class="mdi mdi-webhook mdi-18px mdi-spin"></span> Update My Location</a>
+                          </div>
+                          <div class="col-lg-5"><h5 class="updateMessage">Update your location as often as possible to notify our users on their items location in transit</h5></div>
+                        </div>
                     </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="itemsintransit"></div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="myprompts"></div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="craptrap"></div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="sentoutprompts"></div>
@@ -1775,10 +1785,46 @@ if(userLoggedIn() == True){
 
 
             
+            $("#locationSubm").click(function(){
+                var location = $("#newLocation").val();
+                var state = location.indexOf('-');
+                if(state != -1 && state != ''){
+                    // send the ajax request to change transit location
+                    $.ajax({
+                        url: "transitprogress.php",
+                        type: 'POST',
+                        data: "updateLocation="+location,
+                        success: function(locationupdate){
+                          $(".updateMessage").html('location successfully update to '+location);
+                          $(".updateMessage").css('color','');
+                          setTimeout(returnTextBackToNormal, 15000);
+                        }
+                      });
+                    // hide the input box now maybe and show it in an hour
+                    // setTimeout(showHideAndReverseBox, 4000);
+                }else{
+                    $(".updateMessage").html('Please use the proper format i.e Nairobi-Dandora');
+                    $(".updateMessage").css('color','red');
+                    setTimeout(returnTextBackToNormal, 15000);
 
+                    // alert('please format the input correctly');
+                }
+                
+            });
             
+            function returnTextBackToNormal(){
+                $(".updateMessage").html('Update your location as often as possible to notify our users on their items location in transit');
+                $(".updateMessage").css('color', "");
+            }
 
-            
+            // show this thingy every one hour for like 30 minutes or so
+            function showHideAndReverseBox(){
+                // this will show the box every 1 hour and hide it
+                $("#updatemyLocation").toggle();
+                setTimeout(showHideAndReverseBox, 3600000);// proper show or hide after 1 hour
+
+            }
+
 
             function sales(sls){
               //the start

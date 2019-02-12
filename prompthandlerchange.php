@@ -16,7 +16,7 @@ require 'connect.php';
 // the deleting row function will be called automatically before all prompt functions
 //TODO YOU MAY INCLUDE THE DELETE FUNCTIONS ON THE AUTOTEST
 
-function createprompt(){
+function createprompt($conn){
 
   if(isset($_POST['itemid']) && isset($_POST['cartname']) && isset($_POST['location']) && isset($_POST['handler']) && isset($_POST['handlerid'])){
 
@@ -365,7 +365,7 @@ function confirmhandlerchange($conn){
 //SAVE THIS LATER*****************88888888888
 
 if(isset($_POST['cr_ts'])){
-  createprompt();
+  createprompt($conn);
 }elseif(isset($_POST['myprompts'])){
   showmyprompts($conn);
 }elseif(isset($_POST['sentoutprompts'])){

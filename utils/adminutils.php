@@ -152,4 +152,55 @@ function updateTrnsuptPickupid($conn, $transititemid){
 	}
 
 }
+
+function retrieveFinalItemInCommadString($commadString){
+	$itemArray = explode(',', $commadString);
+	$finalItemPosition = count($itemArray);
+	return $itemArray[$finalItemPosition - 1];
+	// minus one cause numbering starts at zero to total count minus 1
+}
+
+function queryAllitemsInTransit($conn){
+	//retrieve all the items that are currently in transit
+	$query = "SELECT * FROM `transitdbs` WHERE `dstatus` = 0";
+	$query_run = mysqli_query($conn, $query);
+	$transitItems = array();
+	if(mysqli_num_rows($query_run) != 0){
+		// continue
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($transitItems, $query_row);
+		}
+		return $transitItems;
+	}else{
+		die("There are no items in transit");
+	}
+
+}
+
+function returnItemidShop($conn, $rowid){
+	// this will return the complex item id that is the shop letter and the id combined
+	$query = "SELECT `item` FROM `pickupds` WHERE `id`='$rowid'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) == 1){
+		$row = mysqli_fetch_assoc($query_run);
+		return $row['item'];
+	}
+}
+
+function appendNewValueToCommaSeperatedData($data, $newValue){
+	$itemArray = explode(',', $data);
+	array_push($itemArray, $newValue);
+	return implode(',', $itemArray);
+}
+
+function updateTransitLocationTime($conn, $newlocations, $newExchTimes, $transitid){
+	// this is triggered by the staff in transit location change inputing the new location to the system
+	$query = "UPDATE `transitdbs` SET `exchlocs` = '$newlocations', `exchdattimes` = '$newExchTimes' WHERE `itemid` =  '$transitid'";
+	if($query_run = mysqli_query($conn, $query)){
+		// success
+		echo "successfully updated the transit location";
+	}else{
+		die("could not update the transit and time location");
+	}
+}
 ?>

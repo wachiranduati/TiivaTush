@@ -3,9 +3,12 @@ ob_start();
 session_start();
 require 'connect.php';
 require 'utils/adminutils.php';
+
+if(isStaffLoggedIn() != True){
+  die('You do not have permission to view this');
+}
 // Decided to rewrite the entire thing and make it more scalable
 // i RECKON THIS SHOULD CONTROL THE ENTIRE IN TRANSIT THINGY ONCE AN ITEM HAS BEEN PICKED UP 
-// f
 
 function updatetransitdatabase($conn){
   // This script will retrieve all carts that have been picked up and move them to the transit db
@@ -23,7 +26,9 @@ function updatetransitdatabase($conn){
     // updated carts as this wont be scalable with time
     $row = retrieveAllPickedUpRows($conn);
     // print_r($row);
-    $UniqueCarts = createAnArraySpecialItems($row);
+    if($row != 0){
+      // no new rows found
+      $UniqueCarts = createAnArraySpecialItems($row);
     // This returns all the unique carts found in the pickupds
     // retrieve the sold data i.e. shiptype etc
     for($x = 0; $x < count($UniqueCarts); $x++){
@@ -76,6 +81,9 @@ function updatetransitdatabase($conn){
         }
       }
 
+    }
+    }else{
+      echo "no new rows found";
     }
 
   }else{
@@ -320,7 +328,7 @@ function returnadmintransit($conn){
             <th>Shipping</th>
             <th>Destination</th>
             <th>E.T.A</th>
-            <th>Changehandler</th>
+            <!--<th>Changehandler</th>-->
           </tr>
         </thead>
         <tbody>";
@@ -414,7 +422,7 @@ function returnadmintransit($conn){
                   <td>$shiptype</td>
                   <td>$destination</td>
                   <td>$deadline</td>
-                  <td><button class=\"btn btn-primary btn-sm sumsum\" data-product=\"$item\" data-cart=\"$cartname\">PassOn</button></td>
+                  <!--<td><button class=\"btn btn-primary btn-sm sumsum\" data-product=\"$item\" data-cart=\"$cartname\">PassOn</button></td>-->
                 </tr>";
       }
       $count++;
@@ -429,6 +437,130 @@ function returnadmintransit($conn){
 // returnadmintransit();
 // TODO CORRECT THE FUNCTION BEFORE THIS ONE TO SHOW CART NAME ALSO AS THE RESPONSE
 // return current items in transit individually sellers/buyers
+
+function showStaffCurrentItemsInTransit($conn){
+  // retrieve all the items in transit that have you as teh current handler
+  // first retrieve the stafftiivanickname to search for
+  $staffTiivaNick =  getStaffName($conn);
+  // echo $staffTiivaNick;
+  // $dataFed = "banana, monkey, gracias, nothing, grapes";
+  // echo retrieveFinalItemInCommadString($dataFed);
+  // print_r(queryAllitemsInTransit($conn));
+  $transitItems = queryAllitemsInTransit($conn);// TODO ENSURE IT RETURNS SOMETHING ELSE ERROR
+  // loop throught the records and find those where the current handler is myself
+  echo "  
+  <div class=\"table-responsive\" style=\"background-color:white;padding:10px;\">
+    <h3 class=\"text-center text-capitalize\">Items in Transit In my Possession</h3>
+      <table class=\"table\">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>ItemId</th>
+            <th>Cartname</th>
+            <th>Handler</th>
+            <th>Source</th>
+            <th>Last Location</th>
+            <th>Last Time</th>
+            <th>Shipping</th>
+            <th>Destination</th>
+            <th>E.T.A</th>
+            <th>Changehandler</th>
+          </tr>
+        </thead>
+        <tbody>";
+  for($x = 0; $x < count($transitItems); $x++){
+    $handlers = $transitItems[$x]['handlers'];
+    // retrieve the final handler
+    $finalHandler = retrieveFinalItemInCommadString($handlers);
+    if($staffTiivaNick == $finalHandler){
+      // this item is in my possession
+      // retrieve cartname, handler, source, lastlocation, shipping, destination, ETA change handler
+      $itemid = $transitItems[$x]['itemid'];
+      // retrieve item// i.e. with like M234 ...note that the itemid above is the pickup row id
+      $item = returnItemidShop($conn, $itemid);
+      $cartname = $transitItems[$x]['cartname'];
+      $cartnameshort = substr($cartname,0,9);
+      $packagesource = $transitItems[$x]['from'];
+      // retrieve last location from the exch location
+      $exchlocs = $transitItems[$x]['exchlocs'];
+      $currentexchlocs = retrieveFinalItemInCommadString($exchlocs);
+      // retrieve last exchange time
+      $exchdattimes = $transitItems[$x]['exchdattimes'];
+      $latestexchtime = retrieveFinalItemInCommadString($exchdattimes);
+      // retrieve remaining values
+      $currenthandler = $finalHandler;
+      $shiptype = $transitItems[$x]['shiptype'];
+      $destination = $transitItems[$x]['centredestination'];
+      $deadline = $transitItems[$x]['deadline'];
+      $count = ceil($x+1);
+      // return the table rows
+      echo "<tr>
+                <td>$count</td>
+                <td>$itemid</td>";
+
+            echo "
+
+                    <td><span class=\"showcart\" title=\"<h3>Full Cart Name</h3><p>$cartname</p>\">$cartnameshort...</span></td>
+                    <td>$currenthandler</td>
+                    <td>$packagesource</td>
+                    <td>$currentexchlocs</td>
+                    <td>$latestexchtime</td>
+                    <td>$shiptype</td>
+                    <td>$destination</td>
+                    <td>$deadline</td>
+                    <td><button class=\"btn btn-primary btn-sm sumsum\" data-product=\"$item\" data-cart=\"$cartname\">PassOn</button></td>
+                  </tr>";
+
+    }else{
+      // do nothing
+      // echo "I don't have this item<br>";
+    }
+  }
+   echo "
+      </tbody>
+      </table>
+
+      </div>";
+
+}
+
+// showStaffCurrentItemsInTransit($conn);
+
+function updateInTransitLocation($conn, $currentLocation){
+  // This script will enable the staff member currently in transit to update his location
+  // By updating his location this should automatically update the location in items he currently holds
+  $currentTime = currentTime();
+  // so retrieve all the transit items currently in my possession
+  // update the location, timestamp
+  // appendNewValueToCommaSeperatedData($data, $newValue);
+  $staffTiivaNick = getStaffName($conn);
+  // retrieve all the items in transit
+  $transitItems = queryAllitemsInTransit($conn);// this will die if nothing is in transit
+  for($x = 0; $x < count($transitItems); $x++){
+      $handlers = $transitItems[$x]['handlers'];
+      // retrieve the final handler
+      $finalHandler = retrieveFinalItemInCommadString($handlers);
+      if($staffTiivaNick == $finalHandler){
+        // continue
+        // now we have all the items we currently have in transit
+        // updated the location
+        $exchlocs = $transitItems[$x]['exchlocs'];
+        $exchdattimes = $transitItems[$x]['exchdattimes'];
+        // append the new value to the location and time
+        $newlocations = appendNewValueToCommaSeperatedData($exchlocs, $currentLocation);// new location
+        $newExchTimes = appendNewValueToCommaSeperatedData($exchdattimes, $currentTime);// new times
+        // The item id will be passed as the row filter specifying which row to update
+        $itemid = $transitItems[$x]['itemid'];// remember this is the transit row unique id / primary key
+        updateTransitLocationTime($conn, $newlocations, $newExchTimes, $itemid);
+
+      }else{
+        // do nothing
+      }
+  }
+
+}
+// updateInTransitLocation($conn, $currentLocation);
+
 function returnmerchanttransit($conn){
   // first return the incomplete carts i.e carts in transit
   $queryupdatetransitdbs = "SELECT * FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE' AND `updated`='1'";
@@ -566,29 +698,56 @@ function returnmerchanttransit($conn){
       </div>";
 }
 // returnmerchanttransit();
-if(isset($_POST['transit'])){
-  $transit = $_POST['transit'];
-  updatetransitdatabase($conn);
-  // check whether its a user or a staff member
-  // TODO ENSURE THAT THE HANDLER PICKING IS IN THE CORRECT ROUTE THE PACKAGE IS HEADED
-  // TODO THE NEW HANDLER SHOULDNT BE THE CURRENT ITEM HANDLER
-  if(isset($_SESSION['$staff'])){
-    // this is a tiiva staff member so show him all the data
-    // call appropriate transit function
+// if(isset($_POST['transit'])){
+//   $transit = $_POST['transit'];
+//   updatetransitdatabase($conn);
+//   // check whether its a user or a staff member
+//   // TODO ENSURE THAT THE HANDLER PICKING IS IN THE CORRECT ROUTE THE PACKAGE IS HEADED
+//   // TODO THE NEW HANDLER SHOULDNT BE THE CURRENT ITEM HANDLER
+//   if(isset($_SESSION['$staff'])){
+//     // this is a tiiva staff member so show him all the data
+//     // call appropriate transit function
+//     showStaffCurrentItemsInTransit($conn);
+//     returnadmintransit($conn);
+//     // returnmerchanttransit();
+//   }else{
+//     // this is probably a user not a staff member
+//     // TODO CHECK WHETHER THE USER IS LOGGED IN ELSE DENY THEM
+//     // call appropriate transit function
+//     // returnadmintransit();
+//     returnmerchanttransit($conn);
+//   }
+// }elseif(isset($_POST['completecartatdestination'])){
+//   updatetransitdatabase($conn);
+//   completecartatdestination($conn);
+// }
+
+// always run this script every time this page is accessed
+updatetransitdatabase($conn);// this will update the items in transit from the pickup ds
+
+
+if(isset($_POST['transit']) && !empty($_POST['transit'])){
+  $value = $_POST['transit'];
+  if($value == 'transitadmin'){
+    // show all the items in transit and also mine if any
+    showStaffCurrentItemsInTransit($conn);
     returnadmintransit($conn);
-    // returnmerchanttransit();
-  }else{
-    // this is probably a user not a staff member
-    // TODO CHECK WHETHER THE USER IS LOGGED IN ELSE DENY THEM
-    // call appropriate transit function
-    // returnadmintransit();
+  }elseif($value == 'merchant'){
+    // this should be fixed later though...or we can also use it inhouse like..to check on a merchants items
     returnmerchanttransit($conn);
+  }else{
+    //nothing
+    die('Bye bye');
   }
-}elseif(isset($_POST['completecartatdestination'])){
+}elseif(isset($_POST['completecartatdestination']) && $_POST['completecartatdestination'] == 'ljodsfi'){
   updatetransitdatabase($conn);
   completecartatdestination($conn);
+}elseif(isset($_POST['updateLocation']) && !empty($_POST['updateLocation'])){
+  $newLocation = mysqli_real_escape_string($conn, $_POST['updateLocation']);
+  updateInTransitLocation($conn, $newLocation);
+}else{
+  die('Bye bye');
 }
-
 
 // TODO SHOW ITEMS IN TRANSIT THAT ARE IN CARESHIP OF THE CURRENT USER
 

@@ -180,4 +180,18 @@ $query_row = mysqli_num_rows($query_run);
 	}
 }
 
+function getStaffName($conn){
+	$staffId = getStaffID();
+	$query = "SELECT `tiivanick` FROM `staff` WHERE `id` = '$staffId'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) == 1){
+		// staff found
+		$row = mysqli_fetch_assoc($query_run);
+		return $row['tiivanick'];
+	}else{
+		// something is terribly wrong
+		die('Staff Name request could not be completed');
+	}
+}
+
 ?>
