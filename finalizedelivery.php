@@ -2,6 +2,7 @@
 ob_start();
 session_start();
 require 'connect.php';
+require 'utils/adminutils.php';
 
 //TODO SHOW THE CART DETAILS AND CART DELIVERY FORM
 //TODO FINALIZE INCOMPLETE CART DELIVERY
@@ -18,18 +19,18 @@ if(isset($_POST['action'])){
   $action = $_POST['action'];
   if($action == 'delivercart'){
     // return complete carts
-    checkincompletecompletecartsdlv();
-    returndelvdetsandform();
+    checkincompletecompletecartsdlv($conn);
+    returndelvdetsandform($conn);
   }elseif($action =='deliverincocart'){
     // return incomplete carts
-    checkincompletecompletecartsdlv();
-    incompletecartreturnt();
+    checkincompletecompletecartsdlv($conn);
+    incompletecartreturnt($conn);
   }elseif($action == 'compdelv'){
-    checkincompletecompletecartsdlv();
-    completecartdelivery();
+    checkincompletecompletecartsdlv($conn);
+    completecartdelivery($conn);
   }elseif($action == 'incodelv'){
-    checkincompletecompletecartsdlv();
-    incompletecartdelivery();
+    checkincompletecompletecartsdlv($conn);
+    incompletecartdelivery($conn);
   }else{
     die("sida tupu buana");
   }
@@ -38,7 +39,7 @@ if(isset($_POST['action'])){
 }
 
 
-function returndelvdetsandform(){
+function returndelvdetsandform($conn){
   // this is to relay cart information
   if(isset($_POST['cart'])){
     $cartname = $_POST['cart'];
@@ -314,231 +315,50 @@ function incompletecartreturnt(){
 //TODO autotest to check whether checkoutcarts has been changed
 // checkincompletecompletecartsdlv();
 
-function checkincompletecompletecartsdlv(){
-  //this script will update the checkoutcarts status of carts of which have been delivered incompletely ONLY
-  //TODO ...THIS SHOULD BE INCLUDED IN THE AUTOTEST THINGI TOO WHEN RUNNING IT
-  // chekc whether an entry on the autotest actually exists
-  // first get the current time and date to compare with that in the database
-  $date = Date("Y-m-d");
-  $timenow = Date("H:m:i");
-  // now query the autotest table
-  $queryautotest = "SELECT * FROM `autotest` WHERE `test`='incomplete'";
-  $queryautotest_run = mysqli_query($conn, $queryautotest);
-  $queryautotest_num = mysqli_num_rows($queryautotest_run);
-
-  if($queryautotest_num == 1){
-    //record found
-    // echo "record found";// dont insert row
-    //TODO CHECK THE TIME
-    $queryautotest_row = mysqli_fetch_assoc($queryautotest_run);
-    $rantime = $queryautotest_row['time'];
-    $randate = $queryautotest_row['date'];
-
-    $rantimeArray = explode(':',$rantime);
-    $timenowArray = explode(':',$timenow);
-    $rantimeminute = $rantimeArray[1];
-    $timenowminute = $timenowArray[1];
-    $rantimehour = $rantimeArray[0];
-    $timenowhour = $timenowArray[0];
-
-    $timeplus2 = round($timenowminute + 5);// if it was last updated more than 2 minutes ago...update
-    //REVIEW MAYBE CHANGED THE TIME LATER TO REDUCE RAM RESOURCE USE BY THE SCRIPT
-
-    $randateArray = explode('-',$randate);
-    $dateArray = explode('-',$date);
-
-    // if the minute is more than 2 mins away//TODO REVIEW THIS
-    if( $timenowhour != $rantimehour || round($rantimeminute + 5) > $timenowminute || round($rantimeminute + 5) < $timenowminute){
-      // run if ....hour has changed or .. minute has changed by more than 5 minutes - upwards or downwards
-      // run process
-      //REVIEW REVIEW THE IF CONDITION LATER...SOMETHING MIGHT BE OFF
-      // echo "run the process";
-      // SCRIPT WAS PUSHED BELOW THIS
-      $incompletecartsarray = array();
-      // query the time then check the incomplete delivery TODO IS HERE TODO TODO
-      $queryincompletecarts = "SELECT `cartname` FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE'";
-      $queryincompletecarts_run = mysqli_query($conn, $queryincompletecarts);
-      $queryincompletecarts_num = mysqli_num_rows($queryincompletecarts_run);
-      if($queryincompletecarts_num != 0){
-        // carts exist
-        while($queryincompletecarts_row = mysqli_fetch_assoc($queryincompletecarts_run)){
-          // add the carts to the arrays
-          $cart = $queryincompletecarts_row['cartname'];
-          if(in_array($cart,$incompletecartsarray)){
-            // dont add cart
+function checkincompletecompletecartsdlv($conn){
+  // This checks to see whether cart items have been delivered and updates checkout cart to complete
+  // first check whether 5 minutes have elapsed since all the incomplete carts delivery were checked
+  // retrieve the last time on the incomplete row
+  $current_time_on_pickup_row_autotest = getAutotestTime($conn, 'incomplete');
+  if(checkIfAtleast_ThisTimeHasElapsed($current_time_on_pickup_row_autotest, '15 minutes') == True){
+    // retrieve all undelivered carts
+    $incompleteCarts = getUnUpdatedCarts($conn, 1);
+    // retrieve all delivered items from transitdb from incomplete carts...dstatus = 1
+    if($incompleteCarts != 0){
+      for($x = 0; $x < count($incompleteCarts); $x++){
+        // print_r($incompleteCarts[$x]);
+        $cartname = $incompleteCarts[$x]['cartname'];
+        $cartTransitItem = getTransitItemsDstatusPerCart($conn, $cartname, 1);// 1 deliverd 0 not delivered
+        if($cartTransitItem != 0){
+          // print_r($cartTransitItem);
+          // ooh so this script checks whether there's a complete cart that has been delivered// should be in transit though too
+          // this will count items in the transit items belonging to the cart and compare to the actual cart contents
+          // if equal that means that items have been delivered and the cart should be now marked as complete
+          $originaCartContents = $incompleteCarts[$x]['cartcontents'];// original cart contents i.e. m123, m13, m4
+          $originalCartContentsArray = convertCommaSeperateStringIntoArray($originaCartContents); // the cartcontent in array
+          $originaCartSize = count($originalCartContentsArray); // the size of the original cart
+          $cartSizeOnCriteria = count($cartTransitItem); // the size of the cart with given criteria
+          if($originaCartSize == $cartSizeOnCriteria){
+            // cart is complete
+            echo updateCheckOutCartToComplete($conn, $cartname);
           }else{
-            //add cart
-            array_push($incompletecartsarray,$cart);
+            // cart is not complete
+            echo "Not all the items have been delivered for this cart";
           }
         }
-        // query each cart collected get the number of rows
-        $actualcartsize = array();
-        for($i = 0; $i < count($incompletecartsarray);$i++){
-          $currentcart = $incompletecartsarray[$i];
-          //get the cart size from pickuptable
-          $querycartoriginlsize = "SELECT `id` FROM `pickupds` WHERE `cart`='$currentcart'";
-          if($querycartoriginlsize_run = mysqli_query($conn, $querycartoriginlsize)){
-            // continue
-            $querycartoriginlsize_num = mysqli_num_rows($querycartoriginlsize_run);
-            // compare the size with that of the transitdbs table
-              $querytransitcartsize = "SELECT * FROM `transitdbs` WHERE `cartname`='$currentcart' AND `dstatus`='1'";
-              if($querytransitcartsize_run = mysqli_query($conn, $querytransitcartsize)){
-                //continue
-                $querytransitcartsize_num = mysqli_num_rows($querytransitcartsize_run);
-                // first ensure that the cart actually exists in the transit table
-                if($querytransitcartsize_num != 0){
-                  if($querycartoriginlsize_num == $querytransitcartsize_num){
-                    // cart is complete therefore likely from a complete incomplecart delivery
-                    // this banks on this script being ran numerous times to ensure that this list does not take an incomplete cart as a complet one
-                    //REVIEW THIS.....just call this function with all functions here
-                    // echo "complete $currentcart <br>";
-                    // continue to update the checkoutcarts
-                    $queryfinalizecheckoutcart = "UPDATE `checkoutcarts` SET `pickupstat`='COMPLETE' WHERE `cartname`='$currentcart'";
-                    if($queryfinalizecheckoutcart_run = mysqli_query($conn, $queryfinalizecheckoutcart)){
-                        // incomplete cart is now officially complete
-                        // echo "Incomplete cart successfully delivered";
-                        // now update the time in the autotest
-                        $querycheckoutcartupdateinco = "UPDATE `autotest` SET `time`='$timenow', `date`='$date'";
-                        if($querycheckoutcartupdateinco_run = mysqli_query($conn, $querycheckoutcartupdateinco)){
-                          echo "Dbs successfully updated";
-                        }else {
-                          die("Error");
-                        }
-                    }else{
-                      die("Error");
-                    }
-
-                  }else{
-                    // cart is from incomplete cart delivery
-                    // die("Incomplete");
-                    //TODO DIE() FUNCTIONS ARE BEHAVING WEIRDLY IN CUTTING LOOPS SHORT
-                    //  echo "$currentcart<br>";
-                     $querycheckoutcartupdateinco = "UPDATE `autotest` SET `time`='$timenow', `date`='$date'";
-                     if($querycheckoutcartupdateinco_run = mysqli_query($conn, $querycheckoutcartupdateinco)){
-                       echo "(functn update )Dbs successfully updated<br>";
-                     }else {
-                       die("Error");
-                     }
-                  }
-                }else{
-                  // die("Error2");
-                  // echo "not correct $currentcart<br>";
-                }
-              }else{
-                die("Error");
-              }
-          }else{
-            die("Error");
-          }
 
 
-        }
-      }else{
-        // there are no carts
-        die("Error");
       }
-      // SCRIPT WAS PUSHED ABOVE THIS
-    }else{
-      // do nothing
-      // echo "do not run the process";
-      die("Error");
     }
-    // print_r($rantimeArray);
-
+    // update the autotest for this particular test now
+    echo updateAutotestField($conn, 'incomplete', currentTime());
   }else{
-    //record not found
-    echo "not found the record";// insert row
-    // insert row
-    $queryinsertincompleteautotst = "INSERT INTO `autotest` (`id`,`test`,`time`,`date`) VALUES ('','incomplete','$timenow','0')";
-    if($queryinsertincompleteautotst_run = mysqli_query($conn, $queryinsertincompleteautotst)){
-      // it ran
-      echo "|incomplete| row has successfully been created";
-      // now check for incomplete cart delivery TODO IS HERE
-      // query checkourts retrieve cart names
-      // get the cart size from the pickup table
-      // compare the cartsize for the dstatus with 1 count
-       $incompletecarts = array();
-       //collect incomplete carts
-       $incompletecartsarray = array();
-       // query the time then check the incomplete delivery TODO IS HERE TODO TODO
-       $queryincompletecarts = "SELECT `cartname` FROM `checkoutcarts` WHERE `pickupstat`='INCOMPLETE'";
-       $queryincompletecarts_run = mysqli_query($conn, $queryincompletecarts);
-       $queryincompletecarts_num = mysqli_num_rows($queryincompletecarts_run);
-       if($queryincompletecarts_num != 0){
-         // carts exist
-         while($queryincompletecarts_row = mysqli_fetch_assoc($queryincompletecarts_run)){
-           // add the carts to the arrays
-           $cart = $queryincompletecarts_row['cartname'];
-           if(in_array($cart,$incompletecartsarray)){
-             // dont add cart
-           }else{
-             //add cart
-             array_push($incompletecartsarray,$cart);
-           }
-         }
-         // query each cart collected get the number of rows
-         $actualcartsize = array();
-         for($i = 0; $i < count($incompletecartsarray);$i++){
-           $currentcart = $incompletecartsarray[$i];
-           //get the cart size from pickuptable
-           $querycartoriginlsize = "SELECT `id` FROM `pickupds` WHERE `cart`='$currentcart'";
-           if($querycartoriginlsize_run = mysqli_query($conn, $querycartoriginlsize)){
-             // continue
-             $querycartoriginlsize_num = mysqli_num_rows($querycartoriginlsize_run);
-             // compare the size with that of the transitdbs table
-               $querytransitcartsize = "SELECT * FROM `transitdbs` WHERE `cartname`='$currentcart' AND `dstatus`='1'";
-               if($querytransitcartsize_run = mysqli_query($conn, $querytransitcartsize)){
-                 //continue
-                 $querytransitcartsize_num = mysqli_num_rows($querytransitcartsize_run);
-                 // first ensure that the cart actually exists in the transit table
-                 if($querytransitcartsize_num != 0){
-                   if($querycartoriginlsize_num == $querytransitcartsize_num){
-                     // cart is complete therefore likely from a complete incomplecart delivery
-                     // this banks on this script being ran numerous times to ensure that this list does not take an incomplete cart as a complet one
-                     //REVIEW THIS.....just call this function with all functions here
-                     // echo "complete $currentcart <br>";
-                     // continue to update the checkoutcarts
-                     $queryfinalizecheckoutcart = "UPDATE `checkoutcarts` SET `pickupstat`='COMPLETE' WHERE `cartname`='$currentcart'";
-                     if($queryfinalizecheckoutcart_run = mysqli_query($conn, $queryfinalizecheckoutcart)){
-                         // incomplete cart is now officially complete
-                         echo " (update funct) Incomplete cart successfully delivered<br>";
-                         // now update the time in the autotest
-                         // $querycheckoutcartupdateinco = "UPDATE ``";
-                     }else{
-                       die("Error");
-                     }
-
-                   }else{
-                     // cart is from incomplete cart delivery
-                     // die("Incomplete");
-                     //TODO DIE() FUNCTIONS ARE BEHAVING WEIRDLY IN CUTTING LOOPS SHORT
-                     // echo "$currentcart<br>";
-                   }
-                 }else{
-                   // die("Error2");
-                   // echo "not correct $currentcart<br>";
-                 }
-               }else{
-                 die("Error");
-               }
-           }else{
-             die("Error");
-           }
-
-
-         }
-       }else{
-         // there are no carts
-         die("Error");
-       }
-    }else{
-      // ran into an error
-      die("Error");
-    }
-
+    // time has not elapsed do not continue
+    echo "You are currently viewing the freshest list";
   }
 
 }
+// checkincompletecompletecartsdlv($conn);
 
 
 function completecartdelivery(){

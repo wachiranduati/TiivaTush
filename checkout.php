@@ -248,7 +248,7 @@ if(isset($_POST['useremail'])){
                       <label><input title="<h5>Fargo courier COURIER Option</h5>With this option you get your package delivered to you via Fargo courier.We top off any extra charges if your package shipping cost is higher and you receive your package faster.p.s They're awesome" value="Others" type="radio" name="optradio">Others i.e WellsFargo | G4S | 2Nk (1 - 2 days) - Flat rate - 400 KSH</label>
                     </div>
                     </form>
-                    <small style="color:red">*NB Flat Rates factor in any unexpected changes in pricing likely to be met on our side. You should be glad to hear that we refund you the change in Cash.</small>
+                    <small style="color:red">*NB Flat Rates factor in any unexpected changes in shipping likely to be met on our side. Normal shipping fees are in the range of 200Ksh so be assured that a refund is made with your delivery.</small>
                     
 
                 </div>

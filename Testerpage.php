@@ -70,7 +70,7 @@ if(userLoggedIn() == True){
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="row">
-                                <div class="col-lg-1"><img src="images/airmarklogotrial2.png" class="img-responsive"/></div>
+                                <div class="col-lg-1"><a href="index.php" target="_blank"><img src="images/airmarklogotrial2.png" class="img-responsive"/></a></div>
                                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11" style="background-color: white;box-shadow: 0 1px 3px #e6ecf0;"><h5 class="text-right">Hi <?php echo $agent;?>, Beautiful day ain't it?</h5></div>
                             </div>
 
@@ -163,7 +163,7 @@ if(userLoggedIn() == True){
                                 <li><a href="#">Markets</a></li>
                                 <li><a href="#">Shoppers</a></li>
                                 <li><a href="#">visitors</a></li>
-                                <li><a href="#">Merchants</a></li>
+                                <li class="merchantDisply"><a>Merchants</a></li>
                                 <li><a href="#">Shops</a></li>
                                 <li><a href="#">Bloggers</a></li>
                                 <li><a href="#">Skills</a></li>
@@ -448,25 +448,22 @@ if(userLoggedIn() == True){
                       <div class="row" style="background-color: white;padding-top: 10px;">
                           <div class="col-lg-2">
                               <ul class="list-group" style="cursor: pointer;">
-                                  <li class="list-group-item fnance active">
+                                  <li class="list-group-item fnance active pendingcarts">
                                       <span class="badge">5</span>
                                       Pending carts
                                   </li>
-                                  <li class="list-group-item fnance">
+                                  <li class="list-group-item fnance clearedcarts">
                                       <span class="badge">10</span>
                                       Cleared Carts
                                   </li>
-                                  <li class="list-group-item fnance">
-                                      <span class="badge">2</span>
-                                      Transaction Codes
-                                  </li>
+                                  
                                   <li class="list-group-item fnance">
                                       <span class="badge">14</span>
                                       Shipping Expenses
                                   </li>
                                   <li class="list-group-item fnance">
                                       <span class="badge">7</span>
-                                      Petty Cash
+                                      Operating costs
                                   </li>
                                   <li class="list-group-item fnance">
                                       <span class="badge">56</span>
@@ -482,11 +479,94 @@ if(userLoggedIn() == True){
                                   </li>
                               </ul>
                           </div>
-                          <div class="col-lg-10 financeContent">
-                              
+                          <div class="col-lg-10">
+                              <div class="row">
+                                  <div class="col-lg-12 financeContent">
+                                      
+                                  </div>
+                              </div>
                           </div>
                       </div>
                       <script>
+                        $(".pendingcarts").click(function(){
+                            $.ajax({
+                                url: "tiivafinances.php",
+                                type: "POST",
+                                data: "carts=pendingcarts",
+                                success: function(data){
+                                    $(".financeContent").html(data);
+                                    $("#transactionCode").keyup(function(){
+                                        var transCode = $("#transactionCode").val();
+                                        if(transCode == ''){
+                                            $(".pendingCartsResulsts").hide();
+                                        }
+                                        $.ajax({
+                                            url: "tiivafinances.php",
+                                            type: "POST",
+                                            data: "pendingcarts="+transCode,
+                                            success: function(response){
+                                                $(".pendingCartsResulsts").show();
+                                                $(".pendingCartsResulsts").html(response);
+                                                $(".verifyPaymentBtn").click(function(){
+                                                    var verifcartname = $(this).attr("data-cart");
+                                                    var verifcode = $(this).attr("data-verif-code");
+                                                    // alert(verifcartname);
+                                                    // alert(verifcode);
+                                                    $.ajax({
+                                                        url: "tiivafinances.php",
+                                                        type: "POST",
+                                                        data: "cartname="+verifcartname+"&transcode="+verifcode,
+                                                        success: function(data){
+                                                            $(".verifyPaymentBtn").html(data);
+                                                        }
+                                                    });
+                                                });
+                                            }
+                                        });
+                                    });
+                                }
+                            });
+                        });
+                        $(".clearedcarts").click(function(){
+                            $.ajax({
+                                url: "tiivafinances.php",
+                                type: "POST",
+                                data: "clearedcarts=cleared43dscarts",
+                                success: function(data){
+                                    $(".financeContent").html(data);
+                                    $("#transactionCode").keyup(function(){
+                                    var transCode = $("#transactionCode").val();
+                                    if(transCode == ''){
+                                        $(".pendingCartsResulsts").hide();
+                                    }
+                                        $.ajax({
+                                            url: "tiivafinances.php",
+                                            type: "POST",
+                                            data: "verifiedcarts="+transCode,
+                                            success: function(data){
+                                                $(".pendingCartsResulsts").show();
+                                                $(".pendingCartsResulsts").html(data);
+                                                $(".undoverification").click(function(){
+                                                    var VerifCode = $(".undoverification").attr("data-verif");
+                                                    var VerifCart = $(".undoverification").attr("data-cart");
+                                                    $.ajax({
+                                                        url: "tiivafinances.php",
+                                                        type: "POST",
+                                                        data: "undoverification="+VerifCode+"&verifcart="+VerifCart,
+                                                        success: function(data){
+                                                            $(".undoverification").html(data);
+                                                        }
+                                                    });
+                                                });
+                                            }
+                                        });
+                                    });
+                                    
+
+                                }
+                            });
+                        });
+
                           $(".financeDropdown").click(function(){
                              $(".financeMainDiv").toggle();
                           });
@@ -496,10 +576,10 @@ if(userLoggedIn() == True){
                           });
                           // load the pending carts first
                             $.ajax({
-                                url: "finance.php",
+                                url: "tiivafinances.php",
                                 type: "GET",
                                 success: function(data){
-                                    $(".financeContent").html(data);
+                                    // $(".financeContent").html(data);
                                 }
                             });
                       </script>
@@ -566,6 +646,91 @@ if(userLoggedIn() == True){
                             })
                           </script>
               <!-- PROOF CONTAINER END -->
+
+              <!-- MERCHANT DISPLAY CONTAINER -->
+              <div class="row merchantDisplayContainer" style="display: none;padding: 10px;">
+                  <div class="col-lg-12" style="background-color: white;">
+                      <div class="row">
+                          <div class="col-lg-2">
+                              <ul class="list-group" style="padding-top: 20px;">
+                                  <li class="list-group-item active">Activate Merchant</li>
+                                  <li class="list-group-item">Item 2</li>
+                                  <li class="list-group-item">Item 3</li>
+                              </ul>
+                          </div>
+                          <div class="col-lg-10">
+                              <div class="row">
+                                  <div class="col-lg-12"><h4 class="text-center text-uppercase">Merchant page</h4>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-lg-12 merchDetails">
+                                      <form>
+                        <div class="form-group">
+    <input type="number" class="form-control" id="merchantID" placeholder="input merchant national id">
+    <small id="merchIdHelp" class="form-text text-muted">Helper text will appear here.</small>
+  </div>
+  <div class="merchForm">
+      
+  </div>
+  
+</form>
+                                  </div>
+                              </div>
+                              
+                          </div>
+                      </div>
+                  </div>
+                  <script>
+                      $(".merchantDisply").click(function(){
+                            $(".merchantDisplayContainer").toggle();
+                      });
+                      $("#merchantID").blur(function(){
+                        // prompt staff login credentials
+                        var merchantId = $("#merchantID").val();
+                        if(merchantId != ''){
+                        var pssd = prompt("Please Input your Tiiva Staff ID to proceed");
+                            $.ajax({
+                                url: "merchadmin.php",
+                                type: "POST",
+                                data: "staffCheck="+pssd+"&merchID="+merchantId,
+                                success: function(data){
+                                $(".merchForm").html(data);
+                                $(".activateMerchantBtn").click(function(){
+                                    // it only exists here...the button
+                                    var gprs = $("#gpsCoords").val();
+                                    if(gprs != ''){
+                                        // alert(gprs);
+                                        // alert(merchantId);
+
+                                        $.ajax({
+                                            url: "merchadmin.php",
+                                            type: "POST",
+                                            data: "gprs="+gprs+"&merchId="+merchantId,
+                                            success: function(message){
+                                                $(".activateMerchantBtn").html(message);
+                                            }
+                                        });
+                                    }else{
+                                        alert('please provide a gps coordinate to activate the merchant');
+                                    }
+                                });
+                              }
+                            });
+                        }else{
+                            $("#merchIdHelp").html("Please provide a valid ID number");
+                            $("#merchIdHelp").css('color','red');
+                            setTimeout(returnHelperTextNorm, 5000);
+                        }
+                      });
+                      function returnHelperTextNorm(){
+                        $("#merchIdHelp").html('Helper text will appear here.');
+                        $("#merchIdHelp").css('color','');
+                      }
+
+                  </script>
+              </div>
+              <!-- MERCHANT DISPLAY CONTAINER -->
 
               <!-- RETURN GOODS CONTAINER START -->
               <div class="row returncontainer" style=";padding-top:10px;display:none;">
@@ -1855,7 +2020,7 @@ if(userLoggedIn() == True){
 
             }
             $(".showreturn").click(function(){
-              $(".returncontainer").fadeIn();
+              $(".returncontainer").toggle();
             });
 
 

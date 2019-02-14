@@ -26,6 +26,10 @@ function timeDeltaExtendTime_return($time, $extend, $format){
     return date_format($date, $format);
 }
 
+function showHeaderMessage($header, $message){
+    return "<$header class=\"text-center text-capitalize\">$message</$header>";
+}
+
 // UPDATE TO DATE TIME TIMESTAMP Year-month-day time space hour min sec
 // echo $ctime = Date('Y-m-d H:i:s');
 ?>

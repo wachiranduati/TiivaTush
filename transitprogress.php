@@ -740,7 +740,7 @@ if(isset($_POST['transit']) && !empty($_POST['transit'])){
     die('Bye bye');
   }
 }elseif(isset($_POST['completecartatdestination']) && $_POST['completecartatdestination'] == 'ljodsfi'){
-  updatetransitdatabase($conn);
+  // updatetransitdatabase($conn);
   completecartatdestination($conn);
 }elseif(isset($_POST['updateLocation']) && !empty($_POST['updateLocation'])){
   $newLocation = mysqli_real_escape_string($conn, $_POST['updateLocation']);

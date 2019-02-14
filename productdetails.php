@@ -398,6 +398,7 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                                             </div>
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                 <p class="well text-center well-sm">INSTOCK: <?php 
+                                                $sold = $query_row['sold'];
                                                 if($query_row['sold'] == 0){
                                                     echo 1;
                                                 }else{
@@ -476,9 +477,17 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                                                     if($query_row['availability'] == 0 && $query_row['buyer'] != 0){
                                                             if($query_row['buyer'] == $_SESSION['$user_id']){
                                                                 // me show added to cart
-                                                                echo "
+                                                                if($sold == 0){
+                                                                    // available
+                                                                    echo "
         <a class=\"btn btn-block btn-success btn-lg btn-block disabled\"><span class=\"mdi mdi-cart-plus\"></span> Added to Your Cart</a>
                                                             ";
+                                                                }else{
+                                                                    echo "
+        <a class=\"btn btn-block btn-danger btn-lg btn-block disabled\"><span class=\"mdi mdi-cart-off\"></span> Item is no longer available</a>
+                                                            ";
+                                                                }
+                                                                
                                                             }else{
                                                                 // show normal cart
                                                                 echo "

@@ -3,6 +3,7 @@ ob_start();
 session_start();
 require 'connect.php';
 include 'reloadpickupnotifications.php';
+
 $user = $_SESSION['$user_id'];
 $tempme = ceil($user + 21);
 
@@ -19,11 +20,12 @@ echo "
         <th>No</th>
         <th>Item</th>
         <th>Title</th>
-        <th>Price</th>
-        <th>Pcs</th>
+        <th>Contact</th>
+        <!--<th>Pcs</th>-->
         <th>cart</th>
         <th>seller</th>
-        <th>sellerlocation</th>
+        <th>Seller-gps</th>
+        <th>SellerLc</th>
         <th>purchstime</th>
         <th>shippingto</th>
         <th>shippingtype</th>
@@ -58,6 +60,7 @@ $queryitemsrun = mysqli_query($conn, $queryitems);
 while($queryitemrow = mysqli_fetch_assoc($queryitemsrun)){
   $imageone = $imgaddr.$queryitemrow['imageone'];
   $itemtitle = $queryitemrow['itemtitle'];
+  $sellerid = $queryitemrow['sellerid'];
   $seller = ceil($queryitemrow['sellerid'] + 21);
   // $price = number_format($queryitemrow['price']);
   echo "
@@ -88,12 +91,17 @@ while ($querycheckout_row = mysqli_fetch_assoc($querycheckoutcarts_run)) {
   $itemcount = $countarray[$position];
 
   $actualcart = substr($cartname,0,10).'...';
+  $merchdetails = getMerchantLocationViaId($conn, $sellerid);
+  $gps = $merchdetails['gps'];
+  $phonenumber = $merchdetails['phonenumber'];
+  $sellerLocation = $merchdetails['county'].'-'.$merchdetails['township'];
   echo "
-    <td>Ksh $price</td>
-    <td>$itemcount</td>
+    <td>$phonenumber</td>
+    <!--<td>$itemcount</td>-->
     <td>$actualcart</td>
     <td>$seller</td>
-    <td>sellerlocation</td>
+    <td>$gps</td>
+    <td>$sellerLocation</td>
     <td>$purchsdate / $purchasetime HRS</td>";
     // query the Merchant to return merchant location and merchant
     $queryshippinginfo = "SELECT * FROM `sold` WHERE `cartname`='$cartname'";

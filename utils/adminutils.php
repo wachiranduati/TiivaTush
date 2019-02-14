@@ -172,7 +172,7 @@ function queryAllitemsInTransit($conn){
 		}
 		return $transitItems;
 	}else{
-		die("There are no items in transit");
+		return 0;
 	}
 
 }
@@ -201,6 +201,179 @@ function updateTransitLocationTime($conn, $newlocations, $newExchTimes, $transit
 		echo "successfully updated the transit location";
 	}else{
 		die("could not update the transit and time location");
+	}
+}
+
+function getTransitItemsDstatusPerCart($conn, $cartname, $dstatus){
+	$query = "SELECT * FROM `transitdbs` WHERE `cartname`='$cartname' AND `dstatus`='$dstatus'";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		// continue
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($row, $query_row);
+		}
+		return $row;
+	}else{
+		return 0;
+	}
+}
+
+function convertCommaSeperateStringIntoArray($commadString){
+	$itemArray = explode(',', $commadString);
+	return $itemArray;
+}
+
+function updateCheckOutCartToComplete($conn, $cartname){
+	$query = "UPDATE `checkoutcarts` SET `pickupstat`='COMPLETE' WHERE `cartname`='$cartname'";
+	if($query_run = mysqli_query($query)){
+		// update successfull
+		echo "successfully updated the carts to Complete";
+	}else{
+		// update not successfull
+		echo "Ran into an error trying to update the checkout carts to complete";
+	}
+
+}
+function retrieveTransitDetailsPerCart($conn, $cartname){
+	// this function is used in conjection with the complete carts so it might look funky at first
+	$query = "SELECT * FROM `transitdbs` WHERE `cartname` = '$cartname'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) != 0){
+		return mysqli_fetch_assoc($query_run);
+	}else{
+		return 0;
+	}
+}
+
+function getMerchantLocationViaId($conn, $merchId){
+	// note that this is minus the modification to the id
+	// return the county-township if no gps coordinates found
+	$query = "SELECT * FROM `merchants` WHERE `id` = '$merchId'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) != 0){
+		$row = mysqli_fetch_assoc($query_run);
+		return $row;
+	}else{
+		return 0;
+	}
+}
+
+function getMerchantDetailsviaNatID($conn, $natID){
+	$query = "SELECT * FROM `merchants` WHERE `idno` = '$natID'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) != 0){
+		$row = mysqli_fetch_assoc($query_run);
+		return $row;
+	}else{
+		return 0;
+	}
+}
+
+function updateActivateMerchant($conn, $gps, $natID){
+	// this will update the merchant gps location and activate account
+	$agent = getStaffName($conn);
+	$query = "UPDATE `merchants` SET `gps` = '$gps', `activate` = '1', `agent` = '$agent' WHERE `idno` = '$natID'";
+	if($query_run = mysqli_query($conn, $query)){
+		echo "successfully updated";
+	}else{
+		die("could not update merch records");
+	}
+}
+
+function retrieveallCartsBasedonClearing($conn, $clear, $status){
+	// this will be used to retrieve cleared and non cleared carts depening on the argument passed
+	// 1 for cleared 0 for not cleared
+	$query = "SELECT * FROM `checkoutcarts` WHERE `clear` = '$clear' AND `pickupstat` = '$status' ORDER BY `cartid` ASC";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($row, $query_row);
+		}
+		return $row;
+	}else{
+		return 0;
+	}
+}
+
+function retrieveCartsBasedOnVerification($conn, $verificationCode, $status, $clear){
+	// this will use the like functionality to return pending carts with similar verification codes
+	$query = "SELECT * FROM `checkoutcarts` WHERE `paymentverification` LIKE '%$verificationCode%' AND `pickupstat` = '$status' AND `clear` = '$clear'";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($row, $query_row);
+		}
+		return $row;
+	}else{
+		return 0;
+	}
+}
+
+function clearOrUnclearCart($conn, $cartname, $clear){
+	// this will update the value of checkout cart to 1 or 0 implying a verification or lack of 
+	$query = "UPDATE `checkoutcarts` SET `clear` = '$clear' WHERE `cartname` = '$cartname'";
+	if($query_run = mysqli_query($conn, $query)){
+		return "validation successfull";
+	}else{
+		return "Error validating";
+		// echo mysqli_error($conn);
+	}
+
+
+}
+
+function logCartVerifications($conn, $cartname, $verificationCode){
+	// this will always run before the clear or unclear to ensure that the verification code
+	// has been logged and made unique
+	$now = currentTime();
+	$verifiedby = getStaffName($conn);
+	$query = "INSERT INTO `cartverificationlogs` (`id`, `cartname`, `verifiedby`, `verificationCode`, `verifiedon`) VALUES ('', '$cartname', '$verifiedby', '$verificationCode', '$now')";
+	if($query_run = mysqli_query($conn, $query)){
+		// successfully run
+		return 1;
+	}else{
+		return 0;
+	}
+}
+
+function retrieveVerificationCartDetails($conn, $transactioncode){
+	// this will retrieve the cart verification details via the transaction code
+	$query = "SELECT * FROM `cartverificationlogs` WHERE `verificationcode` = '$transactioncode'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) != 0){
+		$row = mysqli_fetch_assoc($query_run);
+		return $row;
+	}else{
+		return 0;
+	}
+}
+
+function retrieveCartsBasedOnVerificationBothCompandIncomplete($conn, $verificationCode, $clear){
+	// this will use the like functionality to return pending carts with similar verification codes
+	// thsi will return both complete and incomplete carts
+	$query = "SELECT * FROM `checkoutcarts` WHERE `paymentverification` LIKE '%$verificationCode%' AND `clear` = '$clear'";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($row, $query_row);
+		}
+		return $row;
+	}else{
+		return 0;
+	}
+}
+
+function deleteCartVerificationLog($conn, $verificationcode){
+	// thsi will delete a row entry with the unique verifiacation code provided
+	$query = "DELETE FROM `cartverificationlogs` WHERE `verificationcode` = '$verificationcode'";
+	if($query_run = mysqli_query($conn, $query)){
+		return 1;
+	}else{
+		return 0;
 	}
 }
 ?>

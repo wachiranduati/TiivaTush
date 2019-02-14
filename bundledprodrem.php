@@ -28,7 +28,7 @@ if(isset($_SESSION['$staff'])){
       }elseif($state == '4lksd'){
         // provide a to provide return details for complete carts
         //TODO REVIEW TWEAK THIS FUNCTION TO ONLY SHOW ITEMS THAT HAVE NOT SURPASSED THEIR RETURN DATE/DAYS....ELSE DISABLE THE CALL TO ACTION BUTTON
-        showretcartcontentscmp();
+        showretcartcontentscmp($conn);
       }elseif($state == 'incomplete'){
         // retun incomplete cart form and the items details
         showincompleteproddetails();
@@ -471,7 +471,7 @@ function showretcartcontentsincomplete($conn){
               // showretcartcontentscmp($inccart);
         }else{
           // dont
-          showretcartcontentscmp($inccart);
+          showretcartcontentscmp($conn, $inccart);
 
           die("<h4 class=\"text-capitalize text-center\" style=\"color:red;font-family:kok;border:1px solid gainsboro;padding:10px;\">Nothing from complt carts</h4>");
         }
@@ -484,7 +484,7 @@ function showretcartcontentsincomplete($conn){
 
 }
 
-function showretcartcontentscmp($xert){
+function showretcartcontentscmp($conn, $xert){
   //these are items that have already been delivered
   // show cart contents  for clicked cart
   // $compcart = '4f50706353f017fac7dc3a95c5eb0038';
