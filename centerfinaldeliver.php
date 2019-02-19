@@ -64,6 +64,7 @@ function completecartatdestination($conn){
             <th>Handler</th>
             <th>Deadline</th>
             <th>shiptype</th>
+            <th>content</th>
             <th>Action</th>
         </tr>
       </thead>
@@ -132,6 +133,8 @@ function completecartatdestination($conn){
               $deadline = $cartTransitDets['deadline'];
               $shiptype = $cartTransitDets['shiptype'];
               $numbering = ceil($comp+1);
+              $cartRows = retrieveSingleCartsContents($conn, $currentComCart);
+              $items = loopArrayRetrieveItemids($cartRows, 'itemid');
 
                   echo "
                       <tr>
@@ -142,6 +145,7 @@ function completecartatdestination($conn){
                             <td>$currentHandler</td>
                             <td>$deadline</td>
                             <td>$shiptype</td>
+                            <td>$items</td>
                             <td><a data-cart=\"$currentComCart\" class=\"btn btn-success btn-sm btncomplt\">Deliver</a></td>
                         </tr>
                       ";

@@ -58,7 +58,7 @@ require 'utils/userutils.php';
                                             <h4>Arrival Date:</h4>
                                         </div>
                                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="border-bottom:1px solid black;">
-                                            <h4>TIIVA : <span id="eta">2 - 5 Working</span> Days</h4>
+                                            <h4>TIIVA : <span id="eta">1 - 5 Working</span> Days</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -78,9 +78,11 @@ require 'utils/userutils.php';
         <script>
                 function changetime(){
                     if($("#shippingdays").text() == 'free'){
-                    $("#eta").text("2 - 5 working");
+                    // $("#eta").text("2 - 5 working");
+                    $("#eta").text("1 - 5 working");// removed free shipping
                 }else{
-                    $("#eta").text("1 - 3");
+                    // $("#eta").text("1 - 3");
+                    $("#eta").text("1 - 5");// removd free shipping
                 }
                 }
             

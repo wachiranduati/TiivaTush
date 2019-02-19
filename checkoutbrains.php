@@ -82,7 +82,7 @@ if(isset($_POST['username']) ||
                     //echo "Thankyou, you just provided us with your location ";
                     if(!empty($details)){
                         
-                        $query = "INSERT INTO  `a_database`.`sold` (`id` ,`names` ,`identity` ,`email` ,`phone` ,`county` ,`area` ,`details` ,`date`,`cartname`,`shipping`)VALUES (NULL ,  '$username',  '$useridno',  '$emailaddress',  '$phonenumber',  '$county',  '$area',  '$details',  '$today','$cartname','$shipping')";
+                        $query = "INSERT INTO `sold` (`id` ,`names` ,`identity` ,`email` ,`phone` ,`county` ,`area` ,`details` ,`date`,`cartname`,`shipping`)VALUES (NULL ,  '$username',  '$useridno',  '$emailaddress',  '$phonenumber',  '$county',  '$area',  '$details',  '$today','$cartname','$shipping')";
 
                         if($query_run = mysqli_query($conn, $query)){
                             

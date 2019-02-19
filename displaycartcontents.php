@@ -76,19 +76,21 @@ if($num_rows != 0){
 
         $count++;
     }
+    $shipping = 150;
     $vat2 = ceil($totalprice * 0.16);
-    $formattotalprice2 = number_format($totalprice);
+    $carttotal = number_format($totalprice);
+    $formattotalprice2 = number_format($totalprice + $shipping);
     $formatvat2 = number_format($vat2);
     echo "  
           <tr>
             <td></td>
             <td colspan=\"4\">Cart SubTotal:</td>
-            <td>$formattotalprice2 Ksh</td>
+            <td>$carttotal Ksh</td>
           </tr>
           <tr>
             <td></td>
-            <td colspan=\"4\">SHIPPING: Tiiva</td>
-            <td>Free by Tiiva</td>
+            <td colspan=\"4\">SHIPPING: Flat Fee all over Kenya</td>
+            <td>150 Ksh</td>
           </tr>
           <tr>
             <td></td>
@@ -204,30 +206,33 @@ if($num_rows != 0){
 }
 }
 // if shipping is set
-if(isset($_POST['shipping']) && !empty($_POST['shipping'])){
-	$shipping = $_POST['shipping'];
-	if($shipping == 'free' || $shipping == 'ExpressTiiva' || $shipping == 'Others'){
-		// continue
-		if($shipping == 'free'){
-			$message = "Free delivery with Tiiva (1 - 5 working days)";
-			$charges = 0;
-			modCartStuff($conn, $userid, $shipping, $message, $charges);
+// if(isset($_POST['shipping']) && !empty($_POST['shipping'])){
+// 	$shipping = $_POST['shipping'];
+// 	if($shipping == 'free' || $shipping == 'ExpressTiiva' || $shipping == 'Others'){
+// 		// continue
+// 		if($shipping == 'free'){
+// 			$message = "Free delivery with Tiiva (1 - 5 working days)";
+// 			$charges = 0;
+// 			modCartStuff($conn, $userid, $shipping, $message, $charges);
 
-		}else if($shipping == 'ExpressTiiva'){
-			$message = "Express Delivery with Tiiva (1 - 3 days)";
-			$charges = 400;
-			modCartStuff($conn, $userid, $shipping, $message, $charges);
+// 		}else if($shipping == 'ExpressTiiva'){
+// 			$message = "Express Delivery with Tiiva (1 - 3 days)";
+// 			$charges = 400;
+// 			modCartStuff($conn, $userid, $shipping, $message, $charges);
 
-		}else{
-			$message = "WellsFargo | G4S | 2Nk (1 - 2 days)";
-			$charges = 400;
-			modCartStuff($conn, $userid, $shipping, $message, $charges);
+// 		}else{
+// 			$message = "WellsFargo | G4S | 2Nk (1 - 2 days)";
+// 			$charges = 400;
+// 			modCartStuff($conn, $userid, $shipping, $message, $charges);
 
-		}
-	}else{
-		die(bootstrapAlert('danger', 'glyphicon-info-sign', 'Sorry ', "Could not complete your request, Please try again later", 'A0'));
-	}
-}else{
-	normCart($conn, $userid);
-}
+// 		}
+
+// 	}else{
+// 		die(bootstrapAlert('danger', 'glyphicon-info-sign', 'Sorry ', "Could not complete your request, Please try again later", 'A0'));
+// 	}
+// }else{
+// 	normCart($conn, $userid);
+// }
+// updated this to a flat shpping fee of 150 all over right...so we commented out the code above
+normCart($conn, $userid);
 ?>

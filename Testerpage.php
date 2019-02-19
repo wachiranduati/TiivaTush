@@ -33,7 +33,7 @@ if(userLoggedIn() == True){
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
       <?php require 'templates/resourcelinks/headerlinks.php';?>
-            <script src="chartjs/chart.bundle.js"></script>
+            <script src="chartjs/Chart.bundle.js"></script>
       
 
 
@@ -732,132 +732,112 @@ if(userLoggedIn() == True){
               </div>
               <!-- MERCHANT DISPLAY CONTAINER -->
 
-              <!-- RETURN GOODS CONTAINER START -->
-              <div class="row returncontainer" style=";padding-top:10px;display:none;">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <h3 class="text-center">Staff Return/Reject goods</h3>
-                            <div class="row" style=";">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="row">
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><br>
-                                        <input type="text" id="returnssearchbox" style="border:none;box-shadow:none;border-radius:0;background-color:rgba(219, 219, 219, 0.35);" class="form-control" placeholder="Search Item Number i.e. h43o3l4k98ds"/>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 resultssearchbox" style="position:absolute;z-index:21;width:64%;left:18%;;box-shadow:0 0 1px rgba(219, 219, 219, 0.35);"></div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                                </div>
+              <!-- RETURN GOODS CONTAINER 2.0 -->
+              <div class="row staffReturnContainer" style="padding: 10px;">
+                  <div class="col-lg-12" style="background-color: white;">
+                      <div class="row" style="margin: 0 0 1% 0;">
+                          <div class="col-lg-2"></div>
+                          <div class="col-lg-8">
+                              <h3 class="text-center text-uppercase">Staff Product Return</h3>
+                              <input type="text" class="form-control text-uppercase" name="cartnameret" id="cartnameret" placeholder="Enter the Clients Cartname e.g. 34xdfs32lk">
+                              <div class="cartreturnresults" style="">
                               </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" style="margin:1% 0;">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="cartdetails">
-                          <!-- two panels to show first the item description and all the details on display and second is the form to return the item -->
+                          </div>
+                           <div class="col-lg-2"></div>
+                      </div>
+                      <div class="row">
+                          <div class="col-lg-3"></div>
+                          <div class="col-lg-6 retformcontainer">
 
-                        </div>
-                    </div>
+                          </div>
+                          <div class="col-lg-3"></div>
+                      </div>
+                      <div class="row">
+                          <div class="col-lg-12 pendingreturnscontainer">
+
+                          </div>
+                      </div>
                   </div>
+                  <script>
+                      $(".showreturn").click(function(){
+                        $(".staffReturnContainer").toggle();
+                      });
+                      $("#cartnameret").keyup(function(){
+                        var retCart = $("#cartnameret").val();
+                        $.ajax({
+                            url: "returnscontroller.php",
+                            type: "POST",
+                            data: "cart="+retCart+"&show=all",
+                            success: function(data){
+                                $(".cartreturnresults").html(data);
+                                $(".cart_rows").click(function(){
+                                    var selectCart = $(this).attr("data-cart");
+                                    // alert(selectCart);
+                                    $.ajax({
+                                        url: "returnscontroller.php",
+                                        type: "POST",
+                                        data: "selectCart="+selectCart,
+                                        success: function(cartcontent){
+                                            $(".cartreturnresults").html(cartcontent);
+                                            $(".retbtnitem").click(function(){
+                                                var returnitem = $(this).attr('data-prod');
+                                                $.ajax({
+                                                    url: "returnscontroller.php",
+                                                    type: "POST",
+                                                    data: "returnForm=nilR54&returnitem="+returnitem,
+                                                    success: function(data){
+                                                        $(".retformcontainer").html(data);
+                                                        $(".btn-completereturn").click(function(){
+                                                            var finalizeretId = $(".btn-completereturn").attr('data-item');
+                                                            var reason = $("#reason").val();
+                                                            var reasonDetail = $("#reasonDetail").val();
+                                                            if(reason != '' && reasonDetail != ''){
+                                                                // alert(finalizeretId);
+                                                                $.ajax({
+                                                                    url: "returnscontroller.php",
+                                                                    type: "POST",
+                                                                    data: "retcart="+selectCart+"&finalizeitem="+finalizeretId+"&reason="+reason+"&reasonDetail="+reasonDetail,
+                                                                    success: function(data){
+                                                                        $(".btn-completereturn").html(data);
+                                                                    }
+                                                                });
+                                                            }else{
+                                                                alert(' you need to provide a reason in detail and select one from the drop down');
+                                                            }
+                                                            // finalize return item
+                                                        });
+                                                    }
+                                                });
+
+                                            });
+                                        }
+                                    });
+                                });
+                            }
+                        });
+                      });
+
+                      $.ajax({
+                            url: "returnscontroller.php",
+                            type: "POST",
+                            data: "activereturns=pending4U4k",
+                            success: function(data){
+                                $(".pendingreturnscontainer").html(data);
+                            }
+                        });
+                      // $.ajax({
+                      //       url: "returnscontroller.php",
+                      //       type: "POST",
+                      //       data: "",
+                      //       success: function(data){
+
+                      //       }
+                      //   });
+                  </script>
               </div>
-              <script>
-                $("#returnssearchbox").keyup(function(){
-                  var keys = $("#returnssearchbox").val();
-                  // alert(keys);
-                  if(keys != ''){
-                    var searchmsg = "state=k498sl&cart="+keys;
-                    $(".resultssearchbox").show();
-                    $.ajax({
-                      url:"bundledprodrem.php",
-                      type: "POST",
-                      data: searchmsg,
-                      success: function(search){
-                        $(".resultssearchbox").html(search);
-                        // complete cart clicked
-                        $(".btn-comp").click(function(){
+              <!-- RETURN GOODS CONTAINER 2.0 -->
 
-                          var item = $(this).attr("data-retcmp");
-                          var compcartmsg = "state=complete&item="+item;
-                          // alert(item);
-                          $.ajax({
-                            url: "bundledprodrem.php",
-                            type: "POST",
-                            data: compcartmsg,
-                            success: function(compcart){
-                              $("#cartdetails").html(compcart);
-                              $(".resultssearchbox").hide();
-                              // now to send the form
-                              $(".btn-retitm").click(function(){
-                                // insert the code here
-                                var reasonx = $("#reason").val();
-                                var rsnmsg = $("#rsndetails").val();
-                                var product = $(this).attr("ret-item");
-                                alert(product);
-                                var compltrsn = "state=reason&reason="+reasonx+"&rsnmessage="+rsnmsg+"&product="+product;
-                                $.ajax({
-                                  url: "bundledprodrem.php",
-                                  type: "POST",
-                                  data: compltrsn,
-                                  success: function(reasoning){
-                                    // replace the button with a message showing form sent
-                                    // TODO RIGHT HERE AND A REVIEW TOO
-                                    $(".replacbutn").html(reasoning);
-                                  }
-                                })
-                              })
-                            }
-                          })
-                        })
-                        $(".btn-incomp").click(function(){
-                          // alert("who");
-                          // the incomplete cart deliveries read data from teh button and show it in the next div
-
-                          var item = $(this).attr("data-retcmp");
-                          var incompcartmsg = "state=incomplete&item="+item;
-                          // alert(item);
-                          $.ajax({
-                            url: "bundledprodrem.php",
-                            type: "POST",
-                            data: incompcartmsg,
-                            success: function(incompcart){
-                              $("#cartdetails").html(incompcart);
-                              $(".resultssearchbox").hide();
-                              // now to send the form
-                              $(".btn-retitm").click(function(){
-                                // insert the code here
-                                var reasonx = $("#reason").val();
-                                var rsnmsg = $("#rsndetails").val();
-                                var product = $(this).attr("ret-item");
-                                // alert(product);
-                                var compltrsn = "state=reason&reason="+reasonx+"&rsnmessage="+rsnmsg+"&product="+product;
-                                $.ajax({
-                                  url: "bundledprodrem.php",
-                                  type: "POST",
-                                  data: compltrsn,
-                                  success: function(reasoning){
-                                    // replace the button with a message showing form sent
-                                    // TODO RIGHT HERE AND A REVIEW TOO
-                                    $(".replacbutn").html(reasoning);
-                                  }
-                                })
-                              })
-                            }
-                          })
-                        })
-
-                      }
-                    })
-                  }else{
-                    // change cart container visibility
-                    $(".resultssearchbox").hide();
-                  }
-                })
-              </script>
-              <!-- RETURN GOODS CONTAINER END -->
+              
 
               <!-- THE BANNERS CONTROL BOX STARTS HERE -->
 
@@ -2020,7 +2000,7 @@ if(userLoggedIn() == True){
 
             }
             $(".showreturn").click(function(){
-              $(".returncontainer").toggle();
+              // $(".returncontainer").toggle();
             });
 
 

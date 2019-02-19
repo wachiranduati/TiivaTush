@@ -335,7 +335,8 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="mtumbauploads/<?php echo $query_row['imageone'];?>" class="img-responsive productslideimages">
+                                    <img src="mtumbauploads/<?php echo $query_row['imageone'];?>" class="img-responsive productslideimages" style="min-height: 350px;height: 400px; width: auto;">
+                                    
                                     <div class="carousel-caption">
                                         <h3>Image One</h3>
                                         <p>This is the first image in the carousel</p>
@@ -343,7 +344,8 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                             </div>
 
                             <div class="item">
-                                    <img src="mtumbauploads/<?php echo $query_row['imagetwo'];?>" class="img-responsive productslideimages">
+                                    <img src="mtumbauploads/<?php echo $query_row['imagetwo'];?>" class="img-responsive productslideimages" style="min-height: 350px;height: 400px; width: auto;">
+                                    
                                     <div class="carousel-caption">
                                         <h3>Image two</h3>
                                         <p>This is the second image in the carousel</p>
@@ -351,7 +353,8 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                             </div>
 
                             <div class="item">
-                                    <img src="mtumbauploads/<?php echo $query_row['imagethree'];?>" class="img-responsive productslideimages">
+                                    <img src="mtumbauploads/<?php echo $query_row['imagethree'];?>" class="img-responsive productslideimages" style="min-height: 400px;height: 350px; width: auto;">
+                                    
                                     <div class="carousel-caption">
                                         <h3>Image three</h3>
                                         <p>This is the third image in the carousel</p>
@@ -511,7 +514,11 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                                         </div>
 
-                                        <div class="row">
+                                        <div class="row" style="margin-top: 2%;">
+                                            <div class="col-lg-12"></div>
+                                        </div>
+
+                                        <!-- <div class="row">
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:2%;">
                                             <span class="glyphicon glyphicon-heart-empty" style="color:red;font-size:200%;" onclick="wishlistbutton();" onmouseover="wishlistpredict();" id="wishlistbutton"></span>
@@ -519,7 +526,7 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><p id="wishlistmessage" style="margin-top:2%;">Add to wishlist</p></div>
                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                                        </div>
+                                        </div> -->
 
 
                                         <div class="row">

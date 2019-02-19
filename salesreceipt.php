@@ -44,13 +44,13 @@ if($query_num_rows != 0){
         $verification = $row['paymentverification'];
         // echo $carttotal;
         if($shipping != 'free'){
-            $shipprice = '400 Ksh';
+            $shipprice = '150 Ksh';// removed free shipping
             //$arrival = '1 - 3 days';
-            $grandtotal = $carttotal + 400;
+            $grandtotal = $carttotal + 150;// updated flat rate shipping to 150
         }else{
-            $shipprice = 'Free By Tiiva';
+            $shipprice = '150 Ksh';// removed free shipping
             //$arrival = '1 - 5 working days';
-            $grandtotal = $carttotal + 0;
+            $grandtotal = $carttotal + 150;// removed free shipping
         }
         // echo $grandtotal;
 

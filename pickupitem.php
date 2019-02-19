@@ -72,7 +72,7 @@ while($queryitemrow = mysqli_fetch_assoc($queryitemsrun)){
 
 }
 // query the checkoutcarts to return
-$querycheckoucarts = "SELECT * FROM `checkoutcarts` WHERE `cartname`='$cartname' AND `pickupstat`='INCOMPLETE' AND `updated`='1'";
+$querycheckoucarts = "SELECT * FROM `checkoutcarts` WHERE `cartname`='$cartname' AND `pickupstat`='INCOMPLETE' AND `updated`='1' AND `clear` = '0'";
 $querycheckoutcarts_run = mysqli_query($conn, $querycheckoucarts);
 while ($querycheckout_row = mysqli_fetch_assoc($querycheckoutcarts_run)) {
   $pricelist = $querycheckout_row['itemprice'];

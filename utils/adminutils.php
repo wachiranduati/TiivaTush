@@ -33,7 +33,7 @@ function getAutotestTime($conn, $field){
 
 function getUnUpdatedCarts($conn, $state){
 	// This will return all the incomplete carts not yet reflected on the pickup table
-	$query = "SELECT * FROM `checkoutcarts` WHERE `updated` = $state AND `pickupstat` = 'INCOMPLETE'";
+	$query = "SELECT * FROM `checkoutcarts` WHERE `updated` = $state AND `pickupstat` = 'INCOMPLETE' AND `clear` = '1'";
 	$query_run = mysqli_query($conn, $query);
 	$query_num_rows = mysqli_num_rows($query_run);
 	$row = array();
@@ -56,6 +56,18 @@ function retrieveProductField($conn, $table, $field, $itemid){
 	if($query_num_rows == 1){
 		$query_row = mysqli_fetch_assoc($query_run);
 		return $query_row[$field];
+	}else{
+		return 0;
+	}
+}
+
+function retrieveproductAllFields($conn, $table, $itemid){
+	$query = "SELECT * FROM `$table` WHERE `id`='$itemid'";
+	$query_run = mysqli_query($conn, $query);
+	$query_num_rows = mysqli_num_rows($query_run);
+	if($query_num_rows == 1){
+		$query_row = mysqli_fetch_assoc($query_run);
+		return $query_row;
 	}else{
 		return 0;
 	}
@@ -226,7 +238,7 @@ function convertCommaSeperateStringIntoArray($commadString){
 
 function updateCheckOutCartToComplete($conn, $cartname){
 	$query = "UPDATE `checkoutcarts` SET `pickupstat`='COMPLETE' WHERE `cartname`='$cartname'";
-	if($query_run = mysqli_query($query)){
+	if($query_run = mysqli_query($conn, $query)){
 		// update successfull
 		echo "successfully updated the carts to Complete";
 	}else{
@@ -285,6 +297,22 @@ function retrieveallCartsBasedonClearing($conn, $clear, $status){
 	// this will be used to retrieve cleared and non cleared carts depening on the argument passed
 	// 1 for cleared 0 for not cleared
 	$query = "SELECT * FROM `checkoutcarts` WHERE `clear` = '$clear' AND `pickupstat` = '$status' ORDER BY `cartid` ASC";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($row, $query_row);
+		}
+		return $row;
+	}else{
+		return 0;
+	}
+}
+
+function retreiveCompleteAndIncompleteCarts($conn, $clear){
+	// this will be used to retrieve cleared and non cleared carts depening on the argument passed
+	// 1 for cleared 0 for not cleared
+	$query = "SELECT * FROM `checkoutcarts` WHERE `clear` = '$clear' ORDER BY `cartid` ASC";
 	$query_run = mysqli_query($conn, $query);
 	$row = array();
 	if(mysqli_num_rows($query_run) != 0){
@@ -375,5 +403,118 @@ function deleteCartVerificationLog($conn, $verificationcode){
 	}else{
 		return 0;
 	}
+}
+
+function retrieveSingleCartsContents($conn, $cartname){
+	// this will return the itemids of transit items belonging to the cart
+	// a combination of cartname and item id will be used as item trackers on the packaging..
+	// eg k33lk-142
+	$query = "SELECT * FROM `transitdbs` WHERE `cartname` = '$cartname'";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($row, $query_row);
+		}
+		return $row;
+	}else{
+		return 0;
+	}
+}
+
+function loopArrayRetrieveItemids($rows, $item){
+	$emptyString = '';
+	for($x =0; $x < count($rows); $x++){
+		$emptyString.= '#'.$rows[$x][$item];
+		// $emptyString = $rows[$x][$item].'-';
+	}
+	return chop($emptyString, '#');
+}
+
+function retrievecartsbasedonCartname($conn, $cartname){
+	// this will use the like functionality to return pending carts with similar verification codes
+	$query = "SELECT * FROM `checkoutcarts` WHERE `cartname` LIKE '%$cartname%' AND `updated` = '1'";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($row, $query_row);
+		}
+		return $row;
+	}else{
+		return 0;
+	}
+}
+
+function checkWhetherCartisCompleteDelivery($conn, $table, $cartname){
+	// this will return true or false on whether the cartname was delivered as a complete delivery
+	$query = "SELECT `id` FROM `$table` WHERE `cartno` = '$cartname'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) != 0){
+		return True;
+	}else{
+		return False;
+	}
+
+}
+
+function retrieveCartstatsFromComDeliv($conn, $cartname){
+	// retrieve content from both the delivery - complete and incdelivery - incomplete cart delivery options
+	$query = "SELECT * FROM `deliveries` WHERE `cartno` = '$cartname'";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		// continue
+		$row = mysqli_fetch_assoc($query_run);
+		return $row;
+	}else{
+		return 0;
+	}
+}
+
+function retrieveCartstatsFromIncompDeliv($conn, $cartname){
+	// retrieve content from both the delivery - complete and incdelivery - incomplete cart delivery options
+	$query = "SELECT * FROM `incdelivery` WHERE `cartno` = '$cartname'";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		// continue
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($row, $query_row);
+		}
+		return $row;
+	}else{
+		return 0;
+	}
+
+}
+
+function createNewReturnEntryByAgent($conn, $productid, $cartname, $buyer, $reason, $details, $returnedOn, $pickupdate, $agenttrigger, $locationto, $locationFrom){
+	// this will create a new return entry 
+	$query = "INSERT INTO `returns` (`id`,`productid`,`cartname`,`buyer`,`reason`,`details`, `returnTo`, `returnFrom`,`returnedOn`,`exchdates`,`pickstat`,`triggerBy`,`agenttrigger`,`handler`, `flagged`, `flaggedBy`, `refundStat`, `flagreason`, `dstatus`) VALUES ('','$productid','$cartname','$buyer','$reason','$details', '$locationto', '$locationFrom','$returnedOn','','0','agent','$agenttrigger','', '0', '0', '0', '', '0')";
+	if($query_run = mysqli_query($conn, $query)){
+		// success
+		return True;
+	}else{
+		// did not run
+		return False;
+	}
+}
+
+function retrieveReturns($conn, $status){
+	// retrieve active returns
+	$query = "SELECT * FROM `returns` WHERE `dstatus` = '$status'";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		// continue
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($row, $query_row);
+		}
+		return $row;
+	}else{
+		return 0;
+	}
+
 }
 ?>

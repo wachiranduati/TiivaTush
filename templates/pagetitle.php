@@ -9,5 +9,8 @@ function pageTitle($title){
 			</div>
 		</div>
 	";
+	// added this
+	require 'templates/pagejumbotron.php';
+	// added this
 }
 ?>

@@ -76,6 +76,7 @@ function returndelvdetsandform($conn){
       $details = $querycardetls_row['details'];
       $purchsdate = $querycardetls_row['date'];
       $shipping = $querycardetls_row['shipping'];
+      $tiivanick = getStaffName($conn);
       // $cartname = '4f50706353f017fac7dc3a95c5eb0038';
       //  TODO CHECK WHETHER ITEM IS AT FINAL LOCATION AND THE CURRENT HANDLER PHYSICALLY HAS THE ITEM
       echo "<div class=\"row cmpltcrtdlv\">
@@ -115,7 +116,7 @@ function returndelvdetsandform($conn){
           <form>
             <div>
               <label for=\"Name\">Agent Making the delivery:</label>
-              <input type=\"text\" id=\"compagent\" value=\"Nicholas Nduati\" readonly name=\"deliveringagnt\" title=\"<h3>New Handler</h3><br></p>the new handler should input their id</p>\" class=\"form-control\">
+              <input type=\"text\" id=\"compagent\" value=\"$tiivanick\" readonly name=\"deliveringagnt\" title=\"<h3>New Handler</h3><br></p>the new handler should input their id</p>\" class=\"form-control\">
             </div><br>
             <div>
               <label for=\"Name\">Your Name:</label>
@@ -154,7 +155,7 @@ function returndelvdetsandform($conn){
   }
 }
 
-function incompletecartreturnt(){
+function incompletecartreturnt($conn){
     // this is to relay cart information for cart named but for item in specific cart
     if(isset($_POST['cart']) && isset($_POST['itemid'])){
       $cartname = $_POST['cart'];
@@ -211,8 +212,9 @@ function incompletecartreturnt(){
                $centredestinationlistarray =  explode(',',$centredestinationlist);
 
                $centerdestination = strtoupper($centredestinationlistarray[0]);
+               $tiivanick = getStaffName($conn);
 
-               if($exchcnt == $centerdestination){
+               // if($exchcnt == $centerdestination){
                  //proceed to display the cart items for the particular item
                  echo "<div class=\"row cmpltcrtdlv\">
                      <div class=\"col-lg-6 col-md-6 col-md-12 col-xs-12\">
@@ -252,7 +254,7 @@ function incompletecartreturnt(){
                      <form>
                        <div>
                          <label for=\"Name\">Agent Making the delivery:</label>
-                         <input type=\"text\" id=\"inccompagent\" value=\"Nicholas Nduati\" readonly name=\"deliveringagnt\" title=\"<h3>New Handler</h3><br></p>the new handler should input their id</p>\" class=\"form-control\">
+                         <input type=\"text\" id=\"inccompagent\" value=\"$tiivanick\" readonly name=\"deliveringagnt\" title=\"<h3>New Handler</h3><br></p>the new handler should input their id</p>\" class=\"form-control\">
                        </div><br>
                        <div>
                          <label for=\"Name\">Your Name:</label>
@@ -280,9 +282,9 @@ function incompletecartreturnt(){
                      </div>
                  </div>";
 
-               }else{
-                 die("Error");
-               }
+               // }else{
+               //   die("Error");
+               // }
 
 
 
@@ -320,7 +322,7 @@ function checkincompletecompletecartsdlv($conn){
   // first check whether 5 minutes have elapsed since all the incomplete carts delivery were checked
   // retrieve the last time on the incomplete row
   $current_time_on_pickup_row_autotest = getAutotestTime($conn, 'incomplete');
-  if(checkIfAtleast_ThisTimeHasElapsed($current_time_on_pickup_row_autotest, '15 minutes') == True){
+  if(checkIfAtleast_ThisTimeHasElapsed($current_time_on_pickup_row_autotest, '5 seconds') == True){
     // retrieve all undelivered carts
     $incompleteCarts = getUnUpdatedCarts($conn, 1);
     // retrieve all delivered items from transitdb from incomplete carts...dstatus = 1
@@ -361,7 +363,7 @@ function checkincompletecompletecartsdlv($conn){
 // checkincompletecompletecartsdlv($conn);
 
 
-function completecartdelivery(){
+function completecartdelivery($conn){
   //script below will complete delivery for complete carts
   //check whether its a staff doing it
 
@@ -412,8 +414,7 @@ function completecartdelivery(){
 
                 }
                 // continue on with the cart
-                $date = Date("Y-m-d");
-                $timenow = Date("H:m:i");
+                $date = Date('Y-m-d H:i:s');
                 if($hasentirecart == true){
                   // echo "proceed to deliver";
                   //THIS IS THE SIMPLER ONE....UPDATE THE CART ITEMS VALUES TO 1 THEN CHANGE THE CHECKOUT CARTS TO COMPLETE...THEN UPDATE THE DELIVERIES TABLE
@@ -425,10 +426,10 @@ function completecartdelivery(){
                     if($queryupdatecheckoutcart_run = mysqli_query($conn, $queryupdatecheckoutcart)){
                       //continue
                       //insert row in deliveries table
-                      $queryfinalizedelivery = "INSERT INTO `deliveries` (`id`,`cartno`,`name`,`nameid`,`date`,`time`,`agent`) VALUES ('','$cart','$name','$id','$date','$timenow','$staffnick')";
+                      $queryfinalizedelivery = "INSERT INTO `deliveries` (`id`,`cartno`,`name`,`nameid`,`date`,`agent`) VALUES ('','$cart','$name','$id','$date','$staffnick')";
                       if($queryfinalizedelivery_run = mysqli_query($conn, $queryfinalizedelivery)){
                         //successful
-                        echo "cart $cart has successfully been delivered to $name TODAY AT $timenow HRS";
+                        echo "cart $cart has successfully been delivered to $name TODAY AT $date HRS";
                       }else{
                         die("Error");
                       }
@@ -466,7 +467,7 @@ function completecartdelivery(){
   }
 
 }
-function incompletecartdelivery(){
+function incompletecartdelivery($conn){
   // receive the cart details sent
   // var Mincomplete = "action=incodelv&agent="+inccompagent+"&name="+inccompname+"&id="+inccompid+"&email="+inccompemail;
   if(isset($_POST['agent']) && isset($_POST['name']) && isset($_POST['id']) && isset($_POST['email']) && isset($_POST['cart']) && isset($_POST['item'])){
@@ -481,8 +482,7 @@ function incompletecartdelivery(){
       //echo "this is teh incompelte cart $item";
       //THIS IS THE HARDER ONE
       //TODO TODO THIS AGAIN TODO
-      $date = Date("Y-m-d");
-      $timenow = Date("H:m:i");
+      $date = Date('Y-m-d H:i:s');
       // check whether the cart is incomplete....then check whether the agent has the said item...clears
       // add the row to incomplete deliveries with users details and date similar to that of complete carts
       // this one should also have the itemid
@@ -520,7 +520,7 @@ function incompletecartdelivery(){
                 $querycheckincdelivery_num = mysqli_num_rows($querycheckincdelivery_run);
                 if($querycheckincdelivery_num == 0){
                   //continue
-                  $queryfinalizedlv = "INSERT INTO `incdelivery` (`id`,`cartno`,`itemid`,`name`,`nameid`,`date`,`time`,`agent`) VALUES ('','$cart','$item','$name','$id','$date','$timenow','$agent')";
+                  $queryfinalizedlv = "INSERT INTO `incdelivery` (`id`,`cartno`,`itemid`,`name`,`nameid`,`date`, `agent`) VALUES ('','$cart','$item','$name','$id','$date','$agent')";
                   if($queryfinalizedlv_run = mysqli_query($conn, $queryfinalizedlv)){
                     // successfully updated
                     // echo "Item $item of cart $cart has successfully been delivered";

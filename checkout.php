@@ -55,7 +55,10 @@ if(isset($_POST['useremail'])){
         ?>
         <div class="container-fluid">
             <div class="row visible-lg visible-md" style="margin-top:10px;">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="index.php">Home </a> / <a href="checkout.php">Checkout</a><h2 class="text-center text-uppercase" style="margin-top:-10px; color:orange;">Checkout</h2></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <a href="index.php">Home </a> / <a href="checkout.php">Checkout</a><h2 class="text-center text-uppercase" style="margin-top:-10px; color:orange;">Checkout</h2>
+                        
+                </div>
             </div>
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="newcartitems"></div>
@@ -235,20 +238,19 @@ if(isset($_POST['useremail'])){
             <div class="row" style="margin-top:1px;display:none;" id="shippingdetails">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11" style="background-color:rgba(165, 165, 165, 0.15);">
-                 <p>Please decide on your mode of delivery</p>
+                 <!-- <p>Please decide on your mode of delivery</p> -->
                     <form id="radioform">
                         <div class="radio">
-                      <label><input title="<h5>Free delivery with Tiiva</h5>With this option you get your package delivered in 3-5 working days free of charge through Tiiva's bulk shipping. This is our way of giving back to our customers. you get a harty smile and a Thankyou with every delivery." value="free" checked type="radio" name="optradio">Free delivery with Tiiva (1 - 5 working days) - Flat rate - FREE</label>
+                      <label><input title="<h5>Free delivery with Tiiva</h5>With this option you get your package delivered in 3-5 working days free of charge through Tiiva's bulk shipping. This is our way of giving back to our customers. you get a harty smile and a Thankyou with every delivery." value="free" checked type="radio" name="optradio">Free delivery with Tiiva (1 - 5 working days) - Flat rate - 150 Ksh</label>
                     </div>
 
-                    <div class="radio">
+                    <!-- <div class="radio">
                       <label><input title="<h5>Experss delivery with Tiiva</h5>With this option you get your package delivered in 1 - 3 days at a flatrate of 400Ksh no matter the size of the package.With this option you get your package delivered faster, we top off any extra costs if any and you get a harty smile and a Thankyou with every delivery." value="ExpressTiiva" type="radio" name="optradio">Express Delivery with Tiiva (1 - 3 days) - Flat rate - 400 KSH</label>
                     </div>
                     <div class="radio">
                       <label><input title="<h5>Fargo courier COURIER Option</h5>With this option you get your package delivered to you via Fargo courier.We top off any extra charges if your package shipping cost is higher and you receive your package faster.p.s They're awesome" value="Others" type="radio" name="optradio">Others i.e WellsFargo | G4S | 2Nk (1 - 2 days) - Flat rate - 400 KSH</label>
-                    </div>
+                    </div> -->
                     </form>
-                    <small style="color:red">*NB Flat Rates factor in any unexpected changes in shipping likely to be met on our side. Normal shipping fees are in the range of 200Ksh so be assured that a refund is made with your delivery.</small>
                     
 
                 </div>
@@ -514,10 +516,11 @@ if(isset($_POST['useremail'])){
                 var xer = $("#radioform input[type='radio']:checked").val();
 
                 var checkoutinfo = 'username='+username+'&useridno='+useridno+'&emailaddress='+emailaddress+'&phonenumber='+phonenumber+'&county='+county+'&area='+area+'&details='+details+'&transcationinputid='+transcationinputid+"&shipping="+xer;
-                alert(xer);
+                // alert(xer);
                 if(username != ''){
                     if(phonenumber != ''){
-                        var cnty = confirm('You selected '+county+' as your county');
+                        // var cnty = confirm('You selected '+county+' as your county');
+                        var cnty = true;
                         if(cnty != false){
                             if(area != ''){
                                 if(transcationinputid != ''){

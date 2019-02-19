@@ -57,7 +57,7 @@ if(userLoggedIn() == True){
                         <a class="text-capitalize" style="color:black;text-decoration:none;"><small>More about us?</small></a>
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <a href="Howto.php" class="text-uppercase" style="text-decoration:none;"><small>FAQS</small></a>
+                                <a href="howto.php" class="text-uppercase" style="text-decoration:none;"><small>FAQS</small></a>
                             </div>
                         </div>
 
@@ -201,7 +201,7 @@ if(userLoggedIn() == True){
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" style="margin-top:10px;">
-                                                        <p style="margin-top:5px;">We offer this service to you the seller for free. Our take on this is 10% of each sale. We do not influence your price but we try and ensure you provide a reasonable pricing for your item. Final amount tab is automated by the price you provide for the item on sale.</p>
+                                                        <p style="margin-top:5px;">We offer this service to you the seller for free. Our take on this is 12.5% of each sale. We do not influence your price but we try and ensure you provide a reasonable pricing for your item. Final amount tab is automated by the price you provide for the item on sale.</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -482,7 +482,7 @@ if(userLoggedIn() == True){
                 //alert("Value: " + $("#price").val());
                 //$("#cut").val("Dolly Duck");
                 //$("#cut").val(0.9*($("#price").val()) + "Ksh");
-                  $("#cut").val(Math.round(0.9*($("#price").val())) + "Ksh");
+                  $("#cut").val(Math.round(0.75*($("#price").val())) + "Ksh");
             });
                 });
 

@@ -48,9 +48,11 @@ function pendingCarts($conn){
 			$soldval = retrieveSoldValuesforCart($conn, $cart);
 			$shiptype = $soldval['shipping']; 
 			if(strtolower($shiptype) == 'free'){
-				$shippingCost = 0;
+				// $shippingCost = 0;
+				$shippingCost = 150;
 			}else{
-				$shippingCost = 400;
+				// $shippingCost = 400;
+				$shippingCost = 150;
 			}
 			$grandtotal = ceil($total + $shippingCost);
 			
@@ -106,9 +108,11 @@ function pendingCarts($conn){
 			$soldval = retrieveSoldValuesforCart($conn, $cart);
 			$shiptype = $soldval['shipping']; 
 			if(strtolower($shiptype) == 'free'){
-				$shippingCost = 0;
+				// $shippingCost = 0;
+				$shippingCost = 150;
 			}else{
-				$shippingCost = 400;
+				// $shippingCost = 400;
+				$shippingCost = 150;
 			}
 			$grandtotal = ceil($total + $shippingCost);
 			
@@ -138,7 +142,7 @@ function pendingCarts($conn){
 function clearedCarts($conn){
 	// this will return all the information pertaining to carts that have been checked out 
 	// but their payment verification is currently pending
-	$row = retrieveallCartsBasedonClearing($conn, 1, 'INCOMPLETE');// retrieve complete and 1 clear
+	$row = retreiveCompleteAndIncompleteCarts($conn, 1);// retrieve complete and 1 clear
 	// incomplete means they've not already been delivered
 	// insist that no pickup/delivery be made on carts not cleared else you might deliver an item for free
 	echo showHeaderMessage("h3", "ClearedCarts");
@@ -177,9 +181,11 @@ function clearedCarts($conn){
 			$soldval = retrieveSoldValuesforCart($conn, $cart);
 			$shiptype = $soldval['shipping']; 
 			if(strtolower($shiptype) == 'free'){
-				$shippingCost = 0;
+				// $shippingCost = 0;
+				$shippingCost = 150;
 			}else{
-				$shippingCost = 400;
+				// $shippingCost = 400;
+				$shippingCost = 150;
 			}
 			$grandtotal = ceil($total + $shippingCost);
 			$verificationdetails = retrieveVerificationCartDetails($conn, $transactioncode);
@@ -240,9 +246,11 @@ function verifyClearedCart($conn, $verificationCode){
 			$soldval = retrieveSoldValuesforCart($conn, $cart);
 			$shiptype = $soldval['shipping']; 
 			if(strtolower($shiptype) == 'free'){
-				$shippingCost = 0;
+				// $shippingCost = 0;
+				$shippingCost = 150;
 			}else{
-				$shippingCost = 400;
+				// $shippingCost = 400;
+				$shippingCost = 150;
 			}
 			$grandtotal = ceil($total + $shippingCost);
 			$verificationdetails = retrieveVerificationCartDetails($conn, $verification);
@@ -250,7 +258,7 @@ function verifyClearedCart($conn, $verificationCode){
 			$verifiedon = $verificationdetails['verifiedon'];
 			if($verifiedBy == getStaffName($conn)){
 				//check whether time has elapsed
-				if(checkIfAtleast_ThisTimeHasElapsed($verifiedon, '1 hour') == True){
+				if(checkIfAtleast_ThisTimeHasElapsed($verifiedon, '2 minutes') == True){
 					// do not show the button...time has passed
 					$undomod = "-";
 				}else{

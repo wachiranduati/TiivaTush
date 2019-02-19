@@ -16,11 +16,11 @@ if(isset($_SESSION['$staff'])){
         inspectitems($conn);
       }elseif($state == 'kdslow'){
         // flag the item
-        flagitem();
+        flagitem($conn);
       }elseif($state == 'kosdl'){
         // unflag the item
         // echo "mwah is not here";
-        unflagitem();
+        unflagitem($conn);
       }elseif($state == 'k498sl'){
         // start search function
         // showreturncarts();
@@ -31,10 +31,10 @@ if(isset($_SESSION['$staff'])){
         showretcartcontentscmp($conn);
       }elseif($state == 'incomplete'){
         // retun incomplete cart form and the items details
-        showincompleteproddetails();
+        showincompleteproddetails($conn);
       }elseif($state == 'complete'){
         // return complete cart form and the item details
-        showcompleteproddetails();
+        showcompleteproddetails($conn);
       }elseif($state == 'exlsE'){
         // provide details for the incomplete carts
         //TODO REVIEW TWEAK THIS FUNCTION TO ONLY SHOW ITEMS THAT HAVE NOT SURPASSED THEIR RETURN DATE/DAYS....ELSE DISABLE THE CALL TO ACTION BUTTON
@@ -44,7 +44,7 @@ if(isset($_SESSION['$staff'])){
         // the return function to just add a new row to the database of returns7
         // TODO REVIEW ADD A TAG TO SHOW THE STAFF WHEN THE ITEM WAS DELIVERED SO TAHT THEY CAN EVALUATE THE ITEM itself
         // TO FIGURE OUT IF THE RETURN TIME HAS ALREADY EXPIRED TODO REVIEW
-          returnproduct();
+          returnproduct($conn);
       }else{
         // error
         die("Error4");
@@ -59,7 +59,7 @@ if(isset($_SESSION['$staff'])){
 }
 
 //TODO CODE TO REVIEW RETURNS.....WATCH THE ITEM AS IT TRAVELS BACK TO THE CLIENT
-function returnproduct(){
+function returnproduct($conn){
   // script will add a new row to the return items database
   $today = Date("Y-m-d H:i:s");
   if(isset($_POST['reason']) && isset($_POST['rsnmessage']) && isset($_POST['product'])){
@@ -90,7 +90,7 @@ function returnproduct(){
 // TODO REVIEW ADD A SNIPPET CODE USING PHPS DATE_ADD FUNCT TO TABULATE THE CHECK WHETHER RETURN DATE EXPIRY HAS ALREADY REACHED
 }
 
-function showincompleteproddetails(){
+function showincompleteproddetails($conn){
   //TODO REVIEW THIS WILL BE TWEAKED AT A LATER DATE TO IMPROVE PERFOMANCE
   // return item details.. and the form with the button set to return this particular item from incomplete cart
   if(isset($_POST['item'])){
@@ -225,7 +225,7 @@ function showincompleteproddetails(){
   }
 }
 
-function showcompleteproddetails(){
+function showcompleteproddetails($conn){
   //return item details....and the form with the button set to return this particular item from the complete cart
     if(isset($_POST['item'])){
       $item = $_POST['item'];
@@ -487,9 +487,10 @@ function showretcartcontentsincomplete($conn){
 function showretcartcontentscmp($conn, $xert){
   //these are items that have already been delivered
   // show cart contents  for clicked cart
-  // $compcart = '4f50706353f017fac7dc3a95c5eb0038';
-  $compcart = $xert;
+  $compcart = 'c36df7d016546edbba9c5e5c3d0945a1';
+  // $compcart = $xert;
   $querycompcart = "SELECT * FROM `deliveries` WHERE `cartno`='$compcart'";
+  // $querycompcart = "SELECT * FROM `deliveries` WHERE `cartno` LIKE '%$compcart%'";
   $querycompcart_run = mysqli_query($conn, $querycompcart);
   $querycompcart_num = mysqli_num_rows($querycompcart_run);
   if($querycompcart_num != 0){
@@ -693,7 +694,7 @@ function showreturncarts(){
 }
 //TODO ADD A RETURN REQUEST FUNCTION IN SELLERS ACCOUNT TAHT SHOULD SHOW UP ON ADMINS PANEL
 
-function unflagitem(){
+function unflagitem($conn){
   if(isset($_POST['item']) && isset($_POST['cart'])){
     $item = $_POST['item'];
     $cart = $_POST['cart'];
@@ -751,7 +752,7 @@ function unflagitem(){
   }
 }
 
-function flagitem(){
+function flagitem($conn){
   if(isset($_POST['item']) && isset($_POST['cart'])){
     $item = $_POST['item'];
     $cart = $_POST['cart'];

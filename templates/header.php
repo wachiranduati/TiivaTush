@@ -125,7 +125,7 @@
                                 <a class="text-capitalize" style="color:black;text-decoration:none;"><small>More about us?</small></a>
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <a href="Howto.php" class="text-uppercase"><small>FAQS</small></a>
+                                        <a href="howto.php" class="text-uppercase"><small>FAQS</small></a>
                                     </div>
                                 </div>
 

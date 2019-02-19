@@ -194,4 +194,330 @@ function getStaffName($conn){
 	}
 }
 
+function retrieveUserDetails($conn){
+	// this will retrieve all user details for the currently logged in user
+	$user = getUserID();
+	$query = "SELECT * FROM `users` WHERE `id` = '$user'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) == 1){
+		// continue
+		return mysqli_fetch_assoc($query_run);
+	}else{
+		die("something's wrong");
+	}
+}
+
+function showUserCartHistory($conn){
+	// this should return a list of carts checked out by the current user..
+	// retrieved from the checkout tables
+	$currentUser = getUserID();
+	$query = "SELECT * FROM `checkoutcarts` WHERE `customer_id` = '$currentUser'";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		// continue
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($row, $query_row);
+		}
+		return $row;
+	}else{
+		return 0;
+	}
+}
+
+function convertcartContentsStringToArray($commadString){
+	$itemArray = explode(',', $commadString);
+	return $itemArray;
+}
+
+function checkwhetherCompDeliveryExist($conn, $cartname){
+	// this should also tell whether was delivered
+	$query = "SELECT * FROM `deliveries` WHERE `cartno` = '$cartname'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) == 1){
+		// delivery was made
+		return True;
+	}else{
+		// delivery yet to be made
+		return False;
+	}
+
+}
+
+function checkforincompCartsdelv($conn, $cartname){
+	// Not to be confused with the function below..this one just checks whether a cart by the name exists
+	$query = "SELECT * FROM `incdelivery` WHERE `cartno` = '$cartname'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) != 0){
+		// delivery not complete on the cart..it may be partial
+		return True;
+	}else{
+		return False;
+	}
+}
+
+function checkwhethercartincExists($conn, $cartname, $count){
+	// this is a bit tricky since we need to know how many items there are
+	// this should check to see whether all items have been delivered
+	// check whether a cartname exists
+	// chekc whether the original content matches the rows with the cartname
+	// just pass the item count
+	$query = "SELECT * FROM `incdelivery` WHERE `cartno` = '$cartname'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) != $count){
+		// delivery not complete on the cart..it may be partial
+		return False;
+	}else{
+		return True;
+	}
+}
+
+function checkwhetherCartDelivered($conn, $cartname, $cartcount){
+	// thsi will use two other functions to figure out whether the cart was delivered
+	if(checkwhetherCompDeliveryExist($conn, $cartname) == True){
+		// cart has been completed
+		return 1;
+	}else{
+		// no complete cart found
+		// check for incomplete complete delivery
+		if(checkwhethercartincExists($conn, $cartname, $cartcount) == True){
+			// incomplete cart actually completed
+			return 1;
+		}else{
+			// incomplete cart not done
+			return 0;
+		}
+	}
+}
+
+function retrieveFinalItemInCommadStringUsersProf($commadString){
+	$itemArray = explode(',', $commadString);
+	$finalItemPosition = count($itemArray);
+	return $itemArray[$finalItemPosition - 1];
+	// minus one cause numbering starts at zero to total count minus 1
+}
+
+function returncartcardslooped($conn, $row){
+	for($x = 0; $x < count($row); $x++){
+		$cartname = $row[$x]['cartname'];
+		$carttotal = $row[$x]['carttotal'];
+		$paymentverification = $row[$x]['paymentverification'];
+		$Date = $row[$x]['Date'].' '.$row[$x]['time'];
+		$cartcontents = $row[$x]['cartcontents'];
+		$cartcontentsArray = convertcartContentsStringToArray($cartcontents);
+		$cartcount = count($cartcontentsArray);
+
+		$delivery_state = checkwhetherCartDelivered($conn, $cartname, $cartcount);
+		if($delivery_state == True){
+			$status = "Delivery Complete";
+		}else{
+			$status = "InTransit";
+		}
+		echo "
+		<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\">
+                      <div class=\"thumbnail text-center\">
+                          <div class=\"caption\">
+                            <h4><span class=\"mdi mdi-cart\"></span>cart</h4>
+                            <h4>$cartname</h4>
+                            <p>Checkout Date : $Date</p>
+
+                            <p>Carttotal : $carttotal Ksh</p>
+                            <p>Shipping : 150 Ksh</p>
+
+                            <p>Verification Code : $paymentverification</p>
+                            <span class=\"mdi mdi-truck-fast mdi-36px\"></span><p>$status</p>
+                            
+                            <a href=\"#cartcontents\" data-cart=\"$cartname\" class=\"btn btn-info btn-block view-cart-info\" role=\"button\">View More</a>
+                        </div>
+                      </div>
+                    </div>
+	";
+	}
+}
+
+function checkWhetherCartBelongsToUser($conn, $cartname){
+	// this will check whether the cart submitted belongs to the currently logged in user
+	$currentUser = getUserID();
+	$query = "SELECT * FROM `checkoutcarts` WHERE `customer_id` = '$currentUser' AND `cartname` = '$cartname'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) == 1){
+		// proceed
+		return True;
+	}else{
+		// dont continue
+		return False;
+	}
+
+
+}
+
+
+function retrieveTransitDetailsPerCartUserProf($conn, $cartname){
+	// this will return transit contents of given cartname
+	// first confirm that the current user owns the cart
+	if(checkWhetherCartBelongsToUser($conn, $cartname) == True){
+		// continue
+		$query = "SELECT * FROM `transitdbs` WHERE `cartname` = '$cartname'";
+		$query_run = mysqli_query($conn, $query);
+		$row = array();
+		if(mysqli_num_rows($query_run) != 0){
+			while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($row, $query_row);
+			}
+			return $row;
+		}else{
+			return 0;
+		}
+	}else{
+		die("You do not own this cart");
+	}
+}
+
+function retrieveItemIdviaTransitItemid($conn, $itemid, $cartname){
+	// itemid is actually the pickup id an item is assigned once its picked up and is only used in the pickupds table
+	// so retrieve the cartcontent now
+	$query = "SELECT * FROM `pickupds` WHERE `id` = '$itemid' AND `cart` = '$cartname'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) != 0){
+		// continue
+		return mysqli_fetch_assoc($query_run);
+	}else{
+		return 0;
+	}
+
+}
+
+function retrieveproductAllFieldsUserProf($conn, $table, $itemid){
+	$query = "SELECT * FROM `$table` WHERE `id`='$itemid'";
+	$query_run = mysqli_query($conn, $query);
+	$query_num_rows = mysqli_num_rows($query_run);
+	if($query_num_rows == 1){
+		$query_row = mysqli_fetch_assoc($query_run);
+		return $query_row;
+	}else{
+		return 0;
+	}
+}
+
+function returnSubstrProdIdfromCompoundKey($compoundKey){
+	return substr($compoundKey, 1);
+}
+	
+function checkwhetherReturnExpired($itemdeliverytime){
+	return checkIfAtleast_ThisTimeHasElapsed($itemdeliverytime, '1 days');
+}
+
+function retrieveCartstatsFromComDelivUserProf($conn, $cartname){
+	// retrieve content from both the delivery - complete and incdelivery - incomplete cart delivery options
+	$query = "SELECT * FROM `deliveries` WHERE `cartno` = '$cartname'";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		// continue
+		$row = mysqli_fetch_assoc($query_run);
+		return $row;
+	}else{
+		return 0;
+	}
+}
+
+function retrieveCartstatsFromIncompDelivUserProf($conn, $cartname){
+	// retrieve content from both the delivery - complete and incdelivery - incomplete cart delivery options
+	$query = "SELECT * FROM `incdelivery` WHERE `cartno` = '$cartname'";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		// continue
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($row, $query_row);
+		}
+		return $row;
+	}else{
+		return 0;
+	}
+
+}
+
+function currentTimeUserProf(){
+	return Date('Y-m-d H:i:s');
+}
+
+function checkIfAtleast_ThisTimeHasElapsedUserprof($dbtime, $timelapse){
+	// this script checks whether $timelapse has passed compared to the current time yaani x time on the timepassed is 
+	//compared to the current time
+	// timelapse like 5 second -> '5 seconds'
+	// $dbtime in -> 'Y-m-d H:i:s'
+	$extended_db_time = timeDeltaExtendTime_return($dbtime, $timelapse, 'Y-m-d H:i:s');
+	// this extends the database time by x timelapse
+	// now compare this time to the current time...-> current time should be 
+	// echo '<br>'.$extended_db_time.'<br>';
+	if(currentTimeUserProf() > $extended_db_time){
+		return True;
+	}else{
+		return False;
+	}
+}
+
+function createNewReturnEntryByUser($conn, $productid, $cartname, $buyer, $reason, $details, $returnedOn, $pickupdate, $agenttrigger, $locationto, $locationFrom){
+	// this will create a new return entry 
+	$query = "INSERT INTO `returns` (`id`,`productid`,`cartname`,`buyer`,`reason`,`details`, `returnTo`, `returnFrom`,`returnedOn`,`exchdates`,`pickstat`,`triggerBy`,`agenttrigger`,`handler`, `flagged`, `flaggedBy`, `refundStat`, `flagreason`, `dstatus`) VALUES ('','$productid','$cartname','$buyer','$reason','$details', '$locationto', '$locationFrom','$returnedOn','','0','user','$agenttrigger','', '0', '0', '0', '', '0')";
+	if($query_run = mysqli_query($conn, $query)){
+		// success
+		return True;
+	}else{
+		// did not run
+		return False;
+	}
+}
+
+function retrievecartsbasedonCartnameUserProf($conn, $cartname){
+	// this will use the like functionality to return pending carts with similar verification codes
+	$query = "SELECT * FROM `checkoutcarts` WHERE `cartname` LIKE '%$cartname%' AND `updated` = '1'";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($row, $query_row);
+		}
+		return $row;
+	}else{
+		return 0;
+	}
+}
+
+function retrieveProductFieldUserProf($conn, $table, $field, $itemid){
+	$query = "SELECT `$field` FROM `$table` WHERE `id`='$itemid'";
+	$query_run = mysqli_query($conn, $query);
+	$query_num_rows = mysqli_num_rows($query_run);
+	if($query_num_rows == 1){
+		$query_row = mysqli_fetch_assoc($query_run);
+		return $query_row[$field];
+	}else{
+		return 0;
+	}
+}
+
+function getMerchantLocationViaIdUserProf($conn, $merchId){
+	// note that this is minus the modification to the id
+	// return the county-township if no gps coordinates found
+	$query = "SELECT * FROM `merchants` WHERE `id` = '$merchId'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) != 0){
+		$row = mysqli_fetch_assoc($query_run);
+		return $row;
+	}else{
+		return 0;
+	}
+}
+
+function retrieveSoldValuesforCartUserProf($conn, $cart){
+	$query = "SELECT * FROM `sold` WHERE `cartname`='$cart'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) != 0){
+		//continue
+		return mysqli_fetch_assoc($query_run);
+	}else{
+		echo "nothing found in the cart";
+	}
+}
 ?>

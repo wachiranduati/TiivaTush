@@ -16,7 +16,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         $usernameF = mysqli_real_escape_string($conn, $_POST['username']);
         $passwordF = md5($salt.mysqli_real_escape_string($conn, $_POST['password']));
         //echo $usernameF.' and '.$passwordF;
-        $query = "SELECT * FROM `Staff` WHERE `username`='$usernameF' AND `password`='$passwordF'";
+        $query = "SELECT * FROM `staff` WHERE `username`='$usernameF' AND `password`='$passwordF'";
         $query_run = mysqli_query($conn, $query);
         $query_num_rows = mysqli_num_rows($query_run);
         $query_fetch_assoc = mysqli_fetch_assoc($query_run);

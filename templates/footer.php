@@ -33,11 +33,11 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 visible-lg visible-md"><h4>Service</h4>
                                     <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="Howto.php">Online help</a></li>
+                                        <li><a style="color:black;" href="howto.php">Online help</a></li>
                                         <li><a style="color:black;" href="contactus.php">Contact us</a></li>
-                                        <li><a style="color:black;" href="Howto.php">Order status</a></li>
-                                        <li><a style="color:black;" href="Howto.php">Change location</a></li>
-                                        <li><a style="color:black;" href="Howto.php">FAQS</a></li>
+                                        <li><a style="color:black;" href="howto.php">Order status</a></li>
+                                        <li><a style="color:black;" href="howto.php">Change location</a></li>
+                                        <li><a style="color:black;" href="howto.php">FAQS</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><h4>Quick Shop</h4>
