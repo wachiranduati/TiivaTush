@@ -223,7 +223,7 @@ function completecartatdestination($conn){
               $centerdestination = $cartIncoItemCurrentLoop['centredestination'];
               $deadline = $cartIncoItemCurrentLoop['deadline'];
               $shiptype = $cartIncoItemCurrentLoop['shiptype'];
-              $transitid = $cartIncoItemCurrentLoop['id'];
+              $transitid = $cartIncoItemCurrentLoop['itemid'];
               echo "
                   <tr>
                       <td>$incocount</td>

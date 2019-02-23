@@ -45,9 +45,11 @@ function showCartDetails($conn, $cart){
 			<tbody>
 		";
 		// print_r($transitdetailsArray);
+				$expired = '';
 		for($x = 0; $x < count($transitdetailsArray); $x++){
 			$position = $x + 1;
 			$item = $transitdetailsArray[$x]['itemid'];
+			$incid = $transitdetailsArray[$x]['id'];//retrieve the transit id to use on line 81
 			$actualItem = retrieveItemIdviaTransitItemid($conn, $item, $cart)['item'];
 			$actualItem = returnSubstrProdIdfromCompoundKey($actualItem);
 			$productdetails = retrieveproductAllFieldsUserProf($conn, 'products', $actualItem);
@@ -76,7 +78,8 @@ function showCartDetails($conn, $cart){
 			}elseif(checkforincompCartsdelv($conn, $cart) == True){
 				// thsi is an incomplete cart
 				// retrieve delivery time
-				$delivtime = retrieveCartstatsFromIncompDelivUserProf($conn, $cart)[$x]['date'];
+				// $delivtime = retrieveCartstatsFromIncompDelivUserProf($conn, $cart)[0]['date'];
+				$delivtime = returnFromIncompDelivSingleRow($conn, $incid, $cart)['date'];
 			}else{
 				// die("something's wrong");
 				$delivtime = 0;

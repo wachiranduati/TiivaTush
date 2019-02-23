@@ -189,6 +189,23 @@ function queryAllitemsInTransit($conn){
 
 }
 
+function queryAllitemsDelivered($conn){
+	//retrieve all the items that are currently in transit
+	$query = "SELECT * FROM `transitdbs` WHERE `dstatus` = '1'";
+	$query_run = mysqli_query($conn, $query);
+	$transitItems = array();
+	if(mysqli_num_rows($query_run) != 0){
+		// continue
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($transitItems, $query_row);
+		}
+		return $transitItems;
+	}else{
+		return 0;
+	}
+
+}
+
 function returnItemidShop($conn, $rowid){
 	// this will return the complex item id that is the shop letter and the id combined
 	$query = "SELECT `item` FROM `pickupds` WHERE `id`='$rowid'";
@@ -489,6 +506,21 @@ function retrieveCartstatsFromIncompDeliv($conn, $cartname){
 
 }
 
+function retrieveIncDeliverySingleRecord($conn, $itemid, $cartname){
+	// retrieve a sigle record from teh incdelivery via its itemid note the item id the transitdb id
+	$query = "SELECT * FROM `incdelivery` WHERE `cartno` = '$cartname' AND `itemid` = '$itemid'";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		// continue
+		$row = mysqli_fetch_assoc($query_run);
+		return $row;
+	}else{
+		return 0;
+	}
+
+}
+
 function createNewReturnEntryByAgent($conn, $productid, $cartname, $buyer, $reason, $details, $returnedOn, $pickupdate, $agenttrigger, $locationto, $locationFrom){
 	// this will create a new return entry 
 	$query = "INSERT INTO `returns` (`id`,`productid`,`cartname`,`buyer`,`reason`,`details`, `returnTo`, `returnFrom`,`returnedOn`,`exchdates`,`pickstat`,`triggerBy`,`agenttrigger`,`handler`, `flagged`, `flaggedBy`, `refundStat`, `flagreason`, `dstatus`) VALUES ('','$productid','$cartname','$buyer','$reason','$details', '$locationto', '$locationFrom','$returnedOn','','0','agent','$agenttrigger','', '0', '0', '0', '', '0')";
@@ -516,5 +548,44 @@ function retrieveReturns($conn, $status){
 		return 0;
 	}
 
+}
+
+function checkWhertherPaymentRecordExists($conn, $prodid){
+	// this will chekc whether an item id exists in the payment record
+	// the record simply means that the particular item's uploader was paid if it exists
+	$query = "SELECT * FROM `deliveranpaidfor` WHERE `prodid` = '$prodid'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) == 1){
+		return True;
+	}else{
+		return False;
+	}
+}
+
+function getMerchantDetailsViaID($conn, $merchid){
+// retreive merchant details via their merchant id
+$user = $_SESSION['$user_id'];
+$query = "SELECT * FROM `merchants` WHERE `userid`='$merchid'";
+$query_run = mysqli_query($conn, $query);
+$query_row = mysqli_num_rows($query_run);
+if($query_row == 1){
+	$row = mysqli_fetch_assoc($query_run);
+	return $row;
+}else{
+	return False;
+}
+}
+
+function checkwhetheritemisOnReturnList($conn, $productid){
+	// this will use the returns database to check and see whether item id is there marked for return
+	$query = "SELECT * FROM `returns` WHERE `productid` = '$productid'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) == 1){
+		// found so item was or is being returned
+		return True;
+	}else{
+		// item not returned
+		return False;
+	}
 }
 ?>

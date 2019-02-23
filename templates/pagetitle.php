@@ -11,6 +11,7 @@ function pageTitle($title){
 	";
 	// added this
 	require 'templates/pagejumbotron.php';
+	require 'templates/tawkio.php';
 	// added this
 }
 ?>

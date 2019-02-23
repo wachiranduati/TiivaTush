@@ -449,34 +449,43 @@ if(userLoggedIn() == True){
                           <div class="col-lg-2">
                               <ul class="list-group" style="cursor: pointer;">
                                   <li class="list-group-item fnance active pendingcarts">
-                                      <span class="badge">5</span>
+                                      <!-- <span class="badge">5</span> -->
                                       Pending carts
                                   </li>
                                   <li class="list-group-item fnance clearedcarts">
-                                      <span class="badge">10</span>
+                                      <!-- <span class="badge">10</span> -->
                                       Cleared Carts
                                   </li>
+                                  <li class="list-group-item fnance paymentpend">
+                                      <!-- <span class="badge">34</span> -->
+                                      Payments to Award
+                                  </li>
+                                  <li class="list-group-item fnance paymentunmatured">
+                                      <!-- <span class="badge">34</span> -->
+                                      Payment Unmatured
+                                  </li>
+                                  <li class="list-group-item fnance paymentcancelreturn">
+                                      <!-- <span class="badge">34</span> -->
+                                      Payment Paused
+                                  </li>
+                                  <li class="list-group-item fnance paymentsmade">
+                                      <!-- <span class="badge">34</span> -->
+                                      Payments Made
+                                  </li>
+                                  <li class="list-group-item fnance merchpay">
+                                      <!-- <span class="badge">34</span> -->
+                                      Payout records
+                                  </li>
                                   
-                                  <li class="list-group-item fnance">
-                                      <span class="badge">14</span>
-                                      Shipping Expenses
+                                  <li class="list-group-item fnance netincome">
+                                      <!-- <span class="badge">14</span> -->
+                                      TiivaCashflow
                                   </li>
-                                  <li class="list-group-item fnance">
-                                      <span class="badge">7</span>
-                                      Operating costs
+                                  <li class="list-group-item fnance tiivaexpenses">
+                                      <!-- <span class="badge">14</span> -->
+                                      Expenses
                                   </li>
-                                  <li class="list-group-item fnance">
-                                      <span class="badge">56</span>
-                                      Cart history
-                                  </li>
-                                  <li class="list-group-item fnance">
-                                      <span class="badge">34</span>
-                                      Merchant payout
-                                  </li>
-                                  <li class="list-group-item fnance">
-                                      <span class="badge">10</span>
-                                      Returns
-                                  </li>
+                                  
                               </ul>
                           </div>
                           <div class="col-lg-10">
@@ -488,6 +497,108 @@ if(userLoggedIn() == True){
                           </div>
                       </div>
                       <script>
+                        // $.ajax({
+                      //       url: "returnscontroller.php",
+                      //       type: "POST",
+                      //       data: "",
+                      //       success: function(data){
+
+                      //       }
+                      //   });
+                        $(".merchpay").click(function(){
+                            $.ajax({
+                                url: "adminpay.php",
+                                type: "POST",
+                                data: "deliveries=43lk489",
+                                success: function(data){
+                                    $(".financeContent").html(data);
+                                }
+                            });
+                        });
+
+                        $(".paymentpend").click(function(){
+                            $.ajax({
+                                url: "adminpay.php",
+                                type: "POST",
+                                data: "deliveries=kl23l239832",
+                                success: function(data){
+                                    $(".financeContent").html(data);
+                                    // #awardPayment
+                                    $(".btn-payMerch").click(function(){
+                                        var productitem = $(this).attr("data-prod");
+                                        var productcart = $(this).attr("data-cart");
+                                        $.ajax({
+                                            url: "adminpay.php",
+                                            type: "POST",
+                                            data: "returnform=45lk9834&prodid="+productitem,
+                                            success: function(data){
+                                                $("#awardPayment").html(data);
+                                                $(".processPayment").click(function(){
+                                                    var verifcode = $(".recordpaymentcode").val();
+                                                    var sellername = $(this).attr("data-sellername");
+                                                    var phonenum = $(this).attr("data-phonenum");
+                                                    var message = "prodid="+productitem+"&verifcode="+verifcode+"&cartname="+productcart+"&sellername="+sellername+"&phonenum="+phonenum;
+                                                    // alert(message);
+                                                    $.ajax({
+                                                        url: "adminpay.php",
+                                                        type: "POST",
+                                                        data: message,
+                                                        success: function(data){
+                                                            $(".processPayment").html(data);
+                                                        }
+                                                    });
+                                                });
+                                            }
+                                        });
+                                    });
+                                }
+                            });
+                        });
+
+                        $(".paymentunmatured").click(function(){
+                            $.ajax({
+                                url: "adminpay.php",
+                                type: "POST",
+                                data: "deliveries=unamtured43lk34P",
+                                success: function(data){
+                                    $(".financeContent").html(data);
+                                }
+                            });
+                        });
+
+                        $(".paymentcancelreturn").click(function(){
+                            $.ajax({
+                                url: "adminpay.php",
+                                type: "POST",
+                                data: "deliveries=returns298349",
+                                success: function(data){
+                                    $(".financeContent").html(data);
+                                }
+                            });
+                        });
+
+                        $(".paymentsmade").click(function(){
+                            $.ajax({
+                                url: "adminpay.php",
+                                type: "POST",
+                                data: "deliveries=paymentscleared202l2k3389",
+                                success: function(data){
+                                    $(".financeContent").html(data);
+                                }
+                            });
+                        });
+
+                        $(".netincome").click(function(){
+                            $.ajax({
+                                url: "adminpay.php",
+                                type: "POST",
+                                data: "k43lk33l=cashfl34k23ow",
+                                success: function(data){
+                                    $(".financeContent").html(data);
+                                }
+                            });
+                        });
+
                         $(".pendingcarts").click(function(){
                             $.ajax({
                                 url: "tiivafinances.php",
@@ -733,7 +844,7 @@ if(userLoggedIn() == True){
               <!-- MERCHANT DISPLAY CONTAINER -->
 
               <!-- RETURN GOODS CONTAINER 2.0 -->
-              <div class="row staffReturnContainer" style="padding: 10px;">
+              <div class="row staffReturnContainer" style="padding: 10px;display: none;">
                   <div class="col-lg-12" style="background-color: white;">
                       <div class="row" style="margin: 0 0 1% 0;">
                           <div class="col-lg-2"></div>
@@ -825,14 +936,7 @@ if(userLoggedIn() == True){
                                 $(".pendingreturnscontainer").html(data);
                             }
                         });
-                      // $.ajax({
-                      //       url: "returnscontroller.php",
-                      //       type: "POST",
-                      //       data: "",
-                      //       success: function(data){
-
-                      //       }
-                      //   });
+                      
                   </script>
               </div>
               <!-- RETURN GOODS CONTAINER 2.0 -->

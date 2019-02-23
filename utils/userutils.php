@@ -256,6 +256,18 @@ function checkforincompCartsdelv($conn, $cartname){
 	}
 }
 
+function returnFromIncompDelivSingleRow($conn, $itemid, $cartname){
+	// Not to be confused with the function below..this one just checks whether a cart by the name exists
+	$query = "SELECT * FROM `incdelivery` WHERE `cartno` = '$cartname' AND `itemid` = '$itemid'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) != 0){
+		// delivery not complete on the cart..it may be partial
+		return mysqli_fetch_assoc($query_run);
+	}else{
+		return False;
+	}
+}
+
 function checkwhethercartincExists($conn, $cartname, $count){
 	// this is a bit tricky since we need to know how many items there are
 	// this should check to see whether all items have been delivered
@@ -520,4 +532,29 @@ function retrieveSoldValuesforCartUserProf($conn, $cart){
 		echo "nothing found in the cart";
 	}
 }
+
+function returnImagePreAddrMtushUserProf(){
+    $imageaddr = 'mtumbauploads/compresseduploads/';
+    return $imageaddr;
+}
+
+function getUnUpdatedCartsUserProf($conn){
+	// This will return all the incomplete carts not yet reflected on the pickup table
+	$query = "SELECT * FROM `checkoutcarts` WHERE `pickupstat` = 'INCOMPLETE' AND `clear` = '1'";
+	// only return carts that have already been cleared
+	$query_run = mysqli_query($conn, $query);
+	$query_num_rows = mysqli_num_rows($query_run);
+	$row = array();
+	if($query_num_rows != 0){
+		//return the rows
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($row, $query_row);
+		}
+		return $row;
+	}else{
+		// no incomplete carts found
+		return 0;
+	}
+}
+
 ?>

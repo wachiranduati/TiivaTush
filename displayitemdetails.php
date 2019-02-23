@@ -1,6 +1,7 @@
 <?php
 ob_start();
 session_start();
+// THIS IS THE REVIEW PRODUCT SCRIPT
 require 'connect.php';
 if(isset($_POST['search'])){
   $search = $_POST['search'];

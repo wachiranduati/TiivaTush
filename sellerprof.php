@@ -44,9 +44,7 @@ if(isUserMerchant($conn) != True){
         #resi:hover {
             background-color: rgba(64, 64, 64, 0.63);
         }
-        .this:hover {
-            background-color: aliceblue;
-        }
+        
         #itonsale{
             max-height: 300px;
             overflow: scroll;
@@ -72,6 +70,38 @@ if(isUserMerchant($conn) != True){
             text-transform: uppercase;
             font-weight: bold;
         }
+        .panel-group .panel {
+        border-radius: 0;
+        box-shadow: none;
+        border-color: #EEEEEE;
+    }
+
+    .panel-default > .panel-heading {
+        padding: 0;
+        border-radius: 0;
+        color: #212121;
+        background-color: #FAFAFA;
+        border-color: #EEEEEE;
+    }
+
+    .panel-title {
+        font-size: 14px;
+    }
+
+    .panel-title > a {
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+    }
+
+    .more-less {
+        float: right;
+        color: #212121;
+    }
+
+    .panel-default > .panel-heading + .panel-collapse > .panel-body {
+        border-top-color: #EEEEEE;
+    }
     </style>
 
 </head>
@@ -413,126 +443,319 @@ if(isUserMerchant($conn) != True){
 
                          </script>
                     </div>
+                    <!-- INSERT NEW ACCORDION HERE -->
                     <div class="row sellercontainer" style="display: none;">
-                      <script type="text/javascript">
-                      boxed();
+                <div class="col-lg-12">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-                          $(document).ready(function(){
-                              $.ajax({
-                                  type: "GET",
-                                  url: 'onlinemerchantuploads.php',
-                                  success: function(data){
-                                      $("#onlineuploads").html(data);
-                                  }
-                              });
+        
 
-                              $.ajax({
-                                  type: "GET",
-                                  url: 'checkonmypickups.php',
-                                  success: function(data){
-                                      $("#mypickups").html(data);
-                                  }
-                              });
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="CurrentlyBooked" title="<h3>Items currently booked</h3><br>These are my items that are currently being viewed by a user">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#currentlybooked" aria-expanded="false" aria-controls="currentlybooked">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                        ONLINE - CURRENTLY BEING VIEWED</a>
+                </h4>
+            </div>
+            <div id="currentlybooked" class="panel-collapse collapse" role="tabpanel" aria-labelledby="CurrentlyBooked">
+                <div class="panel-body onlinebooked">
+                    This should show all your uploads that are currently available, not yet booked and currently not in any user's cart
+                </div>
+            </div>
+        </div>
 
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="currentlyCarted" title="<h3>Carted Items</h3><br>These are my uploads that are currently in a users cart. This should basically indicate a potential sale.">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsecarted" aria-expanded="false" aria-controls="collapsecarted">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                        ONLINE - CURRENTLY ADDED TO USER'S CART</a>
+                </h4>
+            </div>
+            <div id="collapsecarted" class="panel-collapse collapse" role="tabpanel" aria-labelledby="currentlyCarted">
+                <div class="panel-body onlinecarted">
+                    This should show all your uploads that are currently available, not yet booked and currently not in any user's cart
+                </div>
+            </div>
+        </div>
 
-                              $.ajax({
-                                  type: "GET",
-                                  url: 'checkmyproductsintransit.php',
-                                  success: function(data){
-                                      $("#myproductsintransit").html(data);
-                                  }
-                              });
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="merchantsold" title="<h3>New Sales</h3><br>These are my online products that have just been purchased/ paid for">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsolditems" aria-expanded="false" aria-controls="collapsolditems">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                        NEW SALES</a>
+                </h4>
+            </div>
+            <div id="collapsolditems" class="panel-collapse collapse" role="tabpanel" aria-labelledby="merchantsold">
+                <div class="panel-body onlinesolditems">
+                    This should show all your uploads that are currently available, not yet booked and currently not in any user's cart
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="merchanttransit" title="<h3>IN TRANSIT (minus)</h3><br>These are items that I uploaded and were bought by a user and are now in transit being delivered to them">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collaptransit" aria-expanded="false" aria-controls="collaptransit">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                        ITEMS IN TRANSIT</a>
+                </h4>
+            </div>
+            <div id="collaptransit" class="panel-collapse collapse" role="tabpanel" aria-labelledby="merchanttransit">
+                <div class="panel-body onlinetransitpanel">
+                    This shows all the transit items you have
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="merchantdelivered" title="<h3>Delivered</h3><br>These are my products that have already been delivered by to the buyer">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsedelivered" aria-expanded="false" aria-controls="collapsedelivered">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                        MY PRODUCTS ALREADY DELIVERED</a>
+                </h4>
+            </div>
+            <div id="collapsedelivered" class="panel-collapse collapse" role="tabpanel" aria-labelledby="merchantdelivered">
+                <div class="panel-body onlinedeliveredpanel">
+                    This are some of my items already delivered to the buyer
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="merchantreturns" title="<h3>Product Returns</h3><br>These are products that have been returned by the customer not contented with the item delivered.">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapreturns" aria-expanded="false" aria-controls="collapreturns">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                        MY CURRENT RETURNS</a>
+                </h4>
+            </div>
+            <div id="collapreturns" class="panel-collapse collapse" role="tabpanel" aria-labelledby="merchantreturns">
+                <div class="panel-body onlinereturns">
+                    This should show all my product returns
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingseven" title="<h3>Online Uploads (minus)</h3><br>These my products that are currently online.<br>Note that items currently in user's carts or currently booked will not appear here">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseseven" aria-expanded="false" aria-controls="collapseseven">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                        AVAILABLE ONLINE UPLOADS</a>
+                </h4>
+            </div>
+            <div id="collapseseven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingseven">
+                <div class="panel-body onlineuploadspanel">
+                    This should show all your uploads that are currently available, not yet booked and currently not in any user's cart
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="onlinemerchantspaused" title="<h3>Online Paused Items</h3><br>These are all my online products that I have paused.">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsepauseditems" aria-expanded="false" aria-controls="collapsepauseditems">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                        PAUSED ITEMS</a>
+                </h4>
+            </div>
+            <div id="collapsepauseditems" class="panel-collapse collapse" role="tabpanel" aria-labelledby="onlinemerchantspaused">
+                <div class="panel-body onlineuploadpaused">
+                    This should show all your currently paused items
+                </div>
+            </div>
+        </div>
+        <script>
+              $("#CurrentlyBooked").click(function(){
+                $.ajax({
+                    type: "POST",
+                    url: 'merchantswhitepaper.php',
+                    data: "myuploads=booked",
+                    success: function(data){
+                        $(".onlinebooked").html(data);
+                    }
+                });
+              });
+
+            $("#currentlyCarted").click(function(){
+              $.ajax({
+                  type: "POST",
+                  url: 'merchantswhitepaper.php',
+                  data: "myuploads=addedtocart",
+                  success: function(data){
+                      $(".onlinecarted").html(data);
+                  }
+              });
+            });
+
+            $("#merchantsold").click(function(){
+              $.ajax({
+                  type: "POST",
+                  url: 'merchantswhitepaper.php',
+                  data: "myuploads=sold",
+                  success: function(data){
+                      $(".onlinesolditems").html(data);
+                  }
+                });
+            });
+
+            $("#merchanttransit").click(function(){
+              $.ajax({
+                  type: "POST",
+                  url: 'merchantswhitepaper.php',
+                  data: "myuploads=transit",
+                  success: function(data){
+                      $(".onlinetransitpanel").html(data);
+                  }
+                });
+            });
+
+            $("#merchantdelivered").click(function(){
+              $.ajax({
+                  type: "POST",
+                  url: 'merchantswhitepaper.php',
+                  data: "myuploads=delivered",
+                  success: function(data){
+                      $(".onlinedeliveredpanel").html(data);
+                  }
+                });
+            });
+
+            $("#merchantreturns").click(function(){
+              $.ajax({
+                  type: "POST",
+                  url: 'merchantswhitepaper.php',
+                  data: "myuploads=returns",
+                  success: function(data){
+                      $(".onlinereturns").html(data);
+                  }
+                });
+            });
+
+            $("#onlinemerchantspaused").click(function(){
+              $.ajax({
+                  type: "POST",
+                  url: 'merchantswhitepaper.php',
+                  data: "myuploads=paused",
+                  success: function(data){
+                      $(".onlineuploadpaused").html(data);
+                      $(".unpauseitem").click(function(){
+                        var productid = $(this).attr("data-prod");
+                        // alert(productid);
+                          $.ajax({
+                            type: "POST",
+                            url: 'merchantswhitepaper.php',
+                            data: "unpause="+productid,
+                            success: function(data){
+                                $("#responsemessage").html(data);
+                            }
                           });
-                      </script>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <ul class="list-group">
-                                <li title="<h3>Online Uploads</h3><br>These my products that are currently online.<br>Available so not yet sold" class="list-group-item list-history"><a href="#">Online Uploads</a><span class="badge">23</span></li>
-                                    <div class="row history">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="onlineuploads">
-                                            <p>
-                                                The content appearing in the box of online uploads
-                                            </p>
-                                        </div>
-                                        <script>
-                                        $(document).ready(function(){
-                                           $(".list-group-item").tooltip({
-                                               placement: "top",
-                                               //title: "<h5></h5>I am here",
-                                               html: "true",
-
-                                           })
-                                        });
-                                        </script>
-
-                                    </div>
-                                <li title="<h3>Freshly Made Sales</h3>The following items have been sold on Tiiva and need to be picked up" class="list-group-item list-history"><a href="#">Pickup/Sales made</a><span class="badge">23</span></li>
-                                    <div class="row history">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="mypickups" style="height:300px;overflow:scroll;">
-                                            <p>
-                                                Shows information on a pickup from a sale just made
-                                            </p>
-                                        </div>
-                                    </div>
-                                <li title="<h3>Products in Transit</h3><br>These are your products that are in Tiiva's Custody and are enroute to the client" class="list-group-item list-history"><a href="#">Products in Transit</a><span class="badge">23</span></li>
-                                    <div class="row history">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="myproductsintransit" style="height:300px;overflow:scroll;">
-                                            <p>
-                                                The content appearing in teh box of transit
-                                            </p>
-                                        </div>
-                                    </div>
-                                <li title="<h3>Sold &amp; Delivered</h3><br>This is your successful sales history." class="list-group-item list-history"><a href="#">Sold &amp; Delivered</a><span class="badge">23</span></li>
-                                    <div class="row history">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <p>
-                                                The content appearing in teh box of sold and delivered
-                                            </p>
-                                        </div>
-                                    </div>
-                                <li title="<h3>Returns</h3><br>These are products you sold but were rejected by the customer possibly due to defects" class="list-group-item list-history"><a href="#">Returns</a><span class="badge">32</span></li>
-                                <div class="row history">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <p>
-                                            The content appearing in teh box of returns
-                                        </p>
-                                    </div>
-                                </div>
-                                <li title="<h3>Complaints/Poor Rating</h3><br>These are the complaints your products got/bad reviews and bad ratings" class="list-group-item list-history"><a href="#">Complaints/Poor rating</a><span class="badge">11</span></li>
-                                <div class="row history">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <p>
-                                            The content appearing in teh box of complaints
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <script>
-
-                                    $(".history").fadeOut();
-                                    $(".list-history").click(function(){
-                                        $(".list-history").removeClass("list-hist-active");
-                                        $(this).addClass("list-hist-active");
-
-                                        var y = 0;
-                                        while( y <= 6){
-                                            if($(".list-history").eq(y).hasClass("list-hist-active")){
-                                                //$(".sellersmenu>div").eq(x).toggle();
-                                                $(".history").eq(y).fadeIn();
-                                            }else{
-                                                $(".history").eq(y).fadeOut();
-                                            }
-                                            y++;
-                                        }
-                                    });
+                      });
+                      $(".deletepauseditem").click(function(){
+                        var productid = $(this).attr("data-prod");
+                        // alert(productid);
+                        var casestate = confirm("Are you sure you want to remove the upload? This cannot be undone");
+                        if(casestate == true){
+                          $.ajax({
+                          type: "POST",
+                          url: 'merchantswhitepaper.php',
+                          data: "deletepauseditem="+productid,
+                          success: function(data){
+                            $("#responsemessage").html(data);
+                          }
+                        });
+                        }else{
+                          alert('item deletion canceled');
+                          $("#responsemessage").html("")
+                        }
+                      });
+                  }
+                });
+            });
 
 
-                                 </script>
-                            </ul>
-                        </div>
-                    </div>
+          $(document).ready(function(){
+             
+             $(".panel-heading").tooltip({
+                 placement: "top",
+                 //title: "<h5></h5>I am here",
+                 html: "true",
+
+             })
+          });
+          $("#headingseven").click(function(){
+              $.ajax({
+                  type: "POST",
+                  url: 'merchantswhitepaper.php',
+                  data: "myuploads=online",
+                  success: function(data){
+                      $(".onlineuploadspanel").html(data);
+                      $(".pauseproductbtn").click(function(){
+                        var productid = $(this).attr("data-prod");
+                        // alert(productid);
+                        $.ajax({
+                          type: "POST",
+                          url: 'merchantswhitepaper.php',
+                          data: "pauseProduct="+productid,
+                          success: function(data){
+                            $("#responsemessage").html(data);
+                          }
+                        });
+                      });
+                      $(".deleteproductbtn").click(function(){
+                        var productid = $(this).attr("data-prod");
+                        // alert(productid);
+                        var casestate = confirm("Are you sure you want to remove the upload? This cannot be undone");
+                        if(casestate == true){
+                          $.ajax({
+                          type: "POST",
+                          url: 'merchantswhitepaper.php',
+                          data: "deleteproduct="+productid,
+                          success: function(data){
+                            $("#responsemessage").html(data);
+                          }
+                        });
+                        }else{
+                          alert('item deletion canceled');
+                          $("#responsemessage").html("")
+                        }
+                      });
+                  }
+              });
+          });
+           boxed();
+
+           $(".panel-heading").tooltip({
+               placement: "top",
+               //title: "<h5></h5>I am here",
+               html: "true",
+
+           });
+          
+          </script>
+
+
+    </div><!-- panel-group -->
+                </div>
+            </div>
+                    <!-- INSERT NEW ACCORDION HERE -->
+                    
                 <!-- END OF THE CONTENTS SELLER PROF -->
 </div>
 <?php require 'templates/footer.php';?>
-
+<script>
+  function toggleIcon(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+$('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>
     </body>
 </html>
