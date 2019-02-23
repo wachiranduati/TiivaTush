@@ -71,7 +71,7 @@ if(userLoggedIn() == True){
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="row">
                                 <div class="col-lg-1"><a href="index.php" target="_blank"><img src="images/airmarklogotrial2.png" class="img-responsive"/></a></div>
-                                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11" style="background-color: white;box-shadow: 0 1px 3px #e6ecf0;"><h5 class="text-right">Hi <?php echo $agent;?>, Beautiful day ain't it?</h5></div>
+                                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11" style="background-color: white;box-shadow: 0 1px 3px #e6ecf0;"><h5 class="text-right">Hi <?php echo $agent;?>, Beautiful day ain't it? <a href="logout.php">Logout?</a></h5></div>
                             </div>
 
                         </div>

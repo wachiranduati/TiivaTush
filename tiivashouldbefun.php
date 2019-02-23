@@ -2,7 +2,11 @@
 session_start();
 ob_start();
 require 'connect.php';
-//echo 'yolo';
+require 'utils/userutils.php';
+if(userLoggedIn() != True){
+    redirectAndDie();
+}
+
 $salt = md5('chumakuburuka');
 $staff = md5('staff4online5');
 
@@ -16,7 +20,7 @@ if(isset($_SESSION['$staff'])){
 ?>
 <!DOCTYPE html>
 <html>
-<title>Tiiva | Misc</title>
+<title>Tiiva | Staff Login</title>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,39 +30,56 @@ if(isset($_SESSION['$staff'])){
     <body>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-image:url('images/awesome.jpg');background-size:160%;">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-image:url('images/awesome.jpg');background-size:160%;height: 100vh;">
                 <!-- THE MAIN CONTAINER -->
 
                     <div class="row" style="margin-top:1%;padding-bottom:10%;">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md"></div>
-                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="border:1px solid gainsboro;padding:25px;border-radius:10px;box-shadow:2px 2px 5px rgba(0, 0, 0, 0.37);background-color:white;">
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="border:1px solid gainsboro;padding:25px;box-shadow:2px 2px 5px rgba(0, 0, 0, 0.37);background-color:white;">
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs--2 visible-lg visible-md"></div>
                                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                    <p id="message"></p>
                                     <img src="images/airmarklogotrial2.png" class="img-responsive">
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                    <div id="alertbox" class="alert alert-danger" style="display: none;">
+                                        <span class="mdi mdi-silverware-variant"></span><span class="messagecontainer">there is something else here</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2"></div>
                             </div>
                             <div class="row" style="font-family:kok;">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md"></div>
                                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                                     <form role="form">
-                                        <label for="username">Username:</label>
+                                        <label for="username">Staff Username:</label>
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                            <input type="text" id="username" class="form-control" placeholder="Please enter your username" style="box-shadow:none;"/>
+                                            <input type="text" id="username" class="form-control input-lg" placeholder="username" style="box-shadow:none;"/>
                                         </div>
-                                    <label for="password">Password:</label>
+                                    <label for="password">Staff Login Password:</label>
                                         <div class="input-group">
-<!--                                            <label for="password"><small>Password:</small></label>-->
                                             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                            <input type="password" id="password" class="form-control" placeholder="Your password" style="box-shadow:none;"/>
+                                            <input type="password" id="password" class="form-control input-lg" placeholder="Password" style="box-shadow:none;"/>
                                         </div>
-                                        <div class="row" style="margin-top:7%;margin-bottom:7%;">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
                                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                                <a class="btn btn-block btn-primary" onclick="login();">Log in</a>
+                                                <div class="g-recaptcha" data-sitekey="6Ld3cJMUAAAAALQpghkudQFOhwekKRP7Em0IpKSO"></div>
                                             </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+                                        </div>
+                                        <div class="row" style="margin-top:2%;margin-bottom:7%;">
+                                            <div class="col-lg-3"></div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                <a class="btn btn-block btn-primary btn-block btn-lg loginbtn" onclick="login();">Log in</a>
+                                            </div>
+                                            <div class="col-lg-3"></div>
+
                                         </div>
                                     </form>
                                 </div>
@@ -74,6 +95,8 @@ if(isset($_SESSION['$staff'])){
                 function login(){
                     var username = document.getElementById('username').value;
                     var password = document.getElementById('password').value;
+                    var credentials = "username="+username+"&password="+password;
+                    var captcha = grecaptcha.getResponse();
                     if(username != '' && password != ''){
                         //alert(username+' '+password);
                         if(window.XMLHttpRequest){
@@ -83,17 +106,25 @@ if(isset($_SESSION['$staff'])){
                         }
                    xmlhttp01.onreadystatechange = function(){
                         if (xmlhttp01.readyState == 4 && xmlhttp01.status == 200){
-                            document.getElementById('message').innerHTML= xmlhttp01.responseText;
-
+                            var staffResp = xmlhttp01.responseText;
+                                if(staffResp == 1){
+                                    location.reload();
+                                    $("#alertbox").hide();
+                                    $(".loginbtn").html('Welcome back');
+                                }else{
+                                    $("#alertbox").show();
+                                    $(".messagecontainer").html(staffResp);
+                                }
                             }
                             }
 
                         xmlhttp01.open("POST","staffcheck.php",true);
                         xmlhttp01.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-                        xmlhttp01.send("username="+username+"&password="+password);
+                        xmlhttp01.send("username="+username+"&password="+password+"&g-recaptcha-response="+captcha);
+                   
 
                     }else{
-                        alert('You need to provide values in both boxes');
+                        $(".messagecontainer").html('You need to provide your username and password');
                     }
 
                 }
@@ -108,5 +139,6 @@ if(isset($_SESSION['$staff'])){
 
             </script>
         </div>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </body>
 </html>
