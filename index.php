@@ -71,7 +71,7 @@ if(isset($_POST['useremail'])){
 
                         <ul class="dropdown-menu list-group">
                             <a href="sportswear.php" target="_blank" class="list-group-item"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/> &nbsp;&nbsp;Sportswear</a>
-                            <a href="Mens.php" target="_blank" class="list-group-item"><img src="icons/mensicon.svg" class="img-responsive" style="height:25px;display:inline;"/> &nbsp;&nbsp;Mens</a>
+                            <a href="mens.php" target="_blank" class="list-group-item"><img src="icons/mensicon.svg" class="img-responsive" style="height:25px;display:inline;"/> &nbsp;&nbsp;Mens</a>
                             <a href="women.php" target="_blank" class="list-group-item"><img src="icons/womens.png" class="img-responsive" style="height:25px;display:inline;"/> &nbsp;&nbsp; Womens</a>
                             <a href="kids.php" target="_blank" class="list-group-item"><img src="icons/kidsicon.png" class="img-responsive" style="height:25px;display:inline;"/> &nbsp;&nbsp; Kids</a>
                             <a href="household.php" target="_blank" class="list-group-item"><img src="icons/householdicon.png" class="img-responsive" style="height:25px;display:inline;"/> &nbsp;&nbsp; Household</a>
@@ -101,7 +101,7 @@ if(isset($_POST['useremail'])){
                             <li class="text-center" style="font-weight:bold;background-color:black;border:1px solid white;"><span style="color:orange;" class="text-uppercase text-center">Categories</span></li>
                             <li><a href="sportswear.php" target="_blank"><img src="icons/sportswearicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Sportswear<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
 
-                            <li><a href="Mens.php" target="_blank"><img src="icons/mensicon.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Mens<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mens.php" target="_blank"><img src="icons/mensicon.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Mens<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="women.php" target="_blank"><img src="icons/womens.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Womens<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="kids.php" target="_blank"><img src="icons/kidsicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Kids<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="household.php" target="_blank"><img src="icons/householdicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Household<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -153,7 +153,7 @@ if(isset($_POST['useremail'])){
             <div class="row" style="border:1px solid gainsboro;">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="sportswear.php"><img src="banners/categories/sportswear.png" class="img-responsive featured"/></a></div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="women.php"><img src="banners/categories/womens.png" class="img-responsive featured"/></a></div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="Mens.php"><img src="banners/categories/mens.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mens.php"><img src="banners/categories/mens.png" class="img-responsive featured"/></a></div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="shoes.php"><img src="banners/categories/shoes.png" class="img-responsive featured"/></a></div>
             </div>
 
@@ -169,7 +169,7 @@ if(isset($_POST['useremail'])){
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row visible-lg visible-md">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:1%;border:1px solid black; border-bottom:1px solid white;background-color:black;"><a style="color:white;" href="Mens.php" class="btn btn-block"><h4 class="text-uppercase" style="font-weight:bold;">Men's</h4></a></div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:1%;border:1px solid black; border-bottom:1px solid white;background-color:black;"><a style="color:white;" href="mens.php" class="btn btn-block"><h4 class="text-uppercase" style="font-weight:bold;">Men's</h4></a></div>
                     </div>
 
                     <div class="row visible-sm visible-xs">
@@ -199,7 +199,7 @@ if(isset($_POST['useremail'])){
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="Mens.php" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Men's</h5></a>
+                            <a style="color:white;" href="mens.php" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Men's</h5></a>
                         </div>
 
 
@@ -1016,7 +1016,7 @@ if(isset($_POST['useremail'])){
             </div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="Mens.php">
+                    <a href="mens.php">
                         <img src="banners/thankyou.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>

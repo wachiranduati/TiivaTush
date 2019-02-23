@@ -43,8 +43,8 @@
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><h4>Quick Shop</h4>
                                     <ul class="list-unstyled">
                                         <li><a style="color:black;" href="mainpage.php?search=mens&&sub=tshirts">Tshirts</a></li>
-                                        <li><a style="color:black;" href="Mens.php">Mens</a></li>
-                                        <li><a style="color:black;" href="Mens.php">Womens</a></li>
+                                        <li><a style="color:black;" href="mens.php">Mens</a></li>
+                                        <li><a style="color:black;" href="mens.php">Womens</a></li>
                                         <li><a style="color:black;" href="index.php">Gift Cards</a></li>
                                         <li><a style="color:black;" href="shoes.php">Shoes</a></li>
                                     </ul>

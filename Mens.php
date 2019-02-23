@@ -78,7 +78,7 @@ $century = 860;//Mtush
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="Mens.php" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Categories</h5></a>
+                            <a style="color:white;" href="mens.php" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Categories</h5></a>
                         </div>
 
 
@@ -905,7 +905,7 @@ $century = 860;//Mtush
             </div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="Mens.php">
+                    <a href="mens.php">
                         <img src="banners/handcrafted.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
@@ -1001,7 +1001,7 @@ $century = 860;//Mtush
             </div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="Mens.php">
+                    <a href="mens.php">
                         <img src="banners/thankyou.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>

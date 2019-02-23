@@ -1094,7 +1094,7 @@ $century = 860;//Mtush
             </div>
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="Mens.php">
+                    <a href="mens.php">
                         <img src="banners/thankyou.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>

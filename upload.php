@@ -100,7 +100,7 @@ if(userLoggedIn() == True){
                     </span>
                 </div>
             </div> -->
-            <div class="row visible-lg visible-md" style="height:300px;background-image:url(editions/pexels-photo-11744.jpeg);background-size:cover;background-position:50%;margin-bottom:1%;">
+            <div class="row visible-lg visible-md" style="height:300px;background-image:url(images/misc/pexels-photo-11744.jpeg);background-size:cover;background-position:50%;margin-bottom:1%;">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                         <div class="row" style="margin-top:1%;">
@@ -115,7 +115,7 @@ if(userLoggedIn() == True){
                          </div>
 
                          <div class="row" style="margin-top:7%;">
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="height:200px;border:1px solid white;background-image:url(editions/pexels-photo-11744.jpeg);background-size:cover;background-position:50%;">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="height:200px;border:1px solid white;background-image:url(images/misc/pexels-photo-11744.jpeg);background-size:cover;background-position:50%;">
 
                                 </div>
                          </div>
@@ -128,7 +128,7 @@ if(userLoggedIn() == True){
                  </div>
              </div>
 
-            <div class="row visible-sm visible-xs" style="height:200px;background-image:url(editions/pexels-photo-11744.jpeg);background-size:cover;background-position:50%;margin-bottom:10%;">
+            <div class="row visible-sm visible-xs" style="height:200px;background-image:url(images/misc/pexels-photo-11744.jpeg);background-size:cover;background-position:50%;margin-bottom:10%;">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                     <div class="row" style="position:absolute;right:4%;margin-top:40%;">
@@ -136,7 +136,7 @@ if(userLoggedIn() == True){
                     </div>
                     <div class="row" style="position:absolute;margin-top:37%;margin-bottom:2%;">
                         <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-image:url(editions/manontop.jpeg);background-repeat:no-repeat;background-size:cover;background-position:50%;border-radius:50%;width:100px;height:100px;"></div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-image:url(images/misc/manontop.jpeg);background-repeat:no-repeat;background-size:cover;background-position:50%;border-radius:50%;width:100px;height:100px;"></div>
                     </div>
                 </div>
              </div>

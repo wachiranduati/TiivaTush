@@ -36,7 +36,7 @@ if(isUserMerchant($conn) == True){
                         </div>
                     </div>
                     
-                    <div class="row" style="background-image:url(editions/milos-simic-351441.jpg);background-size:110%;background-position:center;background-attachment:fixed;background-repeat: no-repeat;">
+                    <div class="row" style="background-image:url(images/misc/milos-simic-351441.jpg);background-size:110%;background-position:center;background-attachment:fixed;background-repeat: no-repeat;">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:20px;padding-bottom:20px;">
                             <h4 class="text-center text-uppercase" style="font-size:140%;color:orange;text-shadow:-1px 2px 1px black;">Tiiva &nbsp;&nbsp;Merchant registration</h4>
                             <hr>
