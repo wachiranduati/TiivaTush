@@ -80,7 +80,7 @@ if($sub == 'female'){
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
                     <a href="index.php">
-                        <img src="banners/mtumbanner.png" class="img-responsive"/>
+                        <img src="images/banners/mtumbanner.png" class="img-responsive"/>
                     </a>
                 </div>
             </div>
@@ -122,7 +122,7 @@ echo "
         <div class=\"row visible-lg visible-md\">
                 <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\" style=\"padding:0px;margin-top:1%;\">
                     <a href=\"merchantreg.php\">
-                        <img src=\"banners/merchant.png\" class=\"img-responsive\"/>
+                        <img src=\"images/banners/merchant.png\" class=\"img-responsive\"/>
                     </a>
                 </div>
             </div>

@@ -58,7 +58,7 @@ $price = number_format($query_row['price']);
                 <div class=\"row visible-lg visible-md\">
                 <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\" style=\"padding:0px;margin-top:1%;\">
                     <a href=\"index.php\">
-                        <img src=\"banners/different.png\" class=\"img-responsive\"/>
+                        <img src=\"images/banners/different.png\" class=\"img-responsive\"/>
                     </a>
                 </div>
             </div>

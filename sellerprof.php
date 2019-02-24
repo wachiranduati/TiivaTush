@@ -128,7 +128,7 @@ if(isUserMerchant($conn) != True){
 
                 <!-- start of the users acount details -->
 
-               <div class="row visible-lg visible-md" style="height:300px;background-image:url(images/misc/pexels-photo-11744.jpeg);background-size:cover;background-position:50%;margin-bottom:1%;">
+               <div class="row visible-lg visible-md" style="height:300px;background-image:url(images/misc/pexels-photo-11744.png);background-size:cover;background-position:50%;margin-bottom:1%;">
                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                            <div class="row" style="margin-top:1%;">
@@ -136,7 +136,7 @@ if(isUserMerchant($conn) != True){
                                    <h2 class="text-center text-uppercase visible-sm visible-xs" style="margin-top:-10px; color:orange;">Tiiva Seller's account</h2>
                                </div>
                            </div>
-                           <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="background-image:url(editions/manontop.jpeg);background-repeat:no-repeat;background-size:cover;background-position:50%;border-radius:50%;width:150px;height:150px;"></div> -->
+                           <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="background-image:url(editions/manontop.png);background-repeat:no-repeat;background-size:cover;background-position:50%;border-radius:50%;width:150px;height:150px;"></div> -->
                            <div class="row" style="position:absolute;bottom:10%;right:1.3%;">
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-lg visible-md">
                                    <i class="mdi mdi-pen mdi-24px" style="position:absolute;right:10px;top:-40px;color:rgb(0, 128, 255);text-shadow:1px 1px 1px black;"></i>
@@ -163,7 +163,7 @@ if(isUserMerchant($conn) != True){
                             </div>
 
                             <div class="row" style="margin-top:7%;">
-                                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="height:200px;border:1px solid white;background-image:url(images/misc/pexels-photo-11744.jpeg);background-size:cover;background-position:50%;">
+                                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="height:200px;border:1px solid white;background-image:url(images/misc/pexels-photo-11744.png);background-size:cover;background-position:50%;">
 
                                    </div>
                             </div>
@@ -200,7 +200,7 @@ if(isUserMerchant($conn) != True){
                     </div>
                 </div>
 
-               <div class="row visible-sm visible-xs" style="height:200px;background-image:url(images/misc/pexels-photo-11744.jpeg);background-size:cover;background-position:50%;margin-bottom:10%;">
+               <div class="row visible-sm visible-xs" style="height:200px;background-image:url(images/misc/pexels-photo-11744.png);background-size:cover;background-position:50%;margin-bottom:10%;">
                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                        <div class="row" style="position:absolute;right:4%;margin-top:4%;">
@@ -217,7 +217,7 @@ if(isUserMerchant($conn) != True){
                                </div>
                        </div>
                        <!-- <div class="row" style="position:absolute;margin-top:37%;margin-bottom:2%;">
-                           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-image:url(editions/manontop.jpeg);background-repeat:no-repeat;background-size:cover;background-position:50%;border-radius:50%;width:100px;height:100px;"></div>
+                           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-image:url(editions/manontop.png);background-repeat:no-repeat;background-size:cover;background-position:50%;border-radius:50%;width:100px;height:100px;"></div>
                        </div> -->
                    </div>
                 </div>

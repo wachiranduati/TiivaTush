@@ -24,44 +24,44 @@ $century = 860;//Mtush
      if($sub == 'Tiiva Shack'){
          $dbs = 'products';
          $title = 'Tiiva Shack';
-         $banner = 'banners/mtumbanner.png';
+         $banner = 'images/banners/mtumbanner.png';
          $link = 'index.php';
-         $banner1 = 'banners/mainpage/desert.png';
+         $banner1 = 'images/banners/mainpage/desert.png';
          $banner1text = '<h3>Dressed for any occasion</h3><p>#Tiiva #Mtumba The open air market is now open and live on Tiiva</p>';
-         $banner2 = 'banners/mainpage/grass.png';
+         $banner2 = 'images/banners/mainpage/grass.png';
          $banner2text = '<h3>For the Kids?</h3><p>#Tiiva #Mtumba shopping for the kids? Yes! only on Tiiva #Mtumba</p>';
-         $banner3 = 'banners/mainpage/jumpin.png';
+         $banner3 = 'images/banners/mainpage/jumpin.png';
          $banner3text = '<h3>Gear for the outdoors, maybe chill clothes? or dress for the games?</h3><p>#Tiiva #Mtumba Dress for the outdoors, look good, feel good. only on Tiiva #Mtumba</p>';
-         $banner4 = 'banners/mainpage/morocco.png';
+         $banner4 = 'images/banners/mainpage/morocco.png';
          $banner4text = '<h3>Stand Out</h3><p>#Tiiva Try us</p>';
 
      }else{
          $dbs = 'brandyproducts';
          $title = 'Tiiva Shop';
-         $banner = 'banners/tiivashop.png';
+         $banner = 'images/banners/tiivashop.png';
          $link = 'index.php';
-         $banner1 = 'banners/mainpage/shopbannerslide1.jpg';
+         $banner1 = 'images/banners/mainpage/shopbannerslide1.jpg';
          $banner1text = '<h3>Sports &amp; the Outdoors</h3><p>#Tiiva #Shop We\'re Tiiva, we got you sorted</p>';
-         $banner2 = 'banners/mainpage/shopbannerslide2.jpg';
+         $banner2 = 'images/banners/mainpage/shopbannerslide2.jpg';
          $banner2text = '<h3>Fashion &amp; Beauty</h3><p>#Tiiva #Shop Check us out on Tiiva #Shop</p>';
-         $banner3 = 'banners/mainpage/shopbannerslide3.jpg';
+         $banner3 = 'images/banners/mainpage/shopbannerslide3.jpg';
          $banner3text = '<h3>Entertainment, Automotive, Industrial &amp; Electronics</h3><p>#Tiiva #Shop Trust our variety. We have a huge ONE!</p>';
-         $banner4 = 'banners/mainpage/shopbannerslide4.jpg';
+         $banner4 = 'images/banners/mainpage/shopbannerslide4.jpg';
          $banner4text = '<h3>Education, Home, Health &amp; Pets</h3><p>#Tiiva #Shop Hope we have you covered;)</p>';
      }
 
  }else{
      $dbs = 'brandyproducts';
      $title = '';
-     $banner = 'banners/tiivashop.png';
+     $banner = 'images/banners/tiivashop.png';
      $link = 'index.php';
-     $banner1 = 'banners/mainpage/desert.png';
+     $banner1 = 'images/banners/mainpage/desert.png';
      $banner1text = '<h3>Dressed for any occasion</h3<p>#Tiiva #Mtumba The open air market is now open and live on Tiiva</p>';
-     $banner2 = 'banners/mainpage/grass.png';
+     $banner2 = 'images/banners/mainpage/grass.png';
      $banner2text = '<h3>For the Kids?</h3<p>#Tiiva #Mtumba shopping for the kids? Yes! only on Tiiva #Mtumba</p>';
-     $banner3 = 'banners/mainpage/jumpin.png';
+     $banner3 = 'images/banners/mainpage/jumpin.png';
      $banner3text = '<h3>Gear for the outdoors, maybe chill clothes? or dress for the games?</h3<p>#Tiiva #Mtumba Dress for the outdoors, look good, feel good. only on Tiiva #Mtumba</p>';
-     $banner4 = 'banners/mainpage/morocco.png';
+     $banner4 = 'images/banners/mainpage/morocco.png';
      $banner4text = '<h3>Stand Out</h3<p>#Tiiva Try us</p>';
  }
 
@@ -147,7 +147,7 @@ $pagecount = $query_num_rows2 / $items;
     <div class="row visible-lg visible-md">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
             <a href="$link">
-                <img src="banners/thankyou.png" class="img-responsive"/>
+                <img src="images/banners/thankyou.png" class="img-responsive"/>
             </a>
         </div>
     </div>

@@ -80,7 +80,7 @@ $century = 860;
                             <footer>Warrent Buffet</footer>
                           </blockquote>
 
-                            <img src="icons/kidsicon.png" class="img-responsive pull-left" style="height:90px;"/>
+                            <img src="icons/boy.svg" class="img-responsive pull-left" style="height:90px;"/>
                             <p><span class="lead">Hi</span>, i'm <small><em>WN</em></small> and i'm going to tell you a story about Tiiva. So Tiiva is really young and it is our wish to grow and get bigger.Your feedback happens to be very dear to me. I take every feedback seriously and try my best to sort out any issue. 9 out of 10 times I do commit to the requests but then I surely cant change everyones background color to pink....*wink *wink<br>haha right?</p>
                             <img src="icons/emojiicon.png" class="img-responsive pull-right" style="height:90px;"/>
                             <p>

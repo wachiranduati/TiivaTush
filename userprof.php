@@ -45,7 +45,7 @@ $userdetails = retrieveUserDetails($conn);
 
 
                 <!-- start of something else -->
-                <div class="row visible-lg visible-md" style="height:300px;background-image:url(images/misc/pexels-photo-11744.jpeg);background-size:cover;background-position:50%;margin-bottom:1%;">
+                <div class="row visible-lg visible-md" style="height:300px;background-image:url(images/misc/pexels-photo-11744.png);background-size:cover;background-position:50%;margin-bottom:1%;">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="position:absolute;z-index:20;">
@@ -56,7 +56,7 @@ $userdetails = retrieveUserDetails($conn);
                             
 
                              <div class="row" style="margin-top:7%;margin-left:40%;">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="height:200px;border:1px solid white;background-image:url(images/misc/pexels-photo-11744.jpeg);background-size:cover;background-position:50%;">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="height:200px;border:1px solid white;background-image:url(images/misc/pexels-photo-11744.png);background-size:cover;background-position:50%;">
 
                                     </div>
                              </div>
@@ -75,13 +75,13 @@ $userdetails = retrieveUserDetails($conn);
                     </div>
                 </div>
 
-               <div class="row visible-sm visible-xs" style="height:200px;background-image:url(images/misc/pexels-photo-11744.jpeg);background-size:cover;background-position:50%;margin-bottom:10%;">
+               <div class="row visible-sm visible-xs" style="height:200px;background-image:url(images/misc/pexels-photo-11744.png);background-size:cover;background-position:50%;margin-bottom:10%;">
                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                        
                        <div class="row" style="position:absolute;margin-top:37%;margin-bottom:2%;">
                            <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
-                           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-image:url(images/misc/manontop.jpeg);background-repeat:no-repeat;background-size:cover;background-position:50%;border-radius:50%;width:100px;height:100px;position: relative;bottom:80px;"></div>
+                           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background-image:url(images/misc/manontop.png);background-repeat:no-repeat;background-size:cover;background-position:50%;border-radius:50%;width:100px;height:100px;position: relative;bottom:80px;"></div>
                        </div>
                    </div>
                 </div>
