@@ -666,9 +666,36 @@ if(isset($_POST['useremail'])){
                 placement:"top",
                 html: "true",
                 //title: "i have nothing to say anything"
-            })
+            });
 
-        })
+        });
+        var active = 0;
+            $(window).on('scroll',function(){
+                active = 1;
+                // console.log(active);
+            });
+
+            setInterval(function(){ 
+                if(active == 1){
+                    active = 0;
+                    // cartcart();
+                    // console.log('cart extended');
+                    $.ajax({
+                        url: "mtushcart.php",
+                        type: "POST",
+                        data: "action=343mk34j",
+                        success: function(data){
+                            // $("#itemstat").html(data);
+                            // console.log(data);
+                            
+                        }
+                      });
+                    // console.log('just booked it again');
+                }
+                // else{
+                //     console.log('user inactive');
+                // }
+             }, 120000);//120000
         </script>
     </body>
 </html>

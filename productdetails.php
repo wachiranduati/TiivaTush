@@ -44,6 +44,10 @@ $query = "SELECT * FROM `products` WHERE `id`='".mysqli_real_escape_string($conn
 $query_run = mysqli_query($conn, $query);
 
 $query_row = mysqli_fetch_assoc($query_run);
+if(mysqli_num_rows($query_run) == 0){
+    header('Location:index.php');
+    die("You do not have permission to be on this page");
+}
 //echo $query_row[imageone];
 
 
@@ -195,41 +199,6 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
 
                             <div id="modalimagecontainer">
                                 <img id="myImg" src="mtumbauploads/<?php echo $query_row['imageone'];?>" alt="<?php echo $query_row['itemtitle']; echo $query_row['details'];?>" class="modpic img-responsive">
-                                <span class="glass glyphicon glyphicon-search"></span>
-
-                                <!-- The Modal -->
-                                <div id="myModalT" class="modal">
-                                  <span id="closeT" class="close">&times;</span>
-                                  <img class="modal-content" id="img01">
-                                  <div id="caption"></div>
-                                </div>
-
-                                <script>
-                                // Get the modal
-                                var modal = document.getElementById('myModalT');
-
-                                // Get the image and insert it inside the modal - use its "alt" text as a caption
-                                var img = document.getElementById('myImg');
-                                var modalImg = document.getElementById("img01");
-                                var captionText = document.getElementById("caption");
-                                img.onclick = function(){
-                                    modal.style.display = "block";
-                                    modalImg.src = this.src;
-                                    modalImg.alt = this.alt;
-                                    captionText.innerHTML = this.alt;
-                                }
-
-                                // Get the <span> element that closes the modal
-                                //var span = document.getElementsByClassName(\"close\")[0];
-                                var span = document.getElementById("closeT");
-
-                                // When the user clicks on <span> (x), close the modal
-                                span.onclick = function() {
-                                //alert("Works");
-                                    modal.style.display = "none";
-                                }
-
-                                </script>
                             </div>
 
                                         </div>
@@ -240,41 +209,7 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
 
                                             <div id="modalimagecontainer2">
                                 <img id="myImg2" src="mtumbauploads/<?php echo $query_row['imagetwo'];?>" alt="<?php echo $query_row['itemtitle']; ?>" class="modpic img-responsive">
-                                <span class="glass glyphicon glyphicon-search"></span>
-
-                                <!-- The Modal -->
-                                <div id="myModal2" class="modal">
-                                  <span id="close2" class="close">&times;</span>
-                                  <img class="modal-content" id="img012">
-                                  <div id="caption2">T</div>
-                                </div>
-
-                                <script>
-                                // Get the modal
-                                var modal2 = document.getElementById('myModal2');
-
-                                // Get the image and insert it inside the modal - use its "alt" text as a caption
-                                var img2 = document.getElementById('myImg2');
-                                var modalImg2 = document.getElementById("img012");
-                                var captionText2 = document.getElementById("caption2");
-                                img2.onclick = function(){
-                                    modal2.style.display = "block";
-                                    modalImg2.src = this.src;
-                                    modalImg2.alt = this.alt;
-                                    captionText2.innerHTML = this.alt;
-                                }
-
-                                // Get the <span> element that closes the modal
-                                //var span = document.getElementsByClassName("close")[0];
-                                var span2 = document.getElementById("close2");
-
-                                // When the user clicks on <span> (x), close the modal
-                                span2.onclick = function() {
-                                //alert("Works");
-                                    modal2.style.display = "none";
-                                }
-
-                                </script>
+                                
                             </div>
 
                                         </div>
@@ -285,41 +220,7 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
 
                                             <div id="modalimagecontainer3">
                                 <img id="myImg3" src="mtumbauploads/<?php echo $query_row['imagethree'];?>" alt="<?php echo $query_row['itemtitle']; ?>" class="modpic img-responsive">
-                                <span class="glass glyphicon glyphicon-search"></span>
-
-                                <!-- The Modal -->
-                                <div id="myModal3" class="modal">
-                                  <span id="close3" class="close">&times;</span>
-                                  <img class="modal-content" id="img013">
-                                  <div id="caption3">T</div>
-                                </div>
-
-                                <script>
-                                // Get the modal
-                                var modal3 = document.getElementById('myModal3');
-
-                                // Get the image and insert it inside the modal - use its "alt" text as a caption
-                                var img3 = document.getElementById('myImg3');
-                                var modalImg3 = document.getElementById("img013");
-                                var captionText3 = document.getElementById("caption3");
-                                img3.onclick = function(){
-                                    modal3.style.display = "block";
-                                    modalImg3.src = this.src;
-                                    modalImg3.alt = this.alt;
-                                    captionText3.innerHTML = this.alt;
-                                }
-
-                                // Get the <span> element that closes the modal
-                                //var span = document.getElementsByClassName("close")[0];
-                                var span3 = document.getElementById("close3");
-
-                                // When the user clicks on <span> (x), close the modal
-                                span3.onclick = function() {
-                                //alert("Works");
-                                    modal3.style.display = "none";
-                                }
-
-                                </script>
+                                
                             </div>
 
                                         </div>
@@ -518,15 +419,15 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                                             <div class="col-lg-12"></div>
                                         </div>
 
-                                        <!-- <div class="row">
+                                        <div class="row">
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:2%;">
-                                            <span class="glyphicon glyphicon-heart-empty" style="color:red;font-size:200%;" onclick="wishlistbutton();" onmouseover="wishlistpredict();" id="wishlistbutton"></span>
+                                            <span class="glyphicon glyphicon-heart-empty" style="color:red;font-size:200%;" onmouseover="wishlistpredict();" id="wishlistbutton"></span>
 
                                             </div>
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><p id="wishlistmessage" style="margin-top:2%;">Add to wishlist</p></div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><p id="wishlistmessage" style="margin-top:5%;">Add to wishlist</p></div>
                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                                        </div> -->
+                                        </div>
 
 
                                         <div class="row">
@@ -722,54 +623,6 @@ echo "
             // show the count on your cart
             
            
-           // 
-            function wishlistbutton(){
-                //alert('wishlist button has been pressed.');
-                var wishlist = document.getElementById('wishlistbutton');
-                var wishlistmessage = document.getElementById('wishlistmessage');
-                if(wishlist.className == 'glyphicon glyphicon-heart-empty'){
-                    function changename1(){
-                                wishlist.className = 'glyphicon glyphicon-heart';
-                                wishlistmessage.innerHTML = 'Added to Wish List';
-                                    if(window.XMLHttpRequest){
-                                        xmlhttp07 = new XMLHttpRequest();
-                                    }else{
-                                        xmlhttp07 = new ActiveXObject('Microsoft.XMLHTTP');
-                                    }
-                               xmlhttp07.onreadystatechange = function(){
-                                    if (xmlhttp07.readyState == 4 && xmlhttp07.status == 200){
-                                        document.getElementById('wishlistitems').innerHTML= xmlhttp07.responseText;
-
-                                        }
-                                        }
-                                        xmlhttp07.open('GET','wishlistcookie.php?action=remove&id=<?php echo $id;?>',true);
-                                        xmlhttp07.send();
-                                        }
-                    setTimeout(changename1(),100);
-                    // wishlistcount();
-                }else{
-                    function changename2(){
-                                wishlist.className = 'glyphicon glyphicon-heart-empty';
-                                wishlistmessage.innerHTML = 'Removed from Wish List';
-                                if(window.XMLHttpRequest){
-                                        xmlhttp07 = new XMLHttpRequest();
-                                    }else{
-                                        xmlhttp07 = new ActiveXObject('Microsoft.XMLHTTP');
-                                    }
-                               xmlhttp07.onreadystatechange = function(){
-                                    if (xmlhttp07.readyState == 4 && xmlhttp07.status == 200){
-                                        document.getElementById('wishlistitems').innerHTML= xmlhttp07.responseText;
-
-                                        }
-                                        }
-                                        xmlhttp07.open('GET','wishlistcookie.php?action=add&id=<?php echo $id;?>',true);
-                                        xmlhttp07.send();
-
-                    }
-                    setTimeout(changename2(),100);
-                    // wishlistcount();
-                }
-            }
             function wishlistpredict(){
                 //alert('predict on what happens if you click the button;');
                 var wishlistmessage = document.getElementById('wishlistmessage');
@@ -778,11 +631,42 @@ echo "
                         wishlistmessage.innerHTML = 'Click to Add item to your Wishlist?';
                         //alert('add item to your Wishlist?');
                 }else{
-                        wishlistmessage.innerHTML = 'Click to Remove item to your Wishlist?';
+                        wishlistmessage.innerHTML = 'Click to Remove item from your Wishlist?';
 
                 }
 
 
+            }
+
+            $("#wishlistbutton").click(function(){
+                $.ajax({
+                    url: "wishlistmanager.php",
+                    type: "POST",
+                    data: "addtowishlist=<?php echo $id;?>",
+                    success: function(message){
+                        $("#wishlistmessage").html(message);
+                        $("#wishlistbutton").removeClass('glyphicon-heart-empty');
+                        $("#wishlistbutton").addClass('glyphicon-heart');
+                    }
+                });
+            });
+
+            isIteminWishlist();
+            function isIteminWishlist(){
+                $.ajax({
+                    url: "wishlistmanager.php",
+                    type: "POST",
+                    data: "inwishlist=<?php echo $id;?>",
+                    success: function(message){
+                        if(message == 1){
+                            $("#wishlistbutton").removeClass('glyphicon-heart-empty');
+                            $("#wishlistbutton").addClass('glyphicon-heart');
+                            $("#wishlistmessage").html('Added to Wishlist');
+                        }
+                        
+                        
+                    }
+                });
             }
 
             function wishlistcount(){

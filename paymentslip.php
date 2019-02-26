@@ -4,6 +4,12 @@ ob_start();
 require 'connect.php';
 require 'utils/userutils.php';
 
+if(isset($_SESSION['cartname'])){
+    $mycart = $_SESSION['cartname'];
+}else{
+    header('Location:index.php');
+    die();
+}
 ?>
 <!DOCTYPE html>
 <html>

@@ -58,15 +58,15 @@ if(isset($_POST['username']) ||
    isset($_POST['area']) ||
    isset($_POST['transcationinputid']) ||
    isset($_POST['details'])){
-    $username = $_POST['username'];
-    $useridno = $_POST['useridno'];
-    $emailaddress = $_POST['emailaddress'];
-    $phonenumber = $_POST['phonenumber'];
-    $county = $_POST['county'];
-    $shipping = $_POST['shipping'];
-    $area = $_POST['area'];
-    $transcationinputid = strtoupper($_POST['transcationinputid']);
-    $details = mysqli_escape_string($conn, $_POST['details']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $useridno = mysqli_real_escape_string($conn, $_POST['useridno']);
+    $emailaddress = mysqli_real_escape_string($conn, $_POST['emailaddress']);
+    $phonenumber = mysqli_real_escape_string($conn, $_POST['phonenumber']);
+    $county = mysqli_real_escape_string($conn, $_POST['county']);
+    $shipping = mysqli_real_escape_string($conn, $_POST['shipping']);
+    $area = mysqli_real_escape_string($conn, $_POST['area']);
+    $transcationinputid = mysqli_real_escape_string($conn, $_POST['transcationinputid']);
+    $details = mysqli_real_escape_string($conn, $_POST['details']);
 
     $phoneno = $phonenumber;
     $salt = "Dance3imefika2mashinanee";

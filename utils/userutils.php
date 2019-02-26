@@ -557,4 +557,75 @@ function getUnUpdatedCartsUserProf($conn){
 	}
 }
 
+function checkWhetherItemIdExists($conn, $itemid){
+	// this will just check whether the itemid row exists
+	$user = getUserID();
+	$query = "SELECT * FROM `wishlist` WHERE `prodid` = '$itemid'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) == 1){
+		// continue
+		return mysqli_fetch_assoc($query_run);
+	}else{
+		return False;
+	}
+}
+
+function createNewItemidWishlist($conn, $itemid){
+	// thsi will create a new wishlist row...remember that it has to be accompanied by a user
+	$user = getUserID();
+	$now = currentTimeUserProf();
+	$query = "INSERT INTO `wishlist` (`id`,`prodid`,`users`,`date`) VALUES ('','$itemid','$user','$now')";
+	if($query_run = mysqli_query($conn, $query)){
+		return True;
+	}else{
+		return False;
+	}
+
+}
+
+function checkWhetherUserExistsinWishlist($conn, $wishlistArray){
+	// this will recieve row details as an array and check for the user in the users
+	$user = getUserID();
+	$usersList = $wishlistArray['users'];
+	$userArray = explode(',', $usersList);
+		if(in_array($user, $userArray)){
+			return True;
+		}else{
+			return False;
+		}
+
+}
+
+function appendNewValueToCommaSeperatedDataUserProf($data, $newValue){
+	$itemArray = explode(',', $data);
+	array_push($itemArray, $newValue);
+	return implode(',', $itemArray);
+}
+
+function updateWishlist($conn, $prodid, $newuserlist, $newdateslist){
+	//this will add a new user and update this with the user time too
+	$query = "UPDATE `wishlist` SET `users` = '$newuserlist', `date` = '$newdateslist' WHERE `prodid` = '$prodid'";
+	if($query_run = mysqli_query($conn, $query)){
+		return True;
+	}else{
+		return False;
+	}
+
+}
+
+function returnallWishlistItems($conn){
+	// this will return a list of all the wishlist rows
+	$query = "SELECT * FROM `wishlist`";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		//continue
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($row, $query_row);
+		}
+		return $row;
+	}else{
+		return 0;
+	}
+}
 ?>

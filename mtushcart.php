@@ -8,7 +8,8 @@ require 'utils/userutils.php';
 $ctime = Date('Y-m-d H:i:s');
 $booktime = 5; // minutes with activity
 $bootktimeNo = 2; // minutes with no activity
-$carttime = 2; // hours with no activity
+$carttime = 3; // hours with no activity
+$carttimeextend = 2; // minutes with no activity// this is to prevent one from hoarding the cart..just adds 2 mins to the exp
 // echo $ctime;
 $exptime = timeDeltaCurrentTime('+5 minutes');
 
@@ -153,6 +154,29 @@ function timestampExtendexpiry($conn, $itemid, $booktime){
 
 // echo timestampExtendexpiry($conn, 3, $booktime);
 
+function extendExpirytime($conn, $itemid, $booktime){
+	// unlinek the function above this will not extedn on the current itme...this will extend on the expiry time
+	$query = "SELECT `exptime` FROM `cartActivity` WHERE `itemid` = $itemid";
+	$query_run = mysqli_query($conn, $query);
+	$num_rows = mysqli_num_rows($query_run);
+	if($num_rows == 1){
+		$row = mysqli_fetch_assoc($query_run);
+		$oldexpTime = $row['exptime']; 
+		$newtime = timeDeltaExtendTimeReturn($oldexpTime, '+'.$booktime.'minutes', 'Y-m-d H:i:s');
+		$query_update_time = "UPDATE `cartActivity` SET `exptime` = '$newtime' WHERE `itemid` = $itemid";
+		if($query_update_run = mysqli_query($conn, $query_update_time)){
+			return True;
+		}else{
+			return False;
+		}
+
+	}else{
+		return False;
+	}
+
+}
+
+
 function itemAddToWishlist(){
 	// this will add cart items that expired to be added to users wishlist
 	// just an id, itemid, time
@@ -186,6 +210,29 @@ function updateProdActivityAddCart($conn, $carttime, $itemid){
 }
 
 // echo updateProdActivityAddCart($conn, $carttime, 49);
+
+function retrieveusersCartsunexpired($conn, $userid){
+	// this will retrieve all carts belonging to current user unchecked rows okay
+	// also where the exptime has not arrived
+	$now = Date('Y-m-d H:i:s');
+	$query = "SELECT * FROM `cartactivity` WHERE `userid` = '$userid' AND `checked` = '0' AND `state` = 'cart'";
+	$query_run = mysqli_query($conn, $query);
+	$row = array();
+	if(mysqli_num_rows($query_run) != 0){
+		// continue
+		while($query_row = mysqli_fetch_assoc($query_run)){
+			array_push($row, $query_row);
+			}
+			return $row;
+	}else{
+		// return 0;
+		echo mysqli_error($conn);
+	}
+
+}
+
+// print_r(retrieveusersCartsunexpired($conn, 1));
+
 
 function UnbookIfExpired($conn, $ctime){
 	// this will check exp time compare it with current time to know whether book already expired
@@ -371,4 +418,25 @@ if(isset($_POST['action']) && $_POST['action'] == 'unbook' && isset($_POST['prod
 
 // <<<<<<<<<<<<<<<<<<<<<<<<< UNBOOK ITEM ALGO COMPLETE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // ONLY UNBOOK ITEMS NOT IN THE CART user incart function
+// EXTEND THE EXPIRY OF CARTS IN THE CHECKOUTPAGE
+if(isset($_POST['action']) && $_POST['action'] == '343mk34j'){
+	// retrieve all unchecked out carts belonging to current user
+	$userid = getUserID();
+	$viablecarts = retrieveusersCartsunexpired($conn, $userid);
+	if($viablecarts != 0){
+		if(count($viablecarts) != 0){
+			for($x = 0; $x < count($viablecarts); $x++){
+				$itemid = $viablecarts[$x]['itemid'];
+				echo $itemid;
+				$cartExtendState = extendExpirytime($conn, $itemid, $carttimeextend);
+				if($cartExtendState == True){
+					echo "cart expiry extended";
+				}else{
+					echo "could not extend cart expiry";
+				}
+			}
+		}
+	}
+}
+// EXTEND THE EXPIRY OF CARTS IN THE CHECKOUTPAGE
 ?>

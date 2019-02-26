@@ -7,7 +7,9 @@ require 'utils/userutils.php';
 //print_r($_SESSION);
 //print_r($_SESSION['cartname']);
 //$cart = $_SESSION['cart'];
-$mycart = $_SESSION['cartname'];
+if(isset($_SESSION['cartname'])){
+    $mycart = $_SESSION['cartname'];
+}
 //echo $mycart;
 // query the row to display all the cart items
 // should we show the cart contents? by name incase of XXX

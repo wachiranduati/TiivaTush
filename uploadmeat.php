@@ -69,6 +69,11 @@ if (isset($_POST['itname']) ||
     $details = $_POST['details'];
     $sex = $_POST['sex'];
     $rating = $_POST['rating'];
+    if($rating > 5){
+        $rating = 5;
+    }elseif($rating < 1){
+        $rating = 1;
+    }
     $price = $_POST['price'];
     $label = $_POST['label'];
 

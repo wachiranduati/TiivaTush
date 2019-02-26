@@ -48,6 +48,7 @@ function offersCarousels($imageone, $imagetwo, $imagethree, $imagefour, $height)
 
                                                 <div class=\"item active\">
                                                         <img src=\"images\\carousels\\newsboard\\$imageone\" class=\"img-responsive\" style=\"height:$height;\">
+
                                                         <div class=\"carousel-caption\">
                                                             <h3>Free shipping</h3>
 
@@ -126,7 +127,8 @@ function sisterPagesCarousel(){
   </ol>
 
                             <div class=\"item active\">
-                                    <img src=\"images/carousels/main_sisters/desert.png\" class=\"img-responsive\">
+                                    <img src=\"images/carousels/main_sisters/desert.png\" class=\"img-responsive visible-lg visible-md\">
+                                    <img src=\"images\carousels\main\imageone.png\" class=\"img-responsive visible-sm visible-xs\">
                                     <div class=\"carousel-caption\">
                                         <h3>Dressed for any occasion</h3>
 
@@ -135,7 +137,8 @@ function sisterPagesCarousel(){
                             </div>
 
                             <div class=\"item\">
-                                    <img src=\"images/carousels/main_sisters/grass.png\" class=\"img-responsive\">
+                                    <img src=\"images/carousels/main_sisters/grass.png\" class=\"img-responsive visible-lg visible-md\">
+                                    <img src=\"images\carousels\main\imagetwo.png\" class=\"img-responsive visible-sm visible-xs\">
                                     <div class=\"carousel-caption\">
                                         <h3>For the Kids?</h3>
                                         <p>#Tiiva #Mtumba shopping for the kids? Yes! only on Tiiva #Mtumba</p>
@@ -143,7 +146,8 @@ function sisterPagesCarousel(){
                             </div>
 
                             <div class=\"item\">
-                                    <img src=\"images/carousels/main_sisters/jumpin.png\" class=\"img-responsive\">
+                                    <img src=\"images/carousels/main_sisters/jumpin.png\" class=\"img-responsive visible-lg visible-md\">
+                                    <img src=\"images\carousels\main\imagethree.png\" class=\"img-responsive visible-sm visible-xs\">
                                     <div class=\"carousel-caption\">
                                         <h3>Gear for the outdoors, maybe chill clothes? or dress for the games?</h3>
                                         <p>#Tiiva #Mtumba Dress for the outdoors, look good, feel good. only on Tiiva #Mtumba</p>
@@ -151,7 +155,8 @@ function sisterPagesCarousel(){
                             </div>
 
                             <div class=\"item\">
-                                    <img src=\"images/carousels/main_sisters/morocco.png\" class=\"img-responsive\">
+                                    <img src=\"images/carousels/main_sisters/morocco.png\" class=\"img-responsive visible-lg visible-md\">
+                                    <img src=\"images\carousels\main\imagefour.png\" class=\"img-responsive visible-sm visible-xs\">
                                     <div class=\"carousel-caption\">
                                         <h3>Stand Out</h3>
                                         <p>#Tiiva Try us</p>

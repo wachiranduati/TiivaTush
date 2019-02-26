@@ -351,13 +351,15 @@ function retrieveMerchantProductsinTransit($conn){
 	        <th>No</th>
 	        <th>Image</th>
 	        <th>Item</th>
-	        <th>Name</th>
 	        <th>Category</th>
 	        <th>Subcategory</th>
 	        <th>Price</th>
 	        <th>Label</th>
 	        <th>size</th>
 	        <th>sex</th>
+	        <th>LastLocation</th>
+	        <th>At</th>
+	        <th>Destination</th>
 
 	      </tr>
 	    </thead>
@@ -371,12 +373,21 @@ function retrieveMerchantProductsinTransit($conn){
 			for($x = 0; $x < count($transitItems); $x++){
 				// retrieve itemid
 				$itemid = $transitItems[$x]['itemid'];
+				$exchlocations = $transitItems[$x]['exchlocs'];
+				$lastlocation = retrieveFinalItemInCommadString($exchlocations);
+
+				$exchtime = $transitItems[$x]['exchdattimes'];
+				$lasttime = retrieveFinalItemInCommadString($exchtime);
+
+				$centredesti = $transitItems[$x]['centredestination'];
+
 				$compoundProductId = returnItemidShop($conn, $itemid);
 				$actualProdId = substr($compoundProductId, 1);
 				$prodState = showMerchantContent($conn, $actualProdId);
 				if($prodState != 0){
 					// continue
 					$numb += 1;
+					$idforcurrentprod = $prodState['id'];
 					$productName = $prodState['itemtitle'];
 					$image = $imagepre.''.$prodState['imageone'];
     				$category = $prodState['category'];
@@ -397,6 +408,9 @@ function retrieveMerchantProductsinTransit($conn){
 								<td>$label</td>
 								<td>$size</td>
 								<td>$sex</td>
+								<td>$lastlocation</td>
+								<td>$lasttime</td>
+								<td>$centredesti</td>
 							</tr>
 						";
 

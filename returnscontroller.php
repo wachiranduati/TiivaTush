@@ -269,11 +269,14 @@ function returnItem($conn, $returnitem, $cartname, $reason, $reasonDetail){
 function activereturns($conn){
 	// this should show all the items that are currently been marked to be returned
 	$returns = retrieveReturns($conn, 0);
+	$imagepre = returnImagePreAddrMtushUserProf();
+
 	echo "<div class=\"table-responsive\">
 			<table class=\"table table-responsive table-striped\">
 			<thead>
 				<tr>
 					<th>No</th>
+					<th>Item</th>
 					<th>prodid</th>
 					<th>reason</th>
 					<th>ReturnTo</th>
@@ -293,6 +296,8 @@ function activereturns($conn){
 		if(count($returns) != 0){
 		for($x = 0; $x < count($returns); $x++){
 			$prodid = $returns[$x]['productid'];
+			$productDetails = retrieveproductAllFields($conn, 'products', $prodid);
+			$image = $imagepre.''.$productDetails['imageone'];
 			$cartname = $returns[$x]['cartname'];
 			$reason = $returns[$x]['reason'];
 			$buyer = $returns[$x]['buyer'];
@@ -316,6 +321,7 @@ function activereturns($conn){
 			echo "
 			<tr data-reason-detail=\"$details\" data-cart=\"$cartname\" data-status=\"$dstatus\" data-triggeredBy=\"$triggerBy\" data-flagged=\"flagged\" data-flagged-by=\"flaggedBy\" data-flagged-reason=\"flagreason\">
 				<td>$nom</td>
+				<td><a target=\"_blank\" href=\"productdetails.php?id=$prodid\"><img src=\"$image\" class=\"img-responsive\" style=\"max-height:50px;\"></a></td>
 				<td>$prodid</td>
 				<td>$reason</td>
 				<td>$returnTo</td>

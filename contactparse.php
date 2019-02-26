@@ -14,11 +14,11 @@ if(isset($_POST['email']) &&
    isset($_POST['name']) && 
    isset($_POST['subject']) && 
    isset($_POST['details'])){
-    $email = $_POST['email'];
-    $phonenumber = $_POST['phonenumber'];
-    $name = $_POST['name'];
-    $subject = $_POST['subject'];
-    $details = $_POST['details'];
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $phonenumber = mysqli_real_escape_string($conn, $_POST['phonenumber']);
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $subject = mysqli_real_escape_string($conn, $_POST['subject']);
+    $details = mysqli_real_escape_string($conn, $_POST['details']);
     if(!empty($email)){
         if(!empty($phonenumber)){
             if(!empty($name)){

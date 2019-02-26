@@ -161,12 +161,32 @@ $userdetails = retrieveUserDetails($conn);
                     </script>
                 
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <h3>Wishlist</h3>
-                            <div data-target="#userprofmodal" data-toggle="modal">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h3>My Wishlist</h3>
+                            <!-- <div data-target="#userprofmodal" data-toggle="modal">
                                 thisisus
-                            </div>
+                            </div> -->
 
-                            
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 wishlistcontainer">
+                                
+                            </div>
+                        </div>
+
+                           <script>
+                               $.ajax({
+                                    url: "wishlistmanager.php",
+                                    type: "POST",
+                                    data: "mywishlist=k4l2nb2j3h",
+                                    success: function(message){
+                                        $(".wishlistcontainer").html(message);
+                                        
+                                    }
+                                });
+                           </script> 
                     </div>
                 </div>
                 

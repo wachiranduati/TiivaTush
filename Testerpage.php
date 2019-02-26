@@ -257,6 +257,22 @@ if(userLoggedIn() == True){
                         </div>
                     </div>
                         </li>
+
+                        <li class="HistoryDropdown toggleHistoryContainer" style="border-bottom:1px solid rgba(220, 220, 220, 0.33);"><a href="#panelBodyhistory" data-toggle="collapse"><span class="glyphicon glyphicon-cloud"></span>&nbsp;History</a></li>
+                                <li>
+
+                    <div id="panelBodyhistory" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-inverse nav-stacked">
+                                <li class="salesHistory"><a>Sales</a></li>
+                                <li class="salesReturns"><a>Returns</a></li>
+                                <li class="Deliveryrecords"><a>Deliveries</a></li>
+                                <li class="OnlineRecords"><a>Online</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                        </li>
 <!--
                         <li style="border-bottom:1px solid rgba(220, 220, 220, 0.33);"><a href="#panelBodyCharity" data-toggle="collapse"><span class="glyphicon glyphicon-tree-deciduous"></span>&nbsp;Charity</a></li>
                                 <li>
@@ -300,6 +316,84 @@ if(userLoggedIn() == True){
                             </div>
 
                                 </div>
+                            </div>
+
+                            <div class="row histroyContainer" style="padding: 10px;display: none;">
+                                <div class="col-lg-12 historycontents" style="background-color: white;">
+                                </div>
+                                <script>
+                                    $(".toggleHistoryContainer").click(function(){
+                                        $(".histroyContainer").toggle();
+                                    });
+                                    //historycontents
+                                    $(".salesHistory").click(function(){
+                                        $.ajax({
+                                            url: "historyrecords.php",
+                                            type: "POST",
+                                            data: "salesall=lk4j3lkds",
+                                            success: function(data){
+                                                $(".historycontents").html(data);
+                                            }
+                                        }); 
+                                    });
+
+                                    $(".salesReturns").click(function(){
+                                        $.ajax({
+                                            url: "historyrecords.php",
+                                            type: "POST",
+                                            data: "allreturns=klewelkwo",
+                                            success: function(data){
+                                                $(".historycontents").html(data);
+                                            }
+                                        });
+                                    });
+
+                                    $(".OnlineRecords").click(function(){
+                                        $.ajax({
+                                            url: "historyrecords.php",
+                                            type: "POST",
+                                            data: "onlinerecords=k43lkri34",
+                                            success: function(data){
+                                                $(".historycontents").html(data);
+                                            }
+                                        });returnallonlineRecords
+                                    });
+
+                                    $(".returnallonlineRecords").click(function(){
+                                        $.ajax({
+                                            url: "historyrecords.php",
+                                            type: "POST",
+                                            data: "onlinerecords=k43lkri34",
+                                            success: function(data){
+                                                $(".historycontents").html(data);
+                                            }
+                                        });
+                                    });
+
+                                    $(".Deliveryrecords").click(function(){
+                                        $.ajax({
+                                            url: "historyrecords.php",
+                                            type: "POST",
+                                            data: "deliveryrecord=4lk334mkj",
+                                            success: function(data){
+                                                $(".historycontents").html(data);
+                                                $(".delivrow").click(function(){
+                                                   $(".deliv-extr").hide();
+                                                   var productid = $(this).attr('data-prod');
+                                                   $(".tab-rw-"+productid).show();
+                                                });
+                                            }
+                                        });
+                                    });
+                                    // $.ajax({
+                                    //     url: "returnscontroller.php",
+                                    //     type: "POST",
+                                    //     data: "activereturns=pending4U4k",
+                                    //     success: function(data){
+                                    //         $(".pendingreturnscontainer").html(data);
+                                    //     }
+                                    // });
+                                </script>
                             </div>
 
 
@@ -850,8 +944,8 @@ if(userLoggedIn() == True){
                           <div class="col-lg-2"></div>
                           <div class="col-lg-8">
                               <h3 class="text-center text-uppercase">Staff Product Return</h3>
-                              <input type="text" class="form-control text-uppercase" name="cartnameret" id="cartnameret" placeholder="Enter the Clients Cartname e.g. 34xdfs32lk">
-                              <div class="cartreturnresults" style="">
+                              <input type="text" class="form-control" name="cartnameret" id="cartnameret" placeholder="Enter the Clients Cartname e.g. 34xdfs32lk">
+                              <div class="cartreturnresults col-lg-11" style="position: absolute;z-index: 4;background-color: white;">
                               </div>
                           </div>
                            <div class="col-lg-2"></div>
