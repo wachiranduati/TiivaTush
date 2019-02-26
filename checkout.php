@@ -5,39 +5,17 @@ require 'search.inc.php';
 require 'core.inc.php';
 require 'looptemplater.php';
 
-//echo strpos('i love php so im seated here worndering what im doing here','im');
+// if(!isset($_SESSION['$user_id'])){
+//         die();
+//         header('Location:index.php');
+//     }
 
-//echo array_search('me',$thething);
-//$a=array('green','blue','red');
-//echo array_search("red",$a);
-//echo isset($_SESSION['user']);
-//echo $_SERVER['REMOTE_ADDR'];
-
-//echo md5(1);
-//echo $_SERVER['HTTP_CLIENT_IP'];
+// echo $_SERVER['HTTP_CLIENT_IP'];
 //echo $_SERVER['HTTP_X_FORWARDED_FOR'];
 $century = 860;//Mtush
 
 // $_SESSION['$user_id'];
 // md5('wagwanista');
-
-if(isset($_POST['useremail'])){
-    $useremail = $_POST['useremail'];
-    if(!empty($useremail)){
-        //echo "It is set";
-        //echo $useremail;
-        if($useremail == 'a3f1abc0a7101ccf68bb31192780aa42@me.com'){
-            header('location:index.php');
-        }
-
-    }else {
-        echo "The input is empty";
-    }
-}else {
-    //echo "Nuthn";
-}
-
-
 
 ?>
 <!DOCTYPE html>

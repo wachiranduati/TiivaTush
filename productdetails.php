@@ -238,28 +238,28 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                             <div class="item active">
                                     <img src="mtumbauploads/<?php echo $query_row['imageone'];?>" class="img-responsive productslideimages" style="min-height: 350px;height: 400px; width: auto;">
                                     
-                                    <div class="carousel-caption">
+                                    <!-- <div class="carousel-caption">
                                         <h3>Image One</h3>
                                         <p>This is the first image in the carousel</p>
-                                    </div>
+                                    </div> -->
                             </div>
 
                             <div class="item">
                                     <img src="mtumbauploads/<?php echo $query_row['imagetwo'];?>" class="img-responsive productslideimages" style="min-height: 350px;height: 400px; width: auto;">
                                     
-                                    <div class="carousel-caption">
+                                    <!-- <div class="carousel-caption">
                                         <h3>Image two</h3>
                                         <p>This is the second image in the carousel</p>
-                                    </div>
+                                    </div> -->
                             </div>
 
                             <div class="item">
                                     <img src="mtumbauploads/<?php echo $query_row['imagethree'];?>" class="img-responsive productslideimages" style="min-height: 400px;height: 350px; width: auto;">
                                     
-                                    <div class="carousel-caption">
+                                    <!-- <div class="carousel-caption">
                                         <h3>Image three</h3>
                                         <p>This is the third image in the carousel</p>
-                                    </div>
+                                    </div> -->
                             </div>
 
 

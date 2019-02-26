@@ -146,7 +146,7 @@ if(!empty($_SERVER['HTTP_REFERER'])){
             }
         $(document).ready(function(){
             $('[type="text"]').tooltip({
-                title: '<h5>Username Field</h5><p>Input your username or email address</p>',
+                title: '<h5>Username Field</h5><p>You can use either your username or Email or Phonenumber in this field</p>',
                 placement: 'top',
                 html: true,
 

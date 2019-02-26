@@ -40,31 +40,30 @@
                                         <li><a style="color:black;" href="howto.php">FAQS</a></li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><h4>Quick Shop</h4>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><h4>Quick Links</h4>
                                     <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="mainpage.php?search=mens&&sub=tshirts">Tshirts</a></li>
-                                        <li><a style="color:black;" href="mens.php">Mens</a></li>
-                                        <li><a style="color:black;" href="mens.php">Womens</a></li>
-                                        <li><a style="color:black;" href="index.php">Gift Cards</a></li>
-                                        <li><a style="color:black;" href="shoes.php">Shoes</a></li>
+                                        <li><a style="color:black;" href="women.php">WomensWear</a></li>
+                                        <li><a style="color:black;" href="mens.php">MensWear</a></li>
+                                        <li><a style="color:black;" href="shoes.php">shoes</a></li>
+                                        <li><a style="color:black;" href="userprof.php">My Account</a></li>
+                                        <li><a style="color:black;" href="merchantreg.php">Sell on Tiiva</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 visible-lg visible-md" style="height:100px;"><h4>Policies</h4>
                                     <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="Termsofuse.php">Terms of use</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Privacy policy</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Refund policy</a></li>
-                                        <li><a style="color:black;" href="#">Billing System</a></li>
-                                        <li><a style="color:black;" href="#">Ticket System</a></li>
+                                        <li><a style="color:black;" href="termsofuse.php">Terms of use</a></li>
+                                        <li><a style="color:black;" href="termsofuse.php">Privacy policy</a></li>
+                                        <li><a style="color:black;" href="termsofuse.php">Refund policy</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" style="height:100px;"><h4>About shopper</h4>
                                     <ul class="list-unstyled">
                                         <li><a style="color:black;" href="aboutus.php">Company information</a></li>
-                                        <li><a style="color:black;" href="#">Careers</a></li>
-                                        <li><a style="color:black;" href="#">Store location</a></li>
-                                        <li><a style="color:black;" href="#">Affiliate Program</a></li>
-                                        <li><a style="color:black;" href="Termsofuse.php">Copyright</a></li>
+                                        <!-- <li><a style="color:black;" href="#">Careers</a></li> -->
+                                        <!-- <li><a style="color:black;" href="#">Store location</a></li> -->
+                                        <!-- <li><a style="color:black;" href="#">Affiliate Program</a></li> -->
+                                        <li><a style="color:black;" href="termsofuse.php">Copyright</a></li>
+                                        <li><a style="color:black;" href="userprof.php">Tracking</a></li>
                                     </ul>
                                 </div>
                             </div>

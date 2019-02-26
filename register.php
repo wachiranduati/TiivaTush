@@ -41,7 +41,21 @@ if( isset($_SESSION['$user_id'])){
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><p class="text-center"> <?php if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passwordreentered']) && isset($_POST['mobilenumber']) && isset($_POST['emailaddress'])   ){
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><p class="text-center"> 
+<?php 
+function checkWhetherSpecialFieldAlreadyUsed($conn, $val, $field){
+        //this will check field to ensure they are unique
+    $query = "SELECT `$field` FROM `users` WHERE `$field`='".mysqli_real_escape_string($conn, $val)."'";
+        $query_run = mysqli_query($conn, $query);
+        if(mysqli_num_rows($query_run) == 0){
+            //not found so return true
+            return True;
+        }else{
+            return False;
+        }
+    }
+
+if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passwordreentered']) && isset($_POST['mobilenumber']) && isset($_POST['emailaddress']) ){
     $salt = "wagwanista";
     
     $username = $_POST['username'];
@@ -50,40 +64,48 @@ if( isset($_SESSION['$user_id'])){
     $mobilenumber = $_POST['mobilenumber'];
     $emailaddress = $_POST['emailaddress'];
     
-    
     if(!empty($username) && !empty($password) && !empty($passwordreentered) && !empty($_POST['mobilenumber']) && isset($_POST['terms'])  ){
-        echo 'We are good to proceed<br>';
-        if($password != $passwordreentered){
-            echo bootstrapAlert('warning', 'glyphicon-info-sign', ' Error ', "Passwords do not match", 'A0');
-        }else {
-            $query = "SELECT `mobilenumber` FROM `users` WHERE `mobilenumber`='".mysqli_real_escape_string($conn, $mobilenumber)."'";
-            $query_run = mysqli_query($conn, $query);
-            $query_num_rows = mysqli_num_rows($query_run);
-            
-            if($query_num_rows > 0){
-                echo bootstrapAlert('warning', 'glyphicon-info-sign', ' Error ', "Another user is already registered using this phonenumber", 'A0');
-            }else{
-                echo 'OK number is available';
-                $query = "INSERT INTO `users` VALUES ('','".mysqli_real_escape_string($conn, $emailaddress)."','".mysqli_real_escape_string($conn, $username)."','".mysqli_real_escape_string($conn, $password)."','".mysqli_real_escape_string($conn, $mobilenumber)."','', '$now')";
-                if($query_run = mysqli_query($conn, $query)){
-                    $querylog = "SELECT `id` FROM `users` WHERE `emailaddress`='$emailaddress' AND `username`='$username' AND `password`='$password' AND `mobilenumber`='$mobilenumber'";
-                    $querylog_run = mysqli_query($conn, $querylog);
-                    $querylog_num = mysqli_num_rows($querylog_run);
-                    $querylog_row = mysqli_fetch_assoc($querylog_run);
-                    if($querylog_num == 0){
-                     // nothing to show here   
+        // do the checks right here
+        if(checkWhetherSpecialFieldAlreadyUsed($conn, $username, 'username') == True){
+            //continue
+            if(checkWhetherSpecialFieldAlreadyUsed($conn, $mobilenumber, 'mobilenumber') == True){
+                //continue
+                if(checkWhetherSpecialFieldAlreadyUsed($conn, $emailaddress, 'emailaddress') == True){
+                    //continue
+                    if($password == $passwordreentered){
+                        //continue
+                        $query = "INSERT INTO `users` VALUES ('','".mysqli_real_escape_string($conn, $emailaddress)."','".mysqli_real_escape_string($conn, $username)."','".mysqli_real_escape_string($conn, $password)."','".mysqli_real_escape_string($conn, $mobilenumber)."','', '$now')";
+                        if($query_run = mysqli_query($conn, $query)){
+                            $querylog = "SELECT `id` FROM `users` WHERE `emailaddress`='$emailaddress' AND `username`='$username' AND `password`='$password' AND `mobilenumber`='$mobilenumber'";
+                            $querylog_run = mysqli_query($conn, $querylog);
+                            $querylog_num = mysqli_num_rows($querylog_run);
+                            $querylog_row = mysqli_fetch_assoc($querylog_run);
+                            if($querylog_num == 0){
+                             // nothing to show here   
+                            }else{
+                                // create session login and redirect
+                                $user_id = $querylog_row['id'];
+                                $_SESSION['$user_id'] = $user_id;
+                                header('Location:index.php');
+                            }
+                            
+                        }else {
+                            echo bootstrapAlert('warning', 'glyphicon-info-sign', ' Error ', "Could not create your account at the moment, please try again later.", 'A0');
+                        }
                     }else{
-                        // create session login and redirect
-                        $user_id = $querylog_row['id'];
-                        $_SESSION['$user_id'] = $user_id;
-                        header('Location:index.php');
+                        echo bootstrapAlert('warning', 'glyphicon-info-sign', ' Error ', "Password does not match password confirmation", 'A0');
                     }
-                    
-                }else {
-                    echo bootstrapAlert('warning', 'glyphicon-info-sign', ' Error ', "Could not create your account at the moment, please try again later.", 'A0');
+                }else{
+                    echo bootstrapAlert('warning', 'glyphicon-info-sign', ' Error ', "Another user is already registered using this emailaddress", 'A0');
                 }
+            }else{
+                echo bootstrapAlert('warning', 'glyphicon-info-sign', ' Error ', "Another user is already registered using this PhoneNumber", 'A0');
             }
+        }else{
+            //die
+            echo bootstrapAlert('warning', 'glyphicon-info-sign', ' Error ', "Another user is already registered using this username", 'A0');
         }
+        
     }else {
         echo bootstrapAlert('danger', 'glyphicon-info-sign', ' Error ', "All fields are required", 'A0');
     }
@@ -111,7 +133,7 @@ if( isset($_SESSION['$user_id'])){
                             <div class="checkbox">
                                 <label>
                                     <input id="terms" checked="checked" type="checkbox" name="terms"/>
-                                    I agree with the <a href="Termsofuse.php">Terms and Conditions</a> & Privacy policies
+                                    I agree with the <a href="termsofuse.php">Terms and Conditions</a> & Privacy policies
                                 </label>
                             </div>
                             

@@ -34,7 +34,7 @@ $century = 860;
 
                 
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="index.php"><span class="glyphicon glyphicon-home">Home</span></a> / <a href="Termsofuse.php">Terms&C</a></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="index.php"><span class="glyphicon glyphicon-home">Home</span></a> / <a href="termsofuse.php">Terms&C</a></div>
                 </div>
                 <i class="mdi mdi-content-cut" style="position:relative;top:10px;"></i>
                 <i class="mdi mdi-content-cut" style="position:relative;top:10px;left:15%;"></i>
