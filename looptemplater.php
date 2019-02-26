@@ -4,13 +4,13 @@ function returnEmptyCategory(){
     return "
                 <div class=\"row visible-lg visible-md\">
                     <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\" style=\"height:400px;width:100%;color:red;background-image:url('icons/sorry.svg');background-size:100%;background-position:center;background-repeat:no-repeat;\">
-                        <h4 class=\"text-center text-capitalize\" style=\"margin-top:20%;\">Sorry items have ran out in this category</h4>
+                        <h4 class=\"text-center text-capitalize\" style=\"margin-top:20%;\">Sorry items have ran out in this category rest assured Tiiva is working on getting you more products</h4>
                     </div>
                 </div>
 
                 <div class=\"row visible-sm visible-xs\">
                     <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\" style=\"height:200px;width:100%;color:red;background-image:url('icons/sorry.svg');background-size:100%;background-position:center;background-repeat:no-repeat;\">
-                        <h4 class=\"text-center text-capitalize\" style=\"margin-top:20%;\">Sorry items have ran out in this category</h4>
+                        <h4 class=\"text-center text-capitalize\" style=\"margin-top:20%;\">Sorry items have ran out in this category rest assured Tiiva is working on getting you more products</h4>
                     </div>
                 </div>
 

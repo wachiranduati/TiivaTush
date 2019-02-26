@@ -50,9 +50,9 @@ function offersCarousels($imageone, $imagetwo, $imagethree, $imagefour, $height)
                                                         <img src=\"images\\carousels\\newsboard\\$imageone\" class=\"img-responsive\" style=\"height:$height;\">
 
                                                         <div class=\"carousel-caption\">
-                                                            <h3>Free shipping</h3>
+                                                            <h3>Flat Fee Shipping</h3>
 
-                                                            <p>Yup! Free shipping with Tiiva</p>
+                                                            <p>Same Price all Over Kenya</p>
                                                         </div>
                                                 </div>
 
