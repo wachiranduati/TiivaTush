@@ -302,10 +302,10 @@ if(userLoggedIn() == True){
                                       <optgroup label="SHOES" id="shoesid">Shoes
                                     <option value="sports">Sports Shoes</option>
                                     <option value="flats">Flats</option>
-                                    <option value="toms">Toms</option>
+                                    <option value="sneakers">Sneakers</option>
                                     <option value="boots">Boots</option>
                                     <option value="sandals">Sandals &amp; Slippers</option>
-                                    <option value="loafers">Loafers</option>
+                                    <option value="heels">High heels</option>
                                     <option value="vans">Converse &amp; Vans</option>
                                     <option value="rubber">Rubber</option>
                                     <option value="misc">Shoes Misc</option>
@@ -570,7 +570,7 @@ if(userLoggedIn() == True){
                         //alert(returneddata);
                         console.log(returneddata);
                         alert('Item has successfully been uploaded. Please refresh this page to make another upload');
-                        $("#notification").html(returneddata);
+                        // $("#notification").html(returneddata);
                         //$("#upload_Button").attr("disabled","disabled");
 
                     },

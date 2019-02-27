@@ -345,7 +345,7 @@ $century = 860;//Mtush
             <div class="row" style="">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row visible-lg visible-md">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:30px;border:1px solid black; border-bottom:1px solid white;background-color:black;"><a class="btn btn-block" href="mainpage.php?search=shoes&sub=toms&page=1"><h4 class="text-uppercase" style="color:white;font-weight:bold;">Toms</h4></a></div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:30px;border:1px solid black; border-bottom:1px solid white;background-color:black;"><a class="btn btn-block" href="mainpage.php?search=shoes&sub=sneakers&page=1"><h4 class="text-uppercase" style="color:white;font-weight:bold;">Sneakers</h4></a></div>
                     </div>
 
                     <div class="row visible-sm visible-xs">
@@ -359,15 +359,15 @@ $century = 860;//Mtush
                         </a>
 
                         <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=shoes&sub=toms&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Lace Espradille</a>
-                            <a href="mainpage.php?search=shoes&sub=toms&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Lace Casual</a>
-                            <a href="mainpage.php?search=shoes&sub=toms&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Flax Style</a>
-                            <a href="mainpage.php?search=shoes&sub=toms&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Distressed</a>
-                            <a href="mainpage.php?search=shoes&sub=toms&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Chambray</a>
-                            <a href="mainpage.php?search=shoes&sub=toms&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Pumps</a>
-                            <a href="mainpage.php?search=shoes&sub=toms&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Striped Toms</a>
-                            <a href="mainpage.php?search=shoes&sub=toms&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Desert Boots</a>
-                            <a href="mainpage.php?search=shoes&sub=toms&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Toms</a>
+                            <a href="mainpage.php?search=shoes&sub=sneakers&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Tennis style</a>
+                            <a href="mainpage.php?search=shoes&sub=sneakers&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Maximalist Sneakers</a>
+                            <a href="mainpage.php?search=shoes&sub=sneakers&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Dress Sneaker</a>
+                            <a href="mainpage.php?search=shoes&sub=sneakers&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Slip-on Sneakers</a>
+                            <a href="mainpage.php?search=shoes&sub=sneakers&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Workout Sneakers</a>
+                            <a href="mainpage.php?search=shoes&sub=sneakers&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Perforated</a>
+                            <a href="mainpage.php?search=shoes&sub=sneakers&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Contrasting pull tab</a>
+                            <a href="mainpage.php?search=shoes&sub=sneakers&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Ankle Patch</a>
+                            <a href="mainpage.php?search=shoes&sub=sneakers&page=1" class="list-group-item"><img src="others/shoestomsstripedtoms.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc sneakers</a>
 
 
 
@@ -375,7 +375,7 @@ $century = 860;//Mtush
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=shoes&sub=toms&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Toms</h5></a>
+                            <a style="color:white;" href="mainpage.php?search=shoes&sub=sneakers&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Sneakers</h5></a>
                         </div>
 
 
@@ -389,15 +389,15 @@ $century = 860;//Mtush
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
-                            <li><a href="mainpage.php?search=shoes&sub=toms&page=1" target="_blank"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;lace espradille<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=toms&page=1" target="_blank"><img src="icons/mensicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;lace casual<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=toms&page=1" target="_blank"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;flax style<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=toms&page=1" target="_blank"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;distressed style<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=toms&page=1" target="_blank"><img src="icons/house.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;chambray style<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=toms&page=1" target="_blank"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;desert boot<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=toms&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;pumps<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=toms&page=1" target="_blank"><img src="icons/labelsgift.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;striped toms<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=toms&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;misc toms<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=sneakers&page=1" target="_blank"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Tennis stylez<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=sneakers&page=1" target="_blank"><img src="icons/mensicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Maximalist Sneakers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=sneakers&page=1" target="_blank"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Dress Sneaker<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=sneakers&page=1" target="_blank"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Slip-on Sneakers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=sneakers&page=1" target="_blank"><img src="icons/house.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Workout Sneakers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=sneakers&page=1" target="_blank"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Perforated<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=sneakers&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Contrasting pull tab<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=sneakers&page=1" target="_blank"><img src="icons/labelsgift.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Ankle Patch<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=sneakers&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;misc sneakers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
 
                         </ul>
                             </div>
@@ -409,7 +409,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <?php echo groupedCarousels('shoestomsbotasgray.gif', 'shoestomslaceespradille.gif', 'shoestomsmeshespradille.gif', 'shoestomsstripedtoms.gif', 498);?>
+                    <?php echo groupedCarousels('shoessneakersvans.png', 'shoessneakersworkouts.png', 'shoessneakersvanssecond.png', 'shoessneakerstennisstyle.png', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -417,7 +417,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxtomshoes');?>
+                                    <?php echo spinnersHolder('boxsneakershoes');?>
                                 </div>
                             </div>
                         </div>
@@ -638,7 +638,7 @@ $century = 860;//Mtush
             <div class="row" style="">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row visible-lg visible-md">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:30px;border:1px solid black; border-bottom:1px solid white;background-color:black;"><a class="btn btn-block" href="mainpage.php?search=shoes&sub=loafers&page=1"><h4 class="text-uppercase" style="color:white;font-weight:bold;">Loafers</h4></a></div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:30px;border:1px solid black; border-bottom:1px solid white;background-color:black;"><a class="btn btn-block" href="mainpage.php?search=shoes&sub=heels&page=1"><h4 class="text-uppercase" style="color:white;font-weight:bold;">High-Heels</h4></a></div>
                     </div>
 
                     <div class="row visible-sm visible-xs">
@@ -652,15 +652,15 @@ $century = 860;//Mtush
                         </a>
 
                         <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=shoes&sub=loafers&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Moc-toe Penny</a>
-                            <a href="mainpage.php?search=shoes&sub=loafers&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Hosebit</a>
-                            <a href="mainpage.php?search=shoes&sub=loafers&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Tassels</a>
-                            <a href="mainpage.php?search=shoes&sub=loafers&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Casual loafers</a>
-                            <a href="mainpage.php?search=shoes&sub=loafers&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Full strap</a>
-                            <a href="mainpage.php?search=shoes&sub=loafers&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Double-monk</a>
-                            <a href="mainpage.php?search=shoes&sub=loafers&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Single-monk</a>
-                            <a href="mainpage.php?search=shoes&sub=loafers&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Penny Loafers</a>
-                            <a href="mainpage.php?search=shoes&sub=loafers&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc loafers</a>
+                            <a href="mainpage.php?search=shoes&sub=heels&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Pumps</a>
+                            <a href="mainpage.php?search=shoes&sub=heels&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Stilletos</a>
+                            <a href="mainpage.php?search=shoes&sub=heels&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Ankle Straps</a>
+                            <a href="mainpage.php?search=shoes&sub=heels&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Wedges</a>
+                            <a href="mainpage.php?search=shoes&sub=heels&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Platform heels</a>
+                            <a href="mainpage.php?search=shoes&sub=heels&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Peep-toe heels</a>
+                            <a href="mainpage.php?search=shoes&sub=heels&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Ankle boots</a>
+                            <a href="mainpage.php?search=shoes&sub=heels&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Mules</a>
+                            <a href="mainpage.php?search=shoes&sub=heels&page=1" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc heels</a>
 
 
 
@@ -668,7 +668,7 @@ $century = 860;//Mtush
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=shoes&sub=loafers&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Loafers</h5></a>
+                            <a style="color:white;" href="mainpage.php?search=shoes&sub=heels&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">High-heels</h5></a>
                         </div>
 
 
@@ -682,15 +682,15 @@ $century = 860;//Mtush
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
-                            <li><a href="mainpage.php?search=shoes&sub=loafers&page=1" target="_blank"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;moc-toe-penny<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=loafers&page=1" target="_blank"><img src="icons/mensicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;hosebit<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=loafers&page=1" target="_blank"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;tassels<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=loafers&page=1" target="_blank"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;fullstrap<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=loafers&page=1" target="_blank"><img src="icons/house.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;double-monk strap<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=loafers&page=1" target="_blank"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;single-monk strap<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=loafers&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;penny loafer<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=loafers&page=1" target="_blank"><img src="icons/labelsgift.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;casual loafers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=loafers&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;misc loafers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=heels&page=1" target="_blank"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Pumps<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=heels&page=1" target="_blank"><img src="icons/mensicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Stilletos<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=heels&page=1" target="_blank"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Ankle Straps<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=heels&page=1" target="_blank"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Wedges<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=heels&page=1" target="_blank"><img src="icons/house.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Platform heels<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=heels&page=1" target="_blank"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Peep-Toe heels<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=heels&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Ankle boots<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=heels&page=1" target="_blank"><img src="icons/labelsgift.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Mules<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=heels&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;misc heels<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
 
                         </ul>
                             </div>
@@ -702,7 +702,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <?php echo groupedCarousels('shoesloafersmoctoepenny.gif', 'shoesloafersfullstrap.gif', 'shoesloafershorsebit.gif', 'shoesloafertassels.gif', 498);?>
+                    <?php echo groupedCarousels('shoesheelsstilletos.png', 'shoesheelscorsets.png', 'shoesheelsanklestraps.png', 'shoesheelspumps.png', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -710,7 +710,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxloafershoes');?>
+                                    <?php echo spinnersHolder('boxheelsshoes');?>
                                 </div>
                             </div>
                         </div>
@@ -1213,11 +1213,11 @@ function carousel() {
                 }
            xmlhttp4.onreadystatechange = function(){
                 if (xmlhttp4.readyState == 4 && xmlhttp4.status == 200){
-                    document.getElementById('boxtomshoes').innerHTML= xmlhttp4.responseText;
+                    document.getElementById('boxsneakershoes').innerHTML= xmlhttp4.responseText;
 
                     }
                     }
-                    xmlhttp4.open('GET','shoestomsloop.php',true);
+                    xmlhttp4.open('GET','shoessneakers.php',true);
                     xmlhttp4.send();
                 $('.loaderImage').fadeOut(3000);
                 kidsloop();
@@ -1273,11 +1273,11 @@ function carousel() {
                 }
            xmlhttp7.onreadystatechange = function(){
                 if (xmlhttp7.readyState == 4 && xmlhttp7.status == 200){
-                    document.getElementById('boxloafershoes').innerHTML= xmlhttp7.responseText;
+                    document.getElementById('boxheelsshoes').innerHTML= xmlhttp7.responseText;
 
                     }
                     }
-                    xmlhttp7.open('GET','shoesloafersloop.php',true);
+                    xmlhttp7.open('GET','shoesheelssloop.php',true);
                     xmlhttp7.send();
             $('.loaderImage').fadeOut(3000);
                 shoesloop();

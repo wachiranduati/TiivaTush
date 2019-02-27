@@ -120,7 +120,7 @@ if(isset($_POST['useremail'])){
                         <!--            starts here-->
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <?php require 'templates/carousels/carousels.php'; echo mainCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png');?>
+                                    <?php require 'templates/carousels/carousels.php'; echo mainCarousels('imagetwo.png', 'imagetwo.png', 'imagetwo.png', 'imagetwo.png');?>
                             </div>
                         </div>
                         <!--            ends here-->
@@ -376,7 +376,7 @@ if(isset($_POST['useremail'])){
                         <ul class="dropdown-menu list-group">
                             <a href="mainpage.php?search=shoes&sub=flats&page=1" target="_blank" class="list-group-item"><img src="others/shoesflatsdollshoes.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Flat Shoes</a>
                             <a href="mainpage.php?search=shoes&sub=sports&page=1" target="_blank" class="list-group-item"><img src="others/shoessportshoesjordans.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sports Shoes</a>
-                            <a href="mainpage.php?search=shoes&sub=toms&page=1" target="_blank" class="list-group-item"><img src="others/shoestomslaceespradille.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Toms Shoes</a>
+                            <a href="mainpage.php?search=shoes&sub=sneakers&page=1" target="_blank" class="list-group-item"><img src="others/shoestomslaceespradille.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sneakers</a>
                             <a href="mainpage.php?search=shoes&sub=boots&page=1" target="_blank" class="list-group-item"><img src="others/shoesbootsfurtrimmedboots.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Boots</a>
                             <a href="mainpage.php?search=shoes&sub=sandals&page=1" target="_blank" class="list-group-item"><img src="others/shoessandalsflatsandals.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sandals</a>
                             <a href="mainpage.php?search=shoes&sub=loafers&page=1" target="_blank" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Loafer Shoes</a>
@@ -406,10 +406,10 @@ if(isset($_POST['useremail'])){
 
                             <li><a href="mainpage.php?search=shoes&sub=flats&page=1" target="_blank"><img src="icons/flats.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Flat shoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=shoes&sub=sports&page=1" target="_blank"><img src="icons/soccercleatsicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Sports shoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=toms&page=1" target="_blank"><img src="icons/sneakers.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Sneakers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=sneakers&page=1" target="_blank"><img src="icons/sneakers.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Sneakers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=shoes&sub=boots&page=1" target="_blank"><img src="icons/bootsicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Boots<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=shoes&sub=sandals&page=1" target="_blank"><img src="icons/sandals.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Sandals<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=loafers&page=1" target="_blank"><img src="icons/highheelsicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Heels<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=heels&page=1" target="_blank"><img src="icons/highheelsicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Heels<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=shoes&sub=vans&page=1" target="_blank"><img src="icons/slipon.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Slipon Shoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=shoes&sub=rubber&page=1" target="_blank"><img src="icons/formalshoesvectoricons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Oxfords<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=shoes&sub=misc&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Misc shoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -424,7 +424,7 @@ if(isset($_POST['useremail'])){
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <?php echo groupedCarousels('shoesflatshoes.gif', 'shoestoms.gif', 'shoessportsshoes.gif', 'shoesloafers.gif', 498);?>
+                    <?php echo groupedCarousels('shoesflatshoes.gif', 'shoessneakersworkouts.png', 'shoessportsshoes.gif', 'shoesheelsstilletos.png', 498);?>
                 </div>
             </div>
 <!--            ends here-->

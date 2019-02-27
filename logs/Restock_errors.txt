@@ -175,3 +175,30 @@ Restock mens -> officials category |2019-02-26 21:05:23
 Restock mens -> officials category |2019-02-26 21:06:36
 Restock subcategory -> tshirts | sex -> unisex | -> not [female] category |2019-02-26 21:06:36
 Restock subcategory -> blazers | sex -> unisex | -> not [female] category |2019-02-26 21:06:36
+Restock shoes -> misc category |2019-02-27 04:42:41
+Restock shoes -> misc category |2019-02-27 04:42:46
+Restock shoes -> sneakers category |2019-02-27 04:48:02
+Restock shoes -> misc category |2019-02-27 04:48:02
+Restock shoes -> sneakers category |2019-02-27 04:50:27
+Restock shoes -> misc category |2019-02-27 04:50:28
+Restock shoes -> misc category |2019-02-27 04:55:44
+Restock shoes -> misc category |2019-02-27 05:22:17
+Restock shoes -> misc category |2019-02-27 05:22:31
+Restock shoes -> misc category |2019-02-27 05:26:04
+Restock shoes -> misc category |2019-02-27 05:27:56
+Restock shoes -> misc category |2019-02-27 05:30:33
+Restock shoes -> misc category |2019-02-27 05:30:51
+Restock shoes -> misc category |2019-02-27 05:52:42
+Restock shoes -> misc category |2019-02-27 05:55:36
+Restock shoes -> misc category |2019-02-27 06:11:15
+Restock shoes -> misc category |2019-02-27 06:21:52
+Restock shoes -> misc category |2019-02-27 06:23:41
+Restock shoes -> heels category |2019-02-27 07:06:31
+Restock shoes -> misc category |2019-02-27 07:06:31
+Restock shoes -> misc category |2019-02-27 07:15:23
+Restock shoes -> misc category |2019-02-27 07:16:24
+Restock shoes -> misc category |2019-02-27 07:23:25
+Restock shoes -> misc category |2019-02-27 07:26:06
+Restock shoes -> misc category |2019-02-27 07:55:48
+Restock shoes -> misc category |2019-02-27 07:57:29
+Restock shoes -> misc category |2019-02-27 07:58:48

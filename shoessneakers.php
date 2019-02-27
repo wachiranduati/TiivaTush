@@ -3,6 +3,6 @@ require 'connect.php';
 // require 'looptemplater.php';
 require 'masterlooper.php';
 
-showCategorySubcategory($conn, 'products', 'shoes', 'toms', 4);
+showCategorySubcategory($conn, 'products', 'shoes', 'sneakers', 4);
 
 ?>
