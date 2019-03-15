@@ -6,13 +6,13 @@ require 'connect.php';
 require 'looptemplater.php';
 
 if(isset($_GET['label'])){
-    $label = $_GET['label'];
+    $label = mysqli_real_escape_string($conn, $_GET['label']);
 }else{
     $label = 'toon';
 
 }
 if(isset($_GET['page'])){
-    $currentpage = $_GET['page'];
+    $currentpage = mysqli_real_escape_string($conn, $_GET['page']);
 }else{
     $currentpage =1;
 }
@@ -39,7 +39,7 @@ $pages = ceil($query_num_rows2/$itemsperpage);
 while($query_row = mysqli_fetch_assoc($query_run)){
             $price = number_format($query_row['price']);
             //echo "Yes";
-            echo returnProperItemsMainpagees($query_row['id'], $query_row['imageone'], $query_row['label'], $query_row['itemtitle'], $price);
+            echo returnProperItemsMainpagees($query_row['id'], $query_row['imageone'], $query_row['label'], $query_row['itemtitle'], $price, $query_row['size']);
             
            // $count++;
        }

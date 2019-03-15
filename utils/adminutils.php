@@ -588,4 +588,54 @@ function checkwhetheritemisOnReturnList($conn, $productid){
 		return False;
 	}
 }
+
+function checkStaffFieldAlreadyExists($conn, $field, $Fvalue){
+	// check whether Staff field already exists
+	$query = "SELECT `$field` FROM `staff` WHERE `$field` = '$Fvalue'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) == 0){
+		return 1;//field is available
+	}else{
+		return 0;// field is alrady taken
+	}
+}
+
+function checkUserFieldExists($conn, $field, $value){
+	// check whether user field exists
+	if($field != 'password'){
+		$query = "SELECT `$field` FROM `users` WHERE `$field` = '$value'";
+		$query_run = mysqli_query($conn, $query);
+		if(mysqli_num_rows($query_run) == 1){
+			// unique user field found
+			return 1;
+		}else{
+			return 0;
+		}
+	}else{
+		return 0;
+	}
+}
+
+function retrieveUserDetialfromField($conn, $field, $retField, $uniqueval){
+	// retrieve field from user using unique field
+	$query = "SELECT `$retField` FROM `users` WHERE `$field` = '$uniqueval'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) == 1){
+		return mysqli_fetch_assoc($query_run)[$retField];
+	}else{
+		return 0;
+	}
+}
+
+
+function createNewStaffer($conn, $fullnames, $username, $nickname, $password, $center, $userid, $ppic){
+	// thsi will create a new staff row
+	$query = "INSERT INTO `staff`(`id`, `fullnames`, `username`, `password`, `tiivanick`, `ips`, `tiivacenter`, `userid`, `profileimage`) VALUES ('', '$fullnames','$username','$password','$nickname','0','$center','$userid', '$ppic')";
+	if($query_run = mysqli_query($conn, $query)){
+		return 1;
+	}else{
+		return 0;
+	}
+
+}
 ?>

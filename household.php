@@ -14,6 +14,9 @@ $century = 860;//Mtush
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php require 'templates/resourcelinks/headerlinks.php';?>
+    
+    <meta name="description" content="Tiiva is an online store featuring crowdsourced items from sellers all over Kenya. Buy and sell second hand mtumba household items.">
+    <meta name="keywords" content="Mtumba, thriftshop, thriftshopping, second hand, cheap, home, curtains, carpets">
 
      <style type="text/css">
         .searchbox {
@@ -51,39 +54,7 @@ $century = 860;//Mtush
         require 'templates/pagetitle.php';
         echo pageTitle('HOUSEHOLD');
                 ?>
-            <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=interiors&sub=duvets&page=1" class="list-group-item"><img src="others/householdbedroomsheets.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bedroom</a>
-                            <a href="mainpage.php?search=interiors&sub=carpets&page=1" class="list-group-item"><img src="others/householdcarpetsdoormats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Carpets</a>
-                            <a href="mainpage.php?search=interiors&sub=towels&page=1" class="list-group-item"><img src="others/householdbathtowels.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Towels</a>
-                            <a href="mainpage.php?search=interiors&sub=curtains&page=1" class="list-group-item"><img src="others/householdcurtainspinchpleatcurtains.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Curtains</a>
-                            <a href="mainpage.php?search=interiors&sub=pillows&page=1" class="list-group-item"><img src="others/householdpillowsdownpillows.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Pillows</a>
-                            <a href="mainpage.php?search=interiors&sub=antiques&page=1" class="list-group-item"><img src="others/householdantiquesmirrors.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Antiques</a>
-                            <a href="mainpage.php?search=interiors&sub=wallart&page=1" class="list-group-item"><img src="others/householdwallart.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Wall art</a>
-                            <a href="mainpage.php?search=interiors&sub=misc&page=1" class="list-group-item"><img src="others/householdmisccupcoasters.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc</a>
-                            <a href="mainpagee.php?search=interiors&page=1" class="list-group-item"><img src="others\labelsversace.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Households</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="household.php" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Categories</h5></a>
-                        </div>
-
-
-                    </div>
-
+            
 
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border:1px solid white;">
@@ -91,7 +62,7 @@ $century = 860;//Mtush
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md">
 
                         <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom:35px;">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt" style="padding-bottom:35px;">
 
                         <ul id="categories" style="line-height:2.5;padding-bottom:0;margin-bottom:2px;">
                             <li class="text-center" style="font-weight:bold;background-color:black;border:1px solid white;"><span style="color:orange;" class="text-uppercase text-center">Categories</span></li>
@@ -99,8 +70,6 @@ $century = 860;//Mtush
                             <li><a href="mainpage.php?search=interiors&sub=carpets&page=1" target="_blank"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Carpets<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=interiors&sub=towels&page=1" target="_blank"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Towels<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=interiors&sub=curtains&page=1" target="_blank"><img src="icons/house.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Curtains<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=antiques&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Antiques<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=wallart&page=1" target="_blank"><img src="icons/labelsgift.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Wall art<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=interiors&sub=misc&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Misc<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpagee.php?search=interiors&page=1" target="_blank"><img src="icons/mensicon.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Households<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
 
@@ -128,7 +97,7 @@ $century = 860;//Mtush
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="row">
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
-                                                            <?php echo offersCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png', 349);?>
+                                                            <?php echo offersCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png', 351);?>
                                                         </div>
                                                     </div>
                                                     
@@ -148,7 +117,7 @@ $century = 860;//Mtush
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6  featurediv"><a href="mainpage.php?search=interiors&sub=duvets&page=1"><img src="images/banners/categories/householdbedrooms.png" class="img-responsive featured"/></a></div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6  featurediv"><a href="mainpage.php?search=interiors&sub=carpets&page=1"><img src="images/banners/categories/household-carpets.png" class="img-responsive featured"/></a></div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6  featurediv"><a href="mainpage.php?search=interiors&sub=towels&page=1"><img src="images/banners/categories/householdtowels.png" class="img-responsive featured"/></a></div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6  featurediv"><a href="mainpage.php?search=interiors&sub=antiques&page=1"><img src="images/banners/categories/householdantiques.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpage.php?search=interiors&sub=misc&page=1"><img src="images/banners/categories/householdmisc.png" class="img-responsive featured"/></a></div>
             </div>
 
             <div class="row visible-lg visible-md">
@@ -166,34 +135,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=interiors&sub=duvets&page=1" class="list-group-item"><img src="others/householdpillows.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Duvets</a>
-                            <a href="mainpage.php?search=interiors&sub=duvets&page=1" class="list-group-item"><img src="others/householdpillows.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sheets</a>
-                            <a href="mainpage.php?search=interiors&sub=duvets&page=1" class="list-group-item"><img src="others/householdpillows.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Pillow Covers</a>
-                            <a href="mainpage.php?search=interiors&sub=duvets&page=1" class="list-group-item"><img src="others/householdpillows.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;MattressCovers</a>
-                            <a href="mainpage.php?search=interiors&sub=duvets&page=1" class="list-group-item"><img src="others/householdpillows.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Blankets</a>
-                            <a href="mainpage.php?search=interiors&sub=duvets&page=1" class="list-group-item"><img src="others/householdpillows.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Robes</a>
-                            <a href="mainpage.php?search=interiors&sub=duvets&page=1" class="list-group-item"><img src="others/householdpillows.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Panjamas</a>
-                            <a href="mainpage.php?search=interiors&sub=duvets&page=1" class="list-group-item"><img src="others/householdpillows.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Beddings</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=interiors&sub=duvets&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Bedroom</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=interiors&sub=duvets&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Bedroom</h5></a>
                         </div>
 
 
@@ -259,33 +203,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=interiors&sub=carpets&page=1" class="list-group-item"><img src="others/householdcarpetsdoormats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Mats</a>
-                            <a href="mainpage.php?search=interiors&sub=carpets&page=1" class="list-group-item"><img src="others/householdcarpetsdoormats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Door Mats</a>
-                            <a href="mainpage.php?search=interiors&sub=carpets&page=1" class="list-group-item"><img src="others/householdcarpetsdoormats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Centre-P Mats</a>
-                            <a href="mainpage.php?search=interiors&sub=carpets&page=1" class="list-group-item"><img src="others/householdcarpetsdoormats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Large Mats</a>
-                            <a href="mainpage.php?search=interiors&sub=carpets&page=1" class="list-group-item"><img src="others/householdcarpetsdoormats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Handmade Ms</a>
-                            <a href="mainpage.php?search=interiors&sub=carpets&page=1" class="list-group-item"><img src="others/householdcarpetsdoormats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Fuzzy Mats</a>
-                            <a href="mainpage.php?search=interiors&sub=carpets&page=1" class="list-group-item"><img src="others/householdcarpetsdoormats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Loopy Mats</a>
-                            <a href="mainpage.php?search=interiors&sub=carpets&page=1" class="list-group-item"><img src="others/householdcarpetsdoormats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Pattern Mats</a>
-                            <a href="mainpage.php?search=interiors&sub=carpets&page=1" class="list-group-item"><img src="others/householdcarpetsdoormats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Carpets</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=interiors&sub=carpets&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Carpets</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=interiors&sub=carpets&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Carpets</h5></a>
                         </div>
 
 
@@ -356,33 +276,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=interiors&sub=towels&page=1" class="list-group-item"><img src="others/householdtowelsbeachtowels.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bath Towels</a>
-                            <a href="mainpage.php?search=interiors&sub=towels&page=1" class="list-group-item"><img src="others/householdtowelsbeachtowels.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Beach Towels</a>
-                            <a href="mainpage.php?search=interiors&sub=towels&page=1" class="list-group-item"><img src="others/householdtowelsbeachtowels.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Face Towels</a>
-                            <a href="mainpage.php?search=interiors&sub=towels&page=1" class="list-group-item"><img src="others/householdtowelsbeachtowels.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sweat Towels</a>
-                            <a href="mainpage.php?search=interiors&sub=towels&page=1" class="list-group-item"><img src="others/householdtowelsbeachtowels.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Gym Towels</a>
-                            <a href="mainpage.php?search=interiors&sub=towels&page=1" class="list-group-item"><img src="others/householdtowelsbeachtowels.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bright-colored</a>
-                            <a href="mainpage.php?search=interiors&sub=towels&page=1" class="list-group-item"><img src="others/householdtowelsbeachtowels.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Dull colored Ts</a>
-                            <a href="mainpage.php?search=interiors&sub=towels&page=1" class="list-group-item"><img src="others/householdtowelsbeachtowels.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Towels</a>
-                            <a href="mainpage.php?search=interiors&sub=towels&page=1" class="list-group-item"><img src="others/householdtowelsbeachtowels.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Mist Towels</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=interiors&sub=towels&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Towels</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=interiors&sub=towels&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Towels</h5></a>
                         </div>
 
 
@@ -452,10 +348,9 @@ $century = 860;//Mtush
                 </div>
             </div>
             <div class="row visible-sm visible-xs" style="border:1px solid gainsboro;">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpagee.php?search=interiors&page=1"><img src="banners\categories\householdlabels.png" class="img-responsive featured"/></a></div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpage.php?search=interiors&sub=curtains&page=1"><img src="banners\categories\householdcurtains.png" class="img-responsive featured"/></a></div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpage.php?search=interiors&sub=wallart&page=1"><img src="banners\categories\householdwallart.png" class="img-responsive featured"/></a></div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpage.php?search=interiors&sub=misc&page=1"><img src="banners\categories\householdmisc.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpagee.php?search=interiors&page=1"><img src="images/banners/categories/householdlabels.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpage.php?search=interiors&sub=curtains&page=1"><img src="images/banners/categories/householdcurtains.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpage.php?search=interiors&sub=misc&page=1"><img src="images/banners/categories/householdmisc.png" class="img-responsive featured"/></a></div>
             </div>
 
              <!--start here-->
@@ -466,33 +361,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=interiors&sub=curtains&page=1" class="list-group-item"><img src="icons/curtainsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Ripple-fold Cs</a>
-                            <a href="mainpage.php?search=interiors&sub=curtains&page=1" class="list-group-item"><img src="icons/curtainsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Tailored-Pleat</a>
-                            <a href="mainpage.php?search=interiors&sub=curtains&page=1" class="list-group-item"><img src="icons/curtainsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Pinch-Pleat Cs</a>
-                            <a href="mainpage.php?search=interiors&sub=curtains&page=1" class="list-group-item"><img src="icons/curtainsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Inverted-Pleat</a>
-                            <a href="mainpage.php?search=interiors&sub=curtains&page=1" class="list-group-item"><img src="icons/curtainsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Grommet Cs</a>
-                            <a href="mainpage.php?search=interiors&sub=curtains&page=1" class="list-group-item"><img src="icons/curtainsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Cubicle Cs</a>
-                            <a href="mainpage.php?search=interiors&sub=curtains&page=1" class="list-group-item"><img src="icons/curtainsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Rod-Pocket</a>
-                            <a href="mainpage.php?search=interiors&sub=curtains&page=1" class="list-group-item"><img src="icons/curtainsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Goblet Cs</a>
-                            <a href="mainpage.php?search=interiors&sub=curtains&page=1" class="list-group-item"><img src="icons/curtainsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Curtains</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=interiors&sub=curtains&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Curtains</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=interiors&sub=curtains&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Curtains</h5></a>
                         </div>
 
 
@@ -553,200 +424,6 @@ $century = 860;//Mtush
             <!--Ends here -->
 
              <!--start here-->
-           <div class="row" style="">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="row visible-lg visible-md">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:30px;border:1px solid black; border-bottom:1px solid white;background-color:black;"><a class="btn btn-block" href="mainpage.php?search=interiors&sub=antiques&page=1"><h4 class="text-uppercase" style="color:white;font-weight:bold;">antiques</h4></a></div>
-                    </div>
-
-                    <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=interiors&sub=antiques&page=1" class="list-group-item"><img src="others/householdantiquesvases.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Mirrors</a>
-                            <a href="mainpage.php?search=interiors&sub=antiques&page=1" class="list-group-item"><img src="others/householdantiquesvases.gif" class="img-responsive" style="height:25px;display:inline;"/>WoovenBaskets</a>
-                            <a href="mainpage.php?search=interiors&sub=antiques&page=1" class="list-group-item"><img src="others/householdantiquesvases.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Vases</a>
-                            <a href="mainpage.php?search=interiors&sub=antiques&page=1" class="list-group-item"><img src="others/householdantiquesvases.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Clocks</a>
-                            <a href="mainpage.php?search=interiors&sub=antiques&page=1" class="list-group-item"><img src="others/householdantiquesvases.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Paintings</a>
-                            <a href="mainpage.php?search=interiors&sub=antiques&page=1" class="list-group-item"><img src="others/householdantiquesvases.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Books</a>
-                            <a href="mainpage.php?search=interiors&sub=antiques&page=1" class="list-group-item"><img src="others/householdantiquesvases.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Night Stands</a>
-                            <a href="mainpage.php?search=interiors&sub=antiques&page=1" class="list-group-item"><img src="others/householdantiquesvases.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Chinas</a>
-                            <a href="mainpage.php?search=interiors&sub=antiques&page=1" class="list-group-item"><img src="others/householdantiquesvases.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc misc</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=interiors&sub=antiques&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Antiques</h5></a>
-                        </div>
-
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="row">
-
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
-                                    <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
-                        <ul id="categories">
-
-                            <li><a href="mainpage.php?search=interiors&sub=antiques&page=1" target="_blank"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Mirrors<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=antiques&page=1" target="_blank"><img src="icons/mensicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Wooven baskets<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=antiques&page=1" target="_blank"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Vases<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=antiques&page=1" target="_blank"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Clocks<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=antiques&page=1" target="_blank"><img src="icons/house.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Paintings<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-
-                            <li><a href="mainpage.php?search=interiors&sub=antiques&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Books<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=antiques&page=1" target="_blank"><img src="icons/labelsgift.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Night stands<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=antiques&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Chinas<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=antiques&page=1" target="_blank"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Misc misc<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-
-                        </ul>
-                            </div>
-                        </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;">
-
-
-<!--            starts here-->
-            <div class="row visible-lg visible-md">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <?php echo groupedCarousels('householdantiquesclocks.gif', 'householdantiquesmirrors.gif', 'householdantiquesvases.gif', 'householdantiqueswovenbaskets.gif', 498);?>
-                </div>
-            </div>
-<!--            ends here-->
-
-
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxhouseholdantiques');?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row visible-lg visible-md">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="index.php">
-                        <img src="images/banners/different.png" class="img-responsive bannerlg"/>
-                    </a>
-                </div>
-            </div>
-
-            <!--Ends here -->
-
-             <!--start here-->
-           <div class="row" style="">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="row visible-lg visible-md">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:30px;border:1px solid black; border-bottom:1px solid white;background-color:black;"><a class="btn btn-block" href="mainpage.php?search=interiors&sub=wallart&page=1"><h4 class="text-uppercase" style="color:white;font-weight:bold;">Wall art</h4></a></div>
-                    </div>
-
-                    <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=interiors&sub=wallart&page=1" class="list-group-item"><img src="others/householdwallartpictures.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Paintings</a>
-                            <a href="mainpage.php?search=interiors&sub=wallart&page=1" class="list-group-item"><img src="others/householdwallartpictures.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Collages</a>
-                            <a href="mainpage.php?search=interiors&sub=wallart&page=1" class="list-group-item"><img src="others/householdwallartpictures.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Decorative Pcs</a>
-                            <a href="mainpage.php?search=interiors&sub=wallart&page=1" class="list-group-item"><img src="others/householdwallartpictures.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Lighting</a>
-                            <a href="mainpage.php?search=interiors&sub=wallart&page=1" class="list-group-item"><img src="others/householdwallartpictures.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Light Artifacts</a>
-                            <a href="mainpage.php?search=interiors&sub=wallart&page=1" class="list-group-item"><img src="others/householdwallartpictures.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;House Pieces</a>
-                            <a href="mainpage.php?search=interiors&sub=wallart&page=1" class="list-group-item"><img src="others/householdwallartpictures.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Wall Pieces</a>
-                            <a href="mainpage.php?search=interiors&sub=wallart&page=1" class="list-group-item"><img src="others/householdwallartpictures.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Antiques</a>
-                            <a href="mainpage.php?search=interiors&sub=wallart&page=1" class="list-group-item"><img src="others/householdwallartpictures.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Art</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=interiors&sub=wallart&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Wall art</h5></a>
-                        </div>
-
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="row">
-
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
-                                    <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
-                        <ul id="categories">
-
-                            <li><a href="mainpage.php?search=interiors&sub=wallart&page=1" target="_blank"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Paintings<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=wallart&page=1" target="_blank"><img src="icons/mensicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Collages<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=wallart&page=1" target="_blank"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Decorative pieces<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=wallart&page=1" target="_blank"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Lighting<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=wallart&page=1" target="_blank"><img src="icons/house.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;House pieces<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-
-                            <li><a href="mainpage.php?search=interiors&sub=wallart&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Light artifacts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=wallart&page=1" target="_blank"><img src="icons/labelsgift.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Wall pieces<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=wallart&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Antiques<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=wallart&page=1" target="_blank"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Misc art<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-
-                        </ul>
-                            </div>
-                        </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;">
-
-
-<!--            starts here-->
-            <div class="row visible-lg visible-md">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <?php echo groupedCarousels('householdwallartwallpieces.gif', 'householdwallartpaintings.gif', 'householdwallartdecorpieces.gif', 'householdwallartpictures.gif', 498);?>
-                </div>
-            </div>
-<!--            ends here-->
-
-
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxhouseholdwallart');?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row visible-lg visible-md">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
-                    <a href="index.php">
-                        
-<img src="images/banners/varietytwo.png" class="img-responsive bannerlg"/>
-
-                    </a>
-                </div>
-            </div>
-
-            <!--Ends here -->
-
-             <!--start here-->
             <div class="row" style="">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row visible-md visible-lg">
@@ -754,33 +431,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=interiors&sub=misc&page=1" class="list-group-item"><img src="others/householdmischangers.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Cup Costers</a>
-                            <a href="mainpage.php?search=interiors&sub=misc&page=1" class="list-group-item"><img src="others/householdmischangers.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Toys</a>
-                            <a href="mainpage.php?search=interiors&sub=misc&page=1" class="list-group-item"><img src="others/householdmischangers.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Cooking Pans</a>
-                            <a href="mainpage.php?search=interiors&sub=misc&page=1" class="list-group-item"><img src="others/householdmischangers.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Hangers</a>
-                            <a href="mainpage.php?search=interiors&sub=misc&page=1" class="list-group-item"><img src="others/householdmischangers.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Lamps</a>
-                            <a href="mainpage.php?search=interiors&sub=misc&page=1" class="list-group-item"><img src="others/householdmischangers.gif" class="img-responsive" style="height:25px;display:inline;"/>LaundryBaskets</a>
-                            <a href="mainpage.php?search=interiors&sub=misc&page=1" class="list-group-item"><img src="others/householdmischangers.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Silver Cultery</a>
-                            <a href="mainpage.php?search=interiors&sub=misc&page=1" class="list-group-item"><img src="others/householdmischangers.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Push Pins</a>
-                            <a href="mainpage.php?search=interiors&sub=misc&page=1" class="list-group-item"><img src="others/householdmischangers.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc misc</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=interiors&sub=misc&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Misc</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=interiors&sub=misc&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Misc</h5></a>
                         </div>
 
 
@@ -853,33 +506,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpagee.php?search=interiors&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;D&G</a>
-                            <a href="mainpagee.php?search=interiors&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Versace</a>
-                            <a href="mainpagee.php?search=interiors&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Pradda</a>
-                            <a href="mainpagee.php?search=interiors&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Old Navy</a>
-                            <a href="mainpagee.php?search=interiors&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Nike</a>
-                            <a href="mainpagee.php?search=interiors&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Armani</a>
-                            <a href="mainpagee.php?search=interiors&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bulgari</a>
-                            <a href="mainpagee.php?search=interiors&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Gucci</a>
-                            <a href="mainpagee.php?search=interiors&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Labels</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpagee.php?search=interiors&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">All Households</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpagee.php?search=interiors&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">All Households</h5></a>
                         </div>
 
 
@@ -1077,50 +706,11 @@ function carousel() {
                     xmlhttp6.open('GET','householdcurtainsloop.php',true);
                     xmlhttp6.send();
               $('.loaderImage').fadeOut(3000);
-                shoesloop();
+                miscsloop();
 
             }
 
-            //antiques going in here
-            function shoesloop(){
-                $('.loaderImage').fadeIn(3000);
-                if(window.XMLHttpRequest){
-                    xmlhttp8 = new XMLHttpRequest();
-                }else{
-                    xmlhttp8 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp8.onreadystatechange = function(){
-                if (xmlhttp8.readyState == 4 && xmlhttp8.status == 200){
-                    document.getElementById('boxhouseholdantiques').innerHTML= xmlhttp8.responseText;
 
-                    }
-                    }
-                    xmlhttp8.open('GET','householdantiquesloop.php',true);
-                    xmlhttp8.send();
-              $('.loaderImage').fadeOut(3000);
-                labelsloop();
-
-            }
-            //household wall art to go in here
-             function labelsloop(){
-                 $('.loaderImage').fadeIn(3000);
-                if(window.XMLHttpRequest){
-                    xmlhttp9 = new XMLHttpRequest();
-                }else{
-                    xmlhttp9 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp9.onreadystatechange = function(){
-                if (xmlhttp9.readyState == 4 && xmlhttp9.status == 200){
-                    document.getElementById('boxhouseholdwallart').innerHTML= xmlhttp9.responseText;
-
-                    }
-                    }
-                    xmlhttp9.open('GET','householdwallartloop.php',true);
-                    xmlhttp9.send();
-                 $('.loaderImage').fadeOut(3000);
-                 miscsloop();
-
-            }
             //household misc to go in here
              function miscsloop(){
                  $('.loaderImage').fadeIn(3000);

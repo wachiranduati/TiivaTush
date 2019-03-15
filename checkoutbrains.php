@@ -5,6 +5,7 @@ require 'search.inc.php';
 require 'core.inc.php';
 require 'utils/userutils.php';
 
+
 $today = date('Y-m-d');
 $time = Date('H:i:s');
 
@@ -71,6 +72,14 @@ if(isset($_POST['username']) ||
     $phoneno = $phonenumber;
     $salt = "Dance3imefika2mashinanee";
     $cartname = md5($phoneno.$salt.$today.$time);
+
+    $verifs = retrieveVerifiedVerificationCodes($conn, 'verificationcode');
+    if($verifs != 0){
+        if(in_array($transcationinputid, $verifs)){
+            die("That verification code was already used");
+        }
+    }
+    
 
     if(!empty($username)){
         //echo "Username provided<br>".$username;

@@ -64,6 +64,20 @@ function returnImagePreAddrMtush(){
     return $imageaddr;
 }
 
+function DateDiffInterval($sDate1, $sDate2, $sUnit='M') {
+//subtract $sDate2-$sDate1 and return the difference in $sUnit (Days,Hours,Minutes,Seconds)
+    $nInterval = strtotime($sDate2) - strtotime($sDate1);
+    if ($sUnit=='D') { // days
+        $nInterval = $nInterval/60/60/24;
+    } else if ($sUnit=='H') { // hours
+        $nInterval = $nInterval/60/60;
+    } else if ($sUnit=='M') { // minutes
+        $nInterval = $nInterval/60;
+    } else if ($sUnit=='S') { // seconds
+    }
+    return $nInterval;
+} 
+
 // UPDATE TO DATE TIME TIMESTAMP Year-month-day time space hour min sec
 // echo $ctime = Date('Y-m-d H:i:s');
 ?>

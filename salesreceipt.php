@@ -225,7 +225,7 @@ if($query_num_rows != 0){
                         <h4 class=\"text-capitalize\" style=\"\">Payment verified</h4>
                     </div>
                     <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\" style=\"border-bottom:1px solid black;\">
-                        <span><h4>TIIVA: &nbsp;$verification</h4></span><span id=\"shippingdays\" style=\"display:none;visibility:hidden;\">$shipping</span>
+                        <span><h4 class=\"text-uppercase\">TIIVA: &nbsp;$verification</h4></span><span id=\"shippingdays\" style=\"display:none;visibility:hidden;\">$shipping</span>
                     </div>
                 </div>
             </div>

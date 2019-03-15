@@ -883,6 +883,161 @@ function deletepausedItem($conn, $productid){
 	}
 }
 
+function queryMerchNotifs($conn){
+	//this is ust a small function to query the merchnotifications table
+	$sellerid = getMerchantId($conn);
+	$query = "SELECT COUNT(*) FROM `merchnotifs` WHERE `sellerid` = '$sellerid' AND `viewed` = '0'";
+	$query_run = mysqli_query($conn, $query);
+	$rows = mysqli_fetch_assoc($query_run);
+	$totalcount = implode('', $rows);
+	return $totalcount;
+}
+
+function checkwhetherMerchHasNotifs($conn){
+	// this will first check to see whether the current merchant has some new notifications
+	// some are found, they will be populated into the merchants notifications...with a viewed of 0
+	//notifs is simply check the notifs table...aweosme
+	$notifs = queryMerchNotifs($conn);
+	echo $notifs;
+}
+ // checkwhetherMerchHasNotifs($conn);
+
+function messagesTemplater($stateColour, $prodid, $image, $prodtitle, $status, $date, $price, $message, $newnotiflabel){
+	echo "
+		<!-- the messages -->
+          <div class=\"row\" style=\"padding: 5px 0 5px 0;margin-bottom: 2%;border-radius: \">
+            <div class=\"col-lg-2 col-md-2 col-sm-2 col-xs-2\">
+              <div style=\"height: 50px; width: 50px; border: 1px solid black;border-radius: 50%;background-image: url(icons/thaticon.png);background-size: 100%;border:1px solid blue;\"></div>
+            </div>
+            <div class=\"col-lg-10 col-md-10 col-sm-10 col-xs-10\" style=\"background-color: #fbf9fa;border: 1px solid $stateColour;\">
+              <!-- create three rows one for sender details time-->
+              <div class=\"row\">
+                <div class=\"col-lg-12\">
+                  <div class=\"row\">
+                    <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-6\"> <strong>Tiiva Official</strong> </div>
+                    <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-6\"> <strong>$date</strong> </div>
+                  </div>
+                </div>
+                <div class=\"col-lg-12\">$message <br><a target=\"_blank\" href=\"productdetails.php?merchant+item&id=$prodid\" class=\"btn btn-xs btn-info\">View this item</a></div>
+                <div class=\"col-lg-12\">
+                  <!-- the product itself -->
+                  <div class=\"row\" style=\"background-color:white;\">
+                    <div class=\"col-lg-1 col-md-1 col-sm-1 col-xs-1\"></div>
+                    <div class=\"col-lg-1 col-md-1 col-sm-1 col-xs-1\">
+                      <a href=\"productdetails.php?merchant+item&id=$prodid\"><div style=\"width: 20px; height: 20px;background-image: url($image);background-size: 100%;\"></div></a>
+                    </div>
+                    <div class=\"col-lg-10 col-md-10 col-sm-10 col-xs-10\"><span>$prodtitle</span><span> - $status</span>$newnotiflabel</div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- the messages -->
+	";
+}
+
+function retrieveAllNotifications($conn){
+	//this will retrieve all notifications for the current merchant
+	$merchant = getMerchantId($conn);
+	$query = "SELECT * FROM `merchnotifs` WHERE `sellerid` = '$merchant' ORDER BY `date` ASC";
+	$query_run = mysqli_query($conn, $query);
+	$notifications = array();
+	if(mysqli_num_rows($query_run) != 0){
+		while($row = mysqli_fetch_assoc($query_run)){
+			array_push($notifications, $row);
+		}
+		return $notifications;
+	}else{
+		return 0;
+	}
+}
+// print_r(retrieveAllNotifications($conn));
+
+function showAlltheMessages($conn){
+	// this will return all the notifications for the current user
+	// we will highlight messages from the same day but generally give other messages different border colours for status
+	// once messages have been viewed...maybe by monitoring the users scrolling we can make them viewed or sth
+	$allNotifications = retrieveAllNotifications($conn);
+	if($allNotifications != 0){
+		// continue
+		if(count($allNotifications) != 0){
+			for($x = 0; $x < count($allNotifications); $x++){
+				$singleProduct = $allNotifications[$x];
+				$notifStatus = $singleProduct['status'];
+				$prodid = $singleProduct['prodid'];
+				$itemtitle = $singleProduct['itemtitle'];
+				$image = $singleProduct['image'];
+				$price = $singleProduct['price'];
+				$date = $singleProduct['date'];
+				$viewed = $singleProduct['viewed'];
+
+				if($viewed == 0){
+					$newnotiflabel = "<span class=\"label label-success pull-right\">New notification</span>";
+				}else{
+					$newnotiflabel = "";
+				}
+
+
+				if($notifStatus == 'SOLD'){
+					//SOLD
+					$shrtmsg = "Congratulations item [$prodid] has just been purchased for $price ksh by one of our tiiva users. Our representatives will be intouch to inform you on when we'll pickup the item. Thankyou.";
+					messagesTemplater('lime', $prodid, $image, $itemtitle, $notifStatus, $date, $price, $shrtmsg, $newnotiflabel);
+				}elseif($notifStatus == 'TRANSIT'){
+					//TRANSIT
+					// retrieve pickup id of the person picking up
+					$handler = retrieveHandlerUsernameFrompickupds($conn, $prodid);
+					if($handler != 0){
+						$Fhandler = $handler['agent'];
+						$Fdate = $handler['date'];
+						$from = $handler['name'];
+						$FullnameState = retriveStaffFieldFromStaffUsername($conn, $Fhandler);
+						if($FullnameState != 0){
+							$FullName = $FullnameState['fullnames'];
+							$image = $FullnameState['profileimage'];
+						}else{
+							$FullName = 0;
+						}
+					}else{
+						$Fhandler = 0;
+					}
+					$shrtmsg = "Hi, Item [$prodid] is in transit, it was picked up by [<a class=\"handlerImg\" title=\"<img src='$image' style='max-height:250px;'/>\">$FullName</a>] from $from at $Fdate .";
+					messagesTemplater('#03A9F4', $prodid, $image, $itemtitle, $notifStatus, $date, $price, $shrtmsg, $newnotiflabel);
+				}elseif($notifStatus == 'DELIVERY'){
+					// DELIVERY
+					$shrtmsg = "Item [$prodid] has just arrived at its destination. Expect payment in 24 hours should no return be made.";
+					messagesTemplater('#7B1FA2', $prodid, $image, $itemtitle, $notifStatus, $date, $price, $shrtmsg, $newnotiflabel);
+				}elseif($notifStatus == 'RETURN'){
+					// Return
+					$shrtmsg = "Sadly item [$prodid] has been marked for return. The item will however go throught a strict inspection to ensure it is in its original state after which a reverse payment may be made to the buyer. Note that we only take a commission on successfully sold items, returns do not count.";
+					messagesTemplater('#D32F2F', $prodid, $image, $itemtitle, $notifStatus, $date, $price, $shrtmsg, $newnotiflabel);
+				}else{
+					//do noting
+				}
+			}
+		}else{
+			echo "You have no notifications";
+		}
+	}else{
+		echo "You have no notifications";
+	}
+}
+// showAlltheMessages($conn);
+
+function updateNotificationstoViewed($conn){
+	//this will retrieve all notifications for the current merchant
+	$merchant = getMerchantId($conn);
+	$query = "UPDATE `merchnotifs` SET `Viewed` = '1' WHERE `sellerid` = '$merchant'";
+	if($query_run = mysqli_query($conn, $query)){
+		//continue
+		return 1;
+	}else{
+		return 0;
+	}
+	
+}
+// print_r(updateNotificationstoViewed($conn));
+
 if(isset($_POST['myuploads']) && $_POST['myuploads'] == 'booked'){
 	showMerchantsItemsCurrentlyBooked($conn);
 }elseif(isset($_POST['myuploads']) && $_POST['myuploads'] == 'addedtocart'){
@@ -911,6 +1066,12 @@ if(isset($_POST['myuploads']) && $_POST['myuploads'] == 'booked'){
 }elseif(isset($_POST['deletepauseditem']) && !empty($_POST['deletepauseditem'])){
 	$productid = mysqli_real_escape_string($conn, $_POST['deletepauseditem']);
 	deletepausedItem($conn, $productid);
+}elseif(isset($_POST['mynotifs']) && $_POST['mynotifs'] == '4l34H4kll'){
+	checkwhetherMerchHasNotifs($conn);
+}elseif(isset($_POST['messNotifs']) && $_POST['messNotifs'] == '943llk43kKekw'){
+	showAlltheMessages($conn);
+}elseif (isset($_POST['resetViewed']) && $_POST['resetViewed'] == '43K34k_43l') {
+	echo updateNotificationstoViewed($conn);
 }
 
  ?>

@@ -34,8 +34,8 @@ if(isset($_SESSION['$staff'])){
 
           </div>
           <div class=\"col-lg-9 col-md-9 col-sm-9 col-xs-9\" style=\"margin-top:2%;\">
-            <label for=\"email\">Exchange location:<small>e.g Nakuru</small></label>
-            <input type=\"text\" placeholder=\"please input the exchange location\" name=\"exchlocation\" class=\"form-control\" id=\"exchlocation\">
+            <label for=\"email\">Exchange location:<small>i.e county-Area e.g Nairobi-Ngara</small></label>
+            <input type=\"text\" placeholder=\"please input the exchange location e.g Nairobi-Ngara\" name=\"exchlocation\" class=\"form-control\" id=\"exchlocation\">
 
           </div>
           <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\" style=\"margin-top:2%;\">

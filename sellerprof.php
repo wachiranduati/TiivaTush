@@ -223,12 +223,12 @@ if(isUserMerchant($conn) != True){
                 </div>
 
                 <div class="row sellersmenu" style="">
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0;"><h5 class="text-center">Starting</h5></div>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0;"><h5 class="text-center">Uploads</h5></div>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0;"><h5 class="text-center">Messages</h5></div>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0;"><h5 class="text-center">History</h5></div>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0;"><h5 class="text-center">Stats</h5></div>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0;"><h5 class="text-center">Funds</h5></div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><h5 class="text-center">Starting</h5></div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><h5 class="text-center">Uploads</h5></div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 messagesBtn"><h5 class="text-center">Messages <span style="background-color:red;" class="badge notifcount">0</span></h5></div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><h5 class="text-center">History</h5></div>
+                    <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0;"><h5 class="text-center">Stats</h5></div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0;"><h5 class="text-center">Funds</h5></div> -->
                     <script>
                         $(".sellersmenu>div").eq(0).css({"border-bottom":"2px solid lime","background-color":"white","color":"black"});
                         $(".sellersmenu>div").click(function(){
@@ -277,7 +277,8 @@ if(isUserMerchant($conn) != True){
                                 <h3>uploads</h3>
                                 <p>
                                     This contains all the info you may require before proceeding to actually uploading your products on Tiiva.<br>
-                                    Information in this page is constantly updated so <span style="color:red;">Please skim throught the contents for parts noted as updated features</span>
+                                    Information in this page is constantly updated so <span style="color:red;">Please skim throught the contents for parts noted as updated features</span> <br>
+
                                 </p>
                                 <h3>Messages</h3>
                                 <p>
@@ -292,19 +293,29 @@ if(isUserMerchant($conn) != True){
                                     Note that you can edit the product details for items instock on the site. This panel will enable you to view items from you that have been sold, that are on sale and that are on transit.<br>
 
                                 </p>
-                                <h3>Stats</h3>
+                                <!-- <h3>Stats</h3>
                                 <p>
                                     This panel will give a detailed photographic representation for your activity since registering on Tiiva. Mainly the information that will assist you better sell on Tiiva. Like the amount you make the range in which<br>
                                     you make as per your price, the time most of your items are purchased and by who, time with which you get your views and more. Make sure to check it out.<br>
                                     You can also change your status from offline to online for the 1 hour delivery option.
-                                </p>
-                                <h3>Funds</h3>
+                                </p> -->
+                                <!-- <h3>Funds</h3>
                                 <p>
                                     The most important part ey? This panel will enable you to check on your funds. Choose a payment plan and define your return as per your products and clientel.<br>
                                     This is teh panel where you can access your funds and withdraw it to your account. For safety reasons the funds can onlly be withdrawn by from the registered number<br>
                                     associated with your Tiiva Merchant account.Be sure to read up on maturity's and more.
-                                </p>
+                                </p> -->
                             </p>
+                            <h3>Good to Now Facts</h3>
+                                <p>
+                                    Payments to the merchant is made 24 hours after an item has been successfully delivered to the buyer.
+                                    <br>
+                                    Merchants are not charged to for using tiiva but we do charge 12.5% on all items successfully sold on tiiva.
+                                    <br>
+                                    Should you at any time need to unlist items temporarily off tiiva there is a pause feature in the history tab.
+                                    <br>
+                                    
+                                </p>
                         </div>
                     </div>
 
@@ -318,7 +329,7 @@ if(isUserMerchant($conn) != True){
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <h3>Tiiva Shack Merchant</h3>
                                     <p>
-                                        Awesome that you're a registered Merchant for Tiiva. You registered for a Mtumba Seller Account and will hence be redirected to<br>
+                                        Awesome that you're a registered Merchant for Tiiva. You registered for a Second Hand Seller Account and will hence be redirected to<br>
                                         the Tiiva Shack upload page.
                                         <ol>
                                             <li>first slot requires you to name your product using a good simple short descriptive name e.g <small>Black XS one pocket shirt</small></li>
@@ -347,99 +358,78 @@ if(isUserMerchant($conn) != True){
                                         $("#notes").toggleClass("animated bounce");
                                     },1000);
                                     </script>
-                                    <p>
-                                        Please Ensure that for step 3, you choose a subcategory belonging to selected category in step 2.<br>
-                                        For step 3 &amp; 4 ensure you use the details printed on the small sticker sewn to the hem of the product <br>
-                                        For step 6 ensure that you take the best photos. Remember the clearer and better the photos, the more attractive the product will be to Tiiva users.<br>
-                                        Ensure you don't use the same photo for image 1 , 2 and three <br>
-                                        Ensure the each image is not larger than 2 mbs and is of JPEG type else the upload will run into an error. <br>
-                                        For step 7 ensure you select the right sex to prevent mix ups with the product once uploaded <br>
-                                        For step 8 try and be as honest as possible and rate the item you are uploading. <br>
-                                        it should be made known that Tiiva will turn down items that do not match up to our quality. <br>
-                                        We will reject torn, patched, and resized items. <br>
-                                        Items should be in their original forms reason being we cater for a large range of users so your assured that customer tastes and bodies range <br>
-                                        Final amount you get depends entirely on teh amount provided in the proposed selling price and can only be edited by changing the sell price <br>
-                                        Press the green publish button only once and wait for the upload to complete else you risk uploading the same item multiple times
-                                    </p>
+                                    <ul>
+                                      <li>Whenever you're uploading products ensure you use descriptive names to make your items stand out even on google example. <em>Black Medium sized Tshirt for men with a logo of Nike</em> </li>
+                                      <li>Always try to use upload photos that are clear enough and taken from different angles to make your uploads more impressionable to your potential buyers</li>
+                                      <li>Ensure that you're photos are not larger than 2mbs each. The choose file button should turn to green if image is okay and to red if the image is too large.</li>
+                                      <li>Only use photos that are in one orientation either landscape or potrait mode. This is just a tip to improve your products aesthetics. </li>
+                                      <li>Note that A buyer will be given 24 hours to reject and return your item, should they need to.</li>
+                                      <li>Be honest in your description on your upload. This should save you and tiiva from returns.</li>
+                                      <li>It should be made clear that Tiiva will reject and cancel orders to items that turn out to be of inferior qualities</li>
+                                      <li>We cater for a large market with different tastes and body sizes and shapes so please maintain products in their original form. Do not resize etc.</li>
+                                      <li>Note that you cannot edit an item once it is uploaded.</li>
+                                      <li>Note that you can pause and delete items should you need to.</li>
+                                    </ul>
+                                    
                                 </div>
                             </div>
                             <!-- Tiiva shack end -->
                         </div>
                     </div>
                     <div class="row sellercontainer" style="display: none;">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <ul class="list-group">
-                                <li class="list-group-item messages"><a href="#">Admin</a><span class="badge">23</span></li>
-                                    <div class="row notifs">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <p>
-                                                The content appearing in the box of admins
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                <li class="list-group-item messages"><a href="#">Messages</a><span class="badge">23</span></li>
-                                    <div class="row notifs">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <p>
-                                                The content appearing in teh box of messages
-                                            </p>
-                                        </div>
-                                    </div>
-                                <li class="list-group-item messages"><a href="#">Uploads</a><span class="badge">23</span></li>
-                                    <div class="row notifs">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <p>
-                                                The content appearing in teh box of uploads
-                                            </p>
-                                        </div>
-                                    </div>
-                                <li class="list-group-item messages"><a href="#">Sales</a><span class="badge">32</span></li>
-                                <div class="row notifs">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <p>
-                                            The content appearing in teh box of messages
-                                        </p>
-                                    </div>
-                                </div>
-                                <li class="list-group-item messages"><a href="#">Returns</a><span class="badge">11</span></li>
-                                <div class="row notifs">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <p>
-                                            The content appearing in teh box of returns
-                                        </p>
-                                    </div>
-                                </div>
-                                <li class="list-group-item messages"><a href="#">Reviews</a><span class="badge primary">40</span></li>
-                                <div class="row notifs">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <p>
-                                            The content appearing in teh box of review
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </ul>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="border-right: 2px solid gainsboro;"></div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 notificationsContainer" style="height: 100vh;overflow-y: scroll;">
+                            
                         </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
                         <script>
 
-                            $(".notifs").fadeOut();
-                            $(".messages").click(function(){
-                                $(".messages").removeClass("list-active");
-                                $(this).addClass("list-active");
-
-                                var y = 0;
-                                while( y <= 6){
-                                    if($(".messages").eq(y).hasClass("list-active")){
-                                        //$(".sellersmenu>div").eq(x).toggle();
-                                        $(".notifs").eq(y).fadeIn();
-                                    }else{
-                                        $(".notifs").eq(y).fadeOut();
+                            function showNotifs(){
+                                $.ajax({
+                                    type: "POST",
+                                    url: 'merchantswhitepaper.php',
+                                    data: "mynotifs=4l34H4kll",
+                                    success: function(data){
+                                        $(".notifcount").html(data);
                                     }
-                                    y++;
-                                }
-                            });
+                                  });
+                            }
+                            showNotifs();
 
+                            setInterval(function(){updateNotifs();}, 30000);
+
+                            $(".messagesBtn").click(function(){
+                                $.ajax({
+                                    type: "POST",
+                                    url: 'merchantswhitepaper.php',
+                                    data: "messNotifs=943llk43kKekw",
+                                    success: function(data){
+                                        $(".notificationsContainer").html(data);
+                                        $('.notificationsContainer').animate({
+                                            scrollTop: $('.notificationsContainer').get(0).scrollHeight
+                                        }, 2000);
+                                        
+                                        $.ajax({
+                                        type: "POST",
+                                        url: 'merchantswhitepaper.php',
+                                        data: "resetViewed=43K34k_43l",
+                                        success: function(data){
+                                          if(data == 1){
+                                            setTimeout(function(){$(".notifcount").html(0);}, 3000);
+                                            $(".handlerImg").tooltip({
+                                               placement: "top",
+                                               //title: "<h5></h5>I am here",
+                                               html: "true",
+
+                                           });
+                                            
+                                          }
+                                          
+                                        }
+                                      });
+                                    }
+                                  });
+                            });
 
                          </script>
                     </div>
@@ -697,14 +687,20 @@ if(isUserMerchant($conn) != True){
                       $(".pauseproductbtn").click(function(){
                         var productid = $(this).attr("data-prod");
                         // alert(productid);
-                        $.ajax({
-                          type: "POST",
-                          url: 'merchantswhitepaper.php',
-                          data: "pauseProduct="+productid,
-                          success: function(data){
-                            $("#responsemessage").html(data);
-                          }
-                        });
+                        var pausestat = confirm('are you sure you want to pause this item?');
+                        if(pausestat == true){
+                          $.ajax({
+                            type: "POST",
+                            url: 'merchantswhitepaper.php',
+                            data: "pauseProduct="+productid,
+                            success: function(data){
+                              $("#responsemessage").html(data);
+                            }
+                          });
+                        }else{
+                          alert('pause request cancelled');
+                        }
+                        
                       });
                       $(".deleteproductbtn").click(function(){
                         var productid = $(this).attr("data-prod");

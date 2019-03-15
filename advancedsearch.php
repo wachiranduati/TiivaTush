@@ -50,16 +50,18 @@ if(isset($_POST['search_text']) && isset($_POST['minprice']) && isset($_POST['ma
 
         //$query2 = "SELECT `itemtitle`,`subcategory`, `price`, `imageone`, `category` FROM `$site` WHERE `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category'";
 		if($site == 'products'){
-		    $query2 = "SELECT * FROM $site WHERE `availability`='1' AND `buyer`='0' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category'  AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
+		    $query2 = "SELECT COUNT(*) FROM $site WHERE `availability`='1' AND `buyer`='0' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category'  AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		}elseif( $site == 'brandyproducts'){
-		    $query2 = "SELECT * FROM $site WHERE `instock`>='1' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category' AND  `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
+		    $query2 = "SELECT COUNT(*) FROM $site WHERE `instock`>='1' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category' AND  `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		}else{
-		    $query2 = "SELECT * FROM $site WHERE `instock`>='1' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category' AND  `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
+		    $query2 = "SELECT COUNT(*) FROM $site WHERE `instock`>='1' AND `price`>='$minprice' AND `price`<='$maxprice' AND `category`='$category' AND  `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		}
 
 
         $query_run2 = mysqli_query($conn, $query2);
-        $query_num_rows = mysqli_num_rows($query_run2);
+        // $query_num_rows = mysqli_num_rows($query_run2);
+        $rows = mysqli_fetch_assoc($query_run2);
+		$query_num_rows = implode('', $rows);
 
 
 		echo "

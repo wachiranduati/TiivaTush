@@ -112,6 +112,7 @@ if(userLoggedIn() == True){
                                 <li class="transitactivator"><a onclick="transit();showtransit();loveme();">Transit</a></li>
                                 <li class="showreturn"><a>Returns</a></li>
                                 <li class="proofdetls"><a >Review</a></li>
+                                <li class="categstats"><a >Overview</a></li>
                             </ul>
                         </div>
                     </div>
@@ -167,6 +168,7 @@ if(userLoggedIn() == True){
                                 <li><a href="#">Shops</a></li>
                                 <li><a href="#">Bloggers</a></li>
                                 <li><a href="#">Skills</a></li>
+                                <li class="stf43l4"><a>Staff</a></li>
                             </ul>
                         </div>
                     </div>
@@ -395,7 +397,292 @@ if(userLoggedIn() == True){
                                     // });
                                 </script>
                             </div>
+                    <!-- STAFF CONTAINER START -->
+                        <div class="row staffcontainer" style="padding: 10px;display: none;">
+                            <div class="col-lg-12" style="background-color: white;">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                              <ul class="list-group" style="padding-top: 20px;">
+                                  <li class="list-group-item active">New Staff</li>
+                                  <li class="list-group-item">Item 2</li>
+                                  <li class="list-group-item">Item 3</li>
+                              </ul>
+                            </div>
+                            <div class="col-lg-10">
+                                <form action="" method="POST" class="form-horizontal" role="form">
+                                        <h3 class="text-center">Tiiva Staff Account Creation Form</h3>
+                                        <div class="form-group">
+                                            <div class="col-lg-2"></div>
+                                            <div class="col-lg-6">
+                                                <label for="fullStffName">User Full Name: e.g Ondieki Grace Naisale</label>
+                                                <input type="text" class="form-control" placeholder="Your Full Names" name="fullStffName" id="fullStffName" style="margin-bottom: 3%;">
+                                                <label for="profpic">Upload profile image</label>
+                                                <input type="text" placeholder="Enter a url to your photo online" class="form-control" name="profpic" id="profpic" style="margin-bottom: 3%;">
+                                                <label for="username">Tiiva Login Username</label>
+                                                <input type="text" class="form-control" placeholder="Staffusername" name="Staffusername" id="Staffusername" style="margin-bottom: 3%;">
+                                                <label for="tiivaNick">Tiiva Unique Name</label>
+                                                <input type="text" class="form-control" placeholder="tiivaNick" name="tiivaNick" id="tiivaNick" style="margin-bottom: 3%;">
+                                                <label for="StaffPassword">Password</label>
+                                                <input type="password" class="form-control" placeholder="password" name="Staffpassword" id="Staffpassword" style="margin-bottom: 3%;">
+                                                <label for="PasswordConfirmation">Password Confirmation</label>
+                                                <input type="password" class="form-control" placeholder="passwordConfirmation" name="passwordConfirmation" id="passwordConfirmation" style="margin-bottom: 3%;">
+                                                <label for="staffEmail">Email Used to Register on Tiiva</label><br>
+                                                <small>Require the user to login to their account to confirm this</small>
+                                                <input type="text" class="form-control" placeholder="staffEmail" name="staffEmail" id="staffEmail" style="margin-bottom: 3%;">
+                                                <label for="TiivaCenter">Tiiva Center County</label>
+                                                <select class="form-control" id="TiivaCenter" name="TiivaCenter" style="margin-bottom: 2%;">
 
+                                        <optgroup label="TIIVA CENTER REGIONS" >TIIVA CENTERS
+                                        <option value="Baringo">Baringo county</option>
+                                        <option value="Bomet">Bomet county</option>
+                                        <option value="Bungoma">Bungoma county</option>
+                                        <option value="Busia">Busia county</option>
+                                        <option value="Elgeyo Marakwet">Elgeyo Marakwet county</option>
+                                        <option value="Embu">Embu county</option>
+                                        <option value="Garissa">Garissa county</option>
+                                        <option value="Homa bay">Homa bay county</option>
+                                        <option value="Isiolo">Isiolo county</option>
+                                        <option value="Kajiado">Kajiado county</option>
+                                        <option value="Kakamega">Kakamega county</option>
+                                        <option value="Kericho">Kericho county</option>
+                                        <option value="Kiambu">Kiambu county</option>
+                                        <option value="Kilifi">Kilifi county</option>
+                                        <option value="Kirinyaga">Kirinyaga county</option>
+                                        <option value="Kisii">Kisii county</option>
+                                        <option value="Kisumu">Kisumu county</option>
+                                        <option value="Kitui">Kitui county</option>
+                                        <option value="Kwale">Kwale county</option>
+                                        <option value="Laikipia">Laikipia county</option>
+                                        <option value="Lamu">Lamu county</option>
+                                        <option value="Machakos">Machakos county</option>
+                                        <option value="Makueni">Makueni county</option>
+                                        <option value="Mandera">Mandera county</option>
+                                        <option value="Meru">Meru county</option>
+                                        <option value="Migori">Migori county</option>
+                                        <option value="Marsabit">Marsabit county</option>
+                                        <option value="Mombasa">Mombasa county</option>
+                                        <option value="Muranga">Murang'a county</option>
+                                        <option value="Nairobi">Nairobi county</option>
+                                        <option value="Nakuru">Nakuru county</option>
+                                        <option value="Nandi">Nandi county</option>
+                                        <option value="Narok">Narok county</option>
+                                        <option value="Nyamira">Nyamira county</option>
+                                        <option value="Nyandarua">Nyandarua county</option>
+                                        <option value="Nyeri">Nyeri county</option>
+                                        <option value="Samburu">Samburu county</option>
+                                        <option value="Siaya">Siaya county</option>
+                                        <option value="Taita Taveta">Taita Taveta county</option>
+                                        <option value="Tana River">Tana River county</option>
+                                        <option value="Tharaka Nithi">Tharaka Nithi county</option>
+                                        <option value="Trans Nzoia">Trans Nzoia county</option>
+                                        <option value="Turkana">Turkana county</option>
+                                        <option value="Uasin Gishu">Uasin Gishu county</option>
+                                        <option value="Vihiga">Vihiga county</option>
+                                        <option value="Wajir">Wajir county</option>
+                                        <option value="West Pokot">West Pokot county</option>
+
+                                        </optgroup>
+                                      </select>
+                                                <div class="well staffWellFeedck well-sm">
+                                                    <p class="StaffRegMessg"></p>
+                                                </div>
+                                                <input type="button" data-staff-state="poor" class="btn btn-primary btnStfCrt" value="Create New Staff">
+                                            </div>
+                                            <div class="col-lg-4">
+                                            </div>
+                                        </div>
+                                        
+                                </form>
+                            </div>
+                                </div>
+                            </div>
+                            <script>
+                                $(".btnStfCrt").click(function(){
+                                    var state = $(".btnStfCrt").attr('data-staff-state');
+                                    var passwordStaff = $("#Staffpassword").val();
+                                    var passwordStaffConf = $("#passwordConfirmation").val();
+                                    var Staffusername = $("#Staffusername").val();
+                                    var userNick = $("#tiivaNick").val();
+                                    var tiivaCenter = $("#TiivaCenter").val();
+                                    var staffMail = $("#staffEmail").val();
+                                    var fullName = $("#fullStffName").val();
+                                    var profpic = $("#profpic").val();
+
+                                    if(state == 'success' && passwordStaffConf != '' && Staffusername != '' && userNick != '' && staffMail != '' && fullName != '' && profpic != ''){
+                                        //create account
+                                        var sTaffDetals = "username="+Staffusername+"&nickname="+userNick+"&password="+passwordStaff+"&passwordconf="+passwordStaffConf+"&tiivaCenter="+tiivaCenter+"&staffmail="+staffMail+"&fullname="+fullName+"&profpic="+profpic;
+                                        // console.log(sTaffDetals);
+                                        $.ajax({
+                                            url: "staffregtiiva.php",
+                                            type: "POST",
+                                            data: sTaffDetals+"&registration=4l343lk",
+                                            success: function(staffreg){
+                                                // console.log(staffreg);
+                                                if(staffreg == 1){
+                                                    $(".btnStfCrt").val(Staffusername + " is now a Tiiva Staffer");
+                                                    $(".StaffRegMessg").html(Staffusername + "is now a Tiiva Staffer");
+                                                }else{
+                                                    $(".btnStfCrt").val('Error try again');
+                                                    $(".StaffRegMessg").html('Error Please try again|User might already exist');
+                                                }
+                                            }
+                                        });
+                                    }else{
+                                        // console.log('cant complete request');
+                                        $(".StaffRegMessg").html('Please Ensure that all fields are filled');
+                                    }
+                                });
+                                $("#staffEmail").keyup(function(){
+                                    var staffMail = $("#staffEmail").val();
+                                    if(staffMail != '' && staffMail.length > 5){
+                                        ValueGivenOk('Email', 'staffEmail', 'OK');
+                                        checkWhetherEmailExists(staffMail, 'Email', 'k4l3sdlk4', 'staffEmail');
+                                    }else{
+                                        ValueGivenTooShort('Email', 'staffEmail', ' does not exist');
+                                    }
+                                });
+
+                                function checkWhetherEmailExists(toSendStaff, field, secretTrk, inputId){
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "staffregtiiva.php",
+                                        data: "UserFieldVal="+toSendStaff+"&Unetk="+secretTrk,
+                                        success: function(returnData){
+                                            if(returnData == 1){
+                                                ValueGivenOk(field, inputId, ' is available')
+                                            }else{
+                                                ValueGivenTooShort(field, inputId, ' is already taken')
+                                            }
+                                        }
+
+                                    });
+                                }
+
+                                $("#passwordConfirmation").keyup(function(){
+                                    var passwordStaff = $("#Staffpassword").val();
+                                    var passwordStaffConf = $("#passwordConfirmation").val();
+                                    if(passwordStaff == passwordStaffConf){
+                                        ValueGivenOk('Password', 'passwordConfirmation', 'OK');
+                                    }else{
+                                        ValueGivenTooShort('password', 'passwordConfirmation', 'does not match password provided');
+                                    }
+                                });
+
+                                $("#Staffpassword").keyup(function(){
+                                    // the snippet
+                                    var passwordStaff = $("#Staffpassword").val();
+                                    // Validate lowercase letters
+                                  var lowerCaseLetters = /[a-z]/g;
+                                  if(passwordStaff.match(lowerCaseLetters)) {
+                                    // Validate capital letters
+                                      var upperCaseLetters = /[A-Z]/g;
+                                      if(passwordStaff.match(upperCaseLetters)) {
+                                        // Validate numbers
+                                          var numbers = /[0-9]/g;
+                                          if(passwordStaff.match(numbers)) {
+                                            // Validate length
+                                              if(passwordStaff.length >= 8) {
+                                                ValueGivenOk('Password', 'Staffpassword', 'OK')
+                                              } else {
+                                                ValueGivenTooShort('password', 'Staffpassword', 'atleast 8 characters small');
+                                              }
+                                            }
+                                          } else {
+                                            ValueGivenTooShort('password', 'Staffpassword', 'needs an uppercase letter');
+                                          }
+                                      } else {
+                                        ValueGivenTooShort('password', 'Staffpassword', 'needs a small case letter');
+                                      }
+  
+
+  
+                                    // the snippet
+                                });
+
+                                $("#Staffusername").keyup(function(){
+                                    var Staffusername = $("#Staffusername").val();
+                                    if(Staffusername.length >= 5){
+                                        ValueGivenOk('username', 'Staffusername', 'OK');
+                                        checkWhetherStaffValueExists(Staffusername, 'username', '34lk4434l', 'Staffusername');
+                                    }else{
+                                        ValueGivenTooShort('username', 'Staffusername', 'too small');
+                                    }
+                                });
+                                // tiivaNick
+                                $("#tiivaNick").keyup(function(){
+                                    var userNick = $("#tiivaNick").val();
+                                    if(userNick.length >= 5){
+                                        // username not short
+                                        ValueGivenOk('Tiiva Name', 'tiivaNick', 'OK');
+                                        checkWhetherStaffValueExists(userNick, 'Tiiva Name', 'mkewj4_Ekkk32', 'tiivaNick');
+                                    }else{
+                                        // username too short
+                                        ValueGivenTooShort('Tiiva Name', 'tiivaNick', 'too small');
+                                    }
+                                });
+
+                                function checkWhetherStaffValueExists(toSendStaff, field, secretTrk, inputId){
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "staffregtiiva.php",
+                                        data: "UserFieldVal="+toSendStaff+"&Unetk="+secretTrk,
+                                        success: function(returnData){
+                                            if(returnData == 1){
+                                                ValueGivenOk(field, inputId, ' is available')
+                                            }else{
+                                                ValueGivenTooShort(field, inputId, ' is already taken')
+                                            }
+                                        }
+
+                                    });
+                                }
+
+                                function ValueGivenTooShort(field, inputField, message){
+                                    $(".StaffRegMessg").css('color', 'red');
+                                    $(".StaffRegMessg").html(field + ' '+ message + '<span class="mdi mdi-close"></span>');
+                                    $("#"+inputField).css('border', '1px solid red');
+                                    $(".btnStfCrt").attr('data-staff-state', 'error');
+                                }
+                                function ValueGivenOk(field, inputField, message){
+                                    $(".StaffRegMessg").css('color', 'green');
+                                    $(".StaffRegMessg").html(field + ' ' + message + '<span class="mdi mdi-check"></span>');
+                                    $("#"+inputField).css('border', '1px solid green');
+                                    $(".btnStfCrt").attr('data-staff-state', 'success');
+                                }
+                                
+                                $(".stf43l4").click(function(){
+                                    // show the staff container
+                                    $(".staffcontainer").toggle();
+                                });
+                            </script>
+                        </div>
+                    <!-- STAFF CONTAINER END -->
+
+                    <!-- PRODUCTS ON TIIVA COUNTS ETC -->
+                        <div class="row productOverview" style="padding: 10px;display: none;">
+                            <div class="col-lg-12" style="background-color: white;">
+                                <div class="row">
+                                    <div class="col-lg-12 productsAll">
+                                        <h4>These are the items on the database</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                $(".categstats").click(function(){
+                                    $(".productOverview").toggle();
+                                    $.ajax({
+                                        url: "productstats.php",
+                                        type: "POST",
+                                        data: "rquiem=l43koi983",
+                                        success: function(retnProds){
+                                            $(".productsAll").html(retnProds);
+                                        }
+                                    });
+                                });
+                                
+                            </script>
+                        </div>
+                    <!-- PRODUCTS ON TIIVA COUNTS ETC -->
 
               <!-- DELIVERY CONTAINER START -->
                           <div class="row" id="deliverycontainer" style="display: none;">
@@ -579,6 +866,10 @@ if(userLoggedIn() == True){
                                       <!-- <span class="badge">14</span> -->
                                       Expenses
                                   </li>
+                                  <li class="list-group-item fnance tweakcarts">
+                                      <!-- <span class="badge">14</span> -->
+                                      Tweak Carts
+                                  </li>
                                   
                               </ul>
                           </div>
@@ -599,6 +890,90 @@ if(userLoggedIn() == True){
 
                       //       }
                       //   });
+                      $(".tweakcarts").click(function(){
+                        //tweak carts
+                        // we will be able to delete/edit/flag
+                        // maybe when flagging..also show the details...like reason
+                            $.ajax({
+                                url: "adminpay.php",
+                                type: "POST",
+                                data: "viewTwkCarts=lk439lk9843D4_08",
+                                success: function(data){
+                                    $(".financeContent").html(data);
+                                    //edit button..this shoudl enable staff to update the verif code
+                                    // tweak the modified database
+                                    $(".cartverifedt").click(function(){
+                                        var cartname = $(this).attr('data-cart');
+                                        var EditSure = prompt("Are you sure you wan't to Edit cart ["+ cartname +"]?***** Y for Yes and N for no");
+                                        if(EditSure == 'Y' || EditSure == 'y'){
+                                            $.ajax({
+                                                url: "adminpay.php",
+                                                type: "POST",
+                                                data: "retfrm=klsdko439834_sd98&cart="+cartname,
+                                                success: function(data){
+                                                    $("#retFrmCnt").html(data);
+                                                    $(".renewVerif").click(function(){
+                                                        var newVerifCode = $(".newVerifCode").val();
+                                                        if(newVerifCode.length > 5){
+                                                            $.ajax({
+                                                                url: "adminpay.php",
+                                                                type: "POST",
+                                                                data: "sbtmNewVerif=43lk48_04k3l9&cartname="+cartname+"&newVerif="+newVerifCode,
+                                                                success: function(data){
+                                                                    $(".renewVerif").html(data);
+                                                                }
+                                                            });
+                                                        }else{
+                                                            $(".renewVerif").html('error')
+                                                        }
+                                                    });
+                                                }
+                                            });
+                                        }else{
+                                            alert('Edit process canceled');
+                                        }
+                                    });
+                                    // tweak the mod to flag it
+                                    $(".cartverifflg").click(function(){
+                                        var flagSure = prompt("proceed to flag this item? Please note the reason down somewhere. Y to proceed N to cancel.");
+                                        var cartname = $(this).attr("data-cart");
+                                        if(flagSure == 'Y' || flagSure == 'y'){
+                                            $.ajax({
+                                                url: "adminpay.php",
+                                                type: "POST",
+                                                data: "noewkliuw=32lk3_32j78&flag="+cartname,
+                                                success: function(data){
+                                                    $(".cartverifflg").html(data);
+                                                }
+                                            });
+                                        }else{
+                                            $(this).html('error');
+                                        }
+                                    });
+                                    // tweak the mod to delete it
+                                    $(".cartverifdel").click(function(){
+                                        var cartname = $(this).attr("data-cart");
+                                        var delSure = prompt("Take Caution when deleting carts..Are you really sure you want to destroy cart "+ cartname +"? Y for Yes and N to cancel deletion");
+                                        if(delSure == 'Y' || delSure == 'y'){
+                                            var staffname = prompt("Enter your username to complete Deletion");
+                                            if(staffname != ''){
+                                                $.ajax({
+                                                    url: "adminpay.php",
+                                                    type: "POST",
+                                                    data: "deliosete=_kds983_23lk&delt="+cartname,
+                                                    success: function(data){
+                                                        $(".cartverifdel").html(data);
+                                                    }
+                                                });
+                                            }
+                                        }else{
+                                            $(this).html('error');
+                                        }
+
+                                    });
+                                }
+                            });
+                      });
                         $(".merchpay").click(function(){
                             $.ajax({
                                 url: "adminpay.php",
@@ -705,7 +1080,8 @@ if(userLoggedIn() == True){
                                         if(transCode == ''){
                                             $(".pendingCartsResulsts").hide();
                                         }
-                                        $.ajax({
+                                        if(transCode.length >= 5){
+                                            $.ajax({
                                             url: "tiivafinances.php",
                                             type: "POST",
                                             data: "pendingcarts="+transCode,
@@ -728,6 +1104,7 @@ if(userLoggedIn() == True){
                                                 });
                                             }
                                         });
+                                        }
                                     });
                                 }
                             });
@@ -1465,7 +1842,7 @@ if(userLoggedIn() == True){
                                                             <option value="self">Selfdelivery</option>
                                                         </select>
                                                         <div style="display:none;" class="pickmodegroups pickupcont">
-                                                          this is option one
+                                                          <!-- this is option one -->
                                                           <form class="" action="index.html" method="post">
                                                             <div class="form-group">
                                                               <label for="Handover">Agent type</label>
@@ -1498,13 +1875,13 @@ if(userLoggedIn() == True){
                                                                 </select>
                                                                 <br>
                                                                 <label for="sign">Consent</label>
-                                                                  <input type="radio" title="<h5>Seller's consent</h5>Select this if they accept the terms stated above" name="consentP" value="Yes">Yes
+                                                                  <input type="radio" title="<h5>Seller's consent</h5>Select this if they accept the terms stated above" name="consentP" checked value="Yes">Yes
                                                                   <input type="radio" title="<h5>Seller's consent</h5>Select this if they do not accept the terms provided" name="consentP" value="No">No
 
                                                                   <div class="row">
                                                                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 visible-lg visible-md"></div>
                                                                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                                        <a href="#" class="btn btn-primary btn-block btn-lg uploadinfobypickup" title="<h5>Submit Data</h5>Finalize pickup">upload info</a>
+                                                                        <a href="#" class="btn btn-primary btn-block btn-lg uploadinfobypickup" title="<h5>Submit Data</h5>Finalize pickup">Process pickup</a>
                                                                       </div>
                                                                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 visible-lg visible-md"></div>
 
@@ -1514,7 +1891,7 @@ if(userLoggedIn() == True){
                                                           </form>
                                                         </div>
                                                         <div style="display:none;" class="pickmodegroups selfcont">
-                                                          this is option two
+                                                          
                                                           <form class="" action="index.html" method="post">
                                                             <div class="form-group">
                                                                 <br><label for="Agent">Centre Agent Receiving</label><br>
@@ -1542,14 +1919,14 @@ if(userLoggedIn() == True){
                                                                 </select>
                                                                 <br>
                                                                 <label for="sign">Consent</label>
-                                                                <input type="radio" title="<h5>Seller's consent</h5>Select this if they accept the terms stated above" name="selfconsentS" value="Yes">Yes
+                                                                <input type="radio" title="<h5>Seller's consent</h5>Select this if they accept the terms stated above" name="selfconsentS" checked value="Yes">Yes
                                                                 <input type="radio" title="<h5>Seller's consent</h5>Select this if they do not accept the terms provided" name="selfconsentS" value="No">No
                                                                   <br>
 
                                                                   <div class="row">
                                                                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 visible-lg visible-md"></div>
                                                                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                                        <a href="#" class="btn btn-primary btn-block btn-lg uploadinfobyself" title="<h5>Submit Data</h5>Finalize pickup">upload info</a>
+                                                                        <a href="#" class="btn btn-primary btn-block btn-lg uploadinfobyself" title="<h5>Submit Data</h5>Finalize pickup">Process upload</a>
                                                                       </div>
                                                                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 visible-lg visible-md"></div>
 
@@ -1624,11 +2001,20 @@ if(userLoggedIn() == True){
                                                           "&handoverperp="+personhandover+"&name="+handovername+"&idno="+handoverid+"&paymentmode="+paymentmode+
                                                           "&sign="+sign;
                                                           // alert(pickupdata);
+                                                          $(".uploadinfobypickup").html("Processing ... <span class=\"mdi mdi-refresh mdi-spin mdi-24px\"></span>");
                                                         $.ajax({
                                                           type: "POST",
                                                           url: "completepickup.php",
                                                           data: pickupdata,
                                                           success: function(selfpickup){
+                                                            if(selfpickup == 1){
+                                                                //successfulll
+                                                                $(".uploadinfobypickup").html("Item "+itemno+" successfully picked up");
+                                                                setTimeout(returnpickupbtntonorm, 15000);
+                                                            }else{
+                                                                alert(selfpickup);
+                                                                $(".uploadinfobypickup").html("Process Pickup");
+                                                            }
                                                             alert(selfpickup);
                                                             $(".clearinputs").click();
                                                             loadpickups();
@@ -1636,6 +2022,12 @@ if(userLoggedIn() == True){
                                                         });
 
                                                       });
+
+                                                    function returnpickupbtntonorm(){
+                                                        // this will be called to return a button to normal after 30 seconds
+                                                        $(".uploadinfobypickup").html("Process Pickup");
+
+                                                    }
                                                       $(".uploadinfobyself").click(function(){
                                                         // pick up item by myself
                                                         var itemno = $("#itemno").text();
@@ -1669,12 +2061,20 @@ if(userLoggedIn() == True){
                                                           "&handoverperp="+persondeliver+"&name="+selfhandovername+"&idno="+selfhandoverid+
                                                           "&paymentmode="+selfpaymentmode+"&sign="+sign;
                                                           // alert(selfpickupdata);
-
+                                                          $(".uploadinfobyself").html("Processing ... <span class=\"mdi mdi-refresh mdi-spin mdi-24px\"></span>");
                                                         $.ajax({
                                                           type: "POST",
                                                           url: "completepickup.php",
                                                           data: selfpickupdata,
                                                           success: function(selfpickup){
+                                                            if(selfpickup == 1){
+                                                                //successfulll
+                                                                $(".uploadinfobyself").html("Item "+itemno+" successfully picked up");
+                                                                setTimeout(returnuploadBtntoNorm, 15000);
+                                                            }else{
+                                                                alert(selfpickup);
+                                                                $(".uploadinfobyself").html("Process Pickup");
+                                                            }
                                                             alert(selfpickup);
                                                             $(".clearinputs").click();
                                                             loadpickups();
@@ -1682,6 +2082,12 @@ if(userLoggedIn() == True){
                                                         });
 
                                                       });
+
+                                                    function returnuploadBtntoNorm(){
+                                                        // this will be called to return a button to normal after 30 seconds
+                                                        $(".uploadinfobyself").html("Process Pickup");
+
+                                                    }
                                                       // $(".clearinputs").click(function(){
                                                       //   // clear the input all input fields
                                                       //     $(":input").val("");
@@ -1753,8 +2159,10 @@ if(userLoggedIn() == True){
           <!-- ITEMS IN TRANSIT CHANGE HANDLER START-->
                 <div class="row transitcontainer" style=";display:none;">
                   <script>
+                    
                     function showtransit(){
-                      $(".transitcontainer").show();
+                      $(".transitcontainer").toggle();
+
                       var data = "transit=transitadmin";
                       $.ajax({
                           type: "POST",
@@ -1780,7 +2188,6 @@ if(userLoggedIn() == True){
                                 $(".marker2").attr('data-itemid',product);
                                 $(".marker2").attr('data-cart',cart);
                                 var message = "product="+product+"&cart="+cart;
-
 
                                 // lifted starting from here
 
@@ -2033,15 +2440,15 @@ if(userLoggedIn() == True){
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="itemsintransit"></div>
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="myprompts"></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="myprompts" style="padding: 10px;"></div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="craptrap"></div>
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="sentoutprompts"></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="sentoutprompts" style="padding: 10px;"></div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="craptrap2"></div>
 
                     <span class="hidden marker2" data-id="0">7yd</span>
                 </div>
-                <div class="row" style="margin-top:1%;;">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="changehandler"></div>
+                <div class="row" style="margin-top:1%;padding: 10px;">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="changehandler" style="background-color: white;"></div>
                 </div>
           <!-- ITEMS IN TRANSIT CHANGE HANDLER END-->
 

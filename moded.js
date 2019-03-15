@@ -31,6 +31,8 @@ function addnewitem(prod){
       data: "action=addtocart&prod="+prod,
       success: function(data){
           $("#itemstat").html(data);
+          showcount();
+          loadmodalcart();
           
       }
     });
@@ -44,6 +46,9 @@ function removeItem(prod){
       data: "action=removeFrCart&prod="+prod,
       success: function(data){
           $("#itemstat").html(data);
+          showcount();
+          loadmodalcart();
+          cartship();
           
       }
     });

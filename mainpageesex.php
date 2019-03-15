@@ -20,10 +20,13 @@ $jump = 0;
 $items = 40;
 
 
-$query2 = "SELECT * FROM `products` WHERE `category`!='interiors' AND `category`!='kids' AND `sex`!='".mysqli_real_escape_string($conn, $search)."' AND `availability`='1' AND `buyer`='0'";
+$query2 = "SELECT COUNT(*) FROM `products` WHERE `category`!='interiors' AND `category`!='kids' AND `sex`!='".mysqli_real_escape_string($conn, $search)."' AND `availability`='1' AND `buyer`='0'";
 $query_run2 = mysqli_query($conn, $query2);
-$query_num_rows2 = mysqli_num_rows($query_run2);
-$pagecount = $query_num_rows2 / $items;
+// $query_num_rows2 = mysqli_num_rows($query_run2);
+// $pagecount = $query_num_rows2 / $items;
+$rows = mysqli_fetch_assoc($query_run2);
+$totalrows = implode('', $rows);
+$pagecount = $totalrows / $items;
 
 if($search == 'female'){
     $gender = 'Men\'s';

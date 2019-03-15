@@ -51,99 +51,23 @@ if(mysqli_num_rows($query_run) == 0){
 //echo $query_row[imageone];
 
 
-if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
-    $message = "Remember, these are second hand clothes \"Mtush\" we ensure that items you purchase reach up to our standards.Check the item description to look throught the items dimensions.";
+$message = "Remember, these are second hand clothes \"MTUMBA\" we ensure that items you purchase reach up to our standards.Check the item description to look throught the items dimensions.";
 
-}elseif ($query_row['category'] == 'wallart'){
-    $message = "This is an original new item by $sellerid, We at Airmark appreciate art.Remember to check the item description above to look through the specifics.";
-}else {
-    $message = "We at Airmark support designers from Kenya and all over. The items above are brand new from both international and local designers.Remember to look through the items description.";
-}
+
 
 ?>
 <!DOCTYPE html>
 <html>
-<title>tiiva.co.ke | <?php echo $query_row['itemtitle'];?></title>
+<title>tiiva.co.ke | Mtumba <?php echo $query_row['itemtitle'];?></title>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php require 'templates/resourcelinks/headerlinks.php';?>
 
+    <meta name="description" content="Tiiva is an online store featuring crowdsourced items from sellers all over Kenya. Buy mtumba <?php echo $query_row['itemtitle']; echo $query_row['details'];?>" >
+    <meta name="keywords" content="Mtumba, thriftshop, thriftshopping, second hand clothes, second hand, cheap <?php echo $query_row['itemtitle']; echo $query_row['details'];?>">
+
     <style type="text/css">
-
-        .glass{
-            color:white;position:absolute;top:40%;left:40%;font-size:20px;
-        }
-        .modpic:hover + .glass{
-            font-size:30px;
-        }
-        .searchbox {
-            border-bottom: 1px solid black;
-        }
-
-        #box1 {
-                    border-right: 1px dotted gainsboro;
-                }
-        #box1:hover {
-                    box-shadow: 0px -1px 10px red;
-                }
-        #resi:hover {
-            background-color: rgba(64, 64, 64, 0.63);
-        }
-        .thitter:hover {
-            background-color: #0088ff;
-        }
-
-
-        @keyframes tag {
-            0% { transform: rotate(-10deg);}
-            100% {transform: rotate(10deg);}
-        }
-        .mtushtag{
-            animation-name: tag;
-            animation-duration: 2s;
-            animation-direction:alternate;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in-out;
-            animation-delay: 1s;
-        }
-        .comment{
-            padding: 0px;
-            margin: 0px;
-        }
-        #linewithtime{
-            border-top: 2px solid black;
-        }
-        .closemodalcart:hover{
-            color: black;
-        }
-
-/*        cart modal start here*/
-        .cartmodal {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
-}
-
-@keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
-}
-/*        cart modal ends here*/
 
     </style>
 
@@ -179,7 +103,7 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
            </div>
            <div class="row visible-sm visible-xs">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="text-uppercase text-center" style="font-family:kok;"><?php echo $query_row['itemtitle'];?></h4>
+                    <h1 class="text-uppercase text-center" style="font-family:kok;"><?php echo $query_row['itemtitle'];?></h1>
 
                 </div>
             </div>
@@ -236,7 +160,7 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                         <div class="carousel-inner">
 
                             <div class="item active">
-                                    <img src="mtumbauploads/<?php echo $query_row['imageone'];?>" class="img-responsive productslideimages" style="min-height: 350px;height: 400px; width: auto;">
+                                    <img src="mtumbauploads/<?php echo $query_row['imageone'];?>" class="img-responsive productslideimages" alt="<?php echo $query_row['details']; ?>" style="min-height: 350px;height: 400px; width: auto;">
                                     
                                     <!-- <div class="carousel-caption">
                                         <h3>Image One</h3>
@@ -245,7 +169,7 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                             </div>
 
                             <div class="item">
-                                    <img src="mtumbauploads/<?php echo $query_row['imagetwo'];?>" class="img-responsive productslideimages" style="min-height: 350px;height: 400px; width: auto;">
+                                    <img src="mtumbauploads/<?php echo $query_row['imagetwo'];?>" class="img-responsive productslideimages" alt="<?php echo $query_row['details']; ?>" style="min-height: 350px;height: 400px; width: auto;">
                                     
                                     <!-- <div class="carousel-caption">
                                         <h3>Image two</h3>
@@ -254,7 +178,7 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                             </div>
 
                             <div class="item">
-                                    <img src="mtumbauploads/<?php echo $query_row['imagethree'];?>" class="img-responsive productslideimages" style="min-height: 400px;height: 350px; width: auto;">
+                                    <img src="mtumbauploads/<?php echo $query_row['imagethree'];?>" class="img-responsive productslideimages" alt="<?php echo $query_row['details']; ?>" style="min-height: 400px;height: 350px; width: auto;">
                                     
                                     <!-- <div class="carousel-caption">
                                         <h3>Image three</h3>
@@ -362,6 +286,13 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5;border-bottom:1px solid gainsboro;color:black;"><p><?php echo $query_row['details'];?></p></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <span style="margin-right: 2%;">SIZE: <?php echo $query_row['size'];?></span>
+                                                <span style="margin-right: 2%;">SEX: <?php echo $query_row['sex'];?></span>
+                                                <span style="">LABEL: <?php echo $query_row['label'];?></span>
+                                            </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="color:black;">
@@ -519,75 +450,51 @@ if($query_row['category'] != 'wallart' && $query_row['category'] != 'labels' ){
             <div class="row" style="margin-top:10px;">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border:1px solid black;background-color:black;color:white;">
+                        <div class="col-lg-1 col-md-1 visible-lg visible-md"></div>
+                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12" style="border:1px solid black;background-color:black;color:white;margin-bottom: 2%;">
                             <h5 class="text-center text-uppercase">Other items you might like</h5>
                         </div>
+                        <div class="col-lg-1 col-md-1 visible-lg visible-md"></div>
                     </div>
 
 <?php
-// using id like this so that we can increment it will the 5 minute lapse
-// wer are going to select all the items any single div will require
-// then post them on the identical div id container
-// items required img source, price, title, then formulate the button data-name, data-price
-//for this page only get the lead image, follow up to details page query up the total 3 images
+$prodloopedid = $query_row['id'];
+$prodsubcategory = $query_row['subcategory'];
+$prodsex = $query_row['sex'];
+$prodsize = $query_row['size'];
+function itemloop($conn, $table, $prodloopedid, $prodsubcategory, $prodsex, $prodsize){
+    //I think we shoudl just show items from a similar subcategory of the same sex too and size
+    $query = "SELECT * FROM `$table` WHERE `subcategory` = '$prodsubcategory' AND `sex` = '$prodsex' AND `size` = '$prodsize' AND `id` != '$prodloopedid' ORDER BY RAND() LIMIT 6 ";
+    $query_run = mysqli_query($conn, $query);
+    $row = array();
+    if(mysqli_num_rows($query_run) == 6){
+        //continue
+        while($query_row = mysqli_fetch_assoc($query_run)){
+            array_push($row, $query_row);
+            }
+        return $row;
+    }else{
+        //error not enough items to display
+        return False;
+    }
 
-function itemloop($id, $conn){
-    $query_id_details = "SELECT * FROM `products` WHERE `id`='".mysqli_real_escape_string($conn, $id)."'";
-    $query_run_details = mysqli_query($conn, $query_id_details);
-    $query_row_details = mysqli_fetch_assoc($query_run_details);
-    $pageCategory = $query_row_details['category'];
-    $pageSubcategory = $query_row_details['subcategory'];
-
-
-    $query2 = "SELECT * FROM `products` WHERE `id`!='".mysqli_real_escape_string($conn, $id)."' AND `availability`='1' AND `buyer`='0' AND `category`='$pageCategory' AND `subcategory`='$pageSubcategory'";
-$query_run2 = mysqli_query($conn, $query2);
-$query_num_rows = mysqli_num_rows($query_run2);
-//echo $query_num_rows;
-if($query_num_rows <= 6){
-    //to be changed later to 30 to ensure theres enough items at all times
-    // the while loop should fall here if less than the required amount
-    //with disabled links
-    //echo "nothing was found or items are not more than 6";
-    $query = "SELECT * FROM `products` WHERE `id`!='".mysqli_real_escape_string($conn, $id)."' AND `availability`='1' AND `buyer`='0' ORDER BY RAND() LIMIT 6";
-$query_run = mysqli_query($conn, $query);
-// print(mysqli_error($conn));
-
-//$query_row = mysqli_fetch_assoc($query_run);
-//echo $query_row[imageone];
-
-$count = 1;
-while($query_row = mysqli_fetch_assoc($query_run)){
-    $price = number_format($query_row['price']);
-    echo returnProperItemsMainpagees($query_row['id'], $query_row['imageone'], $query_row['label'], $query_row['itemtitle'], $price, $query_row['size']);
-    
-    //$count ++;
-    //that code up there just looped the same item 6 times to fill in the blank slots
 }
-
+$otheritemProds = itemloop($conn, 'products', $prodloopedid, $prodsubcategory, $prodsex, $prodsize);
+if($otheritemProds != False){
+    //show all the products
+    if(count($otheritemProds) == 6){
+        //continue
+        for($x = 0; $x < count($otheritemProds); $x++){
+            $otherproddetails = $otheritemProds[$x];
+            $price = number_format($otherproddetails['price']);
+            echo returnProperItemsMainpagees($otherproddetails['id'], $otherproddetails['imageone'], $otherproddetails['label'], $otherproddetails['itemtitle'], $price, $otherproddetails['size']);
+        }
+    }
 }else{
-    //echo "Something to display right here";
-    //this should indicate everything is okay and should
-    // display 6 items online with an id count increase
-    $query = "SELECT * FROM `products` WHERE `id`!='".mysqli_real_escape_string($conn, $id)."' AND `availability`='1' AND `buyer`='0' AND `category`='$pageCategory' AND `subcategory`='$pageSubcategory' ORDER BY RAND() LIMIT 6";
-$query_run = mysqli_query($conn, $query);
-
-    $counts = 1;
-
-    while($query_row = mysqli_fetch_assoc($query_run)){
-       // echo $query_row['webid'];
-       $price = number_format($query_row['price']);
-
-       echo returnProperItemsMainpagees($query_row['id'], $query_row['imageone'], $query_row['label'], $query_row['itemtitle'], $price, $query_row['size']);
-}
+    //return the emoji we're restocking
+    returnEmptyCategory();
 }
 
-//the above code checks whether there are enough items specifically more than 6 to satisfy the request
-//if not then the while loop below is run with disabled buttons and a note stating that more items
-//are being uploaded
-
-
-}
-itemloop($id, $conn);
 echo "
 
 <!--            SOMETHING IS INTENTIONALLY MISSING HERE-->

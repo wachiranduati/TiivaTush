@@ -195,7 +195,7 @@ function incompletecartreturnt($conn){
         $purchsdate = $querycardetls_row['date'];
         $shipping = $querycardetls_row['shipping'];
         // check whether the item id in transit is at the final center
-          $queryitemid = "SELECT * FROM `transitdbs` WHERE `cartname`='$cartname' AND `id`='$itemid'";
+          $queryitemid = "SELECT * FROM `transitdbs` WHERE `cartname`='$cartname' AND `itemid`='$itemid'";
           $queryitemid_run = mysqli_query($conn, $queryitemid);
           $queryitemid_num = mysqli_num_rows($queryitemid_run);
           if($queryitemid_num != 0){
@@ -295,6 +295,7 @@ function incompletecartreturnt($conn){
           }else{
             //row not found
             die("Error23");
+            // echo mysqli_error($conn);
           }
 
 
@@ -502,7 +503,7 @@ function incompletecartdelivery($conn){
             //first get the staff name
             $staffnick = $querystaff_row['tiivanick'];
             // the id provided is the table id
-            $queryconfirmstaffhandler = "SELECT * FROM `transitdbs` WHERE `id`='$item' AND `cartname`='$cart'";
+            $queryconfirmstaffhandler = "SELECT * FROM `transitdbs` WHERE `itemid`='$item' AND `cartname`='$cart'";
             $queryconfirmstaffhandler_run = mysqli_query($conn, $queryconfirmstaffhandler);
             $queryconfirmstaffhandler_num = mysqli_num_rows($queryconfirmstaffhandler_run);
             if($queryconfirmstaffhandler_num == 1){
@@ -525,30 +526,30 @@ function incompletecartdelivery($conn){
                     // successfully updated
                     // echo "Item $item of cart $cart has successfully been delivered";
                     // update the transit status to 1
-                    $queryfinalizetrnsstat = "UPDATE `transitdbs` SET `dstatus`='1' WHERE `id`='$item' AND `cartname`='$cart'";
+                    $queryfinalizetrnsstat = "UPDATE `transitdbs` SET `dstatus`='1' WHERE `itemid`='$item' AND `cartname`='$cart'";
                     if($queryfinalizetrnsstat_run = mysqli_query($conn, $queryfinalizetrnsstat)){
                       //successfully done
                       echo "Item $item of cart $cart has successfully been delivered";
                     }else{
                       //error
-                      die("Error");
+                      die("Error8");
                     }
                   }else{
                     //Error
-                    die("Error");
+                    die("Error7");
                   }
                 }else{
                   // it exhists
-                  die("Error");
+                  die("Error6");
                 }
               }else{
                 // handler does not have the package
-                die("Error");
+                die("Error5");
               }
 
             }else{
               // it either does not exist or shouldnt exhist
-              die("Error");
+              die("Error4");
             }
           }
         }
@@ -556,7 +557,7 @@ function incompletecartdelivery($conn){
 
       }else{
         //shouldnt be possible or doesnt exhist
-        die("Error");
+        die("Error3");
       }
     }else{
       die('Error2');

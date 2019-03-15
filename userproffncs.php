@@ -64,6 +64,7 @@ function showCartDetails($conn, $cart){
 			$lastCheckedAt = retrieveFinalItemInCommadStringUsersProf($LastLocation);
 
 			$when = $transitdetailsArray[$x]['exchdattimes'];
+			$when = retrieveFinalItemInCommadStringUsersProf($when);
 			$status = $transitdetailsArray[$x]['dstatus'];
 			if($status == 1){
 				$status = "DELIVERED";
@@ -79,7 +80,12 @@ function showCartDetails($conn, $cart){
 				// thsi is an incomplete cart
 				// retrieve delivery time
 				// $delivtime = retrieveCartstatsFromIncompDelivUserProf($conn, $cart)[0]['date'];
-				$delivtime = returnFromIncompDelivSingleRow($conn, $incid, $cart)['date'];
+				$delivtime = returnFromIncompDelivSingleRow($conn, $item, $cart)['date'];
+				//check whether the incomplete cart exists
+				if($delivtime == False){
+					$delivtime = 0;
+					$expired = "N/A";
+				}
 			}else{
 				// die("something's wrong");
 				$delivtime = 0;

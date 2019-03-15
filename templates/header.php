@@ -73,7 +73,8 @@
                                                                         <div class="visible-lg visible-md" style="margin-top:31%;"></div>
 
                     <div class="dropdown">
-                            <a class=" dropdown-toggle" id="menu1" data-toggle="dropdown"><span class="glyphicon glyphicon-user" style="font-size:30px;color:#523CFA;"></span><small>&nbsp;User</small>
+                            <a class=" dropdown-toggle" id="menu1" data-toggle="dropdown"><span class="glyphicon glyphicon-user" style="font-size:30px;color:#523CFA;"><span class="badge notifications" style="background-color:orange;">
+                        </span></span><small>&nbsp;User</small>
                             <span class="caret"></span></a>
 
                             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
@@ -91,11 +92,18 @@
                                     ";
                                     if(isUserMerchant($conn) == True){
                                     echo "
-<li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"sellerprof.php\">Merchants Home</a></li>
+<li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"sellerprof.php\">Merchant Acc <span class=\"badge notifications\" style=\"background-color:orange;\">
+                        </span></a></li><script>setInterval(function(){shownotifications();}, 30000)</script>
                                     ";
                                 }else{
                                     echo "
 <li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"merchantreg.php\">Merchant Reg</a></li>
+                                    ";
+                                }
+
+                                if(usernameIsStaff($conn) == True){
+                                    echo "
+<li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"tiivashouldbefun.php\">Tiiva Home</a></li>
                                     ";
                                 }
                                 }
@@ -252,6 +260,17 @@
                         xmlhttp06.open('GET','stolencart.php?action=remove&id='+id+'>&site=shack',true);
                         xmlhttp06.send();
                 }
+
+                function shownotifications(){
+                        $.ajax({
+                            type: "POST",
+                            url: 'merchantswhitepaper.php',
+                            data: "mynotifs=4l34H4kll",
+                            success: function(data){
+                                $(".notifications").html(data);
+                            }
+                          });
+                            }
 
             </script>
 

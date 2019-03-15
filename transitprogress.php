@@ -354,7 +354,7 @@ function returnadmintransit($conn){
     $cartnameshort = substr($cartnametdbs,0,9);
     // query pickupds with sign, name, idnumber, overperp and agent are done
     // for signed off belonging to this cart
-    $querytrnsitms = "SELECT * FROM `transitdbs` WHERE `cartname`='$cartnametdbs'";
+    $querytrnsitms = "SELECT * FROM `transitdbs` WHERE `cartname`='$cartnametdbs' AND `dstatus` = '0'";
     $querytrnsitms_run = mysqli_query($conn, $querytrnsitms);
     while ($querytrnsitms_row = mysqli_fetch_assoc($querytrnsitms_run)) {
       $itemid = $querytrnsitms_row['itemid'];
@@ -372,11 +372,12 @@ function returnadmintransit($conn){
 
       $exchlocslist = $querytrnsitms_row['exchlocs'];
       $exchlocslistarray = explode(',',$exchlocslist);
-      $currentexchlocs = $exchlocslistarray[$exchangenumbers];// current/latest location package was
+      $position = round(count($exchlocslistarray) - 1);
+      $currentexchlocs = $exchlocslistarray[$position];// current/latest location package was
 
       $exchdatattimeslist = $querytrnsitms_row['exchdattimes'];
       $exchdatattimeslistarray = explode(',',$exchdatattimeslist);
-      $latestexchtime = $exchdatattimeslistarray[$exchangenumbers];// current/latest exchange time
+      $latestexchtime = $exchdatattimeslistarray[$position];// current/latest exchange time
 
       $exchcenterslist = $querytrnsitms_row['exchcenters'];
       $exchcenterslistarray = explode(',',$exchcenterslist);
@@ -627,11 +628,12 @@ function returnmerchanttransit($conn){
 
       $exchlocslist = $querytrnsitms_row['exchlocs'];
       $exchlocslistarray = explode(',',$exchlocslist);
-      $currentexchlocs = $exchlocslistarray[$exchangenumbers];// current/latest location package was
+      $position = round(count($exchlocslistarray) - 1);
+      $currentexchlocs = $exchlocslistarray[$position];// current/latest location package was
 
       $exchdatattimeslist = $querytrnsitms_row['exchdattimes'];
       $exchdatattimeslistarray = explode(',',$exchdatattimeslist);
-      $latestexchtime = $exchdatattimeslistarray[$exchangenumbers];// current/latest exchange time
+      $latestexchtime = $exchdatattimeslistarray[$position];// current/latest exchange time
 
       $exchcenterslist = $querytrnsitms_row['exchcenters'];
       $exchcenterslistarray = explode(',',$exchcenterslist);
@@ -679,7 +681,7 @@ function returnmerchanttransit($conn){
 
                     <td>$cartnameshort</td>
                     <td>$packagesource</td>
-                    <td>$currentexchlocs</td>
+                    <td>$currentexchlocs re</td>
                     <td>$latestexchtime</td>
                     <td>$shiptype</td>
                     <td>$destination</td>

@@ -47,7 +47,8 @@ if(isset($_POST['useremail'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php require 'templates/resourcelinks/headerlinks.php';?>
         <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
-
+    <meta name="description" content="Tiiva is an online store featuring crowdsourced items from sellers all over Kenya. Buy and sell second hand mtumba items.">
+    <meta name="keywords" content="Mtumba, thriftshop, thriftshopping, second hand clothes, second hand, cheap, mtumba bags, mtumba sports, mtumba shoes, mtumba clothes, mtumba shirts">
     <style type="text/css">
         .labelslist{
             padding: 4px;
@@ -144,7 +145,7 @@ if(isset($_POST['useremail'])){
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="row">
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
-                                                            <?php echo offersCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png', 349);?>
+                                                            <?php echo offersCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png', 351);?>
                                                         </div>
                                                     </div>
                                                     
@@ -185,7 +186,7 @@ if(isset($_POST['useremail'])){
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
                     <a href="index.php">
-                        <img src="banners\mtumbanner.png" class="img-responsive"/>
+                         <img src="images/banners/mtumbanner.png" class="img-responsive bannerlg"/>
                     </a>
                 </div>
             </div>
@@ -264,38 +265,7 @@ window.onscroll = function() {scrollFunction()};
 
 
             }
-            function additem(iad){
-                if(window.XMLHttpRequest){
-                    xmlhttp05 = new XMLHttpRequest();
-                }else{
-                    xmlhttp05 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp05.onreadystatechange = function(){
-                if (xmlhttp05.readyState == 4 && xmlhttp05.status == 200){
-                    //document.getElementById('newcartitems').innerHTML= xmlhttp05.responseText;
-                    loadmodalcart();
-
-                    }
-                    }
-                    xmlhttp05.open('GET','stolencart.php?action=add&id='+iad,true);
-                    xmlhttp05.send();
-            }
-            function removeitem(irem){
-                if(window.XMLHttpRequest){
-                    xmlhttp06 = new XMLHttpRequest();
-                }else{
-                    xmlhttp06 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp06.onreadystatechange = function(){
-                if (xmlhttp06.readyState == 4 && xmlhttp06.status == 200){
-                    //document.getElementById('newcartitems').innerHTML= xmlhttp06.responseText;
-                    loadmodalcart();
-
-                    }
-                    }
-                    xmlhttp06.open('GET','stolencart.php?action=remove&id='+irem,true);
-                    xmlhttp06.send();
-            }
+            
             function toggleadvancedsearch(){
                 var AdvancedSearchContainer = document.getElementById('AdvancedSearchContainer');
                 var simplesearchresults = document.getElementById('simplesearchresults');
@@ -387,6 +357,9 @@ window.onscroll = function() {scrollFunction()};
 
             });
             function loadlabelslistview(link,nopage){
+                $('html, body').animate({
+                    scrollTop: $("#labelslistview").offset().top
+                }, 2000);
                 $.ajax({
                     url:'labelslistview.php',
                     type: 'GET',

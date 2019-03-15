@@ -73,25 +73,6 @@ xmlhttp2.onreadystatechange = function(){
 
 }
 
-function loadmodalcart(){
-    alert('home');
-  if(window.XMLHttpRequest){
-        xmlhttp3 = new XMLHttpRequest();
-    }else{
-        xmlhttp3 = new ActiveXObject('Microsoft.XMLHTTP');
-    }
-xmlhttp3.onreadystatechange = function(){
-    if (xmlhttp3.readyState == 4 && xmlhttp3.status == 200){
-        document.getElementById('cartmodalcontents').innerHTML= xmlhttp3.responseText;
-
-        }
-        }
-        xmlhttp3.open('GET','displaycartcheckout.php',true);
-        xmlhttp3.send();
-
-
-}
-
 // function addnewitem(id){
 // var addtocartbutton = document.getElementById('addtocartbutton');
 //     if(window.XMLHttpRequest){
@@ -111,3 +92,14 @@ xmlhttp3.onreadystatechange = function(){
 //         xmlhttp05.send();
 
 // }
+
+function updateNotifs(){
+  $.ajax({
+    type: "POST",
+    url: 'merchantnotifications.php',
+    data: "update=lsekw89s8d",
+    success: function(data){
+        // console.log(data);
+    }
+  });
+}

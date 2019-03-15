@@ -61,7 +61,7 @@ function pendingCarts($conn){
 					<td>$numbering</td>
 					<td>$cart</td>
 					<td>$time</td>
-					<td>$shiptype</td>
+					<td>TIIVA</td>
 					<td>$grandtotal</td>
 					<td>$verification</td>
 				</tr>

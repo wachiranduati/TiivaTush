@@ -32,6 +32,7 @@ if($num_rows != 0){
         <th>Price</th>
         <th>Total</th>
         <th>Add/Remove</th>
+        <th>ExpiresIn</th>
         </tr>
     </thead>
     <tbody>";
@@ -40,6 +41,10 @@ if($num_rows != 0){
     	echo "<tr>";
     $subtotal = $row['price'];
     $id = $row['id'];
+    $itemdetails = retrieveCartActivityDetail($conn, $id);
+    $expiry = $itemdetails['exptime'];
+    $now = Date('Y-m-d H:i:s');
+    $exptime = ceil(DateDiffInterval($now, $expiry, $sUnit='M'));
     $totalprice += $subtotal;
     $urlcaption = urlencode($row['itemtitle']);
 
@@ -71,6 +76,8 @@ if($num_rows != 0){
         echo "&nbsp;&nbsp;";
     echo "<a class=\"btn btn-sm btn-danger\" onclick=\"removeItem($man);\">Remove</a>";
         echo "</td>";
+        echo "<td>$exptime mins</td>";
+
         echo "</tr>";
 
 

@@ -122,7 +122,7 @@ $userdetails = retrieveUserDetails($conn);
                             <h1 id="heres">Heeey Welcome!;)</h1>
                             <p>
                                 Niaje, we're glad you found us.<br>
-                                This is your user account home, here you can manage and tweak most of your activities on Tiiva.,br>
+                                This is your user account home. In here you can monitor all your activities on tiiva.
 
                                 This is the start page
                                 <h3>Starting</h3>
@@ -135,12 +135,12 @@ $userdetails = retrieveUserDetails($conn);
                                 </p>
                                 <h3>Wishlist</h3>
                                 <p>
-                                    This panel will display your wishlist(currently disabled)
+                                    This panel will display your wishlist.
                                 </p>
                                 
                                 <h3>History</h3>
                                 <p>
-                                    Watch your entire shopping history, changes in items and their pricing. Also the ability to delete some of the entries.
+                                    Watch your entire shopping history, changes in items and their pricing. Also the ability to delete some of the entries. You can also track your check out carts in here.
                                 </p>
                                 
                             </p>

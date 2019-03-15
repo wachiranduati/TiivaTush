@@ -48,6 +48,9 @@ if(isset($_POST['useremail'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php require 'templates/resourcelinks/headerlinks.php';?>
 
+    <meta name="description" content="Tiiva is an online store featuring crowdsourced items from sellers all over Kenya. You can buy and sell second hand items on Tiiva and get an experience like no other.">
+    <meta name="keywords" content="Mtumba, thriftshop, thriftshopping, second hand clothes, second hand, cheap, gikomba">
+
 </head>
     <body onload="sportswear();boxed();">
         <?php 
@@ -71,9 +74,9 @@ if(isset($_POST['useremail'])){
 
                         <ul class="dropdown-menu list-group">
                             <a href="sportswear.php" target="_blank" class="list-group-item"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/> &nbsp;&nbsp;Sportswear</a>
-                            <a href="mens.php" target="_blank" class="list-group-item"><img src="icons/mensicon.svg" class="img-responsive" style="height:25px;display:inline;"/> &nbsp;&nbsp;Mens</a>
-                            <a href="women.php" target="_blank" class="list-group-item"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/> &nbsp;&nbsp; Womens</a>
-                            <a href="kids.php" target="_blank" class="list-group-item"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/> &nbsp;&nbsp; Kids</a>
+                            <a href="mens.php" target="_blank" class="list-group-item"><img src="icons/mensicon.svg" class="img-responsive" style="height:25px;display:inline;"/> &nbsp;&nbsp;Men's</a>
+                            <a href="women.php" target="_blank" class="list-group-item"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/> &nbsp;&nbsp; Women's</a>
+                            <a href="kids.php" target="_blank" class="list-group-item"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/> &nbsp;&nbsp; Kids'</a>
                             <a href="household.php" target="_blank" class="list-group-item"><img src="icons/house.svg" class="img-responsive" style="height:25px;display:inline;"/> &nbsp;&nbsp; Household</a>
                             <a href="bag.php" target="_blank" class="list-group-item"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/> &nbsp;&nbsp; Bags</a>
                             <a href="shoes.php" target="_blank" class="list-group-item"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/> &nbsp;&nbsp; Shoes</a>
@@ -101,9 +104,9 @@ if(isset($_POST['useremail'])){
                             <li class="text-center" style="font-weight:bold;background-color:black;border:1px solid white;"><span style="color:orange;" class="text-uppercase text-center">Categories</span></li>
                             <li><a href="sportswear.php" target="_blank"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Sportswear<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
 
-                            <li><a href="mens.php" target="_blank"><img src="icons/mensicon.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Mens<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="women.php" target="_blank"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Womens<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="kids.php" target="_blank"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Kids<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mens.php" target="_blank"><img src="icons/mensicon.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Men's<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="women.php" target="_blank"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Women's<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="kids.php" target="_blank"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Kids'<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="household.php" target="_blank"><img src="icons/house.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Household<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="bag.php" target="_blank"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Bags<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="shoes.php" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Shoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -120,7 +123,7 @@ if(isset($_POST['useremail'])){
                         <!--            starts here-->
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <?php require 'templates/carousels/carousels.php'; echo mainCarousels('imagetwo.png', 'imagetwo.png', 'imagetwo.png', 'imagetwo.png');?>
+                                    <?php require 'templates/carousels/carousels.php'; echo mainCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png');?>
                             </div>
                         </div>
                         <!--            ends here-->
@@ -133,7 +136,7 @@ if(isset($_POST['useremail'])){
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="row">
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
-                                                            <?php echo offersCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png', 349);?>
+                                                            <?php echo offersCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png', 351);?>
                                                         </div>
                                                     </div>
                                                     
@@ -183,15 +186,15 @@ if(isset($_POST['useremail'])){
                         </a>
 
                         <ul class="dropdown-menu list-group">
-                            <a href="manpage.php?search=sportswear&sub=female&page=1" target="_blank" class="list-group-item"><img src="others/sportswearshoes.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sportswear</a>
-                            <a href="manepage.php?search=officials&sub=female&page=1" target="_blank" class="list-group-item"><img src="others/mensofficialpants.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Mens Formalwear</a>
-                            <a href="manepage.php?search=sweaters&sub=female&page=1" target="_blank" class="list-group-item"><img src="others/menssweaterstrenchcoats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sweaters</a>
-                            <a href="manepage.php?search=pants&sub=female&page=1" target="_blank" class="list-group-item"><img src="others/menspantskhakipants.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Mens Pants</a>
-                            <a href="manepage.php?search=shirts&sub=female&page=1" target="_blank" class="list-group-item"><img src="others/menstshirtshenlytshirts.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Mens Tshirts</a>
-                            <a href="manepage.php?search=blazers&sub=female&page=1" target="_blank" class="list-group-item"><img src="others/mensblazerscasualcapblazers.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Mens Blazers</a>
-                            <a href="manepage.php?search=blazers&sub=female&page=1" target="_blank" class="list-group-item"><img src="others/mensjacketsvarsityjackets.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Mens Jackets</a>
-                            <a href="manpage.php?search=shoes&sub=female&page=1" target="_blank" class="list-group-item"><img src="others/shoesmiscthederbys.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Mens Shoes</a>
-                            <a href="manpage.php?search=misc&sub=female&page=1" target="_blank" class="list-group-item"><img src="others/mensmisctrinkets.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Mens Misc</a>
+                            <a href="manpage.php?search=sportswear&sub=female&page=1" target="_blank" class="list-group-item"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sportswear</a>
+                            <a href="manepage.php?search=officials&sub=female&page=1" target="_blank" class="list-group-item"><img src="icons/formal.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Men's Formalwear</a>
+                            <a href="manepage.php?search=sweaters&sub=female&page=1" target="_blank" class="list-group-item"><img src="icons/sweater.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sweaters</a>
+                            <a href="manepage.php?search=pants&sub=female&page=1" target="_blank" class="list-group-item"><img src="icons/menspants.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Men's Pants</a>
+                            <a href="manepage.php?search=shirts&sub=female&page=1" target="_blank" class="list-group-item"><img src="icons/tshirts.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Men's Tshirts</a>
+                            <a href="manepage.php?search=blazers&sub=female&page=1" target="_blank" class="list-group-item"><img src="icons/mensblazer.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Men's Blazers</a>
+                            <a href="manepage.php?search=blazers&sub=female&page=1" target="_blank" class="list-group-item"><img src="icons/denimjacketicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Men's Jackets</a>
+                            <a href="manpage.php?search=shoes&sub=female&page=1" target="_blank" class="list-group-item"><img src="icons/sneakers.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Men's Shoes</a>
+                            <a href="manpage.php?search=misc&sub=female&page=1" target="_blank" class="list-group-item"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Men's Misc</a>
 
 
 
@@ -279,15 +282,15 @@ if(isset($_POST['useremail'])){
                         </a>
 
                         <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=womens&sub=dresses&page=1" class="list-group-item"><img src="others/womensdresses.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Dresses</a>
-                            <a href="manpage.php?search=sportswear&sub=male&page=1" class="list-group-item"><img src="others/womenssportswearpants.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sportswear</a>
-                            <a href="manpage.php?search=bags&sub=male&page=1" class="list-group-item"><img src="others/womensbagsquiltedbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Womens Bags</a>
-                            <a href="manepage.php?search=sweaters&sub=male&page=1" class="list-group-item"><img src="others/womenssweaterscardigans.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sweaters</a>
-                            <a href="manepage.php?search=shirts&sub=male&page=1" class="list-group-item"><img src="others/womenstops.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Womens Tops</a>
-                            <a href="manepage.php?search=pants&sub=male&page=1" class="list-group-item"><img src="others/womenspantsjumpsuits.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Womens Pants</a>
-                            <a href="manepage.php?search=officials&sub=male&page=1" class="list-group-item"><img src="others/womensofficialtrousers.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Formals</a>
-                            <a href="manepage.php?search=blazers&sub=male&page=1" class="list-group-item"><img src="others/womensblazersdrapedblazers.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Blazers</a>
-                            <a href="manpage.php?search=misc&sub=male&page=1" class="list-group-item"><img src="others/womensmiscgloves.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Womens Misc</a>
+                            <a href="mainpage.php?search=womens&sub=dresses&page=1" class="list-group-item"><img src="icons/womens.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Dresses</a>
+                            <a href="manpage.php?search=sportswear&sub=male&page=1" class="list-group-item"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sportswear</a>
+                            <a href="manpage.php?search=bags&sub=male&page=1" class="list-group-item"><img src="icons/purse.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Women's Bags</a>
+                            <a href="manepage.php?search=sweaters&sub=male&page=1" class="list-group-item"><img src="icons/shawlsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sweaters</a>
+                            <a href="manepage.php?search=shirts&sub=male&page=1" class="list-group-item"><img src="icons/top.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Women's Tops</a>
+                            <a href="manepage.php?search=pants&sub=male&page=1" class="list-group-item"><img src="icons/womenspants.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Women's Pants</a>
+                            <a href="manepage.php?search=officials&sub=male&page=1" class="list-group-item"><img src="icons/womensformal.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Formals</a>
+                            <a href="manepage.php?search=blazers&sub=male&page=1" class="list-group-item"><img src="icons/womenscoats.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Blazers</a>
+                            <a href="manpage.php?search=misc&sub=male&page=1" class="list-group-item"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Women's Misc</a>
 
 
 
@@ -374,15 +377,15 @@ if(isset($_POST['useremail'])){
                         </a>
 
                         <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=shoes&sub=flats&page=1" target="_blank" class="list-group-item"><img src="others/shoesflatsdollshoes.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Flat Shoes</a>
-                            <a href="mainpage.php?search=shoes&sub=sports&page=1" target="_blank" class="list-group-item"><img src="others/shoessportshoesjordans.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sports Shoes</a>
-                            <a href="mainpage.php?search=shoes&sub=sneakers&page=1" target="_blank" class="list-group-item"><img src="others/shoestomslaceespradille.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sneakers</a>
-                            <a href="mainpage.php?search=shoes&sub=boots&page=1" target="_blank" class="list-group-item"><img src="others/shoesbootsfurtrimmedboots.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Boots</a>
-                            <a href="mainpage.php?search=shoes&sub=sandals&page=1" target="_blank" class="list-group-item"><img src="others/shoessandalsflatsandals.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sandals</a>
-                            <a href="mainpage.php?search=shoes&sub=loafers&page=1" target="_blank" class="list-group-item"><img src="others/shoesloafersmoctoepenny.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Loafer Shoes</a>
-                            <a href="mainpage.php?search=shoes&sub=vans&page=1" target="_blank" class="list-group-item"><img src="others/shoesvansjackpurcell.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Vans Shoes</a>
-                            <a href="mainpage.php?search=shoes&sub=rubber&page=1" target="_blank" class="list-group-item"><img src="others/shoesrubberexpedition.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Rubber Shoes</a>
-                            <a href="mainpage.php?search=shoes&sub=misc&page=1" target="_blank" class="list-group-item"><img src="others/shoesmisclaceup.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Shoes</a>
+                            <a href="mainpage.php?search=shoes&sub=flats&page=1" target="_blank" class="list-group-item"><img src="icons/flats.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Flat Shoes</a>
+                            <a href="mainpage.php?search=shoes&sub=sports&page=1" target="_blank" class="list-group-item"><img src="icons/soccercleatsicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sports Shoes</a>
+                            <a href="mainpage.php?search=shoes&sub=sneakers&page=1" target="_blank" class="list-group-item"><img src="icons/sneakers.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sneakers</a>
+                            <a href="mainpage.php?search=shoes&sub=boots&page=1" target="_blank" class="list-group-item"><img src="icons/bootsicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Boots</a>
+                            <a href="mainpage.php?search=shoes&sub=sandals&page=1" target="_blank" class="list-group-item"><img src="icons/sandals.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sandals</a>
+                            <a href="mainpage.php?search=shoes&sub=heels&page=1" target="_blank" class="list-group-item"><img src="icons/highheelsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Heels</a>
+                            <a href="mainpage.php?search=shoes&sub=flats&page=1" target="_blank" class="list-group-item"><img src="icons/slipon.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Flats</a>
+                            <a href="mainpage.php?search=shoes&sub=oxfords&page=1" target="_blank" class="list-group-item"><img src="icons/formalshoesvectoricons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Oxfords</a>
+                            <a href="mainpage.php?search=shoes&sub=misc&page=1" target="_blank" class="list-group-item"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Shoes</a>
 
 
 
@@ -410,8 +413,8 @@ if(isset($_POST['useremail'])){
                             <li><a href="mainpage.php?search=shoes&sub=boots&page=1" target="_blank"><img src="icons/bootsicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Boots<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=shoes&sub=sandals&page=1" target="_blank"><img src="icons/sandals.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Sandals<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=shoes&sub=heels&page=1" target="_blank"><img src="icons/highheelsicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Heels<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=vans&page=1" target="_blank"><img src="icons/slipon.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Slipon Shoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=shoes&sub=rubber&page=1" target="_blank"><img src="icons/formalshoesvectoricons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Oxfords<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=flats&page=1" target="_blank"><img src="icons/slipon.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Flats<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=shoes&sub=oxfords&page=1" target="_blank"><img src="icons/formalshoesvectoricons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Oxfords<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=shoes&sub=misc&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Misc shoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
 
                         </ul>
@@ -467,15 +470,15 @@ if(isset($_POST['useremail'])){
                         </a>
 
                         <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=kids&sub=sports&page=1" target="_blank" class="list-group-item"><img src="others/kidssportswear.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Sportswear</a>
-                            <a href="mainpage.php?search=kids&sub=offic&page=1" target="_blank" class="list-group-item"><img src="others/kidsofficialdresses.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids  Formalwear</a>
-                            <a href="mainpage.php?search=kids&sub=sweats&page=1" target="_blank" class="list-group-item"><img src="others/kidssweaterscardigans.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Sweaters</a>
-                            <a href="mainpage.php?search=kids&sub=kshirts&page=1" target="_blank" class="list-group-item"><img src="others/kidstopstshirts.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Tshirts</a>
-                            <a href="mainpage.php?search=kids&sub=kblazers&page=1" target="_blank" class="list-group-item"><img src="others/kidsblazersboyfriendjackets.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Blazers</a>
-                            <a href="mainpage.php?search=misc&sub=dolls&page=1" target="_blank" class="list-group-item"><img src="others/kidsdollsanimaldolls.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Dolls</a>
-                            <a href="mainpagee.php?search=bags&page=1" target="_blank" class="list-group-item"><img src="others/kidsbagsbackpacks.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Bags</a>
-                            <a href="mainpagee.php?search=kids&page=1" target="_blank" class="list-group-item"><img src="others/kidslabelsoldnavy.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Labels</a>
-                            <a href="mainpage.php?search=kids&sub=kmisc&page=1" target="_blank" class="list-group-item"><img src="others/kidsmiscswimsuits.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Misc</a>
+                            <a href="mainpage.php?search=kids&sub=sports&page=1" target="_blank" class="list-group-item"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Sportswear</a>
+                            <a href="mainpage.php?search=kids&sub=offic&page=1" target="_blank" class="list-group-item"><img src="icons/formallady.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids  Formalwear</a>
+                            <a href="mainpage.php?search=kids&sub=sweats&page=1" target="_blank" class="list-group-item"><img src="icons/sweater.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Sweaters</a>
+                            <a href="mainpage.php?search=kids&sub=kshirts&page=1" target="_blank" class="list-group-item"><img src="icons/tshirts.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Tshirts</a>
+                            <a href="mainpage.php?search=kids&sub=kblazers&page=1" target="_blank" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Blazers</a>
+                            <a href="mainpage.php?search=misc&sub=dolls&page=1" target="_blank" class="list-group-item"><img src="icons/bear.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Dolls</a>
+                            <a href="mainpagee.php?search=bags&page=1" target="_blank" class="list-group-item"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Bags</a>
+                            <a href="mainpage.php?search=shoes&sub=kshoes&page=1" target="_blank" class="list-group-item"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Shoes</a>
+                            <a href="mainpage.php?search=kids&sub=kmisc&page=1" target="_blank" class="list-group-item"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Misc</a>
 
 
 
@@ -502,9 +505,9 @@ if(isset($_POST['useremail'])){
                             <li><a href="mainpage.php?search=kids&sub=sweats&page=1" target="_blank"><img src="icons/sweater.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;kids sweaters<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=kids&sub=kshirts&page=1" target="_blank"><img src="icons/tshirts.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;kids tshirts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=kids&sub=kblazers&page=1" target="_blank"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;kids Coats<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=misc&sub=dolls&page=1" target="_blank"><img src="icons/suitpantsicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;kids pants<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=misc&sub=dolls&page=1" target="_blank"><img src="icons/bear.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;kids dolls<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpagee.php?search=bags&page=1" target="_blank"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;kids bags<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpagee.php?search=kids&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;kids shoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpagee.php?search=kshoes&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;kids shoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=kids&sub=kmisc&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;kids misc<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
 
                         </ul>
@@ -560,15 +563,15 @@ if(isset($_POST['useremail'])){
                         </a>
 
                         <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=sportswear&sub=joggers&page=1" target="_blank" class="list-group-item"><img src="others/sportsdeckhandjoggers.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Joggers Sports</a>
-                            <a href="mainpage.php?search=sportswear&sub=shorts&page=1" target="_blank" class="list-group-item"><img src="others/sportswearshortssummershorts.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Shorts Sports</a>
-                            <a href="mainpage.php?search=sportswear&sub=pants&page=1" target="_blank" class="list-group-item"><img src="others/sportswearcompressiontightspants.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Pants Sports</a>
-                            <a href="mainpage.php?search=sportswear&sub=shirts&page=1" target="_blank" class="list-group-item"><img src="others/sportswearshirtssoccerjerseys.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Shirts Sports</a>
-                            <a href="mainpage.php?search=sportswear&sub=vests&page=1" target="_blank" class="list-group-item"><img src="others/sportswearveststanktops.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Vests Sports</a>
-                            <a href="mainpagee.php?search=bags&page=1" target="_blank" class="list-group-item"><img src="others/sportswearbagsdrawstringbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bags Sports</a>
-                            <a href="mainpage.php?search=sportswear&sub=shoes&page=1" target="_blank" class="list-group-item"><img src="others/sportswearshoessoccercleats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Shoes Sports</a>
-                            <a href="mainpageesub.php?search=socks&page=1" target="_blank" class="list-group-item"><img src="others/sportswearsocks.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Socks Sports</a>
-                            <a href="mainpage.php?search=sportswear&sub=misc&page=1" target="_blank" class="list-group-item"><img src="others/sportswearmiscskates.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Sports</a>
+                            <a href="mainpage.php?search=sportswear&sub=joggers&page=1" target="_blank" class="list-group-item"><img src="icons/drawstringpantsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Joggers Sports</a>
+                            <a href="mainpage.php?search=sportswear&sub=shorts&page=1" target="_blank" class="list-group-item"><img src="icons/shorts.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Shorts Sports</a>
+                            <a href="mainpage.php?search=sportswear&sub=pants&page=1" target="_blank" class="list-group-item"><img src="icons/sportspants.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Pants Sports</a>
+                            <a href="mainpage.php?search=sportswear&sub=shirts&page=1" target="_blank" class="list-group-item"><img src="icons/tshirtvectors.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Shirts Sports</a>
+                            <a href="mainpage.php?search=sportswear&sub=vests&page=1" target="_blank" class="list-group-item"><img src="icons/vest.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Vests Sports</a>
+                            <a href="mainpagee.php?search=bags&page=1" target="_blank" class="list-group-item"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bags Sports</a>
+                            <a href="mainpage.php?search=sportswear&sub=shoes&page=1" target="_blank" class="list-group-item"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sportshoes</a>
+                            <a href="mainpageesub.php?search=socks&page=1" target="_blank" class="list-group-item"><img src="icons/socks.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Socks Sports</a>
+                            <a href="mainpage.php?search=sportswear&sub=misc&page=1" target="_blank" class="list-group-item"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Sports</a>
 
 
 
@@ -596,7 +599,7 @@ if(isset($_POST['useremail'])){
                             <li><a href="mainpage.php?search=sportswear&sub=shirts&page=1" target="_blank"><img src="icons/tshirtvectors.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;shirts sportswear<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=vests&page=1" target="_blank"><img src="icons/vest.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;vests sportswear<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpagee.php?search=bags&page=1" target="_blank"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;bags sportswear<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=sportswear&sub=shoes&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;sportsshsoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=sportswear&sub=shoes&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;sportshsoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpageesub.php?search=socks&page=1" target="_blank"><img src="icons/socks.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;socks sportswear<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=sportswear&sub=misc&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;misc sportswear<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
 
@@ -652,15 +655,15 @@ if(isset($_POST['useremail'])){
                         </a>
 
                         <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=bags&sub=backpack&page=1" target="_blank" class="list-group-item"><img src="others/bagsbackpack.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Back-Packs</a>
-                            <a href="mainpage.php?search=bags&sub=duffel&page=1" target="_blank" class="list-group-item"><img src="others/bagsdenimbarrelbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Duffel Bags</a>
-                            <a href="mainpagee.php?search=bags&page=1" target="_blank" class="list-group-item"><img src="others/bagsdenimdesingerbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Denim Bags</a>
-                            <a href="mainpage.php?search=bags&sub=clutch&page=1" target="_blank" class="list-group-item"><img src="others/bagsclutchclutchbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Clutches</a>
-                            <a href="mainpage.php?search=bags&sub=slouch&page=1" target="_blank" class="list-group-item"><img src="others/bagsslouchshopperbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Slouch Bags</a>
-                            <a href="mainpagee.php?search=bags&page=1" target="_blank" class="list-group-item"><img src="others/bagstravelsuitcasebags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Travel Bags</a>
-                            <a href="mainpagee.php?search=bags&page=1" target="_blank" class="list-group-item"><img src="others/bagsleathercrossbody.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Leather Bags</a>
-                            <a href="mainpage.php?search=bags&sub=sling&page=1" target="_blank" class="list-group-item"><img src="others/bagsslingmessengerbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sling Bags</a>
-                            <a href="mainpage.php?search=bags&sub=misc&page=1" target="_blank" class="list-group-item"><img src="others/bagsmiscmakeupbag.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Bags</a>
+                            <a href="mainpage.php?search=bags&sub=backpack&page=1" target="_blank" class="list-group-item"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Back-Packs</a>
+                            <a href="mainpage.php?search=bags&sub=duffel&page=1" target="_blank" class="list-group-item"><img src="icons/mensicon.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Duffel Bags</a>
+                            <a href="mainpagee.php?search=bags&page=1" target="_blank" class="list-group-item"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Denim Bags</a>
+                            <a href="mainpage.php?search=bags&sub=clutch&page=1" target="_blank" class="list-group-item"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Clutches</a>
+                            <a href="mainpage.php?search=bags&sub=slouch&page=1" target="_blank" class="list-group-item"><img src="icons/house.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Slouch Bags</a>
+                            <a href="mainpagee.php?search=bags&page=1" target="_blank" class="list-group-item"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Travel Bags</a>
+                            <a href="mainpagee.php?search=bags&page=1" target="_blank" class="list-group-item"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Leather Bags</a>
+                            <a href="mainpage.php?search=bags&sub=sling&page=1" target="_blank" class="list-group-item"><img src="icons/labelsgift.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sling Bags</a>
+                            <a href="mainpage.php?search=bags&sub=misc&page=1" target="_blank" class="list-group-item"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Bags</a>
 
 
 
@@ -759,15 +762,12 @@ if(isset($_POST['useremail'])){
                         </a>
 
                         <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=interiors&sub=duvets&page=1" target="_blank" class="list-group-item"><img src="others/householdbedroompanjamas.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bedrm Articles</a>
-                            <a href="mainpage.php?search=interiors&sub=fabrics&page=1" target="_blank" class="list-group-item"><img src="others/householdfabricshawls.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;House Fabrics</a>
-                            <a href="mainpage.php?search=interiors&sub=carpets&page=1" target="_blank" class="list-group-item"><img src="others/householdcarpetscentrepiecemats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Carpets</a>
-                            <a href="mainpage.php?search=interiors&sub=towels&page=1" target="_blank" class="list-group-item"><img src="others/householdtowelsbeachtowels.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;House Towels</a>
-                            <a href="mainpage.php?search=interiors&sub=curtains&page=1" target="_blank" class="list-group-item"><img src="others/householdcurtainsripplefoldcurtains.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Curtains</a>
-                            <a href="mainpage.php?search=interiors&sub=pillows&page=1" target="_blank" class="list-group-item"><img src="others/householdpillows.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;House Pillows</a>
-                            <a href="mainpage.php?search=interiors&sub=antiques&page=1" target="_blank" class="list-group-item"><img src="others/householdantiquesclocks.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Antiques</a>
-                            <a href="mainpage.php?search=interiors&sub=wallart&page=1" target="_blank" class="list-group-item"><img src="others/householdwallartpictures.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;House Wallart</a>
-                            <a href="mainpage.php?search=interiors&sub=misc&page=1" target="_blank" class="list-group-item"><img src="others/householdmischangers.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;House Misc</a>
+                            <a href="mainpage.php?search=interiors&sub=duvets&page=1" target="_blank" class="list-group-item"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bedrm Articles</a>
+                            <a href="mainpage.php?search=interiors&sub=carpets&page=1" target="_blank" class="list-group-item"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Carpets</a>
+                            <a href="mainpage.php?search=interiors&sub=towels&page=1" target="_blank" class="list-group-item"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;House Towels</a>
+                            <a href="mainpage.php?search=interiors&sub=curtains&page=1" target="_blank" class="list-group-item"><img src="icons/house.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Curtains</a>
+                            <a href="mainpage.php?search=interiors&sub=pillows&page=1" target="_blank" class="list-group-item"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;House Pillows</a>
+                            <a href="mainpage.php?search=interiors&sub=misc&page=1" target="_blank" class="list-group-item"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;House Misc</a>
 
 
 
@@ -790,13 +790,10 @@ if(isset($_POST['useremail'])){
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=interiors&sub=duvets&page=1" target="_blank"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Bedroom articles<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=fabrics&page=1" target="_blank"><img src="icons/mensicon.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;fabrics<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=interiors&sub=carpets&page=1" target="_blank"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;carpets<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=interiors&sub=towels&page=1" target="_blank"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;towels<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=interiors&sub=curtains&page=1" target="_blank"><img src="icons/house.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;curtains<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=interiors&sub=pillows&page=1" target="_blank"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;pillows<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=antiques&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;antiques<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=interiors&sub=wallart&page=1" target="_blank"><img src="icons/labelsgift.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;wallart<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=interiors&sub=misc&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;households misc<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
 
                         </ul>
@@ -852,15 +849,13 @@ if(isset($_POST['useremail'])){
                         </a>
 
                         <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=misc&sub=dolls&page=1" target="_blank" class="list-group-item"><img src="others/miscdollscartoondolls.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Dolls</a>
-                            <a href="mainpage.php?search=misc&sub=slippers&page=1" target="_blank" class="list-group-item"><img src="others/miscslippersflipflops.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Slippers</a>
-                            <a href="mainpage.php?search=misc&sub=sandals&page=1" target="_blank" class="list-group-item"><img src="others/miscsandalsgladiatorsandals.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Sandals</a>
-                            <a href="mainpage.php?search=misc&sub=dolls&page=1" target="_blank" class="list-group-item"><img src="others/miscbeltsslimbelts.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Belts</a>
-                            <a href="mainpage.php?search=misc&sub=underwear&page=1" target="_blank" class="list-group-item"><img src="others/miscunderwearsportsbras.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Underwears</a>
-                            <a href="mainpage.php?search=misc&sub=hats&page=1" target="_blank" class="list-group-item"><img src="others/mischatsfedorahats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Hats</a>
-                            <a href="mainpage.php?search=misc&sub=sandals&page=1" target="_blank" class="list-group-item"><img src="others/miscsandalshandmadesandals.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Sandals</a>
-                            <a href="mainpageesub.php?search=fabrics&page=1" target="_blank" class="list-group-item"><img src="others/miscfabricscottonfabrics.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Fabrics</a>
-                            <a href="mainpageesub.php?search=misc&page=1" target="_blank" class="list-group-item"><img src="others/miscmiscscarfs.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Misc</a>
+                            <a href="mainpage.php?search=misc&sub=dolls&page=1" target="_blank" class="list-group-item"><img src="icons/bear.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Dolls</a>
+                            <a href="mainpage.php?search=misc&sub=books&page=1" target="_blank" class="list-group-item"><img src="icons/book.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Books</a>
+                            <a href="mainpage.php?search=misc&sub=belts&page=1" target="_blank" class="list-group-item"><img src="icons/belt.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Belts</a>
+                            <a href="mainpage.php?search=misc&sub=underwear&page=1" target="_blank" class="list-group-item"><img src="icons/underwear.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Underwears</a>
+                            <a href="mainpage.php?search=misc&sub=hats&page=1" target="_blank" class="list-group-item"><img src="icons/hat.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Hats</a>
+                            <a href="mainpage.php?search=misc&sub=socks&page=1" target="_blank" class="list-group-item"><img src="icons/socks.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Socks</a>
+                            <a href="mainpageesub.php?search=misc&page=1" target="_blank" class="list-group-item"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Misc</a>
 
 
 
@@ -883,13 +878,11 @@ if(isset($_POST['useremail'])){
                         <ul id="categories">
 
                             <li><a href="mainpage.php?search=misc&sub=dolls&page=1" target="_blank"><img src="icons/bear.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;miscs dolls<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=misc&sub=slippers&page=1" target="_blank"><img src="icons/slippers.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;miscs slippers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=misc&sub=sandals&page=1" target="_blank"><img src="icons/book.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Books<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=misc&sub=dolls&page=1" target="_blank"><img src="icons/belt.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;miscs belts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=misc&sub=books&page=1" target="_blank"><img src="icons/book.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Books<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=misc&sub=belts&page=1" target="_blank"><img src="icons/belt.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;miscs belts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=misc&sub=underwear&page=1" target="_blank"><img src="icons/underwear.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;underwears<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=misc&sub=hats&page=1" target="_blank"><img src="icons/hat.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;miscs hats<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpage.php?search=misc&sub=sandals&page=1" target="_blank"><img src="icons/toy.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;miscs toys<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/labelsgift.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;miscs fabrics<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=misc&sub=socks&page=1" target="_blank"><img src="icons/socks.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Socks<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpageesub.php?search=misc&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;miscs misc<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
 
                         </ul>
@@ -949,15 +942,15 @@ if(isset($_POST['useremail'])){
                         </a>
 
                         <ul class="dropdown-menu list-group">
-                            <a href="labels.php" class="list-group-item"><img src="others/bagslabelskenyasfinest.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;LV</a>
-                            <a href="labels.php" class="list-group-item"><img src="others/labelsnike.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Nike Label</a>
-                            <a href="labels.php" class="list-group-item"><img src="others/labelsversace.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Versace Label</a>
-                            <a href="labels.php" class="list-group-item"><img src="others/householdlabelsprada.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Prada Label</a>
-                            <a href="labels.php" class="list-group-item"><img src="others/kidslabelsoldnavy.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Old Navy Label</a>
-                            <a href="labels.php" class="list-group-item"><img src="others/shoeslabelsconverse.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Converse</a>
-                            <a href="labels.php" class="list-group-item"><img src="others/misclabelscalvinklein.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Calvin Klein</a>
-                            <a href="labels.php" class="list-group-item"><img src="others/kidslabelsarmani.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Armani Label</a>
-                            <a href="labels.php" class="list-group-item"><img src="others/labelsadidas.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Labels</a>
+                            <a href="labels.php" class="list-group-item"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;LV</a>
+                            <a href="labels.php" class="list-group-item"><img src="icons/mensicon.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Nike Label</a>
+                            <a href="labels.php" class="list-group-item"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Versace Label</a>
+                            <a href="labels.php" class="list-group-item"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Prada Label</a>
+                            <a href="labels.php" class="list-group-item"><img src="icons/house.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Old Navy Label</a>
+                            <a href="labels.php" class="list-group-item"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Converse</a>
+                            <a href="labels.php" class="list-group-item"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Calvin Klein</a>
+                            <a href="labels.php" class="list-group-item"><img src="icons/labelsgift.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Armani Label</a>
+                            <a href="labels.php" class="list-group-item"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Labels</a>
 
 
 

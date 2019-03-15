@@ -15,6 +15,9 @@ $century = 860;//Mtush
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php require 'templates/resourcelinks/headerlinks.php';?>
 
+    <meta name="description" content="Tiiva is an online store featuring crowdsourced items from sellers all over Kenya. Buy and sell second hand mtumba bags.">
+    <meta name="keywords" content="Mtumba, thriftshop, thriftshopping, second hand clothes, second hand, cheap, mtumba bags, bag, clutches, denim bags, quilted, purse">
+
     <style type="text/css">
         .searchbox {
             border-bottom: 1px solid black;
@@ -51,35 +54,7 @@ $century = 860;//Mtush
         require 'templates/pagetitle.php';
         echo pageTitle('BAGS');
                 ?>
-            <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=bags&sub=backpack&page=1" target="_blank" class="list-group-item"><img src="others/bagsbackpack.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Back-Pack</a>
-                            <a href="mainpage.php?search=bags&sub=duffel&page=1" target="_blank" class="list-group-item"><img src="others/bagsdenimbarrelbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Duffel Bags</a>
-                            <a href="mainpage.php?search=bags&sub=clutch&page=1" target="_blank" class="list-group-item"><img src="others/bagsclutchwristletbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Clutch Bags</a>
-                            <a href="mainpage.php?search=bags&sub=slouch&page=1" target="_blank" class="list-group-item"><img src="others/bagsslouchshopperbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;shoulder Bags</a>
-                            <a href="mainpage.php?search=bags&sub=misc&page=1" target="_blank" class="list-group-item"><img src="others/bagsmiscpencilcase.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Bags</a>
-                            <a href="mainpagee.php?search=bags&page=1" target="_blank" class="list-group-item"><img src="others\bagslabelseverlane.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;All Bags</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Categories</h5></a>
-                        </div>
-
-
-                    </div>
+            
 
 
             <div class="row">
@@ -88,7 +63,7 @@ $century = 860;//Mtush
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-md visible-lg">
 
                         <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom:20px;">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt" style="padding-bottom:20px;">
                         <ul id="categories" style="line-height:2.5;padding-bottom:0;margin-bottom:2px;">
                             <li class="text-center" style="font-weight:bold;background-color:black;border:1px solid white;"><span style="color:orange;" class="text-uppercase text-center">Categories</span></li>
                             <li><a href="mainpage.php?search=bags&sub=backpack&page=1" target="_blank"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Back-Pack<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -122,7 +97,7 @@ $century = 860;//Mtush
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="row">
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
-                                                            <?php echo offersCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png', 349);?>
+                                                            <?php echo offersCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png', 351);?>
                                                         </div>
                                                     </div>
                                                     
@@ -168,33 +143,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=bags&sub=backpack&page=1" class="list-group-item"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;DayPacks</a>
-                            <a href="mainpage.php?search=bags&sub=backpack&page=1" class="list-group-item"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Heritage Bpks</a>
-                            <a href="mainpage.php?search=bags&sub=backpack&page=1" class="list-group-item"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Rucksacks</a>
-                            <a href="mainpage.php?search=bags&sub=backpack&page=1" class="list-group-item"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Everlane snps</a>
-                            <a href="mainpage.php?search=bags&sub=backpack&page=1" class="list-group-item"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Spade Wxwr</a>
-                            <a href="mainpage.php?search=bags&sub=backpack&page=1" class="list-group-item"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;BackPacks</a>
-                            <a href="mainpage.php?search=bags&sub=backpack&page=1" class="list-group-item"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;GoRucks</a>
-                            <a href="mainpage.php?search=bags&sub=backpack&page=1" class="list-group-item"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;ScoutSeries</a>
-                            <a href="mainpage.php?search=bags&sub=backpack&page=1" class="list-group-item"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Backpks</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=bags&sub=backpack&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Backpacks</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=bags&sub=backpack&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Backpacks</h5></a>
                         </div>
 
 
@@ -258,33 +209,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=bags&sub=duffel&page=1" class="list-group-item"><img src="others/sportswearbagsduffelbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Backpacks</a>
-                            <a href="mainpage.php?search=bags&sub=duffel&page=1" class="list-group-item"><img src="others/sportswearbagsduffelbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Barrel Bags</a>
-                            <a href="mainpage.php?search=bags&sub=duffel&page=1" class="list-group-item"><img src="others/sportswearbagsduffelbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Flap Bags</a>
-                            <a href="mainpage.php?search=bags&sub=duffel&page=1" class="list-group-item"><img src="others/sportswearbagsduffelbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Frame Bags</a>
-                            <a href="mainpage.php?search=bags&sub=duffel&page=1" class="list-group-item"><img src="others/sportswearbagsduffelbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Tote Bags</a>
-                            <a href="mainpage.php?search=bags&sub=duffel&page=1" class="list-group-item"><img src="others/sportswearbagsduffelbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bucket Bags</a>
-                            <a href="mainpage.php?search=bags&sub=duffel&page=1" class="list-group-item"><img src="others/sportswearbagsduffelbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Satchel Bags</a>
-                            <a href="mainpage.php?search=bags&sub=duffel&page=1" class="list-group-item"><img src="others/sportswearbagsduffelbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Doctor's Bags</a>
-                            <a href="mainpage.php?search=bags&sub=duffel&page=1" class="list-group-item"><img src="others/sportswearbagsduffelbags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Duffels</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=bags&sub=duffel&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Duffle types</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=bags&sub=duffel&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Duffle types</h5></a>
                         </div>
 
 
@@ -350,33 +277,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=bags&sub=clutch&page=1" class="list-group-item"><img src="others/bagsclutch.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Envelope</a>
-                            <a href="mainpage.php?search=bags&sub=clutch&page=1" class="list-group-item"><img src="others/bagsclutch.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Clutch</a>
-                            <a href="mainpage.php?search=bags&sub=clutch&page=1" class="list-group-item"><img src="others/bagsclutch.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Pouch</a>
-                            <a href="mainpage.php?search=bags&sub=clutch&page=1" class="list-group-item"><img src="others/bagsclutch.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Satchel</a>
-                            <a href="mainpage.php?search=bags&sub=clutch&page=1" class="list-group-item"><img src="others/bagsclutch.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Wristlet</a>
-                            <a href="mainpage.php?search=bags&sub=clutch&page=1" class="list-group-item"><img src="others/bagsclutch.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Saddle</a>
-                            <a href="mainpage.php?search=bags&sub=clutch&page=1" class="list-group-item"><img src="others/bagsclutch.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Purse</a>
-                            <a href="mainpage.php?search=bags&sub=clutch&page=1" class="list-group-item"><img src="others/bagsclutch.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Quilted bags</a>
-                            <a href="mainpage.php?search=bags&sub=clutch&page=1" class="list-group-item"><img src="others/bagsclutch.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc clutches</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=bags&sub=clutch&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Clutch</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=bags&sub=clutch&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Clutch</h5></a>
                         </div>
 
 
@@ -443,33 +346,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=bags&sub=slouch&page=1" class="list-group-item"><img src="icons/womensbags.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bucket Bag</a>
-                            <a href="mainpage.php?search=bags&sub=slouch&page=1" class="list-group-item"><img src="icons/womensbags.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Shopper Bags</a>
-                            <a href="mainpage.php?search=bags&sub=slouch&page=1" class="list-group-item"><img src="icons/womensbags.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Shoulder Bags</a>
-                            <a href="mainpage.php?search=bags&sub=slouch&page=1" class="list-group-item"><img src="icons/womensbags.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Tote Bags</a>
-                            <a href="mainpage.php?search=bags&sub=slouch&page=1" class="list-group-item"><img src="icons/womensbags.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bowler Bags</a>
-                            <a href="mainpage.php?search=bags&sub=slouch&page=1" class="list-group-item"><img src="icons/womensbags.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Satchel Bags</a>
-                            <a href="mainpage.php?search=bags&sub=slouch&page=1" class="list-group-item"><img src="icons/womensbags.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Baguette Bags</a>
-                            <a href="mainpage.php?search=bags&sub=slouch&page=1" class="list-group-item"><img src="icons/womensbags.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Hobo Bags</a>
-                            <a href="mainpage.php?search=bags&sub=slouch&page=1" class="list-group-item"><img src="icons/womensbags.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Slouch</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=bags&sub=slouch&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Shoulder Bags</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=bags&sub=slouch&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Shoulder Bags</h5></a>
                         </div>
 
 
@@ -536,33 +415,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=bags&sub=misc&page=1" class="list-group-item"><img src="others/bagsmiscmakeupbag.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Make-up Bags</a>
-                            <a href="mainpage.php?search=bags&sub=misc&page=1" class="list-group-item"><img src="others/bagsmiscmakeupbag.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Pencil Cases</a>
-                            <a href="mainpage.php?search=bags&sub=misc&page=1" class="list-group-item"><img src="others/bagsmiscmakeupbag.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Mobile Bags</a>
-                            <a href="mainpage.php?search=bags&sub=misc&page=1" class="list-group-item"><img src="others/bagsmiscmakeupbag.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Notebook Bags</a>
-                            <a href="mainpage.php?search=bags&sub=misc&page=1" class="list-group-item"><img src="others/bagsmiscmakeupbag.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Camera Bags</a>
-                            <a href="mainpage.php?search=bags&sub=misc&page=1" class="list-group-item"><img src="others/bagsmiscmakeupbag.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Trapeze Bags</a>
-                            <a href="mainpage.php?search=bags&sub=misc&page=1" class="list-group-item"><img src="others/bagsmiscmakeupbag.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Canteen Bags</a>
-                            <a href="mainpage.php?search=bags&sub=misc&page=1" class="list-group-item"><img src="others/bagsmiscmakeupbag.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Muff Bags</a>
-                            <a href="mainpage.php?search=bags&sub=misc&page=1" class="list-group-item"><img src="others/bagsmiscmakeupbag.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Bags</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=bags&sub=misc&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Misc</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=bags&sub=misc&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Misc</h5></a>
                         </div>
 
 
@@ -628,8 +483,8 @@ $century = 860;//Mtush
                 </div>
             </div>
             <div class="row visible-sm visible-xs" style="border:1px solid gainsboro;">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpage.php?search=bags&sub=clutch&page=1"><img src="banners\categories\bagsclutches.png" class="img-responsive featured"/></a></div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpagee.php?search=bags&page=1"><img src="banners\categories\bagslabels.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpage.php?search=bags&sub=clutch&page=1"><img src="images/banners/categories/bagsclutches.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpagee.php?search=bags&page=1"><img src="images/banners/categories/bagslabels.png" class="img-responsive featured"/></a></div>
             </div>
 
              <!--start here-->
@@ -640,33 +495,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Everlane</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Urban Outftrs</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Topshop</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;others</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Modcloth</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Madewell</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Delias</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Converse</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Labels</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpagee.php?search=bags&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Labels</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpagee.php?search=bags&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Labels</h5></a>
                         </div>
 
 

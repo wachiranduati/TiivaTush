@@ -77,11 +77,11 @@ $query_num_rows = mysqli_num_rows($query_run);
 //$query2 = "SELECT * FROM `products` WHERE `category`='".mysqli_real_escape_string($conn, $search)."' AND `subcategory`='".mysqli_real_escape_string($conn, $sub)."' AND `availability`='1' AND `buyer`='0' ORDER BY RAND()";
 //$query2 = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' ORDER BY RAND()";
 if($dbs == 'products'){
-    $query2 = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items OFFSET $jump";
+    $query2 = "SELECT COUNT(*) FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items OFFSET $jump";
 }elseif( $dbs == 'brandyproducts'){
-    $query2 = "SELECT * FROM $dbs WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items OFFSET $jump";
+    $query2 = "SELECT COUNT(*) FROM $dbs WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items OFFSET $jump";
 }else{
-    $query2 = "SELECT * FROM `brandyproducts` WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items OFFSET $jump";
+    $query2 = "SELECT COUNT(*) FROM `brandyproducts` WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%' LIMIT $items OFFSET $jump";
 }
 $query_run2 = mysqli_query($conn, $query2);
 $query_num_rows2 = mysqli_num_rows($query_run2);

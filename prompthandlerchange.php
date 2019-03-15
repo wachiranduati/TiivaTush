@@ -109,7 +109,7 @@ function showmyprompts($conn){
     $staffnick = $querystaff_row['tiivanick'];
     // query the prompt dbs to find a row that matches my name
     //the table begins here
-    echo "<h3>My Live Prompts <small>(Items I want to pick up)</small></h3>";
+    echo "<div style=\"background-color:white;\"><h3>My Live Prompts <small>(Items I want to pick up)</small></h3>";
     echo "<div class=\"table-responsive\">
       <table class=\"table\">
           <thead>
@@ -165,7 +165,7 @@ function showmyprompts($conn){
 
     echo "</tbody>
             </table>
-            </div>";
+            </div></div>";
 
   }else{
     die("Error");
@@ -183,7 +183,7 @@ function showmysentprompts($conn){
     $staffnick = $querystaff_row['tiivanick'];
     // query the prompt dbs to find a row that matches my name
     //the table begins here
-    echo "<h3>Live Prompts I've Sent Out <small>(Items I am handing out)</small></h3>";
+    echo "<div style=\"background-color:white;\"><h3>Live Prompts I've Sent Out <small>(Items I am handing out)</small></h3>";
     echo "<div class=\"table-responsive\">
       <table class=\"table\">
           <thead>
@@ -238,7 +238,7 @@ function showmysentprompts($conn){
 
     echo "</tbody>
             </table>
-            </div>";
+            </div></div>";
 
   }else{
     die("Error");

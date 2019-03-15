@@ -8,3 +8,6 @@
 <link rel="stylesheet" href="MaterialDesign-Webfont-master/css/materialdesignicons.min.css">
 <link rel="icon" type="image/png" href="icons/thaticon.png">
 <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+<!-- google fonts links -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 

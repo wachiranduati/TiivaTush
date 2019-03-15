@@ -61,15 +61,19 @@ if(!empty($search_text)){
 
         
 		if($databs == 'products'){
-		    $query2 = "SELECT * FROM $databs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
+		    $query2 = "SELECT COUNT(*) FROM $databs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		}elseif( $databs == 'brandyproducts'){
-		    $query2 = "SELECT * FROM $databs WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
+		    $query2 = "SELECT COUNT(*) FROM $databs WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		}else{
-		    $query2 = "SELECT * FROM $databs WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
+		    $query2 = "SELECT COUNT(*) FROM $databs WHERE `instock`>='1' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search_text)."%'";
 		}
 
         $query_run2 = mysqli_query($conn, $query2);
-        $query_num_rows = mysqli_num_rows($query_run2);
+        // $query_num_rows = mysqli_num_rows($query_run2);
+        $rows = mysqli_fetch_assoc($query_run2);
+		$query_num_rows = implode('', $rows);
+
+
 
         
 		// if($otherdata == 'products'){
@@ -87,7 +91,7 @@ if(!empty($search_text)){
 
 
 		echo "
-		<table class=\"table\" Style=\"background-color:white;font-family:kok;\">
+		<table class=\"table\" Style=\"background-color:white;\">
 			<!--<thead>
 				<tr>
 					<th>image</th>
@@ -111,7 +115,7 @@ if(!empty($search_text)){
 					<tr onclick=\"letsgo('$link$identity');\">
 					<td><img src=\"$imageaddr$query_row[imageone]\" class=\"img-responsive\" Style=\"max-height:50px;max-width:50px;\"/></td>
 					<td><h4 style=\"color:blue;cursor:default;\" class=\"text-capitalize visible-lg visible-md\">$titlesLarge</h4><h5 style=\"color:blue;cursor:default;\" class=\"text-capitalize visible-sm visible-xs\">$titles...</h5></td>
-					<td><h4 class=\"text-capitalize visible-lg visible-md\">$formatvat&nbsp;<p style=\"font-size:90%;color:gainsboro;display:inline;\">Ksh</p></a></h4><h5 class=\"text-capitalize visible-sm visible-xs\">$formatvat&nbsp;<p style=\"font-size:90%;color:gainsboro;display:inline;\">Ksh</p></a></h5></td>
+					<td><h4 class=\"text-capitalize visible-lg visible-md\">$formatvat&nbsp;<p style=\"font-size:90%;display:inline;\">Ksh</p></a></h4><h5 class=\"text-capitalize visible-sm visible-xs\">$formatvat&nbsp;<p style=\"font-size:90%;color:gainsboro;display:inline;\">Ksh</p></a></h5></td>
 					<td><h4 class=\"text-capitalize visible-lg visible-md\">$shop</h4><h5 class=\"text-capitalize visible-sm visible-xs\">$shop</h5></td>
 					</tr>
 				";
@@ -173,7 +177,7 @@ if(!empty($search_text)){
     }
 
         }else{
-            echo "<div class=\"row\" style=\"border-bottom:1px dotted gainsboro;border-right:1px solid gainsboro;border-left:1px solid gainsboro;background-color:white;font-family:kok;background-color:orange;color:white;\">
+            echo "<div class=\"row\" style=\"border-bottom:1px dotted gainsboro;border-right:1px solid gainsboro;border-left:1px solid gainsboro;background-color:white;background-color:orange;color:white;\">
                     <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
                         <h4 class=\"text-center\"><i class=\"mdi mdi-paw-off mdi-24px mdi-dark\"></i>Oops your Search returned no results</h4>
                     </div>

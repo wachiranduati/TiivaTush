@@ -9,7 +9,7 @@ $ctime = Date('Y-m-d H:i:s');
 $booktime = 5; // minutes with activity
 $bootktimeNo = 2; // minutes with no activity
 $carttime = 3; // hours with no activity
-$carttimeextend = 2; // minutes with no activity// this is to prevent one from hoarding the cart..just adds 2 mins to the exp
+$carttimeextend = 15; // minutes with no activity// this is to prevent one from hoarding the cart..just adds 2 mins to the exp
 // echo $ctime;
 $exptime = timeDeltaCurrentTime('+5 minutes');
 
@@ -70,6 +70,19 @@ function bookFunctionality($conn, $table, $userid, $itemid){
 // echo bookFunctionality($conn, 'products', 1, 2); // this will book item
 // echo bookFunctionality($conn, 'products', 0, 2); // this will unbook item
 
+function unbookallotherbookeditems($conn, $table, $userid, $itemid){
+	// this is called to unbook items once a user books another item
+	// this will unbook all other items except this current item
+	// we have to also destory the cart activity
+	$query = "UPDATE `$table` SET `buyer` = $userid WHERE `id` != $itemid AND `sold` = 0 AND `availability` = 1";
+	if($query_run = mysqli_query($conn, $query)){
+		return True;
+	}else{
+		return False;
+	}
+}
+// unbookallotherbookeditems($conn, 'products', 0, 2);
+
 function checkIfBuyerBookedItem($conn, $userid, $itemid){
 	// this will check whether current user booked the item
 	$query = "SELECT * FROM `products` WHERE `sold` = 0 AND `buyer` = $userid AND `id` = $itemid";
@@ -104,7 +117,7 @@ function createProductActivityStamp($conn, $itemid, $ctime, $exptime, $userid, $
 	// create a new entry to a addtocart
 	// cols -> id, itemid, user, exptime, book, cart,  
 	// cart entries will be deleted when cart is checked out
-	$query = "INSERT INTO `cartactivity`(`id`, `itemid`, `ctime`, `exptime`, `userid`, `state`, `checked`) VALUES ('',$itemid,'$ctime','$exptime',$userid, 'book', '0')";
+	$query = "INSERT INTO `cartactivity`(`id`, `itemid`, `ctime`, `exptime`, `userid`, `state`, `checked`) VALUES ('','$itemid','$ctime','$exptime','$userid', 'book', '0')";
 	if($query_run = mysqli_query($conn, $query)){
 		return True;
 	}else{
@@ -113,7 +126,7 @@ function createProductActivityStamp($conn, $itemid, $ctime, $exptime, $userid, $
 
 }
 
-// echo createProductActivityStamp($conn, 409, $ctime, $exptime, 1, 'book');
+// echo createProductActivityStamp($conn, 900, $ctime, $exptime, 1, 'book');
 // echo createProductActivityStamp($conn, 49, $ctime, $exptime, 1, 'cart');
 
 function destroyProductActivityStamp($conn, $table, $itemid, $userid){
@@ -128,6 +141,17 @@ function destroyProductActivityStamp($conn, $table, $itemid, $userid){
 
 // echo destroyProductActivityStamp($conn, 'cartactivity', 49, 1);
 
+function destroyProductActivityStampforallotherbookeditems($conn, $table, $itemid, $userid){
+	// this will destroy an entry once a user has booked another item 
+	// simply deleting all booked items except this one
+	$query = "DELETE FROM `$table` WHERE `itemid` !=  $itemid AND `userid` = $userid AND `state` = 'book' AND `checked` = 0";
+	if($query_run = mysqli_query($conn, $query)){
+		return True;
+	}else{
+		return False;
+	}
+}
+// destroyProductActivityStampforallotherbookeditems($conn, 'cartactivity', 49, 1);
 
 
 function timestampExtendexpiry($conn, $itemid, $booktime){
@@ -302,7 +326,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'addtocart' && isset($_POST['p
 		}
 		
 	}else{
-		echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Sorry ', " There's a chance somene else has just booked this item, refresh the page to try and book it again", 'A0');
+		echo bootstrapAlert('warning', 'glyphicon-info-sign', 'Sorry ', " There's a chance someone else has just booked this item, refresh the page to try and book it again", 'A0');
 	}
 }
 // <<<<<<<<<<<<<<<<<<<<<<<<< AddtoCart ITEM ALGO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -344,7 +368,19 @@ if(isset($_POST['action']) && $_POST['action'] == 'book' && isset($_POST['prod']
 			// create a timestamp for the new booking
 			if(createProductActivityStamp($conn, $prod, $ctime, $exptime, $userid, 'book') == True){
 				// time entry created for the booking
-				echo bootstrapAlert('info', 'glyphicon-info-sign', 'Niaje ', "Item has been successfully booked. For the next 5 minutes no one else ,but you, can buy this item.", 'A0');
+				// echo bootstrapAlert('info', 'glyphicon-info-sign', 'Niaje ', "Item has been successfully booked. For the next 5 minutes no one else ,but you, can buy this item.", 'A0');
+				// unbook any other item user has booked
+				if(unbookallotherbookeditems($conn, 'products', 0, $prod) == True){
+					// proceed to destroy those items carts
+					if(destroyProductActivityStampforallotherbookeditems($conn, 'cartactivity', $prod, $userid) == True){
+						//all done all other booked items unbooked successfully
+						echo bootstrapAlert('info', 'glyphicon-info-sign', 'Niaje ', "Item has been successfully booked. For the next 5 minutes no one else ,but you, can buy this item.", 'A0');
+					}else{
+						// error occured trying to unbook items Crap
+					}
+				}else{
+					// error trying to unbook item
+				}
 			}else{
 				// entry could not be created error
 				echo bootstrapAlert('danger', 'glyphicon-info-sign', 'Sorry ', "encountered an error trying to book item", 'A0');
@@ -427,7 +463,7 @@ if(isset($_POST['action']) && $_POST['action'] == '343mk34j'){
 		if(count($viablecarts) != 0){
 			for($x = 0; $x < count($viablecarts); $x++){
 				$itemid = $viablecarts[$x]['itemid'];
-				echo $itemid;
+				// echo $itemid;
 				$cartExtendState = extendExpirytime($conn, $itemid, $carttimeextend);
 				if($cartExtendState == True){
 					echo "cart expiry extended";
@@ -439,4 +475,5 @@ if(isset($_POST['action']) && $_POST['action'] == '343mk34j'){
 	}
 }
 // EXTEND THE EXPIRY OF CARTS IN THE CHECKOUTPAGE
+
 ?>

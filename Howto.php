@@ -186,7 +186,7 @@ $century = 860;
             </div>
             <div id="collapsefive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
                 <div class="panel-body">
-                    We have a set flat fee of 150 ksh. We intended to have free shipping all over but sadly we just realized on the last minute that doing this could would make us broker than we already are. Remember that we are a startup and we have to much to prove, to you. We hope you understand.
+                    We have a set flat fee of 150 ksh. We intended to have free shipping all over but sadly we just realized on the last minute that doing this could would make us broker than we already are. Remember that we are a startup and we have much to prove, to you. We hope you understand.
                 </div>
             </div>
         </div>

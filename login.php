@@ -54,7 +54,7 @@ if(!empty($_SERVER['HTTP_REFERER'])){
 
                         <div class="row">
                             <div class="col-lg-8 col-md-8 col-sm-4 col-xs-4"></div>
-                            <div class="col-lg-4 col-md-4 col-sm-8 col-xs-8"><h5 class="text-right"><a href="paasswd.html" style="text-decoration:underline;">forgot password?</a></h5></div>
+                            <div class="col-lg-4 col-md-4 col-sm-8 col-xs-8"><h5 class="text-right"><!-- <a href="paasswd.html" style="text-decoration:underline;">forgot password?</a> --></h5></div>
                         </div>
                         <div class="row">
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" ></div>
@@ -103,10 +103,12 @@ if(!empty($_SERVER['HTTP_REFERER'])){
             var y = document.getElementById("password");
             if(y.type == "password"){
                 y.type = "text";
-                x.className = "glyphicon glyphicon-eye-close";
+                $("#eye").removeClass('glyphicon-eye-open');
+                $("#eye").addClass('glyphicon-eye-close');
             }else{
                 y.type = "password";
-                x.className = "glyphicon glyphicon-eye-open";
+                $("#eye").removeClass('glyphicon-eye-close');
+                $("#eye").addClass('glyphicon-eye-open');
 
             }
         }

@@ -25,6 +25,18 @@ if ($userState == True){
 
 }
 
+function usernameIsStaff($conn){
+	// we will check the userid to confirm that the user is a staff member
+	$userid = getUserID($conn);
+	$query = "SELECT `username` FROM `staff` WHERE `userid` = '$userid'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) == 1){
+		return True;
+	}else{
+		return False;
+	}
+}
+
 function getUserID(){
 $userState = userLoggedIn();
 if ($userState == True){
@@ -624,6 +636,159 @@ function returnallWishlistItems($conn){
 			array_push($row, $query_row);
 		}
 		return $row;
+	}else{
+		return 0;
+	}
+}
+
+function retrieveCartActivityDetail($conn, $prodid){
+	//this will retrieve details from the cart activity for the logged in user id
+	$query = "SELECT * FROM `cartactivity` WHERE `itemid` = '$prodid' AND `checked` = '0'";
+	$query_run = mysqli_query($conn, $query);
+	$row = mysqli_fetch_assoc($query_run);
+	return $row;
+}
+
+function retrieveAutotestLastTime($conn, $test){
+	//this will retrieve the last autotest time a test was run
+	$query = "SELECT `time` FROM `autotest` WHERE `test` = '$test'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) == 1){
+		return mysqli_fetch_assoc($query_run)['time'];
+	}else{
+		return 0;
+	}
+}
+
+function updateAutotestTime($conn, $test){
+	// update the the autotest field with the current time
+	$now = currentTimeUserProf();
+	$query = "UPDATE `autotest` SET `time` = '$now' WHERE `test` = '$test'";
+	if($query_run = mysqli_query($conn, $query)){
+		return 	1;
+	}else{
+		return 0;
+	}
+}
+
+function retrieveVerifiedVerificationCodes($conn, $field){
+	// this will retrieve verification codes from cartverification logs
+	// we should only compare carts against verified codes...else they could just as well exist if entered randomly by a twat
+	$query = "SELECT `$field` FROM `cartverificationlogs`";
+	$query_run = mysqli_query($conn, $query);
+	$verifcodes = array();
+	if(mysqli_num_rows($query_run) != 0){
+		while($row = mysqli_fetch_assoc($query_run)[$field]){
+			array_push($verifcodes, $row);
+		}
+		return $verifcodes;
+	}else{
+		return 0;
+	}
+}
+
+function retrieveUnclearedCarts($conn){
+	//  this will retrieve uncleared carts just so that
+	$query = "SELECT * FROM `checkoutcarts` WHERE `clear` = '0' ORDER BY `cartid` ASC";
+	$query_run = mysqli_query($conn, $query);
+	$carts = array();
+	if(mysqli_num_rows($query_run) != 0){
+		while($row = mysqli_fetch_assoc($query_run)){
+			array_push($carts, $row);
+		}
+		return $carts;
+	}else{
+		return 0;
+	}
+}
+
+function retrieveSingleCartBasedOnField($conn, $field, $fieldValue, $otherfield, $otherfieldVal){
+	// this will retrieve a cart from checkout carts which meets a certain criteria
+	$query = "SELECT * FROM `checkoutcarts` WHERE `$field` = '$fieldValue' AND `clear` = '0' ";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) == 1){
+		$row = mysqli_fetch_assoc($query_run);
+		return $row;
+	}else{
+		return 0;
+	}
+}
+
+// flag carts when they are insufficient and all
+function createNewTweakCartRecord($conn, $action, $cartname, $carttotal, $formerverif, $newverif){
+	// this will create a new entry to the tweaked carts table to show the new changes made to them
+	$today = currentTimeUserProf();
+	$staff = getStaffID();
+	$query = "INSERT INTO `modcarts`(`id`, `action`, `cartname`, `carttotal`, `formerverif`, `newverif`, `modedBy`, `modDate`) VALUES ('', '$action','$cartname', '$carttotal', '$formerverif', '$newverif', '$staff','$today')";
+	if($query_run = mysqli_query($conn, $query)){
+		return 1;
+	}else{
+		return 0;
+	}
+
+}
+
+function updateCartRecordVerif($conn, $cartname, $newVerif){
+	//this will update the checkout records verif sasa
+	$query = "UPDATE `checkoutcarts` SET `paymentverification` = '$newVerif' WHERE `cartname` = '$cartname'";
+	if($query_run = mysqli_query($conn, $query)){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+
+function makeCartItemsAvailable($conn, $prodid){
+	// this will make an item avaible after deleting a ghost cart
+	$query = "UPDATE `products` SET `buyer` = '0', `availability` = '1', `sold` = '0' WHERE `id` = '$prodid'";
+	if($query_run = mysqli_query($conn, $query)){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+
+function removeItemsFromCartActivity($conn, $prodid){
+	// this will remove unghosted item from cartactivity records
+	$query = "DELETE FROM `cartactivity` WHERE `itemid` = '$prodid'";
+	if($query_run = mysqli_query($conn, $query)){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+
+function DelCheckoutCart($conn, $cartname, $clearState){
+	// thsi will delete a checkoutcart via its id
+	$query = "DELETE FROM `checkoutcarts` WHERE `cartname` = '$cartname' AND `clear` = '$clearState'";
+	if($query_run = mysqli_query($conn, $query)){
+		return 1;
+	}else{
+		return 0;
+	} 
+}
+
+function retriveStaffFieldFromStaffUsername($conn, $username){
+	// thiw will retreive user details for staff
+	$query = "SELECT * FROM `Staff` WHERE `username` = '$username'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) == 1){
+		$userDetails = mysqli_fetch_assoc($query_run);
+		$userDetails['password'] = '0';
+		return $userDetails;
+	}else{
+		return 0;
+	}
+}
+
+function retrieveHandlerUsernameFrompickupds($conn, $prodid){
+	// this will return the pickup agent from pickupds
+	// thsi users a compound id like M123
+	$itemid = 'M'.$prodid;
+	$query = "SELECT * FROM `pickupds` WHERE `item` = '$itemid'";
+	$query_run = mysqli_query($conn, $query);
+	if(mysqli_num_rows($query_run) == 1){
+		return mysqli_fetch_assoc($query_run);
 	}else{
 		return 0;
 	}

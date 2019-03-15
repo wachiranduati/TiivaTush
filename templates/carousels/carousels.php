@@ -13,18 +13,22 @@ function mainCarousels($imageone, $imagetwo, $imagethree, $imagefour){
                           </ol>
                                                     <div class=\"item active\">
                                                             <img src=\"images\\carousels\\main\\$imageone\" class=\"img-responsive\">
+                                                            
                                                     </div>
 
                                                     <div class=\"item\">
                                                             <img src=\"images\\carousels\\main\\$imagetwo\" class=\"img-responsive\">
+                                                            
                                                     </div>
 
                                                     <div class=\"item\">
                                                             <img src=\"images\\carousels\\main\\$imagethree\" class=\"img-responsive\">
+                                                            
                                                     </div>
 
                                                     <div class=\"item\">
                                                             <img src=\"images\\carousels\\main\\$imagefour\" class=\"img-responsive\">
+                                                            
                                                     </div>
 
                                                 </div>

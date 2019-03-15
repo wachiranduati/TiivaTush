@@ -67,12 +67,12 @@ function spinnersHolder($boxid){
         <div class=\"row\" id=\"$boxid\">
             <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
                 <div class=\"row\">
-                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
-                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
-                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
-                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
-                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
-                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" alt=\"loading spinners\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" alt=\"loading spinners\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" alt=\"loading spinners\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" alt=\"loading spinners\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" alt=\"loading spinners\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
+                    <div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-6\" style=\"height:249px; border:1px solid white;\"><img src=\"images/spinner/spinner_large.gif\" alt=\"loading spinners\" class=\"img-responsive loaderImage\" style=\"position:absolute;top:20%;\"/></div>
                 </div>
             </div>
         </div>     

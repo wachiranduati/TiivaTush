@@ -62,20 +62,21 @@ if(isset($_POST['pickupmode']) && isset($_POST['agent']) && isset($_POST['handov
                 }
                 $querypickup = "UPDATE `pickupds` SET `agent`='$agentfinal', `otheragent`='$otheragent', `pickupmode`='$pickupmode', `date`='$pickupday',
                  `handoverperp`='$handoverperp', `name`='$name', `idnumber`='$idno', `paymentmode`='$paymentmode', `sign`='$sign' WHERE `item`='$itemno' AND `cart`='$cartname' AND `sign`='0'";
-                 echo "<br>went with pickup<br>";
+                 // echo "<br>went with pickup<br>";
                 //  echo $agentfinal.'1 '.$otheragent.'2 '.$pickupmode.'3 '.$pickupday.'4 '.$handoverperp.'5 '.$name.'6 '.$idno.'7 '.$paymentmode.'8 '.$sign.'9 '.$itemno.'10 '.$cartname;
         }elseif($pickupmode == 'self'){
                 // self
                 $querypickup = "UPDATE `pickupds` SET `agent`='$agent', `otheragent`='', `pickupmode`='$pickupmode', `date`='$pickupday',
                  `handoverperp`='$handoverperp', `name`='$name', `idnumber`='$idno', `paymentmode`='$paymentmode', `sign`='$sign' WHERE `item`='$itemno' AND `cart`='$cartname' AND `sign`='0'";
-                 echo "<br>went with self<br>";
+                 // echo "<br>went with self<br>";
                 //  echo $agent.'1 '.$pickupmode.'2 '.$pickupday.'3 '.$handoverperp.'4 '.$name.'5 '.$idno.'6 '.$paymentmode.'7 '.$sign.'8 '.$itemno.'9 '.$cartname;
         }else{
           // nothing
         }
         if($querypickup_run = mysqli_query($conn, $querypickup)){
           // item has been updated
-          echo "Item $itemno from cartnumber $cartname pickup successful. It is now registered successfully in Transit";
+          // echo "Item $itemno from cartnumber $cartname pickup successful. It is now registered successfully in Transit";
+          echo 1;
           // echo "  <div class=\"row\" style=\"position:absolute;z-index:19;margin-top:20%;\">
           //       <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
           //           <div class=\"alert alert-success\">

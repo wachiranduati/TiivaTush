@@ -6,6 +6,7 @@ require 'utils/adminutils.php';
 if(isStaffLoggedIn() != True){
 	redirectAndDie();
 }
+echo getStaffID();
 
 //setup a request payments db too
 
@@ -1169,6 +1170,206 @@ function processpayment($conn, $prodid, $verifcode, $cartname, $sellername, $pho
 
 }
 
+function showUnVerifiedCarts($conn){
+	// thsi will retrieve uncleared carts ...means not yet verified...confirm they do or do not exist
+	$carts = retrieveUnclearedCarts($conn);// these are the unverified carts so you can edit/destroy them but not 
+	echo "<div class=\"table-responsive\">
+	<h4 class=\"text-center text-uppercase\">Unverified carts</h4>
+	  <table class=\"table table-hover\">
+	    <thead>
+	      <tr>
+	        <th>No</th>
+	        <th>Cartname</th>
+	        <th>CartTotal</th>
+	        <th>Date</th>
+	        <th>Vefirication</th>
+	        <th>Flag</th>
+	        <th>Delete</th>
+	        <th>Edit</th>
+	      </tr>
+	    </thead>
+	    <tbody>";
+	if($carts != 0){
+		if(count($carts) != 0){
+			for($x = 0; $x < count($carts); $x++){
+				$numb = $x + 1;
+				$singleCart = $carts[$x];
+				$cartname = $singleCart['cartname'];
+				$carttotal = number_format($singleCart['carttotal'] + 150);
+				$date = $singleCart['Date'].' '.$singleCart['time'];
+				$paymentverification = $singleCart['paymentverification'];
+				echo "
+					<tr>
+						<td>$numb</td>
+						<td>$cartname</td>
+						<td>Ksh $carttotal</td>
+						<td>$date</td>
+						<td class=\"text-uppercase\">$paymentverification</td>
+						<td><a class=\"btn btn-sm btn-warning cartverifflg\" data-cart=\"$cartname\">Flag</a></td>
+						<td><a class=\"btn btn-sm btn-danger cartverifdel\" data-cart=\"$cartname\">Delete</a></td>
+						<td><a href=\"#retFrmCnt\" class=\"btn btn-sm btn-info cartverifedt\" data-cart=\"$cartname\">Edit</a></td>
+					";
+			}
+		}else{
+			echo "
+				<tr>
+					<td>No records found</td>
+				</tr>
+			";
+		}
+	}else{
+		echo "
+				<tr>
+					<td>No records found</td>
+				</tr>
+			";
+	}
+	echo "</tbody>
+				</table>
+				</div><div id=\"retFrmCnt\"></div>";
+}
+// showUnVerifiedCarts($conn);
+
+function reCartFormEditReturn($conn, $cartname){
+	// retrieve cart details and return a form with the cart details and an input to update the verif code
+	$cartDetails = retrieveSingleCartBasedOnField($conn, 'cartname', $cartname, 'clear', '0');
+	if($cartDetails != 0){
+		$cartprice = number_format($cartDetails['carttotal'] + 150);
+		$cartVerif = $cartDetails['paymentverification'];
+		$date = $cartDetails['Date'];
+		// echo "the carts";
+		echo "<div class=\"row\">
+				<div class=\"col-lg-12\">
+					<h4 class=\"text-center\">Edit Cart Verif</h4>
+					<table class=\"table table-responsive table-inverse\">
+						<thead>
+							<tr>
+								<th>cartname</th>
+								<th>carttotal</th>
+								<th>Verifcode</th>
+								<th>Date</th>
+								<th class=\"info\">NewVerifCode</th>
+								<th class=\"info\">Submit</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>$cartname</td>
+								<td>$cartprice Ksh</td>
+								<td class=\"text-uppercase\">$cartVerif</td>
+								<td>$date</td>
+								<td class=\"success\"><input class=\"form-control text-uppercase newVerifCode\" type=\"text\" placeholder=\"Paste New Verification Code\"/></td>
+								<td class=\"success\"><a class=\"btn btn-success btn-sm renewVerif\" data-cart-renew=\"$cartname\">Submit</a></td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+			</div>";
+	}else{
+		echo 0;
+	}
+
+}
+
+// echo reCartFormEditReturn($conn, '12dc73817b38bca793154c9f9e3b4db8');
+
+function udpateCartVerif($conn, $cart, $newVerif){
+	// this will update the cart verification code being edited
+	// it will also create a log to indicate that this cart has been edited...loggint its name, total, formerverif, new verif
+	$cartDetails = retrieveSingleCartBasedOnField($conn, 'cartname', $cart, 'clear', '0');
+	if($cartDetails != 0){
+		$cartprice = number_format($cartDetails['carttotal'] + 150);
+		$cartVerif = $cartDetails['paymentverification'];
+		$date = $cartDetails['Date'];
+
+		$LogVerifChange = createNewTweakCartRecord($conn, 'edit', $cart, $cartprice, $cartVerif, $newVerif);
+		if($LogVerifChange != 0){
+			$updateVerifCheckoutCrt = updateCartRecordVerif($conn, $cart, $newVerif);
+			if($updateVerifCheckoutCrt == 1){
+				echo "UPDATED";
+			}else{
+				echo "error";
+			}
+		}else{
+			echo 0;
+		}
+
+	}else{
+		echo 0;
+	}
+}
+
+function flagCart($conn, $cartname){
+	//this will flag a cart by first creating a row with value flag simply put
+	$cartDetails = retrieveSingleCartBasedOnField($conn, 'cartname', $cartname, 'clear', '0');
+	if($cartDetails != 0){
+		$cartprice = number_format($cartDetails['carttotal'] + 150);
+		$cartVerif = $cartDetails['paymentverification'];
+		$date = $cartDetails['Date'];
+		$LogVerifChange = createNewTweakCartRecord($conn, 'flag', $cartname, $cartprice, $cartVerif, '');
+		if($LogVerifChange != 0){
+			echo "flagged";
+		}else{
+			echo "error";
+		}
+	}else{
+		echo 0;
+	}
+
+}
+
+function deleteCart($conn, $cartname){
+	//TODO remember that sold will contain deleted carts too...ghost carts comprende
+	// this will create a delete row in the modcart record
+	// then it will delete the checkoutcart value----I think we can leave behind the sold for now to be able to follow throught
+	// delete the items from cartactivity too
+	// it will then clear all the items previously in the cart
+	// also for now only I can and should delete carts to we'll check whether current user is me
+	$user = getStaffID();
+	if($user == 1){
+		//1 is me then proceed
+		$cartDetails = retrieveSingleCartBasedOnField($conn, 'cartname', $cartname, 'clear', '0');
+		$cartprice = number_format($cartDetails['carttotal'] + 150);
+		$cartVerif = $cartDetails['paymentverification'];
+		$date = $cartDetails['Date'];
+		$cartcontents = $cartDetails['cartcontents'];
+		$cartcontentsArray =convertcartContentsStringToArray($cartcontents);
+		for($x = 0; $x < count($cartcontentsArray); $x++){
+			$singleItem = substr($cartcontentsArray[$x], 1);
+			$makeavail = makeCartItemsAvailable($conn, $singleItem);
+			if($makeavail == 1){
+				$rmvCartActv = removeItemsFromCartActivity($conn, $singleItem);
+				if($rmvCartActv == 1){
+					//done
+				}else{
+					echo "error2";
+				}
+			}else{
+				echo "error1";
+			}
+		}
+		//TODO this is wrong the loop above as if the code breaks we're not stopping it....
+		$logCartDel = createNewTweakCartRecord($conn, 'del', $cartname, $cartprice, $cartVerif, '');
+		if($logCartDel == 1){
+			//continue
+			$delCheckoutCrts = DelCheckoutCart($conn, $cartname, '0');
+			if($delCheckoutCrts == 1){
+				echo "Success";
+			}else{
+				echo "error4";
+			}
+		}else{
+			echo "error3";
+		}
+	}else{
+		echo "denied";
+	}
+
+}
+
+// deleteCart($conn, '220ef38f01e3dd79ec41a35ec5b006fd');
+
 if(isset($_POST['deliveries']) && $_POST['deliveries'] == '43lk489'){
 	retrieveallUnpaidClearDeliveries($conn);
 }elseif(isset($_POST['deliveries']) && $_POST['deliveries'] == 'kl23l239832'){
@@ -1189,6 +1390,21 @@ if(isset($_POST['deliveries']) && $_POST['deliveries'] == '43lk489'){
 	$sellername = mysqli_real_escape_string($conn, $_POST['sellername']);
 	$phonenum = mysqli_real_escape_string($conn, $_POST['phonenum']);
 	processpayment($conn, $prodid, $verifcode, $cartname, $sellername, $phonenum);
+}elseif(isset($_POST['viewTwkCarts']) && $_POST['viewTwkCarts'] == 'lk439lk9843D4_08'){
+	showUnVerifiedCarts($conn);
+}elseif(isset($_POST['retfrm']) && $_POST['retfrm'] == 'klsdko439834_sd98' && isset($_POST['cart']) && !empty($_POST['cart'])){
+	$cartname = mysqli_real_escape_string($conn, $_POST['cart']);
+	echo reCartFormEditReturn($conn, $cartname);
+}elseif(isset($_POST['sbtmNewVerif']) && $_POST['sbtmNewVerif'] == '43lk48_04k3l9' && isset($_POST['cartname']) && !empty($_POST['cartname']) && isset($_POST['newVerif']) && !empty($_POST['newVerif'])){
+	$cartname = mysqli_real_escape_string($conn, $_POST['cartname']);
+	$newVerif = mysqli_real_escape_string($conn, $_POST['newVerif']);
+	echo udpateCartVerif($conn, $cartname, $newVerif);
+}elseif(isset($_POST['noewkliuw']) && $_POST['noewkliuw'] == '32lk3_32j78' && isset($_POST['flag']) && !empty($_POST['flag'])){
+	$cartname = mysqli_real_escape_string($conn, $_POST['flag']);
+	echo flagCart($conn, $cartname);
+}elseif(isset($_POST['deliosete']) && $_POST['deliosete'] == '_kds983_23lk' && isset($_POST['delt']) && !empty($_POST['delt'])){
+	$cartname = mysqli_real_escape_string($conn, $_POST['delt']);
+	echo deleteCart($conn, $cartname);
 }else{
 	echo "empty err";
 }

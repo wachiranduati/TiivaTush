@@ -204,3 +204,41 @@ Restock shoes -> misc category |2019-02-27 07:57:29
 Restock shoes -> misc category |2019-02-27 07:58:48
 Restock shoes -> misc category |2019-02-27 08:15:56
 Restock shoes -> misc category |2019-02-27 08:16:07
+Restock shoes -> misc category |2019-02-27 08:32:57
+Restock shoes -> misc category |2019-02-27 08:44:06
+Restock shoes -> misc category |2019-02-27 08:59:07
+Restock shoes -> misc category |2019-02-27 09:03:59
+Restock shoes -> oxfords category |2019-02-27 10:13:57
+Restock shoes -> misc category |2019-02-27 10:13:57
+Restock shoes -> misc category |2019-02-27 10:17:32
+Restock misc -> dolls category |2019-02-27 10:33:23
+Restock misc -> dolls category |2019-02-27 13:01:28
+Restock misc -> dolls category |2019-02-27 13:02:39
+Restock misc -> dolls category |2019-02-27 13:03:13
+Restock misc -> dolls category |2019-02-27 13:04:17
+Restock kids -> kblazers category |2019-02-27 13:14:45
+Restock books -> subcategory category |2019-02-27 13:57:24
+Restock books -> subcategory category |2019-02-27 13:58:31
+Restock subcategory -> tshirts | sex -> unisex | -> not [female] category |2019-02-27 16:58:51
+Restock subcategory -> blazers | sex -> unisex | -> not [female] category |2019-02-27 16:58:51
+Restock subcategory -> blazers | sex -> unisex | -> not [female] category |2019-02-27 17:03:30
+Restock subcategory -> tshirts | sex -> unisex | -> not [female] category |2019-02-27 17:03:30
+Restock subcategory -> blazers | sex -> unisex | -> not [female] category |2019-02-27 17:04:17
+Restock subcategory -> tshirts | sex -> unisex | -> not [female] category |2019-02-27 17:04:17
+Restock subcategory -> tshirts | sex -> unisex | -> not [female] category |2019-02-27 17:04:41
+Restock subcategory -> blazers | sex -> unisex | -> not [female] category |2019-02-27 17:04:41
+Restock subcategory -> blazers | sex -> unisex | -> not [female] category |2019-02-27 17:06:06
+Restock subcategory -> blazers | sex -> unisex | -> not [male] category |2019-02-27 17:06:30
+Restock subcategory -> shorts | sex -> unisex | -> not [male] category |2019-02-27 17:06:30
+Restock womens -> dresses category |2019-02-27 17:06:31
+Restock subcategory -> shorts | sex -> unisex | -> not [male] category |2019-02-27 17:27:25
+Restock womens -> dresses category |2019-02-27 17:27:25
+Restock womens -> dresses category |2019-02-27 17:28:32
+Restock kids -> kblazers category |2019-02-27 17:48:33
+Restock sportswear -> shorts category |2019-02-27 20:17:53
+Restock kids -> kblazers category |2019-02-27 20:22:29
+Restock kids -> kshoes category |2019-02-28 07:44:50
+Restock kids -> kshoes category |2019-02-28 07:47:33
+Restock kids -> kshoes category |2019-02-28 07:47:56
+Restock kids -> kshoes category |2019-02-28 07:48:06
+Restock kids -> kshoes category |2019-02-28 07:53:34

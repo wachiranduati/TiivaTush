@@ -181,7 +181,7 @@ if (isset($_POST['itname']) ||
                     echo "<div class=\"row\">
                         <div class=\"col-xs-12\">
                             <div class=\"alert alert-success\">
-                                <strong>Success!</strong>$itname has successfully been uploaded. You can view all your items status in your account.
+                                <strong>Success! </strong>$itname has successfully been uploaded. You can view all your items status in your account. Refresh this page to upload another item.
                             </div>
                         </div>
                     </div>";

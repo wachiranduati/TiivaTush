@@ -22,14 +22,13 @@ echo "
   <table class=\"table table-striped\">
     <thead>
       <tr>
+        <th>Image1</th>
+        <th>Image2</th>
+        <th>image3</th>
         <th>Item</th>
-        <th>Title</th>
         <th>Price</th>
-        <th>Seller</th>
-        <th>Sellerlocation</th>
         <th>Purchstime</th>
         <th>Shippingto</th>
-        <th>Shippingtype</th>
       </tr>
     </thead>
     <tbody>
@@ -60,19 +59,23 @@ $queryitems = "SELECT * FROM `$currentdbs` WHERE `id`='$product'";
 $queryitemsrun = mysqli_query($conn, $queryitems);
 while($queryitemrow = mysqli_fetch_assoc($queryitemsrun)){
   $imageone = $imgaddr.$queryitemrow['imageone'];
+  $imagetwo = $imgaddr.$queryitemrow['imagetwo'];
+  $imagethree = $imgaddr.$queryitemrow['imagethree'];
   $itemtitle = $queryitemrow['itemtitle'];
-  $seller = ceil($queryitemrow['sellerid'] + 21);
+  // $seller = ceil($queryitemrow['sellerid'] + 21);
   // $price = number_format($queryitemrow['price']);
   echo "
   <tr data-target=\"#loginModal\" data-toggle=\"modal\" onclick=\"modalRem();reloadmodal();\" class=\"tablerow\">
     ";
   echo "
     <td><a href=\"$link$product\" target=\"_blank\" title=\"view item\"><img src=\"$imageone\" style=\"max-height:80px;\"/></a></td>
+    <td><a href=\"$link$product\" target=\"_blank\" title=\"view item\"><img src=\"$imagetwo\" style=\"max-height:80px;\"/></a></td>
+    <td><a href=\"$link$product\" target=\"_blank\" title=\"view item\"><img src=\"$imagethree\" style=\"max-height:80px;\"/></a></td>
     <td>$itemtitle</td>";
 
 }
 // query the checkoutcarts to return
-$querycheckoucarts = "SELECT * FROM `checkoutcarts` WHERE `cartname`='$cartname' AND `pickupstat`='INCOMPLETE' AND `updated`='1' AND `clear` = '0'";
+$querycheckoucarts = "SELECT * FROM `checkoutcarts` WHERE `cartname`='$cartname' AND `pickupstat`='INCOMPLETE' AND `updated`='1' AND `clear` = '1'";
 $querycheckoutcarts_run = mysqli_query($conn, $querycheckoucarts);
 while ($querycheckout_row = mysqli_fetch_assoc($querycheckoutcarts_run)) {
   $pricelist = $querycheckout_row['itemprice'];
@@ -89,21 +92,18 @@ while ($querycheckout_row = mysqli_fetch_assoc($querycheckoutcarts_run)) {
   $actualcart = substr($cartname,0,10).'...';
   echo "
     <td>Ksh $price</td>
-    <td>$seller</td>
-    <td>sellerlocation</td>
-    <td>$purchsdate / $purchasetime HRS</td>";
+    <td>$purchsdate / $purchasetime</td>";
     // query the Merchant to return merchant location and merchant
     $queryshippinginfo = "SELECT * FROM `sold` WHERE `cartname`='$cartname'";
     $queryshippinginfo_run = mysqli_query($conn, $queryshippinginfo);
     while($queryshippinginfo_row = mysqli_fetch_assoc($queryshippinginfo_run)){
       $county = $queryshippinginfo_row['county'];
       $area = $queryshippinginfo_row['area'];
-      $shippingto = $queryshippinginfo_row['shipping'];
+      // $shippingto = $queryshippinginfo_row['shipping'];
     }
 
   echo "
     <td>$county,$area</td>
-    <td>$shippingto</td>
 
   </tr>
 

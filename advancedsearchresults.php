@@ -73,15 +73,18 @@ $century = 860;//Mtush
 //$query2 = "SELECT * FROM `products` WHERE `category`='".mysqli_real_escape_string($conn, $search)."' AND `subcategory`='".mysqli_real_escape_string($conn, $sub)."' AND `availability`='1' AND `buyer`='0'";
 //$query2 = "SELECT * FROM $dbs WHERE `availability`='1' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%'";
 if($dbs == 'products'){
-    $query2 = "SELECT * FROM $dbs WHERE `availability`='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%'";
+    $query2 = "SELECT COUNT(*) FROM $dbs WHERE `availability`='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `buyer`='0' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%'";
 }elseif( $dbs == 'brandyproducts'){
     $query2 = "SELECT * FROM $dbs WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%'";
 }else{
     $query2 = "SELECT * FROM $dbs WHERE `instock`>='1' AND `category`='$category' AND `price`<= '$maxprice'  AND `price`>='$minprice' AND `itemtitle` LIKE '%".mysqli_real_escape_string($conn, $search)."%'";
 }
 $query_run2 = mysqli_query($conn, $query2);
-$query_num_rows2 = mysqli_num_rows($query_run2);
-$pagecount = $query_num_rows2 / $items;
+// $query_num_rows2 = mysqli_num_rows($query_run2);
+// $pagecount = $query_num_rows2 / $items;
+$rows = mysqli_fetch_assoc($query_run2);
+$totalrows = implode('', $rows);
+$pagecount = $totalrows / $items;
 
 
 //echo $query_num_rows2;

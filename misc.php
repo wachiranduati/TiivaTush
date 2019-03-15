@@ -14,7 +14,8 @@ $century = 860;//Mtush
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php require 'templates/resourcelinks/headerlinks.php';?>
-
+    <meta name="description" content="Tiiva is an online store featuring crowdsourced items from sellers all over Kenya. Buy and sell second hand mtumba items.">
+    <meta name="keywords" content="Mtumba, thriftshop, thriftshopping, second hand clothes, second hand, cheap">
     <style type="text/css">
         .searchbox {
             border-bottom: 1px solid black;
@@ -51,36 +52,6 @@ $century = 860;//Mtush
         require 'templates/pagetitle.php';
         echo pageTitle('MISC');
                 ?>
-            <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpageesub.php?search=dolls&page=1" target="_blank" class="list-group-item"><img src="others/miscdollsfluffydolls.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Dolls</a>
-                            <a href="mainpage.php?search=misc&sub=belts&page=1" target="_blank" class="list-group-item"><img src="others/miscbeltsslimbelts.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Belts</a>
-                            <a href="mainpage.php?search=misc&sub=underwear&page=1" target="_blank" class="list-group-item"><img src="others/miscunderwearsportsbras.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;underwear</a>
-                            <a href="mainpage.php?search=misc&sub=hats&page=1" target="_blank" class="list-group-item"><img src="others/mischatsbaseballcaps.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Hats</a>
-                            <a href="mainpageesub.php?search=fabrics&page=1" target="_blank" class="list-group-item"><img src="others/miscfabricswoolfabric.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Fabrics</a>
-                            <a href="mainpageesub.php?search=socks&page=1" target="_blank" class="list-group-item"><img src="others/miscsocksanklesocks.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Socks</a>
-                            <a href="mainpageesub.php?search=misc&page=1" target="_blank" class="list-group-item"><img src="others/miscmiscscarfs.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc</a>
-                            <a href="mainpagee.php?search=misc&page=1" target="_blank" class="list-group-item"><img src="icons\boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;All Misc</a>
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="misc.php" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Categories</h5></a>
-                        </div>
-
-
-                    </div>
 
 
             <div class="row">
@@ -89,14 +60,13 @@ $century = 860;//Mtush
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md">
 
                         <div class="row" id="categoriescontainer">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom:35px;">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt" style="padding-bottom:35px;">
                         <ul id="categories" style="line-height:2.5;padding-bottom:0;margin-bottom:2px;">
                             <li class="text-center" style="font-weight:bold;background-color:black;border:1px solid white;"><span style="color:orange;" class="text-uppercase text-center">Categories</span></li>
                             <li><a href="mainpageesub.php?search=dolls&page=1" target="_blank"><img src="icons/bear.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-upp" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Dolls<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=misc&sub=belts&page=1" target="_blank"><img src="icons/belt.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Belts<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=misc&sub=underwear&page=1" target="_blank"><img src="icons/underwear.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;underwear<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpage.php?search=misc&sub=hats&page=1" target="_blank"><img src="icons/hat.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Hats<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/labelsgift.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Fabrics<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpageesub.php?search=socks&page=1" target="_blank"><img src="others/miscsocksanklesocks.gif" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;socks<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpageesub.php?search=misc&page=1" target="_blank"><img src="icons/book.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Books<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
                             <li><a href="mainpagee.php?search=misc&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;All Misc<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
@@ -107,15 +77,13 @@ $century = 860;//Mtush
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="padding:0px;">
 
-
                         <!--            starts here-->
-                                    <div class="row">
+                        <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <?php require 'templates/carousels/carousels.php'; echo mainCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png');?>
                             </div>
                         </div>
                         <!--            ends here-->
-
 
                     </div>
 
@@ -125,7 +93,7 @@ $century = 860;//Mtush
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="row">
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
-                                                            <?php echo offersCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png', 349);?>
+                                                            <?php echo offersCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png', 351);?>
                                                         </div>
                                                     </div>
                                                     
@@ -142,9 +110,9 @@ $century = 860;//Mtush
             </div>
 
             <div class="row" style="border:1px solid gainsboro;">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6  featurediv"><a href="mainpage.php?search=misc&sub=books&page=1"><img src="images/banners/categories/books.png" class="img-responsive featured"/></a></div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6  featurediv"><a href="mainpage.php?search=misc&sub=belts&page=1"><img src="images/banners/categories/miscbelts.png" class="img-responsive featured"/></a></div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6  featurediv"><a href="mainpage.php?search=misc&sub=hats&page=1"><img src="images/banners/categories/mischats.png" class="img-responsive featured"/></a></div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6  featurediv"><a href="mainpageesub.php?search=fabrics&page=1"><img src="images/banners/categories/miscfabrics.png" class="img-responsive featured"/></a></div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6  featurediv"><a href="mainpage.php?search=misc&sub=underwear&page=1"><img src="images/banners/categories/miscunderwear.png" class="img-responsive featured"/></a></div>
             </div>
 
@@ -164,33 +132,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=misc&sub=belts&page=1" class="list-group-item"><img src="others/miscbeltsofficialbelts.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Official Belts</a>
-                            <a href="mainpage.php?search=misc&sub=belts&page=1" class="list-group-item"><img src="others/miscbeltsofficialbelts.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Slim Belts</a>
-                            <a href="mainpage.php?search=misc&sub=belts&page=1" class="list-group-item"><img src="others/miscbeltsofficialbelts.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Leather Belts</a>
-                            <a href="mainpage.php?search=misc&sub=belts&page=1" class="list-group-item"><img src="others/miscbeltsofficialbelts.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;SuspenderBelts</a>
-                            <a href="mainpage.php?search=misc&sub=belts&page=1" class="list-group-item"><img src="others/miscbeltsofficialbelts.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Skinny Belts</a>
-                            <a href="mainpage.php?search=misc&sub=belts&page=1" class="list-group-item"><img src="others/miscbeltsofficialbelts.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Petite Belts</a>
-                            <a href="mainpage.php?search=misc&sub=belts&page=1" class="list-group-item"><img src="others/miscbeltsofficialbelts.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Buckle Belts</a>
-                            <a href="mainpage.php?search=misc&sub=belts&page=1" class="list-group-item"><img src="others/miscbeltsofficialbelts.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Fabric Belts</a>
-                            <a href="mainpage.php?search=misc&sub=belts&page=1" class="list-group-item"><img src="others/miscbeltsofficialbelts.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Belts</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=misc&sub=belts&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Belts</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=misc&sub=belts&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Belts</h5></a>
                         </div>
 
 
@@ -254,33 +198,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="others/miscdollsanimaldolls.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Barbie Dolls</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="others/miscdollsanimaldolls.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Vintage Dolls</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="others/miscdollsanimaldolls.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Rag Dolls</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="others/miscdollsanimaldolls.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;BittyBaby Dls</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="others/miscdollsanimaldolls.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Fluffy Dolls</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="others/miscdollsanimaldolls.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bratz Dolls</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="others/miscdollsanimaldolls.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;CornHusk Dls</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="others/miscdollsanimaldolls.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;China Dolls</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="others/miscdollsanimaldolls.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Dolls</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpageesub.php?search=dolls&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Dolls</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpageesub.php?search=dolls&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Dolls</h5></a>
                         </div>
 
 
@@ -346,33 +266,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=misc&sub=hats&page=1" class="list-group-item"><img src="others/mischats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;BaseBall Caps</a>
-                            <a href="mainpage.php?search=misc&sub=hats&page=1" class="list-group-item"><img src="others/mischats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Beanies</a>
-                            <a href="mainpage.php?search=misc&sub=hats&page=1" class="list-group-item"><img src="others/mischats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Flat Caps</a>
-                            <a href="mainpage.php?search=misc&sub=hats&page=1" class="list-group-item"><img src="others/mischats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sun Hats</a>
-                            <a href="mainpage.php?search=misc&sub=hats&page=1" class="list-group-item"><img src="others/mischats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Fedora Hats</a>
-                            <a href="mainpage.php?search=misc&sub=hats&page=1" class="list-group-item"><img src="others/mischats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bucket Hats</a>
-                            <a href="mainpage.php?search=misc&sub=hats&page=1" class="list-group-item"><img src="others/mischats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Beret Hats</a>
-                            <a href="mainpage.php?search=misc&sub=hats&page=1" class="list-group-item"><img src="others/mischats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bowler Hats</a>
-                            <a href="mainpage.php?search=misc&sub=hats&page=1" class="list-group-item"><img src="others/mischats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Hats</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=misc&sub=hats&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Hats</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=misc&sub=hats&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Hats</h5></a>
                         </div>
 
 
@@ -438,10 +334,10 @@ $century = 860;//Mtush
                 </div>
             </div>
             <div class="row visible-sm visible-xs" style="border:1px solid gainsboro;">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpageesub.php?search=dolls&page=1"><img src="banners\categories\miscdolls.png" class="img-responsive featured"/></a></div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpageesub.php?search=socks&page=1"><img src="banners\categories\miscsocks.png" class="img-responsive featured"/></a></div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpageesub.php?search=misc&page=1"><img src="banners\categories\miscmisc.png" class="img-responsive featured"/></a></div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpagee.php?search=misc&page=1"><img src="banners\categories\misclabels.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpageesub.php?search=dolls&page=1"><img src="images/banners/categories/miscdolls.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpageesub.php?search=socks&page=1"><img src="images/banners/categories/miscsocks.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpageesub.php?search=misc&page=1"><img src="images/banners/categories/miscmisc.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpagee.php?search=misc&page=1"><img src="images/banners/categories/misclabels.png" class="img-responsive featured"/></a></div>
             </div>
 
              <!--start here-->
@@ -452,33 +348,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=misc&sub=underwear&page=1" class="list-group-item"><img src="icons/sportsbraicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sports Bras</a>
-                            <a href="mainpage.php?search=misc&sub=underwear&page=1" class="list-group-item"><img src="icons/sportsbraicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Stockings</a>
-                            <a href="mainpage.php?search=misc&sub=underwear&page=1" class="list-group-item"><img src="icons/sportsbraicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Ordinary Bras</a>
-                            <a href="mainpage.php?search=misc&sub=underwear&page=1" class="list-group-item"><img src="icons/sportsbraicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Push up Bras</a>
-                            <a href="mainpage.php?search=misc&sub=underwear&page=1" class="list-group-item"><img src="icons/sportsbraicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Strapless Bras</a>
-                            <a href="mainpage.php?search=misc&sub=underwear&page=1" class="list-group-item"><img src="icons/sportsbraicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Corset</a>
-                            <a href="mainpage.php?search=misc&sub=underwear&page=1" class="list-group-item"><img src="icons/sportsbraicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bikers</a>
-                            <a href="mainpage.php?search=misc&sub=underwear&page=1" class="list-group-item"><img src="icons/sportsbraicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Underwire Bs</a>
-                            <a href="mainpage.php?search=misc&sub=underwear&page=1" class="list-group-item"><img src="icons/sportsbraicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=misc&sub=underwear&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">underwear</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=misc&sub=underwear&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">underwear</h5></a>
                         </div>
 
 
@@ -545,33 +417,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpageesub.php?search=socks&page=1" class="list-group-item"><img src="icons/sockicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sports Socks</a>
-                            <a href="mainpageesub.php?search=socks&page=1" class="list-group-item"><img src="icons/sockicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Ankle Socks</a>
-                            <a href="mainpageesub.php?search=socks&page=1" class="list-group-item"><img src="icons/sockicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Official Socks</a>
-                            <a href="mainpageesub.php?search=socks&page=1" class="list-group-item"><img src="icons/sockicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Warm Socks</a>
-                            <a href="mainpageesub.php?search=socks&page=1" class="list-group-item"><img src="icons/sockicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Doll-Shoe S</a>
-                            <a href="mainpageesub.php?search=socks&page=1" class="list-group-item"><img src="icons/sockicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Liner Socks</a>
-                            <a href="mainpageesub.php?search=socks&page=1" class="list-group-item"><img src="icons/sockicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Low-cut Socks</a>
-                            <a href="mainpageesub.php?search=socks&page=1" class="list-group-item"><img src="icons/sockicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Executive S</a>
-                            <a href="mainpageesub.php?search=socks&page=1" class="list-group-item"><img src="icons/sockicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Socks</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpageesub.php?search=socks&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Socks</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpageesub.php?search=socks&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Socks</h5></a>
                         </div>
 
 
@@ -613,7 +461,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxmiscmiscocks');?>
+                                    <?php echo spinnersHolder('boxmiscsocks');?>
                                 </div>
                             </div>
                         </div>
@@ -634,37 +482,13 @@ $century = 860;//Mtush
            <div class="row" style="">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row visible-lg visible-md">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:30px;border:1px solid black; border-bottom:1px solid white;background-color:black;"><a class="btn btn-block" href="mainpageesub.php?search=fabrics&page=1"><h4 class="text-uppercase" style="color:white;font-weight:bold;">Fabrics</h4></a></div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:30px;border:1px solid black; border-bottom:1px solid white;background-color:black;"><a class="btn btn-block" href="mainpageesub.php?search=books&page=1"><h4 class="text-uppercase" style="color:white;font-weight:bold;">books</h4></a></div>
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpageesub.php?search=fabrics&page=1" class="list-group-item"><img src="others/miscfabricsjutefabric.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Cotton Fabrics</a>
-                            <a href="mainpageesub.php?search=fabrics&page=1" class="list-group-item"><img src="others/miscfabricsjutefabric.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Silk Fabrics</a>
-                            <a href="mainpageesub.php?search=fabrics&page=1" class="list-group-item"><img src="others/miscfabricsjutefabric.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Linen Fabrics</a>
-                            <a href="mainpageesub.php?search=fabrics&page=1" class="list-group-item"><img src="others/miscfabricsjutefabric.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Wool Fabrics</a>
-                            <a href="mainpageesub.php?search=fabrics&page=1" class="list-group-item"><img src="others/miscfabricsjutefabric.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Jute Fabrics</a>
-                            <a href="mainpageesub.php?search=fabrics&page=1" class="list-group-item"><img src="others/miscfabricsjutefabric.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Ramie Fabrics</a>
-                            <a href="mainpageesub.php?search=fabrics&page=1" class="list-group-item"><img src="others/miscfabricsjutefabric.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Hemp Fabrics</a>
-                            <a href="mainpageesub.php?search=fabrics&page=1" class="list-group-item"><img src="others/miscfabricsjutefabric.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Chiffon Fabrics</a>
-                            <a href="mainpageesub.php?search=fabrics&page=1" class="list-group-item"><img src="others/miscfabricsjutefabric.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Fabrics</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpageesub.php?search=fabrics&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Fabrics</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpageesub.php?search=fabrics&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Books</h5></a>
                         </div>
 
 
@@ -678,15 +502,15 @@ $century = 860;//Mtush
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
                         <ul id="categories">
 
-                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;cotton fabrics<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/mensicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;silk fabrics<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;linen fabrics<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;wool fabrics<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/house.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;jute fabrics<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;ramie fabrics<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;hemp fabrics<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/labelsgift.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;chiffon fabrics<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
-                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;misc fabrics<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Novels<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/mensicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Magazines<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Cook Books<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Picture Books<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/house.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Travel<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Selfhelp<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Biographies<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/labelsgift.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Comics<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpageesub.php?search=fabrics&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;Misc Books<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
 
                         </ul>
                             </div>
@@ -698,7 +522,7 @@ $century = 860;//Mtush
 <!--            starts here-->
             <div class="row visible-lg visible-md">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <?php echo groupedCarousels('miscfabricscottonfabrics.gif', 'miscfabricshempfabrics.gif', 'miscfabricswoolfabric.gif', 'miscfabricsjutefabric.gif', 498);?>
+                    <?php echo groupedCarousels('miscbooksoldbooks.png', 'miscbooksnovels.png', 'miscbooksmagazines.png', 'miscbooksreading.png', 498);?>
                 </div>
             </div>
 <!--            ends here-->
@@ -706,7 +530,7 @@ $century = 860;//Mtush
 
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
-                                    <?php echo spinnersHolder('boxmiscfabrics');?>
+                                    <?php echo spinnersHolder('boxmiscbooks');?>
                                 </div>
                             </div>
                         </div>
@@ -731,33 +555,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=misc&sub=misc&page=1" class="list-group-item"><img src="others/miscmischeadbands.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bandanas</a>
-                            <a href="mainpage.php?search=misc&sub=misc&page=1" class="list-group-item"><img src="others/miscmischeadbands.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Head Bands</a>
-                            <a href="mainpage.php?search=misc&sub=misc&page=1" class="list-group-item"><img src="others/miscmischeadbands.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Gloves</a>
-                            <a href="mainpage.php?search=misc&sub=misc&page=1" class="list-group-item"><img src="others/miscmischeadbands.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Toys</a>
-                            <a href="mainpage.php?search=misc&sub=misc&page=1" class="list-group-item"><img src="others/miscmischeadbands.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Socks</a>
-                            <a href="mainpage.php?search=misc&sub=misc&page=1" class="list-group-item"><img src="others/miscmischeadbands.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Scarfs</a>
-                            <a href="mainpage.php?search=misc&sub=misc&page=1" class="list-group-item"><img src="others/miscmischeadbands.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Laces</a>
-                            <a href="mainpage.php?search=misc&sub=misc&page=1" class="list-group-item"><img src="others/miscmischeadbands.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bags</a>
-                            <a href="mainpage.php?search=misc&sub=misc&page=1" class="list-group-item"><img src="others/miscmischeadbands.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=misc&sub=misc&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Misc</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=misc&sub=misc&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Misc</h5></a>
                         </div>
 
 
@@ -830,33 +630,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpagee.php?search=misc&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Adidas</a>
-                            <a href="mainpagee.php?search=misc&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Fubu</a>
-                            <a href="mainpagee.php?search=misc&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Under-Armour</a>
-                            <a href="mainpagee.php?search=misc&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Puma</a>
-                            <a href="mainpagee.php?search=misc&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kenya's Finest</a>
-                            <a href="mainpagee.php?search=misc&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Calvin Klein</a>
-                            <a href="mainpagee.php?search=misc&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Versace</a>
-                            <a href="mainpagee.php?search=misc&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Nike</a>
-                            <a href="mainpagee.php?search=misc&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Labels</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpagee.php?search=misc&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">All Misc</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpagee.php?search=misc&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">All Misc</h5></a>
                         </div>
 
 
@@ -1037,11 +813,11 @@ xmlhttp7.onreadystatechange = function(){
         xmlhttp7.open('GET','miscbeniesloop.php',true);
         xmlhttp7.send();
 $('.loaderImage').fadeOut(3000);
-    shoesloop();
+    miscsocksloop();
 
 }
 //shoals going in here
-function shoesloop(){
+function miscsocksloop(){
     $('.loaderImage').fadeIn(3000);
     if(window.XMLHttpRequest){
         xmlhttp8 = new XMLHttpRequest();
@@ -1050,18 +826,18 @@ function shoesloop(){
     }
 xmlhttp8.onreadystatechange = function(){
     if (xmlhttp8.readyState == 4 && xmlhttp8.status == 200){
-        document.getElementById('boxmiscmiscocks').innerHTML= xmlhttp8.responseText;
+        document.getElementById('boxmiscsocks').innerHTML= xmlhttp8.responseText;
 
         }
         }
-        xmlhttp8.open('GET','miscshoalsloop.php',true);
+        xmlhttp8.open('GET','miscsocks.php',true);
         xmlhttp8.send();
 $('.loaderImage').fadeOut(3000);
-    labelsloop();
+    miscbooksloop();
 
 }
 //fabrics to go in here
- function labelsloop(){
+ function miscbooksloop(){
      $('.loaderImage').fadeIn(3000);
     if(window.XMLHttpRequest){
         xmlhttp9 = new XMLHttpRequest();
@@ -1070,11 +846,11 @@ $('.loaderImage').fadeOut(3000);
     }
 xmlhttp9.onreadystatechange = function(){
     if (xmlhttp9.readyState == 4 && xmlhttp9.status == 200){
-        document.getElementById('boxmiscfabrics').innerHTML= xmlhttp9.responseText;
+        document.getElementById('boxmiscbooks').innerHTML= xmlhttp9.responseText;
 
         }
         }
-        xmlhttp9.open('GET','miscfabricloop.php',true);
+        xmlhttp9.open('GET','miscbooksloop.php',true);
         xmlhttp9.send();
 $('.loaderImage').fadeOut(3000);
      miscsloop();

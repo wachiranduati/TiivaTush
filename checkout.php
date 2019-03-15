@@ -5,17 +5,42 @@ require 'search.inc.php';
 require 'core.inc.php';
 require 'looptemplater.php';
 
-// if(!isset($_SESSION['$user_id'])){
-//         die();
-//         header('Location:index.php');
-//     }
 
-// echo $_SERVER['HTTP_CLIENT_IP'];
-//echo $_SERVER['HTTP_X_FORWARDED_FOR'];
+function redirectUser(){
+    header('Location:index.php');
+    die();
+}
+
+function checkwhetheruserhasItemsTocheckOut($conn, $userid){
+    $query = "SELECT `id` FROM `cartactivity` WHERE `userid` = '$userid' AND `state` = 'cart' AND `checked` = '0'";
+    $query_run = mysqli_query($conn, $query);
+    if(mysqli_num_rows($query_run) >= 1){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+        
+if(isset($_SESSION['$user_id'])){
+    // return True;
+    $user = $_SESSION['$user_id'];
+    $hasCarts = checkwhetheruserhasItemsTocheckOut($conn, $user);
+    if($hasCarts == 1){
+        // has carted items
+    }else{
+        redirectUser();
+    }
+}else{
+    // return False;
+    redirectUser();
+}
+
 $century = 860;//Mtush
 
 // $_SESSION['$user_id'];
 // md5('wagwanista');
+// check whether user has something in their cart else redirect them and die page
 
 ?>
 <!DOCTYPE html>
@@ -61,10 +86,8 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-xs visible-sm details" style="margin-top:1px;background-color:rgba(0,0,0,0.1);font-family:kok;cursor:pointer;">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="border:1px solid black;background-color:black;color:white;"><h4 class="text-uppercase">Step 1</h4></div>
-                        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-8" style=""><h4 class="text-capitalize">Shipping details</h4></div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="border-left:1px solid white;background-color:lime;color:white;display:none;"><h4 class="text-center"><span class="glyphicon glyphicon-ok"></span></h4></div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="border-left:1px solid white;background-color:red;color:white;"><h4 class="text-center"><span class="glyphicon glyphicon-remove"></span></h4></div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:1px solid black;background-color:black;color:white;"><h4 class="text-uppercase">Step 1</h4></div>
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style=""><h4 class="text-capitalize">Shipping details</h4></div>
                     </div>
 
                     <div class="row" id="checkoutcontainer">
@@ -88,7 +111,7 @@ $century = 860;//Mtush
                                         <input type="text" id="username" name="username" placeholder="Name: Jeniffer Craig Someone" class="form-control" title="<h5>Name Field</h5>Please provide your full name. Your delivery will be made to this name unless a special request is provided in the <strong>Special Requests Field</strong>"/><br>
                                         <label for="useridno">ID no:</label>
                                         <input type="number" id="useridno" name="useridno" placeholder="ID Number: 302367236" class="form-control" title="<h5>Identification number Field</h5>Please provide your identification number in the input below"/><br>
-                                        <label for="emailaddress">Emailaddress: (optional)</label>
+                                        <label for="emailaddress">Emailaddress: (optional - leave as is)</label>
                                         <input type="email" id="emailaddress" value="myemail@gmail.com" name="emailaddress" placeholder="Email: me@gmail.com" class="form-control" title="<h5>Email address Field</h5>Please provide us with your Email Address.ps. We will send your receipt to the provided email. This step is optional"/><br>
                                         <label>Country</label>
                                         <input type="text" placeholder="Country: Kenya" readonly disabled class="form-control" title="<h5>Country Field</h5>Please provide us with your country where the shopping should be delivered"/><br>
@@ -208,8 +231,8 @@ $century = 860;//Mtush
             </div>
 
             <div class="row visible-xs visible-sm shipping" style="margin-top:1px;background-color:rgba(0,0,0,0.1);font-family:kok;cursor:pointer;">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="border:1px solid black;background-color:black;color:white;"><h4 class="text-uppercase">Step 2</h4></div>
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style=""><h4 class="text-capitalize">Delivery options</h4></div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:1px solid black;background-color:black;color:white;"><h4 class="text-uppercase">Step 2</h4></div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style=""><h4 class="text-capitalize">Delivery options</h4></div>
             </div>
 
 
@@ -219,7 +242,7 @@ $century = 860;//Mtush
                  <!-- <p>Please decide on your mode of delivery</p> -->
                     <form id="radioform">
                         <div class="radio">
-                      <label><input title="<h5>Free delivery with Tiiva</h5>With this option you get your package delivered in 3-5 working days free of charge through Tiiva's bulk shipping. This is our way of giving back to our customers. you get a harty smile and a Thankyou with every delivery." value="free" checked type="radio" name="optradio">Free delivery with Tiiva (1 - 5 working days) - Flat rate - 150 Ksh</label>
+                      <label><input title="<h5>Tiiva Delivery</h5>With this option you get your package delivered in 3-5 working days with a flat fee of 150 Ksh through Tiiva's bulk shipping. This is our way of giving back to our customers. you get a harty smile and a Thankyou with every delivery." value="free" checked type="radio" name="optradio">Shipping by Tiiva (1 - 5 working days) - Flat rate - 150 Ksh</label>
                     </div>
 
                     <!-- <div class="radio">
@@ -238,14 +261,14 @@ $century = 860;//Mtush
 
             <div class="row visible-lg visible-md review" style="margin-top:1px;background-color:rgba(0,0,0,0.1);font-family:kok;cursor:pointer;">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="border:1px solid black;background-color:black;color:white;"><h4 class="text-uppercase">Step 3</h4></div>
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style=""><h4 class="text-capitalize">Review &amp; Payment</h4></div>
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 reviewPaytab" style=""><h4 class="text-capitalize">Review &amp; Payment</h4></div>
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="border-left:1px solid white;background-color:lime;color:white;"><h4 class="text-center"><span class="glyphicon glyphicon-ok"></span></h4></div>
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="border-left:1px solid white;background-color:red;color:white;display:none;"><h4 class="text-center"><span class="glyphicon glyphicon-remove"></span></h4></div>
             </div>
 
             <div class="row visible-xs visible-sm review" style="margin-top:1px;background-color:rgba(0,0,0,0.1);font-family:kok;cursor:pointer;">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="border:1px solid black;background-color:black;color:white;"><h4 class="text-uppercase">Step 3</h4></div>
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style=""><h4 class="text-capitalize">Review &amp; Payment</h4></div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:1px solid black;background-color:black;color:white;"><h4 class="text-uppercase">Step 3</h4></div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 reviewPaytab" style=""><h4 class="text-capitalize">Review &amp; Payment</h4></div>
             </div>
 
 
@@ -265,8 +288,8 @@ $century = 860;//Mtush
 
 
             <div class="row visible-xs visible-sm payment" style="margin-top:1px;background-color:rgba(0,0,0,0.1);font-family:kok;cursor:pointer;">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="border:1px solid black;background-color:black;color:white;"><h4 class="text-uppercase">step 4</h4></div>
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style=""><h4 class="text-capitalize">payment</h4></div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:1px solid black;background-color:black;color:white;"><h4 class="text-uppercase">step 4</h4></div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style=""><h4 class="text-capitalize">payment</h4></div>
             </div>
 
 
@@ -275,19 +298,20 @@ $century = 860;//Mtush
                             <div class="row">
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
-                                    <p>Please decide on your mode of payment</p>
-                    <div class="radio">
+                                    <!-- <p>Please decide on your mode of payment</p> -->
+                                    <p>Currently we only support Mpesa, but we'll get more payment options for you</p>
+                    <!-- <div class="radio">
                       <label><input title="<h5>Airtel Pesa</h5>You simply pay for your cart using your Airtel Pesa. Please ensure the number provided is the same provided in your billing details.Ensure you pay the exact total provided in step 3.p.s there are no transaction charges for this method" type="radio" name="optradio">Airtel Pesa (<small>no transaction charges</small>)</label>
                     </div>
                     <div class="radio">
                       <label><input title="<h5>Eazzy pay</h5>You simply pay for your cart using your Equitel line. Please ensure the number provided is the same provided in your billing details.Ensure you pay the exact total provided in step 3.p.s there are no transaction charges for this method" type="radio" name="optradio">EazzyPay (<small>no transaction charges</small>)</label>
-                    </div>
+                    </div> -->
                     <div class="radio">
                       <label><input checked title="<h5>M-Pesa</h5>You simply pay for your cart using your Safaricom line. Please ensure the number provided is the same provided in your billing details.Ensure you pay the exact total provided in step 3.p.s there are no transaction charges for this method" type="radio" name="optradio">M-Pesa (<small>no transaction charges</small>)</label>
                     </div>
-                    <div class="radio">
+                    <!-- <div class="radio">
                       <label><input title="<h5>Telkom Pesa</h5>You simply pay for your cart using your Telkom line. Please ensure the number provided is the same provided in your billing details.Ensure you pay the exact total provided in step 3.p.s there are no transaction charges for this method" type="radio" name="optradio">Telkom Pesa (<small>no transaction charges</small>)</label>
-                    </div>
+                    </div> -->
                                 </div>
                             </div>
                             <div class="row" style="margin-top:1px;">
@@ -418,21 +442,7 @@ $century = 860;//Mtush
                     xmlhttp05.open('GET','stolencart.php?action=add&id='+iad,true);
                     xmlhttp05.send();
             }
-            function removeitem(irem){
-                if(window.XMLHttpRequest){
-                    xmlhttp06 = new XMLHttpRequest();
-                }else{
-                    xmlhttp06 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp06.onreadystatechange = function(){
-                if (xmlhttp06.readyState == 4 && xmlhttp06.status == 200){
-                    //document.getElementById('newcartitems').innerHTML= xmlhttp06.responseText;
-
-                    }
-                    }
-                    xmlhttp06.open('GET','stolencart.php?action=remove&id='+irem,true);
-                    xmlhttp06.send();
-            }
+            
 
             $(document).ready(function(){
                 $.ajax({
@@ -503,7 +513,14 @@ $century = 860;//Mtush
                             if(area != ''){
                                 if(transcationinputid != ''){
                                     if(details != ''){
-                                        sencheckout(checkoutinfo);
+                                        // prompt the user to confirm the transaction code
+                                        var usrocnfrmTrnscd = confirm("Please confirm that your transaction code " + transcationinputid.toUpperCase() + " is correct");
+                                        if(usrocnfrmTrnscd == true){
+                                            //continue
+                                            sencheckout(checkoutinfo);
+                                        }else{
+                                            alert("Please double check your transaction code and try again");
+                                        }
                                     }else{
                                         alert('Please provide instructions for you delivery');
                                     }
@@ -674,6 +691,12 @@ $century = 860;//Mtush
                 //     console.log('user inactive');
                 // }
              }, 120000);//120000
+
+            $(".reviewPaytab").click(function(){
+                showcount();
+                loadmodalcart();
+                cartship();
+            })
         </script>
     </body>
 </html>

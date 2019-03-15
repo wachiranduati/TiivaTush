@@ -31,16 +31,15 @@
                     <div class="row">
                         <div class="col-lg-8 col-lg-offset-1 col-md-8 col-sm-12 col-xs-12">
                             <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 visible-lg visible-md"><h4>Service</h4>
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 visible-lg visible-md"><h4>Service</h4>
                                     <ul class="list-unstyled">
                                         <li><a style="color:black;" href="howto.php">Online help</a></li>
-                                        <li><a style="color:black;" href="contactus.php">Contact us</a></li>
                                         <li><a style="color:black;" href="howto.php">Order status</a></li>
                                         <li><a style="color:black;" href="howto.php">Change location</a></li>
                                         <li><a style="color:black;" href="howto.php">FAQS</a></li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><h4>Quick Links</h4>
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 "><h4>Quick Links</h4>
                                     <ul class="list-unstyled">
                                         <li><a style="color:black;" href="women.php">WomensWear</a></li>
                                         <li><a style="color:black;" href="mens.php">MensWear</a></li>
@@ -49,16 +48,17 @@
                                         <li><a style="color:black;" href="merchantreg.php">Sell on Tiiva</a></li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 visible-lg visible-md" style="height:100px;"><h4>Policies</h4>
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4" style="height:100px;"><h4>Policies</h4>
                                     <ul class="list-unstyled">
                                         <li><a style="color:black;" href="termsofuse.php">Terms of use</a></li>
                                         <li><a style="color:black;" href="termsofuse.php">Privacy policy</a></li>
                                         <li><a style="color:black;" href="termsofuse.php">Refund policy</a></li>
+                                        <li><a style="color:black;" href="contactus.php">Contact us</a></li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" style="height:100px;"><h4>About shopper</h4>
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4" style="height:100px;"><h4>About shopper</h4>
                                     <ul class="list-unstyled">
-                                        <li><a style="color:black;" href="aboutus.php">Company information</a></li>
+                                        <li><a style="color:black;" href="aboutus.php">About Us</a></li>
                                         <!-- <li><a style="color:black;" href="#">Careers</a></li> -->
                                         <!-- <li><a style="color:black;" href="#">Store location</a></li> -->
                                         <!-- <li><a style="color:black;" href="#">Affiliate Program</a></li> -->

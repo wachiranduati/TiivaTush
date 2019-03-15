@@ -1,5 +1,11 @@
-body{
+h1, h2, h5, span{
     font-family: 'Oswald', sans-serif;
+}
+p{
+    font-family: 'Open Sans', sans-serif;
+}
+h3, h4, h6{
+    font-family: 'Roboto', sans-serif;
 }
 /* Style all font awesome icons */
 .fa {
@@ -257,7 +263,7 @@ to {top: 0; opacity: 1}
 
 .loginEye{
     position:absolute;
-    top:28%;
+    top:31%;
     right:-4%;
     color:#626262;
     font-size:120%;

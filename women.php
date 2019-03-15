@@ -15,6 +15,9 @@ $century = 860;//Mtush
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php require 'templates/resourcelinks/headerlinks.php';?>
 
+    <meta name="description" content="Tiiva is an online store featuring crowdsourced items from sellers all over Kenya. Buy and sell second hand mtumba items for women.">
+    <meta name="keywords" content="Mtumba, thriftshop, thriftshopping, second hand clothes, second hand, cheap, women's mtumba, women, female">
+
     <style type="text/css">
         .searchbox {
             border-bottom: 1px solid black;
@@ -52,38 +55,6 @@ $century = 860;//Mtush
         require 'templates/pagetitle.php';
         echo pageTitle('WOMENSWEAR');
                 ?>
-            <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="manpage.php?search=sportswear&sub=male&page=1" target="_blank" class="list-group-item"><img src="others/womenssportswearshorts.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sports</a>
-                            <a href="manepage.php?search=officials&sub=male&page=1" target="_blank" class="list-group-item"><img src="others/womensofficialotherdress.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Official</a>
-                            <a href="manepage.php?search=sweaters&sub=male&page=1" target="_blank" class="list-group-item"><img src="others/womenssweaterscardigans.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sweaters</a>
-                            <a href="manepage.php?search=shirts&sub=male&page=1" target="_blank" class="list-group-item"><img src="others/womenstops.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Tops</a>
-                            <a href="manepage.php?search=blazers&sub=male&page=1" target="_blank" class="list-group-item"><img src="others/womensblazersdrapedblazers.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Blazers</a>
-                            <a href="manepage.php?search=pants&sub=male&page=1" target="_blank" class="list-group-item"><img src="others/womenspantsskinnypants.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Pants</a>
-                            <a href="mainpage.php?search=womens&sub=dresses&page=1" target="_blank" class="list-group-item"><img src="others/womensdressesankaradresses.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Dresses</a>
-                            <a href="manpage.php?search=bags&sub=male&page=1" target="_blank" class="list-group-item"><img src="others/womensbagscrossbodybags.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bags</a>
-                            <a href="manpage.php?search=misc&sub=male&page=1" target="_blank" class="list-group-item"><img src="others/womensmischats.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mens.php" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Categories</h5></a>
-                        </div>
-
-
-                    </div>
 
 
             <div class="row">
@@ -129,7 +100,7 @@ $century = 860;//Mtush
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="row">
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
-                                                            <?php echo offersCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png', 349);?>
+                                                            <?php echo offersCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png', 351);?>
                                                         </div>
                                                     </div>
                                                     
@@ -167,33 +138,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="manpage.php?search=sportswear&sub=male&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp; Pants</a>
-                            <a href="manpage.php?search=sportswear&sub=male&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp; Shorts</a>
-                            <a href="manpage.php?search=sportswear&sub=male&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp; Shirts</a>
-                            <a href="manpage.php?search=sportswear&sub=male&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp; Shoes</a>
-                            <a href="manpage.php?search=sportswear&sub=male&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Underwears</a>
-                            <a href="manpage.php?search=sportswear&sub=male&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp; Socks</a>
-                            <a href="manpage.php?search=sportswear&sub=male&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp; Jackets</a>
-                            <a href="manpage.php?search=sportswear&sub=male&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp; Leggings</a>
-                            <a href="manpage.php?search=sportswear&sub=male&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="manpage.php?search=sportswear&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Sportswear</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="manpage.php?search=sportswear&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Women's Sportswear</h5></a>
                         </div>
 
 
@@ -259,33 +206,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="manepage.php?search=officials&sub=male&page=1" class="list-group-item"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Blouses</a>
-                            <a href="manepage.php?search=officials&sub=male&page=1" class="list-group-item"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Dresses</a>
-                            <a href="manepage.php?search=officials&sub=male&page=1" class="list-group-item"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Blazers</a>
-                            <a href="manepage.php?search=officials&sub=male&page=1" class="list-group-item"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Formal Shoes</a>
-                            <a href="manepage.php?search=officials&sub=male&page=1" class="list-group-item"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Formal Scarfs</a>
-                            <a href="manepage.php?search=officials&sub=male&page=1" class="list-group-item"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Formal Shoals</a>
-                            <a href="manepage.php?search=officials&sub=male&page=1" class="list-group-item"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Formal Skirts</a>
-                            <a href="manepage.php?search=officials&sub=male&page=1" class="list-group-item"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Trousers</a>
-                            <a href="manepage.php?search=officials&sub=male&page=1" class="list-group-item"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc formal wear</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="manepage.php?search=officials&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">formal wear</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="manepage.php?search=officials&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Women's formal wear</h5></a>
                         </div>
 
 
@@ -350,33 +273,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="manepage.php?search=sweaters&sub=male&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Cardigans</a>
-                            <a href="manepage.php?search=sweaters&sub=male&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Shrugs</a>
-                            <a href="manepage.php?search=sweaters&sub=male&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Plain Swtrs</a>
-                            <a href="manepage.php?search=sweaters&sub=male&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sweatshirts</a>
-                            <a href="manepage.php?search=sweaters&sub=male&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Hoodies</a>
-                            <a href="manepage.php?search=sweaters&sub=male&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Trenchcoats</a>
-                            <a href="manepage.php?search=sweaters&sub=male&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;TurtleKnecks</a>
-                            <a href="manepage.php?search=sweaters&sub=male&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Softspun</a>
-                            <a href="manepage.php?search=sweaters&sub=male&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Sweaters</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="manepage.php?search=sweaters&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Sweaters</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="manepage.php?search=sweaters&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Women's Sweaters</h5></a>
                         </div>
 
 
@@ -443,33 +342,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="manepage.php?search=shirts&sub=male&page=1" class="list-group-item"><img src="icons/tshirtsfemaleicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Blouses</a>
-                            <a href="manepage.php?search=shirts&sub=male&page=1" class="list-group-item"><img src="icons/tshirtsfemaleicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Tshirts</a>
-                            <a href="manepage.php?search=shirts&sub=male&page=1" class="list-group-item"><img src="icons/tshirtsfemaleicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Vests</a>
-                            <a href="manepage.php?search=shirts&sub=male&page=1" class="list-group-item"><img src="icons/tshirtsfemaleicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Crop tops</a>
-                            <a href="manepage.php?search=shirts&sub=male&page=1" class="list-group-item"><img src="icons/tshirtsfemaleicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Peplum</a>
-                            <a href="manepage.php?search=shirts&sub=male&page=1" class="list-group-item"><img src="icons/tshirtsfemaleicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Polo</a>
-                            <a href="manepage.php?search=shirts&sub=male&page=1" class="list-group-item"><img src="icons/tshirtsfemaleicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Tuxedo</a>
-                            <a href="manepage.php?search=shirts&sub=male&page=1" class="list-group-item"><img src="icons/tshirtsfemaleicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Henley</a>
-                            <a href="manepage.php?search=shirts&sub=male&page=1" class="list-group-item"><img src="icons/tshirtsfemaleicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Tops</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="manepage.php?search=shirts&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Tops</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="manepage.php?search=shirts&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Women's Tops</h5></a>
                         </div>
 
 
@@ -536,33 +411,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="manepage.php?search=pants&sub=male&page=1" class="list-group-item"><img src="icons/womenspants.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Jumpsuits</a>
-                            <a href="manepage.php?search=pants&sub=male&page=1" class="list-group-item"><img src="icons/womenspants.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Harem Pants</a>
-                            <a href="manepage.php?search=pants&sub=male&page=1" class="list-group-item"><img src="icons/womenspants.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Jeans</a>
-                            <a href="manepage.php?search=pants&sub=male&page=1" class="list-group-item"><img src="icons/womenspants.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Khaki Pants</a>
-                            <a href="manepage.php?search=pants&sub=male&page=1" class="list-group-item"><img src="icons/womenspants.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sweatpants</a>
-                            <a href="manepage.php?search=pants&sub=male&page=1" class="list-group-item"><img src="icons/womenspants.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Highwasit Ps</a>
-                            <a href="manepage.php?search=pants&sub=male&page=1" class="list-group-item"><img src="icons/womenspants.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Skinny Pants</a>
-                            <a href="manepage.php?search=pants&sub=male&page=1" class="list-group-item"><img src="icons/womenspants.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Cargo Pants</a>
-                            <a href="manepage.php?search=pants&sub=male&page=1" class="list-group-item"><img src="icons/womenspants.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Pants</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="manepage.php?search=pants&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Pants</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="manepage.php?search=pants&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Women's Pants</h5></a>
                         </div>
 
 
@@ -627,10 +478,10 @@ $century = 860;//Mtush
                 </div>
             </div>
             <div class="row visible-sm visible-xs" style="border:1px solid gainsboro;">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="manpage.php?search=sportswear&sub=male&page=1"><img src="banners\categories\womenssportswear.png" class="img-responsive featured"/></a></div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="manepage.php?search=officials&sub=male&page=1"><img src="banners\categories\womensformalwear.png" class="img-responsive featured"/></a></div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="manepage.php?search=sweaters&sub=male&page=1"></h5><img src="banners\categories\womenssweaters.png" class="img-responsive featured"/></a></div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="manepage.php?search=pants&sub=male&page=1"><img src="banners\categories\womenspants.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="manpage.php?search=sportswear&sub=male&page=1"><img src="images/banners/categories/womenssportswear.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="manepage.php?search=officials&sub=male&page=1"><img src="images/banners/categories/womensformalwear.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="manepage.php?search=sweaters&sub=male&page=1"></h5><img src="images/banners/categories/womenssweaters.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="manepage.php?search=pants&sub=male&page=1"><img src="images/banners/categories/womenspants.png" class="img-responsive featured"/></a></div>
             </div>
 
              <!--start here-->
@@ -641,33 +492,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="manepage.php?search=blazers&sub=male&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Boyfriend Bs</a>
-                            <a href="manepage.php?search=blazers&sub=male&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Fitted Blazers</a>
-                            <a href="manepage.php?search=blazers&sub=male&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Draped Bs</a>
-                            <a href="manepage.php?search=blazers&sub=male&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bomber Jckts</a>
-                            <a href="manepage.php?search=blazers&sub=male&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Peplum Bs</a>
-                            <a href="manepage.php?search=blazers&sub=male&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Military Bs</a>
-                            <a href="manepage.php?search=blazers&sub=male&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Denim Blazers</a>
-                            <a href="manepage.php?search=blazers&sub=male&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Tailored Bs</a>
-                            <a href="manepage.php?search=blazers&sub=male&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Blazers</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="manepage.php?search=blazers&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Blazers</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="manepage.php?search=blazers&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Women's Blazers</h5></a>
                         </div>
 
 
@@ -734,33 +561,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="manepage.php?search=shorts&sub=male&page=1" class="list-group-item"><img src="icons/runningshortsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Hot Pants</a>
-                            <a href="manepage.php?search=shorts&sub=male&page=1" class="list-group-item"><img src="icons/runningshortsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Jump Shorts</a>
-                            <a href="manepage.php?search=shorts&sub=male&page=1" class="list-group-item"><img src="icons/runningshortsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Booty Shorts</a>
-                            <a href="manepage.php?search=shorts&sub=male&page=1" class="list-group-item"><img src="icons/runningshortsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Casual Shorts</a>
-                            <a href="manepage.php?search=shorts&sub=male&page=1" class="list-group-item"><img src="icons/runningshortsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Ankara Shorts</a>
-                            <a href="manepage.php?search=shorts&sub=male&page=1" class="list-group-item"><img src="icons/runningshortsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Denim Shorts</a>
-                            <a href="manepage.php?search=shorts&sub=male&page=1" class="list-group-item"><img src="icons/runningshortsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Pedal Pushers</a>
-                            <a href="manepage.php?search=shorts&sub=male&page=1" class="list-group-item"><img src="icons/runningshortsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bermuda Ss</a>
-                            <a href="manepage.php?search=shorts&sub=male&page=1" class="list-group-item"><img src="icons/runningshortsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Shorts</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="manepage.php?search=shorts&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Shorts</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="manepage.php?search=shorts&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Women's Shorts</h5></a>
                         </div>
 
 
@@ -827,33 +630,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="manpage.php?search=bags&sub=male&page=1" class="list-group-item"><img src="icons/shoppingbagicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Crossbody Bs</a>
-                            <a href="manpage.php?search=bags&sub=male&page=1" class="list-group-item"><img src="icons/shoppingbagicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Clutches</a>
-                            <a href="manpage.php?search=bags&sub=male&page=1" class="list-group-item"><img src="icons/shoppingbagicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Hobo Bags</a>
-                            <a href="manpage.php?search=bags&sub=male&page=1" class="list-group-item"><img src="icons/shoppingbagicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Drawstring Bs</a>
-                            <a href="manpage.php?search=bags&sub=male&page=1" class="list-group-item"><img src="icons/shoppingbagicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Backpacks</a>
-                            <a href="manpage.php?search=bags&sub=male&page=1" class="list-group-item"><img src="icons/shoppingbagicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Handbags</a>
-                            <a href="manpage.php?search=bags&sub=male&page=1" class="list-group-item"><img src="icons/shoppingbagicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Saddle Bags</a>
-                            <a href="manpage.php?search=bags&sub=male&page=1" class="list-group-item"><img src="icons/shoppingbagicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Quilted Bags</a>
-                            <a href="manpage.php?search=bags&sub=male&page=1" class="list-group-item"><img src="icons/shoppingbagicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Bags</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="manpage.php?search=bags&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Bags</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="manpage.php?search=bags&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Women's Bags</h5></a>
                         </div>
 
 
@@ -920,33 +699,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="manpage.php?search=misc&sub=male&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bras</a>
-                            <a href="manpage.php?search=misc&sub=male&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Body Suits</a>
-                            <a href="manpage.php?search=misc&sub=male&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Corsets</a>
-                            <a href="manpage.php?search=misc&sub=male&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Gloves</a>
-                            <a href="manpage.php?search=misc&sub=male&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Hats</a>
-                            <a href="manpage.php?search=misc&sub=male&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Swim Suits</a>
-                            <a href="manpage.php?search=misc&sub=male&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Belts</a>
-                            <a href="manpage.php?search=misc&sub=male&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Shoes</a>
-                            <a href="manpage.php?search=misc&sub=male&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc misc</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="manpage.php?search=misc&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Misc</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="manpage.php?search=misc&sub=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Women's Misc</h5></a>
                         </div>
 
 
@@ -1016,33 +771,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=womens&sub=dresses&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Skater Drs</a>
-                            <a href="mainpage.php?search=womens&sub=dresses&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Maxi Dresses</a>
-                            <a href="mainpage.php?search=womens&sub=dresses&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Strapless Drs</a>
-                            <a href="mainpage.php?search=womens&sub=dresses&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sun Dresses</a>
-                            <a href="mainpage.php?search=womens&sub=dresses&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bodycone Drs</a>
-                            <a href="mainpage.php?search=womens&sub=dresses&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Flared Drs</a>
-                            <a href="mainpage.php?search=womens&sub=dresses&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Party Dresses</a>
-                            <a href="mainpage.php?search=womens&sub=dresses&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Ankara Drs</a>
-                            <a href="mainpage.php?search=womens&sub=dresses&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Dresses</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=womens&sub=dresses&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Dresses</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=womens&sub=dresses&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Dresses</h5></a>
                         </div>
 
 
@@ -1110,33 +841,9 @@ $century = 860;//Mtush
                                 </div>
 
                                 <div class="row visible-sm visible-xs">
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                                        <div class="dropdown">
-                                    <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-            <!--                                <span class="caret"></span>-->
-                                        <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                                        <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                                        <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                                    </a>
-
-                                    <ul class="dropdown-menu list-group">
-                                        <a href="mainpageesex.php?search=male&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Louis Vuitton</a>
-                                        <a href="mainpageesex.php?search=male&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Channel</a>
-                                        <a href="mainpageesex.php?search=male&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Adidas</a>
-                                        <a href="mainpageesex.php?search=male&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;D &amp; G</a>
-                                        <a href="mainpageesex.php?search=male&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Old Navy</a>
-                                        <a href="mainpageesex.php?search=male&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Urban Outfitters</a>
-                                        <a href="mainpageesex.php?search=male&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Toms</a>
-                                        <a href="mainpageesex.php?search=male&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Everlane</a>
-                                        <a href="mainpageesex.php?search=male&page=1" class="list-group-item"><img src="icons/dress.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Other labels</a>
-
-
-
-                                    </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                                        <a style="color:white;" href="mainpageesex.php?search=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">All Women's</h5></a>
+                                    
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                                        <a style="color:white;" href="mainpageesex.php?search=male&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">All Women's</h5></a>
                                     </div>
 
 
@@ -1451,7 +1158,7 @@ function carousel() {
                     xmlhttp11.open('GET','womensdressesloop.php',true);
                     xmlhttp11.send();
                  $('.loaderImage').fadeOut(3000);
-
+                 boxwomenslabels();
             }
 
             // changes the title box with the hello welcome to airmark logout thingi
@@ -1463,6 +1170,7 @@ function carousel() {
                 url : "womenslabelsloop.php",
                 type : "GET",
                 success: function(data){
+                    $('.loaderImage').fadeOut(3000);
                     $("#boxwomenslabels").html(data);
                 }
             })

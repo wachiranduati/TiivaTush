@@ -164,9 +164,6 @@ if(userLoggedIn() == True){
             </div>
 -->
 
-            <div class="row">
-                <div class="col-xs-12" id="cartitems"></div>
-            </div>
             <div class="row" style="padding:25px;border:1px solid gainsboro;margin-top:10px;">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 visible-lg visible-md"></div>
                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
@@ -217,16 +214,16 @@ if(userLoggedIn() == True){
                                  <form role="form" id="file-form" action="uploadmeat.php" method="post" enctype="multipart/form-data">
                                      <div class="form-group">
                                           <label for="pwd"><span style="color:red">*</span>Item Name:</label>
-                                          <input type="text" class="form-control" maxlength="50" id="itname" name="itname" placeholder="Itemname+colour i.e Black dress">
+                                          <input type="text" title="<h3>Product Name</h3><p>Pick a simple catchy name that best describes your product in less than 15 words</p>" class="form-control" maxlength="50" id="itname" name="itname" placeholder="Itemname+colour i.e Black dress">
                                         </div>
                                 <div class="form-group">
                                   <label for="sel1"><span style="color:red">*</span>Main Category (select one):</label>
-                                  <select class="form-control" id="maincategory" name="maincategory" onchange="showsubs(this.value);">
+                                  <select title="<h3>Main Category</h3><p>Choose a category where you think the item best fits in.</p>" class="form-control" id="maincategory" name="maincategory" onchange="showsubs(this.value);">
                                     <option disabled selected>Select item category</option>
                                     <option value="mens">Mens</option>
                                     <option value="womens">Womens</option>
                                     <option value="kids">Kids</option>
-                                    <option value="interiors">Interiors</option>
+                                    <option value="interiors">Interiors/Home</option>
                                     <option value="sportswear">Sportswear</option>
                                     <option value="shoes">Shoes</option>
                                     <option value="misc">Misc</option>
@@ -236,7 +233,7 @@ if(userLoggedIn() == True){
 
                                 <div class="form-group">
                                   <label for="sel1"><span style="color:red">*</span>Category (select one):</label>
-                                  <select class="form-control" style="font-family:kok;" id="subcategory" name="subcategory">
+                                  <select title="<h3>subcategory</h3><p>Choose a subcategory where you think the item best fits in.</p>" class="form-control" style="font-family:kok;" id="subcategory" name="subcategory">
                                       <option disabled selected>Select the item</option>
                                       <optgroup label="SPORTSWEAR" id="sportswearid">Sportswear
                                     <option value="shorts">Shorts</option>
@@ -257,7 +254,7 @@ if(userLoggedIn() == True){
                                     <option value="shirts">Shirts &amp; Tshirts</option>
                                     <option value="blazers">Blazers &amp; Jackets</option>
                                     <option value="bags">Bags</option>
-                                    <option value="mens">Mens Misc</option>
+                                    <option value="misc">Mens Misc</option>
                                       </optgroup>
                                       <optgroup label="WOMENS" id="womensid">Womens
                                     <option value="dresses">Dresses</option>
@@ -275,9 +272,10 @@ if(userLoggedIn() == True){
                                     <option value="sports">Sports</option>
                                     <option value="offic">Officials</option>
                                     <option value="sweats">Sweaters</option>
+                                    <option value="kshoes">Kids shoes</option>
                                     <option value="kshirts">Tshirts</option>
                                     <option value="kblazers">Blazers &amp; Jackets</option>
-                                    <option value="dolls">Dolls</option>
+                                    <!-- <option value="dolls">Dolls</option> -->
                                     <option value="kpants">Pants &amp; Shorts</option>
                                     <option value="bags">Bags</option>
                                     <option value="kmisc">Kids Misc</option>
@@ -288,8 +286,6 @@ if(userLoggedIn() == True){
                                     <option value="towels">Towels</option>
                                     <option value="curtains">Curtains</option>
                                     <option value="pillows">Pillows</option>
-                                    <option value="antiques">Antiques</option>
-                                    <option value="wallart">Wall art</option>
                                     <option value="misc">Household Misc</option>
                                       </optgroup>
                                       <optgroup label="BAGS" id="bagsid">Bags
@@ -306,9 +302,7 @@ if(userLoggedIn() == True){
                                     <option value="boots">Boots</option>
                                     <option value="sandals">Sandals &amp; Slippers</option>
                                     <option value="heels">High heels</option>
-                                    <option value="vans">Converse &amp; Vans</option>
-                                    <option value="rubber">Rubber</option>
-                                    <option value="misc">Shoes Misc</option>
+                                    <option value="oxfords">Oxfords & Formal</option>
                                       </optgroup>
                                       <optgroup label="MISC" id="miscid">Misc
                                     <option value="dolls">Dolls</option>
@@ -316,12 +310,12 @@ if(userLoggedIn() == True){
                                     <option value="hats">Hats</option>
                                     <option value="underwear">Underwear</option>
                                     <option value="socks">Socks</option>
-                                    <option value="fabrics">Fabrics</option>
+                                    <option value="books">Books, Magazines, Readables</option>
                                     <option value="misc">Misc Misc</option>
                                       </optgroup>
-                                      <optgroup label="GENERAL MISC">
+                                      <!-- <optgroup label="GENERAL MISC">
                                       <option value="misc">Misc</option>
-                                      </optgroup>
+                                      </optgroup> -->
 
 
                                   </select>
@@ -329,7 +323,7 @@ if(userLoggedIn() == True){
 
                                  <div class="form-group">
                                   <label for="sel1"><span style="color:red">*</span>Size (select one):</label>
-                                  <select class="form-control" id="sel1" name="size">
+                                  <select title="<h3>Product Size</h3><p>This will be applied to all products uploaded. To items like books rank it according to how big a read the book is. Choose one that suits but don't worry as you'll still get a chance to describe your item in details before uploading it.</p>" class="form-control" id="sel1" name="size">
                                     <option value="XL">Extra Large "XL"</option>
                                     <option value="L">Large "L"</option>
                                     <option value="M">Medium "M"</option>
@@ -341,7 +335,7 @@ if(userLoggedIn() == True){
 
                                 <div class="form-group">
                                   <label for="email"><span style="color:red">*</span>Label (Name of item designer):</label>
-                                  <input type="text" class="form-control" name="label" id="label" placeholder="Enter label Name i.e Old Navy">
+                                  <input title="<h3>Product Label</h3><p>This is the desiner, manufacturer or writer of the product depending on the context of the product be it cloth, equipment or book etc.</p>" type="text" class="form-control" name="label" id="label" placeholder="Enter label Name i.e Old Navy" maxlength="20">
                                 </div>
 
 
@@ -350,25 +344,25 @@ if(userLoggedIn() == True){
                                      <div class="col-xs-4">
                                         <label for="fl1"><span style="color:red">*</span>Image 1:</label>
                                          <input type="file" id="file" name="file" style="display:none;"/>
-                                         <input type="button" class="btn btn-primary btn-xs" value="Choose file.." onclick="document.getElementById('file').click();"/>
+                                         <input title="<h3>Image 1</h3><p>Select an Image of the product to upload. This should primarily be the best image you have as this is the one easily seen by your potential customers</p>" type="button" class="btn btn-primary btn-xs btnFile" value="Choose file.." onclick="document.getElementById('file').click();"/>
 
                                      </div>
 
                                       <div class="col-xs-4">
                                         <label for="fl1"><span style="color:red">*</span>Image 2:</label>
                                          <input type="file" id="file2" name="file2" style="display:none;"/>
-                                         <input type="button" class="btn btn-primary btn-xs" value="Choose file.." onclick="document.getElementById('file2').click();"/>
+                                         <input title="<h3>Image 2</h3><p>Select another Image of the product to upload. It should be different from Image 1 and two. Use your creativity to make it unique from Image 1 and 3</p>" type="button" class="btn btn-primary btn-xs btnFile2" value="Choose file.." onclick="document.getElementById('file2').click();"/>
 
                                      </div>
                                       <div class="col-xs-4">
                                         <label for="fl1"><span style="color:red">*</span>Image 3:</label>
                                          <input type="file" id="file3" name="file3" style="display:none;"/>
-                                         <input type="button" class="btn btn-primary btn-xs" value="Choose file.." onclick="document.getElementById('file3').click();"/>
+                                         <input title="<h3>Image 3</h3><p>Select the last Image to best sell your item to your customer. This is the final image and should be different from Image 1 and 2 like from a different angle.</p>" type="button" class="btn btn-primary btn-xs btnFile3" value="Choose file.." onclick="document.getElementById('file3').click();"/>
 
                                      </div>
                                      </div>
 
-                                     <div class="row visible-sm visible-xs">
+                                     <div class="row visible-sm visible-xs" title="<h3>Your Chosen Images</h3><p>These are the images you chose for your product</p>">
                                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                             <img src="images/1.jpg" id="image4" class="img-responsive"/>
                                          </div>
@@ -380,49 +374,104 @@ if(userLoggedIn() == True){
                                          </div>
                                      </div>
 
+<script>
+    function wrongsizeImage(x){
+        alert('The image is too large');
+        $(x).removeClass("btn-success");
+        $(x).removeClass("btn-primary");
+        $(x).addClass("btn-danger");
+        $("#upload_Button").prop("disabled", true);
+    }
+    function successImagesize(x){
+        $(x).addClass("btn-success");
+        $(x).removeClass("btn-primary");
+        $(x).removeClass("btn-danger");
+        $("#upload_Button").removeClass("disabled");
+        $("#upload_Button").prop("disabled", false);
+    }
 
+    function checkSize(x, sz){
+        if(sz > 2097152){
+            wrongsizeImage(x);
+        }else{
+            successImagesize(x);
+        }
+    }
+
+    $("#file").change(function(){
+        var size = $(this).get(0).files[0].size;
+        // console.log(size);
+        checkSize(".btnFile", size);
+        
+    });
+    $("#file2").change(function(){
+        var size = $(this).get(0).files[0].size;
+        // console.log(size);
+        checkSize(".btnFile2", size);
+    });
+    $("#file3").change(function(){
+        var size = $(this).get(0).files[0].size;
+        // console.log(size);
+        checkSize(".btnFile3", size);
+    });
+
+    $("#maincategory").change(function(){
+        // var subcategory = $("#subcategory").val();
+        // alert(subcategory);
+        $("#subcategory").val("");
+    });
+    
+</script>
 
                                   <h4><strong><span style="color:red">*</span>Sex</strong></h4>
 
-                                  <label class="radio-inline"><input type="radio" name="sex" value="Male"> Male</label>
-                                  <label class="radio-inline"><input type="radio" name="sex" value="Female"> Female</label>
-                                  <label class="radio-inline"><input type="radio" name="sex" checked value="Unisex"> Unisex</label>
+                                  <label class="radio-inline"><input title="<h3>Male</h3><p>Choose this option if the product is strictly men</p>" type="radio" name="sex" value="Male"> Male</label>
+                                  <label class="radio-inline"><input title="<h3>Female</h3><p>Choose this option if the product is strictly for women.</p>" type="radio" name="sex" value="Female"> Female</label>
+                                  <label class="radio-inline"><input title="<h3>Unisex</h3><p>Choose this if the item can be used by both male and female users. Please be certain of your choice before picking this as the option to avoid returns by the customer.</p>" type="radio" name="sex" checked value="Unisex"> Unisex</label>
 
                                          <div class="row">
                                              <br>
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <label for="ex1" class="visible-lg visible-md"><span style="color:red">*</span>Length/height(Inch)</label>
+                                        <label for="ex1" class="visible-lg visible-md"><span style="color:red">*</span>Item Description</label>
                                         <label for="ex1" class="visible-sm visible-xs">Length(Inch)</label>
-                                          <textarea name="details" id="details" class="form-control" cols="30" rows="10" placeholder="Define the item in detail perse....item colour, size, dimensions, fabric material. You could also describe any faults that may be present in the item. This should be enough to describe to a buyer to reduce chances of returns" style="margin-bottom: 4%"></textarea>
+                                          <textarea title="<h3>Product Details</h3><p>This is your chance to really sell the item to the customer. Describe your item in detail as best as you can depending on the category you are uploading to. Again your inginuity will go a long way to boost your sales.</p>" name="details" id="details" class="form-control" cols="30" rows="10" placeholder="Define the item in detail perse....item colour, size, dimensions, fabric material. You could also describe any faults that may be present in the item. This should be enough to describe to a buyer to reduce chances of returns" style="margin-bottom: 4%"></textarea>
                                         </div>
                                         
                                           </div>
                                           <div class="row">
                                               <div class="col-xs-12">
                                                   <div class="form-group">
-                                          <label for="sel1"><span style="color:red">*</span>Condition (Select one):</label>
-                                          <select class="form-control" id="rating" name="rating">
-                                            <option value="1" style="color:orange;"><p>&#9734</p></option>
-                                            <option value="2" style="color:orange;"><p>&#9734 &#9734</p></option>
-                                            <option value="3" style="color:orange;"><p>&#9734 &#9734 &#9734</p></option>
-                                            <option value="4" style="color:orange;"><p>&#9734 &#9734 &#9734 &#9734</p></option>
-                                            <option value="5" style="color:orange;"><p>&#9734 &#9734 &#9734 &#9734 &#9734</p></option>
+                                          <label for="sel1"><span style="color:red">*</span>Condition</label>
+                                          <select title="<h3>Item Condition</h3><p>Choose an option that best describes your product condition.</p>" class="form-control" id="rating" name="rating">
+                                            <option value="1"><p>Terrible Condition</p></option>
+                                            <option value="2"><p>Fair Condition</p></option>
+                                            <option value="3"><p>Average Condition</p></option>
+                                            <option value="4"><p>Good Condition</p></option>
+                                            <option value="5"><p>Amazing Condition</p></option>
 
                                           </select>
 
                                         </div>
                                         <div class="form-group">
                                           <label for="pwd"><span style="color:red">*</span>Item price:(Ksh)</label>
-                                          <input type="number" class="form-control" min="10" id="price" name="price" placeholder="Item price(Ksh)">
+                                          <input title="<h3>Item Price</h3><p>This is the selling price you settle on selling your item on tiiva. Remember not to overprice nor underprice your item.</p>" type="number" class="form-control" min="10" id="price" name="price" placeholder="Item price(Ksh)">
                                         </div>
 
                                          <div class="form-group">
                                           <label for="cut">Final amount you get:(Ksh)</label>
-                                          <input type="text" class="form-control cut" id="cut" name="cut" readonly placeholder="Item price(Ksh)">
+                                          <input title="<h3>Final Amount</h3><p>This is automated and calculated from the item price you set above. This is the final amount Tiiva pays you once the item is sold and delivered by us. Tiiva charges a 12.5% of the total Item price  of the item sold on Tiiva.</p>" type="text" class="form-control cut" id="cut" name="cut" readonly placeholder="Item price(Ksh)">
                                         </div>
-
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="alert alert-danger uploadAlertBox" style="display: none;">
+                                                        <strong>Error! </strong>Please Ensure that all fields are filled.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div id="notification">
-                                        <button type="button" onclick="twende();" id="upload_Button" class="btn btn-lg btn-success btn-block">Publish Item</button>
+                                        <button title="<h3>Publish Button</h3><p>This is the last step to upload your item on tiiva. Click this button to finalize product upload. You can monitor your upload progress at the top</p>" type="button" onclick="twende();" id="upload_Button" class="btn btn-lg btn-success btn-block">Publish Item</button>
                                         </div>
                                           </div>
                                           </div>
@@ -459,6 +508,11 @@ if(userLoggedIn() == True){
 </div>
 <?php require 'templates/footer.php';?>
         <script type="text/javascript">
+            $(":input, select, textarea").tooltip({
+                placement:"top",
+                html: "true"
+            });
+
         function results(){
               if(window.XMLHttpRequest){
                     xmlhttp3 = new XMLHttpRequest();
@@ -535,6 +589,12 @@ if(userLoggedIn() == True){
 
             }
 
+            function showAlertBox(){
+                $(".uploadAlertBox").show();
+            }
+
+            setInterval(function(){updateNotifs();}, 30000);
+
             function twende(){
                 var itname = document.getElementById("itname").value;
                 var maincategory = document.getElementById("maincategory").value;
@@ -552,10 +612,15 @@ if(userLoggedIn() == True){
                 var datastring = 'itname=' + itname + '&maincategory=' + maincategory + '&subcategory=' + subcategory + '&sel1=' + sel1 + '&label=' + label + '&file=' + file + '&file2=' + file2 + '&file3=' + file3 + '&sex=' + sex + '&details=' + details + '&rating' + rating + '&price' + price;
 
                 if(itname == "" || maincategory == "" || subcategory == "" || sel1 == "" || label == "" || file == "" || file2 == "" || file3 == "" || sex == "" || details == "" || rating == "" || price == ""){
-                    alert("Please Fill All Fields");
+                    // alert("Please Fill All Fields");
+                    // setTimeout(showAlertBox(), 3000);
+                    $(".uploadAlertBox").show();
+                    setTimeout(function(){ $(".uploadAlertBox").hide(); }, 8000);
+                    
                     //alert(sex);
                     // i can change the inner html of a div element later for this
                 }else{
+                    $("#upload_Button").html("Uploading ... <span class=\"mdi mdi-refresh mdi-spin mdi-24px\"></span>");
                     var myform = document.getElementById("file-form");
                     var fd = new FormData(myform);
                     $.ajax({
@@ -569,9 +634,10 @@ if(userLoggedIn() == True){
                     success: function(returneddata){
                         //alert(returneddata);
                         console.log(returneddata);
-                        alert('Item has successfully been uploaded. Please refresh this page to make another upload');
-                        // $("#notification").html(returneddata);
-                        //$("#upload_Button").attr("disabled","disabled");
+                        // alert('Item has successfully been uploaded. Please refresh this page to make another upload');
+                        $("#notification").html(returneddata);
+                        $(".uploadAlertBox").hide();
+                        $("#upload_Button").attr("disabled","disabled");
 
                     },
                     xhr: function(){

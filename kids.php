@@ -15,6 +15,9 @@ $century = 860;//Mtush
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php require 'templates/resourcelinks/headerlinks.php';?>
 
+    <meta name="description" content="Tiiva is an online store featuring crowdsourced items from sellers all over Kenya. Buy and sell second hand mtumba items for children.">
+    <meta name="keywords" content="Mtumba, thriftshop, thriftshopping, second hand clothes, second hand, cheap, kids's mtumba, children, child">
+
     <style type="text/css">
         .searchbox {
             border-bottom: 1px solid black;
@@ -51,39 +54,6 @@ $century = 860;//Mtush
         require 'templates/pagetitle.php';
         echo pageTitle('KIDSWEAR');
                 ?>
-            <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=kids&sub=sports&page=1" class="list-group-item"><img src="others/kidssportswear.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sportswear</a>
-                            <a href="mainpage.php?search=kids&sub=offic&page=1" class="list-group-item"><img src="others/kidsofficialdresses.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Formalwear</a>
-                            <a href="mainpage.php?search=kids&sub=sweats&page=1" class="list-group-item"><img src="others/kidssweaters.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Sweaters</a>
-                            <a href="mainpage.php?search=kids&sub=kshirts&page=1" class="list-group-item"><img src="others/kidstopstshirts.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Tshirts</a>
-                            <a href="mainpage.php?search=kids&sub=kblazers&page=1" class="list-group-item"><img src="others/kidsblazersboyfriendjackets.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Blazers</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="others/kidsdolls.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Dolls</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="others/kidsbagsbackpacks.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Bags</a>
-                            <a href="mainpage.php" class="list-group-item"><img src="others/kidssportswearpants.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;kids Pants</a>
-                            <a href="mainpage.php?search=kids&sub=kmisc&page=1" class="list-group-item"><img src="others/kidsmiscsocks.gif" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Kids Misc</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="kids.php" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Categories</h5></a>
-                        </div>
-
-
-                    </div>
-
 
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border:1px solid white;">
@@ -128,7 +98,7 @@ $century = 860;//Mtush
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="row">
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
-                                                            <?php echo offersCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png', 349);?>
+                                                            <?php echo offersCarousels('imageone.png', 'imagetwo.png', 'imagethree.png', 'imagefour.png', 351);?>
                                                         </div>
                                                     </div>
                                                     
@@ -167,33 +137,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=kids&sub=sports&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sports Shoes</a>
-                            <a href="mainpage.php?search=kids&sub=sports&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sports Socks</a>
-                            <a href="mainpage.php?search=kids&sub=sports&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sports Jackets</a>
-                            <a href="mainpage.php?search=kids&sub=sports&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sports Tshirts</a>
-                            <a href="mainpage.php?search=kids&sub=sports&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sports Pants</a>
-                            <a href="mainpage.php?search=kids&sub=sports&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sports Shorts</a>
-                            <a href="mainpage.php?search=kids&sub=sports&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;SweatBands</a>
-                            <a href="mainpage.php?search=kids&sub=sports&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;SwimSuits</a>
-                            <a href="mainpage.php?search=kids&sub=sports&page=1" class="list-group-item"><img src="icons/runningicons.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sports Misc</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=kids&sub=sports&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Sportswear</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=kids&sub=sports&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Kids' Sportswear</h5></a>
                         </div>
 
 
@@ -257,33 +203,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=kids&sub=offic&page=1" class="list-group-item"><img src="icons/suitjacketicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Formal Shoes</a>
-                            <a href="mainpage.php?search=kids&sub=offic&page=1" class="list-group-item"><img src="icons/suitjacketicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Formal Shirts</a>
-                            <a href="mainpage.php?search=kids&sub=offic&page=1" class="list-group-item"><img src="icons/suitjacketicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Formal Pants</a>
-                            <a href="mainpage.php?search=kids&sub=offic&page=1" class="list-group-item"><img src="icons/suitjacketicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Blouses</a>
-                            <a href="mainpage.php?search=kids&sub=offic&page=1" class="list-group-item"><img src="icons/suitjacketicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Dresses</a>
-                            <a href="mainpage.php?search=kids&sub=offic&page=1" class="list-group-item"><img src="icons/suitjacketicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Ties</a>
-                            <a href="mainpage.php?search=kids&sub=offic&page=1" class="list-group-item"><img src="icons/suitjacketicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sweaters</a>
-                            <a href="mainpage.php?search=kids&sub=offic&page=1" class="list-group-item"><img src="icons/suitjacketicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Formal Tshirts</a>
-                            <a href="mainpage.php?search=kids&sub=offic&page=1" class="list-group-item"><img src="icons/suitjacketicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Formal Misc</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=kids&sub=offic&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">formal-wear</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=kids&sub=offic&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Kids' Formal-wear</h5></a>
                         </div>
 
 
@@ -348,33 +270,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=kids&sub=sweats&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Cardigans</a>
-                            <a href="mainpage.php?search=kids&sub=sweats&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Shrugs</a>
-                            <a href="mainpage.php?search=kids&sub=sweats&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sweaters</a>
-                            <a href="mainpage.php?search=kids&sub=sweats&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;SweatShirts</a>
-                            <a href="mainpage.php?search=kids&sub=sweats&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Hoodies</a>
-                            <a href="mainpage.php?search=kids&sub=sweats&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Trenchcoats</a>
-                            <a href="mainpage.php?search=kids&sub=sweats&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Turtleknecks</a>
-                            <a href="mainpage.php?search=kids&sub=sweats&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Softspun</a>
-                            <a href="mainpage.php?search=kids&sub=sweats&page=1" class="list-group-item"><img src="icons/sweatericon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Sweaters</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=kids&sub=sweats&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Sweaters</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=kids&sub=sweats&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Kids' Sweaters</h5></a>
                         </div>
 
 
@@ -433,6 +331,75 @@ $century = 860;//Mtush
 
             <!--Ends here -->
 
+            <!--start here-->
+            <div class="row" style="">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="row visible-lg visible-md">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:30px;border:1px solid black; border-bottom:1px solid white;background-color:black;"><a class="btn btn-block" href="mainpage.php?search=kids&sub=kshoes&page=1"><h4 class="text-uppercase" style="color:white;font-weight:bold;">Shoes</h4></a></div>
+                    </div>
+
+                    <div class="row visible-sm visible-xs">
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=kids&sub=kshoes&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Kids' Shoes</h5></a>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg visible-md" style="height:400px; border-bottom:1px solid gainsboro;border-right:1px solid white;border-top:1px solid white;">
+                                    <div class="row" id="categoriescontainer">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categoriestopprnt">
+                        <ul id="categories">
+
+                            <li><a href="mainpage.php?search=kids&sub=kshoes&page=1" target="_blank"><img src="icons/sportswear.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;sneakers<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=kids&sub=kshoes&page=1" target="_blank"><img src="icons/mensicon.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;boots<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=kids&sub=kshoes&page=1" target="_blank"><img src="icons/women.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;heels<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=kids&sub=kshoes&page=1" target="_blank"><img src="icons/boy.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;flats<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=kids&sub=kshoes&page=1" target="_blank"><img src="icons/house.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;sandals<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=kids&sub=kshoes&page=1" target="_blank"><img src="icons/backpackicons.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;sports shoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=kids&sub=kshoes&page=1" target="_blank"><img src="icons/shoesicons.png" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;oxfords<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=kids&sub=kshoes&page=1" target="_blank"><img src="icons/labelsgift.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;misc shoes<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+                            <li><a href="mainpage.php?search=kids&sub=kshoes&page=1" target="_blank"><img src="icons/misc.svg" class="img-responsive" style="height:25px;display:inline;"/><span class="text-uppercase">&nbsp;&nbsp;All Kids'<span class="glyphicon glyphicon-chevron-right pull-right" style="padding-top:7%;"></span></span></a></li>
+
+                        </ul>
+                            </div>
+                        </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;">
+
+
+<!--            starts here-->
+            <div class="row visible-lg visible-md">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <?php echo groupedCarousels('kidsshoeschildren.png', 'kidsshoessneakers.png', 'kidsshoesyoungsterteddy.png', 'kidsshoeschildrenshoes.png', 498);?>
+                </div>
+            </div>
+<!--            ends here-->
+
+
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="border-top:1px solid gainsboro;border-bottom:1px solid gainsboro;">
+                                    <?php echo spinnersHolder('boxkidsshoes');?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row visible-lg visible-md">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:1%;">
+                    <a href="index.php">
+                        <img src="images/banners/outdoors.png" class="img-responsive bannerlg"/>
+                    </a>
+                </div>
+            </div>
+
+            <!--Ends here -->
+
              <!--start here-->
             <div class="row" style="">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -441,33 +408,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=kids&sub=kshirts&page=1" class="list-group-item"><img src="icons/tshirts.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Blouses</a>
-                            <a href="mainpage.php?search=kids&sub=kshirts&page=1" class="list-group-item"><img src="icons/tshirts.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Tshirts</a>
-                            <a href="mainpage.php?search=kids&sub=kshirts&page=1" class="list-group-item"><img src="icons/tshirts.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Vests</a>
-                            <a href="mainpage.php?search=kids&sub=kshirts&page=1" class="list-group-item"><img src="icons/tshirts.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Shirts</a>
-                            <a href="mainpage.php?search=kids&sub=kshirts&page=1" class="list-group-item"><img src="icons/tshirts.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Polo</a>
-                            <a href="mainpage.php?search=kids&sub=kshirts&page=1" class="list-group-item"><img src="icons/tshirts.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Interiors</a>
-                            <a href="mainpage.php?search=kids&sub=kshirts&page=1" class="list-group-item"><img src="icons/tshirts.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Turtleknecks</a>
-                            <a href="mainpage.php?search=kids&sub=kshirts&page=1" class="list-group-item"><img src="icons/tshirts.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Peplum</a>
-                            <a href="mainpage.php?search=kids&sub=kshirts&page=1" class="list-group-item"><img src="icons/tshirts.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc tops</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=kids&sub=kshirts&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Tops</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=kids&sub=kshirts&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Kids' Tops</h5></a>
                         </div>
 
 
@@ -533,10 +476,10 @@ $century = 860;//Mtush
                 </div>
             </div>
             <div class="row visible-sm visible-xs" style="border:1px solid gainsboro;">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpage.php?search=kids&sub=offic&page=1"><img src="banners\categories\kidsofficialwear.png" class="img-responsive featured"/></a></div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpage.php?search=kids&sub=sweats&page=1"><img src="banners\categories\kidssweaters.png" class="img-responsive featured"/></a></div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpageesub.php?search=dolls&page=1"><img src="banners\categories\kidsdolls.png" class="img-responsive featured"/></a></div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpage.php?search=kids&sub=kpants&page=1"><img src="banners\categories\kidspants.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpage.php?search=kids&sub=offic&page=1"><img src="images/banners/categories/kidsofficialwear.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpage.php?search=kids&sub=sweats&page=1"><img src="images/banners/categories/kidssweaters.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpageesub.php?search=dolls&page=1"><img src="images/banners/categories/kidsdolls.png" class="img-responsive featured"/></a></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 featurediv"><a href="mainpage.php?search=kids&sub=kpants&page=1"><img src="images/banners/categories/kidspants.png" class="img-responsive featured"/></a></div>
             </div>
 
              <!--start here-->
@@ -547,33 +490,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=kids&sub=kpants&page=1" class="list-group-item"><img src="icons/sweatpantsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Jumpsuits</a>
-                            <a href="mainpage.php?search=kids&sub=kpants&page=1" class="list-group-item"><img src="icons/sweatpantsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Harem Pants</a>
-                            <a href="mainpage.php?search=kids&sub=kpants&page=1" class="list-group-item"><img src="icons/sweatpantsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Jeans Pants</a>
-                            <a href="mainpage.php?search=kids&sub=kpants&page=1" class="list-group-item"><img src="icons/sweatpantsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Khaki Pants</a>
-                            <a href="mainpage.php?search=kids&sub=kpants&page=1" class="list-group-item"><img src="icons/sweatpantsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Sweatpants</a>
-                            <a href="mainpage.php?search=kids&sub=kpants&page=1" class="list-group-item"><img src="icons/sweatpantsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Highwaist Ps</a>
-                            <a href="mainpage.php?search=kids&sub=kpants&page=1" class="list-group-item"><img src="icons/sweatpantsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Skinny Pants</a>
-                            <a href="mainpage.php?search=kids&sub=kpants&page=1" class="list-group-item"><img src="icons/sweatpantsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Cargo Pants</a>
-                            <a href="mainpage.php?search=kids&sub=kpants&page=1" class="list-group-item"><img src="icons/sweatpantsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Pants</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=kids&sub=kpants&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Pants</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=kids&sub=kpants&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Kids' Pants</h5></a>
                         </div>
 
 
@@ -639,33 +558,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=kids&sub=kblazers&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Boyfriend Bs</a>
-                            <a href="mainpage.php?search=kids&sub=kblazers&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Fitted Blazers</a>
-                            <a href="mainpage.php?search=kids&sub=kblazers&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Draped Bs</a>
-                            <a href="mainpage.php?search=kids&sub=kblazers&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bomber Jckts</a>
-                            <a href="mainpage.php?search=kids&sub=kblazers&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Peplum Bs</a>
-                            <a href="mainpage.php?search=kids&sub=kblazers&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Military Bs</a>
-                            <a href="mainpage.php?search=kids&sub=kblazers&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Denim Blazers</a>
-                            <a href="mainpage.php?search=kids&sub=kblazers&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Tailored Bs</a>
-                            <a href="mainpage.php?search=kids&sub=kblazers&page=1" class="list-group-item"><img src="icons/coaticon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Blazers</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=kids&sub=kblazers&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Blazers</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=kids&sub=kblazers&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Kids' Blazers</h5></a>
                         </div>
 
 
@@ -732,33 +627,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="icons/dollicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Barbie Dolls</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="icons/dollicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Vintage Dolls</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="icons/dollicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Rag Dolls</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="icons/dollicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bitty-Baby Ds</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="icons/dollicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bratz Dolls</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="icons/dollicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Cornhusk Ds</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="icons/dollicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;China Dolls</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="icons/dollicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Fluffy Dolls</a>
-                            <a href="mainpageesub.php?search=dolls&page=1" class="list-group-item"><img src="icons/dollicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Dolls</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpageesub.php?search=dolls&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Dolls</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpageesub.php?search=dolls&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Kids' Dolls</h5></a>
                         </div>
 
 
@@ -825,33 +696,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/femalebagsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Backpacks</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/femalebagsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Drawstring Bs</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/femalebagsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Rucksacks</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/femalebagsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Trunks</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/femalebagsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Duffle Bags</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/femalebagsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Messenger Bs</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/femalebagsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Purses</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/femalebagsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Bumbags</a>
-                            <a href="mainpagee.php?search=bags&page=1" class="list-group-item"><img src="icons/femalebagsicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Bags</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpagee.php?search=bags&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Bags</h5></a>
+                        =
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpagee.php?search=bags&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Bags</h5></a>
                         </div>
 
 
@@ -920,33 +767,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpage.php?search=kids&sub=kmisc&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Socks</a>
-                            <a href="mainpage.php?search=kids&sub=kmisc&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Gloves</a>
-                            <a href="mainpage.php?search=kids&sub=kmisc&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Ties</a>
-                            <a href="mainpage.php?search=kids&sub=kmisc&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Hats</a>
-                            <a href="mainpage.php?search=kids&sub=kmisc&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Swimsuits</a>
-                            <a href="mainpage.php?search=kids&sub=kmisc&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Shoes</a>
-                            <a href="mainpage.php?search=kids&sub=kmisc&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Scarfs</a>
-                            <a href="mainpage.php?search=kids&sub=kmisc&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Shoes</a>
-                            <a href="mainpage.php?search=kids&sub=kmisc&page=1" class="list-group-item"><img src="icons/femaleworkoutglovesicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc misc</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpage.php?search=kids&sub=kmisc&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">Misc</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpage.php?search=kids&sub=kmisc&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">Misc</h5></a>
                         </div>
 
 
@@ -1017,33 +840,9 @@ $century = 860;//Mtush
                     </div>
 
                     <div class="row visible-sm visible-xs">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
-                            <div class="dropdown">
-                        <a class="dropdown-toggle btn btn-block" data-toggle="dropdown">
-<!--                                <span class="caret"></span>-->
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                            <p class="text-center" style="border:2px solid white;width:20px;"></p>
-                        </a>
-
-                        <ul class="dropdown-menu list-group">
-                            <a href="mainpagee.php?search=kids&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Armani</a>
-                            <a href="mainpagee.php?search=kids&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Ralph Lauren</a>
-                            <a href="mainpagee.php?search=kids&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Versace</a>
-                            <a href="mainpagee.php?search=kids&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Converse</a>
-                            <a href="mainpagee.php?search=kids&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Fubu</a>
-                            <a href="mainpagee.php?search=kids&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Prada</a>
-                            <a href="mainpagee.php?search=kids&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Old Navy</a>
-                            <a href="mainpagee.php?search=kids&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;D&amp;C</a>
-                            <a href="mainpagee.php?search=kids&page=1" class="list-group-item"><img src="icons/boxicon.png" class="img-responsive" style="height:25px;display:inline;"/>&nbsp;&nbsp;Misc Labels</a>
-
-
-
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-10 col-xs-10" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
-                            <a style="color:white;" href="mainpagee.php?search=kids&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-left" style="font-weight:bold;">All Kids'</h5></a>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:5px;border:1px solid black; border-bottom:1px solid white;background-color:black;">
+                            <a style="color:white;" href="mainpagee.php?search=kids&page=1" class="btn btn-block btn-sm"><h5 class="text-uppercase text-center" style="font-weight:bold;">All Kids'</h5></a>
                         </div>
 
 
@@ -1216,8 +1015,22 @@ function carousel() {
                     xmlhttp4.open('GET','kidssweatersloop.php',true);
                     xmlhttp4.send();
                 $('.loaderImage').fadeOut(3000);
-                kidsloop();
+            kidsshoesloops();
 
+            }
+
+            //kids sweaters loop here down
+            function kidsshoesloops(){
+                $('.loaderImage').fadeIn(3000);
+                $.ajax({
+                    url: "kidsshoesloops.php",
+                    type: "GET",
+                    success: function(data){
+                        $('.loaderImage').fadeOut(3000);
+                        $("#boxkidsshoes").html(data);
+                        kidsloop();
+                    }
+                });
             }
             // kids shirts loop down here
             function kidsloop(){
