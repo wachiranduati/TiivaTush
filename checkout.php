@@ -29,7 +29,8 @@ if(isset($_SESSION['$user_id'])){
     if($hasCarts == 1){
         // has carted items
     }else{
-        redirectUser();
+        // redirectUser();
+        echo $hasCarts;
     }
 }else{
     // return False;
@@ -327,7 +328,7 @@ $century = 860;//Mtush
                                 <li>Go to the <strong>M-PESA</strong> Menu</li>
                                 <li>Go to <strong>Lipa na M-PESA</strong></li>
                                 <li>Go to <strong>Buy Goods and Services</strong> </li>
-                                <li>Enter <strong>Till Number: <span style="color:orange;text-shadow:1px 1px 1px black;font-size:130%;">860321</span></strong></li>
+                                <li>Enter <strong>Till Number: <span style="color:orange;text-shadow:1px 1px 1px black;font-size:130%;"><!-- 860321 -->We're offline at the moment</span></strong></li>
                                 <li>Enter <strong>amount: <span id="mytotal" style="color:blue;font-size:120%;">Your Total</span></strong></li>
                                 <li>Enter your <strong>M-PESA pin</strong></li>
                                 <li>Confirm the name checks out as Tiiva Shopping mall</li>

@@ -156,14 +156,14 @@ function destroyProductActivityStampforallotherbookeditems($conn, $table, $itemi
 
 function timestampExtendexpiry($conn, $itemid, $booktime){
 	// this will extend the expirty time for an item for an active user
-	$query = "SELECT `exptime` FROM `cartActivity` WHERE `itemid` = $itemid";
+	$query = "SELECT `exptime` FROM `cartactivity` WHERE `itemid` = $itemid";
 	$query_run = mysqli_query($conn, $query);
 	$num_rows = mysqli_num_rows($query_run);
 	if($num_rows == 1){
 		$row = mysqli_fetch_assoc($query_run);
 		$oldexpTime = $row['exptime']; 
 		$newtime = timeDeltaCurrentTime('+'.$booktime.'minutes');
-		$query_update_time = "UPDATE `cartActivity` SET `exptime` = '$newtime' WHERE `itemid` = $itemid";
+		$query_update_time = "UPDATE `cartactivity` SET `exptime` = '$newtime' WHERE `itemid` = $itemid";
 		if($query_update_run = mysqli_query($conn, $query_update_time)){
 			return True;
 		}else{
@@ -180,14 +180,14 @@ function timestampExtendexpiry($conn, $itemid, $booktime){
 
 function extendExpirytime($conn, $itemid, $booktime){
 	// unlinek the function above this will not extedn on the current itme...this will extend on the expiry time
-	$query = "SELECT `exptime` FROM `cartActivity` WHERE `itemid` = $itemid";
+	$query = "SELECT `exptime` FROM `cartactivity` WHERE `itemid` = $itemid";
 	$query_run = mysqli_query($conn, $query);
 	$num_rows = mysqli_num_rows($query_run);
 	if($num_rows == 1){
 		$row = mysqli_fetch_assoc($query_run);
 		$oldexpTime = $row['exptime']; 
 		$newtime = timeDeltaExtendTimeReturn($oldexpTime, '+'.$booktime.'minutes', 'Y-m-d H:i:s');
-		$query_update_time = "UPDATE `cartActivity` SET `exptime` = '$newtime' WHERE `itemid` = $itemid";
+		$query_update_time = "UPDATE `cartactivity` SET `exptime` = '$newtime' WHERE `itemid` = $itemid";
 		if($query_update_run = mysqli_query($conn, $query_update_time)){
 			return True;
 		}else{
@@ -224,7 +224,7 @@ function updateProdActivityAddCart($conn, $carttime, $itemid){
 	// this will be called when a user adds the item to cart
 	// remember that item id is unique
 	$newtime = timeDeltaCurrentTime('+'.$carttime.'hours');
-	$query = "UPDATE `cartActivity` SET `exptime` = '$newtime', `state` = 'cart' WHERE `itemid` =  $itemid";
+	$query = "UPDATE `cartactivity` SET `exptime` = '$newtime', `state` = 'cart' WHERE `itemid` =  $itemid";
 	if($query_run = mysqli_query($conn, $query)){
 		return True;
 	}else{
@@ -367,20 +367,23 @@ if(isset($_POST['action']) && $_POST['action'] == 'book' && isset($_POST['prod']
 			
 			// create a timestamp for the new booking
 			if(createProductActivityStamp($conn, $prod, $ctime, $exptime, $userid, 'book') == True){
+				echo bootstrapAlert('info', 'glyphicon-info-sign', 'Niaje ', "Item has been successfully booked. For the next 5 minutes no one else ,but you, can buy this item.", 'A0');
 				// time entry created for the booking
 				// echo bootstrapAlert('info', 'glyphicon-info-sign', 'Niaje ', "Item has been successfully booked. For the next 5 minutes no one else ,but you, can buy this item.", 'A0');
 				// unbook any other item user has booked
-				if(unbookallotherbookeditems($conn, 'products', 0, $prod) == True){
-					// proceed to destroy those items carts
-					if(destroyProductActivityStampforallotherbookeditems($conn, 'cartactivity', $prod, $userid) == True){
-						//all done all other booked items unbooked successfully
-						echo bootstrapAlert('info', 'glyphicon-info-sign', 'Niaje ', "Item has been successfully booked. For the next 5 minutes no one else ,but you, can buy this item.", 'A0');
-					}else{
-						// error occured trying to unbook items Crap
-					}
-				}else{
-					// error trying to unbook item
-				}
+				// // COMMENTED OUT STARTS HERE TODO	
+				// if(unbookallotherbookeditems($conn, 'products', 0, $prod) == True){
+				// 	// proceed to destroy those items carts
+				// 	if(destroyProductActivityStampforallotherbookeditems($conn, 'cartactivity', $prod, $userid) == True){
+				// 		//all done all other booked items unbooked successfully
+				// 		echo bootstrapAlert('info', 'glyphicon-info-sign', 'Niaje ', "Item has been successfully booked. For the next 5 minutes no one else ,but you, can buy this item.", 'A0');
+				// 	}else{
+				// 		// error occured trying to unbook items Crap
+				// 	}
+				// }else{
+				// 	// error trying to unbook item
+				// }
+				// // COMMENTED OUT ENDS HERE
 			}else{
 				// entry could not be created error
 				echo bootstrapAlert('danger', 'glyphicon-info-sign', 'Sorry ', "encountered an error trying to book item", 'A0');
