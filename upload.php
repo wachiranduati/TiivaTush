@@ -198,7 +198,7 @@ if(userLoggedIn() == True){
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" style="margin-top:10px;">
-                                                        <p style="margin-top:5px;">We offer this service to you the seller for free. Our take on this is 12.5% of each sale. We do not influence your price but we try and ensure you provide a reasonable pricing for your item. Final amount tab is automated by the price you provide for the item on sale.</p>
+                                                        <p style="margin-top:5px;">We offer this service to you the seller for free. Our take on this is 10% of each sale. We do not influence your price but we try and ensure you provide a reasonable pricing for your item. Final amount tab is automated by the price you provide for the item on sale.</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -459,7 +459,7 @@ if(userLoggedIn() == True){
 
                                          <div class="form-group">
                                           <label for="cut">Final amount you get:(Ksh)</label>
-                                          <input title="<h3>Final Amount</h3><p>This is automated and calculated from the item price you set above. This is the final amount Tiiva pays you once the item is sold and delivered by us. Tiiva charges a 12.5% of the total Item price  of the item sold on Tiiva.</p>" type="text" class="form-control cut" id="cut" name="cut" readonly placeholder="Item price(Ksh)">
+                                          <input title="<h3>Final Amount</h3><p>This is automated and calculated from the item price you set above. This is the final amount Tiiva pays you once the item is sold and delivered by us. Tiiva charges a 10% of the total Item price  of the item sold on Tiiva.</p>" type="text" class="form-control cut" id="cut" name="cut" readonly placeholder="Item price(Ksh)">
                                         </div>
                                         <div class="form-group">
                                             <div class="row">
@@ -536,7 +536,7 @@ if(userLoggedIn() == True){
                 //alert("Value: " + $("#price").val());
                 //$("#cut").val("Dolly Duck");
                 //$("#cut").val(0.9*($("#price").val()) + "Ksh");
-                  $("#cut").val(Math.round(0.75*($("#price").val())) + "Ksh");
+                  $("#cut").val(Math.round(0.9*($("#price").val())) + "Ksh");
             });
                 });
 

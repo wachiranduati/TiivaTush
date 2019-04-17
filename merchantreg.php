@@ -431,7 +431,7 @@ if(isUserMerchant($conn) == True){
                     _('progressbar').className = "progress-bar progress-bar-success progress-bar-striped active";
                     var submitdatabutton = document.getElementById('submitdatabutton');
                     submitdatabutton.disabled = true;
-                    setTimeout("payslip();",3000);
+                    setTimeout("payslip();",5000);
 
 
                     }

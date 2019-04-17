@@ -52,7 +52,7 @@ if(isset($_POST['useremail'])){
     <meta name="keywords" content="Mtumba, thriftshop, thriftshopping, second hand clothes, second hand, cheap, gikomba">
 
 </head>
-    <body onload="sportswear();boxed();">
+    <body onload="mensloop();boxed();">
         <?php 
         require('templates/header.php');
         ?>
@@ -1045,64 +1045,6 @@ window.onscroll = function() {scrollFunction()};
 		xmlhttp01.send();
 	}
 
-
-             function sportswear(){
-                 $('.loaderImage').fadeIn(3000);
-              if(window.XMLHttpRequest){
-                    xmlhttp = new XMLHttpRequest();
-                }else{
-                    xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp.onreadystatechange = function(){
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-                    document.getElementById('boxsportswear').innerHTML= xmlhttp.responseText;
-
-                    }
-                    }
-                    xmlhttp.open('GET','indexsportswearsloop.php',true);
-                    xmlhttp.send();
-
-            $('.loaderImage').fadeOut(3000);
-                 womensloop();
-            }
-            // changes the title box with the hello welcome to airmark logout thingi
-            function boxed(){
-              if(window.XMLHttpRequest){
-                    xmlhttp2 = new XMLHttpRequest();
-                }else{
-                    xmlhttp2 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp2.onreadystatechange = function(){
-                if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200){
-                    document.getElementById('boxtit').innerHTML= xmlhttp2.responseText;
-
-                    }
-                    }
-                    xmlhttp2.open('GET','account.php',true);
-                    xmlhttp2.send();
-
-
-            }
-            function womensloop(){
-                $('.loaderImage').fadeIn(3000);
-                if(window.XMLHttpRequest){
-                    xmlhttp3 = new XMLHttpRequest();
-                }else{
-                    xmlhttp3 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp3.onreadystatechange = function(){
-                if (xmlhttp3.readyState == 4 && xmlhttp3.status == 200){
-                    document.getElementById('boxwomens').innerHTML= xmlhttp3.responseText;
-
-                    }
-                    }
-                    xmlhttp3.open('GET','indexwomensloop.php',true);
-                    xmlhttp3.send();
-                $('.loaderImage').fadeOut(3000);
-                mensloop();
-
-            }
-
             function mensloop(){
                 $('.loaderImage').fadeIn(3000);
                 if(window.XMLHttpRequest){
@@ -1119,65 +1061,25 @@ window.onscroll = function() {scrollFunction()};
                     xmlhttp4.open('GET','indexmensloop.php',true);
                     xmlhttp4.send();
                 $('.loaderImage').fadeOut(3000);
-                kidsloop();
+                womensloop();
 
             }
 
-            function kidsloop(){
+            function womensloop(){
                 $('.loaderImage').fadeIn(3000);
                 if(window.XMLHttpRequest){
-                    xmlhttp5 = new XMLHttpRequest();
+                    xmlhttp3 = new XMLHttpRequest();
                 }else{
-                    xmlhttp5 = new ActiveXObject('Microsoft.XMLHTTP');
+                    xmlhttp3 = new ActiveXObject('Microsoft.XMLHTTP');
                 }
-           xmlhttp5.onreadystatechange = function(){
-                if (xmlhttp5.readyState == 4 && xmlhttp5.status == 200){
-                    document.getElementById('boxkids').innerHTML= xmlhttp5.responseText;
+           xmlhttp3.onreadystatechange = function(){
+                if (xmlhttp3.readyState == 4 && xmlhttp3.status == 200){
+                    document.getElementById('boxwomens').innerHTML= xmlhttp3.responseText;
 
                     }
                     }
-                    xmlhttp5.open('GET','indexkidsloop.php',true);
-                    xmlhttp5.send();
-                $('.loaderImage').fadeOut(3000);
-                Householdsloop();
-
-            }
-
-            function Householdsloop(){
-                $('.loaderImage').fadeIn(3000);
-                if(window.XMLHttpRequest){
-                    xmlhttp6 = new XMLHttpRequest();
-                }else{
-                    xmlhttp6 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp6.onreadystatechange = function(){
-                if (xmlhttp6.readyState == 4 && xmlhttp6.status == 200){
-                    document.getElementById('boxhouseholds').innerHTML= xmlhttp6.responseText;
-
-                    }
-                    }
-                    xmlhttp6.open('GET','indexhouseholdsloop.php',true);
-                    xmlhttp6.send();
-                $('.loaderImage').fadeOut(3000);
-                bagsloop();
-
-            }
-
-            function bagsloop(){
-                $('.loaderImage').fadeIn(3000);
-                if(window.XMLHttpRequest){
-                    xmlhttp7 = new XMLHttpRequest();
-                }else{
-                    xmlhttp7 = new ActiveXObject('Microsoft.XMLHTTP');
-                }
-           xmlhttp7.onreadystatechange = function(){
-                if (xmlhttp7.readyState == 4 && xmlhttp7.status == 200){
-                    document.getElementById('boxbags').innerHTML= xmlhttp7.responseText;
-
-                    }
-                    }
-                    xmlhttp7.open('GET','indexbagsloop.php',true);
-                    xmlhttp7.send();
+                    xmlhttp3.open('GET','indexwomensloop.php',true);
+                    xmlhttp3.send();
                 $('.loaderImage').fadeOut(3000);
                 shoesloop();
 
@@ -1199,31 +1101,92 @@ window.onscroll = function() {scrollFunction()};
                     xmlhttp8.open('GET','indexshoesloop.php',true);
                     xmlhttp8.send();
                 $('.loaderImage').fadeOut(3000);
-                labelsloop();
+                kidsloop();
 
             }
 
-             function labelsloop(){
-                 $('.loaderImage').fadeIn(3000);
+            function kidsloop(){
+                $('.loaderImage').fadeIn(3000);
                 if(window.XMLHttpRequest){
-                    xmlhttp9 = new XMLHttpRequest();
+                    xmlhttp5 = new XMLHttpRequest();
                 }else{
-                    xmlhttp9 = new ActiveXObject('Microsoft.XMLHTTP');
+                    xmlhttp5 = new ActiveXObject('Microsoft.XMLHTTP');
                 }
-           xmlhttp9.onreadystatechange = function(){
-                if (xmlhttp9.readyState == 4 && xmlhttp9.status == 200){
-                    document.getElementById('boxlabels').innerHTML= xmlhttp9.responseText;
+           xmlhttp5.onreadystatechange = function(){
+                if (xmlhttp5.readyState == 4 && xmlhttp5.status == 200){
+                    document.getElementById('boxkids').innerHTML= xmlhttp5.responseText;
 
                     }
                     }
-                    xmlhttp9.open('GET','indexlabelsloop.php',true);
-                    xmlhttp9.send();
-                 $('.loaderImage').fadeOut(3000);
-                 miscsloop();
+                    xmlhttp5.open('GET','indexkidsloop.php',true);
+                    xmlhttp5.send();
+                $('.loaderImage').fadeOut(3000);
+                sportswear();
 
             }
 
-             function miscsloop(){
+
+             function sportswear(){
+                 $('.loaderImage').fadeIn(3000);
+              if(window.XMLHttpRequest){
+                    xmlhttp = new XMLHttpRequest();
+                }else{
+                    xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+           xmlhttp.onreadystatechange = function(){
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                    document.getElementById('boxsportswear').innerHTML= xmlhttp.responseText;
+
+                    }
+                    }
+                    xmlhttp.open('GET','indexsportswearsloop.php',true);
+                    xmlhttp.send();
+
+            $('.loaderImage').fadeOut(3000);
+                 bagsloop();
+            }
+
+            function bagsloop(){
+                $('.loaderImage').fadeIn(3000);
+                if(window.XMLHttpRequest){
+                    xmlhttp7 = new XMLHttpRequest();
+                }else{
+                    xmlhttp7 = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+           xmlhttp7.onreadystatechange = function(){
+                if (xmlhttp7.readyState == 4 && xmlhttp7.status == 200){
+                    document.getElementById('boxbags').innerHTML= xmlhttp7.responseText;
+
+                    }
+                    }
+                    xmlhttp7.open('GET','indexbagsloop.php',true);
+                    xmlhttp7.send();
+                $('.loaderImage').fadeOut(3000);
+                Householdsloop();
+
+            }
+
+            function Householdsloop(){
+                $('.loaderImage').fadeIn(3000);
+                if(window.XMLHttpRequest){
+                    xmlhttp6 = new XMLHttpRequest();
+                }else{
+                    xmlhttp6 = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+           xmlhttp6.onreadystatechange = function(){
+                if (xmlhttp6.readyState == 4 && xmlhttp6.status == 200){
+                    document.getElementById('boxhouseholds').innerHTML= xmlhttp6.responseText;
+
+                    }
+                    }
+                    xmlhttp6.open('GET','indexhouseholdsloop.php',true);
+                    xmlhttp6.send();
+                $('.loaderImage').fadeOut(3000);
+                miscsloop();
+
+            }
+
+            function miscsloop(){
                  $('.loaderImage').fadeIn(3000);
                 if(window.XMLHttpRequest){
                     xmlhttp10 = new XMLHttpRequest();
@@ -1239,8 +1202,47 @@ window.onscroll = function() {scrollFunction()};
                     xmlhttp10.open('GET','indexmiscsloop.php',true);
                     xmlhttp10.send();
                  $('.loaderImage').fadeOut(3000);
+                 labelsloop();
 
             }
+
+            function labelsloop(){
+                 $('.loaderImage').fadeIn(3000);
+                if(window.XMLHttpRequest){
+                    xmlhttp9 = new XMLHttpRequest();
+                }else{
+                    xmlhttp9 = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+           xmlhttp9.onreadystatechange = function(){
+                if (xmlhttp9.readyState == 4 && xmlhttp9.status == 200){
+                    document.getElementById('boxlabels').innerHTML= xmlhttp9.responseText;
+
+                    }
+                    }
+                    xmlhttp9.open('GET','indexlabelsloop.php',true);
+                    xmlhttp9.send();
+                 $('.loaderImage').fadeOut(3000);
+
+            }
+
+            // changes the title box with the hello welcome to airmark logout thingi
+            function boxed(){
+              if(window.XMLHttpRequest){
+                    xmlhttp2 = new XMLHttpRequest();
+                }else{
+                    xmlhttp2 = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+           xmlhttp2.onreadystatechange = function(){
+                if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200){
+                    document.getElementById('boxtit').innerHTML= xmlhttp2.responseText;
+
+                    }
+                    }
+                    xmlhttp2.open('GET','account.php',true);
+                    xmlhttp2.send();            
+                }
+            
+             
 
             // changes the title box with the hello welcome to airmark logout thingi
             

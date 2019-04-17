@@ -58,7 +58,9 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4" style="height:100px;"><h4>About shopper</h4>
                                     <ul class="list-unstyled">
+                                        <li><a style="color:black;" href="tiivaapp/tiivaShopping.apk">Android App</a></li>
                                         <li><a style="color:black;" href="aboutus.php">About Us</a></li>
+                                        <li><a style="color:black;" href="https://blogs.tiiva.co.ke/">Our blogs</a></li>
                                         <!-- <li><a style="color:black;" href="#">Careers</a></li> -->
                                         <!-- <li><a style="color:black;" href="#">Store location</a></li> -->
                                         <!-- <li><a style="color:black;" href="#">Affiliate Program</a></li> -->
@@ -69,7 +71,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                            <div class="row">
+                            <div class="row" style="display: none;">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="text-center">About shopper</h4></div>
                             </div>
                             <div class="row" style="display: none;">

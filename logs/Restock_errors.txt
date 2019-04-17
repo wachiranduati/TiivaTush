@@ -242,3 +242,5 @@ Restock kids -> kshoes category |2019-02-28 07:47:33
 Restock kids -> kshoes category |2019-02-28 07:47:56
 Restock kids -> kshoes category |2019-02-28 07:48:06
 Restock kids -> kshoes category |2019-02-28 07:53:34
+Restock socks -> subcategory category |2019-03-18 00:53:51
+Restock socks -> subcategory category |2019-03-18 00:54:16

@@ -200,7 +200,7 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passw
         function useri(){
             var user = document.getElementById("username").value;
             var userstatus = document.getElementById("userstatus");
-            if (user != '' && user.length > 4 && user.indexOf(' ') < 1){
+            if (user != '' && user.length > 3 && user.indexOf(' ') < 1){
                 userstatus.innerHTML = "<span class=\"glyphicon glyphicon-ok\" style=\"color:rgb(0, 230, 0);\"></span>";
             }else{
                 userstatus.innerHTML = "<span class=\"glyphicon glyphicon-remove\" style=\"color:rgb(255, 0, 0);\"></span>";

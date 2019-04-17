@@ -308,7 +308,7 @@ if(isUserMerchant($conn) != True){
                             </p>
                             <h3>Good to Now Facts</h3>
                                 <p>
-                                    Payments to the merchant is made 24 hours after an item has been successfully delivered to the buyer.
+                                    Payments of the item must be made to the merchant before picking up the item.
                                     <br>
                                     Merchants are not charged to for using tiiva but we do charge 12.5% on all items successfully sold on tiiva.
                                     <br>

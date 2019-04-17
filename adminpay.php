@@ -1104,7 +1104,7 @@ function cashflowonTiiva($conn, $prodid){
 	$category = $productDetails['category'];
 	$subcategory = $productDetails['subcategory'];
 	$price = $productDetails['price'];
-	$finalprice = number_format($price*0.875);
+	$finalprice = number_format($price*0.9);
 	$label = $productDetails['label'];
 	$size = $productDetails['size'];
 
