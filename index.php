@@ -12,7 +12,6 @@ require 'looptemplater.php';
 //echo array_search("red",$a);
 //echo isset($_SESSION['user']);
 //echo $_SERVER['REMOTE_ADDR'];
-
 //echo md5(1);
 //echo $_SERVER['HTTP_CLIENT_IP'];
 //echo $_SERVER['HTTP_X_FORWARDED_FOR'];

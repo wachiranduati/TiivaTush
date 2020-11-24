@@ -13,6 +13,8 @@ $carttimeextend = 15; // minutes with no activity// this is to prevent one from 
 // echo $ctime;
 $exptime = timeDeltaCurrentTime('+5 minutes');
 
+echo UnbookIfExpired($conn, $ctime);
+// this script has been left behind simply to just unbook expired items
 
 if(userLoggedIn() == True){
 	// do nothing...this is the master function to be reused by the entire page
@@ -292,7 +294,6 @@ function UnbookIfExpired($conn, $ctime){
 	}
 }
 
-echo UnbookIfExpired($conn, $ctime);
-// this script has been left behind simply to just unbook expired items
+
 
 ?>
