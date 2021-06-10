@@ -244,3 +244,12 @@ Restock kids -> kshoes category |2019-02-28 07:48:06
 Restock kids -> kshoes category |2019-02-28 07:53:34
 Restock socks -> subcategory category |2019-03-18 00:53:51
 Restock socks -> subcategory category |2019-03-18 00:54:16
+Restock mens category |2021-06-10 19:31:51
+Restock shoes category |2021-06-10 19:31:51
+Restock womens category |2021-06-10 19:31:51
+Restock kids category |2021-06-10 19:31:51
+Restock sportswear category |2021-06-10 19:31:51
+Restock bags category |2021-06-10 19:31:51
+Restock interiors category |2021-06-10 19:31:51
+Restock misc category |2021-06-10 19:31:51
+Restock all category |2021-06-10 19:31:51
