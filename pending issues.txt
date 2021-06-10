@@ -1,0 +1,8 @@
+pending issues
+
+1. failed login attempt throws an error line 127 array list might be empty login_parse.php
+
+2. login to account with merchant account throws another error merchants white paper line 892
+MYSQLI_FETCH_ASSOC() EXPECTS PARAMETER 1 TO BE MYSQLI_RESULT, BOOL GIVEN IN C:\XAMPP\HTDOCS\TIIVATUSH\TIIVA\MERCHANTSWHITEPAPER.PHP ON LINE 891
+
+WARNING: IMPLODE(): INVALID ARGUMENTS PASSED IN C:\XAMPP\HTDOCS\TIIVATUSH\TIIVA\MERCHANTSWHITEPAPER.PHP ON LINE 892

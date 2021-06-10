@@ -59,7 +59,7 @@ if(isset($_POST['useremail'])){
         <div class="container">
                 <?php
         require 'templates/pagetitle.php';
-        echo pageTitle('Tiiva Home');
+        echo pageTitle('Mtumba Marketplace');
                 ?>
             <div class="row visible-sm visible-xs">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="margin-top:5px;border:1px solid black;background-color:black;border-bottom:2px solid white;height:50px;">
