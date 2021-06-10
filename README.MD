@@ -31,7 +31,7 @@ tiiva was born out of necessity. I was and still are a fan of cheap quality shoe
 #### Hosted?
 Taken down!
 
-It's home used to be https://tiiva.co.ke
+Its home used to be https://tiiva.co.ke
 
 
 ### Technical
@@ -48,6 +48,8 @@ This project uses:
 
 You can:
     a. clone the project and compile it yourself
+    b. in the root folder, locate a_database.sql and upload it to your mysql database, should save you alot of pain working without it
+    c. Note that there's a hidden backoffice, only visible under my account nicholas, good luck finding it.
 
 ### To Do List  
 
